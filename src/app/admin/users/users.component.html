@@ -1,0 +1,82 @@
+<app-admin-nav></app-admin-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="outside" *ngIf="users.length > 0">
+  <div class="head">
+    <h1>All Users</h1>
+  </div>
+  <div class="table-responsive table-container table-sm mt-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-sm-1">Name</th>
+          <th class="col-1">Email</th>
+          <th class="col-1">Package</th>
+          <th class="col-1 col-md-1">Trans ID</th>
+          <th class="col-1">Trans Type</th>
+          <th class="col-1 col-md-1">Payment ID</th>
+          <th class="col-1 col-md-1">Payment Type</th>
+          <th class="col-1">Referrals</th>
+          <th class="col-1 col-md-1">Package Price</th>
+          <th class="col-1" style="text-align: center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.firstname }} {{ user.lastname }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.packagePrice }}</td>
+          <td>{{ user.stripe_subscription_id }}</td>
+          <td>{{ user.balance_transaction_type }}</td>
+          <td>{{ user.payment_id }}</td>
+          <td>{{ user.payment_method }}</td>
+          <td>{{ user.myRefers }}</td>
+          <td>{{ user.bonusAmount }}</td>
+          <td>
+            <!-- Show buttons on larger screens -->
+            <div class="d-none d-md-block">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a [routerLink]="'/admin/user/' + user.id">
+                  <button class="btn btn-sm btn-primary">Edit</button>
+                </a>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deleteUser(user.user_id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+            <!-- Show icons on smaller screens (mobile) -->
+            <div class="d-block d-md-none">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a routerLink="/user/{{ user.user_id }}/edit">
+                  <i class="fas fa-edit text-primary mr-2"></i>
+                </a>
+                <i
+                  class="fas fa-trash text-danger"
+                  (click)="deleteUser(user.user_id)"
+                ></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<app-admin-nav></app-admin-nav>
+<!-- chat.component.html -->
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="container">
+  <div class="row topRow">
+    <div class="col-md-4">
+      <input
+        type="text"
+        name="search"
+        placeholder="Search Chat..."
+        class="form-control"
+      />
+    </div>
+    <div class="col-md-8 closeBtn">
+      <button class="btn btn-secondary">Close Chat</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <!-- List of chat users -->
+      <ul class="list-group">
+        <li
+          *ngFor="let user of chatUsers"
+          (click)="openChat(user.id)"
+          class="list-group-item cursor-pointer user-list"
+        >
+          <span class="user-avatar">
+            <!-- Add your FontAwesome icon here -->
+            <i class="fas fa-user-circle"></i>
+          </span>
+          {{ user.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8 outsideMsg" *ngIf="chatDisplay">
+      <!-- Chat messages -->
+      <div class="chat-messages" id="chat-messages">
+        <div
+          *ngFor="let message of chatMessages"
+          class="message-container"
+          [ngClass]="{
+            'message-sender': message.message_type === 'sent',
+            'message-receiver': message.message_type === 'recieved'
+          }"
+        >
+          <div class="message-bubble">
+            {{ message.user_message }}
+            <div class="message-time">
+              {{ message.created_at | date : "shortTime" }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message-input">
+        <input
+          [(ngModel)]="newMessage"
+          placeholder="Type your message..."
+          class="form-control"
+        />
+        <!-- Add a button for sending messages -->
+        <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+        <!-- <button (click)="sendMessage()" class="btn btn-primary">Send</button> -->
+      </div>
+    </div>
+  </div>
+  <!-- Input for sending messages -->
+</div>

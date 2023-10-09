@@ -1,0 +1,264 @@
+<app-admin-nav></app-admin-nav>
+
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<div
+  class="container"
+  style="margin-top: 80px; padding: 30px; margin-bottom: 60px"
+  *ngIf="user.firstname != ''"
+>
+  <h1 class="heading">
+    <i class="fas fa-check-circle icon"></i>
+    Edit User information
+  </h1>
+  <form (submit)="saveChanges()" style="margin-top: 50px">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input
+            type="text"
+            id="firstname"
+            [(ngModel)]="user.firstname"
+            name="firstname"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            type="text"
+            id="lastname"
+            [(ngModel)]="user.lastname"
+            name="lastname"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="email">My email</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input
+            type="date"
+            id="dob"
+            [(ngModel)]="user.DOB"
+            name="DOB"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>I am a:</label>
+
+          <input
+            style="margin-left: 10px"
+            type="radio"
+            id="male"
+            [(ngModel)]="user.gender"
+            name="gender"
+            value="male"
+            class="form-check-input"
+          />
+          <label for="male" style="margin-left: 5px" class="form-check-label"
+            >Male</label
+          >
+
+          <input
+            style="margin-left: 10px"
+            type="radio"
+            id="female"
+            [(ngModel)]="user.gender"
+            name="gender"
+            value="female"
+            class="form-check-input"
+          />
+          <label for="male" style="margin-left: 5px" class="form-check-label"
+            >Female</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            [(ngModel)]="user.city"
+            name="city"
+            class="form-control"
+            placeholder="Your City"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select
+            id="country"
+            [(ngModel)]="user.country"
+            name="country"
+            class="form-control"
+          >
+            <option
+              *ngFor="let country of countries"
+              [value]="country.name.common"
+            >
+              {{ country.name.common }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="facebook_url">Company</label>
+          <input
+            type="text"
+            id="company"
+            [(ngModel)]="user.company"
+            name="company"
+            class="form-control"
+            placeholder="Company Name"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="facebook_url">Job Title</label>
+          <input
+            type="text"
+            id="job_title"
+            [(ngModel)]="user.job_title"
+            name="job_title"
+            class="form-control"
+            placeholder="Designation Name"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="facebook_url">Website</label>
+          <input
+            type="text"
+            id="website"
+            [(ngModel)]="user.website"
+            name="website"
+            class="form-control"
+            placeholder="Website Address"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="facebook_url">Facebook URL</label>
+          <input
+            type="text"
+            id="facebook_url"
+            [(ngModel)]="user.facebook_url"
+            name="facebook_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="twitter_url">Twitter URL</label>
+          <input
+            type="text"
+            id="twitter_url"
+            [(ngModel)]="user.twitter_url"
+            name="twitter_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="linkedin_url">LinkedIn URL</label>
+          <input
+            type="text"
+            id="linkedin_url"
+            [(ngModel)]="user.linkedin_url"
+            name="linkedin_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="youtube_url">YouTube URL</label>
+          <input
+            type="text"
+            id="youtube_url"
+            [(ngModel)]="user.youtube_url"
+            name="youtube_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="youtube_url">Upload Profile Picture</label>
+          <input
+            type="file"
+            id="profile_image"
+            [(ngModel)]="user.profile_image"
+            name="profile_image"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more form fields as needed -->
+    <div class="row" style="margin-top: 50px">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary btn-rounded">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

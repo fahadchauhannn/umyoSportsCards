@@ -1,0 +1,27 @@
+/* src/app/nav/nav.component.css */
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 56px; /* Adjust this value to position the menu below the navbar */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mobile-menu.open {
+    display: block;
+  }
+  
+  .close-icon {
+    text-align: right;
+    padding: 10px;
+  }
+  
+  .mobile-links {
+    padding: 10px;
+  }
+  

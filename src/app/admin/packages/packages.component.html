@@ -1,0 +1,86 @@
+<app-admin-nav></app-admin-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="outside" *ngIf="packages.length > 0">
+  <div class="head">
+    <h1>Package</h1>
+    <button class="btn btn-primary">Add Package</button>
+  </div>
+  <div class="table-responsive table-container table-sm mt-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-sm-1">No.</th>
+          <th class="col-1">Price</th>
+          <th class="col-1">Net Price</th>
+          <th class="col-md-5">Description</th>
+          <th class="col-1">Duration</th>
+          <th class="col-1">Limit</th>
+          <th class="col-1" style="text-align: center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let package of packages; let i = index">
+          <td>{{ i }}</td>
+          <td>{{ package.price }}</td>
+          <td>{{ package.netPrice }}</td>
+          <td class="desc">{{ package.description }}</td>
+          <td>
+            {{
+              package.expire_in === "month"
+                ? "1 month"
+                : package.expire_in === "year"
+                ? "1 year"
+                : package.expire_in
+            }}
+          </td>
+
+          <td>{{ package.limit }}</td>
+          <td>
+            <!-- Show buttons on larger screens -->
+            <div class="d-none d-md-block">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a routerLink="/user/{{ package.id }}/edit">
+                  <button class="btn btn-sm btn-primary">Edit</button>
+                </a>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deletePackage(package.id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+            <!-- Show icons on smaller screens (mobile) -->
+            <div class="d-block d-md-none">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a routerLink="/user/{{ package.id }}/edit">
+                  <i class="fas fa-edit text-primary mr-2"></i>
+                </a>
+                <i
+                  class="fas fa-trash text-danger"
+                  (click)="deletePackage(package.id)"
+                ></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
