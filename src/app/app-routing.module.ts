@@ -11,6 +11,8 @@ import { ProfileComponent } from './admin/profile/profile.component';
 import {AdminComponent} from './admin/admin.component'
 import { AdminLiveChatComponent } from './admin/admin-live-chat/admin-live-chat.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { AddAgentComponent } from './admin/add-agent/add-agent.component';
+import { UpdateAgentComponent } from './admin/update-agent/update-agent.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   
@@ -22,8 +24,10 @@ const routes: Routes = [
       { path: 'admin/admin-amount', component: AdminAmountComponent },
       { path: 'admin/admin-chat-record', component: AdminChatRecordComponent },
       { path: 'admin/profile', component: ProfileComponent },
+      { path: 'admin/admin-support-agent-add', component: AddAgentComponent },
       { path: 'admin/admin-live-chat', component: AdminLiveChatComponent },
       { path: 'admin/user/:id', component: UserEditComponent },
+      { path: 'update-agent/:id', component: UpdateAgentComponent },
   
   
   

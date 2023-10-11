@@ -62,7 +62,7 @@ export class ApiService {
   
   
 
-
+  
 
 
   getUserById(userId: number): Observable<any> {
@@ -76,22 +76,22 @@ export class ApiService {
 
 
   private customHeaders = new HttpHeaders()
-  .set('Origin', 'https://umyosportscards.com') // Change to your desired Origin
-  .set('Referer', 'https://umyosportscards.com/admin/users/272'); // Change to your desired Referer
+  .set('Origin', 'https://umyosportscards.com') 
+  .set('Referer', 'https://umyosportscards.com/admin/users/272'); 
 
 updateUser(user: any): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/editUser`;
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer your-auth-token', // Add your authentication token if needed
+    'Authorization': 'Bearer your-auth-token', 
   });
 
-  // Combine custom headers with the default headers
+ 
   const combinedHeaders = headers
     .append('Origin', this.customHeaders.get('Origin') || '')
     .append('Referer', this.customHeaders.get('Referer') || '');
 
-  // Make a POST request with the user object as payload and custom headers
+ 
   return this.http.post(url, user, { headers: combinedHeaders });
 }
 
@@ -100,31 +100,98 @@ openChat(chat_id: any): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/getLiveChat`;
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer your-auth-token', // Add your authentication token if needed
+    'Authorization': 'Bearer your-auth-token', 
   });
 
-  // Combine custom headers with the default headers
+  
   const combinedHeaders = headers
     .append('Origin', this.customHeaders.get('Origin') || '')
     .append('Referer', this.customHeaders.get('Referer') || '');
   
-  // Make a POST request with the user object as payload and custom headers
+  
   return this.http.post(url, {"chat_id":chat_id}, { headers: combinedHeaders });
 }
+
+deleteUser(user_id: any): Observable<any> {
+  const url = `
+  https://umyosportscards.com/api_umyocards/public/api/deleteUser`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token',
+  });
+
+ 
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+ 
+  return this.http.post(url, {"user_id":user_id}, { headers: combinedHeaders });
+}
+deleteAgent(agent_id: any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/deleteSupportAgent`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token',
+  });
+
+ 
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+ 
+  return this.http.post(url, {"id":agent_id}, { headers: combinedHeaders });
+}
+
+
+
 saveChat(chat_id: any,chat:any,message_type:any,responded_by_id:any): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/saveLiveChat`;
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer your-auth-token', // Add your authentication token if needed
+    'Authorization': 'Bearer your-auth-token', 
   });
 
-  // Combine custom headers with the default headers
+  
   const combinedHeaders = headers
     .append('Origin', this.customHeaders.get('Origin') || '')
     .append('Referer', this.customHeaders.get('Referer') || '');
   
-  // Make a POST request with the user object as payload and custom headers
+  
   return this.http.post(url, {"chat_id":chat_id,"chat":chat,"message_type":message_type,"respond_by_id":responded_by_id}, { headers: combinedHeaders });
+
+}
+addAgent(name: any,email:any,password:any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/addSupportAgent`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url, {"name":name,"email":email,"password":password}, { headers: combinedHeaders });
+
+}
+updateAgent(name: any,email:any,id:any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/updateSupportAgent`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url, {"name":name,"email":email,"id":id}, { headers: combinedHeaders });
 
 }
 
@@ -135,15 +202,15 @@ getChatUsers(): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/getOpenChatAdmin`;
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer your-auth-token', // Add your authentication token if needed
+    'Authorization': 'Bearer your-auth-token',
   });
 
-  // Combine custom headers with the default headers
+  
   const combinedHeaders = headers
     .append('Origin', this.customHeaders.get('Origin') || '')
     .append('Referer', this.customHeaders.get('Referer') || '');
 
-  // Make a POST request with the user object as payload and custom headers
+ 
   return this.http.post(url, { headers: combinedHeaders });
 }
 
@@ -165,103 +232,5 @@ getChatUsers(): Observable<any> {
   
  
   
-  private agents: Agent[] = [
-    {
-      id: 1,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 2,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 3,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 4,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 5,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 6,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 7,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-   
-    
-  ];
-  private chatRecord: Agent[] = [
-    {
-      id: 1,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 2,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 3,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 4,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 5,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 6,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-    {
-      id: 7,
-        name:'David',
-        email:'davidtest@gmail.com',
-       
-    },
-   
-    
-  ];
 
-  
-  getAgents(): Agent[] {
-    return this.agents;
-  }
- 
-  
 }

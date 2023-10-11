@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Agent } from '../../model.model';
 import { ApiService } from '../../api.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-admin-support-agent-list',
@@ -10,7 +12,7 @@ import { ApiService } from '../../api.service';
 export class AdminSupportAgentListComponent implements OnInit{
   agents: Agent[] = [];
   isLoading:boolean=false;
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
     const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
@@ -26,8 +28,38 @@ export class AdminSupportAgentListComponent implements OnInit{
       }
     );
   }
+
+  editAgent(agent: any) {
+    this.router.navigate(['/update-agent', agent.id], {
+      queryParams: { agentData: JSON.stringify(agent) },
+    });
+  }
   deleteAgent(agentId: number) {
+    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    this.isLoading=true
+    this.apiService.deleteAgent(agentId).subscribe(
+      (response)=>{
+        console.log(response);
+        this.apiService.getSupportAgent(bearerToken).subscribe(
+          (response) => {
+            this.isLoading=false
+            this.agents = response.Agents; // Assuming the API response has a 'data' property containing the user data
+            
+          },
+          (error) => {
+            console.error('Error fetching users:', error);
+          }
+        );
+        this.isLoading=false
+        
+
+      }
+    )
+  }
+
+  handleClick() {
     
+    this.router.navigate(['admin/admin-support-agent-add']);
   }
 }
 

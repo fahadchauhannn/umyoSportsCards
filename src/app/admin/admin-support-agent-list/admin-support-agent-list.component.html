@@ -2,10 +2,10 @@
 <div *ngIf="isLoading" class="outer-spinner">
   <div class="loading-spinner"></div>
 </div>
-<div class="outside" *ngIf="agents.length > 0">
+<div class="outside">
   <div class="head">
     <h1>Support Agents</h1>
-    <button class="btn btn-primary">Add</button>
+    <button class="btn btn-primary" (click)="handleClick()">Add</button>
   </div>
   <div class="table-responsive table-container table-sm mt-4">
     <table class="table">
@@ -34,7 +34,7 @@
                   gap: 20px;
                 "
               >
-                <a routerLink="/user/{{ agent.id }}/edit">
+                <a (click)="editAgent(agent)">
                   <button class="btn btn-sm btn-primary">Edit</button>
                 </a>
                 <button
@@ -55,7 +55,7 @@
                   gap: 20px;
                 "
               >
-                <a routerLink="/user/{{ agent.id }}/edit">
+                <a (click)="editAgent(agent)">
                   <i class="fas fa-edit text-primary mr-2"></i>
                 </a>
                 <i

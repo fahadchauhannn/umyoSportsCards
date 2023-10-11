@@ -17,6 +17,10 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserEditComponent } from './user-edit/user-edit.component'; // Import HttpClientModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddAgentComponent } from './admin/add-agent/add-agent.component';
+import { UpdateAgentComponent } from './admin/update-agent/update-agent.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +36,13 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     ProfileComponent,
     AdminLiveChatComponent,
     AdminNavComponent,
-    UserEditComponent
+    UserEditComponent,
+    AddAgentComponent,
+    UpdateAgentComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule], // Add HttpClientModule here  
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
+    positionClass:'custom-toast-position',
+  }),BrowserAnimationsModule,], // Add HttpClientModule here  
   providers: [],
   bootstrap: [AppComponent]
 })
