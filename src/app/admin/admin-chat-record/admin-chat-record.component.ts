@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatRecord } from '../../model.model';
 import { ApiService } from '../../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-chat-record',
@@ -10,16 +11,16 @@ import { ApiService } from '../../api.service';
 export class AdminChatRecordComponent implements OnInit{
   records: ChatRecord[] = [];
   isLoading:boolean=false;
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,private router: Router) {}
 
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN';
     this.isLoading=true
     this.apiService.getChatRecord(bearerToken).subscribe(
       (response) => {
         this.isLoading=false
-        this.records = response.Record; // Assuming the API response has a 'data' property containing the user data
+        this.records = response.Record;
         
       },
       (error) => {
@@ -29,5 +30,10 @@ export class AdminChatRecordComponent implements OnInit{
   }
   deleteRecord(recordId: number) {
     
+  }
+  viewChat(chat: any) {
+    this.router.navigate(['//admin/viewChat/', chat.id], {
+      queryParams: { chatName: JSON.stringify(chat.name) },
+    });
   }
 }

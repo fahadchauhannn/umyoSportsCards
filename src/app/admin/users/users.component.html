@@ -2,6 +2,7 @@
 <div *ngIf="isLoading" class="outer-spinner">
   <div class="loading-spinner"></div>
 </div>
+
 <div class="outside" *ngIf="users.length > 0">
   <div class="head">
     <h1>All Users</h1>
@@ -34,7 +35,6 @@
           <td>{{ user.myRefers }}</td>
           <td>{{ user.bonusAmount }}</td>
           <td>
-            <!-- Show buttons on larger screens -->
             <div class="d-none d-md-block">
               <div
                 style="
@@ -55,7 +55,7 @@
                 </button>
               </div>
             </div>
-            <!-- Show icons on smaller screens (mobile) -->
+
             <div class="d-block d-md-none">
               <div
                 style="

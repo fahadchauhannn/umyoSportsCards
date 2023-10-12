@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AdminNavComponent {
   mobileMenuOpen = false;
 
-  // Toggle the mobile menu
+  
   toggleMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }

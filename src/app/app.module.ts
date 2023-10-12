@@ -15,12 +15,15 @@ import { ProfileComponent } from './admin/profile/profile.component';
 import { AdminLiveChatComponent } from './admin/admin-live-chat/admin-live-chat.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserEditComponent } from './user-edit/user-edit.component'; // Import HttpClientModule
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { UserEditComponent } from './user-edit/user-edit.component'; 
+import { FormsModule } from '@angular/forms'; 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddAgentComponent } from './admin/add-agent/add-agent.component';
 import { UpdateAgentComponent } from './admin/update-agent/update-agent.component';
+import { AddPackageComponent } from './admin/add-package/add-package.component';
+import { EditPackageComponent } from './admin/edit-package/edit-package.component';
+import { ViewChatComponent } from './admin/view-chat/view-chat.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +41,14 @@ import { UpdateAgentComponent } from './admin/update-agent/update-agent.componen
     AdminNavComponent,
     UserEditComponent,
     AddAgentComponent,
-    UpdateAgentComponent
+    UpdateAgentComponent,
+    AddPackageComponent,
+    EditPackageComponent,
+    ViewChatComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
     positionClass:'custom-toast-position',
-  }),BrowserAnimationsModule,], // Add HttpClientModule here  
+  }),BrowserAnimationsModule,], 
   providers: [],
   bootstrap: [AppComponent]
 })

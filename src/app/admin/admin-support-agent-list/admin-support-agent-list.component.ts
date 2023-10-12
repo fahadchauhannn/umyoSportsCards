@@ -15,12 +15,12 @@ export class AdminSupportAgentListComponent implements OnInit{
   constructor(private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN'; 
     this.isLoading=true
     this.apiService.getSupportAgent(bearerToken).subscribe(
       (response) => {
         this.isLoading=false
-        this.agents = response.Agents; // Assuming the API response has a 'data' property containing the user data
+        this.agents = response.Agents; 
         
       },
       (error) => {
@@ -35,7 +35,7 @@ export class AdminSupportAgentListComponent implements OnInit{
     });
   }
   deleteAgent(agentId: number) {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN';
     this.isLoading=true
     this.apiService.deleteAgent(agentId).subscribe(
       (response)=>{
@@ -43,7 +43,7 @@ export class AdminSupportAgentListComponent implements OnInit{
         this.apiService.getSupportAgent(bearerToken).subscribe(
           (response) => {
             this.isLoading=false
-            this.agents = response.Agents; // Assuming the API response has a 'data' property containing the user data
+            this.agents = response.Agents; 
             
           },
           (error) => {

@@ -13,6 +13,9 @@ import { AdminLiveChatComponent } from './admin/admin-live-chat/admin-live-chat.
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { AddAgentComponent } from './admin/add-agent/add-agent.component';
 import { UpdateAgentComponent } from './admin/update-agent/update-agent.component';
+import { AddPackageComponent } from './admin/add-package/add-package.component';
+import { EditPackageComponent } from './admin/edit-package/edit-package.component';
+import { ViewChatComponent } from './admin/view-chat/view-chat.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   
@@ -28,8 +31,11 @@ const routes: Routes = [
       { path: 'admin/admin-live-chat', component: AdminLiveChatComponent },
       { path: 'admin/user/:id', component: UserEditComponent },
       { path: 'update-agent/:id', component: UpdateAgentComponent },
+      { path: 'admin/add-package', component: AddPackageComponent },
+      { path: 'admin/edit-package/:id', component: EditPackageComponent },
+      { path: 'admin/viewChat/:id', component: ViewChatComponent },
   
-  
+      
   
 ];
 @NgModule({

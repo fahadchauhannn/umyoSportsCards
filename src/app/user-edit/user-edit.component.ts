@@ -27,7 +27,7 @@ export class UserEditComponent implements OnInit {
     youtube_url: null,
     profile_image: null,
     gender: null,
-  }; // Initialize an empty user object
+  }; 
   isLoading: boolean = false;
   countries: any[] = [];
   countryAltSpellingsMap: { [shortForm: string]: string } = {}; // Map sh
@@ -62,11 +62,11 @@ export class UserEditComponent implements OnInit {
             profile_image:response.Users.profile,
             gender:response.Users.gender
           };
-          this.user = { ...this.user, ...updatedUser }; // Merge the updated properties
-          // Fetch the list of countries
+          this.user = { ...this.user, ...updatedUser };
+         
           this.apiService.getCountries().subscribe((countries) => {
             this.countries = countries;
-            // Check if user's country matches any alt spelling, and replace if necessary
+            
             if (this.user.country !== null) {
               const matchingCountry = countries.find((country) =>
                 country.altSpellings.includes(this.user.country)
@@ -82,17 +82,17 @@ export class UserEditComponent implements OnInit {
         }
       );
     } else {
-      // Handle the case when no user ID is provided
+     
     }
   }
   
 
   saveChanges() {
-    // Send a POST request to save changes to the user data
+    
     this.apiService.updateUser(this.user).subscribe(
       (response) => {
         console.log('User data updated successfully:', response);
-        // Redirect to the user list or perform any necessary actions
+        
       },
       (error) => {
         console.error('Error updating user data:', error);

@@ -1,6 +1,8 @@
 <app-admin-nav></app-admin-nav>
-<div class="outside container col-sm-8 mt-4">
-  <!-- input here  -->
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="outside container col-sm-8 mt-4" *ngIf="!isLoading">
   <label for="floatingInput mb-3">User View Text</label>
   <div class="form mb-3 mt-1">
     <input type="email" class="form-control" placeholder="some text" />
@@ -16,7 +18,7 @@
           <h5 class="card-title" style="color: rgb(35, 149, 243)">
             Users Registered
           </h5>
-          <p class="card-text">13</p>
+          <p class="card-text">{{ UsersUsage }}</p>
         </div>
       </div>
     </div>
@@ -26,7 +28,7 @@
           <h5 class="card-title" style="color: rgb(35, 149, 243)">
             Card Created
           </h5>
-          <p class="card-text">124</p>
+          <p class="card-text">{{ CardUsage }}</p>
         </div>
       </div>
     </div>

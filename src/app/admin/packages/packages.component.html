@@ -5,7 +5,7 @@
 <div class="outside" *ngIf="packages.length > 0">
   <div class="head">
     <h1>Package</h1>
-    <button class="btn btn-primary">Add Package</button>
+    <button class="btn btn-primary" (click)="addPackage()">Add Package</button>
   </div>
   <div class="table-responsive table-container table-sm mt-4">
     <table class="table">
@@ -38,7 +38,6 @@
 
           <td>{{ package.limit }}</td>
           <td>
-            <!-- Show buttons on larger screens -->
             <div class="d-none d-md-block">
               <div
                 style="
@@ -48,7 +47,7 @@
                   gap: 20px;
                 "
               >
-                <a routerLink="/user/{{ package.id }}/edit">
+                <a [routerLink]="'/admin/edit-package/' + package.id">
                   <button class="btn btn-sm btn-primary">Edit</button>
                 </a>
                 <button
@@ -59,7 +58,7 @@
                 </button>
               </div>
             </div>
-            <!-- Show icons on smaller screens (mobile) -->
+
             <div class="d-block d-md-none">
               <div
                 style="
@@ -69,7 +68,7 @@
                   gap: 20px;
                 "
               >
-                <a routerLink="/user/{{ package.id }}/edit">
+                <a [routerLink]="'/admin/edit-package/' + package.id">
                   <i class="fas fa-edit text-primary mr-2"></i>
                 </a>
                 <i

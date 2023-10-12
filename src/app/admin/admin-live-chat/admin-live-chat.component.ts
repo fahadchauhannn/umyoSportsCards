@@ -7,7 +7,7 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './admin-live-chat.component.html',
   styleUrls: ['./admin-live-chat.component.css']
 })
-// export class AdminLiveChatComponent implements OnInit, OnDestroy {
+
   export class AdminLiveChatComponent implements OnInit, OnDestroy, AfterViewInit {
   chatUsers: any[] = [];
   selectedUserId: string = '';
@@ -22,18 +22,18 @@ import { interval, Subscription } from 'rxjs';
 
   constructor(private apiService: ApiService) {}
   ngAfterViewInit() {
-    // Ensure that the scrollContainer is properly initialized before using it
+    
     if (this.scrollContainer) {
       this.scrollToBottom();
     }
   }
   ngOnInit() {
     this.isLoading=true
-    // Fetch chat users when the component initializes
+    
     this.chatDisplay = false;
     this.apiService.getChatUsers().subscribe(
       (response: any) => {
-        // Assuming the API response has a 'data' property containing the user data
+        
         this.chatUsers = response.messages.map((user: any) => user);
         this.isLoading=false
       },
@@ -52,10 +52,10 @@ import { interval, Subscription } from 'rxjs';
     this.chatDisplay = true;
     this.selectedUserId = userId;
 
-    // Fetch chat messages for the selected user using an API call
+    
     this.apiService.openChat(userId).subscribe(
       (response: any) => {
-        // Assuming the API response has a 'data' property containing the user data
+        
         this.chatMessages = response.messages.map((message: any) => message);
       },
       (error) => {
@@ -63,11 +63,11 @@ import { interval, Subscription } from 'rxjs';
       }
     );
     this.isLoading=false
-    // Start periodic refresh of chat messages
+    
     this.startChatMessageRefresh();
   }
 
-  // Function to start periodic chat message refresh
+  
   startChatMessageRefresh() {
     this.refreshSubscription = interval(this.refreshInterval).subscribe(() => {
       if (this.selectedUserId) {
@@ -100,7 +100,7 @@ import { interval, Subscription } from 'rxjs';
   }
 
   ngOnDestroy() {
-    // Unsubscribe from the refresh observable to prevent memory leaks
+    
     if (this.refreshSubscription) {
       this.refreshSubscription.unsubscribe();
     }

@@ -1,5 +1,5 @@
 <app-admin-nav></app-admin-nav>
-<!-- chat.component.html -->
+
 <div *ngIf="isLoading" class="outer-spinner">
   <div class="loading-spinner"></div>
 </div>
@@ -19,7 +19,6 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <!-- List of chat users -->
       <ul class="list-group">
         <li
           *ngFor="let user of chatUsers"
@@ -27,7 +26,6 @@
           class="list-group-item cursor-pointer user-list"
         >
           <span class="user-avatar">
-            <!-- Add your FontAwesome icon here -->
             <i class="fas fa-user-circle"></i>
           </span>
           {{ user.name }}
@@ -35,7 +33,6 @@
       </ul>
     </div>
     <div class="col-md-8 outsideMsg" *ngIf="chatDisplay">
-      <!-- Chat messages -->
       <div class="chat-messages" id="chat-messages">
         <div
           *ngFor="let message of chatMessages"
@@ -59,11 +56,10 @@
           placeholder="Type your message..."
           class="form-control"
         />
-        <!-- Add a button for sending messages -->
+
         <button (click)="sendMessage()" class="btn btn-primary">Send</button>
         <!-- <button (click)="sendMessage()" class="btn btn-primary">Send</button> -->
       </div>
     </div>
   </div>
-  <!-- Input for sending messages -->
 </div>

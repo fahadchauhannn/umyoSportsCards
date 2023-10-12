@@ -21,7 +21,7 @@ export class AddAgentComponent {
         console.log('Successful');
         this.isLoading=false
         this.router.navigate(['admin/admin-support-agent-list']);
-        // Add any further logic here after successfully adding the agent
+        
       }
     );
   }

@@ -13,7 +13,7 @@ export class AdminAmountComponent  implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN'; 
     this.isLoading=true
     this.apiService.getReferals(bearerToken).subscribe(
       (response) => {

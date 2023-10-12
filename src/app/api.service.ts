@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User } from './model.model';
-import { Pkg } from './model.model';
-import { Agent } from './model.model';
-import { Amount } from './model.model';
-import { ChatRecord } from './model.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -111,6 +106,21 @@ openChat(chat_id: any): Observable<any> {
   
   return this.http.post(url, {"chat_id":chat_id}, { headers: combinedHeaders });
 }
+usage(): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/Usage`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url,  { headers: combinedHeaders });
+}
 
 deleteUser(user_id: any): Observable<any> {
   const url = `
@@ -128,6 +138,24 @@ deleteUser(user_id: any): Observable<any> {
  
   return this.http.post(url, {"user_id":user_id}, { headers: combinedHeaders });
 }
+deletePackage(id: any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/deletePackage`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token',
+  });
+
+ 
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+ 
+  return this.http.post(url, {"id":id}, { headers: combinedHeaders });
+}
+
+
+
 deleteAgent(agent_id: any): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/deleteSupportAgent`;
   const headers = new HttpHeaders({
@@ -178,6 +206,23 @@ addAgent(name: any,email:any,password:any): Observable<any> {
   return this.http.post(url, {"name":name,"email":email,"password":password}, { headers: combinedHeaders });
 
 }
+
+addPackage(id:any,description:any,expire_in:any, image:any,limit:any,logo:any,net_price:any,price:any,product_image:any,social_media_listing:any,umyoutube:any,vimeo:any,videos:any,website:any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/createPackage`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url, {"id":id,"description":description,"expire_in":expire_in,"image":image,"limit":limit,"logo":logo,"net_price":net_price,"price":price,"product_image":product_image,"social_media_listing":social_media_listing,"umyotube":umyoutube,"vimeo":vimeo,"videos":videos,"website":website}, { headers: combinedHeaders });
+
+}
 updateAgent(name: any,email:any,id:any): Observable<any> {
   const url = `https://umyosportscards.com/api_umyocards/public/api/updateSupportAgent`;
   const headers = new HttpHeaders({
@@ -194,6 +239,40 @@ updateAgent(name: any,email:any,id:any): Observable<any> {
   return this.http.post(url, {"name":name,"email":email,"id":id}, { headers: combinedHeaders });
 
 }
+getPackageById(id:any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/getPackageSingle`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url, {"id":id}, { headers: combinedHeaders });
+
+}
+
+updatePackage(id:any,description:any,expire_in:any, image:any,limit:any,logo:any,net_price:any,price:any,product_image:any,social_media_listing:any,umyoutube:any,vimeo:any,videos:any,website:any): Observable<any> {
+  const url = `https://umyosportscards.com/api_umyocards/public/api/updatePackage`;
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-auth-token', 
+  });
+
+  
+  const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+  
+  
+  return this.http.post(url, {"id":id,"description":description,"expire_in":expire_in,"image":image,"limit":limit,"logo":logo,"net_price":net_price,"price":price,"product_image":product_image,"social_media_listing":social_media_listing,"umyotube":umyoutube,"vimeo":vimeo,"videos":videos,"website":website}, { headers: combinedHeaders });
+
+}
+
 
 
 
