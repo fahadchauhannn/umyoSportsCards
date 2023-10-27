@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,7 +14,6 @@ import { ProfileComponent } from './admin/profile/profile.component';
 import { AdminLiveChatComponent } from './admin/admin-live-chat/admin-live-chat.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserEditComponent } from './user-edit/user-edit.component'; 
 import { FormsModule } from '@angular/forms'; 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +22,10 @@ import { UpdateAgentComponent } from './admin/update-agent/update-agent.componen
 import { AddPackageComponent } from './admin/add-package/add-package.component';
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ViewChatComponent } from './admin/view-chat/view-chat.component';
+import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -39,14 +41,14 @@ import { ViewChatComponent } from './admin/view-chat/view-chat.component';
     ProfileComponent,
     AdminLiveChatComponent,
     AdminNavComponent,
-    UserEditComponent,
     AddAgentComponent,
     UpdateAgentComponent,
     AddPackageComponent,
     EditPackageComponent,
-    ViewChatComponent
+    ViewChatComponent,
+    EditUserComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
+  imports: [BrowserModule, NgxStripeModule.forRoot('pk_test_51O5YCYFsXQwPd2tbJm8xT224tG7OoCXWGyigDqVGZ2DeNsiWxhSDfJNiBbfq508cDU15nQOctVTijlbUcJvVqleO00OTWN3YAb'),SlickCarouselModule,ReactiveFormsModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
     positionClass:'custom-toast-position',
   }),BrowserAnimationsModule,], 
   providers: [],

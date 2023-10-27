@@ -13,12 +13,12 @@ export class UsersComponent implements OnInit{
   isLoading:boolean=false;
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN'; 
     this.isLoading=true
     this.apiService.getAllUsers(bearerToken).subscribe(
       (response) => {
         this.isLoading=false
-        this.users = response.Users; // Assuming the API response has a 'data' property containing the user data
+        this.users = response.Users; 
         console.log(this.users);
       },
       (error) => {
@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit{
     this.isLoading = true;
     this.apiService.deleteUser(userId).subscribe(
       (response) => {
-        this.refreshUserList(); // Update the user list after deletion
+        this.refreshUserList(); 
       },
       (error) => {
     
@@ -41,13 +41,13 @@ export class UsersComponent implements OnInit{
     
   }
 
-  // This function fetches the user list and can be reused to update the list after deletion
+  
   refreshUserList() {
     this.isLoading=true;
-    const bearerToken = 'YOUR_BEARER_TOKEN'; // Replace with your actual bearer token
+    const bearerToken = 'YOUR_BEARER_TOKEN'; 
     this.apiService.getAllUsers(bearerToken).subscribe(
       (response) => {
-        this.users = response.Users; // Assuming the API response has a 'data' property containing the user data
+        this.users = response.Users; 
         this.isLoading=false
       },
       (error) => {

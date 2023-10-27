@@ -1,1 +1,2122 @@
-<app-admin-nav></app-admin-nav>
+<!-- Spinner Start -->
+<!-- <div
+  id="spinner"
+  class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
+>
+  <div class="spinner-grow text-primary" role="status"></div>
+</div> -->
+<!-- Spinner End -->
+
+<!-- Navbar start -->
+<section id="header">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a href="index.html" class="navbar-brand"
+          ><h1 class="text-white display-6">UMYO</h1></a
+        >
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="network.html" class="nav-item nav-link">Network</a>
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link Store
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Industries
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="network.html">Network</a>
+              </li>
+              <!-- 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Support
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+
+  <!-- Hero Start -->
+
+  <div class="container-fluid hero-header mt-5">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-md-12 col-lg-7">
+          <h1 class="mb-3 text-white">
+            CREATE IMPRESSIVE SPORTS & BUSINESS CARDS
+          </h1>
+          <p class="mb-5 text-white">
+            Umyo Sports Cards introduces a revolutionary social networking app
+            that brings together athletes, agents, recruiters, coaches, schools,
+            colleges, and supportive business owners in a unique platform
+            dedicated to enhancing athletes' journeys to success. Our app is the
+            first of its kind, empowering athletes to showcase their talent
+            while receiving the recognition and support they truly deserve.
+          </p>
+          <p class="mb-5 text-white">
+            With Umyo Sports Cards, you can easily upload your statistics, GPA,
+            interviews, podcasts, images, and sports highlights for thousands of
+            users to discover. It's the ultimate hub for athletes from all
+            sports seeking the exposure they need to excel.
+          </p>
+          <a href="#" class="my-auto">
+            <button
+              class="btn btn-primary text-dark border-0 bg-white py-3 px-4"
+            >
+              Get Started
+            </button>
+          </a>
+        </div>
+        <div class="col-md-12 col-lg-5 px-5">
+          <div class="grid__item medium-up--one-half">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <h1 class="text-center mb-5 text-white">
+      "THE UMYO NETWORK" All in one Networking App...
+    </h1>
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="slideConfig1"
+      class="carousel"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="slideConfig2"
+      class="carousel"
+      [dir]="'rtl'"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</section>
+
+<!-- Hero End -->
+<!-- Featurs Section Start -->
+<section id="card_section">
+  <div class="container-fluid featurs">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-10 col-12 px-4">
+          <div
+            class="featurs-item rounded bg-white px-5 py-4 border-primary border-6 w-100"
+            id="feature"
+          >
+            <div class="row">
+              <div class="col-lg-4 col-12">
+                <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
+              </div>
+              <div class="col-lg-8 col-12">
+                <h3 class="mb-3 text-dark">
+                  CORPORATE BRANDING - NAME AND LIKENESS - SUPPORTING ATHLETES
+                </h3>
+                <p class="text-dark mb-0" style="font-size: 20px">
+                  Business owners now have the opportunity to support athletes
+                  by registering their businesses and linking them to specific
+                  athletes using their unique ID codes during registration....
+                </p>
+
+                <div class="moretext" style="display: none">
+                  <p>
+                    Half of the monthly membership fees from supporting
+                    businesses are allocated directly to the respective
+                    athlete's account. This innovative approach enables athletes
+                    to focus solely on their talents, eliminating financial
+                    worries. Each registered athlete operates as an independent
+                    contractor within UMYO SPORTS, ensuring they are compensated
+                    while pursuing their true calling. Join us in shaping the
+                    future of athletic success and support through Umyo Sports
+                    Cards!
+                  </p>
+                  <h3 class="mb-3 text-dark">
+                    Community,Youth to Business Accountability Collaboration
+                    Platform Directory
+                  </h3>
+                  <p class="mb-3 text-dark">
+                    Enhanced Networking Tools for increased Marketing prowess.
+                  </p>
+                  <ul class="text-dark mb-5">
+                    <li>Monthly Tier Packages Based Upon Monthly Budget</li>
+                    <li>Community Brands Directory For You Via Social Media</li>
+                    <li>Daily $$$ Giveaways to registered members</li>
+                    <li>
+                      12 Additional Branding Platforms for registered members to
+                      keep them connected
+                    </li>
+                  </ul>
+                </div>
+                <a class="moreless-button" href="#feature">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------- tab section start-------->
+  <section id="header">
+    <div class="container-fluid service py-5">
+      <div class="container py-5">
+        <h1
+          class="text-white text-center fa-2x mb-3"
+          style="font-size: 80px; font-weight: 600"
+        >
+          Shop Online for Top Talent & Businesses
+        </h1>
+        <div class="row">
+          <div class="col-lg-5">
+            <form
+              [formGroup]="form2"
+              (ngSubmit)="searchSports()"
+              class="text-center"
+            >
+              <h4 class="mb-4 text-white">Search Sports Card Here</h4>
+              <div class="row">
+                <div class="col-lg-6 mb-4">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="selectedBusinessType"
+                  >
+                    <option selected>Select Business Type</option>
+                    <option
+                      [value]="type.business_type"
+                      *ngFor="let type of businessType"
+                    >
+                      {{ type.business_type }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="selectedAgeType"
+                  >
+                    <option selected>Select Age Type</option>
+                    <option [value]="type.name" *ngFor="let type of ageType">
+                      {{ type.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="selectedSportType"
+                    (change)="onSportTypeChange()"
+                  >
+                    <option selected>Select Sport Type</option>
+                    <option [value]="type.name" *ngFor="let type of sportType">
+                      {{ type.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="selectedPositionType"
+                  >
+                    <option selected>Select Position Type</option>
+                    <option
+                      [value]="type.name"
+                      *ngFor="let type of positionType"
+                    >
+                      {{ type.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="selectedStateType"
+                  >
+                    <option selected>Select State Type</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <button
+                    type="submit"
+                    class="btn btn-info text-white py-2 px-5 w-100"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="bg-info rounded mb-4 text-white py-2 px-3 my-5">
+              Result response here
+            </p>
+
+            <h2 class="text-white mb-4 text-uppercase">
+              Make Cool sports cards
+            </h2>
+            <p class="text-white my-3">
+              Umyo Sports Cards is the first of its kind Social network app
+              connecting fellow Athletes, Agents, Recruiters, Coaches, Schools,
+              Colleges, as well as Business owners who choose to support the
+              journey of its athletes financially as they strive for success.
+              The only app that allows athletes to brand their talent while
+              getting the support and branding they deserve. Upload your Stats,
+              GPA, Interviews, Podcast, Images and Sports Reel for literally
+              thousands to see. The perfect one stop shop for athletes of all
+              sports who are needing the exposure. Also, Business owners can now
+              support athletes by registering their business and entering the ID
+              code of an athlete during registration. Half of the businesses
+              monthly membership that supports an athlete goes into their
+              account, thus allowing athletes to solely concentrate on their
+              talent vs resources. Each registered athlete acts as an
+              independent contractor for UMYO SPORTS. This allows those athletes
+              to get paid while operating within their purpose.
+            </p>
+          </div>
+          <div class="col-lg-7 mt-5">
+            <div class="content">
+              <!-- Nav pills -->
+              <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="pill" href="#login"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#regis"
+                    >Register</a
+                  >
+                </li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content rounded p-4">
+                <div id="login" class="container tab-pane active">
+                  <form (ngSubmit)="login()" [formGroup]="form">
+                    <div class="row">
+                      <h1 class="text-center">UMYO For Teams</h1>
+                      <p class="text-center">
+                        Fill out this form to book a quick demo
+                      </p>
+                      <p class="text-center mb-5">
+                        (same-day options available).
+                      </p>
+                      <h2 class="text-info mb-3">Login</h2>
+
+                      <div class="col-md-12 mb-5">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Email
+                            <sup style="color: red; font-size: 20px">*</sup>
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            formControlName="email"
+                            required
+                          />
+                          <div
+                            *ngIf="
+                              form.get('email')?.hasError('required') &&
+                              form.get('email')?.touched
+                            "
+                            class="text-danger"
+                          >
+                            Email is required.
+                          </div>
+                          <div
+                            *ngIf="
+                              form.get('email')?.hasError('email') &&
+                              form.get('email')?.touched
+                            "
+                            class="text-danger"
+                          >
+                            Invalid email format.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-5">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Password<sup style="color: red; font-size: 20px"
+                              >*</sup
+                            >
+                          </label>
+                          <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            formControlName="password"
+                            required
+                          />
+                          <div
+                            *ngIf="
+                              form.get('password')?.hasError('required') &&
+                              form.get('password')?.touched
+                            "
+                            class="text-danger"
+                          >
+                            Password is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      class="btn btn-info text-white mt-3 py-3 px-5"
+                      style="margin: auto; display: block"
+                    >
+                      Submit
+                    </button>
+
+                    <!-- <div class="bg-img">
+            <img src="assets/img/illustrations-office.png"></div> -->
+                  </form>
+                </div>
+                <div id="regis" class="container tab-pane fade">
+                  <form
+                    (ngSubmit)="register()"
+                    (submit)="register()"
+                    [formGroup]="form3"
+                  >
+                    <div class="row justify-content-center">
+                      <h1 class="text-center">UMYO Pro</h1>
+                      <div class="col-md-3 my-5">
+                        <p class="text-center">starting at</p>
+                        <h1 class="text-center">$5/mo</h1>
+                        <p class="text-center">per agent</p>
+                      </div>
+                      <div class="col-md-1 my-5 d-none d-lg-block">
+                        <div class="verticle"></div>
+                      </div>
+                      <div class="col-md-6 my-5">
+                        <p>Includes:</p>
+                        <li>40% off all UMYO products</li>
+                        <li>3 free property listings per agent</li>
+                        <li>Free standard CRM integrations</li>
+                      </div>
+                      <h2 class="mb-3 text-info">Register</h2>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Frist Name
+                            <sup style="color: red; font-size: 20px"
+                              >*</sup
+                            ></label
+                          >
+                          <input
+                            type="text"
+                            formControlName="registerFirstName"
+                            class="form-control"
+                            required
+                            [ngClass]="{
+                              'invalid-input':
+                                !form3.get('registerFirstName')?.touched &&
+                                submitButtonClicked &&
+                                !form3.valid
+                            }"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Last Name
+                            <sup style="color: red; font-size: 20px">*</sup>
+                          </label>
+                          <input
+                            type="text"
+                            formControlName="registerLastName"
+                            class="form-control"
+                            required
+                            [ngClass]="{
+                              'invalid-input':
+                                !form3.get('registerLastName')?.touched &&
+                                submitButtonClicked &&
+                                !form3.valid
+                            }"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Phone Number
+                            <sup style="color: red; font-size: 20px"
+                              >*</sup
+                            ></label
+                          >
+                          <input
+                            type="text"
+                            formControlName="registerPhone"
+                            class="form-control"
+                            required
+                            [ngClass]="{
+                              'invalid-input':
+                                !form3.get('registerPhone')?.touched &&
+                                submitButtonClicked &&
+                                !form3.valid
+                            }"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Email
+                            <sup style="color: red; font-size: 20px"
+                              >*</sup
+                            ></label
+                          >
+                          <input
+                            type="email"
+                            formControlName="registerEmail"
+                            class="form-control"
+                            required
+                            [ngClass]="{
+                              'invalid-input':
+                                (!form3.get('registerEmail')?.touched ||
+                                  !form3.get('registerEmail')?.valid) &&
+                                submitButtonClicked &&
+                                (!form3.valid ||
+                                  form3.hasError('emailMismatch'))
+                            }"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Confirm Email
+                            <sup style="color: red; font-size: 20px"
+                              >*</sup
+                            ></label
+                          >
+                          <input
+                            type="email"
+                            formControlName="registerConfirmEmail"
+                            class="form-control"
+                            required
+                            [ngClass]="{
+                              'invalid-input':
+                                (!form3.get('registerConfirmEmail')?.touched ||
+                                  !form3.get('registerConfirmEmail')?.valid) &&
+                                submitButtonClicked &&
+                                (!form3.valid ||
+                                  form3.hasError('emailMismatch'))
+                            }"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Password<sup style="color: red; font-size: 20px"
+                              >* </sup
+                            ><sup style="color: red; font-size: 14px"
+                              >( Length Should be greater than 6 )</sup
+                            >
+                          </label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            required
+                            formControlName="registerPassword"
+                            [ngClass]="{
+                              'invalid-input':
+                                (!form3.get('registerPassword')?.touched ||
+                                  !form3.get('registerPassword')?.valid) &&
+                                submitButtonClicked &&
+                                !form3.valid
+                            }"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-5">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Select Country<sup
+                            style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          formControlName="registerCountry"
+                          class="form-select"
+                          aria-label="Default select example"
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerCountry')?.touched ||
+                                !form3.get('registerCountry')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+                          <option value="AFG">Afghanistan</option>
+                          <option value="ALB">Albania</option>
+                          <option value="DZA">Algeria</option>
+                          <option value="ASM">American Samoa</option>
+                          <option value="AND">Andorra</option>
+                          <option value="AGO">Angola</option>
+                          <option value="AIA">Anguilla</option>
+                          <option value="ATA">Antarctica</option>
+                          <option value="ATG">Antigua and Barbuda</option>
+                          <option value="ARG">Argentina</option>
+                          <option value="ARM">Armenia</option>
+                          <option value="ABW">Aruba</option>
+                          <option value="AUS">Australia</option>
+                          <option value="AUT">Austria</option>
+                          <option value="AZE">Azerbaijan</option>
+                          <option value="BHS">Bahamas (the)</option>
+                          <option value="BHR">Bahrain</option>
+                          <option value="BGD">Bangladesh</option>
+                          <option value="BRB">Barbados</option>
+                          <option value="BLR">Belarus</option>
+                          <option value="BEL">Belgium</option>
+                          <option value="BLZ">Belize</option>
+                          <option value="BEN">Benin</option>
+                          <option value="BMU">Bermuda</option>
+                          <option value="BTN">Bhutan</option>
+                          <option value="BOL">
+                            Bolivia (Plurinational State of)
+                          </option>
+                          <option value="BES">
+                            Bonaire, Sint Eustatius and Saba
+                          </option>
+                          <option value="BIH">Bosnia and Herzegovina</option>
+                          <option value="BWA">Botswana</option>
+                          <option value="BVT">Bouvet Island</option>
+                          <option value="BRA">Brazil</option>
+                          <option value="IOT">
+                            British Indian Ocean Territory (the)
+                          </option>
+                          <option value="BRN">Brunei Darussalam</option>
+                          <option value="BGR">Bulgaria</option>
+                          <option value="BFA">Burkina Faso</option>
+                          <option value="BDI">Burundi</option>
+                          <option value="CPV">Cabo Verde</option>
+                          <option value="KHM">Cambodia</option>
+                          <option value="CMR">Cameroon</option>
+                          <option value="CAN">Canada</option>
+                          <option value="CYM">Cayman Islands (the)</option>
+                          <option value="CAF">
+                            Central African Republic (the)
+                          </option>
+                          <option value="TCD">Chad</option>
+                          <option value="CHL">Chile</option>
+                          <option value="CHN">China</option>
+                          <option value="CXR">Christmas Island</option>
+                          <option value="CCK">
+                            Cocos (Keeling) Islands (the)
+                          </option>
+                          <option value="COL">Colombia</option>
+                          <option value="COM">Comoros (the)</option>
+                          <option value="COD">
+                            Congo (the Democratic Republic of the)
+                          </option>
+                          <option value="COG">Congo (the)</option>
+                          <option value="COK">Cook Islands (the)</option>
+                          <option value="CRI">Costa Rica</option>
+                          <option value="HRV">Croatia</option>
+                          <option value="CUB">Cuba</option>
+                          <option value="CUW">Curaçao</option>
+                          <option value="CYP">Cyprus</option>
+                          <option value="CZE">Czechia</option>
+                          <option value="CIV">Côte d'Ivoire</option>
+                          <option value="DNK">Denmark</option>
+                          <option value="DJI">Djibouti</option>
+                          <option value="DMA">Dominica</option>
+                          <option value="DOM">Dominican Republic (the)</option>
+                          <option value="ECU">Ecuador</option>
+                          <option value="EGY">Egypt</option>
+                          <option value="SLV">El Salvador</option>
+                          <option value="GNQ">Equatorial Guinea</option>
+                          <option value="ERI">Eritrea</option>
+                          <option value="EST">Estonia</option>
+                          <option value="SWZ">Eswatini</option>
+                          <option value="ETH">Ethiopia</option>
+                          <option value="FLK">
+                            Falkland Islands (the) [Malvinas]
+                          </option>
+                          <option value="FRO">Faroe Islands (the)</option>
+                          <option value="FJI">Fiji</option>
+                          <option value="FIN">Finland</option>
+                          <option value="FRA">France</option>
+                          <option value="GUF">French Guiana</option>
+                          <option value="PYF">French Polynesia</option>
+                          <option value="ATF">
+                            French Southern Territories (the)
+                          </option>
+                          <option value="GAB">Gabon</option>
+                          <option value="GMB">Gambia (the)</option>
+                          <option value="GEO">Georgia</option>
+                          <option value="DEU">Germany</option>
+                          <option value="GHA">Ghana</option>
+                          <option value="GIB">Gibraltar</option>
+                          <option value="GRC">Greece</option>
+                          <option value="GRL">Greenland</option>
+                          <option value="GRD">Grenada</option>
+                          <option value="GLP">Guadeloupe</option>
+                          <option value="GUM">Guam</option>
+                          <option value="GTM">Guatemala</option>
+                          <option value="GGY">Guernsey</option>
+                          <option value="GIN">Guinea</option>
+                          <option value="GNB">Guinea-Bissau</option>
+                          <option value="GUY">Guyana</option>
+                          <option value="HTI">Haiti</option>
+                          <option value="HMD">
+                            Heard Island and McDonald Islands
+                          </option>
+                          <option value="VAT">Holy See (the)</option>
+                          <option value="HND">Honduras</option>
+                          <option value="HKG">Hong Kong</option>
+                          <option value="HUN">Hungary</option>
+                          <option value="ISL">Iceland</option>
+                          <option value="IND">India</option>
+                          <option value="IDN">Indonesia</option>
+                          <option value="IRN">
+                            Iran (Islamic Republic of)
+                          </option>
+                          <option value="IRQ">Iraq</option>
+                          <option value="IRL">Ireland</option>
+                          <option value="IMN">Isle of Man</option>
+                          <option value="ISR">Israel</option>
+                          <option value="ITA">Italy</option>
+                          <option value="JAM">Jamaica</option>
+                          <option value="JPN">Japan</option>
+                          <option value="JEY">Jersey</option>
+                          <option value="JOR">Jordan</option>
+                          <option value="KAZ">Kazakhstan</option>
+                          <option value="KEN">Kenya</option>
+                          <option value="KIR">Kiribati</option>
+                          <option value="PRK">
+                            Korea (the Democratic People's Republic of)
+                          </option>
+                          <option value="KOR">Korea (the Republic of)</option>
+                          <option value="KWT">Kuwait</option>
+                          <option value="KGZ">Kyrgyzstan</option>
+                          <option value="LAO">
+                            Lao People's Democratic Republic (the)
+                          </option>
+                          <option value="LVA">Latvia</option>
+                          <option value="LBN">Lebanon</option>
+                          <option value="LSO">Lesotho</option>
+                          <option value="LBR">Liberia</option>
+                          <option value="LBY">Libya</option>
+                          <option value="LIE">Liechtenstein</option>
+                          <option value="LTU">Lithuania</option>
+                          <option value="LUX">Luxembourg</option>
+                          <option value="MAC">Macao</option>
+                          <option value="MDG">Madagascar</option>
+                          <option value="MWI">Malawi</option>
+                          <option value="MYS">Malaysia</option>
+                          <option value="MDV">Maldives</option>
+                          <option value="MLI">Mali</option>
+                          <option value="MLT">Malta</option>
+                          <option value="MHL">Marshall Islands (the)</option>
+                          <option value="MTQ">Martinique</option>
+                          <option value="MRT">Mauritania</option>
+                          <option value="MUS">Mauritius</option>
+                          <option value="MYT">Mayotte</option>
+                          <option value="MEX">Mexico</option>
+                          <option value="FSM">
+                            Micronesia (Federated States of)
+                          </option>
+                          <option value="MDA">Moldova (the Republic of)</option>
+                          <option value="MCO">Monaco</option>
+                          <option value="MNG">Mongolia</option>
+                          <option value="MNE">Montenegro</option>
+                          <option value="MSR">Montserrat</option>
+                          <option value="MAR">Morocco</option>
+                          <option value="MOZ">Mozambique</option>
+                          <option value="MMR">Myanmar</option>
+                          <option value="NAM">Namibia</option>
+                          <option value="NRU">Nauru</option>
+                          <option value="NPL">Nepal</option>
+                          <option value="NLD">Netherlands (the)</option>
+                          <option value="NCL">New Caledonia</option>
+                          <option value="NZL">New Zealand</option>
+                          <option value="NIC">Nicaragua</option>
+                          <option value="NER">Niger (the)</option>
+                          <option value="NGA">Nigeria</option>
+                          <option value="NIU">Niue</option>
+                          <option value="NFK">Norfolk Island</option>
+                          <option value="MNP">
+                            Northern Mariana Islands (the)
+                          </option>
+                          <option value="NOR">Norway</option>
+                          <option value="OMN">Oman</option>
+                          <option value="PAK">Pakistan</option>
+                          <option value="PLW">Palau</option>
+                          <option value="PSE">Palestine, State of</option>
+                          <option value="PAN">Panama</option>
+                          <option value="PNG">Papua New Guinea</option>
+                          <option value="PRY">Paraguay</option>
+                          <option value="PER">Peru</option>
+                          <option value="PHL">Philippines (the)</option>
+                          <option value="PCN">Pitcairn</option>
+                          <option value="POL">Poland</option>
+                          <option value="PRT">Portugal</option>
+                          <option value="PRI">Puerto Rico</option>
+                          <option value="QAT">Qatar</option>
+                          <option value="MKD">
+                            Republic of North Macedonia
+                          </option>
+                          <option value="ROU">Romania</option>
+                          <option value="RUS">Russian Federation (the)</option>
+                          <option value="RWA">Rwanda</option>
+                          <option value="REU">Réunion</option>
+                          <option value="BLM">Saint Barthélemy</option>
+                          <option value="SHN">
+                            Saint Helena, Ascension and Tristan da Cunha
+                          </option>
+                          <option value="KNA">Saint Kitts and Nevis</option>
+                          <option value="LCA">Saint Lucia</option>
+                          <option value="MAF">
+                            Saint Martin (French part)
+                          </option>
+                          <option value="SPM">Saint Pierre and Miquelon</option>
+                          <option value="VCT">
+                            Saint Vincent and the Grenadines
+                          </option>
+                          <option value="WSM">Samoa</option>
+                          <option value="SMR">San Marino</option>
+                          <option value="STP">Sao Tome and Principe</option>
+                          <option value="SAU">Saudi Arabia</option>
+                          <option value="SEN">Senegal</option>
+                          <option value="SRB">Serbia</option>
+                          <option value="SYC">Seychelles</option>
+                          <option value="SLE">Sierra Leone</option>
+                          <option value="SGP">Singapore</option>
+                          <option value="SXM">Sint Maarten (Dutch part)</option>
+                          <option value="SVK">Slovakia</option>
+                          <option value="SVN">Slovenia</option>
+                          <option value="SLB">Solomon Islands</option>
+                          <option value="SOM">Somalia</option>
+                          <option value="ZAF">South Africa</option>
+                          <option value="SGS">
+                            South Georgia and the South Sandwich Islands
+                          </option>
+                          <option value="SSD">South Sudan</option>
+                          <option value="ESP">Spain</option>
+                          <option value="LKA">Sri Lanka</option>
+                          <option value="SDN">Sudan (the)</option>
+                          <option value="SUR">Suriname</option>
+                          <option value="SJM">Svalbard and Jan Mayen</option>
+                          <option value="SWE">Sweden</option>
+                          <option value="CHE">Switzerland</option>
+                          <option value="SYR">Syrian Arab Republic</option>
+                          <option value="TWN">
+                            Taiwan (Province of China)
+                          </option>
+                          <option value="TJK">Tajikistan</option>
+                          <option value="TZA">
+                            Tanzania, United Republic of
+                          </option>
+                          <option value="THA">Thailand</option>
+                          <option value="TLS">Timor-Leste</option>
+                          <option value="TGO">Togo</option>
+                          <option value="TKL">Tokelau</option>
+                          <option value="TON">Tonga</option>
+                          <option value="TTO">Trinidad and Tobago</option>
+                          <option value="TUN">Tunisia</option>
+                          <option value="TUR">Turkey</option>
+                          <option value="TKM">Turkmenistan</option>
+                          <option value="TCA">
+                            Turks and Caicos Islands (the)
+                          </option>
+                          <option value="TUV">Tuvalu</option>
+                          <option value="UGA">Uganda</option>
+                          <option value="UKR">Ukraine</option>
+                          <option value="ARE">
+                            United Arab Emirates (the)
+                          </option>
+                          <option value="GBR">
+                            United Kingdom of Great Britain and Northern Ireland
+                            (the)
+                          </option>
+                          <option value="UMI">
+                            United States Minor Outlying Islands (the)
+                          </option>
+                          <option value="USA">
+                            United States of America (the)
+                          </option>
+                          <option value="URY">Uruguay</option>
+                          <option value="UZB">Uzbekistan</option>
+                          <option value="VUT">Vanuatu</option>
+                          <option value="VEN">
+                            Venezuela (Bolivarian Republic of)
+                          </option>
+                          <option value="VNM">Viet Nam</option>
+                          <option value="VGB">Virgin Islands (British)</option>
+                          <option value="VIR">Virgin Islands (U.S.)</option>
+                          <option value="WLF">Wallis and Futuna</option>
+                          <option value="ESH">Western Sahara</option>
+                          <option value="YEM">Yemen</option>
+                          <option value="ZMB">Zambia</option>
+                          <option value="ZWE">Zimbabwe</option>
+                          <option value="ALA">Åland Islands</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Select State<sup style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          formControlName="registerStateType"
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerStateType')?.touched ||
+                                !form3.get('registerStateType')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+                          <option value="Alabama">Alabama</option>
+                          <option value="Alaska">Alaska</option>
+                          <option value="Arizona">Arizona</option>
+                          <option value="Arkansas">Arkansas</option>
+                          <option value="California">California</option>
+                          <option value="Colorado">Colorado</option>
+                          <option value="Connecticut">Connecticut</option>
+                          <option value="Delaware">Delaware</option>
+                          <option value="Florida">Florida</option>
+                          <option value="Georgia">Georgia</option>
+                          <option value="Hawaii">Hawaii</option>
+                          <option value="Idaho">Idaho</option>
+                          <option value="Illinois">Illinois</option>
+                          <option value="Indiana">Indiana</option>
+                          <option value="Iowa">Iowa</option>
+                          <option value="Kansas">Kansas</option>
+                          <option value="Kentucky">Kentucky</option>
+                          <option value="Louisiana">Louisiana</option>
+                          <option value="Maine">Maine</option>
+                          <option value="Maryland">Maryland</option>
+                          <option value="Massachusetts">Massachusetts</option>
+                          <option value="Michigan">Michigan</option>
+                          <option value="Minnesota">Minnesota</option>
+                          <option value="Mississippi">Mississippi</option>
+                          <option value="Missouri">Missouri</option>
+                          <option value="Montana">Montana</option>
+                          <option value="Nebraska">Nebraska</option>
+                          <option value="Nevada">Nevada</option>
+                          <option value="New Hampshire">New Hampshire</option>
+                          <option value="New Jersey">New Jersey</option>
+                          <option value="New Mexico">New Mexico</option>
+                          <option value="New York">New York</option>
+                          <option value="North Carolina">North Carolina</option>
+                          <option value="North Dakota">North Dakota</option>
+                          <option value="Ohio">Ohio</option>
+                          <option value="Oklahoma">Oklahoma</option>
+                          <option value="Oregon">Oregon</option>
+                          <option value="Pennsylvania">Pennsylvania</option>
+                          <option value="Rhode Island">Rhode Island</option>
+                          <option value="South Carolina">South Carolina</option>
+                          <option value="South Dakota">South Dakota</option>
+                          <option value="Tennessee">Tennessee</option>
+                          <option value="Texas">Texas</option>
+                          <option value="Utah">Utah</option>
+                          <option value="Vermont">Vermont</option>
+                          <option value="Virginia">Virginia</option>
+                          <option value="Washington">Washington</option>
+                          <option value="West Virginia">West Virginia</option>
+                          <option value="Wisconsin">Wisconsin</option>
+                          <option value="Wyoming">Wyoming</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Business Type<sup style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          formControlName="registerBusinessType"
+                          class="form-select"
+                          aria-label="Default select example"
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerBusinessType')?.touched ||
+                                !form3.get('registerBusinessType')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+                          <option
+                            [value]="type.business_type"
+                            *ngFor="let type of businessType"
+                          >
+                            {{ type.business_type }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Age Type<sup style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerAgeType')?.touched ||
+                                !form3.get('registerAgeType')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                          class="form-select"
+                          aria-label="Default select example"
+                          formControlName="registerAgeType"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+                          <option
+                            [value]="type.name"
+                            *ngFor="let type of ageType"
+                          >
+                            {{ type.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Sports Type<sup style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerSportType')?.touched ||
+                                !form3.get('registerSportType')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                          (change)="onRegisterSportTypeChange()"
+                          formControlName="registerSportType"
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+
+                          <option
+                            [value]="type.name"
+                            *ngFor="let type of sportType"
+                          >
+                            {{ type.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Position Type<sup style="color: red; font-size: 20px"
+                            >*</sup
+                          >
+                        </label>
+                        <select
+                          [ngClass]="{
+                            'invalid-input':
+                              (!form3.get('registerPositionType')?.touched ||
+                                !form3.get('registerPositionType')?.valid) &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                          required
+                          formControlName="registerPositionType"
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option value="" disabled selected>
+                            Please Select
+                          </option>
+
+                          <option
+                            [value]="type.name"
+                            *ngFor="let type of positionType"
+                          >
+                            {{ type.name }}
+                          </option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <label style="font-size: 20px; font-weight: 600"
+                            >Enter Referral Code</label
+                          >
+                          <input
+                            type="text"
+                            formControlName="registerReferralCode"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div (click)="submitForm()">
+                      <button
+                        data-toggle="modal"
+                        data-target="#exampleModalCenter"
+                        [disabled]="!form3.valid"
+                        class="btn btn-info text-white mt-3 py-3 px-5"
+                        style="margin: auto; display: block"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- packages modal  -->
+
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Select One Package
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+          <div class="row">
+            <div
+              class="col-md-6"
+              *ngFor="let package of packages; let i = index"
+            >
+              <div class="outerCard" style="min-height: 30vh; cursor: pointer">
+                <div
+                  class="card"
+                  [ngClass]="{ cardSelect: selectedPackage === package }"
+                  (click)="selectPackage(package)"
+                >
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                      $
+                      {{
+                        package.net_price ? package.net_price : package.price
+                      }}
+                      <sup
+                        style="
+                          text-decoration: line-through;
+                          font-size: 20px;
+                          color: gray;
+                          padding-left: 15px;
+                        "
+                        *ngIf="package.net_price"
+                        >{{ package.price }}</sup
+                      >
+                    </h5>
+                    <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                    <p class="card-duration">
+                      Duration: {{ package.expire_in }}
+                    </p>
+
+                    <div
+                      class="description-container"
+                      style="max-height: 100px; overflow-y: auto"
+                    >
+                      <p class="card-description">{{ package.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            (click)="closeModal()"
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <div
+            [ngClass]="{
+              hidden: selectedPackage == null,
+              paymentButtons: selectedPackage != null
+            }"
+          >
+            <div id="paypal-button-container"></div>
+            <button
+              type="button"
+              style="background-color: rgb(35, 149, 243); color: white"
+              class="btn btn-info"
+              data-toggle="modal"
+              data-target="#stripeModal"
+            >
+              Stripe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stripe modal  -->
+
+  <div
+    class="modal fade"
+    id="stripeModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Pay Through Stripe
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage.net_price
+                  ? selectedPackage.net_price
+                  : selectedPackage.price
+              }}
+            </h3>
+
+            <div
+              class="stripe-card"
+              ngxStripeCardGroup
+              [elementsOptions]="elementsOptions"
+            >
+              <h4>Enter payment details</h4>
+
+              <div class="stripe-element">
+                <ngx-stripe-card-number
+                  [options]="cardOptions"
+                ></ngx-stripe-card-number>
+              </div>
+
+              <div fxLayout="row" fxLayoutGap="10px">
+                <div class="w-full stripe-element">
+                  <ngx-stripe-card-expiry
+                    [options]="cardOptions"
+                  ></ngx-stripe-card-expiry>
+                </div>
+                <div class="w-full stripe-element">
+                  <ngx-stripe-card-cvc
+                    [options]="cardOptions"
+                  ></ngx-stripe-card-cvc>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" (click)="pay()">Submit Payment</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------- tab section end ---------->
+  <div class="container-fluid featurs pt-3 mt-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12">
+          <h1 class="text-center">Single Application, Multiple Platforms</h1>
+          <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/touchScreen.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Double Touch Screens Kiosks</h2>
+          <div class="moretext3" style="display: none">
+            Keep a steady stream of clients walking through your doors with the
+            prominent Digital 4K Vertical Touch Screen Kiosk, which will display
+            your products via images and videos, offering an eye-catching and
+            effective way to call attention to your business.
+          </div>
+          <a class="moreless-button3" href="#text2">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/chat.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">uChatYes.com (Similar to Chat Gpt)</h2>
+          <div class="moretext6" style="display: none">
+            <p>
+              <strong>uChatYes.com</strong> - Create unique and engaging content
+              that will increase conversions and drive sales.Harness the power
+              of artificial intelligence and transform the way you produce
+              unique content.
+            </p>
+            <h6>Transcriptions</h6>
+            <p>
+              Extract the contents of audio files and turn them into fully
+              editable documents. Generate original content for your website,
+              marketing, and social activities
+            </p>
+          </div>
+          <a class="moreless-button6" href="#text5">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">
+            Virtual Interactive Sports and Business Card Directory
+          </h2>
+          <div class="moretext2" style="display: none">
+            <ul>
+              <p>
+                1. A Social Networking Platform & Search Engine Directory for
+                State of Nevada
+              </p>
+              <p>
+                2. Virtual Business and Community Cards /with Social Media Icons
+                that pnks to Social Media & Websites
+              </p>
+              <p>
+                3. Members Befriend, Network, Chat and Share Members ID cards
+                via Social Media
+              </p>
+              <p>
+                4. Search Engine for community, visitors & members to find
+                registered businesses
+              </p>
+              <p>5. Daily $$$ giveaways to community</p>
+            </ul>
+          </div>
+          <a class="moreless-button2" href="#text1">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/virtualconferene.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Virtual Conference Platform (Similar to Zoom)</h2>
+          <div class="moretext4" style="display: none">
+            <ul>
+              <li>
+                Share External Video, Share Screen, Create Rooms, Create
+                Backrooms
+              </li>
+              <li>
+                Shared Notes, Public Chat/Save Copy/Delete, Manage Presentation
+              </li>
+              <li>
+                Start A Poll, Select Random User, Mute, Leave Audio, Share
+                Webcam
+              </li>
+              <li>
+                Manage Presentation, Raise Hands, Recording, Keyboard Shortcuts
+                & More
+              </li>
+              <li>
+                Weekly Support Channels for Students, Student Only Channels
+              </li>
+              <li>
+                Audio Conference -Enable you to conference with only audio with
+                optional screen share features like a group voice call.
+              </li>
+              <li>
+                Video Conference -enables you to conference with others with
+                audio and video with optional screen sharing features.
+              </li>
+              <li>
+                Webinar -Enables you to stream yourself live with video and
+                audio with optional screen sharing feature
+              </li>
+              <li>
+                Live Classes ( backrooms) -Enables you to stream live with audio
+                and video , where you can see and hear anyone but they can see
+                and hear only you , not each other
+              </li>
+              <li>
+                Podcast -Enables you to stream your audio live with others who
+                invited.They can only hear your voice over audio stream
+              </li>
+            </ul>
+          </div>
+          <a class="moreless-button4" href="#text3">Read more...</a>
+        </div>
+        <!-- <div class="col-lg-4 col-md-6 mt-5 px-5" id="text4">
+                        <div class="position-relative fruite-item">
+                            <div class="fruite-img">
+                              <div class="videos__wrapper">
+                                <div class="videos__wrapper--video2">
+                                  <img src="images/image4.jpg" class="img-fluid">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <h2 class="mt-4">Learning Management System </h2>
+                        <div class="moretext5" style="display:none;">
+                            <ul>
+                                <li>Free/PPV/Donation Videos</li>
+                                <li>Free/Paid Class/Donation Options</li>
+                                <li>Free/Paid Courses (optional)</li>
+                                <li>Channels for Coaches, Educators, Historians </li>
+                            </ul>
+                        </div>
+                        <a class="moreless-button5" href="#text4">Read more...</a>
+                    </div> -->
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/sportsmagazine.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Virtual Interactive Video Audio Article Magazine</h2>
+          <div class="moretext7" style="display: none">
+            <p>
+              <strong>Engaging content,</strong> articles, logos, videos,
+              featured pages that will increase conversions and drive sales.
+              Advertise your Business to the World with a Global Streaming
+              magazine that gives you the exposure you can only dream of.
+            </p>
+          </div>
+          <a class="moreless-button7" href="#text6">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/videoplatform.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Video Platform</h2>
+          <div class="moretext12" style="display: none">
+            <p>
+              <strong>A platform</strong> for content creators and users looking
+              to share articles, videos, conduct live streaming with external
+              cameras, offer pay-per-view events, enable donations for online
+              channels, and more.
+            </p>
+          </div>
+          <a class="moreless-button12" href="#text11">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/liveStreaming.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Virtual Live Streaming App</h2>
+          <div class="moretext10" style="display: none">
+            <p>
+              <strong>A Live Streaming platform</strong> that allows users to go
+              live Streams, Live Games, Live Shows and Video Chat online with
+              other users, residents and visitors. Perfect for those who are
+              visiting and looking to know what is happening in the now from
+              others as well as who else is in town looking for fun, activities,
+              parties, and meet and greet. No more catfishing, when you can go
+              live and see real personalities that are looking for exciting
+              things to be a part of. Excellent for dating!!
+            </p>
+            <h5>
+              Create Groups - Create Topics - Create Events - Create Invites
+            </h5>
+          </div>
+          <a class="moreless-button10" href="#text9">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/shortvideo.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Short Video Platform</h2>
+          <div class="moretext13" style="display: none">
+            <p>
+              <strong
+                >is a social media platform primarily designed for creating,
+                sharing, and discovering short-form video content. Users can
+                record videos of themselves, often set to music or audio clips,
+                and then share them with their followers or with a broader
+                community. The platform allows for various creative expressions,
+                including dancing, lip-syncing, comedy skits, tutorials,
+                challenges, and more. Has user-friendly video editing tools,
+                algorithms that promote content virality, and its ability to
+                quickly connect creators with a wide audience. It is widely used
+                for entertainment, self-expression, and social
+                interaction</strong
+              >
+            </p>
+          </div>
+          <a class="moreless-button13" href="#text12">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/vpn.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">
+            Virtual Private Network VPN -<small>
+              search & use internet with privacy</small
+            >
+          </h2>
+          <div class="moretext9" style="display: none">
+            <p>
+              Protects you and your guest browsers privacy. Browse with a
+              virtual I.P. Address that helps you hide your location and lets
+              you view the web with enhance online privacy within the android
+              and desktop
+            </p>
+          </div>
+          <a class="moreless-button9" href="#text8">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/qRcodes.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">QR CODE FOR USERS</h2>
+          <div class="moretext11" style="display: none">
+            <p>
+              <strong>QR Codes Banner</strong> that links to all eight platforms
+              for your guest, visitors and global presence. When guests enter
+              your establishment, they can scan and see all the amazing
+              platforms that allow them to join and participate in online
+              contests and daily giveaways.
+            </p>
+          </div>
+          <a class="moreless-button11" href="#text10">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/uInvite.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">U Invite</h2>
+          <div class="moretext14" style="display: none">
+            <p>
+              Platform primarily used for event management and ticketing. It
+              allows event organizers to create, promote, and sell tickets for a
+              wide range of events, including conferences, concerts, festivals,
+              fundraisers, and more. Eventbrite provides tools for event
+              registration, ticket sales, marketing, and attendee management,
+              making it easier for both event organizers and attendees to plan
+              and participate in events. It is commonly used by event planners,
+              organizers, and businesses to streamline the process of hosting
+              and managing events.
+            </p>
+          </div>
+          <a class="moreless-button14" href="#text13">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/couponBooklet.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Interactive Virtual</h2>
+          <div class="moretext8" style="display: none">
+            <p>
+              Booklet that links to other pages, videos, images, online
+              contests, websites social media and more
+            </p>
+            <p>
+              First ever Kiosk Touch screen business kiosk that can be shared by
+              thousands to thousands within minutes.
+            </p>
+          </div>
+          <a class="moreless-button8" href="#text7">Read more...</a>
+        </div>
+      </div>
+      <div class="row g-4 py-5">
+        <div class="col-lg-12 col-md-6 px-5 mt-5">
+          <img src="assets/newlogo/naf.jpg" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featurs Section End -->
+
+<!-- Slider Start-->
+<!-- <section id="slider">
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner py-5">
+    <div class="carousel-item active">
+        <div class="container">
+            <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                   <div class="videos__wrapper">
+                        <div class="videos__wrapper--video">
+                         <img src="assets/img/310778904_478615557637877_8339393796167693638_n-removebg-preview.png" class="img-fluid">
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h1 class="pt-3">Marquess Huffington</h1>
+                    <p>Details?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+            <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                   <div class="videos__wrapper">
+                        <div class="videos__wrapper--video">
+                            <img src="assets/img/Marquess Huffington.png" class="img-fluid">
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h1 class="pt-3">Marquess Huffington</h1>
+                    <p>Details?</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+            <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                    <div class="videos__wrapper">
+                        <div class="videos__wrapper--video">
+                            <img src="assets/img/all-sports-banner.png" class="img-fluid">
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h1 class="pt-3">All-sports-banner</h1>
+                    <p>Details?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</section> -->
+<!-- Slider End -->
+<!-- product Start -->
+<section id="card_section">
+  <div class="container-fluid service py-2">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-12 col-lg-8">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Cube QR.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/QR COdes.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Transparent QR Card.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/cufflinks.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/dogidtag.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Circular QR.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Cut Cards.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Tap and Scan.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pro_c">
+            <h1>Grab a UMYO Product</h1>
+            <p>Choose from our variety of products designed to fit...</p>
+            <a href="#">
+              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
+                Shop All Products
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- product End -->
+</section>
+
+<!-- Bestsaler Product Start -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Contact us</a>
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">Data Processing Addendum</a>
+          <a class="btn-link" href="">Careers</a>
+          <a class="btn-link" href="">Security & Trust Report</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">UMYO Store</a>
+          <a class="btn-link" href="">Industries</a>
+          <a class="btn-link" href="">UMYO for Teams</a>
+          <a class="btn-link" href="">UMYO Pro</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest UMYO features,
+            products, stories, and more. You can also contact us at
+            contact@umyo.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a
+  href="#"
+  class="btn btn-dark border-3 border-white rounded-circle back-to-top"
+  ><i class="fa fa-arrow-up"></i
+></a>

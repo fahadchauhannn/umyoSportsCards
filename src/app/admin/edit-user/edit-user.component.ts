@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '../api.service';
-import { User } from '../model.model';
+import { ApiService } from '../../api.service';
+import { User } from '../../model.model';
 
 @Component({
   selector: 'app-user-edit',
-  templateUrl: './user-edit.component.html',
-  styleUrls: ['./user-edit.component.css']
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class UserEditComponent implements OnInit {
+export class EditUserComponent implements OnInit {
   
   user = {
     user_id: 0,
