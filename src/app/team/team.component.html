@@ -1,0 +1,1027 @@
+<section id="header">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a href="index.html" class="navbar-brand"
+          ><h1 class="text-white display-6">UMYO</h1></a
+        >
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['/team']" class="nav-item nav-link">Team</a>
+            <a [routerLink]="['/products']" class="nav-item nav-link"
+              >Products</a
+            >
+            <a [routerLink]="['pro']" class="nav-item nav-link">Pro</a>
+            <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/team']">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/products']">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/pro']">Pro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/network']">Network</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+  <!-- Hero Start -->
+  <div class="container-fluid hero-header mt-5">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-md-12 col-lg-7">
+          <h1 class="mb-3 text-white">
+            Seize opportunities with your business cards
+          </h1>
+          <p class="mb-5 text-white">
+            Equip your team with confidence in sharing valuable info and
+            gathering leads through UMYO’s digital business card
+          </p>
+          <a href="#" class="my-auto">
+            <button
+              class="btn btn-primary text-dark border-0 bg-white py-3 px-4"
+            >
+              Get Started
+            </button>
+          </a>
+        </div>
+        <div class="col-md-12 col-lg-5 px-5">
+          <div class="grid__item medium-up--one-half">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <h1 class="text-center mb-5 text-white">
+      "THE UMYO NETWORK" All in one Networking App...
+    </h1>
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="slideConfig1"
+      class="carousel"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="slideConfig2"
+      class="carousel"
+      [dir]="'rtl'"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</section>
+<!-- Hero End -->
+
+<!-- tab section one start -->
+<section class="business-card-section desktop">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Beyond a digital business card.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tabs-wrapper">
+          <div
+            class="nav flex-column nav-pills me-3"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <button
+              class="nav-link active"
+              id="branding-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#branding"
+              type="button"
+              role="tab"
+              aria-controls="branding"
+              aria-selected="true"
+            >
+              <div>
+                <i class="fas fa-star"></i>
+                <span>Branding</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button
+              class="nav-link"
+              id="lead-collection-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#lead-collection"
+              type="button"
+              role="tab"
+              aria-controls="lead-collection"
+              aria-selected="false"
+            >
+              <div>
+                <i class="fas fa-filter"></i>
+                <span>Lead Collection</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button
+              class="nav-link"
+              id="integrations-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#integrations"
+              type="button"
+              role="tab"
+              aria-controls="integrations"
+              aria-selected="false"
+            >
+              <div>
+                <i class="fas fa-cogs"></i>
+                <span>Integrations</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button
+              class="nav-link"
+              id="analytics-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#analytics"
+              type="button"
+              role="tab"
+              aria-controls="analytics"
+              aria-selected="false"
+            >
+              <div>
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button
+              class="nav-link"
+              id="security-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#security"
+              type="button"
+              role="tab"
+              aria-controls="security"
+              aria-selected="false"
+            >
+              <div>
+                <i class="fas fa-shield-alt"></i>
+                <span>Security</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button
+              class="nav-link"
+              id="sustainability-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#sustainability"
+              type="button"
+              role="tab"
+              aria-controls="sustainability"
+              aria-selected="false"
+            >
+              <div>
+                <i class="fas fa-sync"></i>
+                <span>Sustainability</span>
+              </div>
+              <i class="fas fa-angle-right"></i>
+            </button>
+          </div>
+          <div class="tab-content" id="v-pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="branding"
+              role="tabpanel"
+              aria-labelledby="branding-tab"
+              tabindex="0"
+            >
+              <h3>
+                Empower your brand with community support, tailored to fit any
+                budget.
+              </h3>
+              <p>
+                When you partner with the community for branding, we contribute
+                to the community while promoting your business.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-branding-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="lead-collection"
+              role="tabpanel"
+              aria-labelledby="lead-collection-tab"
+              tabindex="0"
+            >
+              <h3>Amplify your lead generation and conversion performance.</h3>
+              <p>
+                Elevate lead generation and conversion rates by streamlining
+                your sales process with versatile platforms with unlimited
+                members, tools for gathering, organizing, and following up with
+                leads using our virtual conference platform for meetings,
+                interviews and presentations.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-leads-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="integrations"
+              role="tabpanel"
+              aria-labelledby="integrations-tab"
+              tabindex="0"
+            >
+              <h3>
+                Enhance productivity and streamline your business operations
+                through automation.
+              </h3>
+              <p>
+                Effortlessly integrate your contacts across over multiple
+                platforms, ensuring everyone is sharing your information and
+                they're where you need them.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-integrations-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="analytics"
+              role="tabpanel"
+              aria-labelledby="analytics-tab"
+              tabindex="0"
+            >
+              <h3>
+                Acquire actionable performance insights by tapping into
+                real-time data from your team.
+              </h3>
+              <p>
+                Gain valuable insights from outcomes tied to shares, clicks,
+                scheduled meetings, established contacts, and other relevant
+                metrics.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-analytics-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="security"
+              role="tabpanel"
+              aria-labelledby="security-tab"
+              tabindex="0"
+            >
+              <h3>Ensure the secure protection of team and customer.</h3>
+              <p>
+                Ensure the secure protection of team and customer data with
+                confidence using UMYO VPN as well as a tightly secured network.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-security-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="sustainability"
+              role="tabpanel"
+              aria-labelledby="sustainability-tab"
+              tabindex="0"
+            >
+              <h3>Reduce waste by using sustainable digital products.</h3>
+              <p>
+                Lower your team's carbon footprint with versatile digital
+                products, branding, business cards and products.
+              </p>
+              <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+              <div class="clearfix"></div>
+              <img src="assets/images/feature-sustainability-2x.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- tab section one end -->
+<!-- tab section two start -->
+<section class="one-stop-solution-section desktop">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>
+          Effortlessly manage page content using templates and maintain
+          uniformity with administrator access to override individual pages.
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tabs-wrapper">
+          <div class="nav nav-pills me-3" id="pills-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="addTeam-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#addTeam"
+              type="button"
+              role="tab"
+              aria-controls="addTeam"
+              aria-selected="true"
+            >
+              Register
+            </button>
+            <button
+              class="nav-link"
+              id="activateProducts-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#activateProducts"
+              type="button"
+              role="tab"
+              aria-controls="activateProducts"
+              aria-selected="false"
+            >
+              Create Sports/Business Card
+            </button>
+            <button
+              class="nav-link"
+              id="customizePages-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#customizePages"
+              type="button"
+              role="tab"
+              aria-controls="customizePages"
+              aria-selected="false"
+            >
+              Network & Share
+            </button>
+          </div>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="addTeam"
+              role="tabpanel"
+              aria-labelledby="addTeam-tab"
+              tabindex="0"
+            >
+              <p>
+                Register and select a tier package that aligns with your
+                budget..
+              </p>
+              <div class="clearfix"></div>
+              <img src="assets/images/admin-people-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="activateProducts"
+              role="tabpanel"
+              aria-labelledby="activateProducts-tab"
+              tabindex="0"
+            >
+              <p>
+                Explore a variety of card templates to design cards for your
+                team, employees, or multiple individual cards to enhance your
+                branding.
+              </p>
+              <div class="clearfix"></div>
+              <img src="assets/images/admin-products-2x.png" alt="" />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="customizePages"
+              role="tabpanel"
+              aria-labelledby="customizePages-tab"
+              tabindex="0"
+            >
+              <p>
+                Join a networking platform where marketing is handled on your
+                behalf. It's a platform created by the community, for the
+                community, where the community supports and nurtures itself..
+              </p>
+              <div class="clearfix"></div>
+              <img src="assets/images/admin-page-2x.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- tab section two end -->
+<!-- trust carousel section start  -->
+<section class="trust-carousel-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Industry Icons Trust Linq</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="testimonials">
+          <ngx-slick-carousel
+            #slickModal="slick-carousel"
+            [config]="slideConfig3"
+            class="carousel"
+          >
+            <div ngxSlickItem class="slide">
+              <div class="testimonials-item">
+                <img
+                  src="assets/images/testimonials/testimonials-mcd.png"
+                  class="main"
+                  alt=""
+                />
+                <div class="testimonials-text">
+                  <img
+                    src="assets/images/testimonials/testimonials-mono.jpg"
+                    class="mono"
+                    alt=""
+                  />
+                  <div class="clearfix"></div>
+                  <p>
+                    “Implementing Linq across my restaurants has allowed me to
+                    utilize the technology not only for recruitment but
+                    <strong>to tell the McDonald's story</strong>. We strive to
+                    take care of our employees and Linq is helping us reach that
+                    goal.”
+                  </p>
+                  <p>
+                    <strong>—Jeff Heidrick</strong>, McDonald’s Business Unit
+                    President
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div ngxSlickItem class="slide">
+              <div class="testimonials-item">
+                <img
+                  src="assets/images/testimonials/testimonials-lexus.png"
+                  class="main"
+                  alt=""
+                />
+                <div class="testimonials-text">
+                  <img
+                    src="assets/images/testimonials/testimonials-2-mono.jpg"
+                    class="mono"
+                    alt=""
+                  />
+                  <div class="clearfix"></div>
+                  <p>
+                    “Linq couldn't be any easier.
+                    <strong>It simplifies referrals for the sales team</strong>
+                    and scheduling test drive appointments. The sales team
+                    maximizes every opportunity to network now”
+                  </p>
+                  <p>
+                    <strong>—Carlo Castillo</strong>, Business Development
+                    Director at Lexus/Subaru of Pembroke Pines
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div ngxSlickItem class="slide">
+              <div class="testimonials-item">
+                <img
+                  src="assets/images/testimonials/testimonials-anf.png"
+                  class="main"
+                  alt=""
+                />
+                <div class="testimonials-text">
+                  <img
+                    src="assets/images/testimonials/testimonials-3-mono.jpg"
+                    class="mono"
+                    alt=""
+                  />
+                  <div class="clearfix"></div>
+                  <p>
+                    “Partnering with Linq and its technology is a
+                    <strong>simple and efficient way to recruit</strong> new
+                    store associates across our brands.”
+                  </p>
+                  <p>
+                    <strong>—James Stokes</strong>, Stores Talent Acquisition
+                    Lead for North America &amp; EMEA at Abercrombie &amp; Fitch
+                    Co
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- trust carousel section end  -->
+<!-- team tools section start -->
+<section class="team-tools-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title-left">
+          <h3>Why UMYO</h3>
+          <h2>What Makes UMYO different</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="team-tools-item">
+          <i class="fas fa-graduation-cap"></i>
+          <!-- <h3>Hands-On Training</h3> -->
+          <ul>
+            <li>Report Violent Crimes Initiative</li>
+            <li>Business & Sports Cards Search Engine</li>
+            <li>Social Media Networking Platform</li>
+            <li>Connects Community To Businesses</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="team-tools-item">
+          <i class="fas fa-hand-sparkles"></i>
+          <!-- <h3>In-House Fulfillment</h3> -->
+          <ul>
+            <li>Connects Athletes with Businesses</li>
+            <li>Community Brands for You</li>
+            <li>Tier packages based upon your budget</li>
+            <li>Accountability Platform for everyone</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="team-tools-item">
+          <i class="fas fa-headset"></i>
+          <!-- <h3>Ongoing Support</h3> -->
+          <ul>
+            <li>Daily money and prize giveaways based upon registration</li>
+            <li>Platform that Shares half proceeds with community</li>
+            <li>Residents chat, befriend, support community and businesses</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="team-tools-item">
+          <i class="fas fa-city"></i>
+          <!-- <h3>Enterprise Ready</h3>  -->
+          <ul>
+            <li>Community Owned</li>
+            <li>Over 16 platforms in one app</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 my-3">
+        <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- team tools section end -->
+<!-- faq section start -->
+<section class="faq-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-heading">Commonly Asked Questions</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 my-3">
+        <div class="accordion faq-accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Do UMYO work with both phones
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                UMYO products feature convenient technology for newer phones and
+                QR codes for both phones. Even in cases where the other person
+                doesn't have their phone, team users can easily share their
+                profile via various methods like text, email, email signature,
+                Zoom background, and more. We are consistently adding and
+                updating our platforms for both androids and ios users.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Can users add and build contacts
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Absolutely, within each user's account, there is an
+                administrative section that empowers users to add and construct
+                their contact list.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                What is the #WhyNot Report Violent Crimes in our Community
+                Accountability Initiative?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                The #WhyNot Community Campaign seeks to tackle violent crimes in
+                our cities by promoting accountability among the community,
+                businesses, and youth. The campaign aims to revive the enjoyable
+                and collaborative solutions that previously benefited our
+                cities. Our goal is to provide daily prize giveaways to our
+                national community through paid membership.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Is there free registration for UMYO users?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Yes, registration is free for users, but in order to receive
+                prize giveaways and participate in our many contests, enjoy
+                incentives on many of the platforms, there is a small cost.
+                <ul>
+                  <li>
+                    Employed residents will pay a monthly fee of $5.99 - $19.99,
+                    based on their budget.
+                  </li>
+                  <li>
+                    Start-up business owners can register for a monthly fee
+                    starting at $4.
+                  </li>
+                  <li>
+                    Small business owners will pay a monthly fee of $109 and up,
+                    depending on their budget.
+                  </li>
+                  <li>
+                    Medium & Large Business owners can select a price based on
+                    their budget.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Can we reuse products if employees leave?
+                        </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Yes, you can. From anywhere in the world, use the Teams admin dashboard to deactivate a product and make it ready to go for the next employee.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            What is the difference between Teams and Pro?
+                        </button>
+                      </h2>
+                      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Linq Pro lets individual users build richer profiles and access more advanced analytics.<br /><br />Linq for Teams includes all the features of Linq Pro for team members, but also includes admin management, custom templates, additional content types, a dedicated support rep, and access to over 300 CRM integrations.
+                        </div>
+                      </div>
+                    </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- faq section end -->
+<section id="cto" class="call-to-action-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 class="section-heading">Interested? Let's talk.</h2>
+        <p>
+          Fill out this form to book a quick demo (same-day options available).
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <form class="call-to-action-form" action="">
+          <div class="mb-3">
+            <label for="email" class="form-label required">Company Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              required=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label required">Your Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Full name please"
+              required=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label required">Company Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your company name please"
+              required=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label required">Company Name</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              required=""
+            >
+              <option disabled="" value="" selected>Please Select</option>
+              <option value="<10">&lt;10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-250">51-250</option>
+              <option value="251-1k">251-1k</option>
+              <option value="1k-5k">1k-5k</option>
+              <option value="5k+">5k+</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your phone number please"
+            />
+          </div>
+          <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary">
+              Submit for Team Requests
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Contact us</a>
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">Data Processing Addendum</a>
+          <a class="btn-link" href="">Careers</a>
+          <a class="btn-link" href="">Security & Trust Report</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">UMYO Store</a>
+          <a class="btn-link" href="">Industries</a>
+          <a class="btn-link" href="">UMYO for Teams</a>
+          <a class="btn-link" href="">UMYO Pro</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest UMYO features,
+            products, stories, and more. You can also contact us at
+            contact@umyo.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a
+  href="#"
+  class="btn btn-dark border-3 border-white rounded-circle back-to-top"
+  ><i class="fa fa-arrow-up"></i
+></a>

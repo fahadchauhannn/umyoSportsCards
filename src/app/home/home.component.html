@@ -13,24 +13,29 @@
   <div class="container-fluid">
     <div class="container px-0">
       <nav
-      class="navbar navbar-expand-xl"
-      style="border-bottom: 2px solid white"
-    >
-      <a href="index.html" class="navbar-brand"
-        ><h1 class="text-white display-6">UMYO</h1></a
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
       >
-      <button
-        class="navbar-toggler py-2 px-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
+        <a href="index.html" class="navbar-brand"
+          ><h1 class="text-white display-6">UMYO</h1></a
+        >
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
           <span class="fa fa-bars text-primary"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="network.html" class="nav-item nav-link">Network</a>
+            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['/team']" class="nav-item nav-link">Team</a>
+            <a [routerLink]="['/products']" class="nav-item nav-link"
+              >Products</a
+            >
+            <a [routerLink]="['pro']" class="nav-item nav-link">Pro</a>
+            <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
           </div>
           <div class="d-flex m-3 ms-auto">
             <p class="text-white" style="margin: 2px 25px; font-size: 25px">
@@ -81,10 +86,19 @@
           </ul>
         </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="network.html">Network</a>
+                <a class="nav-link" [routerLink]="['/team']">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/products']">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/pro']">Pro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/network']">Network</a>
               </li>
               <!-- 
         <li class="nav-item dropdown">
@@ -319,7 +333,9 @@
                     aria-label="Default select example"
                     formControlName="selectedBusinessType"
                   >
-                    <option selected>Select Business Type</option>
+                    <option selected value="" disabled>
+                      Select Business Type
+                    </option>
                     <option
                       [value]="type.business_type"
                       *ngFor="let type of businessType"
@@ -334,7 +350,7 @@
                     aria-label="Default select example"
                     formControlName="selectedAgeType"
                   >
-                    <option selected>Select Age Type</option>
+                    <option selected value="" disabled>Select Age Type</option>
                     <option [value]="type.name" *ngFor="let type of ageType">
                       {{ type.name }}
                     </option>
@@ -347,7 +363,9 @@
                     formControlName="selectedSportType"
                     (change)="onSportTypeChange()"
                   >
-                    <option selected>Select Sport Type</option>
+                    <option selected value="" disabled>
+                      Select Sport Type
+                    </option>
                     <option [value]="type.name" *ngFor="let type of sportType">
                       {{ type.name }}
                     </option>
@@ -359,7 +377,9 @@
                     aria-label="Default select example"
                     formControlName="selectedPositionType"
                   >
-                    <option selected>Select Position Type</option>
+                    <option selected value="" disabled>
+                      Select Position Type
+                    </option>
                     <option
                       [value]="type.name"
                       *ngFor="let type of positionType"
@@ -374,7 +394,9 @@
                     aria-label="Default select example"
                     formControlName="selectedStateType"
                   >
-                    <option selected>Select State Type</option>
+                    <option selected value="" disabled>
+                      Select State Type
+                    </option>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
                     <option value="Arizona">Arizona</option>
@@ -432,15 +454,24 @@
                   <button
                     type="submit"
                     class="btn btn-info text-white py-2 px-5 w-100"
+                    (click)="searchCards()"
+                    [disabled]="!form2.valid"
                   >
                     Search
                   </button>
                 </div>
               </div>
             </form>
-            <p class="bg-info rounded mb-4 text-white py-2 px-3 my-5">
-              Result response here
-            </p>
+            <div class="bg-info rounded text-white py-2 px-3 my-5">
+              <p class="text-white mb-4">Cards Found:</p>
+              <p
+                class="text-white mb-4"
+                style="cursor: pointer"
+                *ngFor="let card of cardsSearched"
+              >
+                {{ card.cardTitle }}
+              </p>
+            </div>
 
             <h2 class="text-white mb-4 text-uppercase">
               Make Cool sports cards
@@ -557,6 +588,7 @@
                       type="submit"
                       class="btn btn-info text-white mt-3 py-3 px-5"
                       style="margin: auto; display: block"
+                      [disabled]="!form.valid"
                     >
                       Submit
                     </button>
@@ -1287,13 +1319,13 @@
   <!-- packages modal  -->
 
   <div
-  class="modal fade"
-  id="exampleModalCenter"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true"
->
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1301,52 +1333,52 @@
             Select One Package
           </h5>
           <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
           <div class="row">
             <div
-            class="col-md-6"
-            *ngFor="let package of packages; let i = index"
-          >
-            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
-              <div
-                class="card"
-                [ngClass]="{ cardSelect: selectedPackage === package }"
-                (click)="selectPackage(package)"
-              >
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
-                    $
-                    {{
-                      package.net_price ? package.net_price : package.price
-                    }}
-                    <sup
-                      style="
-                        text-decoration: line-through;
-                        font-size: 20px;
-                        color: gray;
-                        padding-left: 15px;
-                      "
-                      *ngIf="package.net_price"
-                      >{{ package.price }}</sup
-                    >
-                  </h5>
-                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
-                  <p class="card-duration">
-                    Duration: {{ package.expire_in }}
-                  </p>
+              class="col-md-6"
+              *ngFor="let package of packages; let i = index"
+            >
+              <div class="outerCard" style="min-height: 30vh; cursor: pointer">
+                <div
+                  class="card"
+                  [ngClass]="{ cardSelect: selectedPackage === package }"
+                  (click)="selectPackage(package)"
+                >
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                      $
+                      {{
+                        package.net_price ? package.net_price : package.price
+                      }}
+                      <sup
+                        style="
+                          text-decoration: line-through;
+                          font-size: 20px;
+                          color: gray;
+                          padding-left: 15px;
+                        "
+                        *ngIf="package.net_price"
+                        >{{ package.price }}</sup
+                      >
+                    </h5>
+                    <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                    <p class="card-duration">
+                      Duration: {{ package.expire_in }}
+                    </p>
 
-                  <div
-                    class="description-container"
-                    style="max-height: 100px; overflow-y: auto"
-                  >
+                    <div
+                      class="description-container"
+                      style="max-height: 100px; overflow-y: auto"
+                    >
                       <p class="card-description">{{ package.description }}</p>
                     </div>
                   </div>
@@ -1392,13 +1424,13 @@
   <!-- stripe modal  -->
 
   <div
-  class="modal fade"
-  id="stripeModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true"
->
+    class="modal fade"
+    id="stripeModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1429,29 +1461,52 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="card-number">Card Number</label>
-                    <input type="text" class="form-control" id="card-number" data-stripe-element="cardNumber"
-                      formControlName="cardNumber">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="card-number"
+                      data-stripe-element="cardNumber"
+                      formControlName="cardNumber"
+                    />
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label for="card-expiry">Expiration Date</label>
-                    <input type="text" class="form-control" id="card-expiry" data-stripe-element="expiryDate"
-                      formControlName="expiryDate">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="card-expiry"
+                      data-stripe-element="expiryDate"
+                      formControlName="expiryDate"
+                    />
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label for="card-cvc">CVC</label>
-                    <input type="text" class="form-control" id="card-cvc" data-stripe-element="cvc"
-                      formControlName="cvc">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="card-cvc"
+                      data-stripe-element="cvc"
+                      formControlName="cvc"
+                    />
                   </div>
                 </div>
               </div>
 
               <div class="row mt-3">
                 <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary" id="pay-button" (click)="pay()">Pay Now</button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    id="pay-button"
+                    (click)="pay()"
+                  >
+                    Pay Now
+                  </button>
                 </div>
               </div>
             </form>
@@ -1485,7 +1540,6 @@
 
             <button type="submit" (click)="pay()">Submit Payment</button>
           </form> -->
-
         </div>
 
         <div class="modal-footer">
@@ -1594,9 +1648,9 @@
               <div class="videos__wrapper">
                 <div class="videos__wrapper--video2">
                   <img
-                  src="assets/newlogo/virtualconferene.jpg"
-                  class="img-fluid"
-                />
+                    src="assets/newlogo/virtualconferene.jpg"
+                    class="img-fluid"
+                  />
                 </div>
               </div>
             </div>
@@ -1669,231 +1723,231 @@
                         <a class="moreless-button5" href="#text4">Read more...</a>
                     </div> -->
 
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img
-                                src="assets/newlogo/sportsmagazine.jpg"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">Virtual Interactive Video Audio Article Magazine</h2>
-                      <div class="moretext7" style="display: none">
-                        <p>
-                          <strong>Engaging content,</strong> articles, logos, videos,
-                          featured pages that will increase conversions and drive sales.
-                          Advertise your Business to the World with a Global Streaming
-                          magazine that gives you the exposure you can only dream of.
-                        </p>
-                      </div>
-                      <a class="moreless-button7" href="#text6">Read more...</a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img
-                                src="assets/newlogo/videoplatform.jpg"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">Video Platform</h2>
-                      <div class="moretext12" style="display: none">
-                        <p>
-                          <strong>A platform</strong> for content creators and users looking
-                          to share articles, videos, conduct live streaming with external
-                          cameras, offer pay-per-view events, enable donations for online
-                          channels, and more.
-                        </p>
-                      </div>
-                      <a class="moreless-button12" href="#text11">Read more...</a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img
-                                src="assets/newlogo/liveStreaming.jpg"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">Virtual Live Streaming App</h2>
-                      <div class="moretext10" style="display: none">
-                        <p>
-                          <strong>A Live Streaming platform</strong> that allows users to go
-                          live Streams, Live Games, Live Shows and Video Chat online with
-                          other users, residents and visitors. Perfect for those who are
-                          visiting and looking to know what is happening in the now from
-                          others as well as who else is in town looking for fun, activities,
-                          parties, and meet and greet. No more catfishing, when you can go
-                          live and see real personalities that are looking for exciting
-                          things to be a part of. Excellent for dating!!
-                        </p>
-                        <h5>
-                          Create Groups - Create Topics - Create Events - Create Invites
-                        </h5>
-                      </div>
-                      <a class="moreless-button10" href="#text9">Read more...</a>
-                    </div>
-            
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img src="assets/newlogo/shortvideo.jpg" class="img-fluid" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">Short Video Platform</h2>
-                      <div class="moretext13" style="display: none">
-                        <p>
-                          <strong
-                            >is a social media platform primarily designed for creating,
-                            sharing, and discovering short-form video content. Users can
-                            record videos of themselves, often set to music or audio clips,
-                            and then share them with their followers or with a broader
-                            community. The platform allows for various creative expressions,
-                            including dancing, lip-syncing, comedy skits, tutorials,
-                            challenges, and more. Has user-friendly video editing tools,
-                            algorithms that promote content virality, and its ability to
-                            quickly connect creators with a wide audience. It is widely used
-                            for entertainment, self-expression, and social
-                            interaction</strong
-                          >
-                        </p>
-                      </div>
-                      <a class="moreless-button13" href="#text12">Read more...</a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img src="assets/newlogo/vpn.jpg" class="img-fluid" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">
-                        Virtual Private Network VPN -<small>
-                          search & use internet with privacy</small
-                        >
-                      </h2>
-                      <div class="moretext9" style="display: none">
-                        <p>
-                          Protects you and your guest browsers privacy. Browse with a
-                          virtual I.P. Address that helps you hide your location and lets
-                          you view the web with enhance online privacy within the android
-                          and desktop
-                        </p>
-                      </div>
-                      <a class="moreless-button9" href="#text8">Read more...</a>
-                    </div>
-            
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img src="assets/newlogo/qRcodes.jpg" class="img-fluid" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">QR CODE FOR USERS</h2>
-                      <div class="moretext11" style="display: none">
-                        <p>
-                          <strong>QR Codes Banner</strong> that links to all eight platforms
-                          for your guest, visitors and global presence. When guests enter
-                          your establishment, they can scan and see all the amazing
-                          platforms that allow them to join and participate in online
-                          contests and daily giveaways.
-                        </p>
-                      </div>
-                      <a class="moreless-button11" href="#text10">Read more...</a>
-                    </div>
-            
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img src="assets/newlogo/uInvite.jpg" class="img-fluid" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">U Invite</h2>
-                      <div class="moretext14" style="display: none">
-                        <p>
-                          Platform primarily used for event management and ticketing. It
-                          allows event organizers to create, promote, and sell tickets for a
-                          wide range of events, including conferences, concerts, festivals,
-                          fundraisers, and more. Eventbrite provides tools for event
-                          registration, ticket sales, marketing, and attendee management,
-                          making it easier for both event organizers and attendees to plan
-                          and participate in events. It is commonly used by event planners,
-                          organizers, and businesses to streamline the process of hosting
-                          and managing events.
-                        </p>
-                      </div>
-                      <a class="moreless-button14" href="#text13">Read more...</a>
-                    </div>
-            
-                    <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
-                      <div class="position-relative fruite-item">
-                        <div class="fruite-img">
-                          <div class="videos__wrapper">
-                            <div class="videos__wrapper--video2">
-                              <img
-                                src="assets/newlogo/couponBooklet.jpg"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 class="mt-4">Interactive Virtual</h2>
-                      <div class="moretext8" style="display: none">
-                        <p>
-                          Booklet that links to other pages, videos, images, online
-                          contests, websites social media and more
-                        </p>
-                        <p>
-                          First ever Kiosk Touch screen business kiosk that can be shared by
-                          thousands to thousands within minutes.
-                        </p>
-                      </div>
-                      <a class="moreless-button8" href="#text7">Read more...</a>
-                    </div>
-                  </div>
-                  <div class="row g-4 py-5">
-                    <div class="col-lg-12 col-md-6 px-5 mt-5">
-                      <img src="assets/newlogo/naf.jpg" class="img-fluid" />
-                    </div>
-                  </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/sportsmagazine.jpg"
+                    class="img-fluid"
+                  />
                 </div>
               </div>
-            </section>
-            <!-- Featurs Section End -->
-            
-            <!-- Slider Start-->
-            <!-- <section id="slider">
+            </div>
+          </div>
+          <h2 class="mt-4">Virtual Interactive Video Audio Article Magazine</h2>
+          <div class="moretext7" style="display: none">
+            <p>
+              <strong>Engaging content,</strong> articles, logos, videos,
+              featured pages that will increase conversions and drive sales.
+              Advertise your Business to the World with a Global Streaming
+              magazine that gives you the exposure you can only dream of.
+            </p>
+          </div>
+          <a class="moreless-button7" href="#text6">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/videoplatform.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Video Platform</h2>
+          <div class="moretext12" style="display: none">
+            <p>
+              <strong>A platform</strong> for content creators and users looking
+              to share articles, videos, conduct live streaming with external
+              cameras, offer pay-per-view events, enable donations for online
+              channels, and more.
+            </p>
+          </div>
+          <a class="moreless-button12" href="#text11">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/liveStreaming.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Virtual Live Streaming App</h2>
+          <div class="moretext10" style="display: none">
+            <p>
+              <strong>A Live Streaming platform</strong> that allows users to go
+              live Streams, Live Games, Live Shows and Video Chat online with
+              other users, residents and visitors. Perfect for those who are
+              visiting and looking to know what is happening in the now from
+              others as well as who else is in town looking for fun, activities,
+              parties, and meet and greet. No more catfishing, when you can go
+              live and see real personalities that are looking for exciting
+              things to be a part of. Excellent for dating!!
+            </p>
+            <h5>
+              Create Groups - Create Topics - Create Events - Create Invites
+            </h5>
+          </div>
+          <a class="moreless-button10" href="#text9">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/shortvideo.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Short Video Platform</h2>
+          <div class="moretext13" style="display: none">
+            <p>
+              <strong
+                >is a social media platform primarily designed for creating,
+                sharing, and discovering short-form video content. Users can
+                record videos of themselves, often set to music or audio clips,
+                and then share them with their followers or with a broader
+                community. The platform allows for various creative expressions,
+                including dancing, lip-syncing, comedy skits, tutorials,
+                challenges, and more. Has user-friendly video editing tools,
+                algorithms that promote content virality, and its ability to
+                quickly connect creators with a wide audience. It is widely used
+                for entertainment, self-expression, and social
+                interaction</strong
+              >
+            </p>
+          </div>
+          <a class="moreless-button13" href="#text12">Read more...</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/vpn.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">
+            Virtual Private Network VPN -<small>
+              search & use internet with privacy</small
+            >
+          </h2>
+          <div class="moretext9" style="display: none">
+            <p>
+              Protects you and your guest browsers privacy. Browse with a
+              virtual I.P. Address that helps you hide your location and lets
+              you view the web with enhance online privacy within the android
+              and desktop
+            </p>
+          </div>
+          <a class="moreless-button9" href="#text8">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/qRcodes.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">QR CODE FOR USERS</h2>
+          <div class="moretext11" style="display: none">
+            <p>
+              <strong>QR Codes Banner</strong> that links to all eight platforms
+              for your guest, visitors and global presence. When guests enter
+              your establishment, they can scan and see all the amazing
+              platforms that allow them to join and participate in online
+              contests and daily giveaways.
+            </p>
+          </div>
+          <a class="moreless-button11" href="#text10">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/newlogo/uInvite.jpg" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">U Invite</h2>
+          <div class="moretext14" style="display: none">
+            <p>
+              Platform primarily used for event management and ticketing. It
+              allows event organizers to create, promote, and sell tickets for a
+              wide range of events, including conferences, concerts, festivals,
+              fundraisers, and more. Eventbrite provides tools for event
+              registration, ticket sales, marketing, and attendee management,
+              making it easier for both event organizers and attendees to plan
+              and participate in events. It is commonly used by event planners,
+              organizers, and businesses to streamline the process of hosting
+              and managing events.
+            </p>
+          </div>
+          <a class="moreless-button14" href="#text13">Read more...</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img
+                    src="assets/newlogo/couponBooklet.jpg"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="mt-4">Interactive Virtual</h2>
+          <div class="moretext8" style="display: none">
+            <p>
+              Booklet that links to other pages, videos, images, online
+              contests, websites social media and more
+            </p>
+            <p>
+              First ever Kiosk Touch screen business kiosk that can be shared by
+              thousands to thousands within minutes.
+            </p>
+          </div>
+          <a class="moreless-button8" href="#text7">Read more...</a>
+        </div>
+      </div>
+      <div class="row g-4 py-5">
+        <div class="col-lg-12 col-md-6 px-5 mt-5">
+          <img src="assets/newlogo/naf.jpg" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featurs Section End -->
+
+<!-- Slider Start-->
+<!-- <section id="slider">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner py-5">
                 <div class="carousel-item active">
@@ -1962,194 +2016,193 @@
               </button>
             </div>
             </section> -->
-            <!-- Slider End -->
-            <!-- product Start -->
-            <section id="card_section">
-              <div class="container-fluid service py-2">
-                <div class="container py-5">
-                  <div class="row g-4">
-                    <div class="col-md-12 col-lg-8">
-                      <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/Cube QR.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/QR COdes.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/Transparent QR Card.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/cufflinks.png"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/dogidtag.png"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/Circular QR.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/Cut Cards.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-            
-                        <div class="col-lg-4 col-md-6">
-                          <a href="#">
-                            <img
-                              src="assets/footerimg/new/Tap and Scan.jpg"
-                              class="img-fluid mb-3"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="pro_c">
-                        <h1>Grab a UMYO Product</h1>
-                        <p>Choose from our variety of products designed to fit...</p>
-                        <a href="#">
-                          <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
-                            Shop All Products
-                          </button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- product End -->
-            </section>
-            
-            <!-- Bestsaler Product Start -->
-            
-            <!-- Footer Start -->
-            <div class="container-fluid bg-dark text-white-50 footer">
-              <div class="container py-5">
-                <div class="row g-4">
-                  <div class="col-lg-4">
-                    <div class="d-flex pt-3">
-                      <a
-                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                        href=""
-                        ><i class="fab fa-twitter"></i
-                      ></a>
-                      <a
-                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                        href=""
-                        ><i class="fab fa-facebook-f"></i
-                      ></a>
-                      <a
-                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                        href=""
-                        ><i class="fab fa-instagram"></i
-                      ></a>
-                      <a
-                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                        href=""
-                        ><i class="fab fa-youtube"></i
-                      ></a>
-                      <a
-                        class="btn btn-outline-secondary btn-md-square rounded-circle"
-                        href=""
-                        ><i class="fab fa-linkedin-in"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                      <a class="btn-link" href="">Contact us</a>
-                      <a class="btn-link" href="">Privacy Policy</a>
-                      <a class="btn-link" href="">Refund Policy</a>
-                      <a class="btn-link" href="">Terms Of Service</a>
-                      <a class="btn-link" href="">Terms of Sales</a>
-                      <a class="btn-link" href="">Data Processing Addendum</a>
-                      <a class="btn-link" href="">Careers</a>
-                      <a class="btn-link" href="">Security & Trust Report</a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-column text-start footer-item">
-                      <a class="btn-link" href="">UMYO Store</a>
-                      <a class="btn-link" href="">Industries</a>
-                      <a class="btn-link" href="">UMYO for Teams</a>
-                      <a class="btn-link" href="">UMYO Pro</a>
-                      <a class="btn-link" href="">UMYO Profile</a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="footer-item">
-                      <h4 class="text-light mb-3">LET'S CONNECT</h4>
-                      <p class="mb-4">
-                        Subscribe to stay up to date on all the latest UMYO features,
-                        products, stories, and more. You can also contact us at
-                        contact@umyo.com.
-                      </p>
-                      <div class="position-relative mx-auto">
-                        <input
-                          class="form-control border-0 py-2 w-100"
-                          type="text"
-                          placeholder="Enter Your Email"
-                        />
-                        <button
-                          type="submit"
-                          class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
-                          style="top: 0; right: 0"
-                        >
-                          Sent
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
-                  <p class="text-white text-center">
-                    <a href="#" style="text-decoration: none; color: white"
-                      ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
-                    >, All right reserved.
-                  </p>
-                </div>
-              </div>
+<!-- Slider End -->
+<!-- product Start -->
+<section id="card_section">
+  <div class="container-fluid service py-2">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-12 col-lg-8">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Cube QR.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
             </div>
-            <!-- Footer End -->
-            
-            <!-- Back to Top -->
-            <a
-              href="#"
-              class="btn btn-dark border-3 border-white rounded-circle back-to-top"
-              ><i class="fa fa-arrow-up"></i
-            ></a>
-            
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/QR COdes.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Transparent QR Card.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/cufflinks.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/dogidtag.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Circular QR.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Cut Cards.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/Tap and Scan.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pro_c">
+            <h1>Grab a UMYO Product</h1>
+            <p>Choose from our variety of products designed to fit...</p>
+            <a href="#">
+              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
+                Shop All Products
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- product End -->
+</section>
+
+<!-- Bestsaler Product Start -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Contact us</a>
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">Data Processing Addendum</a>
+          <a class="btn-link" href="">Careers</a>
+          <a class="btn-link" href="">Security & Trust Report</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">UMYO Store</a>
+          <a class="btn-link" href="">Industries</a>
+          <a class="btn-link" href="">UMYO for Teams</a>
+          <a class="btn-link" href="">UMYO Pro</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest UMYO features,
+            products, stories, and more. You can also contact us at
+            contact@umyo.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a
+  href="#"
+  class="btn btn-dark border-3 border-white rounded-circle back-to-top"
+  ><i class="fa fa-arrow-up"></i
+></a>

@@ -158,6 +158,16 @@ ul.nav.nav-pills {
   background: #fff5d7;
   color: black!important;
 }
+
+/* styles.css */
+:root {
+    --primary-color: #2d545e;
+    --primary-dark-color: #173841;
+    --primary-lighter-color: #07556d;
+    --black: #1c1d1d;
+    --white: #ffffff;
+   
+  }
 .tab-content {
     /* position: relative; */
     max-width: 900px;

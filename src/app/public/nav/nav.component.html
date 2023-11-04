@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Umyo Sports Cards</a>
+
+    <button class="navbar-toggler" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-nav d-none d-lg-flex">
+      <a class="nav-item nav-link" routerLink="/cards">Cards</a>
+      <a class="nav-item nav-link" routerLink="/activities">Activity</a>
+      <a class="nav-item nav-link" routerLink="/contact">Contact</a>
+      <a class="nav-item nav-link" routerLink="/requests">Requests</a>
+      <a class="nav-item nav-link" routerLink="/messages">Messages</a>
+      <a class="nav-item nav-link" routerLink="/profile">Profile</a>
+      <a class="nav-item nav-link" routerLink="/live-chat">Live Chat</a>
+      <a class="nav-item nav-link" routerLink="/cards">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" [ngClass]="{ open: mobileMenuOpen }">
+  <div class="close-icon" (click)="toggleMenu()">
+    <i class="fas fa-times"></i>
+  </div>
+  <div class="mobile-links">
+    <a class="nav-item nav-link" routerLink="/">Cards</a>
+    <a class="nav-item nav-link" routerLink="/activities">Activity</a>
+    <a class="nav-item nav-link" routerLink="/contact">Contact</a>
+    <a class="nav-item nav-link" routerLink="/requests">Requests</a>
+    <a class="nav-item nav-link" routerLink="/messages">Messages</a>
+    <a class="nav-item nav-link" routerLink="/profile">Profile</a>
+    <a class="nav-item nav-link" routerLink="/live-chat">Live Chat</a>
+    <a class="nav-item nav-link" routerLink="/cards">Log Out</a>
+  </div>
+</div>

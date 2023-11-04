@@ -15,8 +15,30 @@ import { AddPackageComponent } from './admin/add-package/add-package.component';
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ViewChatComponent } from './admin/view-chat/view-chat.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { EmailVerificationComponent } from './email-verification/email-verification.component';
+import { CardsComponent } from './public/cards/cards.component';
+import { ActivityComponent } from './public/activity/activity.component';
+import { ContactComponent } from './public/contact/contact.component';
+import { RequestsComponent } from './public/requests/requests.component';
+import { MessagesComponent } from './public/messages/messages.component';
+import { ProfileComponent as publicProfileComponent } from './public/profile/profile.component';
+import { LiveChatComponent } from './public/live-chat/live-chat.component';
+import { BasicInformationComponent } from './public/profile/basic-information/basic-information.component';
+import { WorkAndSocialComponent } from './public/profile/work-and-social/work-and-social.component';
+import { ApplyForReferralComponent } from './public/profile/apply-for-referral/apply-for-referral.component';
+import { BonusAmountComponent } from './public/profile/bonus-amount/bonus-amount.component';
+import { ChangePasswordComponent } from './public/profile/change-password/change-password.component';
+import { MyContactsComponent } from './public/profile/my-contacts/my-contacts.component';
+import { TeamComponent } from './team/team.component';
+import { ProductsComponent } from './products/products.component';
+import { ProComponent } from './pro/pro.component';
+import { NetworkComponent } from './network/network.component';
 const routes: Routes = [
       { path: '', component: HomeComponent },
+      { path: 'team', component: TeamComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'pro', component: ProComponent },
+      { path: 'network', component: NetworkComponent },
 
       { path: 'admin/dashboard', component: DashboardComponent },
       { path: 'admin/users', component: UsersComponent },
@@ -32,7 +54,31 @@ const routes: Routes = [
       { path: 'admin/add-package', component: AddPackageComponent },
       { path: 'admin/edit-package/:id', component: EditPackageComponent },
       { path: 'admin/viewChat/:id', component: ViewChatComponent },
-  
+      { path: 'email-verification', component: EmailVerificationComponent },
+      
+      { path: 'cards', component: CardsComponent },
+      { path: 'activities', component: ActivityComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'requests', component: RequestsComponent },
+      { path: 'messages', component: MessagesComponent },
+      { path: 'live-chat', component: LiveChatComponent },
+      // { path: 'profile', component: publicProfileComponent },
+
+      {
+        path: 'profile',
+        component: publicProfileComponent,
+        children: [
+          { path: '', redirectTo: 'my-contacts', pathMatch: 'full' },
+          { path: 'my-contacts', component: MyContactsComponent },
+          { path: 'basic-information', component: BasicInformationComponent },
+          { path: 'work-and-social', component: WorkAndSocialComponent },
+          { path: 'apply-for-referral', component: ApplyForReferralComponent },
+          { path: 'bonus-amount', component: BonusAmountComponent },
+          { path: 'change-password', component: ChangePasswordComponent },
+          // Add routes for other profile sections here
+        ],
+      },
+      
       
   
 ];

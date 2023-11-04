@@ -6,6 +6,8 @@ import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { PaymentService } from '../payment.service'; // Import your PaymentService
 
 
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
@@ -58,7 +60,9 @@ export class HomeComponent implements AfterViewInit {
   };
   pay(): void {
     // if (this.paymentForm.valid) {
-    this.createPaymentIntent(this.selectedPackage)
+      console.log(this.selectedPackage);
+    this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);
+    // this.createPaymentIntent(this.selectedPackage)
     // .pipe(
     //   switchMap((pi: any) =>
     //     this.stripeService.confirmCardPayment(pi.client_secret, {
@@ -97,46 +101,7 @@ export class HomeComponent implements AfterViewInit {
     // });
   }
 
-  async createPaymentIntent(selectedPackage: Package) {
-    const expiry = this.paymentForm.get("expiryDate").value;
-    const expiryMonth = expiry.split("/")[0];
-    const expiryYear = expiry.split("/")[1];
-    console.log(expiryMonth + ' ' + expiryYear)
-    this.apiService.AddCustomer({
-      "name": this.form3.get('registerFirstName').value + ' ' + this.form3.get('registerLastName').value,
-      "phone": this.form3.get('registerPhone').value,
-      "email": this.form3.get('registerEmail').value,
-      "description": selectedPackage.description,
-      "card_number": this.paymentForm.get("cardNumber").value,
-      "exp_month": expiryMonth,
-      "exp_year": expiryYear,
-      "cvc": this.paymentForm.get("cvc").value,
-      "price": selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
-      "interval": "month",
-      "interval_count": 6
-    }).subscribe((response: AddCustomerResponse) => {
-      console.log(response)
-      if (response.status == 'Success') {
-        this.apiService.AddProductPriceSubscription({
-          "name": selectedPackage.description,
-          "description": selectedPackage.description,
-          "price": selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
-          "interval": "month",
-          "interval_count": 6,
-          "customer_id": response.customer_id
-        }).subscribe((response: Subscription) => {
-          console.log(response)
-          if (response.status == "Success") {
-            //proceed to email verification screen
-          } else {
-            alert(response.message)
-          }
-        })
-      } else {
-        alert(response.message)
-      }
-    }, error => console.log(error))
-  }
+ 
 
 
   packages: any[] = [];
@@ -156,7 +121,22 @@ export class HomeComponent implements AfterViewInit {
   submitButtonClicked = false;
   form3: FormGroup
   selectedPackage: Package = null;
+  cardsSearched:any=[]
 
+
+  searchCards(){
+    const business_type = this.form2.get('selectedBusinessType').value;
+    const age_type = this.form2.get('selectedAgeType').value;
+    const sports_type = this.form2.get('selectedSportType').value;
+    const position = this.form2.get('selectedPositionType').value;
+    const state = this.form2.get('selectedStateType').value;
+    this.apiService.searchCard(business_type,age_type,sports_type,position,state).subscribe(
+      (response)=>{
+        this.cardsSearched=response.Cards
+        console.log(response);
+      }
+    )
+  }
 
   selectPackage(selectedPackage: Package) {
     this.selectedPackage = selectedPackage;
@@ -238,13 +218,26 @@ export class HomeComponent implements AfterViewInit {
         const password = passwordControl.value;
 
         this.apiService.publicLogin(email, 0, password).subscribe((response) => {
-          console.log(response);
+          if(response.status==200){
+      localStorage.setItem('access_token', response.access_token);
+      localStorage.setItem('firstname', response.user.firstname);
+      localStorage.setItem('lastname', response.user.lastname);
+      localStorage.setItem('phone', response.user.phone);
+      localStorage.setItem('email', response.user.email);
+      localStorage.setItem('user_id', response.user.id.toString());
+      localStorage.setItem('pg_id', "0");
+                  this.router.navigate(['/cards']);
+          }
+          else{
+            alert("login Failed")
+          }
         });
       } else {
-
+        alert("invalid login form")
       }
     }
   }
+
   register() {
     const firstName = this.form3.get('registerFirstName');
     const lastName = this.form3.get('registerLastName');
@@ -309,7 +302,7 @@ export class HomeComponent implements AfterViewInit {
 
 
   constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,
-    private stripeService: StripeService) {
+    private stripeService: StripeService,private router: Router, private paymentService: PaymentService) {
 
 
 
@@ -351,14 +344,8 @@ export class HomeComponent implements AfterViewInit {
 
     this.getAgeType()
     this.getSportType()
-    this.form2.patchValue({
-      selectedBusinessType: 'Select Business Type',
-      selectedAgeType: 'Select Age Type',
-      selectedSportType: 'Select Sport Type',
-      selectedPositionType: 'Select Position Type',
-      selectedStateType: 'Select State Type',
-    });
 
+    
 
 
     this.apiService.getSignUpPackages(null).subscribe(

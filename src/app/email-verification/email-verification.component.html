@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Umyo Sports Cards</a>
+
+    <button class="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="emailContainer" style="margin-top: 80px; padding: 30px">
+  <h1 class="heading">
+    <i class="fas fa-check-circle icon"></i>
+    Email Verification
+  </h1>
+  <hr class="line" />
+  <form [formGroup]="form">
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="verificationCode"
+        class="form-control"
+        placeholder="Enter Verification Code"
+      />
+    </div>
+    <div class="buttons">
+      <button class="btn btn-primary rounded-corner mt-3" (click)="submit()">
+        Submit
+      </button>
+      <button class="btn btn-primary rounded-corner mt-3">Resend Code</button>
+    </div>
+  </form>
+</div>

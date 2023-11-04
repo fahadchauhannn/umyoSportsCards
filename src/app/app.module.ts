@@ -12,7 +12,7 @@ import { AdminAmountComponent } from './admin/admin-amount/admin-amount.componen
 import { AdminChatRecordComponent } from './admin/admin-chat-record/admin-chat-record.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { AdminLiveChatComponent } from './admin/admin-live-chat/admin-live-chat.component';
-import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; 
 import { ToastrModule } from 'ngx-toastr';
@@ -26,6 +26,26 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxStripeModule } from 'ngx-stripe';
+import { EmailVerificationComponent } from './email-verification/email-verification.component';
+import { CardsComponent } from './public/cards/cards.component';
+import { NavComponent } from './public/nav/nav.component';
+import { ActivityComponent } from './public/activity/activity.component';
+import { ContactComponent } from './public/contact/contact.component';
+import { RequestsComponent } from './public/requests/requests.component';
+import { MessagesComponent } from './public/messages/messages.component';
+import { LiveChatComponent } from './public/live-chat/live-chat.component';
+import { ProfileComponent as publicProfileComponent } from './public/profile/profile.component';
+import { ProfileNavComponent } from './public/profile-nav/profile-nav.component';
+import { BasicInformationComponent } from './public/profile/basic-information/basic-information.component';
+import { WorkAndSocialComponent } from './public/profile/work-and-social/work-and-social.component';
+import { ApplyForReferralComponent } from './public/profile/apply-for-referral/apply-for-referral.component';
+import { BonusAmountComponent } from './public/profile/bonus-amount/bonus-amount.component';
+import { ChangePasswordComponent } from './public/profile/change-password/change-password.component';
+import { MyContactsComponent } from './public/profile/my-contacts/my-contacts.component';
+import { TeamComponent } from './team/team.component';
+import { ProductsComponent } from './products/products.component';
+import { ProComponent } from './pro/pro.component';
+import { NetworkComponent } from './network/network.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +66,27 @@ import { NgxStripeModule } from 'ngx-stripe';
     AddPackageComponent,
     EditPackageComponent,
     ViewChatComponent,
-    EditUserComponent
+    EditUserComponent,
+    EmailVerificationComponent,
+    CardsComponent,
+    NavComponent,
+    ActivityComponent,
+    ContactComponent,
+    RequestsComponent,
+    MessagesComponent,
+    LiveChatComponent,
+    publicProfileComponent,
+    ProfileNavComponent,
+    BasicInformationComponent,
+    WorkAndSocialComponent,
+    ApplyForReferralComponent,
+    BonusAmountComponent,
+    ChangePasswordComponent,
+    MyContactsComponent,
+    TeamComponent,
+    ProductsComponent,
+    ProComponent,
+    NetworkComponent
   ],
   imports: [BrowserModule, NgxStripeModule.forRoot('pk_test_51O5YCYFsXQwPd2tbJm8xT224tG7OoCXWGyigDqVGZ2DeNsiWxhSDfJNiBbfq508cDU15nQOctVTijlbUcJvVqleO00OTWN3YAb'),SlickCarouselModule,ReactiveFormsModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
     positionClass:'custom-toast-position',
