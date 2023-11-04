@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { ApiService } from '../api.service'
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
@@ -35,12 +35,7 @@ export class HomeComponent implements AfterViewInit {
   };
 
 
-  paymentForm: FormGroup = this.fb.group({
-    cardNumber: ['', [Validators.required]],
-    expiryDate: ['', [Validators.required]],
-    cvc: ['', [Validators.required]]
-  });
-
+  
 
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
 
@@ -122,6 +117,7 @@ export class HomeComponent implements AfterViewInit {
   form3: FormGroup
   selectedPackage: Package = null;
   cardsSearched:any=[]
+  paymentForm:FormGroup
 
 
   searchCards(){
@@ -300,6 +296,30 @@ export class HomeComponent implements AfterViewInit {
   }
 
 
+  expiryDateValidator(control: AbstractControl): ValidationErrors | null {
+    const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
+    if (control.value && !expiryDatePattern.test(control.value)) {
+      return { invalidExpiryDate: true };
+    }
+  
+    const [month, year] = control.value.split('/');
+    const currentYear = new Date().getFullYear() % 100;
+    const currentMonth = new Date().getMonth() + 1;
+  
+    if (Number(year) < currentYear || (Number(year) === currentYear && Number(month) < currentMonth)) {
+      return { expiredExpiryDate: true };
+    }
+  
+    return null;
+  }
+  
+  cardNumberValidator(control: AbstractControl): ValidationErrors | null {
+    const cardNumberPattern = /^\d{16}$/; // Assuming 16 digits for a valid card number
+    if (control.value && !cardNumberPattern.test(control.value)) {
+      return { invalidCardNumber: true };
+    }
+    return null;
+  }
 
   constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,
     private stripeService: StripeService,private router: Router, private paymentService: PaymentService) {
@@ -309,7 +329,12 @@ export class HomeComponent implements AfterViewInit {
     // form is login form 
     // form2 is search of cards form 
     // from 3 is registration form 
-
+    const cvcLength = 3;
+  this.paymentForm = this.fb.group({
+  cardNumber: ['', [Validators.required, this.cardNumberValidator]],
+  expiryDate: ['', [Validators.required, this.expiryDateValidator]],
+  cvc: ['', [Validators.required, Validators.minLength(cvcLength), Validators.maxLength(cvcLength)]],
+});
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],

@@ -1504,6 +1504,7 @@
                     data-bs-toggle="modal"
                     id="pay-button"
                     (click)="pay()"
+                    [disabled]="!paymentForm.valid"
                   >
                     Pay Now
                   </button>
