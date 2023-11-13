@@ -19,7 +19,7 @@ import {
 import { Package } from '../models/package.model';
 import { AddCustomerResponse } from '../models/add-customer-response.model';
 import { Subscription } from '../models/subscription.model';
-
+declare var $: any; 
 declare var paypal: any;
 
 @Component({
@@ -28,7 +28,8 @@ declare var paypal: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit {
-  @ViewChild('modal') modal: ElementRef | undefined; // This is for the Bootstrap modal reference
+  @ViewChild('exampleModalCenter') packagesModal: ElementRef | undefined;
+  @ViewChild('stripeModal') stripeModal: ElementRef | undefined;
 
   public elementsOptions: StripeElementsOptions = {
     locale: 'en',
@@ -56,7 +57,7 @@ export class HomeComponent implements AfterViewInit {
   pay(): void {
     // if (this.paymentForm.valid) {
       console.log(this.selectedPackage);
-    this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);
+     this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);
     // this.createPaymentIntent(this.selectedPackage)
     // .pipe(
     //   switchMap((pi: any) =>
@@ -84,6 +85,10 @@ export class HomeComponent implements AfterViewInit {
     // } else {
     //   console.log(this.paymentForm);
     // }
+this.closePackageModal()
+this.closeStripeModal()
+    // this.packagesModal.hide()
+    // this.stripeModal.hide();
   }
   elements: any; // Use any for elements
   cardElement: any; // Use any for card
@@ -97,7 +102,8 @@ export class HomeComponent implements AfterViewInit {
   }
 
  
-
+  showStripeModal = false;
+  showPackageModal = false;
 
   packages: any[] = [];
   slides1: any[] = [];
@@ -119,6 +125,32 @@ export class HomeComponent implements AfterViewInit {
   cardsSearched:any=[]
   paymentForm:FormGroup
 
+  openStripeModal() {
+    this.showStripeModal = true;
+    this.closePackageModal()
+  }
+
+  openPackageModal() {
+    this.apiService.checkEmail(this.form3.get('registerEmail')?.value).subscribe(
+      (response)=>{
+        if(response.status=='Success' || response.message==='Email is already registered.'){
+          alert("This Email is already Registered with another account!")
+        }
+        else{
+          this.showPackageModal = true;
+        }
+      }
+    )
+    
+  }
+  closeStripeModal() {
+    this.showStripeModal = false;
+
+  }
+
+  closePackageModal() {
+    this.showPackageModal = false;
+  }
 
   searchCards(){
     const business_type = this.form2.get('selectedBusinessType').value;
@@ -224,9 +256,15 @@ export class HomeComponent implements AfterViewInit {
       localStorage.setItem('pg_id', "0");
                   this.router.navigate(['/cards']);
           }
-          else{
-            alert("login Failed")
+          
+          else if(response.error=='Unauthorized'){
+            alert("login Failed: Unauthorized")
           }
+          else{
+            alert("login Failed: Unauthorized")
+          }
+        },(error)=>{
+          alert("login Failed: Unauthorized")
         });
       } else {
         alert("invalid login form")
@@ -325,7 +363,14 @@ export class HomeComponent implements AfterViewInit {
     private stripeService: StripeService,private router: Router, private paymentService: PaymentService) {
 
 
-
+      const email= localStorage.getItem('email')
+      const access_token= localStorage.getItem('access_token')
+      const user_id=localStorage.getItem('user_id')
+  
+      if (email !== null && email !== '' && access_token !== null && access_token !== '' && user_id !== null && user_id !== '') {
+        this.router.navigate(['/cards']);
+      }
+      
     // form is login form 
     // form2 is search of cards form 
     // from 3 is registration form 
@@ -486,6 +531,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    
     console.log("register counry value", this.form3.get('registerCountry')?.value)
     const containerId = `paypal-button-container`;
 

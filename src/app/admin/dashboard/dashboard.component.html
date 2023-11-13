@@ -5,10 +5,18 @@
 <div class="outside container col-sm-8 mt-4" *ngIf="!isLoading">
   <label for="floatingInput mb-3">User View Text</label>
   <div class="form mb-3 mt-1">
-    <input type="email" class="form-control" placeholder="some text" />
+    <input
+      type="email"
+      name="admin_text"
+      class="form-control"
+      [(ngModel)]="admin_text"
+      placeholder="some text"
+    />
   </div>
   <div class="d-grid gap-2 mb-3 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="button">Save</button>
+    <button class="btn btn-primary me-md-2" (click)="adminText()" type="button">
+      Save
+    </button>
   </div>
   <h2 class="mb-3">Statistics of Site:</h2>
   <div class="row mb-3">

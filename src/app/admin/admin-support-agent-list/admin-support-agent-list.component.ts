@@ -15,7 +15,7 @@ export class AdminSupportAgentListComponent implements OnInit{
   constructor(private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; 
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.getSupportAgent(bearerToken).subscribe(
       (response) => {
@@ -35,7 +35,7 @@ export class AdminSupportAgentListComponent implements OnInit{
     });
   }
   deleteAgent(agentId: number) {
-    const bearerToken = 'YOUR_BEARER_TOKEN';
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.deleteAgent(agentId).subscribe(
       (response)=>{

@@ -19,7 +19,10 @@ export class ApplyForReferralComponent {
       this.paymentId=response.Users.payment_id
       this.paymentType=response.Users.payment_method
 
-      if(this.userData.Users.refer_code != '' || null){
+      if(this.userData.Users.refer_code == '' || this.userData.Users.refer_code == null){
+        this.referralAvailable=false
+      }
+      else{
         this.referralAvailable=true
       }
       this.isLoading=false

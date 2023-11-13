@@ -14,49 +14,43 @@ export class ApiService {
   getAllUsers(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdW15b3Nwb3J0c2NhcmRzLmNvbVwvYXBpX3VteW9jYXJkc1wvcHVibGljXC9hcGlcL2F1dGhcL2FkbWluU2lnbkluIiwiaWF0IjoxNjk2Mjk0NzYzLCJleHAiOjE2OTYyOTgzNjMsIm5iZiI6MTY5NjI5NDc2MywianRpIjoib3lROG13dWtmVU5PUDgxaiIsInN1YiI6MTAsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.F4KiTeEqxw6roZVfPrvVhZEwaEtwBikArzn5I7bAlEA'}`,
+      Authorization: `Bearer ${bearerToken}`,
     });
 
-    return this.http.post('https://umyosportscards.com/api_umyocards/public/api/getAllUsers', {}, { headers });
+    return this.http.post(baseUrl+`getAllUsers`, {}, { headers });
   }
   getSupportAgent(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdW15b3Nwb3J0c2NhcmRzLmNvbVwvYXBpX3VteW9jYXJkc1wvcHVibGljXC9hcGlcL2F1dGhcL2FkbWluU2lnbkluIiwiaWF0IjoxNjk2Mjk0NzYzLCJleHAiOjE2OTYyOTgzNjMsIm5iZiI6MTY5NjI5NDc2MywianRpIjoib3lROG13dWtmVU5PUDgxaiIsInN1YiI6MTAsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.F4KiTeEqxw6roZVfPrvVhZEwaEtwBikArzn5I7bAlEA'}`,
+      Authorization: `Bearer ${bearerToken}`,
     });
 
-    return this.http.post('https://umyosportscards.com/api_umyocards/public/api/getSupportAgent', {}, { headers });
+    return this.http.post(baseUrl+`getSupportAgent`, {}, { headers });
   }
   getPackages(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdW15b3Nwb3J0c2NhcmRzLmNvbVwvYXBpX3VteW9jYXJkc1wvcHVibGljXC9hcGlcL2F1dGhcL2FkbWluU2lnbkluIiwiaWF0IjoxNjk2Mjk0NzYzLCJleHAiOjE2OTYyOTgzNjMsIm5iZiI6MTY5NjI5NDc2MywianRpIjoib3lROG13dWtmVU5PUDgxaiIsInN1YiI6MTAsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.F4KiTeEqxw6roZVfPrvVhZEwaEtwBikArzn5I7bAlEA'}`,
+      Authorization: `Bearer ${bearerToken}`,
     });
 
-    return this.http.post('https://umyosportscards.com/api_umyocards/public/api/getPackages', {}, { headers });
+    return this.http.post(baseUrl+`getPackages`, {}, { headers });
   }
   getReferals(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdW15b3Nwb3J0c2NhcmRzLmNvbVwvYXBpX3VteW9jYXJkc1wvcHVibGljXC9hcGlcL2F1dGhcL2FkbWluU2lnbkluIiwiaWF0IjoxNjk2Mjk0NzYzLCJleHAiOjE2OTYyOTgzNjMsIm5iZiI6MTY5NjI5NDc2MywianRpIjoib3lROG13dWtmVU5PUDgxaiIsInN1YiI6MTAsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.F4KiTeEqxw6roZVfPrvVhZEwaEtwBikArzn5I7bAlEA'}`,
+      Authorization: `Bearer ${bearerToken}`,
     });
 
-    return this.http.post('https://umyosportscards.com/api_umyocards/public/api/listOfReferals', {}, { headers });
+    return this.http.post(baseUrl+`listOfReferals`, {}, { headers });
   }
   getChatRecord(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdW15b3Nwb3J0c2NhcmRzLmNvbVwvYXBpX3VteW9jYXJkc1wvcHVibGljXC9hcGlcL2F1dGhcL2FkbWluU2lnbkluIiwiaWF0IjoxNjk2Mjk0NzYzLCJleHAiOjE2OTYyOTgzNjMsIm5iZiI6MTY5NjI5NDc2MywianRpIjoib3lROG13dWtmVU5PUDgxaiIsInN1YiI6MTAsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.F4KiTeEqxw6roZVfPrvVhZEwaEtwBikArzn5I7bAlEA'}`,
+      Authorization: `Bearer ${bearerToken}`,
     });
 
-    return this.http.post('https://umyosportscards.com/api_umyocards/public/api/getChatRecord', {}, { headers });
+    return this.http.post(baseUrl+`getChatRecord`, {}, { headers });
   }
-
-
-
-
-
-
 
 
 
@@ -69,12 +63,61 @@ export class ApiService {
 
     return this.http.post(url, payload);
   }
+  getUserData(user_id: any,friend_id:any): Observable<any> {
+    const url = baseUrl+`userData`;
+    const payload = { user_id: user_id,friend_id:friend_id };
+
+
+    return this.http.post(url, payload);
+  }
+  sendRequest(user_id: any,friend_id:any): Observable<any> {
+    const url = baseUrl+`sendRequest`;
+    const payload = { user_id: user_id,friend_id:friend_id };
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+    const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload,{ headers: combinedHeaders });
+  }
+  myRequests(user_id: any): Observable<any> {
+    const url = baseUrl+`myRequests`;
+    const payload = { user_id: user_id };
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+    const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload,{ headers: combinedHeaders });
+  }
+  acceptRequest(request_id: any): Observable<any> {
+    const url = baseUrl+`acceptRequest`;
+    const payload = { request_id: request_id };
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+    const combinedHeaders = headers
+    .append('Origin', this.customHeaders.get('Origin') || '')
+    .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload,{ headers: combinedHeaders });
+  }
 
 
 
   private customHeaders = new HttpHeaders()
     .set('Origin', 'https://umyosportscards.com')
-    .set('Referer', 'https://umyosportscards.com/admin/users/272');
+    .set('Referer', 'https://umyosportscards.com/admin/users/375');
 
   updateUser(user: any): Observable<any> {
     const url = baseUrl+`editUser`;
@@ -153,7 +196,7 @@ export class ApiService {
     return this.http.post(url, {"user_id": user_id,"agreement_id":agreement_id}, { headers: combinedHeaders });
   }
   getActivity(user_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/getActivity`;
+    const url = baseUrl+`getActivity`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -168,7 +211,7 @@ export class ApiService {
     return this.http.post(url, {"user_id": user_id}, { headers: combinedHeaders });
   }
   deleteActivity(user_id: any,activity_id): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/deleteActivity`;
+    const url = baseUrl+`deleteActivity`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -188,7 +231,7 @@ export class ApiService {
 
 
   openChat(chat_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/getLiveChat`;
+    const url = baseUrl+`getLiveChat`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -202,8 +245,40 @@ export class ApiService {
 
     return this.http.post(url, { "chat_id": chat_id }, { headers: combinedHeaders });
   }
+  getMessages(user_id:any,friend_id:any): Observable<any> {
+    const url = baseUrl+`getMessages`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id,"friend_id":friend_id }, { headers: combinedHeaders });
+  }
+  sendMessage(user_id:any,friend_id:any,chat:any): Observable<any> {
+    const url = baseUrl+`sendMessage`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id,"friend_id":friend_id,"chat":chat }, { headers: combinedHeaders });
+  }
+
+  
   startLiveChat(email: string,name:string): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/startLiveChat`;
+    const url = baseUrl+`startLiveChat`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -217,11 +292,61 @@ export class ApiService {
 
     return this.http.post(url, { "email": email,"name":name }, { headers: combinedHeaders });
   }
+  adminText(admin_text: string): Observable<any> {
+    const url = baseUrl+`admin_text`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "admin_text": admin_text }, { headers: combinedHeaders });
+  }
+  checkEmail(email: string): Observable<any> {
+    const url = baseUrl+`checkEmail`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "email": email }, { headers: combinedHeaders });
+  }
+
+
+  
+  adminLogin(email: string,password:string): Observable<any> {
+    const url = baseUrl+`auth/adminSignIn`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "email": email,"password":password }, { headers: combinedHeaders });
+  }
+
+
 
 
 
   getSignUpPackages(user_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/getPackages`;
+    const url = baseUrl+`getPackages`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -239,7 +364,7 @@ export class ApiService {
 
 
   usage(): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/Usage`;
+    const url = baseUrl+`Usage`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -255,8 +380,7 @@ export class ApiService {
   }
 
   deleteUser(user_id: any): Observable<any> {
-    const url = `
-  https://umyosportscards.com/api_umyocards/public/api/deleteUser`;
+    const url = baseUrl+`deleteUser`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -270,8 +394,74 @@ export class ApiService {
 
     return this.http.post(url, { "user_id": user_id }, { headers: combinedHeaders });
   }
+
+  getCustomContact(user_id: any): Observable<any> {
+    const url = baseUrl + `getCustomContact`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id }, { headers: combinedHeaders });
+  }
+  getContact(user_id: any): Observable<any> {
+    const url = baseUrl + `myContacts`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id }, { headers: combinedHeaders });
+  }
+
+
+  deleteCustomContact(user_id: any,card_id:any): Observable<any> {
+    const url = baseUrl + `deleteCustomContact`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id,"card_id":card_id }, { headers: combinedHeaders });
+  }
+  searchUser(user_id: any,query:any): Observable<any> {
+    const url = baseUrl + `searchUser`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, { "user_id": user_id,"query":query }, { headers: combinedHeaders });
+  }
+
+
+
   deletePackage(id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/deletePackage`;
+    const url = baseUrl+`deletePackage`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -289,7 +479,7 @@ export class ApiService {
 
 
   deleteAgent(agent_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/deleteSupportAgent`;
+    const url = baseUrl+`deleteSupportAgent`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -305,7 +495,7 @@ export class ApiService {
   }
 
   searchCard(busniess_type:any,age_type:any,sports_type:any,position:any,state:any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/get-search-card-by-dropdown`;
+    const url = baseUrl+`get-search-card-by-dropdown`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token', 
@@ -321,9 +511,47 @@ export class ApiService {
   
   
   }
+  saveContact(contact:any): Observable<any> {
+    const url = baseUrl+ `saveCustomContact`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token', 
+    });
+  
+    
+  
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+    
+    return this.http.post(url, contact, { headers: combinedHeaders });
+  
+  
+  }
+  updateContact(contact:any): Observable<any> {
+    const url = baseUrl+ `updateCustomContact`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token', 
+    });
+  
+    
+  
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+    
+    return this.http.post(url, contact, { headers: combinedHeaders });
+  
+  
+  }
+
+
+
+
 
   saveChat(chat_id: any, chat: any, message_type: any, responded_by_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/saveLiveChat`;
+    const url = baseUrl+`saveLiveChat`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -340,7 +568,7 @@ export class ApiService {
   }
 
   emailChat(chat_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/emailChats`;
+    const url = baseUrl+`emailChats`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -356,7 +584,7 @@ export class ApiService {
 
   }
   closeChat(chat_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/closeChat`;
+    const url = baseUrl+`closeChat`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -375,7 +603,7 @@ export class ApiService {
   
 
   publicLogin(email: any, package_id: any, password: any,): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/auth/login`;
+    const url = baseUrl+ `auth/login`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -393,7 +621,7 @@ export class ApiService {
   }
 
   getPositionType(category_id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/subcategory-position`;
+    const url = baseUrl+`subcategory-position`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -410,7 +638,7 @@ export class ApiService {
 
   }
   getBusinessType(): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/all-categories`;
+    const url = baseUrl+`all-categories`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -427,7 +655,7 @@ export class ApiService {
 
   }
   getSportType(): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/main-category-sport-type`;
+    const url = baseUrl+`main-category-sport-type`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -444,7 +672,7 @@ export class ApiService {
 
   }
   getAgeType(): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/subcategories-age-type`;
+    const url = baseUrl+`subcategories-age-type`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -469,7 +697,7 @@ export class ApiService {
 
 
   addAgent(name: any, email: any, password: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/addSupportAgent`;
+    const url = baseUrl+`addSupportAgent`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -486,7 +714,7 @@ export class ApiService {
   }
 
   addPackage(id: any, description: any, expire_in: any, image: any, limit: any, logo: any, net_price: any, price: any, product_image: any, social_media_listing: any, umyoutube: any, vimeo: any, videos: any, website: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/createPackage`;
+    const url = baseUrl+`createPackage`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -502,7 +730,7 @@ export class ApiService {
 
   }
   updateAgent(name: any, email: any, id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/updateSupportAgent`;
+    const url = baseUrl+`updateSupportAgent`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -518,7 +746,7 @@ export class ApiService {
 
   }
   getPackageById(id: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/getPackageSingle`;
+    const url = baseUrl+`getPackageSingle`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -535,7 +763,7 @@ export class ApiService {
   }
 
   updatePackage(id: any, description: any, expire_in: any, image: any, limit: any, logo: any, net_price: any, price: any, product_image: any, social_media_listing: any, umyoutube: any, vimeo: any, videos: any, website: any): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/updatePackage`;
+    const url = baseUrl+`updatePackage`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -556,7 +784,7 @@ export class ApiService {
 
 
   getChatUsers(): Observable<any> {
-    const url = `https://umyosportscards.com/api_umyocards/public/api/getOpenChatAdmin`;
+    const url = baseUrl+`getOpenChatAdmin`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',

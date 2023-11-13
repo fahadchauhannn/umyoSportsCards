@@ -84,8 +84,9 @@ import { interval, Subscription } from 'rxjs';
   }
 
   sendMessage(){
+    const id = localStorage.getItem('admin_id')
     this.isLoading=true
-    this.apiService.saveChat(this.selectedUserId,this.newMessage,"recieved","10").subscribe(
+    this.apiService.saveChat(this.selectedUserId,this.newMessage,"recieved",id).subscribe(
       (response:any)=>{
         console.log("message send");
         this.isLoading=false

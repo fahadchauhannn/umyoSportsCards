@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit{
 isLoading:boolean=false
 UsersUsage:any
 CardUsage:any
+admin_text:string=''
   constructor(
     
     private apiService: ApiService,
@@ -29,4 +30,14 @@ this.isLoading=false
     
   }
 
+  
+adminText(){
+  this.apiService.adminText(this.admin_text).subscribe(
+    (response)=>{
+      console.log('successfully set admin text');
+      console.log(this.admin_text);
+    }
+  )
 }
+}
+

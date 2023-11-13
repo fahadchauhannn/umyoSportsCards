@@ -13,7 +13,7 @@ export class PackagesComponent implements OnInit{
   constructor(private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN';
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.getPackages(bearerToken).subscribe(
       (response) => {
@@ -46,7 +46,7 @@ export class PackagesComponent implements OnInit{
 
   refreshUserList() {
     this.isLoading=true;
-    const bearerToken = 'YOUR_BEARER_TOKEN'; 
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.apiService.getPackages(bearerToken).subscribe(
       (response) => {
         this.packages = response.Package; 

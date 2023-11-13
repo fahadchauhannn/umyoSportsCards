@@ -13,7 +13,7 @@ export class AdminAmountComponent  implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; 
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.getReferals(bearerToken).subscribe(
       (response) => {

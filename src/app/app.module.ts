@@ -46,6 +46,7 @@ import { TeamComponent } from './team/team.component';
 import { ProductsComponent } from './products/products.component';
 import { ProComponent } from './pro/pro.component';
 import { NetworkComponent } from './network/network.component';
+import { UserComponent } from './public/user/user.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { NetworkComponent } from './network/network.component';
     TeamComponent,
     ProductsComponent,
     ProComponent,
-    NetworkComponent
+    NetworkComponent,
+    UserComponent
   ],
   imports: [BrowserModule, NgxStripeModule.forRoot('pk_test_51O5YCYFsXQwPd2tbJm8xT224tG7OoCXWGyigDqVGZ2DeNsiWxhSDfJNiBbfq508cDU15nQOctVTijlbUcJvVqleO00OTWN3YAb'),SlickCarouselModule,ReactiveFormsModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
     positionClass:'custom-toast-position',

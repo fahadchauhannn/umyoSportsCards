@@ -13,7 +13,8 @@ export class UsersComponent implements OnInit{
   isLoading:boolean=false;
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN'; 
+    
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.getAllUsers(bearerToken).subscribe(
       (response) => {

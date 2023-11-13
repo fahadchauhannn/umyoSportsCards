@@ -15,7 +15,7 @@ export class AdminChatRecordComponent implements OnInit{
 
 
   ngOnInit(): void {
-    const bearerToken = 'YOUR_BEARER_TOKEN';
+    const bearerToken = localStorage.getItem("admin_access_token")
     this.isLoading=true
     this.apiService.getChatRecord(bearerToken).subscribe(
       (response) => {

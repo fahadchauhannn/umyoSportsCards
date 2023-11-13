@@ -1297,8 +1297,7 @@
                     </div>
                     <div (click)="submitForm()">
                       <button
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModalCenter"
+                        (click)="openPackageModal()"
                         [disabled]="!form3.valid"
                         class="btn btn-info text-white mt-3 py-3 px-5"
                         style="margin: auto; display: block"
@@ -1319,12 +1318,11 @@
   <!-- packages modal  -->
 
   <div
-    class="modal fade"
-    id="exampleModalCenter"
+    class="modal"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true"
+    [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+    style="background-color: rgb(0, 0, 0, 0.8)"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -1332,12 +1330,7 @@
           <h5 class="modal-title" id="exampleModalLongTitle">
             Select One Package
           </h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="close" (click)="closePackageModal()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -1392,10 +1385,9 @@
 
         <div class="modal-footer">
           <button
-            (click)="closeModal()"
+            (click)="closePackageModal()"
             type="button"
             class="btn btn-secondary"
-            data-dismiss="modal"
           >
             Close
           </button>
@@ -1410,8 +1402,7 @@
               type="button"
               style="background-color: rgb(35, 149, 243); color: white"
               class="btn btn-info"
-              data-bs-toggle="modal"
-              data-bs-target="#stripeModal"
+              (click)="openStripeModal()"
             >
               Stripe
             </button>
@@ -1424,12 +1415,11 @@
   <!-- stripe modal  -->
 
   <div
-    class="modal fade"
-    id="stripeModal"
+    class="modal"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true"
+    [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+    style="background-color: rgb(0, 0, 0, 0.8)"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -1437,12 +1427,7 @@
           <h5 class="modal-title" id="exampleModalLongTitle">
             Pay Through Stripe
           </h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="close" (click)="closeStripeModal()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -1512,39 +1497,14 @@
               </div>
             </form>
           </div>
-          <!-- <form class="checkout-form" [formGroup]="paymentForm">
-            <h3>
-              Amount
-              {{
-              selectedPackage?.net_price
-              ? selectedPackage?.net_price
-              : selectedPackage?.price
-              }}
-            </h3>
-
-            <div class="stripe-card" ngxStripeCardGroup [elementsOptions]="elementsOptions">
-              <h4>Enter payment details</h4>
-
-              <div class="stripe-element">
-                <ngx-stripe-card-number [options]="cardOptions"></ngx-stripe-card-number>
-              </div>
-
-              <div fxLayout="row" fxLayoutGap="10px">
-                <div class="w-full stripe-element">
-                  <ngx-stripe-card-expiry [options]="cardOptions"></ngx-stripe-card-expiry>
-                </div>
-                <div class="w-full stripe-element">
-                  <ngx-stripe-card-cvc [options]="cardOptions"></ngx-stripe-card-cvc>
-                </div>
-              </div>
-            </div>
-
-            <button type="submit" (click)="pay()">Submit Payment</button>
-          </form> -->
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="closeStripeModal()"
+          >
             Close
           </button>
         </div>

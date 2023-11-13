@@ -102,6 +102,8 @@ export class NetworkComponent implements AfterViewInit {
   }
 
  
+  showStripeModal = false;
+  showPackageModal = false;
 
 
   packages: any[] = [];
@@ -123,7 +125,34 @@ export class NetworkComponent implements AfterViewInit {
   selectedPackage: Package = null;
   cardsSearched:any=[]
 
+  openStripeModal() {
+    this.showStripeModal = true;
+    this.closePackageModal()
+  }
 
+  openPackageModal() {
+    this.apiService.checkEmail(this.form3.get('registerEmail')?.value).subscribe(
+      (response)=>{
+        if(response.status=='Success' || response.message==='Email is already registered.'){
+          alert("This Email is already Registered with another account!")
+        }
+        else{
+          this.showPackageModal = true;
+        }
+      }
+    )
+    
+  }
+  closeStripeModal() {
+    this.showStripeModal = false;
+
+  }
+
+  closePackageModal() {
+    this.showPackageModal = false;
+  }
+
+  
   searchCards(){
     const business_type = this.form2.get('selectedBusinessType').value;
     const age_type = this.form2.get('selectedAgeType').value;
