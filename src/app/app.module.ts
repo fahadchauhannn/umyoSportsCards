@@ -47,9 +47,33 @@ import { ProductsComponent } from './products/products.component';
 import { ProComponent } from './pro/pro.component';
 import { NetworkComponent } from './network/network.component';
 import { UserComponent } from './public/user/user.component';
+import { CreateCardComponent } from './public/create-card/create-card.component';
+import { CreateCardStepsComponent } from './public/create-card-steps/create-card-steps.component';
+import { Template01Component } from './public/create-card-steps/templates/template01/template01.component';
+import { NgxEditorModule } from 'ngx-editor';
+import { Template02Component } from './public/create-card-steps/templates/template02/template02.component';
+import { Template03Component } from './public/create-card-steps/templates/template03/template03.component';
+import { Template04Component } from './public/create-card-steps/templates/template04/template04.component';
+import { Template05Component } from './public/create-card-steps/templates/template05/template05.component';
+import { Template06Component } from './public/create-card-steps/templates/template06/template06.component';
+import { Template07Component } from './public/create-card-steps/templates/template07/template07.component';
+import { Template08Component } from './public/create-card-steps/templates/template08/template08.component';
+import { Template09Component } from './public/create-card-steps/templates/template09/template09.component';
+import { Template10Component } from './public/create-card-steps/templates/template10/template10.component';
+import {NgxSimpleTextEditorModule} from 'ngx-simple-text-editor';
+import { Template11Component } from './public/create-card-steps/templates/template11/template11.component';
+import { Template12Component } from './public/create-card-steps/templates/template12/template12.component';
+import { Template13Component } from './public/create-card-steps/templates/template13/template13.component';
+import { Template14Component } from './public/create-card-steps/templates/template14/template14.component';
+import { Template15Component } from './public/create-card-steps/templates/template15/template15.component';
+import { PreviewCardComponent } from './public/cards/preview-card/preview-card.component';
+import { EditCardComponent } from './public/edit-card/edit-card.component';
+import { ShareCardComponent } from './public/cards/share-card/share-card.component';
+
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     HomeComponent,
     AdminComponent,
@@ -88,11 +112,50 @@ import { UserComponent } from './public/user/user.component';
     ProductsComponent,
     ProComponent,
     NetworkComponent,
-    UserComponent
+    UserComponent,
+    CreateCardComponent,
+    CreateCardStepsComponent,
+    Template01Component,
+    Template02Component,
+    Template03Component,
+    Template04Component,
+    Template05Component,
+    Template06Component,
+    Template07Component,
+    Template08Component,
+    Template09Component,
+    Template10Component,
+    Template11Component,
+    Template12Component,
+    Template13Component,
+    Template14Component,
+    Template15Component,
+    PreviewCardComponent,
+    EditCardComponent,
+    ShareCardComponent,
+    
+    
+    
+    
+    
   ],
-  imports: [BrowserModule, NgxStripeModule.forRoot('pk_test_51O5YCYFsXQwPd2tbJm8xT224tG7OoCXWGyigDqVGZ2DeNsiWxhSDfJNiBbfq508cDU15nQOctVTijlbUcJvVqleO00OTWN3YAb'),SlickCarouselModule,ReactiveFormsModule, AppRoutingModule, HttpClientModule,FormsModule,ToastrModule.forRoot({
-    positionClass:'custom-toast-position',
-  }),BrowserAnimationsModule,], 
+  
+  imports: [
+    NgxSimpleTextEditorModule,
+    NgxEditorModule,
+    BrowserModule,
+    NgxStripeModule.forRoot('pk_test_51O5YCYFsXQwPd2tbJm8xT224tG7OoCXWGyigDqVGZ2DeNsiWxhSDfJNiBbfq508cDU15nQOctVTijlbUcJvVqleO00OTWN3YAb'),
+    SlickCarouselModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'custom-toast-position',
+    }),
+    BrowserAnimationsModule,
+  ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

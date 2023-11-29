@@ -1,0 +1,113 @@
+<div class="template_012">
+  <section class="section_three">
+    <img [src]="imageSrcLogo" alt="logoimage" />
+  </section>
+  <section class="section_one">
+    <div class="col img">
+      <img [src]="imageSrc" alt="profileImage" />
+    </div>
+  </section>
+  <section class="section_two">
+    <div class="profile-info">
+      <div class="seciton_heading">
+        <h1 [style.color]="buttonColor">{{ firstName + " " + lastName }}</h1>
+        <p>{{ jobTitle + ", " + companyName }}</p>
+      </div>
+      <div class="contact-icons">
+        <!-- phone to -->
+        <a [href]="'tel:' + phone" [style.background-color]="buttonColor">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <!-- message to  -->
+        <a
+          [href]="'sms:' + phone"
+          *ngIf="phoneAllow"
+          [style.background-color]="buttonColor"
+        >
+          <i class="fa-solid fa-comments"></i>
+        </a>
+        <!-- mail to  -->
+        <a [href]="'mailto:' + email" [style.background-color]="buttonColor">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <!-- open map  -->
+        <a
+          [href]="'https://www.google.com/maps?q=' + address"
+          [style.background-color]="buttonColor"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+      </div>
+      <div [innerHTML]="content"></div>
+      <div class="clearfix"><br /></div>
+      <div class="btn-wrapper">
+        <a
+          href="#"
+          class="btn btn-primary btn-block"
+          [style.background-color]="buttonColor"
+          >Learn more</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="section_four">
+    <img src="assets/images/template-img-001.jpg" alt="" />
+    <div class="clearfix"><br /></div>
+    <div class="col social">
+      <a href="#" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-linkedin-in"></i
+      ></a>
+      <a href="#" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a href="#" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-facebook-f"></i
+      ></a>
+      <a href="#" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-twitter"></i
+      ></a>
+      <a href="#" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-youtube"></i
+      ></a>
+    </div>
+    <div class="clearfix"><br /></div>
+  </section>
+  <div class="three-ctrls">
+    <button type="button" class="ctrl-item" *ngIf="forwardCard">
+      <i class="fa-solid fa-share forward"></i>
+      <h3>Forward My Card</h3>
+    </button>
+    <button type="button" class="ctrl-item">
+      <i class="fa-solid fa-right-to-bracket signup"></i>
+      <h3>Sign Up</h3>
+    </button>
+    <button type="button" class="ctrl-item" *ngIf="saveCard">
+      <i class="fa-solid fa-download save"></i>
+      <h3>Save My Card</h3>
+    </button>
+  </div>
+  <footer>
+    <img src="../../../../../assets/images/qrcode.jpg" alt="" />
+    <!-- replace with auto generated in production -->
+    <div class="clearfix"><br /></div>
+  </footer>
+  <footer>
+    <p>This card ispowered by <span>UMYO Cards</span></p>
+    <form action="" class="referal-form" *ngIf="inviteCode">
+      <label for="referal">Referral ID: </label
+      ><input
+        type="text"
+        name="referal"
+        id="referal"
+        [value]="referal"
+        disabled
+        placeholder="XXXXX"
+      />
+    </form>
+    <button class="call-to-action">
+      <span class="left">Click<br />Here</span>
+      <span class="right">Design your card now!</span>
+    </button>
+  </footer>
+</div>

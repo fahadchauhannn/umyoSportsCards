@@ -54,8 +54,6 @@ export class ApiService {
 
 
 
-
-
   getUserById(userId: number): Observable<any> {
     const url = baseUrl+`userData`;
     const payload = { user_id: userId.toString() };
@@ -180,6 +178,9 @@ export class ApiService {
 
     return this.http.post(url, {"email": email,"old_password":old_password,"new_password":new_password}, { headers: combinedHeaders });
   }
+
+
+
   cancelSubscription(user_id: any,agreement_id:any): Observable<any> {
     const url = baseUrl+`cancel-paypal-subscription`;
     const headers = new HttpHeaders({
@@ -780,7 +781,128 @@ export class ApiService {
   }
 
 
+saveCard(formData:any): Observable<any> {
+    const url = baseUrl+`saveCard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
 
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, formData, { headers: combinedHeaders });
+  }
+updateCard(formData:any): Observable<any> {
+    const url = baseUrl+`updateCard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, formData, { headers: combinedHeaders });
+  }
+
+
+getCards(payload:any): Observable<any> {
+    const url = baseUrl+`getCard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
+cancelStripeSubscription(payload:any): Observable<any> {
+    const url = baseUrl+`cancel-subscription`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
+updateSubscriptionId(payload:any): Observable<any> {
+    const url = baseUrl+`update-subscription-id`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
+updateUserPackage(payload:any): Observable<any> {
+    const url = baseUrl+`updateUserPackage`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
+deleteCard(payload:any): Observable<any> {
+    const url = baseUrl+`deleteCard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
+getSingleCard(payload:any): Observable<any> {
+    const url = baseUrl+`getSingleCard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+
+    return this.http.post(url, payload, { headers: combinedHeaders });
+  }
 
 
   getChatUsers(): Observable<any> {
@@ -835,3 +957,5 @@ export class ApiService {
 
 
 }
+
+

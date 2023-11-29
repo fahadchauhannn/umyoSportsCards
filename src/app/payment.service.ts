@@ -19,7 +19,8 @@ export class PaymentService {
     private stripeService: StripeService
   ) {}
    userData: any = {};
-
+   stripe_customer_id:any=null
+   stripe_subscription_id:any=null
   setUserData(data: any) {
     this.userData = data;
   }
@@ -46,7 +47,9 @@ export class PaymentService {
       "interval_count": 6
     }).subscribe((response: AddCustomerResponse) => {
       console.log(response)
+      this.stripe_customer_id=response?.customer_id
       if (response.status == 'Success') {
+        
         this.apiService.AddProductPriceSubscription({
           "name": selectedPackage.description,
           "description": selectedPackage.description,
@@ -56,6 +59,7 @@ export class PaymentService {
           "customer_id": response.customer_id
         }).subscribe((response: Subscription) => {
           console.log(response)
+          this.stripe_subscription_id=response?.subsription_id
           if (response.status == "Success") {
             // proceed to email verification screen
             this.setUserData({
@@ -67,10 +71,12 @@ export class PaymentService {
               country: form3.get('registerCountry').value,
               business_type: form3.get('registerBusinessType').value,
               sub_category: "",
+              stripe_customer_id:this.stripe_customer_id,
+              stripe_subscription_id:this.stripe_subscription_id,
               friend_id: null,
               package_id: selectedPackage.id,
               balance_transaction: null,
-              balance_transaction_type: null,
+              balance_transaction_type: 'stripe',
               sport_type: form3.get('registerSportType').value,
               age_type: form3.get('registerAgeType').value,
               position: form3.get('registerPositionType').value,

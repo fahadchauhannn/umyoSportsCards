@@ -1,0 +1,2131 @@
+<app-nav></app-nav>
+
+<section class="create-card-section" id="create-card-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="progress px-1" style="height: 3px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <div class="step-container d-flex justify-content-between">
+          <div class="step-circle" onclick="displayStep(1)">1</div>
+          <div class="step-circle" onclick="displayStep(2)">2</div>
+          <div class="step-circle" onclick="displayStep(3)">3</div>
+          <div class="step-circle" onclick="displayStep(4)">4</div>
+          <div class="step-circle" onclick="displayStep(5)">5</div>
+          <div class="step-circle" onclick="displayStep(6)">6</div>
+        </div>
+        <form id="multi-step-form" [formGroup]="Form">
+          <div class="step step-1">
+            <h3>Step 1</h3>
+            <div class="mb-3">
+              <label for="field1" class="form-label">Field 1:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="field1"
+                name="field1"
+              />
+            </div>
+            <button type="button" class="btn btn-primary next-step">
+              Next
+            </button>
+          </div>
+          <div class="step step-2">
+            <div class="sticky-ctrls">
+              <a href="create-card.html" class="btn btn-primary">Previous</a>
+              <button type="button" class="btn btn-primary next-step">
+                Next
+              </button>
+            </div>
+            <div class="my-3">
+              <div class="edit-wrapper">
+                <div class="template-box">
+                  <app-template01
+                    *ngIf="templateId == 1"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template01>
+                  <app-template02
+                    *ngIf="templateId == 2"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template02>
+                  <app-template03
+                    *ngIf="templateId == 3"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template03>
+                  <app-template04
+                    *ngIf="templateId == 4"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template04>
+                  <app-template05
+                    *ngIf="templateId == 5"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template05>
+                  <app-template06
+                    *ngIf="templateId == 6"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template06>
+                  <app-template07
+                    *ngIf="templateId == 7"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template07>
+                  <app-template08
+                    *ngIf="templateId == 8"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template08>
+
+                  <app-template09
+                    *ngIf="templateId == 9"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template09>
+
+                  <app-template10
+                    *ngIf="templateId == 10"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template10>
+                  <app-template11
+                    *ngIf="templateId == 11"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template11>
+                  <app-template12
+                    *ngIf="templateId == 12"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template12>
+                  <app-template13
+                    *ngIf="templateId == 13"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template13>
+                  <app-template14
+                    *ngIf="templateId == 14"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template14>
+                  <app-template15
+                    *ngIf="templateId == 15"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template15>
+                </div>
+                <div class="edit-fields">
+                  <a routerLink="/create-card" class="btn btn-warning"
+                    >Change Template</a
+                  >
+                  <!-- your.component.html -->
+
+                  <div class="color_picker_wrap">
+                    <h3 class="title">Choose Button Color:</h3>
+                    <div class="color-picker">
+                      <div
+                        *ngFor="let color of colorOptions"
+                        class="color-item"
+                      >
+                        <input
+                          type="radio"
+                          [id]="color"
+                          [value]="color"
+                          formControlName="selectedColor"
+                        />
+                        <label [for]="color"
+                          ><span [class]="color"></span
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step step-3">
+            <!-- Step 3 form fields here -->
+            <div class="sticky-ctrls">
+              <button type="button" class="btn btn-primary prev-step">
+                Previous
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Next
+              </button>
+            </div>
+            <div class="my-3">
+              <div class="edit-wrapper">
+                <div class="template-box">
+                  <app-template01
+                    *ngIf="templateId == 1"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template01>
+                  <app-template02
+                    *ngIf="templateId == 2"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template02>
+                  <app-template03
+                    *ngIf="templateId == 3"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template03>
+                  <app-template04
+                    *ngIf="templateId == 4"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template04>
+                  <app-template05
+                    *ngIf="templateId == 5"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template05>
+                  <app-template06
+                    *ngIf="templateId == 6"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template06>
+                  <app-template07
+                    *ngIf="templateId == 7"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template07>
+                  <app-template08
+                    *ngIf="templateId == 8"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template08>
+
+                  <app-template09
+                    *ngIf="templateId == 9"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template09>
+
+                  <app-template10
+                    *ngIf="templateId == 10"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template10>
+                  <app-template11
+                    *ngIf="templateId == 11"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template11>
+                  <app-template12
+                    *ngIf="templateId == 12"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template12>
+                  <app-template13
+                    *ngIf="templateId == 13"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template13>
+                  <app-template14
+                    *ngIf="templateId == 14"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template14>
+                  <app-template15
+                    *ngIf="templateId == 15"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template15>
+                </div>
+
+                <div class="edit-fields">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="card title"
+                      placeholder="Card Title"
+                      formControlName="CardTitle"
+                    />
+                    <label for="card title">Card Title</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FirstName"
+                      placeholder="First Name"
+                      formControlName="FirstName"
+                    />
+                    <label for="First Name">First Name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="LastName"
+                      placeholder="Last Name"
+                      formControlName="LastName"
+                    />
+                    <label for="Last Name">Last Name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="Email"
+                      placeholder="Email"
+                      formControlName="Email"
+                    />
+                    <label for="Email">Email</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Phone Number"
+                      placeholder="Phone Number"
+                      formControlName="PhoneNumber"
+                    />
+                    <label for="Phone Number">Phone Number</label>
+                  </div>
+                  <div class="form-check form-switch mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="allow-text-sms"
+                      formControlName="PhoneAllow"
+                    />
+                    <label class="form-check-label" for="allow-text-sms"
+                      >Phone Allow Text/SMS</label
+                    >
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Alt Phone Number"
+                      placeholder="Alternative Phone Number"
+                      formControlName="PhoneNumber2"
+                    />
+                    <label for="Alt Phone Number"
+                      >Alternative Phone Number</label
+                    >
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="CompanyName"
+                      placeholder="Company Name"
+                      formControlName="CompanyName"
+                    />
+                    <label for="Company Name">Company Name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="JobTitle"
+                      placeholder="Job Title"
+                      formControlName="JobTitle"
+                    />
+                    <label for="Job Title">Job Title</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Address"
+                      placeholder="Address"
+                      formControlName="Address"
+                    />
+                    <label for="Address">Address</label>
+                  </div>
+                  <div class="mb-3" style="text-align: left">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >About Text</label
+                    >
+                    <div class="NgxEditor__Wrapper">
+                      <st-editor
+                        formControlName="ccontent"
+                        [config]="config"
+                      ></st-editor>
+                    </div>
+                  </div>
+
+                  <div class="form-check form-switch mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="forwardCardButton"
+                      formControlName="ForwardCard"
+                    />
+                    <label class="form-check-label" for="forwardCardButton"
+                      >Show Forward my Card Button</label
+                    >
+                  </div>
+                  <div class="form-check form-switch mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="SaveCardButton"
+                      formControlName="SaveCard"
+                    />
+                    <label class="form-check-label" for="SaveCardButton"
+                      >Show Save my Card Button</label
+                    >
+                  </div>
+                  <div class="form-check form-switch mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="InviteCardButton"
+                      formControlName="InviteCode"
+                    />
+                    <label class="form-check-label" for="InviteCardButton"
+                      >Show Invite Code</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step step-4">
+            <!-- Step 4 form fields here -->
+            <div class="sticky-ctrls">
+              <button type="button" class="btn btn-primary prev-step">
+                Previous
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Next
+              </button>
+            </div>
+            <div class="my-3">
+              <div class="edit-wrapper">
+                <div class="template-box">
+                  <app-template01
+                    *ngIf="templateId == 1"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template01>
+                  <app-template02
+                    *ngIf="templateId == 2"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template02>
+                  <app-template03
+                    *ngIf="templateId == 3"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template03>
+                  <app-template04
+                    *ngIf="templateId == 4"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template04>
+                  <app-template05
+                    *ngIf="templateId == 5"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template05>
+                  <app-template06
+                    *ngIf="templateId == 6"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template06>
+                  <app-template07
+                    *ngIf="templateId == 7"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template07>
+                  <app-template08
+                    *ngIf="templateId == 8"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template08>
+
+                  <app-template09
+                    *ngIf="templateId == 9"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  ></app-template09>
+
+                  <app-template10
+                    *ngIf="templateId == 10"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template10>
+                  <app-template11
+                    *ngIf="templateId == 11"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template11>
+                  <app-template12
+                    *ngIf="templateId == 12"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template12>
+                  <app-template13
+                    *ngIf="templateId == 13"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template13>
+                  <app-template14
+                    *ngIf="templateId == 14"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template14>
+                  <app-template15
+                    *ngIf="templateId == 15"
+                    [buttonColor]="Form.value.selectedColor"
+                    [firstName]="Form.value.FirstName"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [phone]="Form.value.PhoneNumber"
+                    [phoneAllow]="Form.value.PhoneAllow"
+                    [forwardCard]="Form.value.ForwardCard"
+                    [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
+                    [referal]="referalCode"
+                    [photo]="Form.value.Photo"
+                    [logo]="Form.value.Logo"
+                    [productImages]="Form.value.ProductImages"
+                  >
+                  </app-template15>
+                </div>
+                <div class="edit-fields">
+                  <div
+                    class="upload_box blue"
+                    role="button"
+                    data-target="photo"
+                  >
+                    <i class="fa fa-check"></i>
+                    Change Photo
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      (change)="onPhotoChange($event)"
+                      formControlName="Photo"
+                      name="photo"
+                      id="photo"
+                    />
+                  </div>
+                  <div
+                    class="upload_box orange"
+                    role="button"
+                    data-target="logo"
+                  >
+                    <i class="fa fa-check"></i>
+                    Change Logo
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="Logo"
+                      name="logo"
+                      id="logo"
+                      (change)="onLogoChange($event)"
+                    />
+                  </div>
+                  <div class="upload_box cyan" role="button" data-target="pimg">
+                    <i class="fa fa-check"></i>
+                    Change Product Images
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg"
+                      id="pimg"
+                      (change)="onProductImagesChange($event)"
+                      multiple
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step step-5">
+            <!-- Step 5 form fields here -->
+            <div class="sticky-ctrls">
+              <button type="button" class="btn btn-primary prev-step">
+                Previous
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Next
+              </button>
+            </div>
+            <div class="edit-wrapper">
+              <div class="template-box">
+                <app-template01
+                  *ngIf="templateId == 1"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template01>
+                <app-template02
+                  *ngIf="templateId == 2"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template02>
+                <app-template03
+                  *ngIf="templateId == 3"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template03>
+                <app-template04
+                  *ngIf="templateId == 4"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template04>
+                <app-template05
+                  *ngIf="templateId == 5"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template05>
+                <app-template06
+                  *ngIf="templateId == 6"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template06>
+                <app-template07
+                  *ngIf="templateId == 7"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template07>
+                <app-template08
+                  *ngIf="templateId == 8"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template08>
+
+                <app-template09
+                  *ngIf="templateId == 9"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template09>
+
+                <app-template10
+                  *ngIf="templateId == 10"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template10>
+                <app-template11
+                  *ngIf="templateId == 11"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template11>
+                <app-template12
+                  *ngIf="templateId == 12"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template12>
+                <app-template13
+                  *ngIf="templateId == 13"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template13>
+                <app-template14
+                  *ngIf="templateId == 14"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template14>
+                <app-template15
+                  *ngIf="templateId == 15"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template15>
+              </div>
+              <div class="edit-fields">
+                <h3>Social Links</h3>
+                <div class="text-start mb-3">
+                  <label for="facebook" class="form-label text-start"
+                    >Facebook</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-facebook"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Facebook"
+                      class="form-control"
+                      id="Facebook"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="twitter" class="form-label text-start"
+                    >Twitter</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-twitter"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Twitter"
+                      class="form-control"
+                      id="twitter"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="youtube" class="form-label text-start"
+                    >Youtube</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-youtube"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Youtube"
+                      class="form-control"
+                      id="youtube"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="instagram" class="form-label text-start"
+                    >Instagram</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-instagram"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Instagram"
+                      class="form-control"
+                      id="instagram"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="linkedin" class="form-label text-start"
+                    >Linkedin</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-linkedin"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Linkedin"
+                      class="form-control"
+                      id="linkedin"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="pinterest" class="form-label text-start"
+                    >Pinterest</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-pinterest"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Pinterest"
+                      class="form-control"
+                      id="pinterest"
+                    />
+                  </div>
+                </div>
+                <h3>Communication</h3>
+                <div class="text-start mb-3">
+                  <label for="skype" class="form-label text-start">Skype</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-skype"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Skype"
+                      class="form-control"
+                      id="skype"
+                      placeholder="Skype ID"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="whatsapp" class="form-label text-start"
+                    >Whatsapp</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-facebook"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Whatsapp"
+                      class="form-control"
+                      placeholder="Whatsapp ID"
+                      id="facebook"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="snapchat" class="form-label text-start"
+                    >Snapchat</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-snapchat"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Snapchat"
+                      placeholder="Snapchat"
+                      class="form-control"
+                      id="snapchat"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="line" class="form-label text-start">Line</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-line"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Line"
+                      placeholder="Line ID"
+                      class="form-control"
+                      id="line"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="voxrer" class="form-label text-start"
+                    >Voxer</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-voxer"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="Voxer"
+                      class="form-control"
+                      id="voxer"
+                      placeholder="Voxer ID"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="facebook" class="form-label text-start"
+                    >Youtube</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-facebook"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="FacebookLink"
+                      class="form-control"
+                      id="facebook"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="twitter" class="form-label text-start"
+                    >Vimeo</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-twitter"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="VimeoLink"
+                      class="form-control"
+                      id="twitter"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="youtube" class="form-label text-start"
+                    >Umyoutube</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-youtube"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="UmyotubeLink"
+                      class="form-control"
+                      id="youtube"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="youtube" class="form-label text-start"
+                    >Link Buttons</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-youtube"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="LinkButtonLink"
+                      class="form-control"
+                      id="youtube"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step step-6">
+            <!-- Step 6 form fields here -->
+            <div class="sticky-ctrls">
+              <button type="button" class="btn btn-primary prev-step">
+                Previous
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                (click)="saveCard()"
+              >
+                Save
+              </button>
+            </div>
+            <div class="edit-wrapper">
+              <div class="template-box">
+                <app-template01
+                  *ngIf="templateId == 1"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template01>
+                <app-template02
+                  *ngIf="templateId == 2"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template02>
+                <app-template03
+                  *ngIf="templateId == 3"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template03>
+                <app-template04
+                  *ngIf="templateId == 4"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template04>
+                <app-template05
+                  *ngIf="templateId == 5"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template05>
+                <app-template06
+                  *ngIf="templateId == 6"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template06>
+                <app-template07
+                  *ngIf="templateId == 7"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template07>
+                <app-template08
+                  *ngIf="templateId == 8"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template08>
+
+                <app-template09
+                  *ngIf="templateId == 9"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                ></app-template09>
+
+                <app-template10
+                  *ngIf="templateId == 10"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template10>
+                <app-template11
+                  *ngIf="templateId == 11"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template11>
+                <app-template12
+                  *ngIf="templateId == 12"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template12>
+                <app-template13
+                  *ngIf="templateId == 13"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template13>
+                <app-template14
+                  *ngIf="templateId == 14"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template14>
+                <app-template15
+                  *ngIf="templateId == 15"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
+                  [email]="Form.value.Email"
+                  [address]="Form.value.Address"
+                  [phone]="Form.value.PhoneNumber"
+                  [phoneAllow]="Form.value.PhoneAllow"
+                  [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                >
+                </app-template15>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

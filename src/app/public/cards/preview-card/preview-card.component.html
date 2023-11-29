@@ -1,0 +1,353 @@
+<div class="bbody">
+  <div class="temp-wrapper">
+    <div class="px">
+      <div class="px__body">
+        <div class="px__body__cut"></div>
+        <div class="px__body__speaker"></div>
+        <div class="px__body__sensor"></div>
+
+        <div class="px__body__mute"></div>
+        <div class="px__body__up"></div>
+        <div class="px__body__down"></div>
+        <div class="px__body__right"></div>
+      </div>
+
+      <div class="px__screen">
+        <div class="px__screen__">
+          <div class="px__screen__frame" style="overflow-y: scroll">
+            <app-template01
+              *ngIf="templateId == 1"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template01>
+            <app-template02
+              *ngIf="templateId == 2"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template02>
+            <app-template03
+              *ngIf="templateId == 3"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template03>
+            <app-template04
+              *ngIf="templateId == 4"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template04>
+            <app-template05
+              *ngIf="templateId == 5"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template05>
+            <app-template06
+              *ngIf="templateId == 6"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template06>
+            <app-template07
+              *ngIf="templateId == 7"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template07>
+            <app-template08
+              *ngIf="templateId == 8"
+              [buttonColor]="selectedColor"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template08>
+
+            <app-template09
+              *ngIf="templateId == 9"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            ></app-template09>
+
+            <app-template10
+              *ngIf="templateId == 10"
+              [buttonColor]="selectedColor"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            >
+            </app-template10>
+            <app-template11
+              *ngIf="templateId == 11"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            >
+            </app-template11>
+            <app-template12
+              *ngIf="templateId == 12"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            >
+            </app-template12>
+            <app-template13
+              *ngIf="templateId == 13"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+            >
+            </app-template13>
+            <app-template14
+              *ngIf="templateId == 14"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+            >
+            </app-template14>
+            <app-template15
+              *ngIf="templateId == 15"
+              [buttonColor]="selectedColor"
+              [firstName]="FirstName"
+              [lastName]="LastName"
+              [companyName]="CompanyName"
+              [jobTitle]="JobTitle"
+              [content]="ccontent"
+              [email]="Email"
+              [address]="Address"
+              [phone]="PhoneNumber"
+              [phoneAllow]="PhoneAllow"
+              [forwardCard]="ForwardCard"
+              [referal]="referalCode"
+              [photo]="Photo"
+              [logo]="Logo"
+              [productImages]="ProductImages"
+              [saveCard]="SaveCard"
+              [inviteCode]="InviteCode"
+            >
+            </app-template15>
+            <!-- <i class="fa fa-apple"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="temp-wrapper temp-wrapper--wide">
+    <div class="px px--ls">
+      <div class="px__body">
+        <div class="px__body__cut"></div>
+        <div class="px__body__speaker"></div>
+        <div class="px__body__sensor"></div>
+
+        <div class="px__body__mute"></div>
+        <div class="px__body__up"></div>
+        <div class="px__body__down"></div>
+        <div class="px__body__right"></div>
+      </div>
+
+      <div class="px__screen">
+        <div class="px__screen__">
+          <div class="px__screen__frame">
+            <i class="fa fa-apple"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

@@ -40,6 +40,13 @@ import { ProductsComponent } from './products/products.component';
 import { ProComponent } from './pro/pro.component';
 import { NetworkComponent } from './network/network.component';
 import { AdminComponent } from './admin/admin.component';
+import { CreateCardComponent } from './public/create-card/create-card.component';
+import { CreateCardStepsComponent } from './public/create-card-steps/create-card-steps.component';
+import { PreviewCardComponent } from './public/cards/preview-card/preview-card.component';
+import { EditCardComponent } from './public/edit-card/edit-card.component';
+import { ShareCardComponent } from './public/cards/share-card/share-card.component';
+
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -57,6 +64,11 @@ const routes: Routes = [
   { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
   { path: 'live-chat', component: LiveChatComponent, canActivate: [AuthGuard] },
   { path: 'user/:id', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'create-card', component: CreateCardComponent, canActivate: [AuthGuard] },
+  { path: 'create-card-steps/:id', component: CreateCardStepsComponent, canActivate: [AuthGuard] },
+  { path: 'cards/preview-card/:id', component: PreviewCardComponent, canActivate: [AuthGuard] },
+  { path: 'cards/share-card/:id', component: ShareCardComponent },
+  { path: 'edit-card/:id', component: EditCardComponent, canActivate: [AuthGuard] },
   {
     path: 'profile',
     component: publicProfileComponent,
