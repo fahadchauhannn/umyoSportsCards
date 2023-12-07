@@ -219,12 +219,12 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid mt-5">
+  <div class="container-fluid mt-5 mobile" style="overflow-x: hidden">
     <h1 class="text-center mb-5 text-white">
       "THE UMYO NETWORK" All in one Networking App...
     </h1>
     <ngx-slick-carousel
-      #slickModal="slick-carousel"
+      #slickModal1="slick-carousel"
       [config]="slideConfig1"
       class="carousel"
     >
@@ -234,8 +234,58 @@
     </ngx-slick-carousel>
 
     <ngx-slick-carousel
-      #slickModal="slick-carousel"
+      #slickModal2="slick-carousel"
       [config]="slideConfig2"
+      class="carousel"
+      [dir]="'rtl'"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  <div class="container-fluid mt-5 mobile2" style="overflow-x: hidden">
+    <h1 class="text-center mb-5 text-white">
+      "THE UMYO NETWORK" All in one Networking App...
+    </h1>
+    <ngx-slick-carousel
+      #slickModal1="slick-carousel"
+      [config]="slideConfig5"
+      class="carousel"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+
+    <ngx-slick-carousel
+      #slickModal2="slick-carousel"
+      [config]="slideConfig6"
+      class="carousel"
+      [dir]="'rtl'"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  <div class="container-fluid mt-5 desktop" style="overflow-x: hidden">
+    <h1 class="text-center mb-5 text-white">
+      "THE UMYO NETWORK" All in one Networking App...
+    </h1>
+    <ngx-slick-carousel
+      #slickModal1="slick-carousel"
+      [config]="slideConfig3"
+      class="carousel"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+        <div class="mb-5"><img [src]="slide.img" /></div>
+      </div>
+    </ngx-slick-carousel>
+
+    <ngx-slick-carousel
+      #slickModal2="slick-carousel"
+      [config]="slideConfig4"
       class="carousel"
       [dir]="'rtl'"
     >

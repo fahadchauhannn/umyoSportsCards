@@ -1624,7 +1624,7 @@
                   >
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-linkedin"></i
+                      ><i class="fa-brands fa-linkedin"></i
                     ></span>
                     <input
                       type="text"
@@ -1655,7 +1655,7 @@
                   <label for="skype" class="form-label text-start">Skype</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-skype"></i
+                      ><i class="fab fa-skype"></i
                     ></span>
                     <input
                       type="text"
@@ -1672,7 +1672,7 @@
                   >
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-facebook"></i
+                      ><i class="fa-brands fa-whatsapp"></i
                     ></span>
                     <input
                       type="text"
@@ -1704,8 +1704,9 @@
                   <label for="line" class="form-label text-start">Line</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-line"></i
+                      ><i class="fa-brands fa-line"></i
                     ></span>
+
                     <input
                       type="text"
                       formControlName="Line"
@@ -1721,7 +1722,11 @@
                   >
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-voxer"></i
+                      ><i
+                        ><img
+                          alt="Voxer"
+                          src="assets/images/voxer_black.png"
+                          width="25" /></i
                     ></span>
                     <input
                       type="text"
@@ -1733,40 +1738,8 @@
                   </div>
                 </div>
                 <div class="text-start mb-3">
-                  <label for="facebook" class="form-label text-start"
+                  <label for="youtubeLink" class="form-label text-start"
                     >Youtube</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-facebook"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="FacebookLink"
-                      class="form-control"
-                      id="facebook"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="twitter" class="form-label text-start"
-                    >Vimeo</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-twitter"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="VimeoLink"
-                      class="form-control"
-                      id="twitter"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="youtube" class="form-label text-start"
-                    >Umyoutube</label
                   >
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
@@ -1774,9 +1747,74 @@
                     ></span>
                     <input
                       type="text"
+                      formControlName="YoutubeTitle"
+                      class="form-control"
+                      id="youtubeLink"
+                      placeholder="Youtube Title"
+                    />
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-square-youtube"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="YoutubeLink"
+                      class="form-control"
+                      id="youtubeLink"
+                      placeholder="Youtube Link"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="vimeoLink" class="form-label text-start"
+                    >Vimeo</label
+                  >
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-vimeo"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="VimeoTitle"
+                      class="form-control"
+                      id="vimeoLink"
+                      placeholder="Vimeo Title"
+                    />
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa-brands fa-vimeo"></i
+                    ></span>
+                    <input
+                      type="text"
+                      formControlName="VimeoLink"
+                      class="form-control"
+                      id="vimeoLink"
+                      placeholder="Vimeo Link"
+                    />
+                  </div>
+                </div>
+                <div class="text-start mb-3">
+                  <label for="UmyotubeLink" class="form-label text-start"
+                    >Umyoutube</label
+                  >
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      formControlName="UmyotubeTitle"
+                      class="form-control"
+                      id="UmyotubeLink"
+                      placeholder="Umyotube Title"
+                    />
+                  </div>
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
                       formControlName="UmyotubeLink"
                       class="form-control"
-                      id="youtube"
+                      id="UmyotubeLink"
+                      placeholder="Umyotube Link"
                     />
                   </div>
                 </div>
@@ -1785,14 +1823,21 @@
                     >Link Buttons</label
                   >
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-youtube"></i
-                    ></span>
+                    <input
+                      type="text"
+                      formControlName="LinkButtonTitle"
+                      class="form-control"
+                      id="youtube"
+                      placeholder="Button Title"
+                    />
+                  </div>
+                  <div class="input-group mb-3">
                     <input
                       type="text"
                       formControlName="LinkButtonLink"
                       class="form-control"
                       id="youtube"
+                      placeholder="Website Link"
                     />
                   </div>
                 </div>

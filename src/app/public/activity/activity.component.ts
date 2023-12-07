@@ -6,16 +6,17 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./activity.component.css']
 })
 export class ActivityComponent {
-  user_id:number=null
+  
   activities:any=[]
   isLoading:boolean=false
-  
+  id = localStorage.getItem('user_id')
+  user_id  = parseInt(this.id, 10); 
   deleteActivity(activityId: number): void {
     this.isLoading=true
     this.apiService.deleteActivity(this.user_id,activityId).subscribe(
       (response)=>{
         if(response.status=="Success"){
-          this.apiService.getActivity(377).subscribe(
+          this.apiService.getActivity(this.user_id).subscribe(
             (response)=>{
               if(response.status=='Success'){
                 this.isLoading=false
@@ -51,9 +52,9 @@ export class ActivityComponent {
 }
   constructor(private apiService:ApiService){
     this.isLoading=true
-    const id = localStorage.getItem('user_id')
-    this.user_id  = parseInt(id, 10);
-    this.apiService.getActivity(377).subscribe(
+    
+    
+    this.apiService.getActivity(this.user_id).subscribe(
       (response)=>{
         if(response.status=='Success'){
           this.isLoading=false

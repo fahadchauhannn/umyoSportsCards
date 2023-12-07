@@ -112,6 +112,10 @@ this.closeStripeModal()
   password: string = ''
   slideConfig1: any;
   slideConfig2: any;
+  slideConfig3: any;
+  slideConfig4: any;
+  slideConfig5: any;
+  slideConfig6: any;
   form: FormGroup;
   positionType: any = []
   businessType: any = []
@@ -429,6 +433,7 @@ this.closeStripeModal()
     );
     this.slideConfig1 = {
       dots: false,
+      arrows:false,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 1,
@@ -436,14 +441,16 @@ this.closeStripeModal()
       pauseOnFocus: false,
       pauseOnHover: false,
       pauseOnDotsHover: false,
-      slidesToShow: 5,
+      slidesToShow: 1,
       slidesToScroll: 1,
       fade: false,
       rtl: false,
       cssEase: 'linear'
     };
 
+
     this.slideConfig2 = {
+      arrows:false,
       dots: false,
       infinite: true,
       autoplay: true,
@@ -452,12 +459,81 @@ this.closeStripeModal()
       pauseOnFocus: false,
       pauseOnHover: false,
       pauseOnDotsHover: false,
-      slidesToShow: 5,
+      slidesToShow:1,
       slidesToScroll: 1,
       fade: false,
       rtl: true,
       cssEase: 'linear'
     };
+    this.slideConfig3 = {
+      dots: false,
+      arrows:false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1,
+      speed: 5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: false,
+      cssEase: 'linear'
+    };
+
+
+    this.slideConfig4 = {
+      arrows:false,
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1,
+      speed: 5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow:4,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: true,
+      cssEase: 'linear'
+    };
+    this.slideConfig5 = {
+      dots: false,
+      arrows:false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1,
+      speed: 5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: false,
+      cssEase: 'linear'
+    };
+
+
+    this.slideConfig6 = {
+      arrows:false,
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1,
+      speed: 5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow:2,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: true,
+      cssEase: 'linear'
+    };
+
 
     this.slides1 = [
       { img: 'assets/img/logo2/blackwall.png' },
@@ -519,16 +595,21 @@ this.closeStripeModal()
   }
 
 
+  
   FUNDING_SOURCES = [
     paypal.FUNDING.PAYPAL,
 
   ];
 
 
+
   payWithPayPal(selectedPackage: any) {
     this.selectedPackage = selectedPackage;
 
   }
+
+
+
 
   ngAfterViewInit() {
     

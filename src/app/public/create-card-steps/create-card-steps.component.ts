@@ -276,9 +276,6 @@ check(){
 
   
    saveCard(){
-    
-    
-    
     const SocialFormData={
       facebook:this.Form.value.Facebook, 
       twitter:this.Form.value.Twitter, 
@@ -291,13 +288,11 @@ check(){
       snapchat:this.Form.value.pinterest, 
       lineID:this.Form.value.pinterest, 
       voxerID:this.Form.value.pinterest, 
-
       youtubeVideos:[{youtubeTitle:this.Form.value.YoutubeTitle,youtubeLink:this.Form.value.YoutubeLink}], 
       vimeoVideos:[{vimeoTitle:this.Form.value.VimeoTitle,vimeoLink:this.Form.value.VimeoLink}], 
       umyotubeVideos:[{umyoutubeTitle:this.Form.value.UmyotubeTitle,umyotubeLink:this.Form.value.UmyotubeLink}], 
-      linkButtons:[{youtubeTitle:'',youtubeLink:this.Form.value.YoutubeLink}], 
+      linkButtons:[{linkButtonTitle:this.Form.value.LinkButtonTitle,websiteLink:this.Form.value.LinkButtonLink}], 
     }
-
 const infoFormData={
   templateId:this.templateId,
     cardTitle:this.Form.value.CardTitle,
@@ -316,9 +311,6 @@ const infoFormData={
     showInviteCode:this.Form.value.InviteCode,
     inviteCode:this.referalCode,
 }
- 
-
-
     const formData={
       buttonColor:this.Form.value.selectedColor,
       cardTitle:this.Form.value.CardTitle,
@@ -332,10 +324,7 @@ const infoFormData={
 
     }
     
-  
-
-
-  
+    
   console.log(formData);
 
   this.apiService.saveCard(formData).subscribe(
