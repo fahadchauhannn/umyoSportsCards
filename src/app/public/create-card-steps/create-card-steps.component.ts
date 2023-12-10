@@ -62,6 +62,14 @@ user_id  = parseInt(this.id, 10);
       FirstName: ['John'],
       LastName: ['Doe'],
       CompanyName: ['UMYO Network'],
+
+      Gpa: [''],
+      Age: [''],
+      Height: [''],
+      Weight: [''],
+      Grade: [''],
+      School: [''],
+
       JobTitle: ['Affiliate'],
       ccontent: ['Thanks for checking out my virtual business card! I’m excited to introduce you to umyocards because I know you"ll enjoy it as much as I have. umyocards helps me keep track of my prospects, my team, and my time so I can get more accomplished every day. Feel freeto contact me with any questions.'],
       Email: ['team@goumyocards.com'],
@@ -309,7 +317,18 @@ const infoFormData={
     showSaveButton:this.Form.value.SaveCard,
     showForwardButton:this.Form.value.ForwardCard,
     showInviteCode:this.Form.value.InviteCode,
+
+    gpa:this.Form.value.Gpa,
+    age:this.Form.value.Age,
+    height:this.Form.value.Height,
+    weight:this.Form.value.Weight,
+    grade:this.Form.value.Grade,
+    school:this.Form.value.School,
+
+
+
     inviteCode:this.referalCode,
+    
 }
     const formData={
       buttonColor:this.Form.value.selectedColor,

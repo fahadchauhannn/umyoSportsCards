@@ -126,6 +126,13 @@ user_id  = parseInt(this.id, 10);
       selectedColor:['red'],
       FirstName: ['John'],
       LastName: ['Doe'],
+      Gpa: [''],
+      Age: [''],
+      Height: [''],
+      Weight: [''],
+      Grade: [''],
+      School: [''],
+
       CompanyName: ['UMYO Network'],
       JobTitle: ['Affiliate'],
       ccontent: ['Thanks for checking out my virtual business card! I’m excited to introduce you to umyocards because I know you"ll enjoy it as much as I have. umyocards helps me keep track of my prospects, my team, and my time so I can get more accomplished every day. Feel freeto contact me with any questions.'],
@@ -250,6 +257,13 @@ user_id  = parseInt(this.id, 10);
             this.Form.get('ForwardCard').setValue(response.Card.infoFormData.showForwardButton);
             this.Form.get('SaveCard').setValue(response.Card.infoFormData.showSaveButton);
             this.Form.get('InviteCode').setValue(response.Card.infoFormData.showInviteCode);
+
+            this.Form.get('Gpa').setValue(response.Card.infoFormData.gpa);
+            this.Form.get('Age').setValue(response.Card.infoFormData.age);
+            this.Form.get('Weight').setValue(response.Card.infoFormData.weight);
+            this.Form.get('Height').setValue(response.Card.infoFormData.height);
+            this.Form.get('Grade').setValue(response.Card.infoFormData.grade);
+            this.Form.get('School').setValue(response.Card.infoFormData.school);
             
             this.Form.get('Photo').setValue(this.convertDataURLtoFile(response.Card.change_photo, 'photo'));
             this.Form.get('Logo').setValue(this.convertDataURLtoFile(response.Card.change_logo, 'logo'));
@@ -275,6 +289,8 @@ user_id  = parseInt(this.id, 10);
             this.Form.get('Whatsapp').setValue(response.Card.socialFormData.whatsappID);
             this.Form.get('Skype').setValue(response.Card.socialFormData.skypeID);
             this.Form.get('CardTitle').setValue(response.Card.infoFormData.cardTitle);
+            
+
             this.referalCode=response.Card.infoFormData.inviteCode
             
             
