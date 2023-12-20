@@ -7,12 +7,20 @@
           <button
             type="button"
             class="sub-options dropdown-toggle"
-            data-toggle="dropdown"
             role="button"
             aria-expanded="false"
           >
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-            <ul class="dropdown-menu">
+            <i
+              *ngIf="!DotsModal"
+              class="fa-solid fa-ellipsis-vertical"
+              (click)="openDotsModal()"
+            ></i>
+            <i
+              *ngIf="DotsModal"
+              class="fas fa-times"
+              (click)="closeDotsModal()"
+            ></i>
+            <ul class="dropdown-menu" [class.show]="DotsModal">
               <li>
                 <a
                   class="dropdown-item"

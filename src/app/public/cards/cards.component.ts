@@ -202,6 +202,17 @@ this.paymentForm = this.fb.group({
     this.selectedPackage = selectedPackage;
 
   } 
+
+  DotsModal:boolean=false
+
+
+  openDotsModal(){
+this.DotsModal=true
+  }
+  closeDotsModal(){
+    this.DotsModal=false
+  }
+
 ngAfterViewInit(): void {
   const containerId = `paypal-button-container`;
 
@@ -248,6 +259,7 @@ public cardOptions: StripeCardElementOptions = {
 };
 
 
+
 pay(){
 
   const expiry = this.paymentForm.get("expiryDate").value;
@@ -261,9 +273,9 @@ const payload={
     (response)=>{
       if(response.status=='Success'){
         console.log('res after cancel strip subs'+ response.message)
+
+
         
-
-
         this.apiService.AddCustomer({
           "name": this.userData.firstname + ' ' + this.userData.lastname,
           "phone": this.userData.phone,
