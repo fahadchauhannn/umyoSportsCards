@@ -463,12 +463,22 @@
             <!-- Nav pills -->
             <ul class="nav nav-pills" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#login"
+                <a
+                  class="nav-link"
+                  (click)="checkRoute()"
+                  [class.active]="showLoginTab"
+                  data-toggle="pill"
+                  href="#login"
                   >Login</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#regis"
+                <a
+                  class="nav-link"
+                  (click)="checkRoute()"
+                  [class.active]="showRegisterTab"
+                  data-toggle="pill"
+                  href="#regis"
                   >Register</a
                 >
               </li>
@@ -476,7 +486,11 @@
 
             <!-- Tab panes -->
             <div class="tab-content rounded p-4">
-              <div id="login" class="container tab-pane active">
+              <div
+                id="login"
+                class="container tab-pane"
+                [class.active]="showLoginTab"
+              >
                 <form (ngSubmit)="login()" [formGroup]="form">
                   <div class="row">
                     <h1 class="text-center">UMYO For Pro-Living</h1>
@@ -558,7 +572,11 @@
                 </form>
               </div>
 
-              <div id="regis" class="container tab-pane fade">
+              <div
+                id="regis"
+                class="container tab-pane"
+                [class.active]="showRegisterTab"
+              >
                 <form
                   (ngSubmit)="register()"
                   (submit)="register()"

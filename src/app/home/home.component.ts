@@ -9,6 +9,7 @@ import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { PaymentService } from '../payment.service'; // Import your PaymentService
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -38,7 +39,21 @@ export class HomeComponent implements AfterViewInit {
   };
 
 
-  
+  showLoginTab: boolean;
+  showRegisterTab: boolean;
+  checkRoute(){
+    this.route.fragment.subscribe(fragment => {
+      // Check the fragment in the URL
+      if (fragment === 'regis') {
+        this.showLoginTab = false;
+        this.showRegisterTab = true;
+      } else {
+        // Default to showing the login tab
+        this.showLoginTab = true;
+        this.showRegisterTab = false;
+      }
+    });
+  }
   isMoreTextVisible = false;
   toggleMoreText(): void {
     this.isMoreTextVisible = !this.isMoreTextVisible;
@@ -103,6 +118,18 @@ this.closeStripeModal()
   cardElement: any; // Use any for card
 
   ngOnInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      // Check the fragment in the URL
+      if (fragment === 'regis') {
+        this.showLoginTab = false;
+        this.showRegisterTab = true;
+      } else {
+        // Default to showing the login tab
+        this.showLoginTab = true;
+        this.showRegisterTab = false;
+      }
+    });
+  
     const videoPath = 'assets/video.mp4';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
     // this.stripeService.elements().subscribe(elements => {
@@ -388,7 +415,7 @@ this.closeStripeModal()
   }
   videoUrl: SafeResourceUrl;
 
-  constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,
+  constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,private route: ActivatedRoute,
     private stripeService: StripeService,private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
 
 
