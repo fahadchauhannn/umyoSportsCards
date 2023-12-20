@@ -18,7 +18,7 @@ user = {
     lastname: '',
     email: '',
     DOB: null,
-    city: null,
+    city: '',
     country: null,
     company: null,
     job_title: null,
@@ -28,11 +28,14 @@ user = {
     linkedin_url: null,
     youtube_url: null,
     profile_image: null,
-    gender: null,
+    gender: '',
     business_type:'',
     sport_type:'',
     position:'',
-    age_type:''
+    age_type:'',
+    location:'',
+    race:''
+    
   }; 
   isLoading: boolean = false;
   countries: any[] = [];
@@ -117,6 +120,8 @@ user = {
             position:response.Users.position,
             age_type:response.Users.age_type,
             state:response.Users.state,
+            location:response.Users.location,
+            race:response.Users.race,
 
           };
           this.user = { ...this.user, ...updatedUser };

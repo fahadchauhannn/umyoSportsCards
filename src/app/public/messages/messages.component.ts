@@ -38,17 +38,30 @@ export class MessagesComponent implements OnInit, OnDestroy, AfterViewInit {
         
         this.chatUsers = response.contacts
         this.isLoading=false
+
+      
+      
+      
+      
+      
       },
       (error) => {
         console.error('Error fetching users:', error);
       }
-    );
+    )
   }
+
+
   scrollToBottom() {
+
     if (this.scrollContainer) {
       const scrollContainer = this.scrollContainer.nativeElement;
       scrollContainer.scrollTop = scrollContainer.scrollHeight;
-    }}
+    }
+
+  }
+
+
   openChat(userId: string) {
     this.isLoading=true
     this.chatDisplay = true;
@@ -85,7 +98,7 @@ export class MessagesComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         );
       }
-    });
+    })
     
   }
 

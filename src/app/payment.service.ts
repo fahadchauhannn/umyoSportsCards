@@ -68,7 +68,7 @@ export class PaymentService {
               phone: form3.get('registerPhone').value,
               email: form3.get('registerEmail').value,
               password: form3.get('registerPassword').value,
-              country: form3.get('registerCountry').value,
+              country: "",
               business_type: form3.get('registerBusinessType').value,
               sub_category: "",
               stripe_customer_id:this.stripe_customer_id,
@@ -77,11 +77,15 @@ export class PaymentService {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              sport_type: form3.get('registerSportType').value,
-              age_type: form3.get('registerAgeType').value,
-              position: form3.get('registerPositionType').value,
+              sport_type: "",
+              age_type: "",
+              position: "",
               state: form3.get('registerStateType').value,
               reffered_from: form3.get('registerReferralCode').value,
+              location: form3.get('registerLocationType').value,
+              city: form3.get('registerCityType').value,
+              race: form3.get('registerRaceType').value,
+              gender: form3.get('registerGenderType').value,
               
             });
             // this.userData=response
@@ -117,6 +121,60 @@ export class PaymentService {
         alert("failesd")
       }
     }, error => alert(error.error.message))
+  }
+
+
+
+
+
+  testing(form3:any, selectedPackage: Package){
+
+    this.setUserData({
+      firstname: form3.get('registerFirstName').value,
+      lastname: form3.get('registerLastName').value,
+      phone: form3.get('registerPhone').value,
+      email: form3.get('registerEmail').value,
+      password: form3.get('registerPassword').value,
+      country: "",
+      business_type: form3.get('registerBusinessType').value,
+      sub_category: "",
+      friend_id: null,
+      package_id: selectedPackage.id,
+      balance_transaction: null,
+      balance_transaction_type: null,
+      sport_type: "",
+      age_type: "",
+      position: "",
+      state: form3.get('registerStateType').value,
+      reffered_from: form3.get('registerReferralCode').value,
+      location: form3.get('registerLocationType').value,
+      city: form3.get('registerCityType').value,
+      race: form3.get('registerRaceType').value,
+      gender: form3.get('registerGenderType').value,
+      
+    });
+
+    this.apiService.registerUser(this.userData).subscribe(
+      (response: registerResponse)=>{
+        if(response.status==200){
+          localStorage.setItem('access_token', response.access_token);
+          localStorage.setItem('firstname', response.user.firstname);
+localStorage.setItem('lastname', response.user.lastname);
+localStorage.setItem('phone', response.user.phone);
+localStorage.setItem('email', response.user.email);
+localStorage.setItem('user_id', response.user.id.toString());
+
+          this.router.navigate(['/email-verification']);
+        }
+        else{
+          alert(response.status + response.message)
+        }
+        
+      }
+    )
+    
+
+
   }
 }
 

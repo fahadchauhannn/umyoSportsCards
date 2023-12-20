@@ -121,18 +121,19 @@ user_id  = parseInt(this.id, 10);
     const file = event?.target?.files[0];
 
     if (file) {
-      console.log(file);
+      
       this.Form.patchValue({
         Photo: file,
       });
-      // this.convertFileToDataURL(file).then((dataUrl) => {
-      //   this.ConvertedPhoto = dataUrl;
+      this.convertPhotoFileToDataURL(file).then((dataUrl) => {
+        this.ConvertedPhoto = dataUrl;
         
-      // }),
-      // Manually trigger change detection
+      }),
+      
       this.cdr.detectChanges();
     }
   }
+  
 
   onLogoChange(event: any): void {
     const file = event?.target?.files[0];
@@ -141,13 +142,15 @@ user_id  = parseInt(this.id, 10);
       this.Form.patchValue({
         Logo: file,
       });
-      this.convertFileToDataURL(file).then((dataUrl) => {
+      this.convertLogoFileToDataURL(file).then((dataUrl) => {
         this.ConvertedLogo = dataUrl;
       }),
       
       this.cdr.detectChanges();
     }
   }
+
+
   onProductImagesChange(event: any): void {
     const file = event?.target?.files[0];
 
@@ -262,7 +265,26 @@ check(){
   
  
 
-  convertFileToDataURL(file: File): Promise<string> {
+  convertLogoFileToDataURL(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+  
+      reader.onload = (event) => {
+        if (event.target && typeof event.target.result === 'string') {
+          resolve(event.target.result);
+        } else {
+          reject(new Error('Failed to convert file to data URL.'));
+        }
+      };
+  
+      reader.onerror = (error) => {
+        reject(error);
+      };
+  
+      reader.readAsDataURL(file);
+    });
+  }
+  convertPhotoFileToDataURL(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
   

@@ -93,7 +93,7 @@ user_id  = parseInt(this.id, 10);
 
   ngOnInit(): void {
     const payload={
-      user_id:this.id,
+      
       card_id:this.card_id
     }
 
@@ -111,10 +111,15 @@ user_id  = parseInt(this.id, 10);
             this.Address = response.Card.infoFormData.address;
             this.PhoneNumber = response.Card.infoFormData.phoneNumber;
             this.PhoneNumber2 = response.Card.infoFormData.alternativePhoneNo;
+
             this.PhoneAllow = response.Card.infoFormData.phoneTextAllow;
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
             this.SaveCard = response.Card.infoFormData.showSaveButton;
             this.InviteCode = response.Card.infoFormData.showInviteCode;
+            console.log('phone allow'+this.PhoneAllow);
+            console.log('forward card'+ this.ForwardCard);
+            console.log('save card'+ this.SaveCard);
+            console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
             this.ProductImages = '';

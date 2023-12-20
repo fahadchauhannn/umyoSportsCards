@@ -71,6 +71,7 @@ import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
 
 
+
 @NgModule({
   declarations: [
     
@@ -141,6 +142,7 @@ import { ShareCardComponent } from './public/cards/share-card/share-card.compone
   ],
   
   imports: [
+   
     NgxSimpleTextEditorModule,
     NgxEditorModule,
     BrowserModule,

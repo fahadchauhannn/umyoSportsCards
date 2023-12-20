@@ -8,6 +8,8 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { PaymentService } from '../payment.service'; // Import your PaymentService
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
@@ -37,7 +39,14 @@ export class HomeComponent implements AfterViewInit {
 
 
   
-
+  isMoreTextVisible = false;
+  toggleMoreText(): void {
+    this.isMoreTextVisible = !this.isMoreTextVisible;
+  }
+  isMoreTextVisible2 = false;
+  toggleMoreText2(): void {
+    this.isMoreTextVisible2 = !this.isMoreTextVisible2;
+  }
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
 
   public cardOptions: StripeCardElementOptions = {
@@ -94,6 +103,8 @@ this.closeStripeModal()
   cardElement: any; // Use any for card
 
   ngOnInit(): void {
+    const videoPath = 'assets/video.mp4';
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
     // this.stripeService.elements().subscribe(elements => {
     //   this.elements = elements;
     //   this.cardElement = this.elements.create('card');
@@ -132,6 +143,10 @@ this.closeStripeModal()
   openStripeModal() {
     this.showStripeModal = true;
     this.closePackageModal()
+    console.log(this.selectedPackage);
+  }
+  continuePaymentButton(){
+    this.paymentService.testing(this.form3,this.selectedPackage);
   }
 
   openPackageModal() {
@@ -162,7 +177,13 @@ this.closeStripeModal()
     const sports_type = this.form2.get('selectedSportType').value;
     const position = this.form2.get('selectedPositionType').value;
     const state = this.form2.get('selectedStateType').value;
-    this.apiService.searchCard(business_type,age_type,sports_type,position,state).subscribe(
+    const city = this.form2.get('selectedCity').value;
+    const location = this.form2.get('selectedLocation').value;
+    const name = this.form2.get('selectedName').value;
+    const gender = this.form2.get('selectedGender').value;
+    const race = this.form2.get('selectedRace').value;
+    
+    this.apiService.searchCard(business_type,age_type,sports_type,position,state,city,location,name,gender,race).subscribe(
       (response)=>{
         this.cardsSearched=response.Cards
         console.log(response);
@@ -286,6 +307,9 @@ this.closeStripeModal()
     const country = this.form3.get('registerCountry');
     const businessType = this.form3.get('registerBusinessType');
     const ageType = this.form3.get('registerAgeType');
+    const location = this.form3.get('registerLocationType');
+    const city = this.form3.get('registerCityType');
+    const race = this.form3.get('registerRaceType');
     const sportType = this.form3.get('registerSportType');
     const positionType = this.form3.get('registerPositionType');
     const stateType = this.form3.get('registerStateType');
@@ -362,9 +386,10 @@ this.closeStripeModal()
     }
     return null;
   }
+  videoUrl: SafeResourceUrl;
 
   constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,
-    private stripeService: StripeService,private router: Router, private paymentService: PaymentService) {
+    private stripeService: StripeService,private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
 
 
       const email= localStorage.getItem('email')
@@ -395,6 +420,11 @@ this.closeStripeModal()
       selectedSportType: [''],
       selectedPositionType: [''],
       selectedStateType: [''],
+      selectedName: [''],
+      selectedRace: [''],
+      selectedLocation: [''],
+      selectedGender: [''],
+      selectedCity: [''],
     });
     this.form3 = this.fb.group({
       registerFirstName: ['', Validators.required],
@@ -404,11 +434,15 @@ this.closeStripeModal()
       registerPassword: ['', [Validators.required, Validators.minLength(6)]],
 
       registerPhone: ['', Validators.required],
-      registerCountry: ['', Validators.required],
+      // registerCountry: ['', Validators.required],
       registerBusinessType: ['', Validators.required],
-      registerAgeType: ['', Validators.required],
-      registerSportType: ['', Validators.required],
-      registerPositionType: ['', Validators.required],
+      // registerAgeType: ['', Validators.required],
+      registerLocationType: ['', Validators.required],
+      registerCityType: ['', Validators.required],
+      registerRaceType: ['', Validators.required],
+      registerGenderType: ['', Validators.required],
+      // registerSportType: ['', Validators.required],
+      // registerPositionType: ['', Validators.required],
       registerStateType: ['', Validators.required],
       registerReferralCode: [''], // Not required
     }, { validators: this.emailMatchValidator })

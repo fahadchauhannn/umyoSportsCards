@@ -14,15 +14,15 @@ export class Template06Component implements OnChanges {
   @Input() content: string; 
   @Input() email: string; 
   @Input() address: string; 
-  @Input() saveCard: boolean;  
-  @Input() inviteCode: boolean;  
   @Input() phone: string; 
   @Input() phoneAllow: boolean; 
-  @Input() forwardCard: boolean; 
+  @Input() forwardCard: boolean;  
+  @Input() saveCard: boolean;  
+  @Input() inviteCode: boolean;  
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File
-  @Input() logo: any; 
-  @Input() productImages: any; 
+  @Input() logo: File; 
+  @Input() productImages: File; 
 
   imageSrc: string | ArrayBuffer | null = 'assets/images/john-doe-avatar.jpg';
   imageSrcLogo: string | ArrayBuffer | null = 'assets/images/unmasking-yourself.jpg';
@@ -47,6 +47,7 @@ export class Template06Component implements OnChanges {
         this.imageSrc = event.target?.result;
       };
       reader.readAsDataURL(this.photo);
+      console.log(this.imageSrc);
     }
     
   }

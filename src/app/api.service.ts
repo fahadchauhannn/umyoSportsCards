@@ -1,11 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const baseUrl = "https://flyeats.co.uk/umy/public/api/";
+
+// const baseUrl = "https://flyeats.co.uk/umy/public/api/";
+// const baseUrl = "https://visionarysols.com/ProlivingBiz/public/api/";
+// const baseUrl = "http://127.0.0.1:8000/api/";
+
+const baseUrl = " https://prolivingbiz.com/api_umyocards/public/api/";
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
+
 })
+
 export class ApiService {
 
 
@@ -15,7 +26,7 @@ export class ApiService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${bearerToken}`,
-    });
+    })
 
     return this.http.post(baseUrl+`getAllUsers`, {}, { headers });
   }
@@ -35,6 +46,8 @@ export class ApiService {
 
     return this.http.post(baseUrl+`getPackages`, {}, { headers });
   }
+
+
   getReferals(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -43,6 +56,10 @@ export class ApiService {
 
     return this.http.post(baseUrl+`listOfReferals`, {}, { headers });
   }
+
+
+
+
   getChatRecord(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -50,6 +67,15 @@ export class ApiService {
     });
 
     return this.http.post(baseUrl+`getChatRecord`, {}, { headers });
+  }
+
+  updateAdminPassword(bearerToken: string,payload:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${bearerToken}`,
+    });
+
+    return this.http.post(baseUrl+`updatePasswordAdmin`, payload, { headers });
   }
 
 
@@ -495,8 +521,8 @@ export class ApiService {
     return this.http.post(url, { "id": agent_id }, { headers: combinedHeaders });
   }
 
-  searchCard(busniess_type:any,age_type:any,sports_type:any,position:any,state:any): Observable<any> {
-    const url = baseUrl+`get-search-card-by-dropdown`;
+  searchCard(busniess_type:any,age_type:any,sports_type:any,position:any,state:any,city:any,location:any,name:any,gender:any,race:any): Observable<any> {
+    const url = baseUrl+`get-search-card-by-dropdown-proliving`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token', 
@@ -508,7 +534,7 @@ export class ApiService {
       .append('Origin', this.customHeaders.get('Origin') || '')
       .append('Referer', this.customHeaders.get('Referer') || '');
     
-    return this.http.post(url, {"business_type":busniess_type,"age_type":age_type,"sport_type":sports_type,"position":position,"state":state}, { headers: combinedHeaders });
+    return this.http.post(url, {"business_type":busniess_type,"age_type":age_type,"sport_type":sports_type,"position":position,"state":state,"city":city,"location":location,"name":name,"gender":gender,"race":race}, { headers: combinedHeaders });
   
   
   }

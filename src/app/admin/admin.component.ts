@@ -49,6 +49,7 @@ export class AdminComponent implements OnInit {
         (response: any) => {
           if (response.status === 200 && response.access_token !== '') {
             localStorage.setItem('user_type', response.admin.user_type);
+            localStorage.setItem('admin_email', email);
             localStorage.setItem('admin_access_token', response.access_token);
             localStorage.setItem('admin_id', response.admin.id);
             this.router.navigate(['/admin/dashboard']);

@@ -1,5 +1,5 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+
 import {ApiService} from '../../../api.service'
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './share-card.component.html',
   styleUrls: ['./share-card.component.css']
 })
-export class ShareCardComponent implements  OnInit{
+export class ShareCardComponent  implements  OnInit{
 
   selectedColor:any
       FirstName: any
@@ -21,6 +21,8 @@ export class ShareCardComponent implements  OnInit{
       PhoneNumber2: any
       PhoneAllow: any
       ForwardCard: any
+      SaveCard: any
+      InviteCode: any
       Photo:any
       Logo: any
       ProductImages: any
@@ -60,7 +62,6 @@ export class ShareCardComponent implements  OnInit{
 user_id  = parseInt(this.id, 10);
 
 
-
   constructor(private apiService: ApiService,private route:ActivatedRoute,private router: Router,)  {
     this.route.params.subscribe((params) => {
       this.card_id = params['id'];
@@ -91,7 +92,7 @@ user_id  = parseInt(this.id, 10);
 
   ngOnInit(): void {
     const payload={
-      user_id:this.id,
+      
       card_id:this.card_id
     }
 
@@ -109,8 +110,15 @@ user_id  = parseInt(this.id, 10);
             this.Address = response.Card.infoFormData.address;
             this.PhoneNumber = response.Card.infoFormData.phoneNumber;
             this.PhoneNumber2 = response.Card.infoFormData.alternativePhoneNo;
+
             this.PhoneAllow = response.Card.infoFormData.phoneTextAllow;
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
+            this.SaveCard = response.Card.infoFormData.showSaveButton;
+            this.InviteCode = response.Card.infoFormData.showInviteCode;
+            console.log('phone allow'+this.PhoneAllow);
+            console.log('forward card'+ this.ForwardCard);
+            console.log('save card'+ this.SaveCard);
+            console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
             this.ProductImages = '';

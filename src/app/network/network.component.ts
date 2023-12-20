@@ -35,6 +35,48 @@ export class NetworkComponent implements AfterViewInit {
   };
 
 
+  isMoreTextVisible1 = false;
+  toggleMoreText1(): void {
+    this.isMoreTextVisible1 = !this.isMoreTextVisible1;
+  }
+
+  isMoreTextVisible2 = false;
+  toggleMoreText2(): void {
+    this.isMoreTextVisible2 = !this.isMoreTextVisible2;
+  }
+
+  isMoreTextVisible3 = false;
+  toggleMoreText3(): void {
+    this.isMoreTextVisible3 = !this.isMoreTextVisible3;
+  }
+
+  isMoreTextVisible4 = false;
+  toggleMoreText4(): void {
+    this.isMoreTextVisible4 = !this.isMoreTextVisible4;
+  }
+
+  isMoreTextVisible5 = false;
+  toggleMoreText5(): void {
+    this.isMoreTextVisible5 = !this.isMoreTextVisible5;
+  }
+
+  isMoreTextVisible6 = false;
+  toggleMoreText6(): void {
+    this.isMoreTextVisible6 = !this.isMoreTextVisible6;
+  }
+
+  isMoreTextVisible7 = false;
+  toggleMoreText7(): void {
+    this.isMoreTextVisible7 = !this.isMoreTextVisible7;
+  }
+
+  isMoreTextVisible8 = false;
+  toggleMoreText8(): void {
+    this.isMoreTextVisible8 = !this.isMoreTextVisible8;
+  }
+
+  
+
   paymentForm: FormGroup = this.fb.group({
     cardNumber: ['', [Validators.required]],
     expiryDate: ['', [Validators.required]],
@@ -159,12 +201,12 @@ export class NetworkComponent implements AfterViewInit {
     const sports_type = this.form2.get('selectedSportType').value;
     const position = this.form2.get('selectedPositionType').value;
     const state = this.form2.get('selectedStateType').value;
-    this.apiService.searchCard(business_type,age_type,sports_type,position,state).subscribe(
-      (response)=>{
-        this.cardsSearched=response.Cards
-        console.log(response);
-      }
-    )
+    // this.apiService.searchCard(business_type,age_type,sports_type,position,state).subscribe(
+    //   (response)=>{
+    //     this.cardsSearched=response.Cards
+    //     console.log(response);
+    //   }
+    // )
   }
 
   selectPackage(selectedPackage: Package) {

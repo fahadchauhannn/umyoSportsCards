@@ -30,11 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-            <a [routerLink]="['/team']" class="nav-item nav-link">Team</a>
-            <a [routerLink]="['/products']" class="nav-item nav-link"
-              >Products</a
-            >
-            <a [routerLink]="['pro']" class="nav-item nav-link">Pro</a>
+
             <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
           </div>
           <div class="d-flex m-3 ms-auto">
@@ -88,15 +84,7 @@
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/team']">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/products']">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/pro']">Pro</a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/network']">Network</a>
               </li>
@@ -410,6 +398,7 @@
                 class="text-white mb-4"
                 style="cursor: pointer"
                 *ngFor="let card of cardsSearched"
+                [routerLink]="'/cards/share-card/' + card.id"
               >
                 {{ card.cardTitle }}
               </p>
@@ -1480,6 +1469,7 @@
   </div>
 
   <!------- tab section end ---------->
+
   <section id="card_section">
     <div class="container-fluid featurs">
       <div class="container">
@@ -1499,13 +1489,20 @@
               </div>
             </div>
             <h2 class="mt-4">Establish a steady and reliable presence.</h2>
-            <div class="moretext2" style="display: none">
+            <div
+              class="moretext2"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible1 }"
+            >
               <p>
                 Consolidate your business card, personal website, social media
                 links, and inventory into a single location
               </p>
             </div>
-            <a class="moreless-button2" href="#text1">Read more...</a>
+            <a
+              class="moreless-button2 btn btn-dark text-white"
+              (click)="toggleMoreText1()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text2">
             <div class="position-relative fruite-item">
@@ -1518,14 +1515,21 @@
               </div>
             </div>
             <h2 class="mt-4">Highlight your video reels and inventory.</h2>
-            <div class="moretext3" style="display: none">
+            <div
+              class="moretext3"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible2 }"
+            >
               <p>
                 Craft tailored pages for every sports video, realty home, and
                 vehicle, complete with photos, videos, features, options, and
                 additional details.
               </p>
             </div>
-            <a class="moreless-button3" href="#text2">Read more...</a>
+            <a
+              class="moreless-button3 btn btn-dark text-white"
+              (click)="toggleMoreText2()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text3">
             <div class="position-relative fruite-item">
@@ -1538,7 +1542,10 @@
               </div>
             </div>
             <h2 class="mt-4">Search Engine Directory</h2>
-            <div class="moretext4" style="display: none">
+            <div
+              class="moretext4"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible3 }"
+            >
               <p>
                 Search Engine Directory for users to search all sports types,
                 ages, GPA, positions State and business types
@@ -1548,7 +1555,11 @@
                 branding for you
               </p>
             </div>
-            <a class="moreless-button4" href="#text3">Read more...</a>
+            <a
+              class="moreless-button4 btn btn-dark text-white"
+              (click)="toggleMoreText3()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text4">
             <div class="position-relative fruite-item">
@@ -1561,13 +1572,20 @@
               </div>
             </div>
             <h2 class="mt-4">Support you as an athlete.</h2>
-            <div class="moretext5" style="display: none">
+            <div
+              class="moretext5"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible4 }"
+            >
               <p>
                 Network, chat, make friends, and exchange your sports cards and
                 business cards with potential recruiters and others.
               </p>
             </div>
-            <a class="moreless-button5" href="#text4">Read more...</a>
+            <a
+              class="moreless-button5 btn btn-dark text-white"
+              (click)="toggleMoreText4()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text5">
             <div class="position-relative fruite-item">
@@ -1580,14 +1598,21 @@
               </div>
             </div>
             <h2 class="mt-4">Up to Eight Platforms from one App</h2>
-            <div class="moretext6" style="display: none">
+            <div
+              class="moretext6"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible5 }"
+            >
               <p>
                 Virtual Conference, Networking platform, Sports Chat GPT, VPN,
                 Touch Screen Kiosk, Interactive Sports and Business Magazine,
                 Interactive Touch Screen Kiosk Booklet, Live Streaming App
               </p>
             </div>
-            <a class="moreless-button6" href="#text5">Read more...</a>
+            <a
+              class="moreless-button6 btn btn-dark text-white"
+              (click)="toggleMoreText5()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text6">
             <div class="position-relative fruite-item">
@@ -1600,13 +1625,20 @@
               </div>
             </div>
             <h2 class="mt-4">Leave a lasting impression.</h2>
-            <div class="moretext7" style="display: none">
+            <div
+              class="moretext7"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible6 }"
+            >
               <p>
                 Distinguish yourself from your competitors and create a
                 memorable first impression.
               </p>
             </div>
-            <a class="moreless-button7" href="#text6">Read more...</a>
+            <a
+              class="moreless-button7 btn btn-dark text-white"
+              (click)="toggleMoreText6()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text7">
             <div class="position-relative fruite-item">
@@ -1619,13 +1651,20 @@
               </div>
             </div>
             <h2 class="mt-4">Boost your lead generation.</h2>
-            <div class="moretext8" style="display: none">
+            <div
+              class="moretext8"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible7 }"
+            >
               <p>
                 Effortlessly gather and consolidate lead information while
                 automating follow-ups through your CRM system
               </p>
             </div>
-            <a class="moreless-button8" href="#text7">Read more...</a>
+            <a
+              class="moreless-button8 btn btn-dark text-white"
+              (click)="toggleMoreText7()"
+              >Read more</a
+            >
           </div>
           <div class="col-lg-4 col-md-6 px-5 mt-5" id="text8">
             <div class="position-relative fruite-item">
@@ -1638,7 +1677,10 @@
               </div>
             </div>
             <h2 class="mt-4">Simplified follow-up process.</h2>
-            <div class="moretext9" style="display: none">
+            <div
+              class="moretext9"
+              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible8 }"
+            >
               <p>
                 Swiftly distribute updates to your network and gain insights
                 into what captures their interest.
@@ -1649,7 +1691,11 @@
                 data exclusively for your members only?
               </p>
             </div>
-            <a class="moreless-button9" href="#text8">Read more...</a>
+            <a
+              class="moreless-button9 btn btn-dark text-white"
+              (click)="toggleMoreText8()"
+              >Read more</a
+            >
           </div>
 
           <div class="row g-4 py-5">
@@ -1662,171 +1708,6 @@
     </div>
   </section>
 </section>
-<!-- Featurs Section End -->
-
-<!-- Slider Start-->
-<!-- <section id="slider">
-              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner py-5">
-                  <div class="carousel-item active">
-                      <div class="container">
-                          <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
-                          <div class="row">
-                              <div class="col-md-6 mt-5">
-                                 <div class="videos__wrapper">
-                                      <div class="videos__wrapper--video">
-                                       <img src="assets/img/310778904_478615557637877_8339393796167693638_n-removebg-preview.png" class="img-fluid">
-                                      </div>
-                                    </div>
-                              </div>
-                              <div class="col-md-6 mt-5">
-                                  <h1 class="pt-3">Marquess Huffington</h1>
-                                  <p>Details?</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="container">
-                          <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
-                          <div class="row">
-                              <div class="col-md-6 mt-5">
-                                 <div class="videos__wrapper">
-                                      <div class="videos__wrapper--video">
-                                          <img src="assets/img/Marquess Huffington.png" class="img-fluid">
-                                      </div>
-                                    </div>
-                              </div>
-                              <div class="col-md-6 mt-5">
-                                  <h1 class="pt-3">Marquess Huffington</h1>
-                                  <p>Details?</p>
-              
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="container">
-                          <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
-                          <div class="row">
-                              <div class="col-md-6 mt-5">
-                                  <div class="videos__wrapper">
-                                      <div class="videos__wrapper--video">
-                                          <img src="assets/img/all-sports-banner.png" class="img-fluid">
-                                      </div>
-                                    </div>
-                              </div>
-                              <div class="col-md-6 mt-5">
-                                  <h1 class="pt-3">All-sports-banner</h1>
-                                  <p>Details?</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-              </section> -->
-<!-- Slider End -->
-<!-- product Start -->
-<section id="card_section">
-  <div class="container-fluid service py-2">
-    <div class="container py-5">
-      <div class="row g-4">
-        <div class="col-md-12 col-lg-8">
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/Cube QR.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/QR COdes.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/Transparent QR Card.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/cufflinks.png"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/dogidtag.png"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/Circular QR.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/Cut Cards.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <a href="#">
-                <img
-                  src="assets/footerimg/new/Tap and Scan.jpg"
-                  class="img-fluid mb-3"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="pro_c">
-            <h1>Grab a UMYO Product</h1>
-            <p>Choose from our variety of products designed to fit...</p>
-            <a href="#">
-              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
-                Shop All Products
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- product End -->
-</section>
-
-<!-- Bestsaler Product Start -->
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-white-50 footer">
