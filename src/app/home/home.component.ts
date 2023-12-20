@@ -143,6 +143,12 @@ this.closeStripeModal()
   showStripeModal = false;
   showPackageModal = false;
 
+
+
+showPolicyModal=false
+showRefundModal=false
+showTermsModal=false
+
   packages: any[] = [];
   slides1: any[] = [];
   slides2: any[] = [];
@@ -189,6 +195,20 @@ this.closeStripeModal()
     )
     
   }
+
+  openTermsModal(){
+    this.showTermsModal = true;
+
+  }
+  openRefundModal(){
+    this.showRefundModal = true;
+
+  }
+  openPolicyModal(){
+    this.showPolicyModal = true;
+
+  }
+
   closeStripeModal() {
     this.showStripeModal = false;
 
@@ -196,6 +216,15 @@ this.closeStripeModal()
 
   closePackageModal() {
     this.showPackageModal = false;
+  }
+  closeTermsModal() {
+    this.showTermsModal = false;
+  }
+  closePolicyModal() {
+    this.showPolicyModal = false;
+  }
+  closeRefundModal() {
+    this.showRefundModal = false;
   }
 
   searchCards(){
