@@ -95,6 +95,32 @@ export class ApiService {
 
     return this.http.post(url, payload);
   }
+  createBillingPlan(payload: any): Observable<any> {
+    const url = baseUrl + `create-billing-plan`;
+    return this.http.post(url, payload);
+  }
+  cancelPaypalSubscription(user_id: any,agreement_id:any): Observable<any> {
+    const url = baseUrl + `cancel-paypal-subscription`;
+    return this.http.post(url, {"user_id":user_id,"agreement_id":agreement_id});
+  }
+  updatePaypalKeys(user_id: any,subscription_id:any,plan_id:any): Observable<any> {
+    const url = baseUrl + `update-paypal-keys`;
+    return this.http.post(url, {"user_id":user_id,"subscription_id":subscription_id,"plan_id":plan_id});
+  }
+  
+  executeAggrement(token:any): Observable<any> {
+    const url = baseUrl + `execute-agreement`;
+    return this.http.post(url, {"token":token});
+  }
+
+
+  resetPassword(email: any): Observable<any> {
+    const url = baseUrl + `resetPassword`;
+    return this.http.post(url, {"email":email});
+  }
+
+
+
   sendRequest(user_id: any, friend_id: any): Observable<any> {
     const url = baseUrl + `sendRequest`;
     const payload = { user_id: user_id, friend_id: friend_id };

@@ -258,11 +258,7 @@
           <h4 class="mb-4 text-white">
             Search For Pro-Living & Community Here
           </h4>
-          <form
-            [formGroup]="form2"
-            (ngSubmit)="searchSports()"
-            class="text-center"
-          >
+          <form [formGroup]="form2" class="text-center">
             <div class="row">
               <div class="col-lg-6 mb-4">
                 <input
@@ -491,7 +487,7 @@
                 class="container tab-pane"
                 [class.active]="showLoginTab"
               >
-                <form (ngSubmit)="login()" [formGroup]="form">
+                <form [formGroup]="form">
                   <div class="row">
                     <h1 class="text-center">UMYO For Pro-Living</h1>
                     <p class="text-center">
@@ -556,10 +552,23 @@
                           Password is required.
                         </div>
                       </div>
+                      <div class="form-group" style="padding-top: 10px">
+                        <label
+                          style="
+                            font-size: 16px;
+                            font-weight: 400;
+                            text-decoration: underline;
+                            cursor: pointer;
+                          "
+                          [routerLink]="['/forgot-password']"
+                          >Forgot Password?
+                        </label>
+                      </div>
                     </div>
                   </div>
 
                   <button
+                    (click)="openAgeModal('login')"
                     type="submit"
                     class="btn btn-info text-white mt-3 py-3 px-5"
                     style="margin: auto; display: block"
@@ -577,11 +586,7 @@
                 class="container tab-pane"
                 [class.active]="showRegisterTab"
               >
-                <form
-                  (ngSubmit)="register()"
-                  (submit)="register()"
-                  [formGroup]="form3"
-                >
+                <form [formGroup]="form3">
                   <div class="row justify-content-center">
                     <h1 class="text-center">UMYO Pro</h1>
                     <div class="col-md-3 my-5">
@@ -991,7 +996,7 @@
 
                   <div (click)="submitForm()">
                     <button
-                      (click)="openPackageModal()"
+                      (click)="openAgeModal('signup')"
                       [disabled]="!form3.valid"
                       class="btn btn-info text-white mt-3 py-3 px-5"
                       style="margin: auto; display: block"
@@ -1130,7 +1135,7 @@
             paymentButtons: selectedPackage != null
           }"
         >
-          <div id="paypal-button-container"></div>
+          <!-- <div id="paypal-button-container"></div> -->
           <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
@@ -1138,6 +1143,14 @@
             (click)="openStripeModal()"
           >
             Stripe
+          </button>
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="paypalClick()"
+          >
+            paypal
           </button>
         </div>
         <div *ngIf="selectedPackage?.price == '0'">
@@ -1188,37 +1201,44 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="card-number">Card Number</label>
+                  <label for="card-number"
+                    >Card Number 14 Digit (Without Dashes)</label
+                  >
                   <input
                     type="text"
                     class="form-control"
                     id="card-number"
                     data-stripe-element="cardNumber"
                     formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
                   />
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="card-expiry">Expiration Date</label>
+                  <label for="card-expiry"
+                    >Expiration Date in (MM/YY) Format</label
+                  >
                   <input
                     type="text"
                     class="form-control"
                     id="card-expiry"
                     data-stripe-element="expiryDate"
                     formControlName="expiryDate"
+                    placeholder="MM/YY"
                   />
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="card-cvc">CVC</label>
+                  <label for="card-cvc">CVC 3 Digit</label>
                   <input
                     type="text"
                     class="form-control"
                     id="card-cvc"
                     data-stripe-element="cvc"
                     formControlName="cvc"
+                    placeholder="XXX"
                   />
                 </div>
               </div>
@@ -1250,6 +1270,53 @@
         >
           Close
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Are You 18+ of your age?</h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmAge()">
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAgeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Confirming Payment...</h3>
+        </div>
       </div>
     </div>
   </div>

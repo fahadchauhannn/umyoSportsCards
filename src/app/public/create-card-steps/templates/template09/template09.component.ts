@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-template09',
@@ -23,7 +24,13 @@ export class Template09Component implements OnChanges {
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 
   @Input() productImages: File; 
-
+  @Input() youtubeArray:any
+  @Input() umyotubeArray:any
+  @Input() vimeoArray:any
+  constructor(private sanitizer: DomSanitizer) {}
+  sanitizeYouTubeLink(youtubeLink: string): any {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeLink);
+  }
   imageSrc: string | ArrayBuffer | null = 'assets/images/john-doe-avatar.jpg';
   imageSrcLogo: string | ArrayBuffer | null = 'assets/images/unmasking-yourself.jpg';
   imageSrcProductImage: string | ArrayBuffer | null = 'assets/images/app-devices.jpg';

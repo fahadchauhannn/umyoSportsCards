@@ -19,3 +19,4 @@ export class AddCustomerResponse {
         this.payment_link_id = payment_link_id;
     }
 }
+

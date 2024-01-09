@@ -49,7 +49,9 @@ export class ShareCardComponent  implements  OnInit{
       Skype:any
       CardTitle:any
       referalCode:any
-  
+      YoutubeArray:any
+      UmyotubeArray:any
+      VimeoVideoArray:any
       templateId:any=1
       card_id:any
       ConvertedPhoto:any
@@ -115,6 +117,7 @@ user_id  = parseInt(this.id, 10);
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
             this.SaveCard = response.Card.infoFormData.showSaveButton;
             this.InviteCode = response.Card.infoFormData.showInviteCode;
+            
             console.log('phone allow'+this.PhoneAllow);
             console.log('forward card'+ this.ForwardCard);
             console.log('save card'+ this.SaveCard);

@@ -33,6 +33,24 @@ export class PaymentService {
     const expiryMonth = expiry.split("/")[0];
     const expiryYear = expiry.split("/")[1];
     console.log(expiryMonth + ' ' + expiryYear)
+    let interval:any, interval_count:any;
+
+const expireInValue = selectedPackage.expire_in.toLowerCase(); 
+
+if (expireInValue.includes("year")) {
+  interval = "YEAR";
+  interval_count = 1;
+} else if (expireInValue.includes("6 month")) {
+  interval = "MONTH";
+  interval_count = 6;
+} else if (expireInValue.includes("month")) {
+  interval = "MONTH";
+  interval_count = 1;
+} else {
+  
+  interval = "MONTH";
+  interval_count = 1;
+}
     this.apiService.AddCustomer({
       "name": form3.get('registerFirstName').value + ' ' + form3.get('registerLastName').value,
       "phone": form3.get('registerPhone').value,
@@ -43,8 +61,8 @@ export class PaymentService {
       "exp_year": expiryYear,
       "cvc": paymentForm.get("cvc").value,
       "price": selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
-      "interval": "month",
-      "interval_count": 6
+      "interval": interval,
+      "interval_count": interval_count
     }).subscribe((response: AddCustomerResponse) => {
       console.log(response)
       this.stripe_customer_id=response?.customer_id
@@ -54,8 +72,8 @@ export class PaymentService {
           "name": selectedPackage.description,
           "description": selectedPackage.description,
           "price": selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
-          "interval": "month",
-          "interval_count": 6,
+          "interval": interval,
+          "interval_count": interval_count,
           "customer_id": response.customer_id
         }).subscribe((response: Subscription) => {
           console.log(response)
@@ -88,7 +106,6 @@ export class PaymentService {
               gender: form3.get('registerGenderType').value,
               
             });
-            // this.userData=response
 
             this.apiService.registerUser(this.userData).subscribe(
               (response: registerResponse)=>{
@@ -176,5 +193,197 @@ localStorage.setItem('user_id', response.user.id.toString());
 
 
   }
+
+
+  paypal_create_billing_plan(form3:any, selectedPackage: Package){
+    let planID=''
+    let approval_url=''
+    let interval:any, interval_count:any;
+
+const expireInValue = selectedPackage.expire_in.toLowerCase(); 
+
+if (expireInValue.includes("year")) {
+  interval = "YEAR";
+  interval_count = 1;
+} else if (expireInValue.includes("6 month")) {
+  interval = "MONTH";
+  interval_count = 6;
+} else if (expireInValue.includes("month")) {
+  interval = "MONTH";
+  interval_count = 1;
+} else {
+  
+  interval = "MONTH";
+  interval_count = 1;
 }
+
+  const payload = {
+    product_name: selectedPackage.description,
+    product_description: selectedPackage.description,
+    product_price: selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
+    interval: interval,
+    interval_count: interval_count
+  };
+    this.apiService.createBillingPlan(payload)
+    .subscribe(
+      (response) => {
+        planID = response.plan_id;
+        console.log("Test: Created billing plan with ID " + planID);
+        const approvalLink = response.approval_url
+        console.log("this is approval link"+approvalLink);
+        
+        this.setUserData({
+          firstname: form3.get('registerFirstName').value,
+          lastname: form3.get('registerLastName').value,
+          phone: form3.get('registerPhone').value,
+          email: form3.get('registerEmail').value,
+          password: form3.get('registerPassword').value,
+          country: "",
+          business_type: form3.get('registerBusinessType').value,
+          sub_category: "",
+          stripe_customer_id:this.stripe_customer_id,
+          stripe_subscription_id:this.stripe_subscription_id,
+          friend_id: null,
+          package_id: selectedPackage.id,
+          balance_transaction: null,
+          balance_transaction_type: 'paypal',
+          sport_type: "",
+          age_type: "",
+          position: "",
+          state: form3.get('registerStateType').value,
+          reffered_from: form3.get('registerReferralCode').value,
+          location: form3.get('registerLocationType').value,
+          city: form3.get('registerCityType').value,
+          race: form3.get('registerRaceType').value,
+          gender: form3.get('registerGenderType').value,
+          plan_id:response.plan_id
+  
+});
+localStorage.setItem('register_vale',JSON.stringify(this.userData))
+        window.location.href = approvalLink;
+        
+      },
+      (error) => {
+        console.error("Test: Failed to create billing plan", error);
+       
+
+
+
+      }
+    )
+   
+
+    
+
+  }
+  paypal_upgrade_billing_plan(userData:any, selectedPackage: Package){
+    let planID=''
+    let approval_url=''
+    let interval:any, interval_count:any;
+
+const expireInValue = selectedPackage.expire_in.toLowerCase(); 
+
+if (expireInValue.includes("year")) {
+  interval = "YEAR";
+  interval_count = 1;
+} else if (expireInValue.includes("6 month")) {
+  interval = "MONTH";
+  interval_count = 6;
+} else if (expireInValue.includes("month")) {
+  interval = "MONTH";
+  interval_count = 1;
+} else {
+  
+  interval = "MONTH";
+  interval_count = 1;
+}
+
+  const payload = {
+    product_name: selectedPackage.description,
+    product_description: selectedPackage.description,
+    product_price: selectedPackage.net_price ? selectedPackage.net_price : selectedPackage.price,
+    interval: interval,
+    interval_count: interval_count
+  };
+    this.apiService.createBillingPlan(payload)
+    .subscribe(
+      (response) => {
+        planID = response.plan_id;
+        console.log("Test: Created billing plan with ID " + planID);
+        const approvalLink = response.approval_url
+        console.log("this is approval link"+approvalLink);
+        
+localStorage.setItem('updatePaypalId',response.plan_id)
+        window.location.href = approvalLink;
+        
+      },
+      (error) => {
+        console.error("Test: Failed to create billing plan", error);
+       
+
+
+
+      }
+    )
+   
+
+    
+
+  }
+  
+
+
+paypal_Register_user(subsription_id:any){
+  this.setUserData(JSON.parse(localStorage.getItem('register_vale')))
+  this.userData.subscription_id = subsription_id
+  this.apiService.registerUser(this.userData).subscribe(
+    (response: registerResponse)=>{
+      if(response.status==200){
+        localStorage.removeItem("register_vale");
+        localStorage.setItem('access_token', response.access_token);
+        localStorage.setItem('firstname', response.user.firstname);
+localStorage.setItem('lastname', response.user.lastname);
+localStorage.setItem('phone', response.user.phone);
+localStorage.setItem('email', response.user.email);
+localStorage.setItem('user_id', response.user.id.toString());
+        this.router.navigate(['/email-verification']);
+      }
+      else{
+        alert(response.status + response.message)
+      }
+    }
+  )
+}
+
+
+upgradePaypal(userData:any,user_id:any,selectedPackage:any){
+this.paypal_upgrade_billing_plan(userData,selectedPackage)
+}
+  
+
+update_paypal_keys(subscription_id:any,user_id:any){
+ const planID= localStorage.getItem("updatePaypalId")
+  this.apiService.updatePaypalKeys(user_id,subscription_id,planID).subscribe(
+    (response)=>{
+      if(response.status=='Success'){
+        alert(response.message)
+        localStorage.removeItem("updatePaypalId");
+                  localStorage.removeItem("updatedToken");
+      }
+      else{
+        alert(response.message)
+        localStorage.removeItem("updatePaypalId");
+                  localStorage.removeItem("updatedToken");
+      }
+    },(error)=>{
+      alert("error"+error)
+      localStorage.removeItem("updatePaypalId");
+                  localStorage.removeItem("updatedToken");
+    }
+  )
+
+}
+}
+
+
 

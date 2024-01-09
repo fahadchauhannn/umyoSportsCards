@@ -1,187 +1,102 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ApiService } from '../api.service'
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { PaymentService } from '../payment.service'; // Import your PaymentService
+import { PaymentService } from '../payment.service'; 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-
-
-
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
-import {
-  StripeCardElementOptions,
-  StripeElementsOptions,
-  PaymentIntent,
-} from '@stripe/stripe-js';
+import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
-import { AddCustomerResponse } from '../models/add-customer-response.model';
-import { Subscription } from '../models/subscription.model';
 declare var $: any; 
-declare var paypal: any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
-  @ViewChild('exampleModalCenter') packagesModal: ElementRef | undefined;
-  @ViewChild('stripeModal') stripeModal: ElementRef | undefined;
-
-  public elementsOptions: StripeElementsOptions = {
-    locale: 'en',
-  };
-
-
-  showLoginTab: boolean;
-  showRegisterTab: boolean;
-  checkRoute(){
-    this.route.fragment.subscribe(fragment => {
-      // Check the fragment in the URL
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        // Default to showing the login tab
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
-    });
-  }
-  isMoreTextVisible = false;
-  toggleMoreText(): void {
-    this.isMoreTextVisible = !this.isMoreTextVisible;
-  }
-  isMoreTextVisible2 = false;
-  toggleMoreText2(): void {
-    this.isMoreTextVisible2 = !this.isMoreTextVisible2;
-  }
-  @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
-
-  public cardOptions: StripeCardElementOptions = {
-    style: {
-      base: {
-        fontWeight: 400,
-        fontFamily: 'Circular',
-        fontSize: '14px',
-        iconColor: '#666EE8',
-        color: '#002333',
-        '::placeholder': {
-          color: '#919191',
-        },
-      },
-    },
-  };
-  pay(): void {
-    // if (this.paymentForm.valid) {
-      console.log(this.selectedPackage);
-     this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);
-    // this.createPaymentIntent(this.selectedPackage)
-    // .pipe(
-    //   switchMap((pi: any) =>
-    //     this.stripeService.confirmCardPayment(pi.client_secret, {
-    //       payment_method: {
-    //         card: this.card.element,
-    //         billing_details: {
-    //           name: this.form3.get('registerFirstName').value,
-    //         },
-    //       },
-    //     })
-    //   )
-    // )
-    // .subscribe((result) => {
-    //   if (result.error) {
-    //     // Show error to your customer (e.g., insufficient funds)
-    //     console.log(result.error.message);
-    //   } else {
-    //     // The payment has been processed!
-    //     if (result.paymentIntent.status === 'succeeded') {
-    //       // Show a success message to your customer
-    //     }
-    //   }
-    // });
-    // } else {
-    //   console.log(this.paymentForm);
-    // }
-this.closePackageModal()
-this.closeStripeModal()
-    // this.packagesModal.hide()
-    // this.stripeModal.hide();
-  }
-  elements: any; // Use any for elements
-  cardElement: any; // Use any for card
-
-  ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
-      // Check the fragment in the URL
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        // Default to showing the login tab
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
-    });
+export class HomeComponent implements OnInit {
   
-    const videoPath = 'assets/video.mp4';
-    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
-    // this.stripeService.elements().subscribe(elements => {
-    //   this.elements = elements;
-    //   this.cardElement = this.elements.create('card');
-    //   this.cardElement.mount('#card-element');
-    // });
-  }
 
- 
-  showStripeModal = false;
-  showPackageModal = false;
+showLoginTab: boolean;
+showAgeModal: boolean=false;
+showRegisterTab: boolean;
+isMoreTextVisible:boolean = false;
+showStripeModal:boolean = false;
+showPackageModal:boolean = false;
+showPolicyModal:boolean=false
+showRefundModal:boolean=false
+showTermsModal:boolean=false
+showLoadingModal:boolean=false
+packages: any[] = [];
+slides1: any[] = [];
+slides2: any[] = [];
+email: string = ''
+password: string = ''
+form: FormGroup;
+positionType: any = []
+businessType: any = []
+sportType: any = []
+ageType: any = []
+selectedSport: any
+form2: FormGroup;
+submitButtonClicked = false;
+form3: FormGroup
+selectedPackage: Package = null;
+cardsSearched:any=[]
+paymentForm:FormGroup
+planID:any
+elements: any; 
+cardElement: any; 
+mode:any
+
+ngOnInit(): void {
+  this.route.fragment.subscribe(fragment => {
+    
+    if (fragment === 'regis') {
+      this.showLoginTab = false;
+      this.showRegisterTab = true;
+    } else {
+      
+      this.showLoginTab = true;
+      this.showRegisterTab = false;
+    }
+  });
+
+  const videoPath = 'assets/video.mp4';
+  this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
+  
+}
 
 
 
-showPolicyModal=false
-showRefundModal=false
-showTermsModal=false
+confirmAge() {
+  
+  this.showAgeModal=false;
+    if (this.mode == 'signup') {
+      this.mode = '';
+      this.openPackageModal();
+    }
+    if (this.mode == 'login') {
+      this.mode = '';
+      this.login();
+    }
+  
+}
 
-  packages: any[] = [];
-  slides1: any[] = [];
-  slides2: any[] = [];
-  email: string = ''
-  password: string = ''
-  slideConfig1: any;
-  slideConfig2: any;
-  slideConfig3: any;
-  slideConfig4: any;
-  slideConfig5: any;
-  slideConfig6: any;
-  form: FormGroup;
-  positionType: any = []
-  businessType: any = []
-  sportType: any = []
-  ageType: any = []
-  selectedSport: any
-  form2: FormGroup;
-  submitButtonClicked = false;
-  form3: FormGroup
-  selectedPackage: Package = null;
-  cardsSearched:any=[]
-  paymentForm:FormGroup
+closeAgeModal() {
+ this.showAgeModal=false
+}
 
-  openStripeModal() {
-    this.showStripeModal = true;
-    this.closePackageModal()
-    console.log(this.selectedPackage);
-  }
-  continuePaymentButton(){
-    this.paymentService.testing(this.form3,this.selectedPackage);
-  }
+openAgeModal(value: any) {
+  this.mode = value;
+  this.showAgeModal = true;
+}
 
+
+  
   openPackageModal() {
     this.apiService.checkEmail(this.form3.get('registerEmail')?.value).subscribe(
       (response)=>{
@@ -193,27 +108,23 @@ showTermsModal=false
         }
       }
     )
-    
   }
-
+  openStripeModal() {
+    this.showStripeModal = true;
+    this.closePackageModal()
+  }
   openTermsModal(){
     this.showTermsModal = true;
-
   }
   openRefundModal(){
     this.showRefundModal = true;
-
   }
   openPolicyModal(){
     this.showPolicyModal = true;
-
   }
-
   closeStripeModal() {
     this.showStripeModal = false;
-
   }
-
   closePackageModal() {
     this.showPackageModal = false;
   }
@@ -226,7 +137,34 @@ showTermsModal=false
   closeRefundModal() {
     this.showRefundModal = false;
   }
+  
 
+  // check route for mobile view for registration and login tab
+  checkRoute(){
+    this.route.fragment.subscribe(fragment => {
+      
+      if (fragment === 'regis') {
+        this.showLoginTab = false;
+        this.showRegisterTab = true;
+      } else {
+        this.showLoginTab = true;
+        this.showRegisterTab = false;
+      }
+    });
+  }
+  
+  // toggle read more buttons 
+  toggleMoreText(): void {
+    this.isMoreTextVisible = !this.isMoreTextVisible;
+  }
+  isMoreTextVisible2 = false;
+  toggleMoreText2(): void {
+    this.isMoreTextVisible2 = !this.isMoreTextVisible2;
+  }
+
+
+
+  // search cards 
   searchCards(){
     const business_type = this.form2.get('selectedBusinessType').value;
     const age_type = this.form2.get('selectedAgeType').value;
@@ -247,46 +185,28 @@ showTermsModal=false
     )
   }
 
+  
   selectPackage(selectedPackage: Package) {
     this.selectedPackage = selectedPackage;
+    console.log(this.selectedPackage);
   }
 
 
 
-  closeModal() {
-    // const modal = document.getElementById('exampleModalCenter');
-    //   this.renderer.removeClass(modal, 'show');
-
-  }
-  emailMatchValidator = (control: AbstractControl): { [key: string]: boolean } | null => {
-    const email = control.get('registerEmail');
-    const confirmEmail = control.get('registerConfirmEmail');
-
-    // Return an error if the emails don't match
-    if (email?.value !== confirmEmail?.value) {
-      return { emailMismatch: true };
-    }
-
-    return null;
-  };
+  
+  
   submitForm() {
 
     if (!this.form3.valid) {
-
       this.submitButtonClicked = true;
-      console.log('not valid clicked');
+      
     }
     if (this.form3.valid) {
-      // const modal = document.getElementById('exampleModalCenter');
-      // this.renderer.addClass(modal, 'show');
-      // this.renderer.setStyle(modal, 'display', 'block');
-
-
       this.submitButtonClicked = false;
     }
-
-    console.log("clicking");
   }
+
+
 
 
   getBusniessType() {
@@ -295,29 +215,14 @@ showTermsModal=false
         this.businessType = response.Categories
     )
   }
-  getSportType() {
-    this.apiService.getSportType().subscribe(
-      (response) =>
-        this.sportType = response.types
-    )
-  }
-  getAgeType() {
-    this.apiService.getAgeType().subscribe(
-      (response) =>
-        this.ageType = response.types
-    )
-  }
-  getPositionType(sport: any) {
-    this.apiService.getPositionType(sport).subscribe(
-      (response) => {
-        this.positionType = response.types;
-      }
-    );
-  }
+  
 
 
 
   login() {
+
+    
+
     const emailControl = this.form.get('email');
     const passwordControl = this.form.get('password');
 
@@ -353,70 +258,21 @@ showTermsModal=false
     }
   }
 
-  register() {
-    const firstName = this.form3.get('registerFirstName');
-    const lastName = this.form3.get('registerLastName');
-    const email = this.form3.get('registerEmail');
-    const password = this.form3.get('registerPassword');
-    const confirmEmail = this.form3.get('registerConfirmEmail');
-    const phone = this.form3.get('registerPhone');
-    const country = this.form3.get('registerCountry');
-    const businessType = this.form3.get('registerBusinessType');
-    const ageType = this.form3.get('registerAgeType');
-    const location = this.form3.get('registerLocationType');
-    const city = this.form3.get('registerCityType');
-    const race = this.form3.get('registerRaceType');
-    const sportType = this.form3.get('registerSportType');
-    const positionType = this.form3.get('registerPositionType');
-    const stateType = this.form3.get('registerStateType');
-    const referralCode = this.form3.get('registerReferralCode');
+  
 
-    if (firstName && lastName && email && password && confirmEmail && phone && country) {
-      if (this.form3.valid) {
-        const firstNameValue = firstName.value;
-        const lastNameValue = lastName.value;
-        const emailValue = email.value;
-        const passwordValue = password.value;
-        const confirmEmailValue = confirmEmail.value;
-        const phoneValue = phone.value;
-        const countryValue = country.value;
-        const businessTypeValue = businessType?.value;
-        const ageTypeValue = ageType?.value;
-        const sportTypeValue = sportType?.value;
-        const positionTypeValue = positionType?.value;
-        const stateTypeValue = stateType?.value;
-        const referralCodeValue = referralCode?.value;
+ // VALIDATORS FOR FORMS  
 
+  emailMatchValidator = (control: AbstractControl): { [key: string]: boolean } | null => {
+    const email = control.get('registerEmail');
+    const confirmEmail = control.get('registerConfirmEmail');
 
-        // this.apiService.registerUser({
-        //   firstName: firstNameValue,
-        //   lastName: lastNameValue,
-        //   email: emailValue,
-        //   password: passwordValue,
-        //   confirmEmail: confirmEmailValue,
-        //   phone: phoneValue,
-        //   country: countryValue,
-        //   businessType: businessTypeValue,
-        //   ageType: ageTypeValue,
-        //   sportType: sportTypeValue,
-        //   positionType: positionTypeValue,
-        //   stateType: stateTypeValue,
-        //   referralCode: referralCodeValue,
-        // }).subscribe((response) => {
-
-        //   console.log(response);
-        // }, (error) => {
-
-        //   console.error(error);
-        // });
-      } else {
-
-        console.log('Invalid registration form');
-
-      }
+    // Return an error if the emails don't match
+    if (email?.value !== confirmEmail?.value) {
+      return { emailMismatch: true };
     }
-  }
 
+    return null;
+  };
 
   expiryDateValidator(control: AbstractControl): ValidationErrors | null {
     const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
@@ -444,22 +300,57 @@ showTermsModal=false
   }
   videoUrl: SafeResourceUrl;
 
-  constructor(private apiService: ApiService, private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient,private route: ActivatedRoute,
-    private stripeService: StripeService,private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
+  constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
 
-
-      const email= localStorage.getItem('email')
-      const access_token= localStorage.getItem('access_token')
-      const user_id=localStorage.getItem('user_id')
-  
-      if (email !== null && email !== '' && access_token !== null && access_token !== '' && user_id !== null && user_id !== '') {
-        this.router.navigate(['/cards']);
-      }
+      const token = new URLSearchParams(window.location.search).get('token');
+      const updatedPlanId=localStorage.getItem("updatePaypalId")
       
+      if(updatedPlanId!=null && updatedPlanId){
+        localStorage.setItem("updatedToken",token)
+      }
+      //check if user already available (redirect to cards)
+const email= localStorage.getItem('email')
+const access_token= localStorage.getItem('access_token')
+const user_id=localStorage.getItem('user_id')
+if (email !== null && email !== '' && access_token !== null && access_token !== '' && user_id !== null && user_id !== '') {
+this.router.navigate(['/cards'])}
+      
+
+
+  
+      
+      if(token && (updatedPlanId=='' || updatedPlanId==null)){
+        this.showLoadingModal=true
+        
+        this.apiService.executeAggrement(token)
+        .subscribe(
+          (response) => {
+            // Subscription is now active
+            if(response.status=='Success'){
+              console.log("Billing agreement executed successfully", response);
+              this.paymentService.paypal_Register_user(response.subscription_id)
+            }
+            
+            
+          },
+          (error) => {
+            console.error("Failed to execute billing agreement", error);
+            this.showLoadingModal=false
+              alert("Failed to Verify Paypal Payment")
+              window.location.href='https://prolivingbiz.com'
+          }
+        );
+      }
+
+      
+
+
+
     // form is login form 
     // form2 is search of cards form 
     // from 3 is registration form 
-    const cvcLength = 3;
+  const cvcLength = 3;
   this.paymentForm = this.fb.group({
   cardNumber: ['', [Validators.required, this.cardNumberValidator]],
   expiryDate: ['', [Validators.required, this.expiryDateValidator]],
@@ -488,7 +379,6 @@ showTermsModal=false
       registerEmail: ['', [Validators.required, Validators.email]],
       registerConfirmEmail: ['', [Validators.required, Validators.email]],
       registerPassword: ['', [Validators.required, Validators.minLength(6)]],
-
       registerPhone: ['', Validators.required],
       // registerCountry: ['', Validators.required],
       registerBusinessType: ['', Validators.required],
@@ -506,12 +396,7 @@ showTermsModal=false
 
     this.getBusniessType()
 
-    this.getAgeType()
-    this.getSportType()
-
-    
-
-
+    // fetch packages
     this.apiService.getSignUpPackages(null).subscribe(
       (response) => {
         this.packages = response.Package
@@ -521,218 +406,55 @@ showTermsModal=false
         console.error('Error fetching users:', error);
       }
     );
-    this.slideConfig1 = {
-      dots: false,
-      arrows:false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: false,
-      cssEase: 'linear'
-    };
 
-
-    this.slideConfig2 = {
-      arrows:false,
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow:1,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: true,
-      cssEase: 'linear'
-    };
-    this.slideConfig3 = {
-      dots: false,
-      arrows:false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: false,
-      cssEase: 'linear'
-    };
-
-
-    this.slideConfig4 = {
-      arrows:false,
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow:4,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: true,
-      cssEase: 'linear'
-    };
-    this.slideConfig5 = {
-      dots: false,
-      arrows:false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: false,
-      cssEase: 'linear'
-    };
-
-
-    this.slideConfig6 = {
-      arrows:false,
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 1,
-      speed: 5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow:2,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: true,
-      cssEase: 'linear'
-    };
-
-
-    this.slides1 = [
-      { img: 'assets/img/logo2/blackwall.png' },
-      { img: 'assets/img/logo2/events.png' },
-      { img: 'assets/img/logo2/logo2.png' },
-      { img: 'assets/img/logo2/logo3.png' },
-      { img: 'assets/img/logo2/logo4.png' },
-      { img: 'assets/img/logo2/logo5.png' },
-      { img: 'assets/img/logo2/logo6.png' },
-      { img: 'assets/img/logo2/logo7.png' },
-      { img: 'assets/img/logo2/logo8.png' },
-      { img: 'assets/img/logo2/logo9.png' },
-      { img: 'assets/img/logo2/logo10.png' },
-
-    ];
-
-
-    this.slides2 = [
-      { img: 'assets/img/logo2/logo11.png' },
-      { img: 'assets/img/logo2/logo12.png' },
-      { img: 'assets/img/logo2/logo13.png' },
-      { img: 'assets/img/logo2/logo14.png' },
-      { img: 'assets/img/logo2/logo15.png' },
-      { img: 'assets/img/logo2/logo16.png' },
-      { img: 'assets/img/logo2/pledge.png' },
-      { img: 'assets/img/logo2/logo9.png' },
-      { img: 'assets/img/logo2/umyo_market.png' },
-      { img: 'assets/img/logo2/logo8.png' },
-      { img: 'assets/img/logo2/umyodate.png' },
-
-    ];
-
-
-
-
+    
   }
-
-  onSportTypeChange() {
-
-    const selectedSport = this.form2.get('selectedSportType')?.value;
-    if (selectedSport) {
-      console.log('inside');
-      this.getPositionType(selectedSport);
-    }
-  }
-  onRegisterSportTypeChange() {
-
-    const selectedSport = this.form3.get('registerSportType')?.value;
-    if (selectedSport) {
-      this.getPositionType(selectedSport);
-    }
-  }
-
-  searchSports() {
-    const formData = this.form2.value;
-
-
-
-  }
-
 
   
-  FUNDING_SOURCES = [
-    paypal.FUNDING.PAYPAL,
-
-  ];
+  
 
 
 
-  payWithPayPal(selectedPackage: any) {
-    this.selectedPackage = selectedPackage;
+// STRIPE PAYMENT 
+@ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
 
-  }
+public cardOptions: StripeCardElementOptions = {
+  style: {
+    base: {
+      fontWeight: 400,
+      fontFamily: 'Circular',
+      fontSize: '14px',
+      iconColor: '#666EE8',
+      color: '#002333',
+      '::placeholder': {
+        color: '#919191',
+      },
+    },
+  },
+};
 
-
-
-
-  ngAfterViewInit() {
-    
-    console.log("register counry value", this.form3.get('registerCountry')?.value)
-    const containerId = `paypal-button-container`;
-
-    this.FUNDING_SOURCES.forEach(fundingSource => {
-      const button = paypal.Buttons({
-        fundingSource: fundingSource,
-        createOrder: (data: any, actions: any) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  currency_code: 'USD',
-                  value: this.selectedPackage.net_price ? this.selectedPackage.net_price : this.selectedPackage.price,
-                },
-              },
-            ],
-          });
-        },
-        onApprove: (data: any, actions: any) => {
-          // Add your logic for when the payment is approved
-        },
-      });
-
-      if (button.isEligible()) {
-        button.render(`#${containerId}`);
-      }
-    });
-  }
+pay(): void {
+this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);   
+this.closePackageModal()
+this.closeStripeModal()
+  
+}
 
 
+//PAYPAL PAYMENT 
+
+paypalClick(){
+ this.closePackageModal()
+ this.showLoadingModal=true
+ this.paymentService.paypal_create_billing_plan(this.form3,this.selectedPackage)
+}
+
+
+// CONTINUE PAYMENT FOR TESTING  OF 0$
+
+continuePaymentButton(){
+  this.paymentService.testing(this.form3,this.selectedPackage);
+}
 
 
 

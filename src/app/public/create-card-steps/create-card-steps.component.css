@@ -16,6 +16,14 @@ font-family: 'Roboto Condensed', sans-serif;
   --base-font: "Open Sans", sans-serif;
   --heading-font: "Roboto Condensed", sans-serif;
 }
+.plus-button {
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  
+}
 
 /* html,
 body,

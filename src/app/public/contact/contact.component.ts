@@ -170,7 +170,7 @@ this.fetchContacts()
     this.populateFormArray('phoneNumbers', contact.phone);
     this.populateFormArray('addresses', contact.address);
     this.populateFormArray('websites', contact.website);
-
+    
     // Open the existing modal for editing
     this.updateContactId=contact.id
     this.formController='update'
@@ -314,6 +314,9 @@ this.fetchContacts()
     this.isLoading=false
     this.fetchContacts()
     this.closeAddContactModal();
+
+
+
   }
   
 

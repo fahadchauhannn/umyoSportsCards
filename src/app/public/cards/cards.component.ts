@@ -15,6 +15,7 @@ import {
 
 import { AddCustomerResponse } from './../../models/add-customer-response.model';
 import { Subscription } from './../../models/subscription.model';
+import { PaymentService } from 'src/app/payment.service';
 
 declare var $: any; 
 declare var paypal: any;
@@ -35,6 +36,7 @@ export class CardsComponent implements AfterViewInit{
   stripe_customer_id:any=null
   stripe_subscription_id:any=null
   shareCardId:any
+  updatedPlanId:any
   userData:any={}
   payload={
     user_id:this.id,
@@ -45,6 +47,7 @@ export class CardsComponent implements AfterViewInit{
     locale: 'en',
   };
 
+ 
   expiryDateValidator(control: AbstractControl): ValidationErrors | null {
     const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
     if (control.value && !expiryDatePattern.test(control.value)) {
@@ -89,36 +92,94 @@ export class CardsComponent implements AfterViewInit{
   link.click();
 }
 
-  constructor(private apiService: ApiService,private RegisterUserDataService:RegisterUserDataService,private fb: FormBuilder,) {
+  constructor(private apiService: ApiService,private paymentService:PaymentService,private fb: FormBuilder,) {
+    this.apiService.getUserById(parseInt(this.id, 10)).subscribe(
+      (response)=>{
+        if(response.status=='Success'){
+          this.userData=response.Users
+   
+          this.apiService.getCards(this.payload).subscribe(
+            (response)=>{
+              if(response.status=='Success'){
+                this.cards=response.Card
+              }
+              else{
+                alert("failed to fetch cards.")
+              }
+          
+            },(error)=>{
+              alert("failed to fetch cards."+error.message)
+            }
+          )
+          
 
+          const oldSubId=this.userData.subscription_id
+          let newSubId=''
+          this.updatedPlanId=localStorage.getItem("updatePaypalId")
+          const token = localStorage.getItem("updatedToken")
+          if(token &&token!=null &&token!=''&& this.updatedPlanId!='' && this.updatedPlanId && this.updatedPlanId!=null){
+            // this.showLoadingModal=true
+            
+      
+      
+            this.apiService.executeAggrement(token)
+            .subscribe(
+              (response) => {
+                
+                if(response.status=='Success'){
+                  console.log("Billing agreement executed successfully", response);
+                  newSubId=response.subscription_id
+                  
+                  
+                  alert("Subscription Updated Successfully!")
+                  this.apiService.cancelPaypalSubscription(this.id,oldSubId).subscribe(
+                    (response)=>{
+                      if(response.status=='success'){
+                        alert("Old Subscription Canclled!")
+                        this.paymentService.update_paypal_keys(newSubId,this.id)
+                      }
+                      else{
+                        alert("failed to cancel old subscription! ")
+                        
+                      }
+                    },(error)=>{
+                      alert("error " + error)
+                    }
+                  )
+                  
+                }
+                else{
+                  localStorage.removeItem("updatePaypalId");
+                  localStorage.removeItem("updatedToken");
+                }
+                
+                
+              },
+              (error) => {
+                console.error("Failed to execute billing agreement", error);
+                // this.showLoadingModal=false
+                  alert("Failed to Verify Paypal Payment")
+                  localStorage.removeItem("updatePaypalId");
+                  localStorage.removeItem("updatedToken");
+                  window.location.href='https://prolivingbiz.com'
+              }
+            );
+          }
 
+        }
+        else{
+          alert("failed to fetch user.")
+        }
     
-this.apiService.getCards(this.payload).subscribe(
-  (response)=>{
-    if(response.status=='Success'){
-      this.cards=response.Card
-    }
-    else{
-      alert("failed to fetch cards.")
-    }
+      },(error)=>{
+        alert("failed to fetch user."+error.message)
+      }
+    )
+   
+    
 
-  },(error)=>{
-    alert("failed to fetch cards."+error.message)
-  }
-)
-this.apiService.getUserById(parseInt(this.id, 10)).subscribe(
-  (response)=>{
-    if(response.status=='Success'){
-      this.userData=response.Users
-    }
-    else{
-      alert("failed to fetch user.")
-    }
 
-  },(error)=>{
-    alert("failed to fetch user."+error.message)
-  }
-)
+ 
 
 this.apiService.getSignUpPackages(null).subscribe(
   (response) => {
@@ -192,14 +253,19 @@ this.paymentForm = this.fb.group({
     )
   }
 
-  FUNDING_SOURCES = [
-    paypal.FUNDING.PAYPAL,
-
-  ];
-
+  
 
   payWithPayPal(selectedPackage: any) {
-    this.selectedPackage = selectedPackage;
+    this.selectedPackage = selectedPackage
+    let confirmation:boolean
+
+    
+
+    confirmation=confirm("Are You Sure you want to cancel your old Subscription and update? ")
+
+    if(confirmation){
+      this.paymentService.upgradePaypal(this.userData,this.id,selectedPackage)
+    }
 
   } 
 
@@ -212,34 +278,17 @@ this.DotsModal=true
   closeDotsModal(){
     this.DotsModal=false
   }
+  activeCardId: number | null = null;
 
+  setActiveCard(cardId: number): void {
+    this.activeCardId = cardId;
+    this.DotsModal=true
+  }
+  unsetActiveCard(cardId: number): void {
+    this.activeCardId = cardId;
+    this.DotsModal=false
+  }
 ngAfterViewInit(): void {
-  const containerId = `paypal-button-container`;
-
-    this.FUNDING_SOURCES.forEach(fundingSource => {
-      const button = paypal.Buttons({
-        fundingSource: fundingSource,
-        createOrder: (data: any, actions: any) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  currency_code: 'USD',
-                  value: this.selectedPackage.net_price ? this.selectedPackage.net_price : this.selectedPackage.price,
-                },
-              },
-            ],
-          });
-        },
-        onApprove: (data: any, actions: any) => {
-          
-        },
-      });
-
-      if (button.isEligible()) {
-        button.render(`#${containerId}`);
-      }
-    });
   
 }
 
@@ -269,6 +318,24 @@ const payload={
   subscription_id:this.userData.stripe_subscription_id,
   user_id:this.id
 }
+let interval:any, interval_count:any;
+
+const expireInValue = this.selectedPackage.expire_in.toLowerCase(); 
+
+if (expireInValue.includes("year")) {
+  interval = "YEAR";
+  interval_count = 1;
+} else if (expireInValue.includes("6 month")) {
+  interval = "MONTH";
+  interval_count = 6;
+} else if (expireInValue.includes("month")) {
+  interval = "MONTH";
+  interval_count = 1;
+} else {
+  
+  interval = "MONTH";
+  interval_count = 1;
+}
   this.apiService.cancelStripeSubscription(payload).subscribe(
     (response)=>{
       if(response.status=='Success'){
@@ -286,8 +353,8 @@ const payload={
           "exp_year": expiryYear,
           "cvc": this.paymentForm.get("cvc").value,
           "price": this.selectedPackage.net_price ? this.selectedPackage.net_price : this.selectedPackage.price,
-          "interval": "month",
-          "interval_count": 6,
+          "interval": interval,
+          "interval_count": interval_count,
           "stripe_subscription_id":this.userData.stripe_subscription_id
         }).subscribe((response: AddCustomerResponse) => {
           console.log(response)
@@ -298,8 +365,8 @@ const payload={
               "name": this.selectedPackage.description,
               "description": this.selectedPackage.description,
               "price": this.selectedPackage.net_price ? this.selectedPackage.net_price : this.selectedPackage.price,
-              "interval": "month",
-              "interval_count": 6,
+              "interval": interval,
+              "interval_count": interval_count,
               "customer_id": response.customer_id
             }).subscribe((response: Subscription) => {
               console.log(response)
