@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Umyo Sports Cards</a>
+
+    <button class="navbar-toggler" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-nav d-none d-lg-flex">
+      <a class="nav-item nav-link" routerLink="/">Home</a>
+      <a class="nav-item nav-link" routerLink="/admin/dashboard">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="/admin/users">Users</a>
+      <a class="nav-item nav-link" routerLink="/admin/admin-support-agent-list"
+        >Support Agents</a
+      >
+      <a class="nav-item nav-link" routerLink="/admin/packages">Packages</a>
+      <a class="nav-item nav-link" routerLink="/admin/admin-amount">Amount</a>
+      <a class="nav-item nav-link" routerLink="/admin/admin-chat-record"
+        >Chat Record</a
+      >
+      <a class="nav-item nav-link" routerLink="/admin/profile">Profile</a>
+      <a class="nav-item nav-link" routerLink="/admin/admin-live-chat"
+        >Live Chat</a
+      >
+      <a class="nav-item nav-link" style="cursor: pointer" (click)="logout()"
+        >Logout</a
+      >
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" [ngClass]="{ open: mobileMenuOpen }">
+  <div class="close-icon" (click)="toggleMenu()">
+    <i class="fas fa-times"></i>
+  </div>
+  <div class="mobile-links">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" routerLink="/admin/dashboard">Dashboard</a>
+    <a class="nav-item nav-link" routerLink="/admin/users">Users</a>
+    <a class="nav-item nav-link" routerLink="/admin/admin-support-agent-list"
+      >Support Agents</a
+    >
+    <a class="nav-item nav-link" routerLink="/admin/packages">Packages</a>
+    <a class="nav-item nav-link" routerLink="/admin/admin-amount">Amount</a>
+    <a class="nav-item nav-link" routerLink="/admin/admin-chat-record"
+      >Chat Record</a
+    >
+    <a class="nav-item nav-link" routerLink="/admin/profile">Profile</a>
+    <a class="nav-item nav-link" routerLink="/admin/admin-live-chat"
+      >Live Chat</a
+    >
+    <a class="nav-item nav-link" style="cursor: pointer" (click)="logout()"
+      >Logout</a
+    >
+  </div>
+</div>

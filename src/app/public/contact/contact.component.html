@@ -1,0 +1,380 @@
+<app-nav></app-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <div class="topRow">
+    <div class="col">
+      <input
+        type="text"
+        placeholder="Search"
+        class="form-control searchInput"
+      />
+    </div>
+    <div class="col topButton">
+      <button class="btn btn-primary" (click)="addContact()">
+        Add Contact
+      </button>
+    </div>
+  </div>
+  <div class="row" style="width: 100%" *ngIf="myContacts.length > 0">
+    <div *ngFor="let contact of myContacts" class="col-12 col-md-4">
+      <div class="card mb-3" style="min-width: 200px">
+        <div class="card-body d-flex align-items-center">
+          <div class="avatar mr-3">
+            <!-- Add your avatar image or icon here -->
+            <img
+              src="assets/images/avatar.png"
+              style="height: 40px; width: 40px"
+              alt="{{ contact.user.firstname }}"
+              class="avatar-image"
+            />
+          </div>
+          <span style="padding-left: 5px"
+            >{{ contact.user.firstname }}
+            {{ " " + contact.user.lastname }}</span
+          >
+        </div>
+        <div class="card-footer">
+          <div class="dropdown">
+            <p
+              class="status"
+              (click)="sendMessage(contact.id)"
+              style="color: #8dc63f"
+              *ngIf="contact.status === 'Accepted'"
+            >
+              Send Message
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="width: 100%" *ngIf="contactList.length > 0">
+    <div *ngFor="let contact of contactList" class="col-12 col-md-4">
+      <div class="card mb-3" style="min-width: 200px">
+        <div class="card-body d-flex align-items-center">
+          <div class="avatar mr-3">
+            <!-- Add your avatar image or icon here -->
+            <img
+              src="assets/images/avatar.png"
+              style="height: 40px; width: 40px"
+              alt="{{ contact.firstname }}"
+              class="avatar-image"
+            />
+          </div>
+          <span style="padding-left: 5px"
+            >{{ contact.firstname }} {{ " " + contact.lastname }}</span
+          >
+        </div>
+        <div class="card-footer">
+          <div class="dropdown">
+            <a
+              class="btn btn-link dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+            >
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" (click)="editContact(contact)">Edit</a>
+              <a class="dropdown-item" (click)="deleteContact(contact)"
+                >Delete</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showModal, 'd-block': showModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="height: 500px; overflow-y: auto">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Contact</h5>
+        <button type="button" class="close" (click)="closeAddContactModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="contactForm">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label style="margin-top: 5px; margin-bottom: 5px" for="firstName"
+                >First Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                formControlName="firstName"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label style="margin-top: 5px; margin-bottom: 5px" for="lastName"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                formControlName="lastName"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tags">Tags</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tags"
+              formControlName="tags"
+            />
+          </div>
+
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px"
+              >Phone Number</label
+            >
+            <div formArrayName="phoneNumbers">
+              <div
+                *ngFor="let phone of phoneNumbers.controls; let i = index"
+                class="input-group"
+                style="margin-bottom: 10px"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  [formControlName]="i"
+                  placeholder="Enter Phone Number"
+                />
+                <div class="input-group-append">
+                  <button
+                    *ngIf="i > 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="removePhoneNumber(i)"
+                  >
+                    −
+                  </button>
+                  <button
+                    *ngIf="i == 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="addPhoneNumber()"
+                  >
+                    <span class="">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px">Email</label>
+            <div formArrayName="emails">
+              <div
+                *ngFor="let email of emails.controls; let i = index"
+                class="input-group"
+                style="margin-bottom: 10px"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  [formControlName]="i"
+                  placeholder="Enter Email"
+                />
+                <div class="input-group-append">
+                  <button
+                    *ngIf="i > 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="removeEmail(i)"
+                  >
+                    −
+                  </button>
+                  <button
+                    *ngIf="i == 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="addEmail()"
+                  >
+                    <span class="">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px">Address</label>
+            <div formArrayName="addresses">
+              <div
+                *ngFor="let address of addresses.controls; let i = index"
+                class="input-group"
+                style="margin-bottom: 10px"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  [formControlName]="i"
+                  placeholder="Enter Address"
+                />
+                <div class="input-group-append">
+                  <button
+                    *ngIf="i > 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="removeAddress(i)"
+                  >
+                    −
+                  </button>
+                  <button
+                    *ngIf="i == 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="addAddress()"
+                  >
+                    <span class="">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div>
+              <label class="form-check-label">
+                <input type="radio" formControlName="gender" value="male" />
+                Male
+              </label>
+              <label class="form-check-label" style="margin-left: 10px">
+                <input type="radio" formControlName="gender" value="female" />
+                Female
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px" for="company"
+              >Company</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="company"
+              formControlName="company"
+              placeholder="Enter Company"
+            />
+          </div>
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px" for="position"
+              >Position</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="position"
+              formControlName="position"
+              placeholder="Enter Positon"
+            />
+          </div>
+
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px">Website</label>
+            <div formArrayName="websites">
+              <div
+                *ngFor="let website of websites.controls; let i = index"
+                class="input-group"
+                style="margin-bottom: 10px"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  [formControlName]="i"
+                  placeholder="Enter Website"
+                />
+                <div class="input-group-append">
+                  <button
+                    *ngIf="i > 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="removeWebsite(i)"
+                  >
+                    −
+                  </button>
+                  <button
+                    *ngIf="i == 0"
+                    class="btn btn-primary plus-button"
+                    type="button"
+                    (click)="addWebsite()"
+                  >
+                    <span class="">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px" for="facebook"
+              >Facebook</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="facebook"
+              formControlName="facebook"
+              placeholder="Enter Facebook ID"
+            />
+          </div>
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px" for="twitter"
+              >Twitter</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="twitter"
+              formControlName="twitter"
+              placeholder="Enter Twitter ID"
+            />
+          </div>
+          <div class="form-group">
+            <label style="margin-top: 5px; margin-bottom: 5px" for="linkedin"
+              >Linkedin</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="linkedin"
+              formControlName="linkedin"
+              placeholder="Enter Linkedin ID"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAddContactModal()"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" (click)="saveContact()">
+          Add Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

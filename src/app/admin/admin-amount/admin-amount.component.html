@@ -1,0 +1,69 @@
+<app-admin-nav></app-admin-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="outside" *ngIf="amount.length > 0">
+  <div class="head">
+    <h1>Bonus Amount</h1>
+  </div>
+  <div class="table-responsive table-container table-sm mt-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-sm-1">No.</th>
+          <th class="col-1">Date</th>
+          <th class="col-1">Referal Email</th>
+          <th class="col-1">Referal Code</th>
+          <th class="col-1">User Email</th>
+          <th class="col-1">Amount of Package</th>
+          <th class="col-1">Bonus Amount</th>
+          <th class="col-1">Status</th>
+          <th class="col-1" style="text-align: center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let amt of amount; let i = index">
+          <td>{{ i }}</td>
+          <td>{{ amt.PurchasedDate }}</td>
+          <td>{{ amt.referalEmail }}</td>
+          <td>{{ amt.ReferalCode }}</td>
+          <td>{{ amt.whoPurchased }}</td>
+          <td>{{ amt.totalPackageAmount }}</td>
+          <td>{{ amt.bonusAmount }}</td>
+          <td>{{ amt.status }}</td>
+          <td>
+            <div class="d-none d-md-block">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a routerLink="/user/{{ amt.id }}/edit">
+                  <button class="btn btn-sm btn-primary">Change Status</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="d-block d-md-none">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <a routerLink="/user/{{ amt.id }}/edit">
+                  <i class="fas fa-edit text-primary mr-2"></i>
+                </a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

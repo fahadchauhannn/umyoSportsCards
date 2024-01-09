@@ -1,0 +1,107 @@
+.head{
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+
+.container{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.desc{
+    max-width: 20rem;
+}
+
+.action{
+    display: flex;
+    gap: 10px;
+}
+
+h1{
+    color: rgb(35, 149, 243);
+}
+td,th {
+    font-size: 10px;
+    padding: 2px;
+}
+
+
+@media(max-width:699px){
+    td,th {
+        font-size: 10px;
+        padding: 2px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    
+    .outside{
+        margin-top: 80px;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    
+}
+
+@media(min-width:700px){
+    td,th {
+        font-size: 15px;
+        padding: 10px;
+    }
+    h1{
+        font-size: 35px;
+    }
+    
+    .outside{
+        margin-top: 80px;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    
+}
+
+.table-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-top: -30px; /* Create the floating effect on top of the screen */
+    z-index: 1;
+  }
+  
+  /* Optional: Add a background color or gradient to the table header for a separate visual effect */
+  .table thead {
+    background-color: #f0f0f0;
+    /* You can use a different background color or gradient here */
+  }
+
+  .loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #007bff; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .outer-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    z-index: 10;
+  }

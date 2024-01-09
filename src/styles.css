@@ -1,0 +1,18 @@
+.custom-toast-position {
+    position: fixed;
+    top: 5rem; /* Adjust the top position as needed */
+    right: 5rem; /* Adjust the right position as needed */
+    text-align: center;
+    background-color: rgba(86, 249, 86, 0.799);
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px; 
+    color: #fff;
+    
+
+  }
+
+  /* *,html,body{
+overflow-x: hidden !important;
+  }
+   */

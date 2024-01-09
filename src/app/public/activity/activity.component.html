@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<div
+  class="container"
+  *ngIf="!isLoading"
+  style="padding: 30px; margin-bottom: 60px; margin-top: 50px"
+>
+  <h1 class="heading">
+    <i class="fas fa-check-circle icon"></i>
+    Activities
+  </h1>
+
+  <div class="activity">
+    <div *ngIf="activities.length < 1" class="activityItem">
+      <p class="activityName">No Recent Activities</p>
+    </div>
+    <div *ngFor="let activity of activities" class="activityItem">
+      <div class="leftContent">
+        <p class="activityName">{{ activity?.activity }}</p>
+        <p>{{ formatCreatedAt(activity.created_at) }}</p>
+      </div>
+      <div class="delete-icon" (click)="deleteActivity(activity.id)">
+        <i class="fas fa-trash-alt" style="color: red; cursor: pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
