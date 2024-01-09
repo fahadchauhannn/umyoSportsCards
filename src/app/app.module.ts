@@ -69,6 +69,8 @@ import { Template15Component } from './public/create-card-steps/templates/templa
 import { PreviewCardComponent } from './public/cards/preview-card/preview-card.component';
 import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { TruckersComponent } from './truckers/truckers.component';
 
 
 
@@ -134,6 +136,8 @@ import { ShareCardComponent } from './public/cards/share-card/share-card.compone
     PreviewCardComponent,
     EditCardComponent,
     ShareCardComponent,
+    ForgotPasswordComponent,
+    TruckersComponent,
     
     
     

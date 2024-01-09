@@ -17,6 +17,7 @@ import { interval, Subscription } from 'rxjs';
   refreshInterval: number = 4000; // 6 seconds
   refreshSubscription: Subscription | undefined;
   isLoading:boolean=false
+  noChatFound:boolean=false
   @ViewChild('chat-messages', { static: true }) scrollContainer: ElementRef | undefined;
 
 
@@ -33,8 +34,13 @@ import { interval, Subscription } from 'rxjs';
     this.chatDisplay = false;
     this.apiService.getChatUsers().subscribe(
       (response: any) => {
-        
-        this.chatUsers = response.messages.map((user: any) => user);
+        if(response.status=='Success'){
+
+          this.chatUsers = response.messages.map((user: any) => user);
+        }
+        if(response.status=='Failed'){
+          this.noChatFound=true
+        }
         this.isLoading=false
       },
       (error) => {

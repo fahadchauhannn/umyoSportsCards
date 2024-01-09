@@ -1,5 +1,7 @@
 import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
+
 import { ApiService } from 'src/app/api.service';
 declare var $: any;
 
@@ -83,16 +85,19 @@ user_id  = parseInt(this.id, 10);
       Photo: ['assets/images/john-doe-avatar.jpg'],
       Logo: ['assets/images/unmasking-yourself.jpg'],
       ProductImages: ['assets/images/app-devices.jpg'],
-      YoutubeTitle:[''],
-      YoutubeLink:['https://www.youtube.com/embed/soXhe4aEsTU'],
-      VimeoTitle:[''],
-      VimeoLink:[''],
-      UmyotubeTitle:[''],
-      UmyotubeLink:[''],
-      LinkButtonTitle:[''],
-      LinkButtonLink:[''],
-      FacebookLink:[''],
+
+
+
+      YoutubeVideos: this.fb.array([this.createYoutubeVideoGroup()]),
+
+      UmyotubeVideos:this.fb.array([this.createUmyotubeVideoGroup()]),
+      VimeoVideos:this.fb.array([this.createVimeoVideoGroup()]),
+      LinkButton:this.fb.array([this.createLinkButtonGroup()]),
+
       
+      
+      
+      FacebookLink:[''],
       Facebook:['https://www.facebook.com/'],
       Youtube:['https://www.youtube.com/'],
       Linkedin:['https://www.linkedin.com/'],
@@ -111,10 +116,116 @@ user_id  = parseInt(this.id, 10);
     
 
     });
+
+    
+   
     
   }
 
+  createYoutubeVideoGroup() {
+    return this.fb.group({
+      youtubeTitle: [''],
+      youtubeLink: [''],
+    });
+  }
+  createUmyotubeVideoGroup() {
+    return this.fb.group({
+      umyotubeTitle: [''],
+      umyotubeLink: [''],
+    });
+  }
+  createVimeoVideoGroup() {
+    return this.fb.group({
+      vimeoVideoTitle: [''],
+      vimeoVideoLink: [''],
+    });
+  }
+  createLinkButtonGroup() {
+    return this.fb.group({
+      LinkButtonTitle: [''],
+      LinkButtonLink: [''],
+    });
+  }
+
   
+  
+  getUmyotubeTitleControl(index: number) {
+    return this.UmyotubeVideos.at(index).get('umyotubeTitle') as FormControl;
+  }
+  
+  getUmyotubeLinkControl(index: number) {
+    return this.UmyotubeVideos.at(index).get('umyotubeLink') as FormControl;
+  }
+  getVimeoVideoTitleControl(index: number) {
+    return this.VimeoVideos.at(index).get('vimeoVideoTitle') as FormControl;
+  }
+  
+  getVimeoVideoLinkControl(index: number) {
+    return this.VimeoVideos.at(index).get('vimeoVideoLink') as FormControl;
+  }
+  getLinkButtonTitleControl(index: number) {
+    return this.LinkButton.at(index).get('LinkButtonTitle') as FormControl;
+  }
+  
+  getLinkButtonLinkControl(index: number) {
+    return this.LinkButton.at(index).get('LinkButtonLink') as FormControl;
+  }
+  getYoutubeTitleControl(index: number) {
+    return this.YoutubeVideos.at(index).get('youtubeTitle') as FormControl;
+  }
+  
+  getYoutubeLinkControl(index: number) {
+    return this.YoutubeVideos.at(index).get('youtubeLink') as FormControl;
+  }
+
+  get YoutubeVideos() {
+    return this.Form.get('YoutubeVideos') as FormArray;
+  }
+
+
+  get UmyotubeVideos() {
+    return this.Form.get('UmyotubeVideos') as FormArray;
+  }
+  get VimeoVideos() {
+    return this.Form.get('VimeoVideos') as FormArray;
+  }
+  get LinkButton() {
+    return this.Form.get('LinkButton') as FormArray;
+  }
+
+
+  addYoutube() {
+    this.YoutubeVideos.push(this.createYoutubeVideoGroup());
+  }
+
+  removeYoutube(index: number) {
+    this.YoutubeVideos.removeAt(index);
+  }
+ 
+  addUmyotubeVideos() {
+    this.UmyotubeVideos.push(this.createUmyotubeVideoGroup());
+  }
+
+  removeUmyotubeVideos(index: number) {
+    this.UmyotubeVideos.removeAt(index);
+  }
+
+  addVimeoVideos() {
+    this.VimeoVideos.push(this.createVimeoVideoGroup());
+  }
+
+  removeVimeoVideos(index: number) {
+    this.VimeoVideos.removeAt(index);
+  }
+  addLinkButton() {
+    this.LinkButton.push(this.createLinkButtonGroup());
+  }
+
+  removeLinkButton(index: number) {
+    this.LinkButton.removeAt(index);
+  }
+  
+
 
 
   onPhotoChange(event: any): void {
@@ -306,6 +417,38 @@ check(){
 
   
    saveCard(){
+
+
+    const youtubeVideosArray = this.Form.get('YoutubeVideos') as FormArray;
+    const umyotubeVideosArray = this.Form.get('UmyotubeVideos') as FormArray;
+    const vimeoVideosArray = this.Form.get('VimeoVideos') as FormArray;
+    const LinkButtonArray = this.Form.get('LinkButton') as FormArray;
+    const youtubeData = youtubeVideosArray.controls.map((control) => {  
+      const youtubeTitle = control.get('youtubeTitle').value;
+      const youtubeLink = control.get('youtubeLink').value;
+      return { youtubeTitle, youtubeLink };
+    });
+    const umyotubeData = umyotubeVideosArray.controls.map((control) => {  
+      const umtotubeTitle = control.get('umyotubeTitle').value;
+      const umyotubeLink = control.get('umyotubeLink').value;
+      return { umtotubeTitle, umyotubeLink };
+    });
+    const vimeoVideosData = vimeoVideosArray.controls.map((control) => {  
+      const vimeoVideoTitle = control.get('vimeoVideoTitle').value;
+      const vimeoVideoLink = control.get('vimeoVideoLink').value;
+      return { vimeoVideoTitle, vimeoVideoLink };
+    });
+    const linkButtonData = LinkButtonArray.controls.map((control) => {  
+      const LinkButtonTitle = control.get('LinkButtonTitle').value;
+      const LinkButtonLink = control.get('LinkButtonLink').value;
+      return { LinkButtonTitle, LinkButtonLink };
+    });
+
+    
+
+    
+    
+
     const SocialFormData={
       facebook:this.Form.value.Facebook, 
       twitter:this.Form.value.Twitter, 
@@ -318,10 +461,10 @@ check(){
       snapchat:this.Form.value.pinterest, 
       lineID:this.Form.value.pinterest, 
       voxerID:this.Form.value.pinterest, 
-      youtubeVideos:[{youtubeTitle:this.Form.value.YoutubeTitle,youtubeLink:this.Form.value.YoutubeLink}], 
-      vimeoVideos:[{vimeoTitle:this.Form.value.VimeoTitle,vimeoLink:this.Form.value.VimeoLink}], 
-      umyotubeVideos:[{umyoutubeTitle:this.Form.value.UmyotubeTitle,umyotubeLink:this.Form.value.UmyotubeLink}], 
-      linkButtons:[{linkButtonTitle:this.Form.value.LinkButtonTitle,websiteLink:this.Form.value.LinkButtonLink}], 
+      youtubeVideos:youtubeData, 
+      vimeoVideos:vimeoVideosData, 
+      umyotubeVideos:umyotubeData, 
+      linkButtons:linkButtonData, 
     }
 const infoFormData={
   templateId:this.templateId,

@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { VerifyEmail } from '../models/verify-email-response.model'
 import { Router } from '@angular/router';
 import {RegisterUserDataService} from '../register-user-data.service'
-// import { LocalStorageService } from 'your-local-storage-service'; // Import your local storage service
+
 @Component({
   selector: 'app-email-verification',
   templateUrl: './email-verification.component.html',

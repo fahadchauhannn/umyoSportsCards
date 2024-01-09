@@ -70,6 +70,48 @@
     <img src="assets/images/template-img-001.jpg" alt="" />
     <div class="clearfix"><br /></div>
   </section>
+  <div *ngIf="youtubeArray && youtubeArray.length > 0">
+    <div *ngFor="let video of youtubeArray">
+      <p>{{ video.youtubeTitle }}</p>
+      <iframe
+        *ngIf="video.youtubeLink"
+        style="width: 100%; padding: 10px"
+        height="200"
+        [src]="sanitizeYouTubeLink(video.youtubeLink)"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+      ></iframe>
+    </div>
+  </div>
+
+  <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
+    <div *ngFor="let video of umyotubeArray">
+      <p>{{ video.umtotubeTitle }}</p>
+      <iframe
+        *ngIf="video.umyotubeLink"
+        style="width: 100%; padding: 10px"
+        height="200"
+        [src]="sanitizeYouTubeLink(video.umyotubeLink)"
+        title="Umyotube player"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+  <div *ngIf="vimeoArray && vimeoArray.length > 0">
+    <div *ngFor="let video of vimeoArray">
+      <p>{{ video.vimeoVideoTitle }}</p>
+      <iframe
+        *ngIf="video.vimeoVideoLink"
+        style="width: 100%; padding: 10px"
+        height="200"
+        [src]="sanitizeYouTubeLink(video.vimeoVideoLink)"
+        title="Vimeo video player"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+
   <div class="three-ctrls">
     <button type="button" class="ctrl-item" *ngIf="forwardCard">
       <i class="fa-solid fa-share forward"></i>

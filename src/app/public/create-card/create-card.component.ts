@@ -36,7 +36,7 @@ export class CreateCardComponent implements AfterViewInit {
     };
     setTimeout(() => {
       this.isLoading = false;
-    }, 2500);
+    }, 5000);
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-<section id="header" style="background: #527853 !important">
+<section id="header" style="background: #2f3d7e !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -7,12 +7,12 @@
         style="border-bottom: 2px solid white"
       >
         <a href="index.html" class="navbar-brand">
-          <!-- <h1 class="text-white display-6">UMYO</h1> -->
-          <img
+          <h1 class="text-white display-6">UMYO</h1>
+          <!-- <img
             src="assets/proliving/pro_liv.jpeg"
             class="img-fluid rounded-circle"
             style="width: 4rem; height: 4rem"
-          />
+          /> -->
         </a>
         <button
           class="navbar-toggler py-2 px-3"
@@ -26,7 +26,10 @@
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['']" class="nav-item nav-link">Home</a>
 
-            <!-- <a [routerLink]="['network']" class="nav-item nav-link">Network</a> -->
+            <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
+            <a [routerLink]="['truckers']" class="nav-item nav-link"
+              >Truckers Connects</a
+            >
           </div>
           <div class="d-flex m-3 ms-auto">
             <p class="text-white" style="margin: 2px 25px; font-size: 25px">
@@ -80,9 +83,14 @@
                 <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
 
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/network']">Network</a>
-              </li> -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/truckers']"
+                  >Truckers Connects</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -152,26 +160,23 @@
       <div class="col-md-12 col-lg-7">
         <div class="page-width">
           <div class="lft-hero__content">
-            <h1 class="mb-3">Pro-Living Connects</h1>
+            <h1 class="mb-3">CREATE IMPRESSIVE SPORTS & BUSINESS CARDS</h1>
             <p class="mb-5">
-              Pro-Living Connects introduces an innovative networking solution
-              exclusively for Community.
+              Umyo Sports Cards introduces a revolutionary social networking app
+              that brings together athletes, agents, recruiters, coaches,
+              schools, colleges.
             </p>
-            <div
-              class="moretext-he"
-              [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible }"
-            >
+            <div class="moretext-he" style="display: none">
               <p class="mb-5">
-                Our groundbreaking app unites Pro-Living Connects, logistics
-                professionals, community, business owners, organizations,
-                training institutions, and affiliated businesses on a
-                specialized platform, dedicated to advancing the careers of
-                youth and adults in the industry and promoting growth.
-                Pro-Living Connect is the first of its kind, enabling Pro-Living
-                community members and professionals to network with fellow
-                Pro-Living members, industry experts, and businesses while
-                showcasing their skills and expertise, receiving the recognition
-                and support they rightfully deserve.
+                supportive business owners in a unique platform dedicated to
+                enhancing athletes' journeys to success. Our app is the first of
+                its kind, empowering athletes to showcase their talent while
+                receiving the recognition and support they truly deserve.With
+                Umyo Sports Cards, you can easily upload your statistics, GPA,
+                interviews, podcasts, images, and sports highlights for
+                thousands of users to discover. It's the ultimate hub for
+                athletes from all sports seeking the exposure they need to
+                excel.
               </p>
             </div>
             <a
@@ -212,42 +217,157 @@
 </div>
 </div> -->
 </section>
-<!-- <section id="logo-slider" style="background:#527853!important;">
-<div class="container-fluid mt-5">
-          <h1 class="text-center text-white mb-5">The “UMYO” All In One Networking App</h1>
-      <div class="slider slider-1">
-                <div class="mb-5"><img src="assets/img/logo2/blackwall.png"></div>
-                <div><img src="assets/img/logo2/events.png"></div>
-                <div><img src="assets/img/logo2/logo2.png"></div>
-                <div><img src="assets/img/logo2/logo3.png"></div>
-                <div><img src="assets/img/logo2/logo4.png"></div>
-                <div><img src="assets/img/logo2/logo5.png"></div>
-                <div><img src="assets/img/logo2/logo6.png"></div>
-                <div><img src="assets/img/logo2/logo7.png"></div>
-                <div><img src="assets/img/logo2/logo8.png"></div>
-                <div><img src="assets/img/logo2/logo9.png"> </div>
-                <div><img src="assets/img/logo2/logo10.png"></div>
-      </div>
 
-      <div class="slider slider-2 mb-4" dir="rtl">
-          <div><img src="assets/img/logo2/logo11.png"></div>
-              <div class="mb-5"><img src="assets/img/logo2/logo12.png"></div>
-                <div><img src="assets/img/logo2/logo13.png"></div>
-                <div><img src="assets/img/logo2/logo14.png"></div>
-                <div><img src="assets/img/logo2/logo15.png"></div>
-                <div><img src="assets/img/logo2/logo16.png"></div>
-                <div><img src="assets/img/logo2/pledge.png"></div>
-                <div><img src="assets/img/logo2/logo9.png"> </div>
-                <div><img src="assets/img/logo2/umyo_market.png"></div>
-                <div><img src="assets/img/logo2/logo8.png"></div>
-                <div><img src="assets/img/logo2/umyodate.png"></div>
-      </div>
+<section id="logo-slider" style="background: #2f3d7e !important">
+  <div class="container-fluid mt-5">
+    <div class="container-fluid mt-1 mobile" style="overflow-x: hidden">
+      <h1 class="text-center mb-5 text-white">
+        "THE UMYO NETWORK" All in one Networking App...
+      </h1>
+      <ngx-slick-carousel
+        #slickModal1="slick-carousel"
+        [config]="slideConfig1"
+        class="carousel"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
 
+      <ngx-slick-carousel
+        #slickModal2="slick-carousel"
+        [config]="slideConfig2"
+        class="carousel"
+        [dir]="'rtl'"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="container-fluid mt-1 mobile2" style="overflow-x: hidden">
+      <h1 class="text-center mb-5 text-white">
+        "THE UMYO NETWORK" All in one Networking App...
+      </h1>
+      <ngx-slick-carousel
+        #slickModal1="slick-carousel"
+        [config]="slideConfig5"
+        class="carousel"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
+
+      <ngx-slick-carousel
+        #slickModal2="slick-carousel"
+        [config]="slideConfig6"
+        class="carousel"
+        [dir]="'rtl'"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="container-fluid mt-1 desktop" style="overflow-x: hidden">
+      <h1 class="text-center mb-5 text-white">
+        "THE UMYO NETWORK" All in one Networking App...
+      </h1>
+      <ngx-slick-carousel
+        #slickModal1="slick-carousel"
+        [config]="slideConfig3"
+        class="carousel"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
+
+      <ngx-slick-carousel
+        #slickModal2="slick-carousel"
+        [config]="slideConfig4"
+        class="carousel"
+        [dir]="'rtl'"
+      >
+        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+          <div class="mb-5"><img [src]="slide.img" /></div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</section>
+<div class="container-fluid featurs">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-10 col-12 px-4">
+        <div
+          class="featurs-item rounded bg-white px-5 py-4 border-primary border-6 w-100"
+          id="feature"
+        >
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
+            </div>
+            <div class="col-lg-8 col-12">
+              <h3 class="mb-3 text-dark">
+                CORPORATE BRANDING - NAME AND LIKENESS - SUPPORTING ATHLETES
+              </h3>
+              <p class="text-dark mb-0" style="font-size: 20px">
+                Business owners now have the opportunity to support athletes by
+                registering their businesses and linking them to specific
+                athletes using their unique ID codes during registration....
+              </p>
+
+              <div
+                class="moretext"
+                [ngClass]="{
+                  'moretext-he': true,
+                  'd-none': !isMoreTextVisible3
+                }"
+              >
+                <p>
+                  Half of the monthly membership fees from supporting businesses
+                  are allocated directly to the respective athlete's account.
+                  This innovative approach enables athletes to focus solely on
+                  their talents, eliminating financial worries. Each registered
+                  athlete operates as an independent contractor within UMYO
+                  SPORTS, ensuring they are compensated while pursuing their
+                  true calling. Join us in shaping the future of athletic
+                  success and support through Umyo Sports Cards!
+                </p>
+                <h3 class="mb-3 text-dark">
+                  Community,Youth to Business Accountability Collaboration
+                  Platform Directory
+                </h3>
+                <p class="mb-3 text-dark">
+                  Enhanced Networking Tools for increased Marketing prowess.
+                </p>
+                <ul class="text-dark mb-5">
+                  <li>Monthly Tier Packages Based Upon Monthly Budget</li>
+                  <li>Community Brands Directory For You Via Social Media</li>
+                  <li>Daily $$$ Giveaways to registered members</li>
+                  <li>
+                    12 Additional Branding Platforms for registered members to
+                    keep them connected
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="moreless-button btn btn-dark text-white mt-3"
+                (click)="toggleMoreText3()"
+                >Read more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</section> -->
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #527853 !important">
+<section id="header" style="background: #2f3d7e !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
       <h1 class="text-white text-center mb-3" style="font-weight: 600">
@@ -258,11 +378,7 @@
           <h4 class="mb-4 text-white">
             Search For Pro-Living & Community Here
           </h4>
-          <form
-            [formGroup]="form2"
-            (ngSubmit)="searchSports()"
-            class="text-center"
-          >
+          <form [formGroup]="form2" class="text-center">
             <div class="row">
               <div class="col-lg-6 mb-4">
                 <input
@@ -277,14 +393,11 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedBusinessType"
+                  formControlName="selectedAgeType"
                 >
-                  <option selected value="" disabled>Business Type</option>
-                  <option
-                    [value]="type.business_type"
-                    *ngFor="let type of businessType"
-                  >
-                    {{ type.business_type }}
+                  <option selected value="" disabled>Select Age Type</option>
+                  <option [value]="type.name" *ngFor="let type of ageType">
+                    {{ type.name }}
                   </option>
                 </select>
               </div>
@@ -293,45 +406,38 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedLocation"
+                  formControlName="selectedSportType"
+                  (change)="onSportTypeChange()"
                 >
-                  <option selected value="" disabled>Location</option>
-                  <option value="Business">Business</option>
-                  <option value="CEO">CEO</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Corporation">Corporation</option>
-                  <option value="Exclusive">Exclusive</option>
-                  <option value="Founder">Founder</option>
-                  <option value="CFO">CFO</option>
-                  <option value="COO">COO</option>
-                  <option value="Home Owner">Home Owner</option>
-                  <option value="Mall">Mall</option>
-                  <option value="Mass">Mass</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="Non Profit">Non Profit</option>
-                  <option value="Office">Office</option>
-                  <option value="Online">Online</option>
-                  <option value="Partners">Partners</option>
-                  <option value="Private">Private</option>
-                  <option value="Retail and Consultants">
-                    Retail and Consultants
+                  <option selected value="" disabled>Select Sport Type</option>
+                  <option [value]="type.name" *ngFor="let type of sportType">
+                    {{ type.name }}
                   </option>
-                  <option value="Community Pledge">Community Pledge</option>
-                  <option value="Store Front">Store Front</option>
-                  <option value="Pop Up Shop">Pop Up Shop</option>
-                  <option value="Vehicle">Vehicle</option>
                 </select>
               </div>
 
-              <div class="col-lg-6 mb-4">
+              <!-- <div class="col-lg-6 mb-4">
                 <input
                   type="text"
                   formControlName="selectedCity"
                   class="form-control"
                   placeholder="City"
                 />
+              </div> -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedPositionType"
+                >
+                  <option selected value="" disabled>
+                    Select Position Type
+                  </option>
+                  <option [value]="type.name" *ngFor="let type of positionType">
+                    {{ type.name }}
+                  </option>
+                </select>
               </div>
-
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
@@ -395,44 +501,33 @@
 
               <div class="col-lg-6">
                 <h4 class="mb-4 text-white text-center">
-                  I Pledge To Report Violent Crimes
+                  Businesses Supporting Military
                 </h4>
               </div>
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedRace"
+                  formControlName="selectedBusinessType"
                 >
-                  <option selected value="" disabled>Race</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="African">African</option>
-                  <option value="Native American">Native American</option>
-                  <option value="Afro-Americans">Afro-Americans</option>
-                  <option value="Asian">Asian</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="European">European</option>
-                  <option value="Pacific Isalnder">Pacific Isalnder</option>
-                  <option value="German">German</option>
-                  <option value="Middle Eastern">Middle Eastern</option>
-                  <option value="Casun">Casun</option>
-                  <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Other">Other</option>
+                  <option selected value="" disabled>Business Type</option>
+                  <option
+                    [value]="type.business_type"
+                    *ngFor="let type of businessType"
+                  >
+                    {{ type.business_type }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedGender"
-                >
-                  <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
+                <input
+                  type="text"
+                  formControlName="selectedCity"
+                  class="form-control"
+                  placeholder="City"
+                />
               </div>
+
               <div class="col-lg-6 mb-4">
                 <button
                   type="submit"
@@ -491,12 +586,13 @@
                 class="container tab-pane"
                 [class.active]="showLoginTab"
               >
-                <form (ngSubmit)="login()" [formGroup]="form">
+                <form [formGroup]="form">
                   <div class="row">
-                    <h1 class="text-center">UMYO For Pro-Living</h1>
+                    <h1 class="text-center">UMYO For Teams</h1>
                     <p class="text-center">
-                      Register to Connect with Your Community
+                      Fill out this form to book a quick demo
                     </p>
+                    <p class="text-center">(same-day options available).</p>
                     <br /><br /><br /><br /><br /><br />
                     <h2 class="text-info mb-3">Login</h2>
                     <div class="col-md-12 mb-5">
@@ -556,10 +652,23 @@
                           Password is required.
                         </div>
                       </div>
+                      <div class="form-group" style="padding-top: 10px">
+                        <label
+                          style="
+                            font-size: 16px;
+                            font-weight: 400;
+                            text-decoration: underline;
+                            cursor: pointer;
+                          "
+                          [routerLink]="['/forgot-password']"
+                          >Forgot Password?
+                        </label>
+                      </div>
                     </div>
                   </div>
 
                   <button
+                    (click)="openAgeModal('login')"
                     type="submit"
                     class="btn btn-info text-white mt-3 py-3 px-5"
                     style="margin: auto; display: block"
@@ -577,11 +686,7 @@
                 class="container tab-pane"
                 [class.active]="showRegisterTab"
               >
-                <form
-                  (ngSubmit)="register()"
-                  (submit)="register()"
-                  [formGroup]="form3"
-                >
+                <form [formGroup]="form3">
                   <div class="row justify-content-center">
                     <h1 class="text-center">UMYO Pro</h1>
                     <div class="col-md-3 my-5">
@@ -736,20 +841,20 @@
                         />
                       </div>
                     </div>
-                    <div class="col-md-6 mb-5">
+                    <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Select Location<sup style="color: red; font-size: 20px"
+                        >Business Type<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
-                        formControlName="registerLocationType"
+                        formControlName="registerBusinessType"
                         class="form-select"
                         aria-label="Default select example"
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerLocationType')?.touched ||
-                              !form3.get('registerLocationType')?.valid) &&
+                            (!form3.get('registerBusinessType')?.touched ||
+                              !form3.get('registerBusinessType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
@@ -757,32 +862,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Business">Business</option>
-                        <option value="CEO">CEO</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Corporation">Corporation</option>
-                        <option value="Exclusive">Exclusive</option>
-                        <option value="Founder">Founder</option>
-                        <option value="CFO">CFO</option>
-                        <option value="COO">COO</option>
-                        <option value="Home Owner">Home Owner</option>
-                        <option value="Mall">Mall</option>
-                        <option value="Mass">Mass</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Non Profit">Non Profit</option>
-                        <option value="Office">Office</option>
-                        <option value="Online">Online</option>
-                        <option value="Partners">Partners</option>
-                        <option value="Private">Private</option>
-                        <option value="Retail and Consultants">
-                          Retail and Consultants
+                        <option
+                          [value]="type.business_type"
+                          *ngFor="let type of businessType"
+                        >
+                          {{ type.business_type }}
                         </option>
-                        <option value="Community Pledge">
-                          Community Pledge
-                        </option>
-                        <option value="Store Front">Store Front</option>
-                        <option value="Pop Up Shop">Pop Up Shop</option>
-                        <option value="Vehicle">Vehicle</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -861,30 +946,30 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Business Type<sup style="color: red; font-size: 20px"
+                        >Age Type<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
-                        formControlName="registerBusinessType"
-                        class="form-select"
-                        aria-label="Default select example"
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerBusinessType')?.touched ||
-                              !form3.get('registerBusinessType')?.valid) &&
+                            (!form3.get('registerAgeType')?.touched ||
+                              !form3.get('registerAgeType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
+                        class="form-select"
+                        aria-label="Default select example"
+                        formControlName="registerAgeType"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
                         <option
-                          [value]="type.business_type"
-                          *ngFor="let type of businessType"
+                          [value]="type.name"
+                          *ngFor="let type of ageType"
                         >
-                          {{ type.business_type }}
+                          {{ type.name }}
                         </option>
                       </select>
                     </div>
@@ -912,17 +997,20 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Race<sup style="color: red; font-size: 20px">*</sup>
+                        >Sports Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerRaceType')?.touched ||
-                              !form3.get('registerRaceType')?.valid) &&
+                            (!form3.get('registerSportType')?.touched ||
+                              !form3.get('registerSportType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
-                        formControlName="registerRaceType"
+                        (change)="onRegisterSportTypeChange()"
+                        formControlName="registerSportType"
                         class="form-select"
                         aria-label="Default select example"
                       >
@@ -930,38 +1018,30 @@
                           Please Select
                         </option>
 
-                        <option value="Nubians">Nubians</option>
-                        <option value="African">African</option>
-                        <option value="Native American">Native American</option>
-                        <option value="Afro-Americans">Afro-Americans</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="European">European</option>
-                        <option value="Pacific Isalnder">
-                          Pacific Isalnder
+                        <option
+                          [value]="type.name"
+                          *ngFor="let type of sportType"
+                        >
+                          {{ type.name }}
                         </option>
-                        <option value="German">German</option>
-                        <option value="Middle Eastern">Middle Eastern</option>
-                        <option value="Casun">Casun</option>
-                        <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Gender<sup style="color: red; font-size: 20px">*</sup>
+                        >Position Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerGenderType')?.touched ||
-                              !form3.get('registerGenderType')?.valid) &&
+                            (!form3.get('registerPositionType')?.touched ||
+                              !form3.get('registerPositionType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerGenderType"
+                        formControlName="registerPositionType"
                         class="form-select"
                         aria-label="Default select example"
                       >
@@ -969,9 +1049,12 @@
                           Please Select
                         </option>
 
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option
+                          [value]="type.name"
+                          *ngFor="let type of positionType"
+                        >
+                          {{ type.name }}
+                        </option>
                       </select>
                     </div>
 
@@ -991,7 +1074,7 @@
 
                   <div (click)="submitForm()">
                     <button
-                      (click)="openPackageModal()"
+                      (click)="openAgeModal('signup')"
                       [disabled]="!form3.valid"
                       class="btn btn-info text-white mt-3 py-3 px-5"
                       style="margin: auto; display: block"
@@ -1005,42 +1088,26 @@
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">Pro-Living Connect</h1>
+      <h1 class="text-white my-3 featurs">MAKE COOL SPORTS CARDS</h1>
       <p class="text-white my-3">
-        Through Pro-Living Connect, you can effortlessly share, network, coach,
-        conduct and share training achievements, interviews, industry insights,
-        images..
+        Umyo Sports Cards is the first of its kind Social network app connecting
+        fellow Athletes, Agents, Recruiters, Coaches, Schools, Colleges
       </p>
-      <div
-        class="moretext"
-        [ngClass]="{ 'moretext-he': true, 'd-none': !isMoreTextVisible2 }"
-      >
+      <div class="moretext" style="display: none">
         <p class="text-white my-3">
-          career milestones for a wide-reaching Pro-Living audience. It's the
-          premier destination for Pro-Living individuals and those involved in
-          our communities, providing them with a safe space exclusively for
-          them.
-        </p>
-        <p class="text-white my-3">
-          Pro-Living individuals and industry professionals can reciprocate the
-          support provided by businesses that endorse diversity in our
-          community. Business owners now have the opportunity to register their
-          companies and connect them with specific Pro-Living professionals
-          using unique ID codes during the registration process.
-        </p>
-        <p class="text-white my-3">
-          Pro-Living Connect is a groundbreaking social network app designed
-          exclusively for the Pro-Living community and businesses eager to
-          support the journey of our Pro-Living members as they strive for
-          success.
-        </p>
-        <p class="text-white my-3">
-          Share your Business, Portfolio, Achievements, Industry Insights,
-          Podcast, Conferences, Testimonials, Videos, Images, and Career
-          Highlights for a wide audience to explore. This all-in-one platform is
-          essential for community and professionals seeking greater visibility
-          using virtual interactive concepts to network with others just like
-          you. A safe and positive place to thrive in this digital space.
+          Business owners who choose to support the journey of its athletes
+          financially as they strive for success. The only app that allows
+          athletes to brand their talent while getting the support and branding
+          they deserve. Upload your Stats, GPA, Interviews, Podcast, Images and
+          Sports Reel for literally thousands to see. The perfect one stop shop
+          for athletes of all sports who are needing the exposure. Also,
+          Business owners can now support athletes by registering their business
+          and entering the ID code of an athlete during registration. Half of
+          the businesses monthly membership that supports an athlete goes into
+          their account, thus allowing athletes to solely concentrate on their
+          talent vs resources. Each registered athlete acts as an independent
+          contractor for UMYO SPORTS. This allows those athletes to get paid
+          while operating within their purpose.
         </p>
       </div>
       <a
@@ -1130,7 +1197,7 @@
             paymentButtons: selectedPackage != null
           }"
         >
-          <div id="paypal-button-container"></div>
+          <!-- <div id="paypal-button-container"></div> -->
           <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
@@ -1138,6 +1205,14 @@
             (click)="openStripeModal()"
           >
             Stripe
+          </button>
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="paypalClick()"
+          >
+            paypal
           </button>
         </div>
         <div *ngIf="selectedPackage?.price == '0'">
@@ -1188,37 +1263,44 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="card-number">Card Number</label>
+                  <label for="card-number"
+                    >Card Number 14 Digit (Without Dashes)</label
+                  >
                   <input
                     type="text"
                     class="form-control"
                     id="card-number"
                     data-stripe-element="cardNumber"
                     formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
                   />
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="card-expiry">Expiration Date</label>
+                  <label for="card-expiry"
+                    >Expiration Date in (MM/YY) Format</label
+                  >
                   <input
                     type="text"
                     class="form-control"
                     id="card-expiry"
                     data-stripe-element="expiryDate"
                     formControlName="expiryDate"
+                    placeholder="MM/YY"
                   />
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="card-cvc">CVC</label>
+                  <label for="card-cvc">CVC 3 Digit</label>
                   <input
                     type="text"
                     class="form-control"
                     id="card-cvc"
                     data-stripe-element="cvc"
                     formControlName="cvc"
+                    placeholder="XXX"
                   />
                 </div>
               </div>
@@ -1255,319 +1337,556 @@
   </div>
 </div>
 
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Are You 18+ of your age?</h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmAge()">
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAgeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Confirming Payment...</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!------- tab section end ---------->
-<div class="container-fluid featurs pt-3 mt-3 mb-5">
+
+<div class="container-fluid featurs pt-3 mt-3">
   <div class="container">
     <div class="row g-4">
       <div class="col-12">
         <h1 class="text-center">Single Application, Multiple Platforms</h1>
         <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
       </div>
-      <!-- <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/2.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/touchScreen.jpg" class="img-fluid" />
               </div>
-              <h2 class="mt-4">Virtual Interactive Pro-Living Card Directory</h2>
-              <div class="moretext1" style="display:none;">
-              <p>1. A Social Networking Platform & Search Engine Directory.</p>
-                 <p>2. Virtual Business and Community Cards /with Social Media Icons that Links to Social Media & Websites.</p>
-                 <p>3. Members Befriend, Network, Chat and Share Members ID cards via Social Media.</p>
-                 <p>4. Search Engine for community, visitors & members to find registered businesses.</p>
-                 <p>5. Daily $$$ giveaways to Pro-Living individuals and their families.</p>
-              </div>
-              <a class="moreless-button1 btn btn-dark" href="#text1">Read more</a>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/2.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
+        </div>
+        <h2 class="mt-4">Double Touch Screens Kiosks</h2>
+        <div class="moretext3" style="display: none">
+          Keep a steady stream of clients walking through your doors with the
+          prominent Digital 4K Vertical Touch Screen Kiosk, which will display
+          your products via images and videos, offering an eye-catching and
+          effective way to call attention to your business.
+        </div>
+        <a class="moreless-button3 btn btn-dark text-white" href="#text2"
+          >Read more</a
+        >
+      </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/chat.jpg" class="img-fluid" />
               </div>
-              <h2 class="mt-4">Timeline</h2>
-              <div class="moretext2" style="display:none;">
-                 <p>Stay in the loop with the latest posts, photos, and life events of your Pro-Living friends. Scroll through your personalized timeline to ensure you never miss a moment.</p>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">uChatYes.com (Similar to Chat Gpt)</h2>
+        <div class="moretext6" style="display: none">
+          <p>
+            <strong>uChatYes.com</strong> - Create unique and engaging content
+            that will increase conversions and drive sales.Harness the power of
+            artificial intelligence and transform the way you produce unique
+            content.
+          </p>
+          <h6>Transcriptions</h6>
+          <p>
+            Extract the contents of audio files and turn them into fully
+            editable documents. Generate original content for your website,
+            marketing, and social activities
+          </p>
+        </div>
+        <a class="moreless-button6 btn btn-dark text-white" href="#text5"
+          >Read more</a
+        >
+      </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
               </div>
-              <a class="moreless-button2 btn btn-dark" href="#text2">Read more</a>
-          </div> -->
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">
+          Virtual Interactive Sports and Business Card Directory
+        </h2>
+        <div class="moretext2" style="display: none">
+          <p>
+            1. A Social Networking Platform & Search Engine Directory for State
+            of Nevada
+          </p>
+          <p>
+            2. Virtual Business and Community Cards /with Social Media Icons
+            that pnks to Social Media & Websites
+          </p>
+          <p>
+            3. Members Befriend, Network, Chat and Share Members ID cards via
+            Social Media
+          </p>
+          <p>
+            4. Search Engine for community, visitors & members to find
+            registered businesses
+          </p>
+          <p>5. Daily $$$ giveaways to community</p>
+        </div>
+        <a class="moreless-button2 btn btn-dark text-white" href="#text1"
+          >Read more</a
+        >
+      </div>
+
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
-        <a href=" https://umyomusic.com" target="_blank">
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/dfw/3.png" class="img-fluid" />
-                </div>
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img
+                  src="assets/newlogo/virtualconferene.jpg"
+                  class="img-fluid"
+                />
               </div>
             </div>
           </div>
-        </a>
-        <!-- <h2 class="mt-4">Live</h2>
-               <div class="moretext3" style="display:none;">
-                  <p>Share live broadcasts with your followers or tune in to watch live content from around the world from other Pro-Living professionals, their family, friends. Interact with broadcasters in real-time.</p>
-              </div>
-          <a class="moreless-button3 btn btn-dark" href="#text3">Read more</a> -->
+        </div>
+        <h2 class="mt-4">Virtual Conference Platform (Similar to Zoom)</h2>
+        <div class="moretext4" style="display: none">
+          <ul>
+            <li>
+              Share External Video, Share Screen, Create Rooms, Create Backrooms
+            </li>
+            <li>
+              Shared Notes, Public Chat/Save Copy/Delete, Manage Presentation
+            </li>
+            <li>
+              Start A Poll, Select Random User, Mute, Leave Audio, Share Webcam
+            </li>
+            <li>
+              Manage Presentation, Raise Hands, Recording, Keyboard Shortcuts &
+              More
+            </li>
+            <li>Weekly Support Channels for Students, Student Only Channels</li>
+            <li>
+              Audio Conference -Enable you to conference with only audio with
+              optional screen share features like a group voice call.
+            </li>
+            <li>
+              Video Conference -enables you to conference with others with audio
+              and video with optional screen sharing features.
+            </li>
+            <li>
+              Webinar -Enables you to stream yourself live with video and audio
+              with optional screen sharing feature
+            </li>
+            <li>
+              Live Classes ( backrooms) -Enables you to stream live with audio
+              and video , where you can see and hear anyone but they can see and
+              hear only you , not each other
+            </li>
+            <li>
+              Podcast -Enables you to stream your audio live with others who
+              invited.They can only hear your voice over audio stream
+            </li>
+          </ul>
+        </div>
+        <a class="moreless-button4 btn btn-dark text-white" href="#text3"
+          >Read more</a
+        >
       </div>
 
-      <!-- <div class="col-lg-4 col-md-6 mt-5 px-5" id="text4">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/1.jpg" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Chat</h2>
-              <div class="moretext4" style="display:none;">
-                  <p>Connect with friends through private messages or group chats. Share text, photos, videos, and more.</p>
-              </div>
-              <a class="moreless-button4 btn btn-dark" href="#text4">Read more</a>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/5.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Calling</h2>
-              <div class="moretext5" style="display:none;">
-                 <p>Make high-quality voice and video calls to your contacts, keeping you connected no matter where you are.</p>
-              </div>
-              <a class="moreless-button5 btn btn-dark" href="#text5">Read more</a>
-          </div> -->
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
-        <a href="https://Uchatyes.com" target="_blank">
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/dfw/6.png" class="img-fluid" />
-                </div>
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img
+                  src="assets/newlogo/sportsmagazine.jpg"
+                  class="img-fluid"
+                />
               </div>
             </div>
           </div>
-        </a>
-        <!-- <h2 class="mt-4">Events Booking</h2>
-              <div class="moretext6" style="display:none;">
-                 <p>Discover and book events in your area or share your own events with the community.</p>
-              </div>
-              <a class="moreless-button6 btn btn-dark" href="#text6">Read more</a> -->
+        </div>
+        <h2 class="mt-4">Virtual Interactive Video Audio Article Magazine</h2>
+        <div class="moretext7" style="display: none">
+          <p>
+            <strong>Engaging content,</strong> articles, logos, videos, featured
+            pages that will increase conversions and drive sales. Advertise your
+            Business to the World with a Global Streaming magazine that gives
+            you the exposure you can only dream of.
+          </p>
+        </div>
+        <a class="moreless-button7 btn btn-dark text-white" href="#text6"
+          >Read more</a
+        >
       </div>
-      <!-- <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/7.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Dating</h2>
-              <div class="moretext7" style="display:none;">
-                 <p>Find meaningful connections with like-minded people through our dating feature. Pro-Living Connect is more than just a social app; it's a place to meet new people and potentially find love.</p>
-              </div>
-              <a class="moreless-button7 btn btn-dark" href="#text7">Read more</a>
-          </div>
-
-           <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/8.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Podcasts</h2>
-              <div class="moretext8" style="display:none;">
-                 <p>Listen to and create your own podcasts on topics you're passionate about. Share your voice with the world.</p>
-              </div>
-              <a class="moreless-button8 btn btn-dark" href="#text8">Read more</a>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/9.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Fundraising</h2>
-              <div class="moretext9" style="display:none;">
-                 <p>Support and create fundraising campaigns for causes that matter to you. Make a positive impact on your community.</p>
-              </div>
-              <a class="moreless-button9 btn btn-dark" href="#text9">Read more</a>
-          </div>
-
-           <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
-              <div class="position-relative fruite-item">
-                  <div class="fruite-img">
-                    <div class="videos__wrapper">
-                      <div class="videos__wrapper--video2">
-                        <img src="assets/dfw/10.png" class="img-fluid">
-                      </div>
-                  </div>
-                  </div>
-              </div>
-              <h2 class="mt-4">Pro-Living Groups</h2>
-              <div class="moretext10" style="display:none;">
-                 <p>Creating groups involves forming distinct communities within the platform where Pro-Living users with common interests or affiliations can join and interact. These groups provide a space for like-minded Pro-Living individuals to share content, engage in discussions, and connect with one another based on shared topics, hobbies, or goals. Group members can typically post and comment on discussions relevant to the group's theme, fostering a more focused and engaged online community.</p>
-              </div>
-              <a class="moreless-button10 btn btn-dark" href="#text10">Read more</a>
-          </div> -->
-
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
-        <a href="https://Umyovideo.com" target="_blank">
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/dfw/11.png" class="img-fluid" />
-                </div>
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/videoplatform.jpg" class="img-fluid" />
               </div>
             </div>
           </div>
-        </a>
-        <!-- <h2 class="mt-4">Nearby Offers</h2>
-              <div class="moretext11" style="display:none;">
-                 <p>Access exclusive offers and discounts from businesses in your area. Pro-Living Connect helps you save from online registered businesses while you explore your surroundings.</p>
+        </div>
+        <h2 class="mt-4">Video Platform</h2>
+        <div class="moretext12" style="display: none">
+          <p>
+            <strong>A platform</strong> for content creators and users looking
+            to share articles, videos, conduct live streaming with external
+            cameras, offer pay-per-view events, enable donations for online
+            channels, and more.
+          </p>
+        </div>
+        <a class="moreless-button12 btn btn-dark text-white" href="#text11"
+          >Read more</a
+        >
+      </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/liveStreaming.jpg" class="img-fluid" />
               </div>
-              <a class="moreless-button11 btn btn-dark" href="#text11">Read more</a> -->
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">Virtual Live Streaming App</h2>
+        <div class="moretext10" style="display: none">
+          <p>
+            <strong>A Live Streaming platform</strong> that allows users to go
+            live Streams, Live Games, Live Shows and Video Chat online with
+            other users, residents and visitors. Perfect for those who are
+            visiting and looking to know what is happening in the now from
+            others as well as who else is in town looking for fun, activities,
+            parties, and meet and greet. No more catfishing, when you can go
+            live and see real personalities that are looking for exciting things
+            to be a part of. Excellent for dating!!
+          </p>
+          <h5>
+            Create Groups - Create Topics - Create Events - Create Invites
+          </h5>
+        </div>
+        <a class="moreless-button10 btn btn-dark text-white" href="#text9"
+          >Read more</a
+        >
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
-        <a href="https://Umyosms.com/" target="_blank">
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/dfw/12.png" class="img-fluid" />
-                </div>
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/shortvideo.jpg" class="img-fluid" />
               </div>
             </div>
           </div>
-        </a>
-        <!-- <h2 class="mt-4">Short Videos</h2>
-              <div class="moretext12" style="display:none;">
-                 <p>Creating short videos entails producing and sharing concise video content that is typically brief in duration, often lasting anywhere from a few seconds to a few minutes. These short videos are designed to capture attention quickly and are well-suited for sharing on platforms like TikTok, Instagram Reels, or Snapchat. Users can use various creative tools and features to record, edit, and enhance their videos to tell stories, share moments, provide entertainment, or convey messages in a concise and engaging format. The goal is to engage the audience and make an impact in a short span of time.</p>
-              </div>
-              <a class="moreless-button12 btn btn-dark" href="#text12">Read more</a> -->
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text15">
-        <a>
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/proliving/1.png" class="img-fluid" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <!-- <h2 class="mt-4">Pro-Living Tweets</h2>
-              <div class="moretext15" style="display:none;">
-                 <p>is a microblogging platform where Pro-Living users share short messages called tweets, limited to 280 characters. It's a hub for Pro-Living individuals to add real-time updates, discussions, and a variety of content, often accompanied by hashtags to categorize topics.</p>                          
-                 <p>Pro-Living Connect was crafted to provide a safe and inclusive space for Pro-Living individuals, their family, business industry and their communities. Our robust privacy settings and content moderation ensure a secure environment for all users.</p>
-                 
-                 <p>Join the Pro-Living Connect community today and embark on a social media experience like no other. - Where Pro-Living Connections Come to Life!</p>
         </div>
-              <a class="moreless-button15 btn btn-dark" href="#text15">Read more</a> -->
+        <h2 class="mt-4">Short Video Platform</h2>
+        <div class="moretext13" style="display: none">
+          <p>
+            <strong
+              >is a social media platform primarily designed for creating,
+              sharing, and discovering short-form video content. Users can
+              record videos of themselves, often set to music or audio clips,
+              and then share them with their followers or with a broader
+              community. The platform allows for various creative expressions,
+              including dancing, lip-syncing, comedy skits, tutorials,
+              challenges, and more. Has user-friendly video editing tools,
+              algorithms that promote content virality, and its ability to
+              quickly connect creators with a wide audience. It is widely used
+              for entertainment, self-expression, and social interaction</strong
+            >
+          </p>
+        </div>
+        <a class="moreless-button13 btn btn-dark text-white" href="#text12"
+          >Read more</a
+        >
       </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text15">
-        <a href="http://PLTweet.site" target="_blank">
-          <div class="position-relative fruite-item">
-            <div class="fruite-img">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video2">
-                  <img src="assets/proliving/2.png" class="img-fluid" />
-                </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/vpn.jpg" class="img-fluid" />
               </div>
             </div>
           </div>
-        </a>
+        </div>
+        <h2 class="mt-4">
+          Virtual Private Network VPN -<small>
+            search & use internet with privacy</small
+          >
+        </h2>
+        <div class="moretext9" style="display: none">
+          <p>
+            Protects you and your guest browsers privacy. Browse with a virtual
+            I.P. Address that helps you hide your location and lets you view the
+            web with enhance online privacy within the android and desktop
+          </p>
+        </div>
+        <a class="moreless-button9 btn btn-dark text-white" href="#text8"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/qRcodes.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">QR CODE FOR USERS</h2>
+        <div class="moretext11" style="display: none">
+          <p>
+            <strong>QR Codes Banner</strong> that links to all eight platforms
+            for your guest, visitors and global presence. When guests enter your
+            establishment, they can scan and see all the amazing platforms that
+            allow them to join and participate in online contests and daily
+            giveaways.
+          </p>
+        </div>
+        <a class="moreless-button11 btn btn-dark text-white" href="#text10"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/uInvite.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">U Invite</h2>
+        <div class="moretext14" style="display: none">
+          <p>
+            Platform primarily used for event management and ticketing. It
+            allows event organizers to create, promote, and sell tickets for a
+            wide range of events, including conferences, concerts, festivals,
+            fundraisers, and more. Eventbrite provides tools for event
+            registration, ticket sales, marketing, and attendee management,
+            making it easier for both event organizers and attendees to plan and
+            participate in events. It is commonly used by event planners,
+            organizers, and businesses to streamline the process of hosting and
+            managing events.
+          </p>
+        </div>
+        <a class="moreless-button14 btn btn-dark text-white" href="#text13"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/couponBooklet.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">Interactive Virtual</h2>
+        <div class="moretext8" style="display: none">
+          <p>
+            Booklet that links to other pages, videos, images, online contests,
+            websites social media and more
+          </p>
+          <p>
+            First ever Kiosk Touch screen business kiosk that can be shared by
+            thousands to thousands within minutes.
+          </p>
+        </div>
+        <a class="moreless-button8 btn btn-dark text-white" href="#text7"
+          >Read more</a
+        >
+      </div>
+    </div>
+    <div class="row g-4 py-5">
+      <div class="col-lg-12 col-md-6 px-5 mt-5">
+        <img src="assets/newlogo/naf.jpg" class="img-fluid" />
       </div>
     </div>
   </div>
 </div>
 
-<!-- Featurs Section End -->
+<section id="card_section">
+  <div class="container-fluid service py-2">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-12 col-lg-8">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/attorneys.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/automotive.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/colleges.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/dfw.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/entertainment.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img src="assets/footerimg/new/nl.jpg" class="img-fluid mb-3" />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/sports.jpeg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
 
-<!-- Footer Start -->
-<div
-  class="container-fluid bg-dark text-white-50 footer"
-  style="background: #527853 !important; height: 100% !important"
->
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-lg-4 col-md-6">
-        <h4 class="text-light"><b>Contact us</b></h4>
-        <div class="d-flex flex-column text-start footer-item">
-          <a
-            class="btn-link"
-            style="cursor: pointer"
-            (click)="openPolicyModal()"
-            >Privacy Policy</a
-          >
-          <a
-            class="btn-link"
-            style="cursor: pointer"
-            (click)="openRefundModal()"
-            >Refund Policy</a
-          >
-          <a class="btn-link" style="cursor: pointer" (click)="openTermsModal()"
-            >Terms Of Service</a
-          >
-          <a class="btn-link" style="cursor: pointer">Proliving Profile</a>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/restaurants.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/hispanics.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/hotel.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/stylists.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-item">
-          <h4 class="text-light mb-3">LET'S CONNECT</h4>
-          <p class="mb-4">
-            Subscribe to stay up to date on all the latest Pro-Living features,
-            products, stories, and more. You can also contact us at
-            contact@prolivingbiz.com.
-          </p>
-          <div class="position-relative mx-auto">
-            <input
-              class="form-control border-0 py-2 w-100"
-              type="text"
-              placeholder="Enter Your Email"
-            />
-            <button
-              type="submit"
-              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
-              style="top: 0; right: 0"
-            >
-              Sent
-            </button>
+        <div class="col-lg-4">
+          <div class="pro_c">
+            <h1>Grab a UMYO Product</h1>
+            <p>Choose from our variety of products designed to fit...</p>
+            <a href="#">
+              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
+                Shop All Products
+              </button>
+            </a>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="d-flex justify-content-center pt-3">
+    </div>
+  </div>
+  <!-- product End -->
+</section>
+
+<!-- Featurs Section End -->
+
+<!-- Footer Start -->
+
+<div
+  class="container-fluid bg-dark text-white-50 footer"
+  style="background: #2f3d7e !important"
+>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex pt-3">
           <a
             class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
             href=""
@@ -1595,11 +1914,56 @@
           ></a>
         </div>
       </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link">Contact us</a>
+          <a class="btn-link" (click)="openPolicyModal()">Privacy Policy</a>
+          <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
+          <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
+          <a class="btn-link">Terms of Sales</a>
+          <a class="btn-link">Data Processing Addendum</a>
+          <a class="btn-link">Careers</a>
+          <a class="btn-link">Security & Trust Report</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link">UMYO Store</a>
+          <a class="btn-link">Industries</a>
+          <a class="btn-link">UMYO for Teams</a>
+          <a class="btn-link">UMYO Pro</a>
+          <a class="btn-link">UMYO Profile</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest UMYO features,
+            products, stories, and more. You can also contact us at
+            contact@umyo.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
       <p class="text-white text-center">
         <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i>2023 Pro-Living</a
+          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
         >, All right reserved.
       </p>
     </div>
@@ -2316,33 +2680,3 @@ non-enforcement doesn't waive future enforcement rights.
     </div>
   </div>
 </div>
-
-<!-- <div
-  class="modal fade"
-  id="profileModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="profileModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="profileModalLabel">Proliving Profile</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-
-
-      </div>
-    </div>
-  </div>
-</div> -->

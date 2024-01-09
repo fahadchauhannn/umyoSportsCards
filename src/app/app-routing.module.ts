@@ -45,16 +45,20 @@ import { CreateCardStepsComponent } from './public/create-card-steps/create-card
 import { PreviewCardComponent } from './public/cards/preview-card/preview-card.component';
 import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { TruckersComponent } from './truckers/truckers.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent ,pathMatch: 'full'},
   { path: 'team', component: TeamComponent },
+  { path: 'truckers', component: TruckersComponent ,pathMatch: 'full' },
   { path: 'products', component: ProductsComponent },
   { path: 'pro', component: ProComponent },
   { path: 'network', component: NetworkComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
 
   // Protected routes for authenticated users
   { path: 'cards', component: CardsComponent, canActivate: [AuthGuard] },

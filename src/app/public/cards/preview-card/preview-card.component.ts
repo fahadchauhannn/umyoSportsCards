@@ -26,8 +26,9 @@ export class PreviewCardComponent implements  OnInit{
       Photo:any
       Logo: any
       ProductImages: any
-      YoutubeTitle:any
-      YoutubeLink:any
+      YoutubeArray:any
+      UmyotubeArray:any
+      VimeoVideoArray:any
       VimeoTitle:any
       VimeoLink:any
       UmyotubeTitle:any
@@ -123,8 +124,10 @@ user_id  = parseInt(this.id, 10);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
             this.ProductImages = '';
-            this.YoutubeTitle = response.Card.socialFormData?.youtubeVideos[0]?.youtubeTitle;
-            this.YoutubeLink = response.Card.socialFormData?.youtubeVideos[0]?.youtubeLink;
+            this.YoutubeArray = response.Card.socialFormData?.youtubeVideos;
+            this.UmyotubeArray = response.Card.socialFormData?.umyotubeVideos;
+            this.VimeoVideoArray = response.Card.socialFormData?.vimeoVideos;
+            
             this.VimeoTitle = response.Card.socialFormData?.vimeoVideos[0]?.vimeoTitle;
             this.VimeoLink = response.Card.socialFormData?.vimeoVideos[0]?.vimeoLink;
             this.UmyotubeTitle = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeTitle;
