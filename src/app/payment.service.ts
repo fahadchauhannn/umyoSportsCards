@@ -87,7 +87,6 @@ if (expireInValue.includes("year")) {
               email: form3.get('registerEmail').value,
               password: form3.get('registerPassword').value,
               country: "",
-              business_type: form3.get('registerBusinessType').value,
               sub_category: "",
               stripe_customer_id:this.stripe_customer_id,
               stripe_subscription_id:this.stripe_subscription_id,
@@ -95,15 +94,21 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              sport_type: form3.get('registerSportType').value,
-              age_type: form3.get('registerAgeType').value,
-              position: form3.get('registerPositionType').value,
-              state: form3.get('registerStateType').value,
+              business_type: form3.get('registerBusinessType')?.value,
+              sport_type: form3.get('registerSportType')?.value,
+              age_type: form3.get('registerAgeType')?.value,
+              position: form3.get('registerPositionType')?.value,
+              state: form3.get('registerStateType')?.value,
+              city: form3.get('registerCityType')?.value,
+              location: form3.get('registerLocationType')?.value,
+              race: form3.get('registerRaceType')?.value,
+              gender: form3.get('registerGenderType')?.value,
+              truckType: form3.get('registerTypeOfTrucks')?.value,
+              truckLoad: form3.get('registerTruckLoads')?.value,
+              commonCarrier: form3.get('registerCommonCarrier')?.value,
+              truckService: form3.get('registerTruckService')?.value,
+        
               reffered_from: form3.get('registerReferralCode').value,
-              location: '',
-              city: form3.get('registerCityType').value,
-              race: '',
-              gender: '',
               
             });
 
@@ -147,27 +152,35 @@ if (expireInValue.includes("year")) {
   testing(form3:any, selectedPackage: Package){
 
     this.setUserData({
+      
+      
+      friend_id: null,
+      package_id: selectedPackage.id,
+      balance_transaction: null,
+      balance_transaction_type: null,
+    
       firstname: form3.get('registerFirstName').value,
       lastname: form3.get('registerLastName').value,
       phone: form3.get('registerPhone').value,
       email: form3.get('registerEmail').value,
       password: form3.get('registerPassword').value,
-      country: "",
-      business_type: form3.get('registerBusinessType').value,
-      sub_category: "",
-      friend_id: null,
-      package_id: selectedPackage.id,
-      balance_transaction: null,
-      balance_transaction_type: null,
-      sport_type: form3.get('registerSportType').value,
-              age_type: form3.get('registerAgeType').value,
-              position: form3.get('registerPositionType').value,
-      state: form3.get('registerStateType').value,
+
+      
+      business_type: form3.get('registerBusinessType')?.value,
+      sport_type: form3.get('registerSportType')?.value,
+      age_type: form3.get('registerAgeType')?.value,
+      position: form3.get('registerPositionType')?.value,
+      state: form3.get('registerStateType')?.value,
+      city: form3.get('registerCityType')?.value,
+      location: form3.get('registerLocationType')?.value,
+      race: form3.get('registerRaceType')?.value,
+      gender: form3.get('registerGenderType')?.value,
+      truckType: form3.get('registerTypeOfTrucks')?.value,
+      truckLoad: form3.get('registerTruckLoads')?.value,
+      commonCarrier: form3.get('registerCommonCarrier')?.value,
+      truckService: form3.get('registerTruckService')?.value,
+
       reffered_from: form3.get('registerReferralCode').value,
-      location: '',
-      city: form3.get('registerCityType').value,
-      race: '',
-      gender: '',
       
     });
 
@@ -239,7 +252,7 @@ if (expireInValue.includes("year")) {
           email: form3.get('registerEmail').value,
           password: form3.get('registerPassword').value,
           country: "",
-          business_type: form3.get('registerBusinessType').value,
+          
           sub_category: "",
           stripe_customer_id:this.stripe_customer_id,
           stripe_subscription_id:this.stripe_subscription_id,
@@ -247,16 +260,28 @@ if (expireInValue.includes("year")) {
           package_id: selectedPackage.id,
           balance_transaction: null,
           balance_transaction_type: 'paypal',
-          sport_type: "",
-          age_type: "",
-          position: "",
-          state: form3.get('registerStateType').value,
+          
+          state: form3.get('registerStateType')?.value,
           reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocationType').value,
-          city: form3.get('registerCityType').value,
-          race: form3.get('registerRaceType').value,
-          gender: form3.get('registerGenderType').value,
-          plan_id:response.plan_id
+          location: form3.get('registerLocationType')?.value,
+          city: form3.get('registerCityType')?.value,
+          race: form3.get('registerRaceType')?.value,
+          gender: form3.get('registerGenderType')?.value,
+          plan_id:response.plan_id,
+
+          
+      sport_type: form3.get('registerSportType')?.value,
+      age_type: form3.get('registerAgeType')?.value,
+      position: form3.get('registerPositionType')?.value,
+      
+      
+      
+      
+      
+      truckType: form3.get('registerTypeOfTrucks')?.value,
+      truckLoad: form3.get('registerTruckLoads')?.value,
+      commonCarrier: form3.get('registerCommonCarrier')?.value,
+      truckService: form3.get('registerTruckService')?.value,
   
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))

@@ -18,7 +18,7 @@ import { interval, Subscription } from 'rxjs';
   refreshSubscription: Subscription | undefined;
   isLoading:boolean=false
   noChatFound:boolean=false
-  @ViewChild('chat-messages', { static: true }) scrollContainer: ElementRef | undefined;
+  @ViewChild('chat_messages', { static: false }) scrollContainer: ElementRef | undefined;
 
 
   constructor(private apiService: ApiService) {}
@@ -49,10 +49,13 @@ import { interval, Subscription } from 'rxjs';
     );
   }
   scrollToBottom() {
+    console.log('outside');
     if (this.scrollContainer) {
       const scrollContainer = this.scrollContainer.nativeElement;
       scrollContainer.scrollTop = scrollContainer.scrollHeight;
-    }}
+      console.log('scrolled');
+    }
+  }
   openChat(userId: string) {
     this.isLoading=true
     this.chatDisplay = true;
@@ -63,6 +66,9 @@ import { interval, Subscription } from 'rxjs';
       (response: any) => {
         
         this.chatMessages = response.messages.map((message: any) => message);
+        if (this.scrollContainer) {
+          this.scrollToBottom();
+        }
       },
       (error) => {
         console.error('Error fetching users:', error);
@@ -71,6 +77,7 @@ import { interval, Subscription } from 'rxjs';
     this.isLoading=false
     
     this.startChatMessageRefresh();
+    
   }
 
   

@@ -548,8 +548,8 @@ export class ApiService {
     return this.http.post(url, { "id": agent_id }, { headers: combinedHeaders });
   }
 
-  searchCard(busniess_type: any, age_type: any, sports_type: any, position: any, state: any, city: any,name:any ): Observable<any> {
-    const url = baseUrl + `get-search-card-by-dropdown-dw`;
+  searchCard(payload:any): Observable<any> {
+    const url = baseUrl + `get-search-card-by-dropdown-trucking`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',
@@ -561,7 +561,26 @@ export class ApiService {
       .append('Origin', this.customHeaders.get('Origin') || '')
       .append('Referer', this.customHeaders.get('Referer') || '');
 
-    return this.http.post(url, { "business_type": busniess_type, "age_type": age_type, "sport_type": sports_type, "position": position, "state": state, "city": city,  "name": name }, { headers: combinedHeaders });
+    return this.http.post(url, payload, { headers: combinedHeaders });
+
+
+  }
+
+
+  searchCardNetwork(payload:any): Observable<any> {
+    const url = baseUrl + `get-search-card-by-dropdown-network`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-auth-token',
+    });
+
+
+
+    const combinedHeaders = headers
+      .append('Origin', this.customHeaders.get('Origin') || '')
+      .append('Referer', this.customHeaders.get('Referer') || '');
+
+    return this.http.post(url,  payload , { headers: combinedHeaders });
 
 
   }
