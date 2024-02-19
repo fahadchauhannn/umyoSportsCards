@@ -1,0 +1,293 @@
+<section id="header">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a [routerLink]="['/']" class="navbar-brand"
+          ><img
+            src="assets/img/network/logo.png"
+            class="img-fluid"
+            style="width: auto; height: 6rem"
+        /></a>
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['mission']" class="nav-item nav-link"
+              >Philanthropy Mission</a
+            >
+            <a [routerLink]="['/pledge']" class="nav-item nav-link">
+              IAM Pledge</a
+            >
+            <a [routerLink]="['/about']" class="nav-item nav-link">About</a>
+            <a [routerLink]="['/package']" class="nav-item nav-link">
+              View Services</a
+            >
+            <a href="ai.html" class="nav-item nav-link"> Additional Features</a>
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mission']"
+                  >Philanthropy Mission</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/pledge']" class="nav-link">IAM Pledge</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/about']" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/package']" class="nav-link">
+                  View Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="ai.html" class="nav-link">Additional Features</a>
+              </li>
+
+              <!-- 
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Link Profile
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+
+  <!-- Hero Start -->
+
+  <div class="container-fluid hero-header mt-5">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-md-12 col-lg-7">
+          <h1 class="mb-3 text-white">UMYO NETWORK</h1>
+          <p class="text-white">
+            Un-Masking Your Opinion - (United Movement for Youth Opportunities)
+          </p>
+          <a href="#">RE-DISCOVER "IAM" - "WE ARE" POSSIBILITIES</a>
+        </div>
+        <div class="col-md-12 col-lg-5 px-5">
+          <div class="grid__item medium-up--one-half">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                <iframe
+                  src="https://www.youtube.com/embed/XHOmBV4js_E"
+                  title="Video Placeholder"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <h1 class="text-center mb-5 text-white">
+      THE UMYO NETWORK ALL IN ONE NETWORKING APP
+    </h1>
+    <div class="slider slider-1">
+      <div class="mb-5">
+        <img src="assets/img/network/logo2/blackwall.png" />
+      </div>
+      <div><img src="assets/img/network/logo2/events.png" /></div>
+      <div><img src="assets/img/network/logo2/logo2.png" /></div>
+      <div><img src="assets/img/network/logo2/logo3.png" /></div>
+      <div><img src="assets/img/network/logo2/logo4.png" /></div>
+      <div><img src="assets/img/network/logo2/logo5.png" /></div>
+      <div><img src="assets/img/network/logo2/logo6.png" /></div>
+      <div><img src="assets/img/network/logo2/logo7.png" /></div>
+      <div><img src="assets/img/network/logo2/logo8.png" /></div>
+      <div><img src="assets/img/network/logo2/logo9.png" /></div>
+      <div><img src="assets/img/network/logo2/logo10.png" /></div>
+    </div>
+
+    <div class="slider slider-2 mb-4" dir="rtl">
+      <div><img src="assets/img/network/logo2/logo11.png" /></div>
+      <div class="mb-5"><img src="assets/img/network/logo2/logo12.png" /></div>
+      <div><img src="assets/img/network/logo2/logo13.png" /></div>
+      <div><img src="assets/img/network/logo2/logo14.png" /></div>
+      <div><img src="assets/img/network/logo2/logo15.png" /></div>
+      <div><img src="assets/img/network/logo2/logo16.png" /></div>
+      <div><img src="assets/img/network/logo2/pledge.png" /></div>
+      <div><img src="assets/img/network/logo2/logo9.png" /></div>
+      <div><img src="assets/img/network/logo2/umyo_market.png" /></div>
+      <div><img src="assets/img/network/logo2/logo8.png" /></div>
+      <div><img src="assets/img/network/logo2/umyodate.png" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero End -->
+<!-- Featurs Section Start -->
+<section id="card_section">
+  <!------- tab section start-------->
+
+  <section id="content-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="c1">
+            <h3>UMYO'S Philanthropist Mission</h3>
+            <ul>
+              <li>
+                Popular Platforms are generating over $400 Millions Per Month
+              </li>
+              <li>We Killing & Destroying each over The Crumbs</li>
+              <li>
+                “IAM Pledges” to report and tackle violent crimes with
+                accountability and financial solutions
+              </li>
+              <li>
+                UMYO builds community-owned platforms to counter division and
+                violence that's destroying communities.
+              </li>
+              <li>
+                For those who see the vision, find your niche and connect with a
+                tribe or tribes that's tailored to your interests.
+              </li>
+              <li>UMYO Platforms upholds free speech with responsibility.</li>
+              <li>
+                We are at war and it's not between people of Color & Europeans
+                or Democrats vs Republicans. It's democracy vs capitalism for
+                those who see through the smoke.
+              </li>
+              <li>
+                Democracy means Rule By The People - We Have to Drive The Change
+                We Want To See...
+              </li>
+              <li>
+                Invest $200 plus million Monthly to empower communities as one
+                Nation with a plan of action that helps us all.
+              </li>
+              <li>
+                Proactive Solutions - How much longer can we continue to wait on
+                the system for answers while AI replaces our jobs, homes and
+                lives ??
+              </li>
+              <li>Stand for True Democracy….</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </section>
+</section>
+<!-- Featurs Section End -->
+<!-- product Start -->
+
+<!-- Bestsaler Product Start -->
+
+<!-- Footer Start -->
+<section id="footer">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <img src="assets/img/network/logof.png" class="img-fluid logo" />
+        </div>
+        <div class="col-lg-5 d-none d-lg-block"></div>
+        <div class="col-lg-4">
+          <p>#75-2895137</p>
+          <!-- <p>© 2022 AAOG. All Rights Reserved.</p> -->
+        </div>
+        <div class="col-lg-12">
+          <!-- <p>#75-2895137</p> -->
+          <p class="copy">© 2022 AAOG. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer End -->

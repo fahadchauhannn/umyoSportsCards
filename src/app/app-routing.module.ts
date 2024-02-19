@@ -47,16 +47,30 @@ import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TruckersComponent } from './truckers/truckers.component';
+import { UmyocardsComponent } from './umyocards/umyocards.component';
+import { MissionComponent } from './mission/mission.component';
+import { PledgeComponent } from './pledge/pledge.component';
+import { AboutComponent } from './about/about.component';
+import { PackageComponent } from './package/package.component';
+import { CfComponent } from './cf/cf.component';
+import { AiComponent } from './ai/ai.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent ,pathMatch: 'full'},
+  // { path: '', component: HomeComponent ,pathMatch: 'full'},
+  { path: '', component: UmyocardsComponent ,pathMatch: 'full'},
+  { path: 'mission', component: MissionComponent },
+  { path: 'package', component: PackageComponent },
+  { path: 'pledge', component: PledgeComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'team', component: TeamComponent },
   { path: 'truckers', component: TruckersComponent ,pathMatch: 'full' },
   { path: 'products', component: ProductsComponent },
   { path: 'pro', component: ProComponent },
   { path: 'network', component: NetworkComponent },
+  { path: 'network', component: NetworkComponent },
+  { path: 'ai', component: AiComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
 

@@ -71,6 +71,13 @@ import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TruckersComponent } from './truckers/truckers.component';
+import { UmyocardsComponent } from './umyocards/umyocards.component';
+import { MissionComponent } from './mission/mission.component';
+import { PledgeComponent } from './pledge/pledge.component';
+import { AboutComponent } from './about/about.component';
+import { PackageComponent } from './package/package.component';
+import { CfComponent } from './cf/cf.component';
+import { AiComponent } from './ai/ai.component';
 
 
 
@@ -138,6 +145,13 @@ import { TruckersComponent } from './truckers/truckers.component';
     ShareCardComponent,
     ForgotPasswordComponent,
     TruckersComponent,
+    UmyocardsComponent,
+    MissionComponent,
+    PledgeComponent,
+    AboutComponent,
+    PackageComponent,
+    CfComponent,
+    AiComponent,
     
     
     

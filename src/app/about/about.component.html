@@ -1,0 +1,413 @@
+<!-- Navbar start -->
+<section id="header">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a [routerLink]="['/']" class="navbar-brand"
+          ><img
+            src="assets/img/network/logo.png"
+            class="img-fluid"
+            style="width: auto; height: 6rem"
+        /></a>
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['/mission']" class="nav-item nav-link"
+              >Philanthropy Mission</a
+            >
+            <a [routerLink]="['/pledge']" class="nav-item nav-link"
+              >IAM Pledge</a
+            >
+            <a [routerLink]="['/about']" class="nav-item nav-link">About</a>
+            <a [routerLink]="['/package']" class="nav-item nav-link">
+              View Services</a
+            >
+            <a [routerLink]="['/ai']" class="nav-item nav-link">
+              Additional Features</a
+            >
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mission']"
+                  >Philanthropy Mission</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/pledge']" class="nav-link">IAM Pledge</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/about']" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/package']" class="nav-link">
+                  View Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/ai']" class="nav-link"
+                  >Additional Features</a
+                >
+              </li>
+
+              <!-- 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+
+  <!-- Hero Start -->
+</section>
+<!--  <section id="page-top" class="lft-hero">
+  <div class="lft-video">
+    
+    <video src="../video.mp4" autoplay muted loop style="width:100%; height:100%;"></video>
+    <div class="overlay"></div>
+  </div>
+  
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-12 col-lg-7">
+                        <div class="page-width">
+    <div class="lft-hero__content">
+                        <h1 class="mb-3">Pro-Living Connects</h1>
+                        <p class="mb-5">Pro-Living Connects introduces an innovative networking solution exclusively for Community.</p>
+                        <div class="moretext-he" style="display:none;">
+                        <p class="mb-5">Our groundbreaking app unites Pro-Living Connects, logistics professionals, community, business owners, organizations, training institutions, and affiliated businesses on a specialized platform, dedicated to advancing the careers of youth and adults in the industry and promoting growth. Pro-Living Connect is the first of its kind, enabling Pro-Living community members and professionals to network with fellow Pro-Living members, industry experts, and businesses while showcasing their skills and expertise, receiving the recognition and support they rightfully deserve.</p>
+                    </div>
+                    <a class="moreless-button-he text-white btn btn-dark" style="text-decoration: none; " href="#he">Read more</a>
+                    </div>
+                </div>
+            </div>
+                    <div class="col-md-12 col-lg-5 px-5">
+                     <div class="grid__item medium-up--one-half">
+            <div class="videos__wrapper">
+                <div class="videos__wrapper--video">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </div>      
+          </div>   
+         </div>
+        </div>
+    </div>
+</section> -->
+<!-- <section id="logo-slider" style="background:#68292C!important;">
+        <div class="container-fluid mt-5">
+                    <h1 class="text-center text-white mb-5">The “UMYO” All In One Networking App</h1>
+                <div class="slider slider-1">
+                          <div class="mb-5"><img src="assets/img/network/logo2/blackwall.png"></div>
+                          <div><img src="assets/img/network/logo2/events.png"></div>
+                          <div><img src="assets/img/network/logo2/logo2.png"></div>
+                          <div><img src="assets/img/network/logo2/logo3.png"></div>
+                          <div><img src="assets/img/network/logo2/logo4.png"></div>
+                          <div><img src="assets/img/network/logo2/logo5.png"></div>
+                          <div><img src="assets/img/network/logo2/logo6.png"></div>
+                          <div><img src="assets/img/network/logo2/logo7.png"></div>
+                          <div><img src="assets/img/network/logo2/logo8.png"></div>
+                          <div><img src="assets/img/network/logo2/logo9.png"> </div>
+                          <div><img src="assets/img/network/logo2/logo10.png"></div>
+                </div>
+
+                <div class="slider slider-2 mb-4" dir="rtl">
+                    <div><img src="assets/img/network/logo2/logo11.png"></div>
+                        <div class="mb-5"><img src="assets/img/network/logo2/logo12.png"></div>
+                          <div><img src="assets/img/network/logo2/logo13.png"></div>
+                          <div><img src="assets/img/network/logo2/logo14.png"></div>
+                          <div><img src="assets/img/network/logo2/logo15.png"></div>
+                          <div><img src="assets/img/network/logo2/logo16.png"></div>
+                          <div><img src="assets/img/network/logo2/pledge.png"></div>
+                          <div><img src="assets/img/network/logo2/logo9.png"> </div>
+                          <div><img src="assets/img/network/logo2/umyo_market.png"></div>
+                          <div><img src="assets/img/network/logo2/logo8.png"></div>
+                          <div><img src="assets/img/network/logo2/umyodate.png"></div>
+                </div>
+
+        </div>
+        </section> -->
+<!-- Hero End -->
+<!------- Proliving end ---------->
+<div class="container-fluid featurs pt-3 mt-3 mb-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-2"></div>
+      <div class="col-lg-8 p-3">
+        <h2 class="my-4">
+          From Incarceration, to Father, to Developer, to Innovator, to
+          Community Problem Solvers
+        </h2>
+        <p class="my-4">
+          An American Innovator Unveils Proprietary Concepts and Platforms
+          Tailored for Top Brands, with a Mission to Foster Community
+          Empowerment
+        </p>
+        <p class="my-4">
+          Born with a natural affinity for problem-solving and innovative
+          thinking, our founder has navigated a journey where the highs of
+          leadership were often met with the lows of real-world skepticism and
+          disloyalty. Yet, steadfast resilience has continued to drive his
+          pursuit for true innovation, with a personal and professional history
+          that sings the tune of unwavering dedication.
+        </p>
+        <p class="my-4">
+          Starting in 1997, he stepped into the world of web building, crafting
+          a coded platform that enabled live-streaming of weekly talent shows.
+          This was a time when home computers were a rarity, and mobile apps
+          were an unheard concept. As the years passed, his career path led him
+          to Excel Telecommunications, where he rapidly rose from a telephone
+          service representative to a project manager in just four months.
+        </p>
+        <p class="my-4">
+          Oncor Telecommunications witnessed a transformative era under his
+          leadership. Armed with creative solutions, he optimized scripts to
+          boost sales, equipped representatives with distinct skill sets for
+          various campaigns, and drove business growth through pioneering sales
+          and marketing strategies. His ability to recognize and leverage the
+          potential of creative leaders helped Oncor establish a strong presence
+          in a fiercely competitive consumer marketplace.
+        </p>
+        <p class="my-4">
+          We understand the pain points of different industries, thanks to our
+          founders' extensive experience in education, non-profits, and
+          for-profit sectors. Recognizing the challenges companies face in
+          workforce growth, credibility, and visibility, we provide third-party
+          services to support their journey. Our vision extends beyond a job
+          opportunity; it's about empowering retirees to influence, build
+          communities, and inspire others to embrace a purposeful life daily,
+          not just exist.
+        </p>
+        <p class="my-4">
+          Following the tragedy of 9/11 and the relocation of Oncor
+          Telecommunications to Virginia in 2003, our founder chose to stay in
+          Dallas, grounded by his family of three sons and close relatives. This
+          period marked the inception of his venture into web building with the
+          objective to assist major brands with step-by-step action plans and
+          concepts. However, he discovered the hard truth – not all were open to
+          new ideas, with many gatekeepers exploiting those ideas for their own
+          gains.
+        </p>
+        <img
+          src="assets/img/network/grup.png"
+          class="img-fluid m-auto d-block"
+        />
+        <p class="my-4">
+          Today, with his sons by his side, our founder is prepared to share his
+          unique concepts and platforms, tailored specifically for top brands.
+          The focus of these solutions is not only to foster partnerships with
+          businesses, corporate entities, and government, but also to create
+          meaningful connections with communities. These pioneering concepts, a
+          first of its kind, aim to build bridges while bolstering community
+          support.
+        </p>
+        <p class="my-4">
+          Our founder, a proud American of African and Indian descent, seeks to
+          partner with entities that prioritize community empowerment and are
+          open to embracing innovative solutions that make sense.
+        </p>
+        <p class="my-4">
+          UMYO, "Un-Masking Your Opinion" - (United Movement For Youth
+          Opportunities) aims to challenge the status quo and disrupt the
+          market. It is a revolutionary concept that will transform the way
+          businesses market themselves and empower communities. UMYO is here to
+          make a difference, and it invites everyone to join the movement
+          towards community accountability, also providing a sense of unity and
+          belonging. By working together towards a common goal, we can create a
+          better future for ourselves and our communities.
+        </p>
+        <p class="my-4">
+          Gregory believes that the answer to many of our communities’ concerns
+          has been hidden in plain sight for generations: democracy. “The only
+          way to empower communities is through community accountability.
+          Despite our differences, coming together on the things we agree upon
+          is the only way to move forward. As we face an uncertain future with
+          the rise of AI and the displacement of millions of jobs, it is crucial
+          that we come together as a community to find solutions and create a
+          better future for ourselves and future generations.” People are asking
+          how we can help, Barnard Gregory’s response is simple: “Register”!! We
+          need every business owner, every employed and umeployed person in this
+          country to register.
+        </p>
+        <p class="my-4">
+          Barnard Cherry’s journey to content creator to community problem
+          solver is a testament to the power of resilience, determination, and
+          the ability to turn adversity into opportunity. His commitment to
+          creating a better future for his family and his community is an
+          inspiration to all.
+        </p>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Start -->
+<div
+  class="container-fluid bg-dark text-white-50 footer"
+  style="background: #1f1717 !important"
+>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h4 class="text-light"><b>Contact us</b></h4>
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest Pro-Living features,
+            products, stories, and more. You can also contact us at
+            contact@prolivingbiz.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex justify-content-center pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i>2023 Pro-Living</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->

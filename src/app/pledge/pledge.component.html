@@ -1,0 +1,374 @@
+<section id="header">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a [routerLink]="['/']" class="navbar-brand"
+          ><img
+            src="assets/img/network/logo.png"
+            class="img-fluid"
+            style="width: auto; height: 6rem"
+        /></a>
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['/mission']" class="nav-item nav-link"
+              >Philanthropy Mission</a
+            >
+            <a [routerLink]="['/pledge']" class="nav-item nav-link"
+              >IAM Pledge</a
+            >
+            <a [routerLink]="['/about']" class="nav-item nav-link">About</a>
+            <a [routerLink]="['/package']" class="nav-item nav-link">
+              View Services</a
+            >
+            <a href="ai.html" class="nav-item nav-link"> Additional Features</a>
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/=']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mission']"
+                  >Philanthropy Mission</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/pledge']" class="nav-link">IAM Pledge</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/about']" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/package']" class="nav-link">
+                  View Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="ai.html" class="nav-link">Additional Features</a>
+              </li>
+
+              <!-- 
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Link Profile
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+
+  <!-- Hero Start -->
+</section>
+<!--  <section id="page-top" class="lft-hero">
+<div class="lft-video">
+
+<video src="../video.mp4" autoplay muted loop style="width:100%; height:100%;"></video>
+<div class="overlay"></div>
+</div>
+
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-12 col-lg-7">
+                <div class="page-width">
+<div class="lft-hero__content">
+                <h1 class="mb-3">Pro-Living Connects</h1>
+                <p class="mb-5">Pro-Living Connects introduces an innovative networking solution exclusively for Community.</p>
+                <div class="moretext-he" style="display:none;">
+                <p class="mb-5">Our groundbreaking app unites Pro-Living Connects, logistics professionals, community, business owners, organizations, training institutions, and affiliated businesses on a specialized platform, dedicated to advancing the careers of youth and adults in the industry and promoting growth. Pro-Living Connect is the first of its kind, enabling Pro-Living community members and professionals to network with fellow Pro-Living members, industry experts, and businesses while showcasing their skills and expertise, receiving the recognition and support they rightfully deserve.</p>
+            </div>
+            <a class="moreless-button-he text-white btn btn-dark" style="text-decoration: none; " href="#he">Read more</a>
+            </div>
+        </div>
+    </div>
+            <div class="col-md-12 col-lg-5 px-5">
+             <div class="grid__item medium-up--one-half">
+    <div class="videos__wrapper">
+        <div class="videos__wrapper--video">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>      
+  </div>   
+ </div>
+</div>
+</div>
+</section> -->
+<!-- <section id="logo-slider" style="background:#68292C!important;">
+<div class="container-fluid mt-5">
+            <h1 class="text-center text-white mb-5">The “UMYO” All In One Networking App</h1>
+        <div class="slider slider-1">
+                  <div class="mb-5"><img src="assets/img/network/logo2/blackwall.png"></div>
+                  <div><img src="assets/img/network/logo2/events.png"></div>
+                  <div><img src="assets/img/network/logo2/logo2.png"></div>
+                  <div><img src="assets/img/network/logo2/logo3.png"></div>
+                  <div><img src="assets/img/network/logo2/logo4.png"></div>
+                  <div><img src="assets/img/network/logo2/logo5.png"></div>
+                  <div><img src="assets/img/network/logo2/logo6.png"></div>
+                  <div><img src="assets/img/network/logo2/logo7.png"></div>
+                  <div><img src="assets/img/network/logo2/logo8.png"></div>
+                  <div><img src="assets/img/network/logo2/logo9.png"> </div>
+                  <div><img src="assets/img/network/logo2/logo10.png"></div>
+        </div>
+
+        <div class="slider slider-2 mb-4" dir="rtl">
+            <div><img src="assets/img/network/logo2/logo11.png"></div>
+                <div class="mb-5"><img src="assets/img/network/logo2/logo12.png"></div>
+                  <div><img src="assets/img/network/logo2/logo13.png"></div>
+                  <div><img src="assets/img/network/logo2/logo14.png"></div>
+                  <div><img src="assets/img/network/logo2/logo15.png"></div>
+                  <div><img src="assets/img/network/logo2/logo16.png"></div>
+                  <div><img src="assets/img/network/logo2/pledge.png"></div>
+                  <div><img src="assets/img/network/logo2/logo9.png"> </div>
+                  <div><img src="assets/img/network/logo2/umyo_market.png"></div>
+                  <div><img src="assets/img/network/logo2/logo8.png"></div>
+                  <div><img src="assets/img/network/logo2/umyodate.png"></div>
+        </div>
+
+</div>
+</section> -->
+<!-- Hero End -->
+<!------- Proliving end ---------->
+<section id="card_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div
+          class="c1"
+          style="
+            padding: 40px 50px;
+            background: #fff;
+            border-radius: 20px;
+            margin: 2rem;
+          "
+        >
+          <h3>
+            <strong> Subject:</strong> Join Us in Empowering Communities:
+            Introducing the Community Pledge
+          </h3>
+          <h4 class="mt-5 mb-3">Dear Community Members,</h4>
+          <p>
+            We are thrilled to introduce a vital initiative aimed at empowering
+            our communities. Our Community Pledge focuses on rebuilding, youth
+            empowerment, and community-business accountability, serving as a
+            blueprint for positive change in our cities.
+          </p>
+          <p>
+            As we embark on this journey towards revitalization, it's imperative
+            that we stand together, recognizing our collective responsibility to
+            create an inclusive and thriving environment for all. By embracing
+            the principles outlined in the Community Pledge, including reporting
+            violent crimes, we can work towards a brighter future for our
+            neighborhoods.
+          </p>
+          <h4 class="mt-5 mb-3">Rebuilding Phase:</h4>
+          <p>
+            Together, we can transform challenges into opportunities. Our pledge
+            is to actively engage in rebuilding efforts, advocating for
+            sustainable development, improved infrastructure, and increased
+            access to essential resources. Let's unite to overcome obstacles and
+            lay a solid foundation for growth.
+          </p>
+          <h4 class="mt-5 mb-3">Youth Empowerment:</h4>
+          <p>
+            Our youth are the architects of our future. Through targeted
+            initiatives, mentorship programs, and educational opportunities, we
+            pledge to empower them to become leaders, change-makers, and
+            ambassadors of their community. Investing in their potential is
+            investing in a brighter tomorrow for all.
+          </p>
+          <h4 class="mt-5 mb-3">Community-Business Accountability:</h4>
+          <p>
+            Sustainable progress requires accountability between local
+            businesses and the community. Our pledge emphasizes transparency,
+            ethical practices, and collaboration. Together, we'll ensure
+            businesses prioritize the needs of the community, fostering an
+            environment of mutual respect and shared success.
+          </p>
+          <p>
+            By signing the Community Pledge, you join a collective effort to
+            rebuild, empower our youth, and promote community-business
+            accountability. Together, we can create vibrant, resilient, and
+            prosperous cities that serve as models for others to follow.
+          </p>
+          <p>
+            We invite each of you to be part of this transformative journey.
+            Stand with us, committed to our shared vision of stronger
+            communities. Register for the Community Pledge today and make a
+            lasting impact on our community's future.
+          </p>
+          <h5>Warm regards,</h5>
+          <p>Barnard, Gregory & Sons (Founders)</p>
+          <p>An Act Of God Ministry</p>
+          <p>682-231-2366</p>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
+<!-- Footer Start -->
+<div
+  class="container-fluid bg-dark text-white-50 footer"
+  style="background: #1f1717 !important"
+>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h4 class="text-light"><b>Contact us</b></h4>
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest Pro-Living features,
+            products, stories, and more. You can also contact us at
+            contact@prolivingbiz.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex justify-content-center pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i>2023 Pro-Living</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->

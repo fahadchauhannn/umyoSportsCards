@@ -1,0 +1,496 @@
+.box1 {
+    background: lightblue;
+    border-radius: 10px;
+    padding: 30px 20px;
+    height: 100%;
+}
+.box1 h5{
+    text-align: center;
+    color: #3D3B40;
+}
+.b{
+    background: #F2F1EB;
+}
+.b h5{
+    text-align: center;
+}
+.b ul li{
+    color: #3D3B40;
+}
+.box2{
+    background: #EEE7DA;
+}
+.box2 h5{
+    color: #3D3B40;
+}
+.box2 ul li{
+    color: black;
+}
+.bg2{
+    background: black;
+    color: white;
+    padding: 46px 19px;
+    
+}
+.bg2 h4{
+  font-size: 1.5rem;
+  margin-top: 1.89rem;
+  text-transform: uppercase;
+}
+.bg2 .line {
+    background: #E4C072;
+    height: 4px;
+    margin: 1rem 0px;
+    border-radius: 2px;
+}
+.th{
+        background: #F2F2F2;
+    padding: 13px 16px;
+}
+.th2{
+        background: white;
+    padding: 13px 16px;
+}
+.bgn{
+    background: #F05D5E;
+    padding: 17px 30px 85px;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+.bgn img{
+    background: white;
+    border-radius: 50%;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+.bgn h3{
+    font-size: 24px;
+}
+.fa-check {
+    border-radius: 50%;
+    color: green;
+    font-size: 27px;
+    text-align: center;
+}
+.th .icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fa-close {
+    /* border: 3px solid red; */
+    /* padding: 4px 6px; */
+    border-radius: 50%;
+    color: red;
+    font-size: 27px;
+    text-align: center;
+}
+.th2 .icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.th2 p{
+    margin-bottom: 0px;
+    text-align: center;
+}
+.small{
+    font-size: 2.1rem;
+}
+.h3{
+    display: none;
+}
+/* Aligns the heading text to the center. */
+ 
+#acc h1 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+
+#acc .accordion {
+    color: black;
+    background-color: white;
+    padding: 45px 45px;
+}
+#acc .accordion .container-content {
+  position: relative;
+  margin: 10px 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+#acc .accordion .label {
+  position: relative;
+  padding: 10px 0;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+#acc .accordion .label::before {
+  content: '+';
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+#acc .accordion .content {
+  position: relative;
+  background: white;
+  margin: 0;
+  height: 0;
+  font-size: 20px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.2s;
+}
+#acc .accordion h6{
+    text-align: center;
+}
+
+/* Adds a horizontal line between the contents */
+.nav-pills .nav-link.active{
+    background: #fff5d7 !important;
+    color: black!important;
+}
+#acc .accordion hr {
+  width: 100;
+  margin-left: 0;
+  border: 1px solid grey;
+}
+/* Unhides the content part when active. Sets the height */
+
+#acc .accordion .container-content.active .content {
+  height: 100%;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+#acc .accordion .container-content.active .label::before {
+  content: '-';
+  font-size: 30px;
+}
+.bgn21 {
+    padding: 18px 30px 44px;
+}
+#acc ul {
+    background: #F2F1EB;
+    padding: 20px 93px;
+    margin: 38px 0px;
+    border-radius: 10px;
+}
+.bg{
+    background-color: rgb(246, 246, 246);
+    margin-bottom: 3rem;
+}
+.program h1{
+    color: rgb(67, 144, 181);
+}
+.card{
+    border: 0px;
+    background-color: rgb(246, 246, 246);;
+}
+/*.card img{
+    border-radius: 50%;
+}*/
+.card-body{
+    text-align: center;
+}
+.card-body h4 {
+    font-size: 18px;
+    padding-top: 5px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.card-body p{
+margin-bottom: 5px;
+}
+.mycard{
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+.mybtn{
+    color: rgb(67, 144, 181);
+}
+.para{
+    padding-top: 1rem;
+}
+
+/* contact us */
+#contact-us {
+    padding: 1rem 0px 5rem;
+}
+#contact-us h1 {
+    color: rgb(67, 144, 181);
+    text-align: center;
+    /* font-size: 2.5rem; */
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+#contact-us .get {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+#contact-us .get h5 {
+    font-weight: 400;
+}
+#contact-us .form{
+
+}
+#contact-us .form input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: rgb(246, 246, 246);
+    border-bottom: 0px solid rgb(246, 246, 246);
+    box-shadow: 0rem 0px 0px rgb(246, 246, 246);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 4px solid rgb(218, 218, 218);
+}
+#contact-us .form textarea {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: rgb(246, 246, 246);
+    border-bottom: 0px solid rgb(246, 246, 246);
+    box-shadow: 0rem 0px 0px rgb(246, 246, 246);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 4px solid rgb(218, 218, 218);
+}
+#contact-us .form button {
+    padding: 16px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    color: #fff;
+    background-color: black;
+    border: 0px;
+    font-size: 12px;
+    font-weight: 700;
+}
+#contact-us .form input:focus{
+    outline: 0px;
+}
+#contact-us .form textarea:focus{
+    outline: 0px;
+}
+#contact-us .inputfile {
+    width: 0.1px !important;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+#contact-us .inputfile + label {
+    color: blue;
+    display: inline-block;
+}
+#contact-us .inputfile:focus + label,
+.inputfile + label:hover {
+    color: rgb(94, 125, 140);
+}
+#contact-us .inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+#contact-us .select{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+#contact-us .select span{
+    display: inline-block;
+    font-size: 12px;
+}
+#contact-us .button-para {
+    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+    #contact-us .button-para a{
+        text-decoration: none;
+    }
+ #contact-us .better{
+    margin: 1.5rem;
+  }
+   #contact-us .better h5{
+font-weight: 400;
+    }
+   #contact-us .better p{
+        padding-top: 1rem;
+    }
+   #contact-us .better button {
+        background-color: rgb(79, 102, 114);
+        color: #fff;
+        border: 0px;
+        padding: 15px 24px;
+        margin: 37px 37px 37px 0px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+   #contact-us .better button img {
+        width: 24px;
+        margin-left: 2px;
+        margin-right: 10px;
+    }
+   #contact-us .better h6 {
+        padding-bottom: 1rem;
+        font-weight: 400;
+        font-size: 20px;
+    }
+   #contact-us .better a {
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+    }
+   #contact-us .hrs {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    #contact-us select{
+        border: 0px;
+    }
+  #contact-us  select:focus{
+        outline: none;
+    }
+
+ /* subscribe */
+  #subscribe {
+        background-color: rgb(246, 246, 246);
+        padding: 1rem 0px;
+    }
+    #subscribe h2 {
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+    #subscribe .email-form input {
+        width: 100%;
+        padding: 14px;
+        font-size: 13px;
+        font-weight: 500;
+        background-color: #fff;
+        border-bottom: 0px solid rgb(246, 246, 246);
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 4px solid rgb(218, 218, 218);
+    }
+   #subscribe .email-button {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 14px 32px;
+        border: 0px;
+        background-color: black;
+        color: #fff;
+    } 
+
+    /* top */
+    #main{
+    margin-top: 3rem;
+}
+ #main .simg {
+    width: 270px;
+ margin: auto;
+ display: block;
+}
+.img6 {
+    margin-top: 4rem;
+}
+.main-content {
+/*    margin-left: -122px;*/
+/*    padding: 0px 50px;*/
+}
+.main-content h3{
+    color: rgb(55, 126, 174);
+}
+.main-content button {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 0px;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}  
+@media screen and (max-width: 768px){
+.bgn {
+    padding: 17px 6px 85px;
+ }
+ .h31{
+    display: none;
+ }
+ .h3{
+    display: block;
+ }
+} 
+
+@media screen and (max-width: 575px){
+ /*.bgn21{
+    padding: 17px 0px 40px;
+    overflow-x: hidden;
+
+ }*/
+ .bgn h3 {
+    font-size: 14px;
+}
+.bgn img {
+    padding: 11px;
+ }
+.bgn h6{
+    font-size: 14px;
+}
+#acc .accordion .label {
+    font-size: 17px;
+ }
+} 
+.navbar .navbar-nav .nav-link {
+    padding: 10px 30px 0 0;
+    font-size: 19px;
+    transition: .5s;
+    color: white;
+    margin-left: 4px;
+  }
+  
+
+  .footer_widget img{
+    width: auto!important;
+    height: 230px;
+  }
+  .footer {
+    --bs-bg-opacity: 1;
+    /* background-color: #2F3D7E!important; */
+    /* height: 20vh; */
+  }
+  .footer .form-control {
+     background: white!important;
+  }
+  .footer p{
+    color: white;
+  }
+  .footer a{
+    text-decoration: none;
+    /* padding: 5px; */
+    color: white!important;
+  }

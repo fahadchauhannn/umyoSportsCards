@@ -1,4 +1,4 @@
-<section id="header" style="background: #2f3d7e !important">
+<section id="header">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -6,14 +6,12 @@
         class="navbar navbar-expand-xl"
         style="border-bottom: 2px solid white"
       >
-        <a href="index.html" class="navbar-brand">
-          <h1 class="text-white display-6">UMYO</h1>
-          <!-- <img
-              src="assets/proliving/pro_liv.jpeg"
-              class="img-fluid rounded-circle"
-              style="width: 4rem; height: 4rem"
-            /> -->
-        </a>
+        <a href="index.html" class="navbar-brand"
+          ><img
+            src="assets/img/network/logo.png"
+            class="img-fluid"
+            style="width: auto; height: 6rem"
+        /></a>
         <button
           class="navbar-toggler py-2 px-3"
           type="button"
@@ -24,9 +22,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
-            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-
-            <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
+            <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['/mission']" class="nav-item nav-link"
+              >Philanthropy Mission</a
+            >
+            <a [routerLink]="['/pledge']" class="nav-item nav-link"
+              >IAM Pledge</a
+            >
+            <a [routerLink]="['/about']" class="nav-item nav-link">About</a>
+            <a [routerLink]="['/package']" class="nav-item nav-link">
+              View Services</a
+            >
+            <a [routerLink]="['/ai']" class="nav-item nav-link">
+              Additional Features</a
+            >
           </div>
           <div class="d-flex m-3 ms-auto">
             <p class="text-white" style="margin: 2px 25px; font-size: 25px">
@@ -53,36 +62,44 @@
       <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
         <div class="container-fluid p-0">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
-              <!-- <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Link Store
-  </a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-  </li>
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Industries
-  </a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-  </li> -->
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" [routerLink]="['']">Home</a>
+                <a class="nav-link" [routerLink]="['/']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mission']"
+                  >Philanthropy Mission</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/pledge']" class="nav-link">IAM Pledge</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/about']" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/package']" class="nav-link">
+                  View Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/ai']" class="nav-link"
+                  >Additional Features</a
+                >
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/network']">Network</a>
-              </li>
+              <!-- 
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  Link Profile
+</a>
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Action</a></li>
+  <li><a class="dropdown-item" href="#">Another action</a></li>
+  <li><hr class="dropdown-divider"></li>
+  <li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul>
+</li> -->
             </ul>
           </div>
         </div>
@@ -134,45 +151,23 @@
     <div class="container py-5">
       <div class="row g-5 align-items-center">
         <div class="col-md-12 col-lg-7">
-          <h1 class="mb-3 text-white">
-            Powerful Networking Tools for Sports and Business Networking
-          </h1>
-          <p class="mb-5 text-white">
-            Don't let valuable opportunities slip away because of your business
-            cards.Enable your team to share actionable information and gather
-            leads confidently using UMYO's digital business card solution.Get
-            Started Icon- Links to Directory registration
+          <h1 class="mb-3 text-white">UMYO NETWORK</h1>
+          <p class="text-white">
+            Un-Masking Your Opinion - (United Movement for Youth Opportunities)
           </p>
-          <p class="mb-5 text-white">
-            Beyond a mere digital Sport and business card.Increase your N.I.L.
-            deal-closing potential by capturing additional leads, seamlessly
-            integrating with your CRM system, and gaining valuable business
-            leads insights.Discover why we stand as your number one Sports and
-            Business networking platform.
-          </p>
-          <a href="#" class="my-auto">
-            <button
-              class="btn btn-primary text-dark border-0 bg-white py-3 px-4"
-            >
-              Get Started
-            </button>
-          </a>
+          <a href="#">RE-DISCOVER "IAM" - "WE ARE" POSSIBILITIES</a>
         </div>
         <div class="col-md-12 col-lg-5 px-5">
           <div class="grid__item medium-up--one-half">
-            <div class="videos">
-              <div class="videos__wrapper">
-                <div class="videos__wrapper--video">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                <iframe
+                  src="https://www.youtube.com/embed/XHOmBV4js_E"
+                  title="Video Placeholder"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
@@ -180,2162 +175,839 @@
       </div>
     </div>
   </div>
-</section>
-
-<section id="logo-slider" style="background: #2f3d7e !important">
   <div class="container-fluid mt-5">
-    <div class="container-fluid mt-1 mobile" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig1"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig2"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
+    <h1 class="text-center mb-5 text-white">
+      THE UMYO NETWORK ALL IN ONE NETWORKING APP
+    </h1>
+    <div class="slider slider-1">
+      <div class="mb-5">
+        <img src="assets/img/network/logo2/blackwall.png" />
+      </div>
+      <div><img src="assets/img/network/logo2/events.png" /></div>
+      <div><img src="assets/img/network/logo2/logo2.png" /></div>
+      <div><img src="assets/img/network/logo2/logo3.png" /></div>
+      <div><img src="assets/img/network/logo2/logo4.png" /></div>
+      <div><img src="assets/img/network/logo2/logo5.png" /></div>
+      <div><img src="assets/img/network/logo2/logo6.png" /></div>
+      <div><img src="assets/img/network/logo2/logo7.png" /></div>
+      <div><img src="assets/img/network/logo2/logo8.png" /></div>
+      <div><img src="assets/img/network/logo2/logo9.png" /></div>
+      <div><img src="assets/img/network/logo2/logo10.png" /></div>
     </div>
-    <div class="container-fluid mt-1 mobile2" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig5"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
 
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig6"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-    </div>
-    <div class="container-fluid mt-1 desktop" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig3"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig4"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
+    <div class="slider slider-2 mb-4" dir="rtl">
+      <div><img src="assets/img/network/logo2/logo11.png" /></div>
+      <div class="mb-5"><img src="assets/img/network/logo2/logo12.png" /></div>
+      <div><img src="assets/img/network/logo2/logo13.png" /></div>
+      <div><img src="assets/img/network/logo2/logo14.png" /></div>
+      <div><img src="assets/img/network/logo2/logo15.png" /></div>
+      <div><img src="assets/img/network/logo2/logo16.png" /></div>
+      <div><img src="assets/img/network/logo2/pledge.png" /></div>
+      <div><img src="assets/img/network/logo2/logo9.png" /></div>
+      <div><img src="assets/img/network/logo2/umyo_market.png" /></div>
+      <div><img src="assets/img/network/logo2/logo8.png" /></div>
+      <div><img src="assets/img/network/logo2/umyodate.png" /></div>
     </div>
   </div>
 </section>
 
 <!-- Hero End -->
-<!------- tab section start-------->
-<section id="header" style="background: #2f3d7e !important">
-  <div class="container-fluid srice py-5">
-    <div class="container py-5">
-      <h1
-        class="text-white text-center fa-2x mb-3"
-        style="font-size: 80px; font-weight: 600"
-      >
-        Shop Online for Top Talent & Businesses
-      </h1>
-      <div class="row">
-        <div class="col-lg-5">
-          <h4 class="mb-4 text-white">Search Sports Card Here</h4>
-          <form [formGroup]="form2" class="text-center">
+<!-- Featurs Section Start -->
+<section id="card_section">
+  <div class="container-fluid featurs">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-10 col-12 px-4">
+          <div
+            class="featurs-item rounded bg-white px-5 py-4 border-primary border-6 w-100"
+            id="feature"
+          >
             <div class="row">
-              <div class="col-lg-6 mb-4">
-                <input
-                  type="name"
-                  formControlName="selectedName"
-                  class="form-control"
-                  placeholder="Name"
-                />
+              <div class="col-lg-3 col-12">
+                <img src="assets/img/network/logo.png" class="img-fluid" />
               </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedAgeType"
-                >
-                  <option selected value="" disabled>Select Age Type</option>
-                  <option [value]="type.name" *ngFor="let type of ageType">
-                    {{ type.name }}
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedSportType"
-                  (change)="onSportTypeChange()"
-                >
-                  <option selected value="" disabled>Select Sport Type</option>
-                  <option [value]="type.name" *ngFor="let type of sportType">
-                    {{ type.name }}
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedPositionType"
-                >
-                  <option selected value="" disabled>
-                    Select Position Type
-                  </option>
-                  <option [value]="type.name" *ngFor="let type of positionType">
-                    {{ type.name }}
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedStateType"
-                >
-                  <option selected value="" disabled>Select State Type</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <h4 class="mb-4 text-white text-center">
-                  "IAM" Pledge To Report Violent Crime
-                </h4>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <input
-                  type="text"
-                  formControlName="selectedCity"
-                  class="form-control"
-                  placeholder="City"
-                />
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <input
-                  type="text"
-                  formControlName="selectedBusinessType"
-                  class="form-control"
-                  placeholder="Business Type"
-                />
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <button
-                  type="submit"
-                  class="btn btn-info text-white py-2 px-5 w-100"
-                  (click)="searchCards()"
-                  [disabled]="!form2.valid"
-                >
-                  Search
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <div class="bg-info rounded text-white py-2 px-3 my-5">
-            <p class="text-white mb-4">Cards:</p>
-            <p
-              class="text-white mb-4"
-              style="cursor: pointer"
-              [routerLink]="'/cards/share-card/' + card.id"
-              *ngFor="let card of cardsSearched"
-            >
-              {{ card.cardTitle }}
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-7 mt-5">
-          <div class="content">
-            <!-- Nav pills -->
-            <ul class="nav nav-pills" role="tablist">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  (click)="checkRoute()"
-                  [class.active]="showLoginTab"
-                  data-toggle="pill"
-                  href="#login"
-                  >Login</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  (click)="checkRoute()"
-                  [class.active]="showRegisterTab"
-                  data-toggle="pill"
-                  href="#regis"
-                  >Register</a
-                >
-              </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content rounded p-4">
-              <div
-                id="login"
-                class="container tab-pane"
-                [class.active]="showLoginTab"
-              >
-                <form [formGroup]="form">
-                  <div class="row">
-                    <h1 class="text-center">UMYO For Teams</h1>
-                    <p class="text-center">
-                      Fill out this form to book a quick demo
-                    </p>
-                    <p class="text-center">(same-day options available).</p>
-                    <br /><br /><br /><br /><br /><br />
-                    <h2 class="text-info mb-3">Login</h2>
-                    <div class="col-md-12 mb-5">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Email
-                          <sup style="color: red; font-size: 20px">*</sup>
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          class="form-control"
-                          formControlName="email"
-                          required
-                        />
-                        <div
-                          *ngIf="
-                            form.get('email')?.hasError('required') &&
-                            form.get('email')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Email is required.
-                        </div>
-                        <div
-                          *ngIf="
-                            form.get('email')?.hasError('email') &&
-                            form.get('email')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Invalid email format.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-5">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Password<sup style="color: red; font-size: 20px"
-                            >*</sup
-                          >
-                        </label>
-                        <input
-                          type="password"
-                          id="password"
-                          class="form-control"
-                          formControlName="password"
-                          required
-                        />
-                        <div
-                          *ngIf="
-                            form.get('password')?.hasError('required') &&
-                            form.get('password')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Password is required.
-                        </div>
-                      </div>
-                      <div class="col-md-12 mb-3">
-                        <div class="form-group">
-                          <div
-                            class="custom-control custom-checkbox custom-checkbox-lg"
-                          >
-                            <input
-                              style="width: 1rem; height: 1rem"
-                              type="checkbox"
-                              class="custom-control-input"
-                              id="ageCheckbox"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="ageCheckbox"
-                              style="
-                                font-size: 20px;
-                                font-weight: 600;
-                                margin-left: 10px;
-                              "
-                            >
-                              Are you above 13 years old?
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group" style="padding-top: 10px">
-                        <label
-                          style="
-                            font-size: 16px;
-                            font-weight: 400;
-                            text-decoration: underline;
-                            cursor: pointer;
-                          "
-                          [routerLink]="['/forgot-password']"
-                          >Forgot Password?
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    (click)="openAgeModal('login')"
-                    type="submit"
-                    class="btn btn-info text-white mt-3 py-3 px-5"
-                    style="margin: auto; display: block"
-                    [disabled]="!form.valid"
-                  >
-                    Submit
-                  </button>
-                  <!-- <div class="bg-img">
-    <img src="assets/img/illustrations-office.png"></div> -->
-                </form>
-              </div>
-
-              <div
-                id="regis"
-                class="container tab-pane"
-                [class.active]="showRegisterTab"
-              >
-                <form [formGroup]="form3">
-                  <div class="row justify-content-center">
-                    <h1 class="text-center">UMYO Pro</h1>
-                    <div class="col-md-3 my-5">
-                      <p class="text-center">starting at</p>
-                      <h1 class="text-center">$5/mo</h1>
-                      <p class="text-center">per agent</p>
-                    </div>
-                    <div class="col-md-1 my-5 d-none d-lg-block">
-                      <div class="verticle"></div>
-                    </div>
-                    <div class="col-md-6 my-5">
-                      <p>Includes:</p>
-                      <li>40% off all UMYO products</li>
-                      <li>3 free property listings per agent</li>
-                      <li>Free standard CRM integrations</li>
-                    </div>
-                    <h2 class="mb-3 text-info">Register</h2>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Frist Name
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerFirstName"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerFirstName')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Last Name
-                          <sup style="color: red; font-size: 20px">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          formControlName="registerLastName"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerLastName')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Phone Number
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerPhone"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerPhone')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Email
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="email"
-                          formControlName="registerEmail"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerEmail')?.touched ||
-                                !form3.get('registerEmail')?.valid) &&
-                              submitButtonClicked &&
-                              (!form3.valid || form3.hasError('emailMismatch'))
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Confirm Email
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="email"
-                          formControlName="registerConfirmEmail"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerConfirmEmail')?.touched ||
-                                !form3.get('registerConfirmEmail')?.valid) &&
-                              submitButtonClicked &&
-                              (!form3.valid || form3.hasError('emailMismatch'))
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Password<sup style="color: red; font-size: 20px"
-                            >* </sup
-                          ><sup style="color: red; font-size: 14px"
-                            >( Length Should be greater than 6 )</sup
-                          >
-                        </label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          required
-                          formControlName="registerPassword"
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerPassword')?.touched ||
-                                !form3.get('registerPassword')?.valid) &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Business Type
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerBusinessType"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerBusinessType')?.touched ||
-                                !form3.get('registerBusinessType')?.valid) &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Select State<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        class="form-select"
-                        aria-label="Default select example"
-                        formControlName="registerStateType"
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerStateType')?.touched ||
-                              !form3.get('registerStateType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Age Type<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerAgeType')?.touched ||
-                              !form3.get('registerAgeType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        class="form-select"
-                        aria-label="Default select example"
-                        formControlName="registerAgeType"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option
-                          [value]="type.name"
-                          *ngFor="let type of ageType"
-                        >
-                          {{ type.name }}
-                        </option>
-                      </select>
-                    </div>
-
-                    <div class="col-lg-6 mb-4">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >City
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerCityType"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerCityType')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Sports Type<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerSportType')?.touched ||
-                              !form3.get('registerSportType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        (change)="onRegisterSportTypeChange()"
-                        formControlName="registerSportType"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option
-                          [value]="type.name"
-                          *ngFor="let type of sportType"
-                        >
-                          {{ type.name }}
-                        </option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Position Type<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerPositionType')?.touched ||
-                              !form3.get('registerPositionType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerPositionType"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option
-                          [value]="type.name"
-                          *ngFor="let type of positionType"
-                        >
-                          {{ type.name }}
-                        </option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Enter Referral Code</label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerReferralCode"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <div
-                          class="custom-control custom-checkbox custom-checkbox-lg"
-                        >
-                          <input
-                            style="width: 1rem; height: 1rem"
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="ageCheckbox"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="ageCheckbox"
-                            style="
-                              font-size: 20px;
-                              font-weight: 600;
-                              margin-left: 10px;
-                            "
-                          >
-                            Are you above 13 years old?
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div (click)="submitForm()">
-                    <button
-                      (click)="openAgeModal('signup')"
-                      [disabled]="!form3.valid"
-                      class="btn btn-info text-white mt-3 py-3 px-5"
-                      style="margin: auto; display: block"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
+              <div class="col-lg-8 col-12">
+                <h5 class="mb-3 text-dark">
+                  THE ONLY NETWORK MEMBERSHIP WHERE COMMUNITY CAN NOW CONNECT
+                  WITH OTHERS WHO SHARE SIMILAR INTERESTS.
+                </h5>
+                <p class="text-dark mb-0" style="font-size: 20px">
+                  Three Network - One Registration
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">MAKE COOL SPORTS CARDS</h1>
-      <p class="text-white my-3">
-        Umyo Sports Cards is the first of its kind Social network app connecting
-        fellow Athletes, Agents, Recruiters, Coaches, Schools, Colleges
-      </p>
-      <div class="moretext" style="display: none">
-        <p class="text-white my-3">
-          Business owners who choose to support the journey of its athletes
-          financially as they strive for success. The only app that allows
-          athletes to brand their talent while getting the support and branding
-          they deserve. Upload your Stats, GPA, Interviews, Podcast, Images and
-          Sports Reel for literally thousands to see. The perfect one stop shop
-          for athletes of all sports who are needing the exposure. Also,
-          Business owners can now support athletes by registering their business
-          and entering the ID code of an athlete during registration. Half of
-          the businesses monthly membership that supports an athlete goes into
-          their account, thus allowing athletes to solely concentrate on their
-          talent vs resources. Each registered athlete acts as an independent
-          contractor for UMYO SPORTS. This allows those athletes to get paid
-          while operating within their purpose.
-        </p>
+    </div>
+  </div>
+  <!------- tab section start-------->
+
+  <!------- tab section end ---------->
+  <div class="container-fluid featurs pt-3 mt-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12">
+          <h1 class="text-center">Single Application, Multiple Network</h1>
+          <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/1.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="#" class="mt-5"><p class="mt-4 text-center">Register</p></a>             -->
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/2.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5 class="mt-4 text-center">THREE NETWORK IN ONE</h5>
+          <!-- <a href="#" class="mt-5"><p class="mt-4 text-center">Register</p></a>  -->
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/3.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="#" class="mt-5"><p class="mt-4 text-center">Register</p></a> -->
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/4.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../truckers.html#register" class="mt-5"
+                >Truckers Tweet</a
+              >
+            </li>
+            <li>
+              <a href="../truckers.html#register" class="mt-5"
+                >Truckers Directory</a
+              >
+            </li>
+            <li>
+              <a href="../truckers.html#register" class="mt-5">Truckers Talk</a>
+            </li>
+          </ul>
+          <a href="../truckers.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/32.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../m_c.html#register" class="mt-5">Military Tweet</a>
+            </li>
+            <li>
+              <a href="../m_c.html#register" class="mt-5">Military Directory</a>
+            </li>
+            <li>
+              <a href="../m_c.html#register" class="mt-5">Military Talk</a>
+            </li>
+          </ul>
+          <a href="../m_c.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/5.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../religions.html#register" class="mt-5"
+                >Religions Tweet</a
+              >
+            </li>
+            <li>
+              <a href="../religions.html#register" class="mt-5"
+                >Religions Directory</a
+              >
+            </li>
+            <li>
+              <a href="../religions.html#register" class="mt-5"
+                >Religions Talk</a
+              >
+            </li>
+          </ul>
+          <a href="../religions.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/6.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../entertainers.html#register" class="mt-5"
+                >Entertainers Tweet</a
+              >
+            </li>
+            <li>
+              <a href="../entertainers.html#register" class="mt-5"
+                >Entertainers Directory</a
+              >
+            </li>
+            <li>
+              <a href="../entertainers.html#register" class="mt-5"
+                >Entertainers Talk</a
+              >
+            </li>
+          </ul>
+          <a href="../entertainers.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/7.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../nubians.html#register" class="mt-5">Nubians Tweet</a>
+            </li>
+            <li>
+              <a href="../nubians.html#register" class="mt-5"
+                >Nubians Directory</a
+              >
+            </li>
+            <li>
+              <a href="../nubians.html#register" class="mt-5">Nubians Talk</a>
+            </li>
+          </ul>
+          <a href="../nubians.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/8.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../hispanics.html#register" class="mt-5"
+                >Hispanics Tweet</a
+              >
+            </li>
+            <li>
+              <a href="../hispanics.html#register" class="mt-5"
+                >Hispanics Directory</a
+              >
+            </li>
+            <li>
+              <a href="../hispanics.html#register" class="mt-5"
+                >Hispanics Talk</a
+              >
+            </li>
+          </ul>
+          <a href="../hispanics.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/9.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../hb.html#register" class="mt-5">Hair & Beauty Tweet</a>
+            </li>
+            <li>
+              <a href="../hb.html#register" class="mt-5"
+                >Hair & Beauty Directory</a
+              >
+            </li>
+            <li>
+              <a href="../hb.html#register" class="mt-5">Hair & Beauty Talk</a>
+            </li>
+          </ul>
+          <a href="../hb.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/10.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../alt.html#register" class="mt-5">Athletes Tweet</a>
+            </li>
+            <li>
+              <a href="../alt.html#register" class="mt-5">Athletes Directory</a>
+            </li>
+            <li>
+              <a href="../alt.html#register" class="mt-5">Athletes Talk</a>
+            </li>
+          </ul>
+          <a href="../alt.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/11.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../college.html#register" class="mt-5">Colleges Tweet</a>
+            </li>
+            <li>
+              <a href="../college.html#register" class="mt-5"
+                >Colleges Directory</a
+              >
+            </li>
+            <li>
+              <a href="../college.html#register" class="mt-5">Colleges Talk</a>
+            </li>
+          </ul>
+          <a href="../college.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/12.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../school.html#register" class="mt-5">Students Tweet</a>
+            </li>
+            <li>
+              <a href="../school.html#register" class="mt-5"
+                >Students Directory</a
+              >
+            </li>
+            <li>
+              <a href="../school.html#register" class="mt-5">Students Talk</a>
+            </li>
+          </ul>
+          <a href="../school.html#register"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/13.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mt-4">
+            <li>
+              <a href="../hbcu.html#register" class="mt-5">HCBU’S Tweet</a>
+            </li>
+            <li>
+              <a href="../hbcu.html#register" class="mt-5">HCBU’S Directory</a>
+            </li>
+            <li>
+              <a href="../hbcu.html#register" class="mt-5">HCBU’S Talk</a>
+            </li>
+          </ul>
+          <a href="../hbcu.html#register" class="mt-5"
+            ><p class="mt-4 text-center">Register</p></a
+          >
+        </div>
       </div>
-      <a
-        class="moreless-button btn btn-light"
-        style="text-decoration: none"
-        (click)="toggleMoreText2()"
-        >Read more</a
-      >
+    </div>
+  </div>
+  <section id="content-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="c1">
+            <h3>
+              THIS IS UMYO'S COMMUNITY MEMBERSHIP NETWORK THAT IS RUN AND OWNED
+              BY COMMUNITY. MEMBERS BOTH SUPPORT BUSINESSES AND ARE SUPPORTED BY
+              THEM IN RETURN.
+            </h3>
+            <p>Register Here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sc">
+    <div class="container-fluid">
+      <h2>COMMUNITY NETWORK REGISTRATION</h2>
+    </div>
+  </section>
+  <div class="container-fluid featurs pt-3 mt-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/14.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/15.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/16.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/17.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/18.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/19.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/20.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/21.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/22.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/23.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/24.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/25.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/26.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/27.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/28.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/29.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/30.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+        <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+          <div class="position-relative fruite-item">
+            <div class="fruite-img">
+              <div class="videos__wrapper">
+                <div class="videos__wrapper--video2">
+                  <img src="assets/img/network/31.png" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="mt-5"
+            ><p class="mt-4 text-center">Register Here</p></a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- packages modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Select One Package
-        </h5>
-        <button type="button" class="close" (click)="closePackageModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
-        <div class="row">
-          <div class="col-md-6" *ngFor="let package of packages; let i = index">
-            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
-              <div
-                class="card"
-                [ngClass]="{ cardSelect: selectedPackage === package }"
-                (click)="selectPackage(package)"
-              >
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
-                    $
-                    {{ package.net_price ? package.net_price : package.price }}
-                    <sup
-                      style="
-                        text-decoration: line-through;
-                        font-size: 20px;
-                        color: gray;
-                        padding-left: 15px;
-                      "
-                      *ngIf="package.net_price"
-                      >{{ package.price }}</sup
-                    >
-                  </h5>
-                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
-                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
-
-                  <div
-                    class="description-container"
-                    style="max-height: 100px; overflow-y: auto"
-                  >
-                    <p class="card-description">{{ package.description }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          (click)="closePackageModal()"
-          type="button"
-          class="btn btn-secondary"
-        >
-          Close
-        </button>
-
-        <div
-          *ngIf="selectedPackage?.price != '0'"
-          [ngClass]="{
-            hidden: selectedPackage == null || selectedPackage?.price == '0',
-            paymentButtons: selectedPackage != null
-          }"
-        >
-          <!-- <div id="paypal-button-container"></div> -->
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="openStripeModal()"
-          >
-            Stripe
-          </button>
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="paypalClick()"
-          >
-            paypal
-          </button>
-        </div>
-        <div *ngIf="selectedPackage?.price == '0'">
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="continuePaymentButton()"
-          >
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- stripe modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Pay Through Stripe
-        </h5>
-        <button type="button" class="close" (click)="closeStripeModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <form class="checkout-form" [formGroup]="paymentForm">
-            <h3>
-              Amount
-              {{
-                selectedPackage?.net_price
-                  ? selectedPackage?.net_price
-                  : selectedPackage?.price
-              }}
-            </h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-number"
-                    data-stripe-element="cardNumber"
-                    formControlName="cardNumber"
-                    placeholder="XXXXXXXXXXXXXXXX"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-expiry"
-                    data-stripe-element="expiryDate"
-                    formControlName="expiryDate"
-                    placeholder="MM/YY"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-cvc"
-                    data-stripe-element="cvc"
-                    formControlName="cvc"
-                    placeholder="XXX"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  id="pay-button"
-                  (click)="pay()"
-                  [disabled]="!paymentForm.valid"
-                >
-                  Pay Now
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeStripeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Are You 18+ of your age?</h3>
-          <p style="padding: 8px">
-            You must be at least 13 years old to use the Service. However,
-            children of all ages may use the Service and PLTalk Kids (where
-            available) if enabled by a parent or legal guardian. Permission by
-            Parent or Guardian If you are under 18, you represent that you have
-            your parent or guardian’s permission to use the Service. Please have
-            them read this Agreement with you. If you are a parent or legal
-            guardian of a user under the age of 18, by allowing your child to
-            use the Service, you are subject to the terms of this Agreement and
-            responsible for your child’s activity on the Service. You can find
-            tools and resources to help you manage your family’s experience on
-            PLTalk in our Help Center
-          </p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="confirmAge()">
-          Yes
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeAgeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Confirming Payment...</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!------- tab section end ---------->
-
-<div class="container-fluid featurs" style="margin-top: 20px">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-12">
-        <h1 class="text-center">Single Application, Multiple Platforms</h1>
-        <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text1">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image1.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Establish a steady and reliable presence.</h2>
-        <div class="moretext2" style="display: none">
-          <p>
-            Consolidate your business card, personal website, social media
-            links, and inventory into a single location
-          </p>
-        </div>
-        <a class="moreless-button2 btn btn-dark text-white" href="#text1"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text2">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image2.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Highlight your video reels and inventory.</h2>
-        <div class="moretext3" style="display: none">
-          <p>
-            Craft tailored pages for every sports video, realty home, and
-            vehicle, complete with photos, videos, features, options, and
-            additional details.
-          </p>
-        </div>
-        <a class="moreless-button3 btn btn-dark text-white" href="#text2"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text3">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image3.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Search Engine Directory</h2>
-        <div class="moretext4" style="display: none">
-          <p>
-            Search Engine Directory for users to search all sports types, ages,
-            GPA, positions State and business types
-          </p>
-          <p>
-            Gather contact information seamlessly, with users who are branding
-            for you
-          </p>
-        </div>
-        <a class="moreless-button4 btn btn-dark text-white" href="#text3"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text4">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image4.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Support you as an athlete.</h2>
-        <div class="moretext5" style="display: none">
-          <p>
-            Network, chat, make friends, and exchange your sports cards and
-            business cards with potential recruiters and others.
-          </p>
-        </div>
-        <a class="moreless-button5 btn btn-dark text-white" href="#text4"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text5">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image5.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Up to Eight Platforms from one App</h2>
-        <div class="moretext6" style="display: none">
-          <p>
-            Virtual Conference, Networking platform, Sports Chat GPT, VPN, Touch
-            Screen Kiosk, Interactive Sports and Business Magazine, Interactive
-            Touch Screen Kiosk Booklet, Live Streaming App
-          </p>
-        </div>
-        <a class="moreless-button6 btn btn-dark text-white" href="#text5"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text6">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image6.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Leave a lasting impression.</h2>
-        <div class="moretext7" style="display: none">
-          <p>
-            Distinguish yourself from your competitors and create a memorable
-            first impression.
-          </p>
-        </div>
-        <a class="moreless-button7 btn btn-dark text-white" href="#text6"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text7">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image7.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Boost your lead generation.</h2>
-        <div class="moretext8" style="display: none">
-          <p>
-            Effortlessly gather and consolidate lead information while
-            automating follow-ups through your CRM system
-          </p>
-        </div>
-        <a class="moreless-button8 btn btn-dark text-white" href="#text7"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 px-5 mt-5" id="text8">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/2ndpage/image8.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Simplified follow-up process.</h2>
-        <div class="moretext9" style="display: none">
-          <p>
-            Swiftly distribute updates to your network and gain insights into
-            what captures their interest.
-          </p>
-          <p>
-            Organizations with 5k or more members!!Are You ready to Partner and
-            Own Your Own Platform similar to USC and control your own data
-            exclusively for your members only?
-          </p>
-        </div>
-        <a class="moreless-button9 btn btn-dark text-white" href="#text8"
-          >Read more</a
-        >
-      </div>
-
-      <div class="row g-4 py-5">
-        <div class="col-lg-12 col-md-6 px-5 mt-5">
-          <img src="assets/newlogo/naf.jpg" class="img-fluid" />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Featurs Section End -->
+<!-- product Start -->
+<section id="card_section">
+  <div class="container-fluid service py-2">
+    <h1 class="text-center my-5">COMMUNITY BRANDING</h1>
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-12 col-lg-8">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/attorneys.jpg"
+                  class="img-fluid mb-3"
+                />
+                <!-- <h5 class="text-center text-dark">Religious Entities</h5> -->
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img src="assets/img/network/nl.jpg" class="img-fluid mb-3" />
+                <!-- <h5 class="text-center text-dark">Religious Entities</h5> -->
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/sports.jpeg"
+                  class="img-fluid mb-3"
+                />
+                <!-- <h5 class="text-dark text-center">Sports Athletes</h5> -->
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/aaog/colleges.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/aaog/entertainment.jpg"
+                  class="img-fluid mb-3"
+                />
+                <!-- <h5 class="text-dark text-center">Nightlife and Clubs</h5> -->
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/aaog/hispanics.png"
+                  class="img-fluid mb-3"
+                />
+                <!-- <h5 class="text-dark text-center">Realtors & Homes</h5> -->
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/aaog/restaurants.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/hotel.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/img/network/stylists.png"
+                  class="img-fluid mb-3"
+                />
+                <!-- <h5 class="text-dark text-center">Fraternities and Sororities</h5> -->
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pro_c">
+            <h1>Grab a UMYO Network</h1>
+            <p>Choose from our variety of products designed to fit...</p>
+            <a href="#">
+              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
+                Shop All Products
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- product End -->
+</section>
+
+<!-- Bestsaler Product Start -->
 
 <!-- Footer Start -->
-
-<!-- <div
-  class="container-fluid bg-dark text-white-50 footer"
-  style="background: #671414 !important; height: 100% !important"
-> -->
-
-<div
-  class="container-fluid bg-dark text-white-50 footer"
-  style="background: #2f3d7e !important; height: 100% !important"
->
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="d-flex pt-3">
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
+<section id="footer">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <img src="assets/img/network/logof.png" class="img-fluid logo" />
         </div>
-      </div>
-      <div class="col-lg-2 col-md-6">
-        <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link" href="">Contact us</a>
-          <a class="btn-link" href="">Privacy Policy</a>
-          <a class="btn-link" href="">Refund Policy</a>
-          <a class="btn-link" href="">Terms Of Service</a>
-          <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">Data Processing Addendum</a>
-          <a class="btn-link" href="">Careers</a>
-          <a class="btn-link" href="">Security & Trust Report</a>
+        <div class="col-lg-5 d-none d-lg-block"></div>
+        <div class="col-lg-4">
+          <p>#75-2895137</p>
+          <!-- <p>© 2022 AAOG. All Rights Reserved.</p> -->
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link" href="">Link Store</a>
-          <a class="btn-link" href="">Industries</a>
-          <a class="btn-link" href="">Link for Teams</a>
-          <a class="btn-link" href="">Link Pro</a>
-          <a class="btn-link" href="">UMYO Profile</a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-item">
-          <h4 class="text-light mb-3">LET'S CONNECT</h4>
-          <p class="mb-4">
-            Subscribe to stay up to date on all the latest UMYO features,
-            products, stories, and more. You can also contact us at
-            contact@UMYOapp.com.
-          </p>
-          <div class="position-relative mx-auto">
-            <input
-              class="form-control border-0 py-2 w-100"
-              type="text"
-              placeholder="Enter Your Email"
-            />
-            <button
-              type="submit"
-              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
-              style="top: 0; right: 0"
-            >
-              Sent
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
-      <p class="text-white text-center">
-        <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
-        >, All right reserved.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showPolicyModal, 'd-block': showPolicyModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
-        <button type="button" class="close" (click)="closePolicyModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <pre
-            style="
-              max-height: 70vh;
-              white-space: pre-wrap;
-              overflow-x: hidden;
-              overflow-y: scroll;
-            "
-          >
-              Privacy Policy
-  
-  Last modified: January 10, 2022
-  
-  Who We Are
-  
-  Welcome! We are Proliving Inc., a Texas corporation, or as we prefer to be known, "Proliving,"
-  "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
-  products,services, and technologies ("Products") allowing users ("Users") to organize,
-  display, and share information with their contacts through our software, mobile
-  application, and website (collectively,"Platform").
-  
-  We are committed to safeguarding our User’s privacy in accordance with this Privacy Policy
-  ("Policy").Please carefully read this Policy to comprehend our policies and practices
-  concerning your information and how we handle it. If you disagree with our policies and
-  practices, please refrain from using our Platform or purchasing our Products.
-  
-  How to Contact Us
-  
-  If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@proliving.com or by mail at Proliving Inc., Attn: Data Privacy
-  Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
-  
-  Application of this Policy
-  
-  Upon accessing our Platform or utilizing our Products, you become a User and agree to
-  this Policy, our Data Processing Addendum, and our Terms of Service and Sale
-  (collectively, "Policies").
-  
-  This Policy delineates the types of information we may collect from you or that you may
-  provide to us when interacting with our Platform or Products. It further outlines
-  our practices for collecting,
-  using, maintaining, protecting, and disclosing that information.
-  
-  Categories of Information We Collect or Receive
-  
-  Our Platform and Products empower Users to customize their pages and profiles by
-  uploading and linking content and information, shareable with other Users or third
-  parties. The information provided by a User on the Platform can be extensive. We
-  may receive information directly from you or automatically as you access, use, or
-  interact with our Platform or Products.
-  
-  The categories of information we collect or receive include:
-  
-  - **Identity or Contact Information:** Your first name, last name, or similar
-   identifier title, postal addresses, unique personal identifiers, online
-  identifiers, IP addresses, email addresses, social media accounts or identifiers
-  (e.g., username), age, date of birth, or other similar contact information
-  or forms of identification.
-  
-  - **Transaction Information:** Details about payments to and from you, as well
-   as other details of subscriptions and services you have purchased from us.
-  
-  - **Content Data Information:** Any content you post on the Platform, such as
-    pictures, third-party links, documents, writings, preference settings, messages,
-    comments, and other contributions, along with metadata about them.
-  
-  - **Marketing and Communications Information:** Your preferences for receiving
-    marketing communications from us and your communication preferences.
-    Correspondence content, if any, may be retained.
-  
-  - **Behavioral and Usage Information:** Details of your access, use, or 
-    interaction with our Platform or Products, including traffic data, location
-    data, logs, and other communication data.
-  
-  - **Technical Information:** IP address, browser type and version, time zone
-    setting and location, browser plug-in types and versions, operating system
-    and platform, and other technology on the devices you use to access our Platform.
-  
-  - **Aggregated Data or Information:** We may collect, use, and share aggregated 
-    data or information such as statistical or demographic data derived from your 
-    Personal Information.
-  
-  Because Users can upload various information on our Platform, we may also receive
-  sensitive information, such as your date of birth, racial or ethnic origin, sex,
-  political views, affiliations, veteran or military status, religious or philosophical
-  views, or similar information. We do not mandate the provision of Sensitive Information,
-  but such information may be indirectly collected by us through our hosting of the Platform.
-  
-  Our Platform also allows you to upload and share information that is not Personal Information
-  or Sensitive
-  Information, such as your hobbies, pictures, links, descriptions, messages, and comments
-  ("Other Information"). As our Platform permits you to choose the Information associated
-  with your account, we may link Other Information to Personal or Sensitive Information 
-  aboutyou.
-  
-  For more information on our use of cookies, logs, web beacons, and other tracking
-  technologies,refer to the "Third-Party Sources, Cookies, and Other Tracking
-  Technologies" section below.
-  
-  Third-Party Sources, Cookies, and Other Tracking Technologies
-  
-  We may also collect or receive Personal Information from third-party sources, and the Platform
-  may include links to other sites. Any Information you provide on linked pages is submitted
-  directly to the respective third-party and is subject to their terms and policies. This 
-  Policy does not extend to such linked third-party sites, and we disclaim responsibility 
-  for the content, privacy, security practices, and policies of these external sites or any
-  other sites linked to or from our Platform.
-  
-  Certain Information on the Platform may be served by third parties, including advertisers,
-  ad networks and servers, content providers, and application providers. These third parties
-  may utilize cookies independently or in conjunction with web beacons or other tracking
-  technologies to collect Information about you. The Information they gather may be linked
-  to your Personal Information or Sensitive Information, or they may collect Information,
-  including Personal Information, about your activities across different websites and online
-  services.This Information may be used to provide you with interest-based advertising or other
-  targeted content. We do not oversee third-party tracking technologies or their usage. For 
-  inquiries regarding advertisements or other targeted content, please directly contact the 
-  responsible provider.
-  
-  We may collect Information regarding your Platform usage, encompassing the pages and links
-  viewed, time spent on our Platform, demographic data such as server locations, connection
-  speed, and other non-identifying Information. Like most online services, we employ cookies
-  , log files, clear GIFs, tracking pixels, web beacons, and other technologies that may collect
-  Personal Information.
-  
-  Upon visiting our Platform, one or more "cookies" – small data files – may be sent to your
-  device to uniquely identify your browser, enabling us to enhance your navigation experience.
-  Cookies may convey Information about your Platform or Products usage to provide you with a 
-  more personalized experience. Persistent cookies remain on your device after closing your 
-  browser, allowing your browser to use them in subsequent visits. These can be removed by 
-  following your web browser's instructions. Session cookies are temporary and vanish after 
-  closing your browser.Our Platform may utilize the following types of cookies, logs, web
-  beacons, and other tracking 
-   technology:
-  
-  - **Essential Cookies:** Necessary to provide you with services available on our Platform, 
-  facilitating actions like logging in to secure areas and expediting Content loading.
-  
-  - **Functionality Cookies:** Allow us to remember your choices, such as login information, 
-    providing a more personalized experience.
-  
-  - **Analytics and Performance Cookies:** Collect Information about traffic to our Platform 
-    and Users' interactions to enhance Platform efficiency and gather aggregated, anonymous
-    demographic data.
-    Third-party tools and services may be utilized for this purpose.
-  
-  - **Targeted and Advertising Cookies:** Track browsing habits to show relevant content.
-   Information about browsing history may group Users with similar interests, enabling
-    third-parties to display ads matching those interests.
-  
-  - **Social Media Cookies:** Activate when sharing or engaging with Content on social
-    media platforms,helping track conversions, optimize ads, and build targeted audiences.
-  
-  - **Log Files:** Automatically reported by your browser, recording information such
-   as web requests, IP addresses, browser types, and pages viewed. Servers automatically
-  capture this data whenever you access our Platform.
-  
-  ### How Can I Disable Cookies?
-  
-  You can typically configure your web browser to block all cookies or prompt you when
-  a cookie is being sent.To do this, follow the instructions provided by your browser,
-  usually located within the “settings,” “help,” or “tools” function. Many browsers
-  are set to accept cookies by default until you modify your settings.
-  
-  Should you choose not to accept our cookies, it may result in some inconvenience
-  during your use of our Platform, and certain features may not operate correctly.
-  For instance, we may be unable to recognize your device, necessitating you to log
-  in each time you visit our Platform.
-  
-  For more details on cookies, including viewing and managing cookies on your device, 
-  visit www.allaboutcookies.org or www.whatarecookies.com.
-  
-  As of now, we do not acknowledge web browsers’ “do not track” signals that offer an
-  opt-out method from collecting Information about User activities on the Platform.
-  If we adopt this practice in the future, relevant information will be provided in
-  this Policy.
-  
-  ### How We Use Your Information
-  
-  We utilize the Information collected about you or provided by you, including any
-  Personal Information:
-  
-  - To present our Platform and enhance its contents, providing a personalized
-    and improved experience for Users.
-  - To furnish information, products, or services requested by you, responding
-    to inquiries or facilitating purchases 
-    and deliveries.
-  - To enable your participation in interactive features, allowing the sharing
-    of Personal Information with other Users.
-  - To send notices regarding your accounts, pages, or subscriptions, including
-    expiry and renewal notifications.
-  - To fulfill our contractual obligations and enforce rights, including
-    billing and collection.
-  - To inform you of changes to our Platform, Products, or services.
-  - To uphold the safety, security, and integrity of the Platform, Products,
-    databases, and technological assets.
-  - For testing, research, analysis, and product development, enhancing and
-     evolving our Platform and Products.
-  - To respond to law enforcement requests and comply with applicable law,
-    court orders, or governmental regulations.
-  - In any other manner as described when providing the Information or as
-     outlined in applicable law, including the CCPA and GDPR.
-  - For any other purpose with your consent.
-  
-  ### Disclosure of Your Information
-  
-  We may share your Information, including Personal Information, by disclosing
-  it to third parties for the provision of our Platform, its Content, and security,
-  or for marketing and selling our Platform or Products. 
-  These disclosures occur under written contracts specifying purposes,
-  confidentiality requirements, and prohibiting use for any purpose other than contract
-   performance. We do not sell your Personal Information.
-  
-  For Users with an account linked to a “Proliving for Teams” subscription, the administrator 
-  associated with your “Proliving for Teams” account may manage, access, view, or store your
-  Information, including Personal Information. We do not control or limit your account's
-  accessibility, and we are not responsible for the administrator's access, disclosure, or
-  processing of your Information.
-  
-  Within the last twelve (12) months, we have disclosed Information, as described in this Policy:
-  
-  - In connection with your use of our Platform or Products, enabling the sharing of Personal
-    Information with other Users.
-  - To our service providers, affiliates, agents, subprocessors, advertising partners, 
-    internet service providers, data analytics providers, and related third parties, supporting
-    Platform and Product functions.
-  - To our processors and subprocessors, engaging specific service providers to assist in
-     Platform and Product support.
-  
-  **List of Subprocessors:**
-  
-  - **Google LLC:** Cloud Service Provider (United States)
-  - **Stripe:** Payment Processor (United States)
-  - **Hubspot:** Marketing, Sales (CRM), and Support Software Platform (United States)
-  - **Chili Piper:** Scheduling Software (United States)
-  - **Zapier:** Workflow Integration Software (United States)
-  - **Slack:** Messaging and Communication Platform (United States)
-  - **Amplitude:** Product and Data Analytics (United States)
-  - **Shopify:** Ecommerce Platform (Canada and jurisdictions per Shopify’s policies)
-  - **Cloudflare Inc.:** Web Traffic Optimization and Distribution Service (United States)
-  - **Covve Visual Network Limited:** Physical business card scanner API (Cyprus)
-  - **Rollbar:** Error Monitoring (United States)
-  - **Heroku:** Cloud Hosting Provider (United States)
-  - **AWS:** Cloud Hosting Provider (United States)
-  - **Fivetran:** ETL Tooling (United States)
-  - **Looker:** BI (Business Intelligence) tooling (United States)
-  - **Cloudinary:** Image hosting API (United States)
-  - **Newrelic:** APM (Application Performance Monitoring) (United States)
-  - **Passsource:** API (United States)
-  - **Klaviyo:** Marketing automation (United States)
-  
-  **User Data Privacy Policy**
-  
-  **Effective Date: [Date]**
-  
-  Welcome to Proliving! This User Data Privacy Policy ("Policy") outlines how we collect,
-  use, disclose, and protect your information when you use our platform, products, and
-  services ("Platform" or "Products"). Please read this Policy carefully to understand
-  our practices regarding your information and how we will treat it.
-  
-  ### 1. **How Can I Disable Cookies?**
-  
-  You have the ability to configure your web browser to block cookies or prompt
-  you when a cookie is being sent. Refer to your browser's settings, usually
-  located in the "settings," "help," or "tools" function. Please note that
-  if you choose to disable our cookies, it may impact your experience on the Platform,
-  and certain features may not operate correctly. For more information on cookies,
-  including how tomanage them, visit [www.allaboutcookies.org](www.allaboutcookies.org)
-  or [www.whatarecookies.com](www.whatarecookies.com).
-  
-  As of now, we do not acknowledge "do not track" signals from web browsers. If this
-  changes in the future, we will provide relevant information in this Policy.
-  
-  ### 2. **How We Use Your Information**
-  
-  We use the information collected or provided by you for various purposes, including
-  but not limited to:
-  
-  - Presenting and enhancing the Platform.
-  - Providing information, products, or services as requested.
-  - Enabling participation in interactive features and sharing information with other Users.
-  - Sending notices regarding accounts, pages, or subscriptions.
-  - Fulfilling contractual obligations, including billing and collection.
-  - Informing you of changes to our Platform, Products, or services.
-  - Upholding the safety, security, and integrity of our Platform and Products.
-  - Conducting testing, research, analysis, and product development.
-  - Responding to law enforcement requests and complying with applicable laws.
-  
-  ### 3. **Disclosure of Your Information**
-  
-  We may share your information, including Personal Information, with third parties for various 
-  purposes,such as providing our Platform, securing it, and marketing or selling our Products.
-  These disclosures are governed by written contracts specifying purposes and confidentiality
-  requirements. We do not sell your Personal Information.
-  
-  **List of Subprocessors:**
-  - Google LLC (Cloud Service Provider, United States)
-  - Stripe (Payment Processor, United States)
-  - Hubspot (Marketing, Sales, and Support Software Platform, United States)
-  - Chili Piper (Scheduling Software, United States)
-  - Zapier (Workflow Integration Software, United States)
-  - Slack (Messaging and Communication Platform, United States)
-  - Amplitude (Product and Data Analytics, United States)
-  - Shopify (Ecommerce Platform, Canada and jurisdictions per Shopify’s policies)
-  - Cloudflare Inc. (Web Traffic Optimization and Distribution Service, United States)
-  - Covve Visual Network Limited (Physical business card scanner API, Cyprus)
-  - Rollbar (Error Monitoring, United States)
-  - Heroku (Cloud Hosting Provider, United States)
-  - AWS (Cloud Hosting Provider, United States)
-  - Fivetran (ETL Tooling, United States)
-  - Looker (BI tooling, United States)
-  - Cloudinary (Image hosting API, United States)
-  - Newrelic (APM, United States)
-  - Passsource (API, United States)
-  - Klaviyo (Marketing automation, United States)
-  
-  ### 4. **Where We Store Your Information**
-  
-  We maintain our Platform in the United States, and your information may be stored,
-  processed, and accessed in the U.S. or elsewhere by us, our employees, contractors,
-  and third parties. By using our Platform and providing your information, you consent
-  to the export of Personal Information to the United States, understanding that U.S.
-  laws may differ from those in your country.
-  
-  ### 5. **How Long We Store Your Information**
-  
-  We retain your information for as long as reasonably necessary for the purposes
-  outlined in this Policy, unless a longer retention period is required by law. We
-  may keep your information for business interests, audits, legal compliance, dispute
-  resolution, and agreement enforcement.
-  
-  ### 6. **Your Rights Related to Your Personal Information**
-  
-  You may have rights under laws such as the CCPA and GDPR. These rights may include:
-  
-  - Requesting access to your Personal Information.
-  - Right to Know (CCPA) – Receiving information about the collection and use of your
-     Personal Information.
-  - Requesting correction of your Personal Information.
-  - Requesting erasure of your Personal Information.
-  - Objecting to processing or requesting restriction of processing.
-  - Requesting the transfer of your Personal Information.
-  - Withdrawing consent.
-  
-  ### 7. **How to Exercise Your Rights**
-  
-  To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@proliving.com] (mailto:data-privacy@proliving.com) or by mail at
-  Proliving Inc., Attn: Data Privacy Officer, [Address].
-  
-  We will confirm receipt of your request within ten (10) business days and aim to
-  respond within one month, unless the request is complex. If applicable, any disclosures
-  will cover the 12-month period preceding the request.
-  
-  ### 8. **Non-Discrimination**
-  
-  We do not discriminate against you for exercising your rights. We will not deny goods or
-  services, charge different prices, or provide different quality levels based on your
-  exercise of privacy rights, unless permitted by law.
-  
-  ### 9. **How We Protect Your Information**
-  
-  We implement measures to secure your information from loss and unauthorized access.
-  All information is stored on secure servers, and payment transactions are encrypted
-  using SSL technology.
-  
-  ### 10. **Children Under the Age of 16**
-  
-  Our Platform is not intended for children under 16. We do not knowingly collect
-  Personal Information from children under 16. If you are under 16, please do not
-  use the Platform or provide any information. If we learn of such information, we
-  will delete it promptly.
-  
-  ### 11. **Opting Out of Sale of Personal Information**
-  
-  We do not sell Personal Information. If you are 16 or older, you can direct us not
-  to sell your information at any time by contacting us at 
-  [data-privacy@proliving.com](mailto:data-privacy@proliving.com) or by mail at
-  Proliving Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
-  
-  **Changes to Our Privacy Policy at Proliving**
-  
-  You acknowledge that this Policy is subject to modification by us at any time,
-  without prior written notice,and solely at our discretion. Any revisions to this
-  Policy will take effect on the "Last Updated Date" or "Last Revised Date"
-  indicated on the Platform. Therefore, it is advisable to review our Policies before
-  making any purchases or using our Products, Platform, or associated services. Your
-  ongoing use of the Platform or any Product following the "Last Updated Date" or "Last
-  Revised Date" will signify your acceptance and agreement to these modifications
-  
-            </pre
-          >
+        <div class="col-lg-12">
+          <!-- <p>#75-2895137</p> -->
+          <p class="copy">© 2022 AAOG. All Rights Reserved.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showRefundModal, 'd-block': showRefundModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="refundModalLabel">Refund Policy</h5>
-        <button type="button" class="close" (click)="closeRefundModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <pre
-            style="
-              max-height: 70vh;
-              white-space: pre-wrap;
-              overflow-y: scroll;
-              overflow-x: hidden;
-            "
-          >
-              **Refund Policy at Proliving**
-  
-  **Returns for Defective Items:**
-  Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
-  event that you receive a defective or damaged item, kindly notify us within 30 days of
-  receipt. We will promptly offer a replacement or a full refund for the returned items.
-  
-  **Return for Customization Issues:**
-  If the item received does not align with the agreed-upon customization specifications,
-  please inform us within 30 days of receipt. We will collaborate with you to replace
-  and reprint it correctly to your satisfaction. In some cases, we may request the return
-  of the item to our office to address any issues that occurred during the printing process.
-  
-  **No Returns for Change of Mind:**
-  Due to the personalized nature of our custom items, returns or exchanges stemming from a
-  change of mind are not feasible. We encourage you to thoroughly review all customization
-  details before confirming your order. This enables us to promptly commence crafting your
-  item, ensuring a smooth and efficient process.
-  
-  **Communication on Specifications:**
-  To expedite the process and ensure your custom item exceeds expectations, we rely on
-  comprehensive and precise specifications during the ordering process. Your timely
-  and detailed communication allows us to swiftly proceed with crafting your custom
-  piece, reflecting our commitment to your satisfaction.
-  
-  If you believe your order requires additional details, please notify us promptly.
-  As the fastest custom NFC option on the market, early communication enhances our
-  ability to address any potential issues.
-  
-  **Cancellation Policy:**
-  You can cancel your order within 1-2 business days of purchase, provided we haven't
-  initiated the creation of your custom item. If cancellation is requested after this
-  timeframe, a 10% cancellation fee will be applied to cover the cost of materials and
-  work invested in your unique item. This fee will be deducted from your refund.
-  
-            </pre
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showTermsModal, 'd-block': showTermsModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="termsModalLabel">Terms Of Service</h5>
-        <button
-          type="button"
-          class="close"
-          (click)="closeTermsModal()"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <pre
-            style="
-              max-height: 70vh;
-              white-space: pre-wrap;
-              overflow-y: scroll;
-              overflow-x: hidden;
-            "
-          >
-              Welcome to Proliving!
-  
-  **Terms of Service and Sale - Proliving**
-  
-  **Last Revised: December 22, 2023**
-  
-  **Terms of Sale and Service**
-  
-  **Introduction**
-  
-  Welcome! We are Proliving, a Delaware corporation, known as "we," "our," or "us." Our mission
-  is to redefine how the world connects. We provide Products, Services, and Technologies
-  ("Products") that enable Users ("Users") to organize, display, and share information
-  with others and third parties ("Services") through our software, mobile application, and
-  website (collectively, "Platform").
-  
-  By submitting an order through the Platform or otherwise ("Order"), you (whether on behalf
-  of yourself or an entity you represent) are entering into these Terms of Sale and Service
-  ("Terms") with us. You agree to be bound by these Terms and other conditions governing the
-  use of our Services, Platform, or the Products offered or sold, such as our Privacy Policy
-  and Data Processing Addendum (collectively, "Policies"). If you are under 16, you may not
-  use our Platform or Services without parental or guardian permission.
-  
-  If you disagree with these Terms or our Policies, do not submit an Order or use our
-  Platform, Services, or Products.
-  
-  By agreeing, you confirm that you have the authority to bind yourself and/or the entity
-  or company you represent. We may periodically modify these Terms or any Policies at our
-  discretion, with the "Last Revised" date indicating such changes.
-  
-  **Purchase of Products**
-  
-  (a) When you place an Order, you make an offer to purchase Products according to the
-  Order terms, these Terms, and our Policies. An Order is effective upon our acceptance
-  or rejection. We may accept or reject Orders at our discretion. Product prices (the
-  "Product Purchase Price") are as stated in the Order or, if not in an Order, as
-  advertised on our Platform when we accept the Order. Prices exclude taxes; you are
-  responsible for such charges.
-  
-  (b) We select shipment methods and carriers unless specified in the Order. Partial
-  shipments are possible at our discretion. You pay for shipped units, including shipping
-  and insurance costs unless otherwise stated in the Order.
-  
-  (c) Products will be delivered to the specified address ("Delivery Point") within a
-  reasonable time. Custom Products may have longer processing times. Delivery times are
-  estimates, and we are not liable for delays. Title and risk pass upon delivery. If you
-  fail to accept delivery, risk passes to you, and we may store the Products at your cost.
-  
-  (d) Inspect Products within ten (10) days of delivery ("Inspection Period"). Accept or reject
-  Nonconforming Products (materially different or defective) during the Inspection Period. If
-  notified of Nonconforming Products, ship them to us, and we may replace them.
-  
-  (e) We warrant Products against significant defects for 1 year ("Warranty Period"). The
-  warranty doesn't apply if Products are misused, altered, or used with unauthorized hardware.
-  Except for this warranty, we provide no other warranties.
-  
-  (f) We are not liable for a breach of the warranty unless you give written notice within
-  10 days of discovering the defect, allow us to examine the Products, and we verify the
-  Nonconforming Products. Remedies for Nonconforming Products are repair, replacement,
-  credit, or refund at our discretion.
-  
-  (g) Your sole remedy for Nonconforming Products is as outlined in Section 2(f).
-  
-  (h) Changes to Terms in Orders are void unless expressly stated.
-  
-  **Services**
-  
-  (a) To use our Services, register and create an account ("Account"). Our Services allow
-  Users to create, design, maintain, and share profiles or pages ("Pages"). Subscription
-  Levels offer different access levels.
-  
-  (b) During the Subscription Term, you are granted licensed seats for Services based on
-  an accepted Order. Users are responsible for complying with these Terms and our Policies.
-  Some Products may require an Account Administrator.
-  
-  (c) We may establish policies and practices for the Platform, including deleting or
-  removing Content, terminating inactive Accounts, or changing Services. Our Services
-  may be changed, suspended, or discontinued at any time.
-  
-  (d) You are responsible for your Account's security. Notify us of any unauthorized
-  use promptly. We are not liable for third-party access resulting from your failure
-  to comply with these Terms.
-  
-  **Subscription; Payment Terms**
-  
-  (a) We offer various Subscription Levels with associated Subscription Fees. Fees
-  are subject to change, impacting renewals but not current Subscription Terms.
-  
-  (b) You agree to pay Subscription Fees associated with your Subscription. Payment
-   terms are as stated on our Platform or Order.
-  
-  (c) We may collect payments through third-party processors. By providing payment
-  information, you authorize us to charge your payment method for Fees. Failure to
-  verify or accept your payment method may result in suspension or cancellation.
-  
-  (d) Subscription Fees may consist of recurring charges. By choosing a recurring
-  payment plan, you acknowledge and accept responsibility for all recurring charges.
-  
-  (e) We may submit periodic charges without further authorization until notice of
-  termination or payment method change is provided. Charges submitted before notice will
-  not be affected.
-  
-  (f) Your subscription will automatically renew unless terminated before the end of
-  the then-current Subscription Term. Termination may occur through Account settings.
-  No refunds are provided for early termination.
-  
-  Certainly! Here's the rewritten version:
-  
-  ---
-  
-  **Proliving App Terms of Service**
-  
-  **1. Account Information and Updates**
-  
-  (g) You must provide accurate, current, and complete information for your Proliving
-  account. Ensure timely updates for your billing account, including changes to
-  billing address, credit card number, or expiration date. Promptly notify us or
-  our payment processor about canceled payment methods or potential security breaches.
-  Make changes through your account settings. Failure to provide accurate information
-  authorizes us to continue charging subscription fees.
-  
-  **2. Free Trials and Subscriptions**
-  
-  (h) Free trials for paid subscription levels are offered with specific terms disclosed
-   during the offer. Trials are for users without prior paid subscriptions. Obtaining a
-  free tier allows one account creation. Non-genuine use may result in standard fees or
-   service denial. Acceptance of free trial subscription implies agreement to associated
-    fees upon expiration unless canceled.
-  
-  **3. User-Generated Content**
-  
-  (a) Users can post content ("Content") on Proliving. Posted Content is not confidential,
-   treated as public information. By posting, users represent having the right to do so
-  and grant us a non-exclusive license to use it for platform operation and promotion.
-  
-  (b) Users warrant that Content doesn't infringe third-party rights. We reserve the
-   right to review and may refuse or remove Content violating terms, policies, or
-  laws. Prohibited actions include unlawful, harmful, or objectionable Content;
-  collecting personal information without consent; creating derivative works; and
-  interfering with platform operations.
-  
-  (c) The platform may contain links to third-party services ("Third Party
-  Services"). These services are not covered by our terms, and we are not
-  responsible for them.
-  
-  (d) Platform content is protected by intellectual property laws. All related
-  rights are exclusively ours. Users providing feedback grant us rights to use it freely.
-  
-  **4. Limitation on Liability**
-  
-  (a) We're not liable for user-posted Content, user interactions, losses from platform
-  use, negative comments, or third-party information provided without consent. Users are
-  responsible for interactions with others; we may not intervene in disputes.
-  
-  (b) We're not liable for indirect, incidental, or exemplary damages arising from a
-   breach of terms, regardless of foreseeability. Our aggregate liability is limited
-  to the total amounts paid by you in the previous 12 months.
-  
-  **5. Indemnification**
-  
-  Users indemnify us against any losses arising from claims by third parties related to
-  platform use, purchased products or services, or user negligence or breach of terms.
-  
-  **6. Governing Law**
-  
-  These terms are governed by the laws of the State of Alabama.
-  
-  **7. Binding Arbitration**
-  
-  (a) By accepting these terms, you waive the right to a jury trial and class action
-  participation. Disputes are resolved through binding arbitration. Some claims are
-  exempted, including those regarding intellectual property rights or small claims.
-  
-  (b) Disputes must be addressed informally for at least 30 days before arbitration.
-  If unresolved, either party may elect binding arbitration administered by the
-  American Arbitration Association in Birmingham, Alabama.
-  
-  **8. General**
-  
-  (a) Unenforceability of one provision won't affect others. In case of conflict,
-  we decide which provision prevails. Headings are for convenience. Our
-  non-enforcement doesn't waive future enforcement rights.
-  
-  (b) Products and services may be subject to US export control laws. Users
-   are responsible for compliance. Communication with us is electronic,
-   fulfilling legal requirements.
-  
-  (c) Notices are provided within the platform or through services. Users
-    can notify us via mail.
-  
-  (d) "Include" or "including" is not limiting, and "or" means "and/or."
-  
-  ---
-  
-            </pre
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
