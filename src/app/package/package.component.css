@@ -59,6 +59,7 @@
     width: 100%;
 }
 .bgn img{
+    max-width: 100%;
     background: white;
     border-radius: 50%;
     padding: 30px;

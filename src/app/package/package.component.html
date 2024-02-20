@@ -1,4 +1,5 @@
-<section id="header" style="background: #68292c !important">
+<!-- Navbar start -->
+<section id="header" style="background: #474f7a !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -7,12 +8,8 @@
         style="border-bottom: 2px solid white"
       >
         <a [routerLink]="['/']" class="navbar-brand">
-          <!-- <h1 class="text-white display-6">UMYO</h1> -->
-          <img
-            src="assets/proliving/pro_liv.jpeg"
-            class="img-fluid rounded-circle"
-            style="width: 4rem; height: 4rem"
-          />
+          <h1 class="text-white display-6">UMYO Stylist</h1>
+          <!-- <img src="../proliving/pro_liv.jpeg" class="img-fluid rounded-circle" style="width:4rem; height:4rem;"> -->
         </a>
         <button
           class="navbar-toggler py-2 px-3"
@@ -25,19 +22,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
-            <a href="https://pltalk.site/welcome" class="nav-item nav-link"
-              >PLTalk</a
-            >
-
+            <a [routerLink]="['']" class="nav-item nav-link">Stylist Talk</a>
             <a href="https://vibetalktv.com/" class="nav-item nav-link"
               >Podcast</a
             >
             <a href="https://uchatyes.com/" class="nav-item nav-link"
               >ChatGpt</a
             >
-            <a href="https://pltweet.site/guest" class="nav-item nav-link"
-              >Pltweet</a
-            >
+            <a class="nav-item nav-link" href="#">StylistTweet</a>
             <a [routerLink]="['/cf']" class="nav-item nav-link"
               >Card Features</a
             >
@@ -49,7 +41,7 @@
             >
           </div>
           <div class="d-flex m-3 ms-auto">
-            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">UMYO</p> -->
+            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">Additional Features</p> -->
             <button
               class="btn-search btn border border-white btn-md-square rounded-circle me-4"
               data-bs-toggle="modal"
@@ -76,9 +68,7 @@
                 <a class="nav-link" [routerLink]="['/']">Home</a>
               </li>
               <li class="nav-item">
-                <a href="https://pltalk.site/welcome" class="nav-link"
-                  >PLTalk</a
-                >
+                <a class="nav-link" [routerLink]="['']">Stylist Talk</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://vibetalktv.com/">Podcast</a>
@@ -87,9 +77,7 @@
                 <a href="https://uchatyes.com/" class="nav-link">ChatGpt</a>
               </li>
               <li class="nav-item">
-                <a href="https://pltweet.site/guest" class="nav-link"
-                  >Pltweet</a
-                >
+                <a href="#" class="nav-link">StylistTweet</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
@@ -158,12 +146,14 @@
     <div class="container">
       <div class="row g-4">
         <h2 class="text-center">Community To Business Branding</h2>
-        <h4>Pro-Living Community and Small Business Accountability Packages</h4>
+        <h4>
+          UMYO Stylist Community and Small Business Accountability Packages
+        </h4>
         <div class="col-lg-3">
           <div class="bg2">
             <h3 class="mt-4 small">Small <br />Biz Package</h3>
             <div class="line"></div>
-            <p>www.Prolivingbiz.com</p>
+            <p>www.umyostylist.com</p>
           </div>
           <div class="th">
             <h6>(109-$299 monthly)</h6>
@@ -211,15 +201,15 @@
         <div class="col-lg-9">
           <div class="d-flex align-items-center">
             <div class="bgn">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Starter Biz Package</h3>
             </div>
             <div class="bgn" style="background: #27b7be !important">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Accountability Package</h3>
             </div>
             <div class="bgn" style="background: #f1c05a !important">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3 class="h31">Free Package</h3>
               <h3 class="h3">
                 Free<br />
@@ -296,8 +286,8 @@
               up)
             </p>
             <!-- <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i> -->
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <i class="fa fa-check" aria-hidden="true"></i> -->
           </div>
           <div class="th padd">
             <div class="icon">
@@ -331,13 +321,13 @@
       </div>
       <div class="row g-4">
         <h4 class="mt-5 pt-5">
-          ProLiving Community Accountability & Business Cards Search Engine
+          UMYO Stylist Community Accountability & Business Cards Search Engine
         </h4>
         <div class="col-lg-3">
           <div class="bg2">
             <h4>Basic <br />Biz Package</h4>
             <div class="line"></div>
-            <p>www.Prolivingbiz.com</p>
+            <p>www.umyostylist.com</p>
           </div>
           <div class="th">
             <h6>(10k monthly)</h6>
@@ -409,19 +399,19 @@
         <div class="col-lg-9">
           <div class="d-flex align-items-center">
             <div class="bgn bgn21">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Custom Biz Package</h3>
             </div>
             <div class="bgn bgn21" style="background: #27b7be !important">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Premium Biz Package</h3>
             </div>
             <div class="bgn bgn21" style="background: #f1c05a !important">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Bronze Biz Package</h3>
             </div>
             <div class="bgn bgn21" style="background: #000 !important">
-              <img src="assets/aboutimg/logo2.png" />
+              <img src="assets/img/logo2.png" />
               <h3>Bronze Biz Package</h3>
             </div>
           </div>
@@ -457,8 +447,8 @@
               <p>LOGO</p>
               <p>Virtual Card</p>
               <!-- <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i> -->
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <i class="fa fa-check" aria-hidden="true"></i> -->
             </div>
           </div>
           <div class="th thb">
@@ -504,8 +494,8 @@
           <div class="th2 thb">
             <p>Null</p>
             <!-- <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-check" aria-hidden="true"></i> -->
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <i class="fa fa-check" aria-hidden="true"></i> -->
           </div>
           <div class="th thb">
             <div class="icon">
@@ -603,7 +593,7 @@
 <!-- Footer Start -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #68292c !important"
+  style="background: #474f7a !important"
 >
   <div class="container py-5">
     <div class="row g-4">
@@ -614,7 +604,7 @@
           <a class="btn-link" href="">Refund Policy</a>
           <a class="btn-link" href="">Terms Of Service</a>
           <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">UMYO Profile</a>
+          <a class="btn-link" href="">UMYO Stylist</a>
         </div>
       </div>
 
@@ -624,7 +614,7 @@
           <p class="mb-4">
             Subscribe to stay up to date on all the latest Pro-Living features,
             products, stories, and more. You can also contact us at
-            contact@prolivingbiz.com.
+            contact@umyoStylist.com.
           </p>
           <div class="position-relative mx-auto">
             <input
@@ -675,9 +665,10 @@
     <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
       <p class="text-white text-center">
         <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i>2023 Pro-Living</a
+          ><i class="fas fa-copyright text-light me-2"></i>2023 UMYO Stylist</a
         >, All right reserved.
       </p>
     </div>
   </div>
 </div>
+<!-- Footer End -->

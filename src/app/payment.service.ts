@@ -101,12 +101,10 @@ if (expireInValue.includes("year")) {
               state: form3.get('registerStateType')?.value,
               city: form3.get('registerCityType')?.value,
               location: form3.get('registerLocationType')?.value,
+              speciality: form3.get('registerSpecialityType')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              truckType: form3.get('registerTypeOfTrucks')?.value,
-              truckLoad: form3.get('registerTruckLoads')?.value,
-              commonCarrier: form3.get('registerCommonCarrier')?.value,
-              truckService: form3.get('registerTruckService')?.value,
+              
         
               reffered_from: form3.get('registerReferralCode').value,
               
@@ -173,12 +171,10 @@ if (expireInValue.includes("year")) {
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
       location: form3.get('registerLocationType')?.value,
+      speciality: form3.get('registerSpecialityType')?.value,
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
-      truckType: form3.get('registerTypeOfTrucks')?.value,
-      truckLoad: form3.get('registerTruckLoads')?.value,
-      commonCarrier: form3.get('registerCommonCarrier')?.value,
-      truckService: form3.get('registerTruckService')?.value,
+      
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -264,6 +260,7 @@ if (expireInValue.includes("year")) {
           state: form3.get('registerStateType')?.value,
           reffered_from: form3.get('registerReferralCode').value,
           location: form3.get('registerLocationType')?.value,
+          speciality: form3.get('registerSpecialityType')?.value,
           city: form3.get('registerCityType')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
@@ -278,10 +275,7 @@ if (expireInValue.includes("year")) {
       
       
       
-      truckType: form3.get('registerTypeOfTrucks')?.value,
-      truckLoad: form3.get('registerTruckLoads')?.value,
-      commonCarrier: form3.get('registerCommonCarrier')?.value,
-      truckService: form3.get('registerTruckService')?.value,
+      
   
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))

@@ -70,6 +70,7 @@ const routes: Routes = [
   { path: 'pro', component: ProComponent },
   { path: 'network', component: NetworkComponent },
   { path: 'network', component: NetworkComponent },
+  { path: 'cf', component: CfComponent },
   { path: 'ai', component: AiComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
