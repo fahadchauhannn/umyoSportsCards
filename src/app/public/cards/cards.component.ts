@@ -161,7 +161,7 @@ export class CardsComponent implements AfterViewInit{
                   alert("Failed to Verify Paypal Payment")
                   localStorage.removeItem("updatePaypalId");
                   localStorage.removeItem("updatedToken");
-                  window.location.href='https://prolivingbiz.com'
+                  window.location.href='https://umyorealtor.site/'
               }
             );
           }

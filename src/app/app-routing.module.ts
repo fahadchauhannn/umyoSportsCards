@@ -54,12 +54,14 @@ import { AboutComponent } from './about/about.component';
 import { PackageComponent } from './package/package.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
+import { RealtorComponent } from './realtor/realtor.component';
 
 
 
 const routes: Routes = [
+  { path: '', component: RealtorComponent ,pathMatch: 'full'},
   // { path: '', component: HomeComponent ,pathMatch: 'full'},
-  { path: '', component: UmyocardsComponent ,pathMatch: 'full'},
+  // { path: '', component: UmyocardsComponent ,pathMatch: 'full'},
   { path: 'mission', component: MissionComponent },
   { path: 'package', component: PackageComponent },
   { path: 'pledge', component: PledgeComponent },

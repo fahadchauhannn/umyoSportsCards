@@ -78,6 +78,7 @@ import { AboutComponent } from './about/about.component';
 import { PackageComponent } from './package/package.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
+import { RealtorComponent } from './realtor/realtor.component';
 
 
 
@@ -152,6 +153,7 @@ import { AiComponent } from './ai/ai.component';
     PackageComponent,
     CfComponent,
     AiComponent,
+    RealtorComponent,
     
     
     
