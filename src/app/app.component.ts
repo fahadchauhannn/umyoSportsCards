@@ -6,8 +6,8 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Umyo Sports Cards';
+  // title = 'Umyo Sports Cards';
   constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle(this.title)
+    // this.titleService.setTitle(this.title)
   }
 }
