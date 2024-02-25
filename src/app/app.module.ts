@@ -74,6 +74,14 @@ import { TruckersComponent } from './truckers/truckers.component';
 
 
 
+
+import { PackageComponent } from './package/package.component';
+import { CfComponent } from './cf/cf.component';
+import { AiComponent } from './ai/ai.component';
+
+
+
+
 @NgModule({
   declarations: [
     
@@ -138,6 +146,12 @@ import { TruckersComponent } from './truckers/truckers.component';
     ShareCardComponent,
     ForgotPasswordComponent,
     TruckersComponent,
+    
+    
+    PackageComponent,
+    CfComponent,
+    AiComponent,
+    
     
     
     

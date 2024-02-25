@@ -1,0 +1,720 @@
+<!-- Navbar start -->
+<section id="header" style="background: #671414 !important">
+  <div class="overlay"></div>
+  <div class="container-fluid">
+    <div class="container px-0">
+      <nav
+        class="navbar navbar-expand-xl"
+        style="border-bottom: 2px solid white"
+      >
+        <a href="index.html" class="navbar-brand">
+          <!-- <h1 class="text-white display-6">UMYO</h1> -->
+          <img
+            src="assets/truckers/logo.png"
+            class="img-fluid rounded-circle"
+            style="width: 4rem; height: 4rem"
+          />
+        </a>
+        <button
+          class="navbar-toggler py-2 px-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav d-lg-none">
+            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
+
+            <a href="https://umyonetwork.com/network" class="nav-item nav-link"
+              >Network</a
+            >
+            <a href="http://truckerstalks.site/" class="nav-item nav-link"
+              >Truckers Talk</a
+            >
+            <a href="http://vibetalktv.com/" class="nav-item nav-link"
+              >Podcast</a
+            >
+            <a href="http://uchatyes.com/" class="nav-item nav-link">ChatGpt</a>
+            <a href="http://utruckertalk.site/" class="nav-item nav-link"
+              >Truckers Tweet</a
+            >
+            <a href="" class="nav-item nav-link">Booking Appt</a>
+            <a [routerLink]="['/cf']" class="nav-item nav-link"
+              >Umyo Truckers
+            </a>
+            <a [routerLink]="['/package']" class="nav-item nav-link"
+              >Umyo Truckers</a
+            >
+            <a [routerLink]="['/ai']" class="nav-item nav-link"
+              >UMYO Truckers</a
+            >
+          </div>
+          <div class="d-flex m-3 ms-auto">
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              Truckers
+            </p>
+            <button
+              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fas fa-search text-white"></i>
+            </button>
+            <a href="#" class="position-relative me-4 my-auto">
+              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+            </a>
+            <a href="#" class="my-auto">
+              <button class="btn btn-primary bg-white text-dark border-0 p-2">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
+              <!-- <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Link Store
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Industries
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  </li> -->
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['']">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://umyonetwork.com/network"
+                  >Network</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://truckerstalks.site/"
+                  >Truckers Talk</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://vibetalktv.com/">Podcast</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://uchatyes.com/">ChatGpt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://utruckertalk.site/"
+                  >Truckers Tweet</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Booking Appt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/cf']">Umyo Truckers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/package']"
+                  >Umyo Truckers</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/ai']">UMYO Truckers</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Modal Search Start -->
+  <div
+    class="modal fade"
+    id="searchModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input
+              type="search"
+              class="form-control p-3"
+              placeholder="keywords"
+              aria-describedby="search-icon-1"
+            />
+            <span id="search-icon-1" class="input-group-text p-3"
+              ><i class="fa fa-search"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Search End -->
+
+  <!-- Hero Start -->
+</section>
+
+<!------- tab section end ---------->
+<section id="table-pkg">
+  <div class="container-fluid featurs pt-3 mt-3 mb-5">
+    <div class="container">
+      <div class="row g-4">
+        <h2 class="text-center">Community To Business Branding</h2>
+        <h4>
+          UMYO Truckers Community and Small Business Accountability Packages
+        </h4>
+        <div class="col-lg-3">
+          <div class="bg2">
+            <h3 class="mt-4 small">Small <br />Biz Package</h3>
+            <div class="line"></div>
+            <p>www.umyoTruckers.com</p>
+          </div>
+          <div class="th">
+            <h6>(109-$299 monthly)</h6>
+          </div>
+          <div class="th2">
+            <h6>Membership Cards</h6>
+          </div>
+          <div class="th">
+            <h6>IAM Pledge Cards</h6>
+          </div>
+          <div class="th2">
+            <h6>Coupon Kiosk</h6>
+          </div>
+          <div class="th">
+            <h6>Business Cards</h6>
+          </div>
+          <div class="th2">
+            <h6>Daily Prize Giveaways</h6>
+          </div>
+          <div class="th">
+            <h6>B2B Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Email Branding</h6>
+          </div>
+          <div class="th">
+            <h6>MP3 Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Conference Platform</h6>
+          </div>
+          <div class="th">
+            <h6>Commercial Contests Participation</h6>
+          </div>
+          <div class="th2">
+            <h6>Additional Platforms Access</h6>
+          </div>
+          <div class="th">
+            <h6>Community To Business Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Networking Platforms</h6>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="d-flex align-items-center">
+            <div class="bgn">
+              <img src="assets/img/logo2.png" />
+              <h3>Starter Biz Package</h3>
+            </div>
+            <div class="bgn" style="background: #27b7be !important">
+              <img src="assets/img/logo2.png" />
+              <h3>Accountability Package</h3>
+            </div>
+            <div class="bgn" style="background: #f1c05a !important">
+              <img src="assets/img/logo2.png" />
+              <h3 class="h31">Free Package</h3>
+              <h3 class="h3">
+                Free<br />
+                Package
+              </h3>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <h6>($49-$109 monthly)</h6>
+              <h6>($5.99 - $19.99 monthly)</h6>
+              <h6>Free</h6>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-check"></i>
+              <i class="fa fa-check"></i>
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <p>
+              24/7 365 ( no time limits, live stream, podcast, webinar; $5.99 &
+              up)
+            </p>
+            <!-- <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i> -->
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 padd">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <h4 class="mt-5 pt-5">
+          UMYO Truckers Community Accountability & Business Cards Search Engine
+        </h4>
+        <div class="col-lg-3">
+          <div class="bg2">
+            <h4>Basic <br />Biz Package</h4>
+            <div class="line"></div>
+            <p>www.umyoTruckers.com</p>
+          </div>
+          <div class="th">
+            <h6>(10k monthly)</h6>
+          </div>
+          <div class="th2">
+            <h6>Uchatyes.com</h6>
+          </div>
+          <div class="th">
+            <h6>Standing Kiosk</h6>
+          </div>
+          <div class="th2">
+            <h6>Sports Mag</h6>
+          </div>
+          <div class="th">
+            <h6>Coupon Kiosk</h6>
+          </div>
+          <div class="th2">
+            <h6>Commercial</h6>
+          </div>
+          <div class="th">
+            <h6>EPK</h6>
+          </div>
+          <div class="th2">
+            <h6>Google Ads</h6>
+          </div>
+          <div class="th">
+            <h6>SEO</h6>
+          </div>
+          <div class="th2">
+            <h6>SMS Marketing</h6>
+          </div>
+          <div class="th">
+            <h6>Unlimited Cards</h6>
+          </div>
+          <div class="th2">
+            <h6>B2B Branding</h6>
+          </div>
+          <div class="th">
+            <h6>Email Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Sponsor Ambassador</h6>
+          </div>
+          <div class="th">
+            <h6>MP3 Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Virtual Website</h6>
+          </div>
+          <div class="th">
+            <h6>Marketing Manager</h6>
+          </div>
+          <div class="th2">
+            <h6>Campaign Marketing</h6>
+          </div>
+          <div class="th">
+            <h6>Commercial Contests</h6>
+          </div>
+          <div class="th2">
+            <h6>Social Media Influencer</h6>
+          </div>
+          <div class="th">
+            <h6>Youth Social Media Branding</h6>
+          </div>
+          <div class="th2">
+            <h6>Full Platforms Access & Features</h6>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="d-flex align-items-center">
+            <div class="bgn bgn21">
+              <img src="assets/img/logo2.png" />
+              <h3>Custom Biz Package</h3>
+            </div>
+            <div class="bgn bgn21" style="background: #27b7be !important">
+              <img src="assets/img/logo2.png" />
+              <h3>Premium Biz Package</h3>
+            </div>
+            <div class="bgn bgn21" style="background: #f1c05a !important">
+              <img src="assets/img/logo2.png" />
+              <h3>Bronze Biz Package</h3>
+            </div>
+            <div class="bgn bgn21" style="background: #000 !important">
+              <img src="assets/img/logo2.png" />
+              <h3>Bronze Biz Package</h3>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <h6>(5k monthly)</h6>
+              <h6>(3k monthly)</h6>
+              <h6>(1k monthly)</h6>
+              <h6>($500)</h6>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check"></i>
+              <i class="fa fa-check"></i>
+              <i class="fa fa-check"></i>
+              <i class="fa fa-close"></i>
+            </div>
+          </div>
+          <div class="th thb padd">
+            <div class="icon">
+              <p>Floor Kiosk</p>
+              <!-- <i class="fa fa-check" aria-hidden="true"></i> -->
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <p class="ml-auto">ADD</p>
+              <p>LOGO</p>
+              <p>Virtual Card</p>
+              <!-- <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i> -->
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <p>Null</p>
+            <!-- <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i> -->
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <p>Null</p>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <p>Null</p>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <p>Null</p>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="th2 thb">
+            <div class="icon">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Start -->
+<div
+  class="container-fluid bg-dark text-white-50 footer"
+  style="background: #671414 !important"
+>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h4 class="text-light"><b>Contact us</b></h4>
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Privacy Policy</a>
+          <a class="btn-link" href="">Refund Policy</a>
+          <a class="btn-link" href="">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">UMYO Truckers</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest Pro-Living features,
+            products, stories, and more. You can also contact us at
+            contact@umyoTruckers.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex justify-content-center pt-3">
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary btn-md-square rounded-circle"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
+      <p class="text-white text-center">
+        <a href="#" style="text-decoration: none; color: white"
+          ><i class="fas fa-copyright text-light me-2"></i>2023 UMYO Truckers</a
+        >, All right reserved.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->

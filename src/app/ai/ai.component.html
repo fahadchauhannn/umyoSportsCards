@@ -1,4 +1,4 @@
-<section id="header" style="background: #68292c !important">
+<section id="header" style="background: #671414 !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -6,10 +6,10 @@
         class="navbar navbar-expand-xl"
         style="border-bottom: 2px solid white"
       >
-        <a [routerLink]="['/']" class="navbar-brand">
+        <a href="index.html" class="navbar-brand">
           <!-- <h1 class="text-white display-6">UMYO</h1> -->
           <img
-            src="assets/img/network/logo.png"
+            src="assets/truckers/logo.png"
             class="img-fluid rounded-circle"
             style="width: 4rem; height: 4rem"
           />
@@ -24,32 +24,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
-            <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
-            <a href="https://pltalk.site/welcome" class="nav-item nav-link"
-              >PLTalk</a
-            >
+            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
 
-            <a href="https://vibetalktv.com/" class="nav-item nav-link"
+            <a href="https://umyonetwork.com/network" class="nav-item nav-link"
+              >Network</a
+            >
+            <a href="http://truckerstalks.site/" class="nav-item nav-link"
+              >Truckers Talk</a
+            >
+            <a href="http://vibetalktv.com/" class="nav-item nav-link"
               >Podcast</a
             >
-            <a href="https://uchatyes.com/" class="nav-item nav-link"
-              >ChatGpt</a
+            <a href="http://uchatyes.com/" class="nav-item nav-link">ChatGpt</a>
+            <a href="http://utruckertalk.site/" class="nav-item nav-link"
+              >Truckers Tweet</a
             >
-            <a href="https://pltweet.site/guest" class="nav-item nav-link"
-              >Pltweet</a
-            >
+            <a href="" class="nav-item nav-link">Booking Appt</a>
             <a [routerLink]="['/cf']" class="nav-item nav-link"
-              >Card Features</a
-            >
+              >Umyo Truckers
+            </a>
             <a [routerLink]="['/package']" class="nav-item nav-link"
-              >View Services</a
+              >Umyo Truckers</a
             >
             <a [routerLink]="['/ai']" class="nav-item nav-link"
-              >Additional Features</a
+              >UMYO Truckers</a
             >
           </div>
           <div class="d-flex m-3 ms-auto">
-            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">UMYO</p> -->
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              Truckers
+            </p>
             <button
               class="btn-search btn border border-white btn-md-square rounded-circle me-4"
               data-bs-toggle="modal"
@@ -72,37 +76,66 @@
         <div class="container-fluid p-0">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
+              <!-- <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Link Store
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Industries
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  </li> -->
               <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/']">Home</a>
+                <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
+
               <li class="nav-item">
-                <a href="https://pltalk.site/welcome" class="nav-link"
-                  >PLTalk</a
+                <a class="nav-link" href="https://umyonetwork.com/network"
+                  >Network</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://vibetalktv.com/">Podcast</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://uchatyes.com/" class="nav-link">ChatGpt</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://pltweet.site/guest" class="nav-link"
-                  >Pltweet</a
+                <a class="nav-link" href="http://truckerstalks.site/"
+                  >Truckers Talk</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
+                <a class="nav-link" href="http://vibetalktv.com/">Podcast</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://uchatyes.com/">ChatGpt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://utruckertalk.site/"
+                  >Truckers Tweet</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Booking Appt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/cf']">Umyo Truckers</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/package']"
-                  >View Services</a
+                  >Umyo Truckers</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/ai']"
-                  >Additional Features</a
-                >
+                <a class="nav-link" [routerLink]="['/ai']">UMYO Truckers</a>
               </li>
             </ul>
           </div>
@@ -159,7 +192,8 @@
     <div class="accordion">
       <div class="container">
         <h1>
-          PL Cards - Corporate Ambassador Sponsorships - Name - Image - Likeness
+          UMYO Truckers - Corporate Ambassador Sponsorships - Name - Image -
+          Likeness
         </h1>
         <div class="row">
           <div class="col-lg-1"></div>
@@ -596,7 +630,7 @@
 <!-- Footer Start -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #68292c !important"
+  style="background: #671414 !important"
 >
   <div class="container py-5">
     <div class="row g-4">
@@ -607,7 +641,7 @@
           <a class="btn-link" href="">Refund Policy</a>
           <a class="btn-link" href="">Terms Of Service</a>
           <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">UMYO Profile</a>
+          <a class="btn-link" href="">UMYO Truckers</a>
         </div>
       </div>
 
@@ -617,7 +651,7 @@
           <p class="mb-4">
             Subscribe to stay up to date on all the latest Pro-Living features,
             products, stories, and more. You can also contact us at
-            contact@umyonetwork.com.
+            contact@umyoTruckers.com.
           </p>
           <div class="position-relative mx-auto">
             <input
@@ -668,9 +702,10 @@
     <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
       <p class="text-white text-center">
         <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i>2023 Pro-Living</a
+          ><i class="fas fa-copyright text-light me-2"></i>2024 UMYO Truckers</a
         >, All right reserved.
       </p>
     </div>
   </div>
 </div>
+<!-- Footer End -->
