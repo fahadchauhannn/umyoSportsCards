@@ -8,6 +8,31 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
 })
 export class AiComponent {
   
+
+  showPolicyModal:boolean=false
+  showRefundModal:boolean=false
+  showTermsModal:boolean=false
+
+  openTermsModal(){
+    this.showTermsModal = true;
+  }
+  openRefundModal(){
+    this.showRefundModal = true;
+  }
+  openPolicyModal(){
+    this.showPolicyModal = true;
+  }
+
+
+  closeTermsModal() {
+    this.showTermsModal = false;
+  }
+  closePolicyModal() {
+    this.showPolicyModal = false;
+  }
+  closeRefundModal() {
+    this.showRefundModal = false;
+  }
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit() {
