@@ -50,15 +50,16 @@ import { TruckersComponent } from './truckers/truckers.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
 import { PackageComponent } from './package/package.component';
+import { NbaComponent } from './nba/nba.component';
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent ,pathMatch: 'full'},
   { path: 'team', component: TeamComponent },
-  { path: 'truckers', component: TruckersComponent ,pathMatch: 'full' },
-  { path: 'products', component: ProductsComponent },
-  { path: 'pro', component: ProComponent },
+  // { path: 'truckers', component: TruckersComponent ,pathMatch: 'full' },
+  // { path: 'products', component: ProductsComponent },
+  // { path: 'pro', component: ProComponent },
   { path: 'network', component: NetworkComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },

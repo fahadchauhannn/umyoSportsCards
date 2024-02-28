@@ -77,9 +77,9 @@ export class HomeComponent implements AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    $('.moreless-button-he').click(function() {
-      $('.moretext-he').slideToggle();
-      if ($('.moreless-button-he').text() == "Read more") {
+    $('.moreless-buttonf').click(function() {
+      $('.moretextf').slideToggle();
+      if ($('.moreless-buttonf').text() == "Read more") {
         $(this).text("Read less")
       } else {
         $(this).text("Read more")
@@ -350,12 +350,18 @@ export class HomeComponent implements AfterViewInit {
        city : this.form2.get('selectedCity').value,
       
        name : this.form2.get('selectedName').value,
-       gender : this.form2.get('selectedGender').value,
+       
        race : this.form2.get('selectedRace').value,
-       truckType : this.form2.get('selectedTypeOfTrucks').value,
-       truckLoad : this.form2.get('selectedTruckLoads').value,
-       commonCarrier : this.form2.get('selectedCommonCarrier').value,
-       truckService : this.form2.get('selectedTruckService').value,
+       division : this.form2.get('selectedDivision').value,
+       position : this.form2.get('selectedPosition').value,
+       team : this.form2.get('selectedTeam').value,
+       year : this.form2.get('selectedYear').value,
+       trophy : this.form2.get('selectedTrophy').value,
+       honor : this.form2.get('selectedHonor').value,
+       business : this.form2.get('selectedBusiness').value,
+
+       
+       
        }
       
       this.apiService.searchCard(payload).subscribe(
@@ -570,22 +576,26 @@ export class HomeComponent implements AfterViewInit {
       });
   
       this.form2 = this.fb.group({
-        // selectedBusinessType: [''],
-        // selectedAgeType: [''],
-        // selectedSportType: [''],
-        // selectedPositionType: [''],
+        
+    
+        
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        // selectedLocation: [''],
-        selectedGender: [''],
         selectedCity: [''],
-     
 
-        selectedTypeOfTrucks: [''],
-        selectedTruckLoads: [''],
-        selectedCommonCarrier: [''],
-        selectedTruckService: [''],
+        selectedDivision: [''],
+        selectedPosition: [''],
+        selectedTeam: [''],
+        selectedYear: [''],
+        selectedTrophy: [''],
+        selectedHonor: [''],
+        selectedBusiness: [''],
+
+
+     
+        
+        
 
       });
       this.form3 = this.fb.group({
@@ -597,11 +607,17 @@ export class HomeComponent implements AfterViewInit {
         registerPhone: ['', Validators.required],
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
-        registerGenderType: ['', Validators.required],
-        registerTypeOfTrucks: ['', Validators.required],
-        registerTruckLoads: ['', Validators.required],
-        registerCommonCarrier: ['', Validators.required],
-        registerTruckService: ['', Validators.required],
+
+        registerDivision: ['', Validators.required],
+        registerPosition: ['', Validators.required],
+        registerTeam: ['', Validators.required],
+        registerYear: ['', Validators.required],
+        registerTrophy: ['', Validators.required],
+        registerHonor: ['', Validators.required],
+        registerBusiness: ['', Validators.required],
+        
+
+
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })

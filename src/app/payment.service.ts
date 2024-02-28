@@ -94,10 +94,10 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              business_type: form3.get('registerBusinessType')?.value,
+              business_type: form3.get('registerBusiness')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
-              position: form3.get('registerPositionType')?.value,
+              
               state: form3.get('registerStateType')?.value,
               city: form3.get('registerCityType')?.value,
               location: form3.get('registerLocationType')?.value,
@@ -107,6 +107,13 @@ if (expireInValue.includes("year")) {
               truckLoad: form3.get('registerTruckLoads')?.value,
               commonCarrier: form3.get('registerCommonCarrier')?.value,
               truckService: form3.get('registerTruckService')?.value,
+
+              division: form3.get('registerDivision')?.value,
+      position: form3.get('registerPosition')?.value,
+      team: form3.get('registerTeam')?.value,
+      year: form3.get('registerYear')?.value,
+      trophy: form3.get('registerTrophy')?.value,
+      honor: form3.get('registerHonor')?.value,
         
               reffered_from: form3.get('registerReferralCode').value,
               
@@ -166,10 +173,10 @@ if (expireInValue.includes("year")) {
       password: form3.get('registerPassword').value,
 
       
-      business_type: form3.get('registerBusinessType')?.value,
+      business_type: form3.get('registerBusiness')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
-      position: form3.get('registerPositionType')?.value,
+      
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
       location: form3.get('registerLocationType')?.value,
@@ -179,6 +186,21 @@ if (expireInValue.includes("year")) {
       truckLoad: form3.get('registerTruckLoads')?.value,
       commonCarrier: form3.get('registerCommonCarrier')?.value,
       truckService: form3.get('registerTruckService')?.value,
+
+      division: form3.get('registerDivision')?.value,
+      position: form3.get('registerPosition')?.value,
+      team: form3.get('registerTeam')?.value,
+      year: form3.get('registerYear')?.value,
+      trophy: form3.get('registerTrophy')?.value,
+      honor: form3.get('registerHonor')?.value,
+
+
+
+
+
+      
+
+
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -269,10 +291,10 @@ if (expireInValue.includes("year")) {
           gender: form3.get('registerGenderType')?.value,
           plan_id:response.plan_id,
 
-          
+          business_type: form3.get('registerBusiness')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
-      position: form3.get('registerPositionType')?.value,
+      
       
       
       
@@ -281,7 +303,14 @@ if (expireInValue.includes("year")) {
       truckType: form3.get('registerTypeOfTrucks')?.value,
       truckLoad: form3.get('registerTruckLoads')?.value,
       commonCarrier: form3.get('registerCommonCarrier')?.value,
+
       truckService: form3.get('registerTruckService')?.value,
+      division: form3.get('registerDivision')?.value,
+      position: form3.get('registerPosition')?.value,
+      team: form3.get('registerTeam')?.value,
+      year: form3.get('registerYear')?.value,
+      trophy: form3.get('registerTrophy')?.value,
+      honor: form3.get('registerHonor')?.value,
   
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))

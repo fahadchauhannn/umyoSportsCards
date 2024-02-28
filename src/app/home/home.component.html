@@ -1,4 +1,5 @@
-<section id="header" style="background: #671414 !important">
+<!-- Navbar start -->
+<section id="header" style="background: #265073 !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -6,13 +7,9 @@
         class="navbar navbar-expand-xl"
         style="border-bottom: 2px solid white"
       >
-        <a href="index.html" class="navbar-brand">
-          <!-- <h1 class="text-white display-6">UMYO</h1> -->
-          <img
-            src="assets/truckers/logo.png"
-            class="img-fluid rounded-circle"
-            style="width: 4rem; height: 4rem"
-          />
+        <a [routerLink]="['']" class="navbar-brand">
+          <h1 class="text-white display-6">UMYO NBA</h1>
+          <!-- <img src="../proliving/pro_liv.jpeg" class="img-fluid rounded-circle" style="width:4rem; height:4rem;"> -->
         </a>
         <button
           class="navbar-toggler py-2 px-3"
@@ -25,57 +22,26 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-
-            <a href="https://umyonetwork.com/network" class="nav-item nav-link"
-              >Network</a
-            >
-            <a
-              style="white-space: nowrap"
-              href="http://truckerstalks.site/"
-              class="nav-item nav-link"
-              >Truckers Talk</a
-            >
-            <a href="http://vibetalktv.com/" class="nav-item nav-link"
+            <a href="#" class="nav-item nav-link">NBATalk</a>
+            <a href="https://vibetalktv.com/" class="nav-item nav-link"
               >Podcast</a
             >
-            <a
-              style="white-space: nowrap"
-              href="http://uchatyes.com/"
-              class="nav-item nav-link"
+            <a href="https://uchatyes.com/" class="nav-item nav-link"
               >ChatGpt</a
             >
-            <a
-              style="white-space: nowrap"
-              href="http://utruckertalk.site/"
-              class="nav-item nav-link"
-              >Truckers Tweet</a
+            <a class="nav-item nav-link" href="#">NBATweet</a>
+            <a [routerLink]="['/cf']" class="nav-item nav-link"
+              >Card Features</a
             >
-            <a href="" style="white-space: nowrap" class="nav-item nav-link"
-              >Booking Appt</a
-            >
-            <a
-              [routerLink]="['/cf']"
-              style="white-space: nowrap"
-              class="nav-item nav-link"
-              >Card Features
-            </a>
-            <a
-              [routerLink]="['/package']"
-              style="white-space: nowrap"
-              class="nav-item nav-link"
+            <a [routerLink]="['/package']" class="nav-item nav-link"
               >View Services</a
             >
-            <a
-              [routerLink]="['/ai']"
-              style="white-space: nowrap"
-              class="nav-item nav-link"
+            <a [routerLink]="['/ai']" class="nav-item nav-link"
               >Additional Features</a
             >
           </div>
           <div class="d-flex m-3 ms-auto">
-            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
-              Truckers
-            </p>
+            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">Additional Features</p> -->
             <button
               class="btn-search btn border border-white btn-md-square rounded-circle me-4"
               data-bs-toggle="modal"
@@ -98,95 +64,31 @@
         <div class="container-fluid p-0">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
-              <!-- <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Link Store
-  </a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-  </li>
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Industries
-  </a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-  </li> -->
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link" href="https://umyonetwork.com/network"
-                  >Network</a
-                >
+                <a class="nav-link" href="#">NBATalk</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  href="http://truckerstalks.site/"
-                  >Truckers Talk</a
-                >
+                <a class="nav-link" href="https://vibetalktv.com/">Podcast</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  href="http://vibetalktv.com/"
-                  >Podcast</a
-                >
+                <a href="https://uchatyes.com/" class="nav-link">ChatGpt</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  href="http://uchatyes.com/"
-                  >ChatGpt</a
-                >
+                <a href="#" class="nav-link">NBATweet</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  href="http://utruckertalk.site/"
-                  >Truckers Tweet</a
-                >
+                <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="white-space: nowrap" href=""
-                  >Booking Appt</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  [routerLink]="['/cf']"
-                  >Card Features</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  [routerLink]="['/package']"
+                <a class="nav-link" [routerLink]="['/package']"
                   >View Services</a
                 >
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  [routerLink]="['/ai']"
+                <a class="nav-link" [routerLink]="['/ai']"
                   >Additional Features</a
                 >
               </li>
@@ -196,6 +98,8 @@
       </nav>
     </div>
   </div>
+  <!-- Navbar End -->
+
   <!-- Navbar End -->
 
   <!-- Modal Search Start -->
@@ -237,160 +141,169 @@
 
   <!-- Hero Start -->
 </section>
-<section id="page-top" class="lft-hero">
-  <div class="lft-video">
-    <!-- <video loop="" muted="" playsinline="" autoplay="" poster="https://cdn.shopify.com/s/files/1/0413/5891/7796/files/lft-hero.jpg?v=1678132516">
-  
-  <source src="https://cdn.shopify.com/videos/c/o/v/5bc68d777dab433ebc9f9f62d35dcd80.mp4" type="video/mp4">
-  </video> -->
-    <video
-      autoplay
-      loop
-      [src]="videoUrl"
-      style="width: 100%; height: 100%"
-      [muted]="true"
-    ></video>
 
-    <div class="overlay"></div>
-  </div>
-
-  <div class="container py-5">
-    <div class="row g-5 align-items-center">
-      <div class="col-md-12 col-lg-7">
-        <div class="page-width">
-          <div class="lft-hero__content">
-            <h1 class="mb-3">
-              CREATE IMPRESSIVE TRUCKERS AND TRUCKING INDUSTRY CARDS
-            </h1>
-            <p class="mb-5">
-              Umyo Truckers and Trucking Industry Connect introduces an
-              Innovative Networking Solution Exclusively for Truckers and The
-              Trucking Industry
-            </p>
-          </div>
-        </div>
+<div class="container-fluid featurs pt-3 mt-3 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="assets/img/newimg/13.png" class="img-fluid" />
+        <h5 class="text-center mt-3">1990 All-decade NBA Team</h5>
       </div>
-      <div class="col-md-12 col-lg-5 px-5">
-        <div class="grid__item medium-up--one-half">
-          <div class="videos__wrapper">
-            <div class="videos__wrapper--video">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-4">
+        <img src="assets/img/newimg/12.png" class="img-fluid" />
+        <h5 class="text-center mt-3">
+          Greatest NBA Final Of All Time | Stadium Talk
+        </h5>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/img/newimg/11.png" class="img-fluid" />
+        <h5 class="text-center mt-3">The 1986 NBA Finals Game 3</h5>
       </div>
     </div>
-  </div>
-  <!-- <div class="page-width">
-  <div class="lft-hero__content">
-  <h1>CREATE IMPRESSIVE MILITARY CARDS</h1>
-      <p>Umyo Military Connect introduces an innovative networking solution exclusively for military personnel.</p>
-  
-  
-  <a class="button js-no-transition" href="#linq-form" onclick="track('Clicked LFT hero cta')">Read More</a>
-  </div>
-  </div> -->
-</section>
-
-<section id="logo-slider" style="background: #671414 !important">
-  <div class="container-fluid mt-5">
-    <div class="container-fluid mt-1 mobile" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig1"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
+    <div class="row g-4 justify-content-center mt-3">
+      <div class="col-lg-8 p-3 bg-light text-dark px-5 rounded">
+        <h2 style="color: #4390b3">
+          Unlocking Bonds in the NBA: Presenting the Players Directory
+        </h2>
+        <p class="my-4">
+          In the vibrant realm of professional basketball, camaraderie surpasses
+          the boundaries of the court. The NBA Players Directory stands as a
+          testament to this, establishing an unrivaled platform for players,
+          coaches, and enthusiasts to connect, engage, and uplift one another.
+        </p>
+        <div class="moretextf" style="display: none">
+          <h4 class="my-4">Connecting Players</h4>
+          <p class="my-4">
+            Our directory features an advanced search system, enabling users to
+            discover NBA players and coaches based on various criteria. Whether
+            seeking a specific name, position, team, or delving into
+            achievements and divisions, the directory is your portal to building
+            connections within the expansive basketball community.
+          </p>
+          <h4 class="my-4">Redefined Networking</h4>
+          <p class="my-4">
+            Envision a space where NBA players effortlessly network, befriend,
+            and engage in meaningful conversations. This isn't merely a
+            platform; it's a virtual meeting ground where athletes share
+            experiences, strategies, and laughter. Forge connections that
+            transcend team rivalries and position rivalries, uniting players
+            under the common thread of a shared passion for the game.
+          </p>
+          <h4 class="my-4">Sponsorship Opportunities</h4>
+          <p class="my-4">
+            The NBA Players Directory goes beyond fostering connections—it
+            empowers athletes through sponsorship and advertising. Advertisers
+            have the unique chance to support NBA players by featuring their
+            names and likenesses in our dedicated directory. Elevate your brand
+            by aligning with the stars who make basketball exceptional.
+          </p>
+          <h4 class="my-4">Support System for All</h4>
+          <p class="my-4">
+            This platform extends beyond the basketball court. It's a support
+            system where players and their families connect, share insights, and
+            build a community. The journey of an NBA player is not solitary; it
+            involves the support of loved ones. Our platform acknowledges this,
+            creating a space where players and their families share victories
+            and navigate challenges together.
+          </p>
+          <h4 class="my-4">Podcasts</h4>
+          <p class="my-4">
+            Immerse yourself in the world of NBA through engaging podcasts. Join
+            NBA stars and their loved ones as they discuss the game, life, and
+            everything in between. The podcasts provide an intimate glimpse into
+            the lives of these athletes, offering a unique perspective that goes
+            beyond slam dunks and steals.
+          </p>
+          <h4 class="my-4">Crafting Virtual Cards</h4>
+          <p class="my-4">
+            A Digital Showcase of Athletic Brilliance As the NBA Players
+            Directory continues to revolutionize how basketball enthusiasts
+            connect, we introduce a groundbreaking feature – the Sports Virtual
+            Card. This digital showcase offers players a dynamic and interactive
+            platform to encapsulate their athletic journey, providing a
+            comprehensive glimpse into their accomplishments both on and
+          </p>
+          <h4 class="my-4">Sports Reels and Images</h4>
+          <p class="my-4">
+            Players can curate a captivating reel highlighting their most iconic
+            moments. From spectacular dunks to game-changing plays, the Sports
+            Virtual Card becomes a visual journey through an athlete's career.
+            Coupled with striking images, this section allows players to
+            showcase the essence of their prowess and commitment to the sport.
+          </p>
+          <h4 class="my-4">Social Media Integration</h4>
+          <p class="my-4">
+            Embrace the power of social connectivity by seamlessly integrating
+            your social media profiles into the Sports Virtual Card. Share your
+            latest updates, engage with fans, and connect with fellow
+            players—all from a centralized digital hub. This feature ensures
+            that your virtual card becomes a dynamic representation of your
+            ongoing narrative in the basketball world.
+          </p>
+          <h4 class="my-4">QR Code Convenience</h4>
+          <p class="my-4">
+            Efficiency meets innovation with the inclusion of a personalized QR
+            code on each Sports Virtual Card. Users can simply scan the code to
+            access a player's card, making networking and sharing a breeze.
+            Whether during events, meet-and-greets, or casual encounters, the QR
+            code transforms how players connect with fans, sponsors, and peers.
+          </p>
+          <h4 class="my-4">Card Sharing</h4>
+          <p class="my-4">
+            The Sports Virtual Card isn't confined—it's designed for sharing.
+            Players can effortlessly share their digital showcase with fans,
+            family, and potential sponsors. This feature fosters a sense of
+            community, enabling athletes to extend their reach and impact beyond
+            the traditional boundaries of the court.
+          </p>
+          <h4 class="my-4">Connecting Beyond the Game</h4>
+          <p class="my-4">
+            By incorporating these features, the NBA Players Directory is not
+            just a directory; it's a hub for building a digital legacy. The
+            Sports Virtual Card allows players to transcend the limitations of
+            physical presence, creating a lasting impression that extends far
+            beyond the final buzzer.
+          </p>
+          <p class="my-4">
+            Embrace the future of athlete representation with the NBA Players
+            Directory – where your story is not just told but experienced
+            through the immersive lens of the Sports Virtual Card. Join us in
+            redefining how the world engages with basketball excellence.
+          </p>
+          <p class="my-4">
+            In conclusion, the NBA Players Directory is more than a platform;
+            it's a community that transcends boundaries. It's a place where
+            connections are forged, support is extended, and the love for the
+            game is celebrated. Join us in unlocking the true potential of
+            basketball camaraderie. The NBA Players Directory awaits, bridging
+            the gap between players, coaches, sponsors, and fans.
+          </p>
         </div>
-      </ngx-slick-carousel>
-
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig2"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
+        <a
+          class="moreless-buttonf btn btn-dark"
+          style="text-decoration: none"
+          href="#feature2"
+          >Read more</a
+        >
+      </div>
     </div>
-    <div class="container-fluid mt-1 mobile2" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig5"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig6"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-    </div>
-    <div class="container-fluid mt-1 desktop" style="overflow-x: hidden">
-      <h1 class="text-center mb-5 text-white">
-        "THE UMYO NETWORK" All in one Networking App...
-      </h1>
-      <ngx-slick-carousel
-        #slickModal1="slick-carousel"
-        [config]="slideConfig3"
-        class="carousel"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-
-      <ngx-slick-carousel
-        #slickModal2="slick-carousel"
-        [config]="slideConfig4"
-        class="carousel"
-        [dir]="'rtl'"
-      >
-        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
-          <div class="mb-5"><img [src]="slide.img" /></div>
-        </div>
-      </ngx-slick-carousel>
-    </div>
   </div>
-</section>
+</div>
 
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #671414 !important">
+<section id="header" style="background: #265073 !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
-      <h1 class="text-white text-center mb-3" style="font-weight: 600">
-        Search For Truckers
+      <h1
+        class="text-white text-center"
+        style="font-weight: 600; margin-bottom: 60px"
+      >
+        Search For NBA Players Connects
       </h1>
       <div class="row">
         <div class="col-lg-5">
-          <h4 class="mb-4 text-white">Search Members Here</h4>
+          <!-- <h4 class="mb-4 text-white">Search Members Here</h4> -->
           <form [formGroup]="form2" class="text-center">
             <div class="row">
               <div class="col-lg-6 mb-4">
@@ -406,12 +319,15 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedGender"
+                  formControlName="selectedDivision"
                 >
-                  <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option selected value="" disabled>NBA DIVISION</option>
+                  <option value="Central">Central</option>
+                  <option value="Pacific">Pacific</option>
+                  <option value="Atlantic">Atlantic</option>
+                  <option value="Eastern">Eastern</option>
+                  <option value="Northwest">Northwest</option>
+                  <option value="Southwest">Southwest</option>
                 </select>
               </div>
 
@@ -419,25 +335,427 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedRace"
+                  formControlName="selectedPosition"
                 >
-                  <option selected value="" disabled>Race</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="Afro American">Afro American</option>
-                  <option value="White">White</option>
-                  <option value="Indian">Indian</option>
-                  <option value="Asian">Asian</option>
+                  <option selected value="" disabled>POSITION</option>
+                  <option value="Coach">Coach</option>
+                  <option value="Shooting Guard">Shooting Guard</option>
+                  <option value="Small Forward">Small Forward</option>
+                  <option value="Point Guard">Point Guard</option>
+                  <option value="Power Forward">Power Forward</option>
+                  <option value="Center">Center</option>
+                  <option value="Six Man">Six Man</option>
                 </select>
               </div>
 
               <!-- <div class="col-lg-6 mb-4">
-                  <input
-                    type="text"
-                    formControlName="selectedCity"
-                    class="form-control"
-                    placeholder="City"
-                  />
-                </div> -->
+                <input
+                  type="text"
+                  formControlName="selectedCity"
+                  class="form-control"
+                  placeholder="City"
+                />
+              </div> -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedTeam"
+                >
+                  <option selected value="" disabled>NBA TEAM</option>
+                  <option value="Boston Celtics">Boston Celtics</option>
+                  <option value="Brooklyn Nets">Brooklyn Nets</option>
+                  <option value="New York Knicks">New York Knicks</option>
+                  <option value="Philadelphia 76ers">Philadelphia 76ers</option>
+                  <option value="Toronto Raptors">Toronto Raptors</option>
+                  <option value="Chicago Bulls">Chicago Bulls</option>
+                  <option value="Cleveland Cavaliers">
+                    Cleveland Cavaliers
+                  </option>
+                  <option value="Detroit Pistons">Detroit Pistons</option>
+                  <option value="Indiana Pacers">Indiana Pacers</option>
+                  <option value="Milwaukee Bucks">Milwaukee Bucks</option>
+                  <option value="Atlanta Hawks">Atlanta Hawks</option>
+                  <option value="Charlotte Hornets">Charlotte Hornets</option>
+                  <option value="Miami Heat">Miami Heat</option>
+                  <option value="Orlando Magic">Orlando Magic</option>
+                  <option value="Washington Wizards">Washington Wizards</option>
+                  <option value="Denver Nuggets">Denver Nuggets</option>
+                  <option value="Minnesota Timberwolves">
+                    Minnesota Timberwolves
+                  </option>
+                  <option value="Oklahoma City Thunder">
+                    Oklahoma City Thunder
+                  </option>
+                  <option value="Portland Trailblazers">
+                    Portland Trailblazers
+                  </option>
+                  <option value="Utah Jazz">Utah Jazz</option>
+                  <option value="Golden State Warriors">
+                    Golden State Warriors
+                  </option>
+                  <option value="Los Angeles Clippers">
+                    Los Angeles Clippers
+                  </option>
+                  <option value="Los Angeles Lakers">Los Angeles Lakers</option>
+                  <option value="Phoenix Suns">Phoenix Suns</option>
+                  <option value="Sacramento Kings">Sacramento Kings</option>
+                  <option value="Dallas Mavericks">Dallas Mavericks</option>
+                  <option value="Houston Rockets">Houston Rockets</option>
+                  <option value="Memphis Grizzlies">Memphis Grizzlies</option>
+                  <option value="New Orleans Pelicans">
+                    New Orleans Pelicans
+                  </option>
+                  <option value="San Antonio Spurs">San Antonio Spurs</option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedYear"
+                >
+                  <option selected value="" disabled>YEAR IN NBA</option>
+                  <option value="1947">1947</option>
+                  <option value="1948">1948</option>
+                  <option value="1949">1949</option>
+                  <option value="1950">1950</option>
+                  <option value="1951">1951</option>
+                  <option value="1952">1952</option>
+                  <option value="1953">1953</option>
+                  <option value="1954">1954</option>
+                  <option value="1955">1955</option>
+                  <option value="1956">1956</option>
+                  <option value="1957">1957</option>
+                  <option value="1958">1958</option>
+                  <option value="1959">1959</option>
+                  <option value="1960">1960</option>
+                  <option value="1961">1961</option>
+                  <option value="1962">1962</option>
+                  <option value="1963">1963</option>
+                  <option value="1964">1964</option>
+                  <option value="1965">1965</option>
+                  <option value="1966">1966</option>
+                  <option value="1967">1967</option>
+                  <option value="1968">1968</option>
+                  <option value="1969">1969</option>
+                  <option value="1970">1970</option>
+                  <option value="1971">1971</option>
+                  <option value="1972">1972</option>
+                  <option value="1973">1973</option>
+                  <option value="1974">1974</option>
+                  <option value="1975">1975</option>
+                  <option value="1976">1976</option>
+                  <option value="1977">1977</option>
+                  <option value="1978">1978</option>
+                  <option value="1979">1979</option>
+                  <option value="1980">1980</option>
+                  <option value="1981">1981</option>
+                  <option value="1982">1982</option>
+                  <option value="1983">1983</option>
+                  <option value="1984">1984</option>
+                  <option value="1985">1985</option>
+                  <option value="1986">1986</option>
+                  <option value="1987">1987</option>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedRace"
+                >
+                  <option selected value="" disabled>Race</option>
+                  <option value="African Americans">African Americans</option>
+                  <option value="European">European</option>
+                  <option value="Mexican-american">Mexican-american</option>
+                  <option value="Hispanic -Latino">Hispanic -Latino</option>
+                  <option value="Asian">Asian</option>
+                  <option value="German">German</option>
+                  <option value="Serbia">Serbia</option>
+                  <option value="Lithuanians">Lithuanians</option>
+                  <option value="Cameroonian">Cameroonian</option>
+                  <option value="Dominican's">Dominican's</option>
+                  <option value="Latvian">Latvian</option>
+                  <option value="Australian">Australian</option>
+                  <option value="Montenegro">Montenegro</option>
+                  <option value="Canadian">Canadian</option>
+                  <option value="Greece">Greece</option>
+                  <option value="Slovenia">Slovenia</option>
+                  <option value="American Indian">American Indian</option>
+                  <option value="Alaska Native">Alaska Native</option>
+                  <option value="Native Hawaiian">Native Hawaiian</option>
+                  <option value="Two or More Race">Two or More Race</option>
+                  <option value="French">French</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedTrophy"
+                >
+                  <option selected value="" disabled>TROPHY'S</option>
+                  <option value="Larry OBrian">Larry OBrian</option>
+                  <option value="Walter A Brown">Walter A Brown</option>
+                  <option value="Bob Cousy">Bob Cousy</option>
+                  <option value="Oscar Robertson">Oscar Robertson</option>
+                  <option value="Maurice Podoloff">Maurice Podoloff</option>
+                  <option value="NBA Cup">NBA Cup</option>
+                  <option value="Nat Sweetwater Clifton">
+                    Nat Sweetwater Clifton
+                  </option>
+                  <option value="Wayne Embry">Wayne Embry</option>
+                  <option value="Earl Lloyd">Earl Lloyd</option>
+                  <option value="Willis Reed">Willis Reed</option>
+                  <option value="Sam Jones">Sam Jones</option>
+                  <option value="Chuck Cooper">Chuck Cooper</option>
+                  <option value="None">None</option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedHonor"
+                >
+                  <option selected value="" disabled>HONORS</option>
+                  <option value="MVP">MVP</option>
+                  <option value="Executive of the Year">
+                    Executive of the Year
+                  </option>
+                  <option value="Rookie Of the Year">Rookie Of the Year</option>
+                  <option value="Hall Of Fame">Hall Of Fame</option>
+                  <option value="Coach Of The Year">Coach Of The Year</option>
+                  <option value="Offensive Player of The Year">
+                    Offensive Player of The Year
+                  </option>
+                  <option value="Defensive Player of The Year">
+                    Defensive Player of The Year
+                  </option>
+                  <option value="Most Improved Player">
+                    Most Improved Player
+                  </option>
+                  <option value="All Star MVP">All Star MVP</option>
+                  <option value="Finals MVP">Finals MVP</option>
+                  <option value="Eastern Conference MVP">
+                    Eastern Conference MVP
+                  </option>
+                  <option value="Western Conference MVP">
+                    Western Conference MVP
+                  </option>
+                  <option value="Citizenship Award">Citizenship Award</option>
+                  <option value="Six Man Of The Year">
+                    Six Man Of The Year
+                  </option>
+                  <option value="Sportsmanship Award">
+                    Sportsmanship Award
+                  </option>
+                  <option value="TeamMate of Year Award">
+                    TeamMate of Year Award
+                  </option>
+                  <option value="Lifetime Achievement Award">
+                    Lifetime Achievement Award
+                  </option>
+                  <option value="Social Justice Champion Award">
+                    Social Justice Champion Award
+                  </option>
+                  <option value="Clutch Player of Year Award">
+                    Clutch Player of Year Award
+                  </option>
+                  <option value="None">None</option>
+                </select>
+              </div>
+              <div class="col-lg-6">
+                <h4 class="mb-4 text-white text-center">
+                  I PLEDGE TO REPORT VIOLENT CRIMES
+                </h4>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedBusiness"
+                >
+                  <option selected value="" disabled>BUSINESS TYPE</option>
+                  <option value="Accountant">Accountant</option>
+                  <option value="Actor">Actor</option>
+                  <option value="Actuary">Actuary</option>
+                  <option value="Administrator">Administrator</option>
+                  <option value="Agent">Agent</option>
+                  <option value="Agricultural Worker">
+                    Agricultural Worker
+                  </option>
+                  <option value="Air Traffic Controller">
+                    Air Traffic Controller
+                  </option>
+                  <option value="Ambulance Officer">Ambulance Officer</option>
+                  <option value="Architect">Architect</option>
+                  <option value="Art Director">Art Director</option>
+                  <option value="Artist">Artist</option>
+                  <option value="Athlete">Athlete</option>
+                  <option value="Auditor">Auditor</option>
+                  <option value="Baker">Baker</option>
+                  <option value="Barista">Barista</option>
+                  <option value="Bartender">Bartender</option>
+                  <option value="Board Member">Board Member</option>
+                  <option value="Business Analyst">Business Analyst</option>
+                  <option value="Chef">Chef</option>
+                  <option value="Childcare Worker">Childcare Worker</option>
+                  <option value="Civil Servant">Civil Servant</option>
+                  <option value="Cleaner">Cleaner</option>
+                  <option value="Company Worker">Company Worker</option>
+                  <option value="Computer Scientist">Computer Scientist</option>
+                  <option value="Construction Worker">
+                    Construction Worker
+                  </option>
+                  <option value="Cook">Cook</option>
+                  <option value="Copywriter">Copywriter</option>
+                  <option value="Courier">Courier</option>
+                  <option value="Craftsperson">Craftsperson</option>
+                  <option value="Curator">Curator</option>
+                  <option value="Customer Service Representative">
+                    Customer Service Representative
+                  </option>
+                  <option value="Dentist">Dentist</option>
+                  <option value="Designer">Designer</option>
+                  <option value="Doctor">Doctor</option>
+                  <option value="Driver">Driver</option>
+                  <option value="Economist">Economist</option>
+                  <option value="Electrician">Electrician</option>
+                  <option value="Entrepreneur">Entrepreneur</option>
+                  <option value="Equipment Operator">Equipment Operator</option>
+                  <option value="Executive Manager">Executive Manager</option>
+                  <option value="Farmer">Farmer</option>
+                  <option value="Film Maker">Film Maker</option>
+                  <option value="Firefighter">Firefighter</option>
+                  <option value="Fisherman">Fisherman</option>
+                  <option value="Fitness Trainer">Fitness Trainer</option>
+                  <option value="Flight Attendant">Flight Attendant</option>
+                  <option value="Florist">Florist</option>
+                  <option value="Freelancer">Freelancer</option>
+                  <option value="Gardener">Gardener</option>
+                  <option value="Hair Stylist">Hair Stylist</option>
+                  <option value="Home Care Aid">Home Care Aid</option>
+                  <option value="Homemaker">Homemaker</option>
+                  <option value="Hospitality Worker">Hospitality Worker</option>
+                  <option value="Housekeeper">Housekeeper</option>
+                  <option value="Information Technology Professional">
+                    Information Technology Professional
+                  </option>
+                  <option value="Investor">Investor</option>
+                  <option value="Journalist">Journalist</option>
+                  <option value="Laborer">Laborer</option>
+                  <option value="Lawyer">Lawyer</option>
+                  <option value="Librarian">Librarian</option>
+                  <option value="Maintenance Worker">Maintenance Worker</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Manufacturing Worker">
+                    Manufacturing Worker
+                  </option>
+                  <option value="Marketing Professional">
+                    Marketing Professional
+                  </option>
+                  <option value="Mathematician">Mathematician</option>
+                  <option value="Mechanic">Mechanic</option>
+                  <option value="Medical Professional">
+                    Medical Professional
+                  </option>
+                  <option value="Merchant">Merchant</option>
+                  <option value="Midwife">Midwife</option>
+                  <option value="Military Personnel">Military Personnel</option>
+                  <option value="Musician">Musician</option>
+                  <option value="Nanny">Nanny</option>
+                  <option value="Nurse">Nurse</option>
+                  <option value="Office Clerk">Office Clerk</option>
+                  <option value="Office Worker">Office Worker</option>
+                  <option value="Optician">Optician</option>
+                  <option value="Performance Artist">Performance Artist</option>
+                  <option value="Photographer">Photographer</option>
+                  <option value="Pilot">Pilot</option>
+                  <option value="Police Officer">Police Officer</option>
+                  <option value="Politician">Politician</option>
+                  <option value="Professor">Professor</option>
+                  <option value="Railroad Engineer">Railroad Engineer</option>
+                  <option value="Researcher">Researcher</option>
+                  <option value="Retail Employee">Retail Employee</option>
+                  <option value="Retiree">Retiree</option>
+                  <option value="Rigger">Rigger</option>
+                  <option value="Sailor">Sailor</option>
+                  <option value="Salesperson">Salesperson</option>
+                  <option value="Scientist">Scientist</option>
+                  <option value="Sea Captain">Sea Captain</option>
+                  <option value="Secretary">Secretary</option>
+                  <option value="Self-Employed">Self-Employed</option>
+                  <option value="Small Business Owner">
+                    Small Business Owner
+                  </option>
+                  <option value="Social Worker">Social Worker</option>
+                  <option value="Software Developer">Software Developer</option>
+                  <option value="Spokesperson">Spokesperson</option>
+                  <option value="Statistician">Statistician</option>
+                  <option value="Stay-At-Home Parent">
+                    Stay-At-Home Parent
+                  </option>
+                  <option value="Student">Student</option>
+                  <option value="Surgeon">Surgeon</option>
+                  <option value="Surveyor">Surveyor</option>
+                  <option value="Tailor">Tailor</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Technician">Technician</option>
+                  <option value="Tradesperson">Tradesperson</option>
+                  <option value="Trainer">Trainer</option>
+                  <option value="Translator">Translator</option>
+                  <option value="Truck Driver">Truck Driver</option>
+                  <option value="Tutor">Tutor</option>
+                  <option value="Unemployed">Unemployed</option>
+                  <option value="Veterinarian">Veterinarian</option>
+                  <option value="Videographer">Videographer</option>
+                  <option value="Waiter">Waiter</option>
+                  <option value="Waste Collector">Waste Collector</option>
+                  <option value="Writer">Writer</option>
+                  <option value="Zoologist">Zoologist</option>
+                </select>
+              </div>
+
               <div class="col-lg-6 mb-4">
                 <input
                   type="text"
@@ -446,14 +764,13 @@
                   placeholder="City"
                 />
               </div>
-
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
                   formControlName="selectedStateType"
                 >
-                  <option selected value="" disabled>Select State Type</option>
+                  <option selected value="" disabled>State</option>
                   <option value="Alabama">Alabama</option>
                   <option value="Alaska">Alaska</option>
                   <option value="Arizona">Arizona</option>
@@ -504,109 +821,6 @@
                   <option value="West Virginia">West Virginia</option>
                   <option value="Wisconsin">Wisconsin</option>
                   <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <h4 class="mb-4 text-white text-center">
-                  "IAM" Pledge To Report Violent Crime
-                </h4>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedTypeOfTrucks"
-                >
-                  <option selected value="" disabled>Types of Trucks</option>
-                  <option value="Tanker">Tanker</option>
-                  <option value="Cement">Cement</option>
-                  <option value="Camioneta">Camioneta</option>
-                  <option value="Panel">Panel</option>
-                  <option value="Box">Box</option>
-                  <option value="Dump Truck">Dump Truck</option>
-                  <option value="Refrigerator">Refrigerator</option>
-                  <option value="Pickup">Pickup</option>
-                  <option value="Semi trailer">Semi trailer</option>
-                  <option value="Articulated">Articulated</option>
-                  <option value="Fire">Fire</option>
-                  <option value="Mobile crane">Mobile crane</option>
-                  <option value="Tractor">Tractor</option>
-                  <option value="Trailer">Trailer</option>
-                  <option value="Van">Van</option>
-                  <option value="Car Transporter">Car Transporter</option>
-                  <option value="Livestock">Livestock</option>
-                  <option value="Chassis">Chassis</option>
-                  <option value="Lowboy Trailer">Lowboy Trailer</option>
-                  <option value="Reefer">Reefer</option>
-                  <option value="Road Trains">Road Trains</option>
-                  <option value="Tow">Tow</option>
-                  <option value="Logging">Logging</option>
-                  <option value="Platform">Platform</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedTruckLoads"
-                >
-                  <option selected value="" disabled>Truck Loads</option>
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Heavy">Heavy</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedCommonCarrier"
-                >
-                  <option selected value="" disabled>Common carrier</option>
-
-                  <option value="conveyor">conveyor</option>
-                  <option value="driver">driver</option>
-                  <option value="shipper">shipper</option>
-                  <option value="transporter">transporter</option>
-                  <option value="truck driver">truck driver</option>
-                  <option value="Trucker">Trucker</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedTruckService"
-                >
-                  <option selected value="" disabled>Truck Service</option>
-                  <option value="Truck yards">Truck yards</option>
-                  <option value="Truck Parts">Truck Parts</option>
-                  <option value="Truck Sales">Truck Sales</option>
-                  <option value="Workshops">Workshops</option>
-                  <option value="Truck and Trailer">Truck and Trailer</option>
-                  <option value="Truck Employers">Truck Employers</option>
-                  <option value="Truck Companies">Truck Companies</option>
-                  <option value="RoadSide Assistance">
-                    RoadSide Assistance
-                  </option>
-                  <option value="Commercial and Heavy Duty">
-                    Commercial and Heavy Duty
-                  </option>
-                  <option value="Mobile Service">Mobile Service</option>
-                  <option value="Truck Stops">Truck Stops</option>
-                  <option value="Truck Apparels">Truck Apparels</option>
-                  <option value="DL Courses">DL Courses</option>
-                  <option value="Truck License">Truck License</option>
-                  <option value="Trucker">Trucker</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -951,16 +1165,18 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Gender<sup style="color: red; font-size: 20px">*</sup>
+                        >NBA DIVISION<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
                       </label>
                       <select
-                        formControlName="registerGenderType"
+                        formControlName="registerDivision"
                         class="form-select"
                         aria-label="Default select example"
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerGenderType')?.touched ||
-                              !form3.get('registerGenderType')?.valid) &&
+                            (!form3.get('registerDivision')?.touched ||
+                              !form3.get('registerDivision')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
@@ -968,21 +1184,610 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="Central">Central</option>
+                        <option value="Pacific">Pacific</option>
+                        <option value="Atlantic">Atlantic</option>
+                        <option value="Eastern">Eastern</option>
+                        <option value="Northwest">Northwest</option>
+                        <option value="Southwest">Southwest</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Select State<sup style="color: red; font-size: 20px"
+                        >POSITION<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         class="form-select"
                         aria-label="Default select example"
-                        formControlName="registerStateType"
+                        formControlName="registerPosition"
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerPosition')?.touched ||
+                              !form3.get('registerPosition')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Coach">Coach</option>
+                        <option value="Shooting Guard">Shooting Guard</option>
+                        <option value="Small Forward">Small Forward</option>
+                        <option value="Point Guard">Point Guard</option>
+                        <option value="Power Forward">Power Forward</option>
+                        <option value="Center">Center</option>
+                        <option value="Six Man">Six Man</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >NBA TEAM<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerTeam')?.touched ||
+                              !form3.get('registerTeam')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        class="form-select"
+                        aria-label="Default select example"
+                        formControlName="registerTeam"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Boston Celtics">Boston Celtics</option>
+                        <option value="Brooklyn Nets">Brooklyn Nets</option>
+                        <option value="New York Knicks">New York Knicks</option>
+                        <option value="Philadelphia 76ers">
+                          Philadelphia 76ers
+                        </option>
+                        <option value="Toronto Raptors">Toronto Raptors</option>
+                        <option value="Chicago Bulls">Chicago Bulls</option>
+                        <option value="Cleveland Cavaliers">
+                          Cleveland Cavaliers
+                        </option>
+                        <option value="Detroit Pistons">Detroit Pistons</option>
+                        <option value="Indiana Pacers">Indiana Pacers</option>
+                        <option value="Milwaukee Bucks">Milwaukee Bucks</option>
+                        <option value="Atlanta Hawks">Atlanta Hawks</option>
+                        <option value="Charlotte Hornets">
+                          Charlotte Hornets
+                        </option>
+                        <option value="Miami Heat">Miami Heat</option>
+                        <option value="Orlando Magic">Orlando Magic</option>
+                        <option value="Washington Wizards">
+                          Washington Wizards
+                        </option>
+                        <option value="Denver Nuggets">Denver Nuggets</option>
+                        <option value="Minnesota Timberwolves">
+                          Minnesota Timberwolves
+                        </option>
+                        <option value="Oklahoma City Thunder">
+                          Oklahoma City Thunder
+                        </option>
+                        <option value="Portland Trailblazers">
+                          Portland Trailblazers
+                        </option>
+                        <option value="Utah Jazz">Utah Jazz</option>
+                        <option value="Golden State Warriors">
+                          Golden State Warriors
+                        </option>
+                        <option value="Los Angeles Clippers">
+                          Los Angeles Clippers
+                        </option>
+                        <option value="Los Angeles Lakers">
+                          Los Angeles Lakers
+                        </option>
+                        <option value="Phoenix Suns">Phoenix Suns</option>
+                        <option value="Sacramento Kings">
+                          Sacramento Kings
+                        </option>
+                        <option value="Dallas Mavericks">
+                          Dallas Mavericks
+                        </option>
+                        <option value="Houston Rockets">Houston Rockets</option>
+                        <option value="Memphis Grizzlies">
+                          Memphis Grizzlies
+                        </option>
+                        <option value="New Orleans Pelicans">
+                          New Orleans Pelicans
+                        </option>
+                        <option value="San Antonio Spurs">
+                          San Antonio Spurs
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <div class="form-group">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >City
+                          <sup style="color: red; font-size: 20px"
+                            >*</sup
+                          ></label
+                        >
+                        <input
+                          type="text"
+                          formControlName="registerCityType"
+                          class="form-control"
+                          required
+                          [ngClass]="{
+                            'invalid-input':
+                              !form3.get('registerCityType')?.touched &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >YEAR IN NBA<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerYear')?.touched ||
+                              !form3.get('registerYear')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        formControlName="registerYear"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+
+                        <option value="1947">1947</option>
+                        <option value="1948">1948</option>
+                        <option value="1949">1949</option>
+                        <option value="1950">1950</option>
+                        <option value="1951">1951</option>
+                        <option value="1952">1952</option>
+                        <option value="1953">1953</option>
+                        <option value="1954">1954</option>
+                        <option value="1955">1955</option>
+                        <option value="1956">1956</option>
+                        <option value="1957">1957</option>
+                        <option value="1958">1958</option>
+                        <option value="1959">1959</option>
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                      </select>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Race<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerRaceType')?.touched ||
+                              !form3.get('registerRaceType')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerRaceType"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+
+                        <option value="African Americans">
+                          African Americans
+                        </option>
+                        <option value="European">European</option>
+                        <option value="Mexican-american">
+                          Mexican-american
+                        </option>
+                        <option value="Hispanic -Latino">
+                          Hispanic -Latino
+                        </option>
+                        <option value="Asian">Asian</option>
+                        <option value="German">German</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Lithuanians">Lithuanians</option>
+                        <option value="Cameroonian">Cameroonian</option>
+                        <option value="Dominican's">Dominican's</option>
+                        <option value="Latvian">Latvian</option>
+                        <option value="Australian">Australian</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Canadian">Canadian</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="American Indian">American Indian</option>
+                        <option value="Alaska Native">Alaska Native</option>
+                        <option value="Native Hawaiian">Native Hawaiian</option>
+                        <option value="Two or More Race">
+                          Two or More Race
+                        </option>
+                        <option value="French">French</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >TROPHY'S<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerTrophy')?.touched ||
+                              !form3.get('registerTrophy')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerTrophy"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Larry OBrian">Larry OBrian</option>
+                        <option value="Walter A Brown">Walter A Brown</option>
+                        <option value="Bob Cousy">Bob Cousy</option>
+                        <option value="Oscar Robertson">Oscar Robertson</option>
+                        <option value="Maurice Podoloff">
+                          Maurice Podoloff
+                        </option>
+                        <option value="NBA Cup">NBA Cup</option>
+                        <option value="Nat Sweetwater Clifton">
+                          Nat Sweetwater Clifton
+                        </option>
+                        <option value="Wayne Embry">Wayne Embry</option>
+                        <option value="Earl Lloyd">Earl Lloyd</option>
+                        <option value="Willis Reed">Willis Reed</option>
+                        <option value="Sam Jones">Sam Jones</option>
+                        <option value="Chuck Cooper">Chuck Cooper</option>
+                        <option value="None">None</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >HONORS<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerHonor')?.touched ||
+                              !form3.get('registerHonor')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerHonor"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="MVP">MVP</option>
+                        <option value="Executive of the Year">
+                          Executive of the Year
+                        </option>
+                        <option value="Rookie Of the Year">
+                          Rookie Of the Year
+                        </option>
+                        <option value="Hall Of Fame">Hall Of Fame</option>
+                        <option value="Coach Of The Year">
+                          Coach Of The Year
+                        </option>
+                        <option value="Offensive Player of The Year">
+                          Offensive Player of The Year
+                        </option>
+                        <option value="Defensive Player of The Year">
+                          Defensive Player of The Year
+                        </option>
+                        <option value="Most Improved Player">
+                          Most Improved Player
+                        </option>
+                        <option value="All Star MVP">All Star MVP</option>
+                        <option value="Finals MVP">Finals MVP</option>
+                        <option value="Eastern Conference MVP">
+                          Eastern Conference MVP
+                        </option>
+                        <option value="Western Conference MVP">
+                          Western Conference MVP
+                        </option>
+                        <option value="Citizenship Award">
+                          Citizenship Award
+                        </option>
+                        <option value="Six Man Of The Year">
+                          Six Man Of The Year
+                        </option>
+                        <option value="Sportsmanship Award">
+                          Sportsmanship Award
+                        </option>
+                        <option value="TeamMate of Year Award">
+                          TeamMate of Year Award
+                        </option>
+                        <option value="Lifetime Achievement Award">
+                          Lifetime Achievement Award
+                        </option>
+                        <option value="Social Justice Champion Award">
+                          Social Justice Champion Award
+                        </option>
+                        <option value="Clutch Player of Year Award">
+                          Clutch Player of Year Award
+                        </option>
+                        <option value="None">None</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >BUSINESS TYPE<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerBusiness')?.touched ||
+                              !form3.get('registerBusiness')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerBusiness"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Accountant">Accountant</option>
+                        <option value="Actor">Actor</option>
+                        <option value="Actuary">Actuary</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Agent">Agent</option>
+                        <option value="Agricultural Worker">
+                          Agricultural Worker
+                        </option>
+                        <option value="Air Traffic Controller">
+                          Air Traffic Controller
+                        </option>
+                        <option value="Ambulance Officer">
+                          Ambulance Officer
+                        </option>
+                        <option value="Architect">Architect</option>
+                        <option value="Art Director">Art Director</option>
+                        <option value="Artist">Artist</option>
+                        <option value="Athlete">Athlete</option>
+                        <option value="Auditor">Auditor</option>
+                        <option value="Baker">Baker</option>
+                        <option value="Barista">Barista</option>
+                        <option value="Bartender">Bartender</option>
+                        <option value="Board Member">Board Member</option>
+                        <option value="Business Analyst">
+                          Business Analyst
+                        </option>
+                        <option value="Chef">Chef</option>
+                        <option value="Childcare Worker">
+                          Childcare Worker
+                        </option>
+                        <option value="Civil Servant">Civil Servant</option>
+                        <option value="Cleaner">Cleaner</option>
+                        <option value="Company Worker">Company Worker</option>
+                        <option value="Computer Scientist">
+                          Computer Scientist
+                        </option>
+                        <option value="Construction Worker">
+                          Construction Worker
+                        </option>
+                        <option value="Cook">Cook</option>
+                        <option value="Copywriter">Copywriter</option>
+                        <option value="Courier">Courier</option>
+                        <option value="Craftsperson">Craftsperson</option>
+                        <option value="Curator">Curator</option>
+                        <option value="Customer Service Representative">
+                          Customer Service Representative
+                        </option>
+                        <option value="Dentist">Dentist</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Economist">Economist</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Entrepreneur">Entrepreneur</option>
+                        <option value="Equipment Operator">
+                          Equipment Operator
+                        </option>
+                        <option value="Executive Manager">
+                          Executive Manager
+                        </option>
+                        <option value="Farmer">Farmer</option>
+                        <option value="Film Maker">Film Maker</option>
+                        <option value="Firefighter">Firefighter</option>
+                        <option value="Fisherman">Fisherman</option>
+                        <option value="Fitness Trainer">Fitness Trainer</option>
+                        <option value="Flight Attendant">
+                          Flight Attendant
+                        </option>
+                        <option value="Florist">Florist</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Gardener">Gardener</option>
+                        <option value="Hair Stylist">Hair Stylist</option>
+                        <option value="Home Care Aid">Home Care Aid</option>
+                        <option value="Homemaker">Homemaker</option>
+                        <option value="Hospitality Worker">
+                          Hospitality Worker
+                        </option>
+                        <option value="Housekeeper">Housekeeper</option>
+                        <option value="Information Technology Professional">
+                          Information Technology Professional
+                        </option>
+                        <option value="Investor">Investor</option>
+                        <option value="Journalist">Journalist</option>
+                        <option value="Laborer">Laborer</option>
+                        <option value="Lawyer">Lawyer</option>
+                        <option value="Librarian">Librarian</option>
+                        <option value="Maintenance Worker">
+                          Maintenance Worker
+                        </option>
+                        <option value="Manager">Manager</option>
+                        <option value="Manufacturing Worker">
+                          Manufacturing Worker
+                        </option>
+                        <option value="Marketing Professional">
+                          Marketing Professional
+                        </option>
+                        <option value="Mathematician">Mathematician</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Medical Professional">
+                          Medical Professional
+                        </option>
+                        <option value="Merchant">Merchant</option>
+                        <option value="Midwife">Midwife</option>
+                        <option value="Military Personnel">
+                          Military Personnel
+                        </option>
+                        <option value="Musician">Musician</option>
+                        <option value="Nanny">Nanny</option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="Office Clerk">Office Clerk</option>
+                        <option value="Office Worker">Office Worker</option>
+                        <option value="Optician">Optician</option>
+                        <option value="Performance Artist">
+                          Performance Artist
+                        </option>
+                        <option value="Photographer">Photographer</option>
+                        <option value="Pilot">Pilot</option>
+                        <option value="Police Officer">Police Officer</option>
+                        <option value="Politician">Politician</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Railroad Engineer">
+                          Railroad Engineer
+                        </option>
+                        <option value="Researcher">Researcher</option>
+                        <option value="Retail Employee">Retail Employee</option>
+                        <option value="Retiree">Retiree</option>
+                        <option value="Rigger">Rigger</option>
+                        <option value="Sailor">Sailor</option>
+                        <option value="Salesperson">Salesperson</option>
+                        <option value="Scientist">Scientist</option>
+                        <option value="Sea Captain">Sea Captain</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Self-Employed">Self-Employed</option>
+                        <option value="Small Business Owner">
+                          Small Business Owner
+                        </option>
+                        <option value="Social Worker">Social Worker</option>
+                        <option value="Software Developer">
+                          Software Developer
+                        </option>
+                        <option value="Spokesperson">Spokesperson</option>
+                        <option value="Statistician">Statistician</option>
+                        <option value="Stay-At-Home Parent">
+                          Stay-At-Home Parent
+                        </option>
+                        <option value="Student">Student</option>
+                        <option value="Surgeon">Surgeon</option>
+                        <option value="Surveyor">Surveyor</option>
+                        <option value="Tailor">Tailor</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Technician">Technician</option>
+                        <option value="Tradesperson">Tradesperson</option>
+                        <option value="Trainer">Trainer</option>
+                        <option value="Translator">Translator</option>
+                        <option value="Truck Driver">Truck Driver</option>
+                        <option value="Tutor">Tutor</option>
+                        <option value="Unemployed">Unemployed</option>
+                        <option value="Veterinarian">Veterinarian</option>
+                        <option value="Videographer">Videographer</option>
+                        <option value="Waiter">Waiter</option>
+                        <option value="Waste Collector">Waste Collector</option>
+                        <option value="Writer">Writer</option>
+                        <option value="Zoologist">Zoologist</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >State<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
                         [ngClass]="{
                           'invalid-input':
                             (!form3.get('registerStateType')?.touched ||
@@ -990,6 +1795,10 @@
                             submitButtonClicked &&
                             !form3.valid
                         }"
+                        required
+                        formControlName="registerStateType"
+                        class="form-select"
+                        aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
@@ -1044,212 +1853,6 @@
                         <option value="West Virginia">West Virginia</option>
                         <option value="Wisconsin">Wisconsin</option>
                         <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Race<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerRaceType')?.touched ||
-                              !form3.get('registerRaceType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        class="form-select"
-                        aria-label="Default select example"
-                        formControlName="registerRaceType"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="Afro American">Afro American</option>
-                        <option value="White">White</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Asian">Asian</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >City
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerCityType"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerCityType')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Types of Trucks<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTypeOfTrucks')?.touched ||
-                              !form3.get('registerTypeOfTrucks')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        formControlName="registerTypeOfTrucks"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option value="Tanker">Tanker</option>
-                        <option value="Cement">Cement</option>
-                        <option value="Camioneta">Camioneta</option>
-                        <option value="Panel">Panel</option>
-                        <option value="Box">Box</option>
-                        <option value="Dump Truck">Dump Truck</option>
-                        <option value="Refrigerator">Refrigerator</option>
-                        <option value="Pickup">Pickup</option>
-                        <option value="Semi trailer">Semi trailer</option>
-                        <option value="Articulated">Articulated</option>
-                        <option value="Fire">Fire</option>
-                        <option value="Mobile crane">Mobile crane</option>
-                        <option value="Tractor">Tractor</option>
-                        <option value="Trailer">Trailer</option>
-                        <option value="Van">Van</option>
-                        <option value="Car Transporter">Car Transporter</option>
-                        <option value="Livestock">Livestock</option>
-                        <option value="Chassis">Chassis</option>
-                        <option value="Lowboy Trailer">Lowboy Trailer</option>
-                        <option value="Reefer">Reefer</option>
-                        <option value="Road Trains">Road Trains</option>
-                        <option value="Tow">Tow</option>
-                        <option value="Logging">Logging</option>
-                        <option value="Platform">Platform</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Truck Loads<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTruckLoads')?.touched ||
-                              !form3.get('registerTruckLoads')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerTruckLoads"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Heavy">Heavy</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Common carrier<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerCommonCarrier')?.touched ||
-                              !form3.get('registerCommonCarrier')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerCommonCarrier"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option value="conveyor">conveyor</option>
-                        <option value="driver">driver</option>
-                        <option value="shipper">shipper</option>
-                        <option value="transporter">transporter</option>
-                        <option value="truck driver">truck driver</option>
-                        <option value="Trucker">Trucker</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Truck Service<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTruckService')?.touched ||
-                              !form3.get('registerTruckService')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerTruckService"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option value="Truck yards">Truck yards</option>
-                        <option value="Truck Parts">Truck Parts</option>
-                        <option value="Truck Sales">Truck Sales</option>
-                        <option value="Workshops">Workshops</option>
-                        <option value="Truck and Trailer">
-                          Truck and Trailer
-                        </option>
-                        <option value="Truck Employers">Truck Employers</option>
-                        <option value="Truck Companies">Truck Companies</option>
-                        <option value="RoadSide Assistance">
-                          RoadSide Assistance
-                        </option>
-                        <option value="Commercial and Heavy Duty">
-                          Commercial and Heavy Duty
-                        </option>
-                        <option value="Mobile Service">Mobile Service</option>
-                        <option value="Truck Stops">Truck Stops</option>
-                        <option value="Truck Apparels">Truck Apparels</option>
-                        <option value="DL Courses">DL Courses</option>
-                        <option value="Truck License">Truck License</option>
-                        <option value="Trucker">Trucker</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
@@ -1309,58 +1912,6 @@
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">CREATE IMPRESSIVE TRUCKERS</h1>
-      <p class="text-white my-3">
-        Our groundbreaking app unites truck drivers, logistics professionals,
-        fleet managers, training institutions, and affiliated businesses on a
-        specialized platform
-      </p>
-      <div class="moretext" style="display: none">
-        <p class="text-white my-3">
-          dedicated to advancing the careers of truckers and promoting the
-          growth of the trucking industry. Our app is the first in its category,
-          enabling trucking professionals to network with fellow drivers,
-          industry experts, and businesses while showcasing their skills and
-          expertise, receiving the recognition and support they rightfully
-          deserve.
-        </p>
-        <p class="text-white my-3">
-          Through Umyo Truckers and Trucking Industry Connect, you can
-          effortlessly upload your driving records, training achievements,
-          interviews, industry insights, images, and career milestones for a
-          wide-reaching audience. It's the premier destination for truckers and
-          those involved in the trucking industry, providing them with a safe
-          space exclusively for them
-        </p>
-        <p class="text-white my-3">
-          Truckers and industry professionals can reciprocate the support
-          provided by businesses that support the trucking industry. Business
-          owners now have the opportunity to register their companies and
-          connect them with specific trucking professionals using unique ID
-          codes during the registration process.
-        </p>
-        <p class="text-white my-3">
-          Umyo Truckers and Trucking Industry Connect is a groundbreaking social
-          network app designed exclusively for the trucking community,
-          connecting drivers, logistics experts, fleet managers, and businesses
-          eager to support the journey of our truckers as they strive for
-          success
-        </p>
-        <p class="text-white my-3">
-          Share your Trucking Portfolio, Training Achievements, Industry
-          Insights, Interviews, Trucking Experiences, Images, and Career
-          Highlights for a wide audience to explore. This all-in-one platform is
-          essential for trucking professionals seeking greater visibility using
-          virtual interactive concepts to network with others just like you. A
-          safe and positive place to thrive in the trucking industry.
-        </p>
-      </div>
-      <a
-        class="moreless-button btn btn-light"
-        style="text-decoration: none"
-        (click)="toggleMoreText2()"
-        >Read more</a
-      >
     </div>
   </div>
 </section>
@@ -1642,413 +2193,368 @@
   </div>
 </div>
 
-<!------- tab section end ---------->
-
-<div class="container-fluid featurs pt-3 mt-3 mb-5">
+<div class="container-fluid bg">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-12">
-        <h1 class="text-center">Single Application, Multiple Platforms</h1>
-        <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/1.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="program my-5 text-center">
+          <h1>NBA Players Connects</h1>
         </div>
-        <h2 class="mt-4">Virtual Interactive Truckers Card Directory</h2>
-        <div class="moretext1" style="display: none">
-          <p>1. A Social Networking Platform & Search Engine Directory</p>
-          <p>
-            2. Virtual Business and Community Cards /with Social Media Icons
-            that Links to Social Media & Websites.
-          </p>
-          <p>
-            3. Members Befriend, Network, Chat and Share Members ID cards via
-            Social Media.
-          </p>
-          <p>
-            4. Search Engine for community, visitors & members to find
-            registered businesses.
-          </p>
-          <p>5. Daily $$$ giveaways to military officers and family.</p>
-        </div>
-        <a class="moreless-button1 btn btn-dark" href="/#text1">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/2.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Timeline</h2>
-        <div class="moretext2" style="display: none">
-          <p>
-            <strong>**Timeline:** </strong> Stay in the loop with the latest
-            posts, photos, and life events of your friends. Scroll through your
-            personalized timeline to ensure you never miss a moment.
-          </p>
-        </div>
-        <a class="moreless-button2 btn btn-dark" href="#text2">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/3.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Live</h2>
-        <div class="moretext3" style="display: none">
-          <p>
-            <strong>**Live:**</strong> Share live broadcasts with your followers
-            or tune in to watch live content from around the world from other
-            military personnel, their family, friends. Interact with
-            broadcasters in real-time.
-          </p>
-        </div>
-        <a class="moreless-button3 btn btn-dark" href="#text3">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text4">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/4.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Chat</h2>
-        <div class="moretext4" style="display: none">
-          <p>
-            <strong>**Chat:**</strong> Connect with friends through private
-            messages or group chats. Share text, photos, videos, and more.
-          </p>
-        </div>
-        <a class="moreless-button4 btn btn-dark" href="#text4">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/5.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Calling</h2>
-        <div class="moretext5" style="display: none">
-          <p>
-            <strong>**Calling:**</strong> Make high-quality voice and video
-            calls to your contacts, keeping you connected no matter where you
-            are.
-          </p>
-        </div>
-        <a class="moreless-button5 btn btn-dark" href="#text5">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/6.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Events Booking</h2>
-        <div class="moretext6" style="display: none">
-          <p>
-            <strong>**Events Booking:**</strong> Discover and book events in
-            your area or share your own events with the community.
-          </p>
-        </div>
-        <a class="moreless-button6 btn btn-dark" href="#text6">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/7.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Dating</h2>
-        <div class="moretext7" style="display: none">
-          <p>
-            <strong>**Dating:**</strong> Find meaningful connections with
-            like-minded people through our dating feature. Truckers Talk is more
-            than just a social app; it's a place to meet new people and
-            potentially find love.
-          </p>
-        </div>
-        <a class="moreless-button7 btn btn-dark" href="#text7">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/8.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Podcasts</h2>
-        <div class="moretext8" style="display: none">
-          <p>
-            <strong>**Podcasts:**</strong> Listen to and create your own
-            podcasts on topics you're passionate about. Share your voice with
-            the world.
-          </p>
-        </div>
-        <a class="moreless-button8 btn btn-dark" href="#text8">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/9.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Fundraising</h2>
-        <div class="moretext9" style="display: none">
-          <p>
-            **Fundraising:** Support and create fundraising campaigns for causes
-            that matter to you. Make a positive impact on your community.
-          </p>
-        </div>
-        <a class="moreless-button9 btn btn-dark" href="#text9">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/10.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Truckers Group</h2>
-        <div class="moretext10" style="display: none">
-          <p>
-            Creating groups involves forming distinct communities within the
-            platform where users with common interests or affiliations can join
-            and interact. These groups provide a space for like-minded
-            individuals to share content, engage in discussions, and connect
-            with one another based on shared topics, hobbies, or goals. Group
-            members can typically post and comment on discussions relevant to
-            the group's theme, fostering a more focused and engaged online
-            community.
-          </p>
-        </div>
-        <a class="moreless-button10 btn btn-dark" href="#text10">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/11.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Nearby Offers</h2>
-        <div class="moretext11" style="display: none">
-          <p>
-            <strong> **Nearby Offers:** </strong> Access exclusive offers and
-            discounts from businesses in your area. Truckers Connect helps you
-            save from online registered businesses while you explore your
-            surroundings.
-          </p>
-        </div>
-        <a class="moreless-button11 btn btn-dark" href="#text11">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/12.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Short Video</h2>
-        <div class="moretext12" style="display: none">
-          <p>
-            Creating short videos entails producing and sharing concise video
-            content that is typically brief in duration, often lasting anywhere
-            from a few seconds to a few minutes. These short videos are designed
-            to capture attention quickly and are well-suited for sharing on
-            platforms like TikTok, Instagram Reels, or Snapchat. Users can use
-            various creative tools and features to record, edit, and enhance
-            their videos to tell stories, share moments, provide entertainment,
-            or convey messages in a concise and engaging format. The goal is to
-            engage the audience and make an impact in a short span of time.
-          </p>
-        </div>
-        <a class="moreless-button12 btn btn-dark" href="#text12">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text15">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/truckers/13.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Truckers Tweets</h2>
-        <div class="moretext15" style="display: none">
-          <p>
-            is a microblogging platform where users share short messages called
-            tweets, limited to 280 characters. It's a hub for Truckers to add
-            real-time updates, discussions, and a variety of content, often
-            accompanied by hashtags to categorize topics.
-          </p>
-          <p>
-            Truckers Connects was crafted to provide a safe and inclusive space
-            for our military and their families. Our robust privacy settings and
-            content moderation ens7ure a secure environment for all users.
-          </p>
-          <p>
-            Join the Truckers Connects community today and embark on a social
-            media experience like no other. - Where Truckers Connections Come to
-            Life!
-          </p>
-        </div>
-        <a class="moreless-button15 btn btn-dark" href="#text15">Read more</a>
       </div>
     </div>
-    <!-- <div class="row g-4 py-5">
-            <div class="col-lg-12 col-md-6 px-5 mt-5">
-            <img src="assets/newlogo/naf.jpg" class="img-fluid">    
-            </div>
-        </div> -->
+    <div class="row justify-content-center">
+      <div class="col-md-4" id="text1">
+        <div class="card">
+          <img src="assets/img/newimg/1.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">NBA Super Teams</h4>
+            <!-- <div class="mycard">
+                <p class="card-text">
+                  The Hero's Project introduces our K-12 module, a comprehensive initiative bringing mental health counseling services and workshops to educational institutions. We extend support to faculty, staff, students, and parents, delivering essential resources for holistic well-being. Our Pro Living course guides students in identifying and embarki</p>
+                  <div class="moretext1" style="display:none;">
+                  <p>on their career paths, while also providing whole-life insurance protection to ensure their future security. Partnering with McAfee, our project incorporates cutting-edge data protection and security measures, offered to schools at no cost. Our commitment is to empower students, faculty, and staff, ensuring every family has access to knowledge and resources for success.</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button1">Show More</button>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text2">
+        <div class="card">
+          <img src="assets/img/newimg/2.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              What Do You Think Of NBA For Short Players
+            </h4>
+            <!-- <div class="mycard">
+                <p class="card-text">
+                  Step into our 'Life After the Game' program—a transformative journey crafted in two sectors. For current or former professional athletes embarking on their post-game voyage, our program offers more than a transition—it's a complete support system. Picture this: salaries, health insurance, and a dedicated accountability group, all tailored  
+              </p>
+              <div class="moretext2" style="display:none;">
+                  <p>to guide and empower you in discovering life's next thrilling phase. Our diverse team, which includes transitioned players, business owners, and seasoned company CEOs, will walk this exciting journey alongside you.</p>
+                  <p>If you're a retired athlete or nearing retirement, seeking to make a substantial impact in your community while charting your next steps, Pro Living was crafted with you in mind.</p>
+                  <p>The second part of our program is custom-built for collegiate student-athletes whose careers conclude post-college. Our 'Life After the Game' series partners with universities of all sizes, providing tailored support to these athletes as they navigate their post-college lives. We offer a unique platform to learn, network, and prepare for a seamless transition into the workforce.</p>
+                  <p>For current and former athletes seeking a purposeful life beyond the game and for colleges invested in their athletes' future success, Pro Living is the empowering partner you've been searching for. Join us in shaping the future beyond sports, where every athlete thrives in their life after the game.</p>
+                  </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button2">Show More</button>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text3">
+        <div class="card">
+          <img src="assets/img/newimg/3.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              Pin By Antonio Williams On NBA Old School
+            </h4>
+            <!-- <div class="mycard">
+                <p class="card-text">
+                  The Pro Living Investment Fund was strategically crafted for both current and former players seeking to secure a residual income. It's more than an investment—it's an opportunity to support job creation while offering players a secure way to invest their earnings. We carefully test and invest in valuable products that yield returns, empowring    
+              
+               <div class="moretext3" style="display:none;">
+                  players, both current and former, to diversify their investments while championing other professional athletes.</p>
+                  <p>Our commitment goes beyond funding; we provide guidance and education to athletes on building generational wealth. We see ourselves as legacy builders, assisting players, both present and past, in creating a lasting impact for themselves and future generations.</p>
+             </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button3">Show More</button>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text4">
+        <div class="card">
+          <img src="assets/img/newimg/4.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">A Letter Of NBA Rookies</h4>
+            <!--  <div class="mycard">
+                <p class="card-text">
+                  Our Business Growth and Development services cater to both for-profit and non-profit companies, facilitating workforce expansion and retention strategies. Our focus on establishing credibility among end-users drives engagement with their services or products, fostering growth and enhancing visibility. With a core mission of fostering company
+                </p>
+                <div class="moretext4" style="display:none;">
+                  <p> growth, we operate with the goal of enhancing efficiency and aiding in employee retention, ensuring companies optimize their performance and maintain a high level of production.</p>
+                </div>
+           <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button4">Show More</button>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img src="assets/img/newimg/5.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">Golden State Warriors</h4>
+            <!-- <div class="mycard">
+                <p class="card-text">
+                  Step into our vibrant Mom and Dad's Club—a thrilling space for parents to bond, grow, and learn together! This isn't just a support group; it's a dynamic village where everyday superheroes recharge and thrive. Our innovative engagements spark connections between parents, fostering growth in various life domains.</p>
+                <p class="para">Join us in actively engaging</p>
+                <div class="moretext5" style="display:none;">
+                  <p>with schools, empowering parental involvement and equipping you with essential tools to elevate not just your own life, but your child's and community's too. This club isn't just for first-timers or seasonal parents; it's an open invitation to all generations! Grandparents bring wisdom, first-timers bring fresh perspectives—it's a melting pot of experiences.</p>
+                  <p>It's more than a club; it's a thrilling journey, a safe space for parents to share, connect, and learn from each other's incredible journeys. Get ready to dive into a supportive, exciting community where the bonds you form will be as thrilling as the growth you'll experience!</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button5">Show More</button>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img src="assets/img/newimg/10.png" class="img-fluid" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              Every Fred Biletnikoff Touchdo Win the playoffs
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img
+            src="assets/img/newimg/6.png"
+            class="ver-img img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              Kobe Bryant Of The Los Angeles Lakers Goes Up
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img
+            src="assets/img/newimg/7.png"
+            class="ver-img img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title mb-4">NBA Fantasy On Hakeem Olajuwon</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img
+            src="assets/img/newimg/8.png"
+            class="ver-img img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title mb-4">NBA Photos - 1980s - 1990</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="text5">
+        <div class="card">
+          <img
+            src="assets/img/newimg/9.png"
+            class="ver-img img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              1999 - 2000 Season All Things Lakers
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h2 class="text-center mt-3">
+      NBA Connects Packages, Products and Platforms
+    </h2>
+    <div class="col-lg-3 col-md-6 my-4">
+      <div class="box1 b">
+        <h5>Free Monthly</h5>
+        <ul>
+          <li>Directory - “Basic” Membership</li>
+          <li>Tweet & Talk Access</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 my-4">
+      <div class="box1 box2">
+        <h5>$5 Monthly</h5>
+        <ul>
+          <li>Directory - “IAM” Pledge <br />Membership</li>
+          <li>Free Standard CRM Integration</li>
+          <li>Conference/Podcast Platform</li>
+          <li>Eligible For Daily Prize & Money Giveaways</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 my-4">
+      <div class="box1 b">
+        <h5>$19.99 Monthly</h5>
+        <ul>
+          <li>
+            “Premium” Membership -Directory, Tweet, Talk & Conference/Podcast
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 my-4">
+      <div class="box1 box2">
+        <h5>
+          Starting @ $109 - Community To Business Branding (Community Brands On
+          Your Behalf)
+        </h5>
+        <ul>
+          <li>“Business” Membership - Directory</li>
+          <li>50% Monthly goes to Registered “IAM” Pledge Members</li>
+          <li>Branded by Community</li>
+          <li>Monthly Giveaways (Sponsored By Name Of Your Biz)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin: auto; display: table; margin-top: 1rem; margin-bottom: 4rem"
+  >
+    <a [routerLink]="['/package']" class="btn btn-dark">Packages</a>
   </div>
 </div>
 
 <!-- Featurs Section End -->
 
-<!-- Footer Start -->
+<!------ contact us ------>
+<section id="contact-us">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="get">
+          <h5>Get in Touch</h5>
+          <div class="form">
+            <input type="text" name="" id="" placeholder="Name" /><br />
+            <input type="email" name="" id="" placeholder="Email" /><br />
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="7"
+              placeholder="Message"
+            ></textarea
+            ><br />
+            <div class="select">
+              <input type="file" name="file" id="file" class="inputfile" />
+              <label for="file"
+                ><i class="fa-solid fa-paperclip"></i>Attach Files</label
+              >
+              <span>Attachments(0)</span>
+            </div>
+            <button type="submit">SEND MESSAGE</button><br />
+            <p class="button-para">
+              This site is protected by reCAPTCHA and the Google
+              <a href="#">Privacy Policy </a>and
+              <a href="#">Terms of Service</a> apply.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="better">
+          <h5>Better yet, see us in person!</h5>
+          <p>
+            Get the quickest response by reaching out to us on our social media
+            platforms! You can also contact us directly via phone call or text
+            message. We're excited to engage with you and hear your thoughts!
+          </p>
+          <p>
+            Drop us a message, and we'll make it a priority to get back to you
+            at the earliest convenience.
+          </p>
+          <button type="button">
+            <img src="img/new-icon-removebg-preview.png" alt="" />Message us on
+            WhatsApp
+          </button>
+          <h6>UMYO NBA</h6>
+          <a href="#">(214)-926-0027</a>
+          <!-- <a href="#">cmoore@NBA.com</a> -->
+          <h6 class="hrs">Hours</h6>
+          <select name="" id="">
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+            <option value="">Open today 09:00 am – 02:00 pm</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!----- subscribe -------->
+<section id="subscribe">
+  <div class="container">
+    <h2 class="text-center">Subscribe</h2>
+    <p class="text-center">
+      Get 10% off your first purchase when you sign up for our newsletter!
+    </p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <div class="email-form">
+          <input type="email" placeholder="Email" />
+        </div>
+      </div>
+      <div class="col-md-2 pb-5">
+        <button type="button" class="email-button">SIGN UP</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!----- subscribe end-------->
+
+<!-- Footer Start -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #671414 !important; height: 100% !important"
+  style="background: #265073 !important"
 >
   <div class="container py-5">
     <div class="row g-4">
-      <div class="col-lg-2 col-md-6">
+      <div class="col-lg-4 col-md-6">
         <h4 class="text-light"><b>Contact us</b></h4>
         <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link">Contact us</a>
           <a class="btn-link" (click)="openPolicyModal()">Privacy Policy</a>
           <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
           <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
           <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">UMYO Profile</a>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="d-flex align-items-center">
-          <h4 class="text-light"><b>UMYO Community Categories</b></h4>
-          <a class="moreless-button13" href="#text13"
-            ><a class="moreless-button13" href="#text13"
-              ><span class="material-symbols-sharp ms-3">chevron_right</span></a
-            ></a
-          >
-        </div>
-        <div class="moretext13" style="display: none">
-          <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">DFW Connects</a>
-            <a class="btn-link" href="">Military Connects</a>
-            <a class="btn-link" href="">Truckers Connects</a>
-            <a class="btn-link" href="">Automotive Connects</a>
-            <a class="btn-link" href="">Students Connects</a>
-            <a class="btn-link" href="">Sports Athletes Connects</a>
-            <a class="btn-link" href="">Realtors Connects</a>
-            <a class="btn-link" href="">Restaurants Connects</a>
-            <a class="btn-link" href="">Hair & Beauty Connects</a>
-            <a class="btn-link" href="">Hispanics Connects</a>
-            <a class="btn-link" href="">Nubians Connects</a>
-            <a class="btn-link" href="">Attorneys Connects</a>
-            <a class="btn-link" href="">Religions Connects</a>
-            <a class="btn-link" href="">Entertainers Connects</a>
-            <a class="btn-link" href="">Night Life Connects</a>
-          </div>
+          <a class="btn-link" href="">UMYO NBA</a>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6">
-        <div class="d-flex align-items-center">
-          <h4 class="text-light"><b>UMYO Platforms</b></h4>
-          <a class="moreless-button14" href="#text14"
-            ><span class="material-symbols-sharp ms-3">chevron_right</span></a
-          >
-        </div>
-        <div class="moretext14" style="display: none">
-          <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">UMYO Conferences</a>
-            <a class="btn-link" href="">UMYO Music</a>
-            <a class="btn-link" href="">UMYO Market</a>
-            <a class="btn-link" href="">UMYO Hosting</a>
-            <a class="btn-link" href="">UMYO Chatgpt</a>
-            <a class="btn-link" href="">UMYO Tweets</a>
-            <a class="btn-link" href="">UMYO Date</a>
-            <a class="btn-link" href="">UMYO Tik Tok</a>
-            <a class="btn-link" href="">UMYO Connects</a>
-            <a class="btn-link" href="">UMYO Mail</a>
-            <a class="btn-link" href="">UMYO WhatsApp</a>
-            <a class="btn-link" href="">UMYO Games</a>
-            <a class="btn-link" href="">UMYO Tube</a>
-            <a class="btn-link" href="">UMYO SMS</a>
-            <a class="btn-link" href="">UMYO PPV</a>
-            <a class="btn-link" href="">UMYO LMS</a>
-            <a class="btn-link" href="">UMYO VPN</a>
-            <a class="btn-link" href="">UMYO Store</a>
-            <a class="btn-link" href="">UMYO Profile</a>
-            <a class="btn-link" href="">UMYO Ambassadors</a>
-            <a class="btn-link" href="">UMYO Articles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-4 col-md-6">
         <div class="footer-item">
           <h4 class="text-light mb-3">LET'S CONNECT</h4>
           <p class="mb-4">
-            Subscribe to stay up to date on all the latest UMYO features,
+            Subscribe to stay up to date on all the latest Pro-Living features,
             products, stories, and more. You can also contact us at
-            contact@umyo.com.
+            contact@NBA.com.
           </p>
           <div class="position-relative mx-auto">
             <input
@@ -2065,7 +2571,9 @@
             </button>
           </div>
         </div>
-        <div class="d-flex pt-3">
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex justify-content-center pt-3">
           <a
             class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
             href=""
@@ -2097,12 +2605,17 @@
     <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
       <p class="text-white text-center">
         <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
+          ><i class="fas fa-copyright text-light me-2"></i>2024 NBA</a
         >, All right reserved.
       </p>
     </div>
   </div>
 </div>
+<!-- Footer End -->
+
+<!-- Featurs Section End -->
+
+<!-- Footer Start -->
 
 <div
   class="modal"
@@ -2135,7 +2648,7 @@
   
   Who We Are
   
-  Welcome! We are Truckers Inc., a Texas corporation, or as we prefer to be known, "Truckers,"
+  Welcome! We are NBA Inc., a Texas corporation, or as we prefer to be known, "NBA,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -2149,7 +2662,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@Truckers.com or by mail at Truckers Inc., Attn: Data Privacy
+  email at data-privacy@NBA.com or by mail at NBA Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -2333,8 +2846,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “Truckers for Teams” subscription, the administrator 
-  associated with your “Truckers for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “NBA for Teams” subscription, the administrator 
+  associated with your “NBA for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -2375,7 +2888,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to Truckers! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to NBA! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -2467,8 +2980,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@Truckers.com] (mailto:data-privacy@Truckers.com) or by mail at
-  Truckers Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@NBA.com] (mailto:data-privacy@NBA.com) or by mail at
+  NBA Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -2497,10 +3010,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@Truckers.com](mailto:data-privacy@Truckers.com) or by mail at
-  Truckers Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@NBA.com](mailto:data-privacy@NBA.com) or by mail at
+  NBA Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at Truckers**
+  **Changes to Our Privacy Policy at NBA**
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -2543,7 +3056,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at Truckers**
+              **Refund Policy at NBA**
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -2616,9 +3129,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to Truckers!
+              Welcome to NBA!
   
-  **Terms of Service and Sale - Truckers**
+  **Terms of Service and Sale - NBA**
   
   **Last Revised: December 22, 2023**
   
@@ -2626,7 +3139,7 @@
   
   **Introduction**
   
-  Welcome! We are Truckers, a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are NBA, a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -2726,11 +3239,11 @@
   
   ---
   
-  **Truckers App Terms of Service**
+  **NBA App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your Truckers
+  (g) You must provide accurate, current, and complete information for your NBA
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -2747,7 +3260,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on Truckers. Posted Content is not confidential,
+  (a) Users can post content ("Content") on NBA. Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   
