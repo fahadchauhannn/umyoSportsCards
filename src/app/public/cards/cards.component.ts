@@ -210,7 +210,7 @@ this.paymentForm = this.fb.group({
     
   }
   openShareDialog() {
-    const shareUrl = `https://umyosportscards.com/cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://umyotruckers.site/cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
 
     // Open a new window for sharing
