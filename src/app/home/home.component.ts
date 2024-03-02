@@ -552,7 +552,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyotruckers.site'
+                window.location.href='https://umyonfl.site'
             }
           );
         }
