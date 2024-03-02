@@ -348,14 +348,17 @@ export class HomeComponent implements AfterViewInit {
        const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
+       base : this.form2.get('selectedBase').value,
+       branch : this.form2.get('selectedBranch').value,
+       type : this.form2.get('selectedType').value,
+       location : this.form2.get('selectedLocation').value,
+       rank : this.form2.get('selectedRank').value,
+       business_type : this.form2.get('selectedBusiness').value,
       
        name : this.form2.get('selectedName').value,
        gender : this.form2.get('selectedGender').value,
        race : this.form2.get('selectedRace').value,
-       truckType : this.form2.get('selectedTypeOfTrucks').value,
-       truckLoad : this.form2.get('selectedTruckLoads').value,
-       commonCarrier : this.form2.get('selectedCommonCarrier').value,
-       truckService : this.form2.get('selectedTruckService').value,
+       
        }
       
       this.apiService.searchCard(payload).subscribe(
@@ -546,7 +549,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyotruckers.site'
+                window.location.href='www.umyomilitary.site'
             }
           );
         }
@@ -570,23 +573,21 @@ export class HomeComponent implements AfterViewInit {
       });
   
       this.form2 = this.fb.group({
-        // selectedBusinessType: [''],
-        // selectedAgeType: [''],
-        // selectedSportType: [''],
-        // selectedPositionType: [''],
+        selectedBusiness: [''],
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        // selectedLocation: [''],
+        selectedLocation: [''],
         selectedGender: [''],
         selectedCity: [''],
+
+        selectedBase: [''],
+        selectedBranch: [''],
+        selectedRank: [''],
+        selectedType: [''],
      
 
-        selectedTypeOfTrucks: [''],
-        selectedTruckLoads: [''],
-        selectedCommonCarrier: [''],
-        selectedTruckService: [''],
-
+        
       });
       this.form3 = this.fb.group({
         registerFirstName: ['', Validators.required],
@@ -598,10 +599,14 @@ export class HomeComponent implements AfterViewInit {
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-        registerTypeOfTrucks: ['', Validators.required],
-        registerTruckLoads: ['', Validators.required],
-        registerCommonCarrier: ['', Validators.required],
-        registerTruckService: ['', Validators.required],
+
+        registerBusiness: ['', Validators.required],
+        registerBranch: ['', Validators.required],
+        registerBase: ['', Validators.required],
+        registerLocation: ['', Validators.required],
+        registerType: ['', Validators.required],
+        registerRank: ['', Validators.required],
+        
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })

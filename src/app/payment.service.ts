@@ -94,19 +94,23 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              business_type: form3.get('registerBusinessType')?.value,
+              business_type: form3.get('registerBusiness')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
               position: form3.get('registerPositionType')?.value,
               state: form3.get('registerStateType')?.value,
               city: form3.get('registerCityType')?.value,
-              location: form3.get('registerLocationType')?.value,
+              location: form3.get('registerLocation')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              truckType: form3.get('registerTypeOfTrucks')?.value,
-              truckLoad: form3.get('registerTruckLoads')?.value,
-              commonCarrier: form3.get('registerCommonCarrier')?.value,
-              truckService: form3.get('registerTruckService')?.value,
+              branch: form3.get('registerBranch')?.value,
+
+              base: form3.get('registerBase')?.value,
+              type: form3.get('registerType')?.value,
+              rank: form3.get('registerRank')?.value,
+              
+        
+        
         
               reffered_from: form3.get('registerReferralCode').value,
               
@@ -166,19 +170,21 @@ if (expireInValue.includes("year")) {
       password: form3.get('registerPassword').value,
 
       
-      business_type: form3.get('registerBusinessType')?.value,
+      business_type: form3.get('registerBusiness')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       position: form3.get('registerPositionType')?.value,
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
-      location: form3.get('registerLocationType')?.value,
+      location: form3.get('registerLocation')?.value,
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
-      truckType: form3.get('registerTypeOfTrucks')?.value,
-      truckLoad: form3.get('registerTruckLoads')?.value,
-      commonCarrier: form3.get('registerCommonCarrier')?.value,
-      truckService: form3.get('registerTruckService')?.value,
+      branch: form3.get('registerBranch')?.value,
+
+              base: form3.get('registerBase')?.value,
+              type: form3.get('registerType')?.value,
+              rank: form3.get('registerRank')?.value,
+              
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -263,7 +269,7 @@ if (expireInValue.includes("year")) {
           
           state: form3.get('registerStateType')?.value,
           reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocationType')?.value,
+          location: form3.get('registerLocation')?.value,
           city: form3.get('registerCityType')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
@@ -272,17 +278,19 @@ if (expireInValue.includes("year")) {
           
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
+      business_type: form3.get('registerBusiness')?.value,
       position: form3.get('registerPositionType')?.value,
       
       
       
       
       
-      truckType: form3.get('registerTypeOfTrucks')?.value,
-      truckLoad: form3.get('registerTruckLoads')?.value,
-      commonCarrier: form3.get('registerCommonCarrier')?.value,
-      truckService: form3.get('registerTruckService')?.value,
-  
+      branch: form3.get('registerBranch')?.value,
+
+      base: form3.get('registerBase')?.value,
+      type: form3.get('registerType')?.value,
+      rank: form3.get('registerRank')?.value,
+      
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))
         window.location.href = approvalLink;

@@ -8,7 +8,7 @@
 // };
 export const environment = {
   production: false,
-  apiUrl: "https://umyotruckers.site/api_umyocards/public/api/"
+  apiUrl: "https://umyomilitary.site/api_umyocards/public/api/"
 };
 
 
