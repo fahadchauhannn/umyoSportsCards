@@ -241,6 +241,120 @@ export class HomeComponent implements AfterViewInit {
       $(this).text("Read more")
     }
   });
+
+
+
+
+
+
+        $('.moreless-button16').click(function() {
+          event.preventDefault();
+    $('.moretext16').slideToggle();
+    if ($('.moreless-button16').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button17').click(function() {
+          event.preventDefault();
+    $('.moretext17').slideToggle();
+    if ($('.moreless-button17').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button18').click(function() {
+          event.preventDefault();
+    $('.moretext18').slideToggle();
+    if ($('.moreless-button18').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button19').click(function() {
+          event.preventDefault();
+    $('.moretext19').slideToggle();
+    if ($('.moreless-button19').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button20').click(function() {
+          event.preventDefault();
+    $('.moretext20').slideToggle();
+    if ($('.moreless-button20').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button21').click(function() {
+          event.preventDefault();
+    $('.moretext21').slideToggle();
+    if ($('.moreless-button21').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button22').click(function() {
+          event.preventDefault();
+    $('.moretext22').slideToggle();
+    if ($('.moreless-button22').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button23').click(function() {
+          event.preventDefault();
+    $('.moretext23').slideToggle();
+    if ($('.moreless-button23').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button24').click(function() {
+          event.preventDefault();
+    $('.moretext24').slideToggle();
+    if ($('.moreless-button24').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button25').click(function() {
+          event.preventDefault();
+    $('.moretext25').slideToggle();
+    if ($('.moreless-button25').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button26').click(function() {
+          event.preventDefault();
+    $('.moretext26').slideToggle();
+    if ($('.moreless-button26').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button27').click(function() {
+          event.preventDefault();
+    $('.moretext27').slideToggle();
+    if ($('.moreless-button27').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
   
   }
   
@@ -549,7 +663,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='www.umyomilitary.site'
+                window.location.href='https://umyobizdfw.com/'
             }
           );
         }
@@ -599,15 +713,13 @@ export class HomeComponent implements AfterViewInit {
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-
         registerBusiness: ['', Validators.required],
-        registerBranch: ['', Validators.required],
-        registerBase: ['', Validators.required],
-        registerLocation: ['', Validators.required],
-        registerType: ['', Validators.required],
-        registerRank: ['', Validators.required],
         
-        registerStateType: ['', Validators.required],
+        
+        registerLocation: ['', Validators.required],
+        
+        
+        
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
       // fetch packages

@@ -79,7 +79,7 @@ export class CardsComponent implements AfterViewInit{
   const errorCorrectionLevel = 'L'; 
 
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
-  qrCode.addData('www.umyomilitary.site/cards/share-card/' + id);
+  qrCode.addData('https://umyobizdfw.com/cards/share-card/' + id);
   qrCode.make();
 
   // Create a data URI for the QR code image
@@ -161,7 +161,7 @@ export class CardsComponent implements AfterViewInit{
                   alert("Failed to Verify Paypal Payment")
                   localStorage.removeItem("updatePaypalId");
                   localStorage.removeItem("updatedToken");
-                  window.location.href='www.umyomilitary.site'
+                  window.location.href='https://umyobizdfw.com/'
               }
             );
           }
@@ -210,7 +210,7 @@ this.paymentForm = this.fb.group({
     
   }
   openShareDialog() {
-    const shareUrl = `www.umyomilitary.site/cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://umyobizdfw.com/cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
 
     // Open a new window for sharing
