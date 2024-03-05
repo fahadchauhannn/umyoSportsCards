@@ -79,6 +79,7 @@ import { PackageComponent } from './package/package.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
 import { NbaComponent } from './nba/nba.component';
+import { PledgeComponent } from './pledge/pledge.component';
 
 
 
@@ -153,6 +154,7 @@ import { NbaComponent } from './nba/nba.component';
     CfComponent,
     AiComponent,
     NbaComponent,
+    PledgeComponent,
     
     
     

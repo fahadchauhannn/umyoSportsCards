@@ -51,6 +51,7 @@ import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
 import { PackageComponent } from './package/package.component';
 import { NbaComponent } from './nba/nba.component';
+import { PledgeComponent } from './pledge/pledge.component';
 
 
 
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'cf', component: CfComponent },
   { path: 'ai', component: AiComponent },
   { path: 'package', component: PackageComponent },
+  { path: 'pledge', component: PledgeComponent },
 
   // Protected routes for authenticated users
   { path: 'cards', component: CardsComponent, canActivate: [AuthGuard] },
