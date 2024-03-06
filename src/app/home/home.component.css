@@ -12,7 +12,18 @@
     font-size: 22px;
   }
 
-
+#logo-slider {
+/*    background: #030F2F url(/cdn/shop/files/bg-globe.png?v=1678133787);*/
+  background: #2F3D7E;
+    display: grid;
+    align-content: center;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 100vw;
+}
   @media(max-width:500px){
     .mobile{
       display: block;

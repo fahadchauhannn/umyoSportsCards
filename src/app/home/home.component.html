@@ -1,5 +1,4 @@
-<!-- Navbar start -->
-<section id="header" style="background: #1b1a55 !important">
+<section id="header" style="background: #2f3d7e !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -8,7 +7,7 @@
         style="border-bottom: 2px solid white"
       >
         <a [routerLink]="['']" class="navbar-brand">
-          <h1 class="text-white display-6">UMYO Cards</h1>
+          <h1 class="text-white display-6">UMYO SPORTS CARD</h1>
           <!-- <img src="../proliving/pro_liv.jpeg" class="img-fluid rounded-circle" style="width:4rem; height:4rem;"> -->
         </a>
         <button
@@ -22,27 +21,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-            <a href="https://www.nfltalk.site" class="nav-item nav-link"
-              >NFLTalk</a
+
+            <a href="https://umyonetwork.com/" class="nav-item nav-link"
+              >Network</a
             >
             <a href="https://vibetalktv.com/" class="nav-item nav-link"
               >Podcast</a
             >
-            <a href="https://uchatyes.com/" class="nav-item nav-link"
-              >ChatGpt</a
-            >
-            <a class="nav-item nav-link" href="https://nfltweet.site/guest"
-              >NFLTweet</a
+            <a [routerLink]="['/package']" class="nav-item nav-link"
+              >Umyo Cards Packages</a
             >
             <a [routerLink]="['/cf']" class="nav-item nav-link"
-              >Card Features</a
+              >Umyo Cards Features</a
             >
-            <a [routerLink]="['/package']" class="nav-item nav-link"
-              >View Services</a
-            >
-            <a [routerLink]="['/ai']" class="nav-item nav-link"
-              >Additional Features</a
-            >
+            <!-- <a href="pkg.html" class="nav-item nav-link"> View Services</a> -->
+            <a [routerLink]="['/ai']" class="nav-item nav-link"> UMYO</a>
+            <a [routerLink]="['/pledge']" class="nav-item nav-link">
+              IAM Pledge
+            </a>
           </div>
           <div class="d-flex m-3 ms-auto">
             <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">Additional Features</p> -->
@@ -72,19 +68,18 @@
                 <a class="nav-link" [routerLink]="['']">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://www.nfltalk.site">NFLTalk</a>
+                <a href="https://umyonetwork.com/" class="nav-item nav-link"
+                  >Network</a
+                >
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="https://vibetalktv.com/">Podcast</a>
               </li>
               <li class="nav-item">
                 <a href="https://uchatyes.com/" class="nav-link">ChatGpt</a>
               </li>
-              <li class="nav-item">
-                <a href="https://nfltweet.site/guest" class="nav-link"
-                  >NFLTweet</a
-                >
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
               </li>
@@ -98,14 +93,17 @@
                   >Additional Features</a
                 >
               </li>
+              <li class="nav-item">
+                <a [routerLink]="['/pledge']" class="nav-item nav-link"
+                  >IAM Pledge</a
+                >
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
   </div>
-  <!-- Navbar End -->
-
   <!-- Navbar End -->
 
   <!-- Modal Search Start -->
@@ -147,277 +145,197 @@
 
   <!-- Hero Start -->
 </section>
+<section id="page-top" class="lft-hero">
+  <div class="lft-video">
+    <!-- <video loop="" muted="" playsinline="" autoplay="" poster="https://cdn.shopify.com/s/files/1/0413/5891/7796/files/lft-hero.jpg?v=1678132516">
+  
+  <source src="https://cdn.shopify.com/videos/c/o/v/5bc68d777dab433ebc9f9f62d35dcd80.mp4" type="video/mp4">
+  </video> -->
+    <video
+      autoplay
+      loop
+      [src]="videoUrl"
+      style="width: 100%; height: 100%"
+      [muted]="true"
+    ></video>
 
-<div class="container-fluid bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="program my-5 text-center">
-          <h1>NFL Players Connects</h1>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-4" id="text1">
-        <div class="card">
-          <img src="assets/img/newimg/1.png" class="img-fluid" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title mb-4">
-              <strong>NFL: </strong> Philadelphlia Eagles at Detroit Lions
-            </h4>
-            <!-- <div class="mycard">
-                <p class="card-text">
-                  The Hero's Project introduces our K-12 module, a comprehensive initiative bringing mental health counseling services and workshops to educational institutions. We extend support to faculty, staff, students, and parents, delivering essential resources for holistic well-being. Our Pro Living course guides students in identifying and embarki</p>
-                  <div class="moretext1" style="display:none;">
-                  <p>on their career paths, while also providing whole-life insurance protection to ensure their future security. Partnering with McAfee, our project incorporates cutting-edge data protection and security measures, offered to schools at no cost. Our commitment is to empower students, faculty, and staff, ensuring every family has access to knowledge and resources for success.</p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-center">
-                  <i class="fa fa-plus mybtn"></i>
-                <button type="btn" class="btn mybtn moreless-button1">Show More</button>
-                </div>
-              </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" id="text2">
-        <div class="card">
-          <img src="assets/img/newimg/2.png" class="img-fluid" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title mb-4">AT&T Stadium</h4>
-            <!-- <div class="mycard">
-                <p class="card-text">
-                  Step into our 'Life After the Game' program—a transformative journey crafted in two sectors. For current or former professional athletes embarking on their post-game voyage, our program offers more than a transition—it's a complete support system. Picture this: salaries, health insurance, and a dedicated accountability group, all tailored  
+    <div class="overlay"></div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-md-12 col-lg-7">
+        <div class="page-width">
+          <div class="lft-hero__content">
+            <h1 class="mb-3">CREATE IMPRESSIVE SPORTS & BUSINESS CARDS</h1>
+            <p class="mb-5">
+              Umyo Sports Cards introduces a revolutionary social networking app
+              that brings together athletes, agents, recruiters, coaches,
+              schools, colleges.
+            </p>
+            <div class="moretext-he" style="display: none">
+              <p class="mb-5">
+                supportive business owners in a unique platform dedicated to
+                enhancing athletes' journeys to success. Our app is the first of
+                its kind, empowering athletes to showcase their talent while
+                receiving the recognition and support they truly deserve.With
+                Umyo Sports Cards, you can easily upload your statistics, GPA,
+                interviews, podcasts, images, and sports highlights for
+                thousands of users to discover. It's the ultimate hub for
+                athletes from all sports seeking the exposure they need to
+                excel.
               </p>
-              <div class="moretext2" style="display:none;">
-                  <p>to guide and empower you in discovering life's next thrilling phase. Our diverse team, which includes transitioned players, business owners, and seasoned company CEOs, will walk this exciting journey alongside you.</p>
-                  <p>If you're a retired athlete or nearing retirement, seeking to make a substantial impact in your community while charting your next steps, Pro Living was crafted with you in mind.</p>
-                  <p>The second part of our program is custom-built for collegiate student-athletes whose careers conclude post-college. Our 'Life After the Game' series partners with universities of all sizes, providing tailored support to these athletes as they navigate their post-college lives. We offer a unique platform to learn, network, and prepare for a seamless transition into the workforce.</p>
-                  <p>For current and former athletes seeking a purposeful life beyond the game and for colleges invested in their athletes' future success, Pro Living is the empowering partner you've been searching for. Join us in shaping the future beyond sports, where every athlete thrives in their life after the game.</p>
-                  </div>
-                <div class="d-flex align-items-center justify-content-center">
-                  <i class="fa fa-plus mybtn"></i>
-                <button type="btn" class="btn mybtn moreless-button2">Show More</button>
-                </div>
-              </div> -->
+            </div>
+            <a
+              class="moreless-button-he text-white btn btn-dark"
+              style="text-decoration: none"
+              href="#he"
+              >Read more</a
+            >
           </div>
         </div>
       </div>
-      <div class="col-md-4" id="text3">
-        <div class="card">
-          <img src="assets/img/newimg/3.png" class="img-fluid" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Odell The Catch</h4>
-            <!-- <div class="mycard">
-                <p class="card-text">
-                  The Pro Living Investment Fund was strategically crafted for both current and former players seeking to secure a residual income. It's more than an investment—it's an opportunity to support job creation while offering players a secure way to invest their earnings. We carefully test and invest in valuable products that yield returns, empowring    
-              
-               <div class="moretext3" style="display:none;">
-                  players, both current and former, to diversify their investments while championing other professional athletes.</p>
-                  <p>Our commitment goes beyond funding; we provide guidance and education to athletes on building generational wealth. We see ourselves as legacy builders, assisting players, both present and past, in creating a lasting impact for themselves and future generations.</p>
-             </div>
-                <div class="d-flex align-items-center justify-content-center">
-                  <i class="fa fa-plus mybtn"></i>
-                <button type="btn" class="btn mybtn moreless-button3">Show More</button>
-                </div>
-              </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" id="text4">
-        <div class="card">
-          <img src="assets/img/newimg/4.png" class="img-fluid" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Earl Campbell Highlights</h4>
-            <!--  <div class="mycard">
-                <p class="card-text">
-                  Our Business Growth and Development services cater to both for-profit and non-profit companies, facilitating workforce expansion and retention strategies. Our focus on establishing credibility among end-users drives engagement with their services or products, fostering growth and enhancing visibility. With a core mission of fostering company
-                </p>
-                <div class="moretext4" style="display:none;">
-                  <p> growth, we operate with the goal of enhancing efficiency and aiding in employee retention, ensuring companies optimize their performance and maintain a high level of production.</p>
-                </div>
-           <div class="d-flex align-items-center justify-content-center">
-                  <i class="fa fa-plus mybtn"></i>
-                <button type="btn" class="btn mybtn moreless-button4">Show More</button>
-                </div>
-              </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img src="assets/img/newimg/5.png" class="img-fluid" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Barry Sanders incredible Run</h4>
-            <!-- <div class="mycard">
-                <p class="card-text">
-                  Step into our vibrant Mom and Dad's Club—a thrilling space for parents to bond, grow, and learn together! This isn't just a support group; it's a dynamic village where everyday superheroes recharge and thrive. Our innovative engagements spark connections between parents, fostering growth in various life domains.</p>
-                <p class="para">Join us in actively engaging</p>
-                <div class="moretext5" style="display:none;">
-                  <p>with schools, empowering parental involvement and equipping you with essential tools to elevate not just your own life, but your child's and community's too. This club isn't just for first-timers or seasonal parents; it's an open invitation to all generations! Grandparents bring wisdom, first-timers bring fresh perspectives—it's a melting pot of experiences.</p>
-                  <p>It's more than a club; it's a thrilling journey, a safe space for parents to share, connect, and learn from each other's incredible journeys. Get ready to dive into a supportive, exciting community where the bonds you form will be as thrilling as the growth you'll experience!</p>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                  <i class="fa fa-plus mybtn"></i>
-                <button type="btn" class="btn mybtn moreless-button5">Show More</button>
-                </div>
-              </div> -->
+      <div class="col-md-12 col-lg-5 px-5">
+        <div class="grid__item medium-up--one-half">
+          <div class="videos__wrapper">
+            <div class="videos__wrapper--video">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid featurs pt-3 mt-3 mb-5">
-  <div class="container">
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-8 p-3 bg-light text-dark px-5 rounded">
-        <h2 style="color: #4390b3" class="feature2">
-          Unlocking Connections in the NFL: Introducing the Players Directory
-        </h2>
-        <p class="my-4">
-          In the dynamic world of professional football, camaraderie extends
-          beyond the field. The NFL Players Directory stands as a testament to
-          this, creating an unparalleled platform for players, coaches, and
-          enthusiasts to connect, engage, and support each other.
-        </p>
+  <!-- <div class="page-width">
+  <div class="lft-hero__content">
+  <h1>CREATE IMPRESSIVE MILITARY CARDS</h1>
+      <p>Umyo Military Connect introduces an innovative networking solution exclusively for military personnel.</p>
+  
+  
+  <a class="button js-no-transition" href="#linq-form" onclick="track('Clicked LFT hero cta')">Read More</a>
+  </div>
+  </div> -->
+</section>
 
-        <div class="moretextf" style="display: none">
-          <h4 class="my-4">Connecting Players</h4>
-          <p class="my-4">
-            Our directory boasts a sophisticated search system, allowing users
-            to find NFL players and coaches based on various criteria. Whether
-            you're looking for a specific name, position, team, or even diving
-            into achievements and divisions, the directory is your gateway to
-            establishing connections within the vast football community.
-          </p>
-          <h4 class="my-4">Networking Redefined</h4>
-          <p class="my-4">
-            Imagine a space where NFL players can effortlessly network,
-            befriend, and engage in meaningful conversations. This isn't just a
-            platform; it's a virtual meeting ground where athletes share
-            experiences, strategies, and laughs. Forge connections that
-            transcend team rivalries and position rivalries, uniting players
-            under the common thread of a shared passion for the game.
-          </p>
-          <h4 class="my-4">Sponsorship Opportunities</h4>
-          <p class="my-4">
-            The NFL Players Directory isn't just about fostering
-            connections—it's about empowering athletes through sponsorship and
-            advertising. Advertisers have the unique chance to support NFL
-            players by featuring their names and likenesses in our dedicated
-            directory. Elevate your brand by aligning with the stars who make
-            football exceptional.
-          </p>
-          <h4 class="my-4">Support System for All</h4>
-          <p class="my-4">
-            This platform goes beyond the playing field. It's a support system
-            where players and their families can connect, share insights, and
-            build a community. The journey of an NFL player is not solitary; it
-            involves the support of loved ones. Our platform acknowledges this,
-            creating a space where players and their families can share in the
-            victories and navigate the challenges together.
-          </p>
-          <h4 class="my-4">Podcasts</h4>
-          <p class="my-4">
-            Immerse yourself in the world of NFL through engaging podcasts. Join
-            NFL stars and their loved ones as they discuss the game, life, and
-            everything in between. The podcasts provide an intimate glimpse into
-            the lives of these athletes, offering a unique perspective that goes
-            beyond the touchdowns and tackles.
-          </p>
-          <h4 class="my-4">Creating Virtual Cards</h4>
-          <p class="my-4">
-            A Digital Showcase of Athletic Brilliance As the NFL Players
-            Directory continues to revolutionize the way football enthusiasts
-            connect, we are excited to introduce a groundbreaking feature – the
-            Sports Virtual Card. This digital showcase provides players with a
-            dynamic and interactive platform to encapsulate their athletic
-            journey, offering a comprehensive glimpse into their accomplishments
-            both on and off the field.
-          </p>
-          <h4 class="my-4">Sports Reels and Images</h4>
-          <p class="my-4">
-            Players can curate a captivating reel that highlights their most
-            iconic moments. From spectacular touchdowns to game-changing plays,
-            the Sports Virtual Card becomes a visual journey through an
-            athlete's career. Coupled with striking images, this section allows
-            players to showcase the essence of their prowess and commitment to
-            the sport.
-          </p>
-          <h4 class="my-4">Social Media Integration</h4>
-          <p class="my-4">
-            Embrace the power of social connectivity by seamlessly integrating
-            your social media profiles into the Sports Virtual Card. Share your
-            latest updates, engage with fans, and connect with fellow
-            players—all from a centralized digital hub. This feature ensures
-            that your virtual card becomes a dynamic representation of your
-            ongoing narrative in the football world.
-          </p>
-          <h4 class="my-4">QR Code Convenience</h4>
-          <p class="my-4">
-            Efficiency meets innovation with the inclusion of a personalized QR
-            code on each Sports Virtual Card. Users can simply scan the code to
-            access a player's card, making networking and sharing a breeze.
-            Whether it's during events, meet-and-greets, or casual encounters,
-            the QR code transforms the way players connect with fans, sponsors,
-            and peers.
-          </p>
-          <h4 class="my-4">Card Sharing</h4>
-          <p class="my-4">
-            The Sports Virtual Card isn't meant to be confined—it's designed for
-            sharing. Players can effortlessly share their digital showcase with
-            fans, family, and potential sponsors. This feature fosters a sense
-            of community, enabling athletes to extend their reach and impact
-            beyond the traditional boundaries of the field.
-          </p>
-          <h4 class="my-4">Connecting Beyond the Game</h4>
-          <p class="my-4">
-            By incorporating these features, the NFL Players Directory is not
-            just a directory; it's a hub for building a digital legacy. The
-            Sports Virtual Card allows players to transcend the limitations of
-            physical presence, creating a lasting impression that extends far
-            beyond the final whistle.
-          </p>
-          <p class="my-4">
-            Embrace the future of athlete representation with the NFL Players
-            Directory – where your story is not just told but experienced
-            through the immersive lens of the Sports Virtual Card. Join us in
-            redefining how the world engages with football excellence.
-          </p>
-          <p class="my-4">
-            In conclusion, the NFL Players Directory is more than a platform;
-            it's a community that transcends boundaries. It's a place where
-            connections are forged, support is extended, and the love for the
-            game is celebrated. Join us in unlocking the true potential of
-            football camaraderie. The NFL Players Directory awaits, bridging the
-            gap between players, coaches, sponsors, and fans.
-          </p>
-        </div>
-        <a
-          class="moreless-buttonf btn btn-dark"
-          style="text-decoration: none"
-          href="#feature2"
-          >Read more</a
-        >
-      </div>
+<section id="logo-slider" style="background: #2f3d7e !important">
+  <div class="container-fluid mt-5">
+    <h1 class="text-center mb-5 text-white">
+      THE UMYO NETWORK All in one Networking App
+    </h1>
+    <div class="slider slider-1">
+      <div class="mb-5"><img src="assets/img/logo2/blackwall.png" /></div>
+      <div><img src="assets/img/logo2/events.png" /></div>
+      <div><img src="assets/img/logo2/logo2.png" /></div>
+      <div><img src="assets/img/logo2/logo3.png" /></div>
+      <div><img src="assets/img/logo2/logo4.png" /></div>
+      <div><img src="assets/img/logo2/logo5.png" /></div>
+      <div><img src="assets/img/logo2/logo6.png" /></div>
+      <div><img src="assets/img/logo2/logo7.png" /></div>
+      <div><img src="assets/img/logo2/logo8.png" /></div>
+      <div><img src="assets/img/logo2/logo9.png" /></div>
+      <div><img src="assets/img/logo2/logo10.png" /></div>
+    </div>
+
+    <div class="slider slider-2 mb-4" dir="rtl">
+      <div><img src="assets/img/logo2/logo11.png" /></div>
+      <div class="mb-5"><img src="assets/img/logo2/logo12.png" /></div>
+      <div><img src="assets/img/logo2/logo13.png" /></div>
+      <div><img src="assets/img/logo2/logo14.png" /></div>
+      <div><img src="assets/img/logo2/logo15.png" /></div>
+      <div><img src="assets/img/logo2/logo16.png" /></div>
+      <div><img src="assets/img/logo2/pledge.png" /></div>
+      <div><img src="assets/img/logo2/logo9.png" /></div>
+      <div><img src="assets/img/logo2/umyo_market.png" /></div>
+      <div><img src="assets/img/logo2/logo8.png" /></div>
+      <div><img src="assets/img/logo2/umyodate.png" /></div>
     </div>
   </div>
-</div>
-
+</section>
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #1b1a55 !important">
+<div class="container-fluid featurs">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-10 col-12 px-4">
+        <div
+          class="featurs-item rounded bg-white px-5 py-4 border-primary border-6 w-100"
+          id="feature"
+        >
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
+            </div>
+            <div class="col-lg-8 col-12">
+              <h3 class="mb-3 text-dark">
+                CORPORATE BRANDING - NAME AND LIKENESS - SUPPORTING ATHLETES
+              </h3>
+              <p class="text-dark mb-0" style="font-size: 20px">
+                Business owners now have the opportunity to support athletes by
+                registering their businesses and linking them to specific
+                athletes using their unique ID codes during registration....
+              </p>
+
+              <div class="moretext" style="display: none">
+                <p>
+                  Half of the monthly membership fees from supporting businesses
+                  are allocated directly to the respective athlete's account.
+                  This innovative approach enables athletes to focus solely on
+                  their talents, eliminating financial worries. Each registered
+                  athlete operates as an independent contractor within UMYO
+                  SPORTS, ensuring they are compensated while pursuing their
+                  true calling. Join us in shaping the future of athletic
+                  success and support through Umyo Sports Cards!
+                </p>
+                <h3 class="mb-3 text-dark">
+                  Community,Youth to Business Accountability Collaboration
+                  Platform Directory
+                </h3>
+                <p class="mb-3 text-dark">
+                  Enhanced Networking Tools for increased Marketing prowess.
+                </p>
+                <ul class="text-dark mb-5">
+                  <li>Monthly Tier Packages Based Upon Monthly Budget</li>
+                  <li>Community Brands Directory For You Via Social Media</li>
+                  <li>Daily $$$ Giveaways to registered members</li>
+                  <li>
+                    12 Additional Branding Platforms for registered members to
+                    keep them connected
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="moreless-button btn btn-dark text-white mt-3"
+                href="#feature"
+                >Read more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="header" style="background: #2f3d7e !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
       <h1
-        class="text-white text-center"
-        style="font-weight: 600; margin-bottom: 60px"
+        class="text-white text-center fa-2x mb-3"
+        style="font-size: 80px; font-weight: 600"
       >
-        Search for NFL Players & Businesses That Supports NFL Players
+        Shop Online for Top Talent & Businesses
       </h1>
       <div class="row">
         <div class="col-lg-5">
-          <!-- <h4 class="mb-4 text-white">Search Members Here</h4> -->
+          <h4 class="mb-4 text-white">Search Sports Card Here</h4>
+
           <form [formGroup]="form2" class="text-center">
             <div class="row">
               <div class="col-lg-6 mb-4">
@@ -614,12 +532,13 @@
               >
                 <form [formGroup]="form">
                   <div class="row">
-                    <h1 class="text-center">NFL Players Connects</h1>
+                    <h1 class="text-center">UMYO For Teams</h1>
                     <p class="text-center">
-                      Register to Connect with Your Community
+                      Fill out this form to book a quick demo
                     </p>
-
-                    <br /><br /><br /><br /><br /><br />
+                    <p class="text-center mb-5">
+                      (same-day options available).
+                    </p>
                     <h2 class="text-info mb-3">Login</h2>
                     <div class="col-md-12 mb-5">
                       <div class="form-group">
@@ -1166,6 +1085,34 @@
           </div>
         </div>
       </div>
+      <h1 class="text-white my-3 featurs2">MAKE COOL SPORTS CARDS</h1>
+      <p class="text-white my-3">
+        Umyo Sports Cards is the first of its kind Social network app connecting
+        fellow Athletes, Agents, Recruiters, Coaches, Schools, Colleges
+      </p>
+      <div class="moretextf" style="display: none">
+        <p class="text-white my-3">
+          Business owners who choose to support the journey of its athletes
+          financially as they strive for success. The only app that allows
+          athletes to brand their talent while getting the support and branding
+          they deserve. Upload your Stats, GPA, Interviews, Podcast, Images and
+          Sports Reel for literally thousands to see. The perfect one stop shop
+          for athletes of all sports who are needing the exposure. Also,
+          Business owners can now support athletes by registering their business
+          and entering the ID code of an athlete during registration. Half of
+          the businesses monthly membership that supports an athlete goes into
+          their account, thus allowing athletes to solely concentrate on their
+          talent vs resources. Each registered athlete acts as an independent
+          contractor for UMYO SPORTS. This allows those athletes to get paid
+          while operating within their purpose.
+        </p>
+      </div>
+      <a
+        class="moreless-buttonf btn btn-light"
+        style="text-decoration: none"
+        href="#feature2"
+        >Read more</a
+      >
     </div>
   </div>
 </section>
@@ -1447,308 +1394,578 @@
   </div>
 </div>
 
-<div class="container-fluid bg">
-  <div class="container pt-5">
-    <div class="row">
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/6.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Dollas's Cowboys Ed "Too Tall"</h4>
-          </div>
-        </div>
+<div class="container-fluid featurs pt-3 mt-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12">
+        <h1 class="text-center">Single Application, Multiple Platforms</h1>
+        <!-- <h1 class="text-center text-white w-75 display-1 p-2" style="   background: linear-gradient(269deg, rgba(0,87,206) 0%, rgba(0,87,206) 33%, rgba(0,87,206) 50%);margin: auto; ">#1 Networking Solution</h1> -->
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/7.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">#99 Football American</h4>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/touchScreen.jpg" class="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">Double Touch Screens Kiosks</h2>
+        <div class="moretext3" style="display: none">
+          Keep a steady stream of clients walking through your doors with the
+          prominent Digital 4K Vertical Touch Screen Kiosk, which will display
+          your products via images and videos, offering an eye-catching and
+          effective way to call attention to your business.
+        </div>
+        <a class="moreless-button3 btn btn-dark text-white" href="#text2"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/8.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Best Sports Role Models Of All Time</h4>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/chat.jpg" class="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">uChatYes.com (Similar to Chat Gpt)</h2>
+        <div class="moretext6" style="display: none">
+          <p>
+            <strong>uChatYes.com</strong> - Create unique and engaging content
+            that will increase conversions and drive sales.Harness the power of
+            artificial intelligence and transform the way you produce unique
+            content.
+          </p>
+          <h6>Transcriptions</h6>
+          <p>
+            Extract the contents of audio files and turn them into fully
+            editable documents. Generate original content for your website,
+            marketing, and social activities
+          </p>
+        </div>
+        <a class="moreless-button6 btn btn-dark text-white" href="#text5"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/9.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">
-              Jerry Rice Owns Most Unbreakable Record
-            </h4>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text1">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/sportrcards.jpg" class="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">
+          Virtual Interactive Sports and Business Card Directory
+        </h2>
+        <div class="moretext2" style="display: none">
+          <p>
+            1. A Social Networking Platform & Search Engine Directory for State
+            of Nevada
+          </p>
+          <p>
+            2. Virtual Business and Community Cards /with Social Media Icons
+            that pnks to Social Media & Websites
+          </p>
+          <p>
+            3. Members Befriend, Network, Chat and Share Members ID cards via
+            Social Media
+          </p>
+          <p>
+            4. Search Engine for community, visitors & members to find
+            registered businesses
+          </p>
+          <p>5. Daily $$$ giveaways to community</p>
+        </div>
+        <a class="moreless-button2 btn btn-dark text-white" href="#text1"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/10.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">
-              Lawrence Taylor | NFL Hall Of Famer, Linebacker
-            </h4>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img
+                  src="assets/newlogo/virtualconferene.jpg"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">Virtual Conference Platform (Similar to Zoom)</h2>
+        <div class="moretext4" style="display: none">
+          <ul>
+            <li>
+              Share External Video, Share Screen, Create Rooms, Create Backrooms
+            </li>
+            <li>
+              Shared Notes, Public Chat/Save Copy/Delete, Manage Presentation
+            </li>
+            <li>
+              Start A Poll, Select Random User, Mute, Leave Audio, Share Webcam
+            </li>
+            <li>
+              Manage Presentation, Raise Hands, Recording, Keyboard Shortcuts &
+              More
+            </li>
+            <li>Weekly Support Channels for Students, Student Only Channels</li>
+            <li>
+              Audio Conference -Enable you to conference with only audio with
+              optional screen share features like a group voice call.
+            </li>
+            <li>
+              Video Conference -enables you to conference with others with audio
+              and video with optional screen sharing features.
+            </li>
+            <li>
+              Webinar -Enables you to stream yourself live with video and audio
+              with optional screen sharing feature
+            </li>
+            <li>
+              Live Classes ( backrooms) -Enables you to stream live with audio
+              and video , where you can see and hear anyone but they can see and
+              hear only you , not each other
+            </li>
+            <li>
+              Podcast -Enables you to stream your audio live with others who
+              invited.They can only hear your voice over audio stream
+            </li>
+          </ul>
+        </div>
+        <a class="moreless-button4 btn btn-dark text-white" href="#text3"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/11.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">Pin By Larry Torbett On NFL</h4>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img
+                  src="assets/newlogo/sportsmagazine.jpg"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">Virtual Interactive Video Audio Article Magazine</h2>
+        <div class="moretext7" style="display: none">
+          <p>
+            <strong>Engaging content,</strong> articles, logos, videos, featured
+            pages that will increase conversions and drive sales. Advertise your
+            Business to the World with a Global Streaming magazine that gives
+            you the exposure you can only dream of.
+          </p>
+        </div>
+        <a class="moreless-button7 btn btn-dark text-white" href="#text6"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/12.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">NFL Divisional Round Picks</h4>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/videoplatform.jpg" class="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">Video Platform</h2>
+        <div class="moretext12" style="display: none">
+          <p>
+            <strong>A platform</strong> for content creators and users looking
+            to share articles, videos, conduct live streaming with external
+            cameras, offer pay-per-view events, enable donations for online
+            channels, and more.
+          </p>
+        </div>
+        <a class="moreless-button12 btn btn-dark text-white" href="#text11"
+          >Read more</a
+        >
       </div>
-      <div class="col-md-4" id="text5">
-        <div class="card">
-          <img
-            src="assets/img/newimg/13.png"
-            class="ver-img img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h4 class="card-title mb-4">
-              Green Bay Packers Coach Vince Lombardi
-            </h4>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/liveStreaming.jpg" class="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
+        <h2 class="mt-4">Virtual Live Streaming App</h2>
+        <div class="moretext10" style="display: none">
+          <p>
+            <strong>A Live Streaming platform</strong> that allows users to go
+            live Streams, Live Games, Live Shows and Video Chat online with
+            other users, residents and visitors. Perfect for those who are
+            visiting and looking to know what is happening in the now from
+            others as well as who else is in town looking for fun, activities,
+            parties, and meet and greet. No more catfishing, when you can go
+            live and see real personalities that are looking for exciting things
+            to be a part of. Excellent for dating!!
+          </p>
+          <h5>
+            Create Groups - Create Topics - Create Events - Create Invites
+          </h5>
+        </div>
+        <a class="moreless-button10 btn btn-dark text-white" href="#text9"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/shortvideo.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">Short Video Platform</h2>
+        <div class="moretext13" style="display: none">
+          <p>
+            <strong
+              >is a social media platform primarily designed for creating,
+              sharing, and discovering short-form video content. Users can
+              record videos of themselves, often set to music or audio clips,
+              and then share them with their followers or with a broader
+              community. The platform allows for various creative expressions,
+              including dancing, lip-syncing, comedy skits, tutorials,
+              challenges, and more. Has user-friendly video editing tools,
+              algorithms that promote content virality, and its ability to
+              quickly connect creators with a wide audience. It is widely used
+              for entertainment, self-expression, and social interaction</strong
+            >
+          </p>
+        </div>
+        <a class="moreless-button13 btn btn-dark text-white" href="#text12"
+          >Read more</a
+        >
+      </div>
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/vpn.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">
+          Virtual Private Network VPN -<small>
+            search & use internet with privacy</small
+          >
+        </h2>
+        <div class="moretext9" style="display: none">
+          <p>
+            Protects you and your guest browsers privacy. Browse with a virtual
+            I.P. Address that helps you hide your location and lets you view the
+            web with enhance online privacy within the android and desktop
+          </p>
+        </div>
+        <a class="moreless-button9 btn btn-dark text-white" href="#text8"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/qRcodes.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">QR CODE FOR USERS</h2>
+        <div class="moretext11" style="display: none">
+          <p>
+            <strong>QR Codes Banner</strong> that links to all eight platforms
+            for your guest, visitors and global presence. When guests enter your
+            establishment, they can scan and see all the amazing platforms that
+            allow them to join and participate in online contests and daily
+            giveaways.
+          </p>
+        </div>
+        <a class="moreless-button11 btn btn-dark text-white" href="#text10"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text13">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/uInvite.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">U Invite</h2>
+        <div class="moretext14" style="display: none">
+          <p>
+            Platform primarily used for event management and ticketing. It
+            allows event organizers to create, promote, and sell tickets for a
+            wide range of events, including conferences, concerts, festivals,
+            fundraisers, and more. Eventbrite provides tools for event
+            registration, ticket sales, marketing, and attendee management,
+            making it easier for both event organizers and attendees to plan and
+            participate in events. It is commonly used by event planners,
+            organizers, and businesses to streamline the process of hosting and
+            managing events.
+          </p>
+        </div>
+        <a class="moreless-button14 btn btn-dark text-white" href="#text13"
+          >Read more</a
+        >
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
+        <div class="position-relative fruite-item">
+          <div class="fruite-img">
+            <div class="videos__wrapper">
+              <div class="videos__wrapper--video2">
+                <img src="assets/newlogo/couponBooklet.jpg" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="mt-4">Interactive Virtual</h2>
+        <div class="moretext8" style="display: none">
+          <p>
+            Booklet that links to other pages, videos, images, online contests,
+            websites social media and more
+          </p>
+          <p>
+            First ever Kiosk Touch screen business kiosk that can be shared by
+            thousands to thousands within minutes.
+          </p>
+        </div>
+        <a class="moreless-button8 btn btn-dark text-white" href="#text7"
+          >Read more</a
+        >
       </div>
     </div>
-  </div>
-</div>
-<div class="container my-4">
-  <div class="row">
-    <h2 class="text-center mt-3">
-      NFL Connects Packages, Products and Platforms
-    </h2>
-    <div class="col-lg-3 col-md-6 my-4">
-      <div class="box1 b">
-        <h5>Free Monthly</h5>
-        <ul>
-          <li>Directory - “Basic” Membership</li>
-          <li>Tweet & Talk Access</li>
-        </ul>
+    <div class="row g-4 py-5">
+      <div class="col-lg-12 col-md-6 px-5 mt-5">
+        <img src="assets/newlogo/naf.jpg" class="img-fluid" />
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 my-4">
-      <div class="box1 box2">
-        <h5>$5 Monthly</h5>
-        <ul>
-          <li>Directory - “IAM” Pledge <br />Membership</li>
-          <li>Free Standard CRM Integration</li>
-          <li>Conference/Podcast Platform</li>
-          <li>Eligible For Daily Prize & Money Giveaways</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 my-4">
-      <div class="box1 b">
-        <h5>$19.99 Monthly</h5>
-        <ul>
-          <li>
-            “Premium” Membership -Directory, Tweet, Talk & Conference/Podcast
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 my-4">
-      <div class="box1 box2">
-        <h5>
-          Starting @ $109 - Community To Business Branding (Community Brands On
-          Your Behalf)
-        </h5>
-        <ul>
-          <li>“Business” Membership - Directory</li>
-          <li>50% Monthly goes to Registered “IAM” Pledge Members</li>
-          <li>Branded by Community</li>
-          <li>Monthly Giveaways (Sponsored By Name Of Your Biz)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div
-    style="margin: auto; display: table; margin-top: 1rem; margin-bottom: 4rem"
-  >
-    <a [routerLink]="['/package']" class="btn btn-dark">Packages</a>
   </div>
 </div>
 
 <!-- Featurs Section End -->
 
-<!------ contact us ------>
-<section id="contact-us">
-  <div class="container">
-    <h1>Contact Us</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="get">
-          <h5>Get in Touch</h5>
-          <div class="form">
-            <input type="text" name="" id="" placeholder="Name" /><br />
-            <input type="email" name="" id="" placeholder="Email" /><br />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="7"
-              placeholder="Message"
-            ></textarea
-            ><br />
-            <div class="select">
-              <input type="file" name="file" id="file" class="inputfile" />
-              <label for="file"
-                ><i class="fa-solid fa-paperclip"></i>Attach Files</label
-              >
-              <span>Attachments(0)</span>
+<!-- Slider Start-->
+<!-- <section id="slider">
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner py-5">
+<div class="carousel-item active">
+<div class="container">
+  <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+  <div class="row">
+      <div class="col-md-6 mt-5">
+         <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+               <img src="assets/img/310778904_478615557637877_8339393796167693638_n-removebg-preview.png" class="img-fluid">
+              </div>
             </div>
-            <button type="submit">SEND MESSAGE</button><br />
-            <p class="button-para">
-              This site is protected by reCAPTCHA and the Google
-              <a href="#">Privacy Policy </a>and
-              <a href="#">Terms of Service</a> apply.
-            </p>
+      </div>
+      <div class="col-md-6 mt-5">
+          <h1 class="pt-3">Marquess Huffington</h1>
+          <p>Details?</p>
+      </div>
+  </div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="container">
+  <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+  <div class="row">
+      <div class="col-md-6 mt-5">
+         <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                  <img src="assets/img/Marquess Huffington.png" class="img-fluid">
+              </div>
+            </div>
+      </div>
+      <div class="col-md-6 mt-5">
+          <h1 class="pt-3">Marquess Huffington</h1>
+          <p>Details?</p>
+
+      </div>
+  </div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="container">
+  <h1 class="text-center display-4 mb-5" style="color:black;">Zero Waste, 100% Sustainable</h1>
+  <div class="row">
+      <div class="col-md-6 mt-5">
+          <div class="videos__wrapper">
+              <div class="videos__wrapper--video">
+                  <img src="assets/img/all-sports-banner.png" class="img-fluid">
+              </div>
+            </div>
+      </div>
+      <div class="col-md-6 mt-5">
+          <h1 class="pt-3">All-sports-banner</h1>
+          <p>Details?</p>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+<button class="carousel-control-prev bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next bg-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+</section> -->
+<!-- Slider End -->
+<!-- product Start -->
+<section id="card_section">
+  <div class="container-fluid service py-2">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-12 col-lg-8">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/attorneys.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/automotive.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/colleges.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/dfw.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/entertainment.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img src="assets/footerimg/new/nl.jpg" class="img-fluid mb-3" />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/sports.jpeg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/restaurants.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/hispanics.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/hotel.jpg"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="#">
+                <img
+                  src="assets/footerimg/new/stylists.png"
+                  class="img-fluid mb-3"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pro_c">
+            <h1>Grab a UMYO Product</h1>
+            <p>Choose from our variety of products designed to fit...</p>
+            <a href="#">
+              <button class="btn btn-info border-0 text-white mt-3 py-4 px-5">
+                Shop All Products
+              </button>
+            </a>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="better">
-          <h5>Better yet, see us in person!</h5>
-          <p>
-            Get the quickest response by reaching out to us on our social media
-            platforms! You can also contact us directly via phone call or text
-            message. We're excited to engage with you and hear your thoughts!
-          </p>
-          <p>
-            Drop us a message, and we'll make it a priority to get back to you
-            at the earliest convenience.
-          </p>
-          <button type="button">
-            <img src="assets/img/new-icon-removebg-preview.png" alt="" />Message
-            us on WhatsApp
-          </button>
-          <h6>UMYO Cards</h6>
-          <a href="#">(682)231-2366</a>
-          <!-- <a href="#">cmoore@NFL.com</a> -->
-          <h6 class="hrs">Hours</h6>
-          <select name="" id="">
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-            <option value="">Open today 10:00 am – 10:00 pm</option>
-          </select>
-        </div>
-      </div>
     </div>
   </div>
-</section>
-
-<!----- subscribe -------->
-<section id="subscribe">
-  <div class="container">
-    <h2 class="text-center">Subscribe</h2>
-    <p class="text-center">
-      Get 10% off your first purchase when you sign up for our newsletter!
-    </p>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-7">
-        <div class="email-form">
-          <input type="email" placeholder="Email" />
-        </div>
-      </div>
-      <div class="col-md-2 pb-5">
-        <button type="button" class="email-button">SIGN UP</button>
-      </div>
-    </div>
-  </div>
+  <!-- product End -->
 </section>
 
 <!-- Footer Start -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #1b1a55 !important"
+  style="background: #2f3d7e !important"
 >
   <div class="container py-5">
     <div class="row g-4">
-      <div class="col-lg-4 col-md-6">
-        <h4 class="text-light"><b>Contact us</b></h4>
-        <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link" (click)="openPolicyModal()">Privacy Policy</a>
-          <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
-          <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
-          <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">UMYO Cards</a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-item">
-          <h4 class="text-light mb-3">LET'S CONNECT</h4>
-          <p class="mb-4">
-            Subscribe to stay up to date on all the latest Pro-Living features,
-            products, stories, and more. You can also contact us at
-            contact@NFL.com.
-          </p>
-          <div class="position-relative mx-auto">
-            <input
-              class="form-control border-0 py-2 w-100"
-              type="text"
-              placeholder="Enter Your Email"
-            />
-            <button
-              type="submit"
-              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
-              style="top: 0; right: 0"
-            >
-              Sent
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="d-flex justify-content-center pt-3">
+      <div class="col-lg-4">
+        <div class="d-flex pt-3">
           <a
             class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
             href=""
@@ -1776,11 +1993,56 @@
           ></a>
         </div>
       </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">Contact us</a>
+          <a class="btn-link" (click)="openPolicyModal()">Privacy Policy</a>
+          <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
+          <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
+          <a class="btn-link" href="">Terms of Sales</a>
+          <a class="btn-link" href="">Data Processing Addendum</a>
+          <a class="btn-link" href="">Careers</a>
+          <a class="btn-link" href="">Security & Trust Report</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex flex-column text-start footer-item">
+          <a class="btn-link" href="">UMYO Store</a>
+          <a class="btn-link" href="">Industries</a>
+          <a class="btn-link" href="">UMYO for Teams</a>
+          <a class="btn-link" href="">UMYO Pro</a>
+          <a class="btn-link" href="">UMYO Profile</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item">
+          <h4 class="text-light mb-3">LET'S CONNECT</h4>
+          <p class="mb-4">
+            Subscribe to stay up to date on all the latest UMYO features,
+            products, stories, and more. You can also contact us at
+            contact@umyo.com.
+          </p>
+          <div class="position-relative mx-auto">
+            <input
+              class="form-control border-0 py-2 w-100"
+              type="text"
+              placeholder="Enter Your Email"
+            />
+            <button
+              type="submit"
+              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
+              style="top: 0; right: 0"
+            >
+              Sent
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
       <p class="text-white text-center">
         <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i>2024 NFL</a
+          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
         >, All right reserved.
       </p>
     </div>
@@ -1823,7 +2085,7 @@
   
   Who We Are
   
-  Welcome! We are NFL Inc., a Texas corporation, or as we prefer to be known, "NFL,"
+  Welcome! We are UMYO CARDS Inc., a Texas corporation, or as we prefer to be known, "UMYO CARDS,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -1837,7 +2099,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@NFL.com or by mail at NFL Inc., Attn: Data Privacy
+  email at data-privacy@UMYO CARDS.com or by mail at UMYO CARDS Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -2021,8 +2283,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “NFL for Teams” subscription, the administrator 
-  associated with your “NFL for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “UMYO CARDS for Teams” subscription, the administrator 
+  associated with your “UMYO CARDS for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -2063,7 +2325,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to NFL! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to UMYO CARDS! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -2155,8 +2417,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@NFL.com] (mailto:data-privacy@NFL.com) or by mail at
-  NFL Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@UMYO CARDS.com] (mailto:data-privacy@UMYO CARDS.com) or by mail at
+  UMYO CARDS Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -2185,10 +2447,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@NFL.com](mailto:data-privacy@NFL.com) or by mail at
-  NFL Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@UMYO CARDS.com](mailto:data-privacy@UMYO CARDS.com) or by mail at
+  UMYO CARDS Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at NFL**
+  **Changes to Our Privacy Policy at UMYO CARDS**
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -2231,7 +2493,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at NFL**
+              **Refund Policy at UMYO CARDS**
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -2304,9 +2566,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to NFL!
+              Welcome to UMYO CARDS!
   
-  **Terms of Service and Sale - NFL**
+  **Terms of Service and Sale - UMYO CARDS**
   
   **Last Revised: December 22, 2023**
   
@@ -2314,7 +2576,7 @@
   
   **Introduction**
   
-  Welcome! We are NFL, a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are UMYO CARDS, a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -2414,11 +2676,11 @@
   
   ---
   
-  **NFL App Terms of Service**
+  **UMYO CARDS App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your NFL
+  (g) You must provide accurate, current, and complete information for your UMYO CARDS
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -2435,7 +2697,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on NFL. Posted Content is not confidential,
+  (a) Users can post content ("Content") on UMYO CARDS. Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   
@@ -2483,7 +2745,7 @@
   
   **8. General**
   
-  (a) Unenforceability of one provision won't affect others. In case of conflict,
+  (a) Unenforceability of one provision won't affect others. In case of coUMYO CARDSict,
   we decide which provision prevails. Headings are for convenience. Our
   non-enforcement doesn't waive future enforcement rights.
   

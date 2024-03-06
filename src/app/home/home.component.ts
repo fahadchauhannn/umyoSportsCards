@@ -77,170 +77,276 @@ export class HomeComponent implements AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    $('.moreless-buttonf').click(function() {
-      $('.moretextf').slideToggle();
-      if ($('.moreless-buttonf').text() == "Read more") {
-        $(this).text("Read less")
-      } else {
-        $(this).text("Read more")
+    var slider1 = $('.slider-1').slick({
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed:5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: false,
+      cssEase: 'linear',
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 4,
+        speed:5500,
+        centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+        slidesToScroll: 1
+        
+        }
+      },
+      {
+        breakpoint: 767, 
+        settings: {
+          slidesToShow: 3,
+          speed:6000,
+          slidesToScroll: 1
+          }
+      },
+      {
+        breakpoint: 600, 
+        settings: {
+          slidesToShow: 2,
+          speed:6000,
+          slidesToScroll: 1
+          }
+      },
+      
+      {
+        breakpoint: 480, 
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
       }
-    });
-        $('.moreless-button').click(function() {
-    $('.moretext').slideToggle();
-    if ($('.moreless-button').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
+
+
+     ]
   });
+
+var slider2 = $('.slider-2').slick({
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed:5000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      fade: false,
+      rtl: true,
+      cssEase: 'linear',
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 4,
+        speed:5500,
+        centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+        slidesToScroll: 1
+        
+        }
+      },
+      {
+        breakpoint: 767, 
+        settings: {
+          slidesToShow: 3,
+          speed:6000,
+          slidesToScroll: 1
+          }
+      },
+      {
+        breakpoint: 600, 
+        settings: {
+          slidesToShow: 2,
+          speed:6000,
+          slidesToScroll: 1
+          }
+      },
       
-        $('.moreless-button15').click(function() {
-          event.preventDefault();
-    $('.moretext15').slideToggle();
-    if ($('.moreless-button15').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
+      {
+        breakpoint: 480, 
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+
+     ]
   });
-        $('.moreless-button1').click(function() {
-          event.preventDefault();
-    $('.moretext1').slideToggle();
-    if ($('.moreless-button1').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-        $('.moreless-button2').click(function() {
-          event.preventDefault();
-    $('.moretext2').slideToggle();
-    if ($('.moreless-button2').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-      
-        $('.moreless-button3').click(function() {
-          event.preventDefault();
-    $('.moretext3').slideToggle();
-    if ($('.moreless-button3').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-      
-        $('.moreless-button4').click(function() {
-          event.preventDefault();
-    $('.moretext4').slideToggle();
-    if ($('.moreless-button4').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-     
-        $('.moreless-button5').click(function() {
-          event.preventDefault();
-    $('.moretext5').slideToggle();
-    if ($('.moreless-button5').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
+
+
+
+
+    
+    $('.moreless-button-he').click(function() {
+$('.moretext-he').slideToggle();
+if ($('.moreless-button-he').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-buttonf').click(function() {
+$('.moretextf').slideToggle();
+if ($('.moreless-buttonf').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+
+    $('.moreless-button').click(function() {
+$('.moretext').slideToggle();
+if ($('.moreless-button').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button2').click(function() {
+$('.moretext2').slideToggle();
+if ($('.moreless-button2').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
    
-        $('.moreless-button6').click(function() {
-          event.preventDefault();
-    $('.moretext6').slideToggle();
-    if ($('.moreless-button6').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
+    $('.moreless-button3').click(function() {
+$('.moretext3').slideToggle();
+if ($('.moreless-button3').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button4').click(function() {
+$('.moretext4').slideToggle();
+if ($('.moreless-button4').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button5').click(function() {
+$('.moretext5').slideToggle();
+if ($('.moreless-button5').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button6').click(function() {
+$('.moretext6').slideToggle();
+if ($('.moreless-button6').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+   
+    $('.moreless-button7').click(function() {
+$('.moretext7').slideToggle();
+if ($('.moreless-button7').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
     
-        $('.moreless-button7').click(function() {
-          event.preventDefault();
-    $('.moretext7').slideToggle();
-    if ($('.moreless-button7').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-    
-        $('.moreless-button8').click(function() {
-          event.preventDefault();
-    $('.moretext8').slideToggle();
-    if ($('.moreless-button8').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-     
-        $('.moreless-button9').click(function() {
-          event.preventDefault();
-    $('.moretext9').slideToggle();
-    if ($('.moreless-button9').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-      
-        $('.moreless-button10').click(function() {
-          event.preventDefault();
-    $('.moretext10').slideToggle();
-    if ($('.moreless-button10').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-     
-        $('.moreless-button11').click(function() {
-          event.preventDefault();
-    $('.moretext11').slideToggle();
-    if ($('.moreless-button11').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-      
-        $('.moreless-button12').click(function() {
-          event.preventDefault();
-    $('.moretext12').slideToggle();
-    if ($('.moreless-button12').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-      
-        $('.moreless-button13').click(function() {
-          event.preventDefault();
-    $('.moretext13').slideToggle();
-    if ($('.moreless-button13').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-     
-        $('.moreless-button14').click(function() {
-          event.preventDefault();
-    $('.moretext14').slideToggle();
-    if ($('.moreless-button14').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
+    $('.moreless-button8').click(function() {
+$('.moretext8').slideToggle();
+if ($('.moreless-button8').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button9').click(function() {
+$('.moretext9').slideToggle();
+if ($('.moreless-button9').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+   
+    $('.moreless-button10').click(function() {
+$('.moretext10').slideToggle();
+if ($('.moreless-button10').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button11').click(function() {
+$('.moretext11').slideToggle();
+if ($('.moreless-button11').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+   
+    $('.moreless-button12').click(function() {
+$('.moretext12').slideToggle();
+if ($('.moreless-button12').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+  
+    $('.moreless-button13').click(function() {
+$('.moretext13').slideToggle();
+if ($('.moreless-button13').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
+   
+    $('.moreless-button14').click(function() {
+$('.moretext14').slideToggle();
+if ($('.moreless-button14').text() == "Read more") {
+  $(this).text("Read less")
+} else {
+  $(this).text("Read more")
+}
+});
+  
   
   }
   

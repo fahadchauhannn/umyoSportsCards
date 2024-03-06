@@ -109,7 +109,7 @@ if (expireInValue.includes("year")) {
               truckService: form3.get('registerTruckService')?.value,
 
               division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
+      position: form3.get('registerPositionType')?.value,
       team: form3.get('registerTeam')?.value,
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
@@ -188,7 +188,7 @@ if (expireInValue.includes("year")) {
       truckService: form3.get('registerTruckService')?.value,
 
       division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
+      position: form3.get('registerPositionType')?.value,
       team: form3.get('registerTeam')?.value,
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
@@ -306,7 +306,7 @@ if (expireInValue.includes("year")) {
 
       truckService: form3.get('registerTruckService')?.value,
       division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
+      position: form3.get('registerPositionType')?.value,
       team: form3.get('registerTeam')?.value,
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
