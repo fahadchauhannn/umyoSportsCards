@@ -348,20 +348,14 @@ export class HomeComponent implements AfterViewInit {
        const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
-      
        name : this.form2.get('selectedName').value,
-       
-       race : this.form2.get('selectedRace').value,
-       division : this.form2.get('selectedDivision').value,
-       position : this.form2.get('selectedPosition').value,
-       team : this.form2.get('selectedTeam').value,
-       year : this.form2.get('selectedYear').value,
-       trophy : this.form2.get('selectedTrophy').value,
-       honor : this.form2.get('selectedHonor').value,
-       business : this.form2.get('selectedBusiness').value,
-
+       position : this.form2.get('selectedPositionType').value,
+       business_type: this.form2.get('selectedBusinessType')?.value,
+       sport_type: this.form2.get('selectedSportType')?.value,
+       age_type: this.form2.get('selectedAgeType')?.value,
        
        
+  
        }
       
       this.apiService.searchCard(payload).subscribe(
@@ -579,18 +573,16 @@ export class HomeComponent implements AfterViewInit {
         
     
         
-        selectedStateType: [''],
-        selectedName: [''],
-        selectedRace: [''],
-        selectedCity: [''],
-
-        selectedDivision: [''],
-        selectedPosition: [''],
-        selectedTeam: [''],
-        selectedYear: [''],
-        selectedTrophy: [''],
-        selectedHonor: [''],
-        selectedBusiness: [''],
+      selectedBusinessType: [''],
+      selectedAgeType: [''],
+      selectedSportType: [''],
+      selectedPositionType: [''],
+      selectedStateType: [''],
+      selectedName: [''],
+      
+      
+      
+      selectedCity: [''],
 
 
      
@@ -606,21 +598,23 @@ export class HomeComponent implements AfterViewInit {
         registerPassword: ['', [Validators.required, Validators.minLength(6)]],
         registerPhone: ['', Validators.required],
         registerCityType: ['', Validators.required],
-        registerRaceType: ['', Validators.required],
-
-        registerDivision: ['', Validators.required],
-        registerPosition: ['', Validators.required],
-        registerTeam: ['', Validators.required],
-        registerYear: ['', Validators.required],
-        registerTrophy: ['', Validators.required],
-        registerHonor: ['', Validators.required],
-        registerBusiness: ['', Validators.required],
+      registerBusinessType: ['', Validators.required],
+      registerAgeType: ['', Validators.required],
+      registerSportType: ['', Validators.required],
+      registerPositionType: ['', Validators.required],
+      registerStateType: ['', Validators.required],
+      registerReferralCode: [''], // Not required
         
 
 
-        registerStateType: ['', Validators.required],
-        registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
+
+      this.getBusniessType()
+
+    this.getAgeType()
+    this.getSportType()
+
+    
       // fetch packages
       this.apiService.getSignUpPackages(null).subscribe(
         (response) => {

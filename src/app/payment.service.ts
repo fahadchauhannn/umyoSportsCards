@@ -94,7 +94,7 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              business_type: form3.get('registerBusiness')?.value,
+              business_type: form3.get('registerBusinessType')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
               
@@ -173,7 +173,7 @@ if (expireInValue.includes("year")) {
       password: form3.get('registerPassword').value,
 
       
-      business_type: form3.get('registerBusiness')?.value,
+      business_type: form3.get('registerBusinessType')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       
@@ -291,7 +291,7 @@ if (expireInValue.includes("year")) {
           gender: form3.get('registerGenderType')?.value,
           plan_id:response.plan_id,
 
-          business_type: form3.get('registerBusiness')?.value,
+          business_type: form3.get('registerBusinessType')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       

@@ -428,125 +428,20 @@
                   placeholder="Name"
                 />
               </div>
-
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedDivision"
+                  formControlName="selectedBusinessType"
                 >
-                  <option selected value="" disabled>NFL DIVISION</option>
-                  <option value="AFC North">AFC North</option>
-                  <option value="AFC South">AFC South</option>
-                  <option value="AFC East">AFC East</option>
-                  <option value="AFC West">AFC West</option>
-                  <option value="NFC North">NFC North</option>
-                  <option value="NFC South">NFC South</option>
-                  <option value="NFC East">NFC East</option>
-                  <option value="NFC West">NFC West</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedPosition"
-                >
-                  <option selected value="" disabled>POSITION</option>
-                  <option value="Coach">Coach</option>
-                  <option value="Football Quarterback">
-                    Football Quarterback
+                  <option selected value="" disabled>
+                    Select Business Type
                   </option>
-                  <option value="Wide Receiver">Wide Receiver</option>
-                  <option value="Linebacker">Linebacker</option>
-                  <option value="Safety">Safety</option>
-                  <option value="Cornerback">Cornerback</option>
-                  <option value="Running Back">Running Back</option>
-                  <option value="Center">Center</option>
-                  <option value="Guard">Guard</option>
-                  <option value="Tackle">Tackle</option>
-                  <option value="Place Kicker">Place Kicker</option>
-                  <option value="Defensive Back">Defensive Back</option>
-                  <option value="Defensive End">Defensive End</option>
-                  <option value="Tight End">Tight End</option>
-                  <option value="Full Back">Full Back</option>
-                  <option value="Long Snapper">Long Snapper</option>
-                  <option value="Half Back">Half Back</option>
-                  <option value="Kick Off Returner">Kick Off Returner</option>
-                  <option value="Defensive Tackle">Defensive Tackle</option>
-                  <option value="Lineman">Lineman</option>
-                  <option value="Return Specialist">Return Specialist</option>
-                  <option value="Gunner">Gunner</option>
-                  <option value="Nose Tackle">Nose Tackle</option>
-                  <option value="Fan">Fan</option>
-                </select>
-              </div>
-
-              <!-- <div class="col-lg-6 mb-4">
-                <input
-                  type="text"
-                  formControlName="selectedCity"
-                  class="form-control"
-                  placeholder="City"
-                />
-              </div> -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedTeam"
-                >
-                  <option selected value="" disabled>NFL TEAM</option>
-                  <option value="Baltimore Ravens">Baltimore Ravens</option>
-                  <option value="Cincinnati Bengals">Cincinnati Bengals</option>
-                  <option value="Cleveland Browns">Cleveland Browns</option>
-                  <option value="Pittsburgh Steelers">
-                    Pittsburgh Steelers
-                  </option>
-                  <option value="AFC East">AFC East</option>
-                  <option value="Buffalo Bills">Buffalo Bills</option>
-                  <option value="Miami Dolphins">Miami Dolphins</option>
-                  <option value="New England Patriots">
-                    New England Patriots
-                  </option>
-                  <option value="New York Jets">New York Jets</option>
-                  <option value="AFC West">AFC West</option>
-                  <option value="Denver Broncos">Denver Broncos</option>
-                  <option value="Kansas City Chiefs">Kansas City Chiefs</option>
-                  <option value="Las Vegas Raiders">Las Vegas Raiders</option>
-                  <option value="Los Angeles Chargers">
-                    Los Angeles Chargers
-                  </option>
-                  <option value="Houston Texans">Houston Texans</option>
-                  <option value="Indianapolis Colts">Indianapolis Colts</option>
-                  <option value="Jacksonville Jaguars">
-                    Jacksonville Jaguars
-                  </option>
-                  <option value="Tennessee Titans">Tennessee Titans</option>
-                  <option value="Chicago Bears">Chicago Bears</option>
-                  <option value="Detroit Lions">Detroit Lions</option>
-                  <option value="Green Bay Packers">Green Bay Packers</option>
-                  <option value="Minnesota Vikings">Minnesota Vikings</option>
-                  <option value="Dallas Cowboys">Dallas Cowboys</option>
-                  <option value="New York Giants">New York Giants</option>
-                  <option value="Philadelphia Eagles">
-                    Philadelphia Eagles
-                  </option>
-                  <option value="Washington Commanders">
-                    Washington Commanders
-                  </option>
-                  <option value="Arizona Cardinals">Arizona Cardinals</option>
-                  <option value="Los Angeles Rams">Los Angeles Rams</option>
-                  <option value="San Francisco 49ers">
-                    San Francisco 49ers
-                  </option>
-                  <option value="Seattle Seahawks">Seattle Seahawks</option>
-                  <option value="Atlanta Falcons">Atlanta Falcons</option>
-                  <option value="Carolina Panthers">Carolina Panthers</option>
-                  <option value="New Orleans Saints">New Orleans Saints</option>
-                  <option value="Tampa Bay Buccaneers">
-                    Tampa Bay Buccaneers
+                  <option
+                    [value]="type.business_type"
+                    *ngFor="let type of businessType"
+                  >
+                    {{ type.business_type }}
                   </option>
                 </select>
               </div>
@@ -554,325 +449,39 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedYear"
+                  formControlName="selectedAgeType"
                 >
-                  <option selected value="" disabled>YEAR IN NFL</option>
-                  <option value="1920">1920</option>
-                  <option value="1921">1921</option>
-                  <option value="1922">1922</option>
-                  <option value="1923">1923</option>
-                  <option value="1924">1924</option>
-                  <option value="1925">1925</option>
-                  <option value="1926">1926</option>
-                  <option value="1927">1927</option>
-                  <option value="1928">1928</option>
-                  <option value="1929">1929</option>
-                  <option value="1930">1930</option>
-                  <option value="1931">1931</option>
-                  <option value="1932">1932</option>
-                  <option value="1933">1933</option>
-                  <option value="1934">1934</option>
-                  <option value="1935">1935</option>
-                  <option value="1936">1936</option>
-                  <option value="1937">1937</option>
-                  <option value="1938">1938</option>
-                  <option value="1939">1939</option>
-                  <option value="1940">1940</option>
-                  <option value="1941">1941</option>
-                  <option value="1942">1942</option>
-                  <option value="1943">1943</option>
-                  <option value="1944">1944</option>
-                  <option value="1945">1945</option>
-                  <option value="1946">1946</option>
-
-                  <option value="1947">1947</option>
-                  <option value="1948">1948</option>
-                  <option value="1949">1949</option>
-                  <option value="1950">1950</option>
-                  <option value="1951">1951</option>
-                  <option value="1952">1952</option>
-                  <option value="1953">1953</option>
-                  <option value="1954">1954</option>
-                  <option value="1955">1955</option>
-                  <option value="1956">1956</option>
-                  <option value="1957">1957</option>
-                  <option value="1958">1958</option>
-                  <option value="1959">1959</option>
-                  <option value="1960">1960</option>
-                  <option value="1961">1961</option>
-                  <option value="1962">1962</option>
-                  <option value="1963">1963</option>
-                  <option value="1964">1964</option>
-                  <option value="1965">1965</option>
-                  <option value="1966">1966</option>
-                  <option value="1967">1967</option>
-                  <option value="1968">1968</option>
-                  <option value="1969">1969</option>
-                  <option value="1970">1970</option>
-                  <option value="1971">1971</option>
-                  <option value="1972">1972</option>
-                  <option value="1973">1973</option>
-                  <option value="1974">1974</option>
-                  <option value="1975">1975</option>
-                  <option value="1976">1976</option>
-                  <option value="1977">1977</option>
-                  <option value="1978">1978</option>
-                  <option value="1979">1979</option>
-                  <option value="1980">1980</option>
-                  <option value="1981">1981</option>
-                  <option value="1982">1982</option>
-                  <option value="1983">1983</option>
-                  <option value="1984">1984</option>
-                  <option value="1985">1985</option>
-                  <option value="1986">1986</option>
-                  <option value="1987">1987</option>
-                  <option value="1988">1988</option>
-                  <option value="1989">1989</option>
-                  <option value="1990">1990</option>
-                  <option value="1991">1991</option>
-                  <option value="1992">1992</option>
-                  <option value="1993">1993</option>
-                  <option value="1994">1994</option>
-                  <option value="1995">1995</option>
-                  <option value="1996">1996</option>
-                  <option value="1997">1997</option>
-                  <option value="1998">1998</option>
-                  <option value="1999">1999</option>
-                  <option value="2000">2000</option>
-                  <option value="2001">2001</option>
-                  <option value="2002">2002</option>
-                  <option value="2003">2003</option>
-                  <option value="2004">2004</option>
-                  <option value="2005">2005</option>
-                  <option value="2006">2006</option>
-                  <option value="2007">2007</option>
-                  <option value="2008">2008</option>
-                  <option value="2009">2009</option>
-                  <option value="2010">2010</option>
-                  <option value="2011">2011</option>
-                  <option value="2012">2012</option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
+                  <option selected value="" disabled>Select Age Type</option>
+                  <option [value]="type.name" *ngFor="let type of ageType">
+                    {{ type.name }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedRace"
+                  formControlName="selectedSportType"
+                  (change)="onSportTypeChange()"
                 >
-                  <option selected value="" disabled>Race</option>
-                  <option value="African Americans">African Americans</option>
-                  <option value="European">European</option>
-                  <option value="Mexican-american">Mexican-american</option>
-                  <option value="Hispanic -Latino">Hispanic -Latino</option>
-                  <option value="Asian">Asian</option>
-                  <option value="German">German</option>
-                  <option value="Serbia">Serbia</option>
-                  <option value="Lithuanians">Lithuanians</option>
-                  <option value="Cameroonian">Cameroonian</option>
-                  <option value="Dominican's">Dominican's</option>
-                  <option value="Latvian">Latvian</option>
-                  <option value="Australian">Australian</option>
-                  <option value="Montenegro">Montenegro</option>
-                  <option value="Canadian">Canadian</option>
-                  <option value="Greece">Greece</option>
-                  <option value="Slovenia">Slovenia</option>
-                  <option value="American Indian">American Indian</option>
-                  <option value="Alaska Native">Alaska Native</option>
-                  <option value="Native Hawaiian">Native Hawaiian</option>
-                  <option value="Two or More Race">Two or More Race</option>
-                  <option value="French">French</option>
-                  <option value="Other">Other</option>
+                  <option selected value="" disabled>Select Sport Type</option>
+                  <option [value]="type.name" *ngFor="let type of sportType">
+                    {{ type.name }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedTrophy"
+                  formControlName="selectedPositionType"
                 >
-                  <option selected value="" disabled>AWARDS</option>
-                  <option value="MVP">MVP</option>
-                  <option value="Super Bowl">Super Bowl</option>
-                  <option value="Rookie Of the Year">Rookie Of the Year</option>
-                  <option value="Hall Of Fame">Hall Of Fame</option>
-                  <option value="Fan Of the Year">Fan Of the Year</option>
-                  <option value="Coach Of The Year">Coach Of The Year</option>
-                  <option value="Offensive Player of The Year">
-                    Offensive Player of The Year
+                  <option selected value="" disabled>
+                    Select Position Type
                   </option>
-                  <option value="Defensive Player of The Year">
-                    Defensive Player of The Year
+                  <option [value]="type.name" *ngFor="let type of positionType">
+                    {{ type.name }}
                   </option>
-                  <option value="Comeback Player of The Year">
-                    Comeback Player of The Year
-                  </option>
-                  <option value="Walter Payton Man of The Year">
-                    Walter Payton Man of The Year
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <h4 class="mb-4 text-white text-center">
-                  I PLEDGE TO REPORT VIOLENT CRIMES
-                </h4>
-              </div>
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedBusiness"
-                >
-                  <option selected value="" disabled>BUSINESS TYPE</option>
-                  <option value="Accountant">Accountant</option>
-                  <option value="Actor">Actor</option>
-                  <option value="Actuary">Actuary</option>
-                  <option value="Administrator">Administrator</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agricultural Worker">
-                    Agricultural Worker
-                  </option>
-                  <option value="Air Traffic Controller">
-                    Air Traffic Controller
-                  </option>
-                  <option value="Ambulance Officer">Ambulance Officer</option>
-                  <option value="Architect">Architect</option>
-                  <option value="Art Director">Art Director</option>
-                  <option value="Artist">Artist</option>
-                  <option value="Athlete">Athlete</option>
-                  <option value="Auditor">Auditor</option>
-                  <option value="Baker">Baker</option>
-                  <option value="Barista">Barista</option>
-                  <option value="Bartender">Bartender</option>
-                  <option value="Board Member">Board Member</option>
-                  <option value="Business Analyst">Business Analyst</option>
-                  <option value="Chef">Chef</option>
-                  <option value="Childcare Worker">Childcare Worker</option>
-                  <option value="Civil Servant">Civil Servant</option>
-                  <option value="Cleaner">Cleaner</option>
-                  <option value="Company Worker">Company Worker</option>
-                  <option value="Computer Scientist">Computer Scientist</option>
-                  <option value="Construction Worker">
-                    Construction Worker
-                  </option>
-                  <option value="Cook">Cook</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Craftsperson">Craftsperson</option>
-                  <option value="Curator">Curator</option>
-                  <option value="Customer Service Representative">
-                    Customer Service Representative
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Designer">Designer</option>
-                  <option value="Doctor">Doctor</option>
-                  <option value="Driver">Driver</option>
-                  <option value="Economist">Economist</option>
-                  <option value="Electrician">Electrician</option>
-                  <option value="Entrepreneur">Entrepreneur</option>
-                  <option value="Equipment Operator">Equipment Operator</option>
-                  <option value="Executive Manager">Executive Manager</option>
-                  <option value="Farmer">Farmer</option>
-                  <option value="Film Maker">Film Maker</option>
-                  <option value="Firefighter">Firefighter</option>
-                  <option value="Fisherman">Fisherman</option>
-                  <option value="Fitness Trainer">Fitness Trainer</option>
-                  <option value="Flight Attendant">Flight Attendant</option>
-                  <option value="Florist">Florist</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Gardener">Gardener</option>
-                  <option value="Hair Stylist">Hair Stylist</option>
-                  <option value="Home Care Aid">Home Care Aid</option>
-                  <option value="Homemaker">Homemaker</option>
-                  <option value="Hospitality Worker">Hospitality Worker</option>
-                  <option value="Housekeeper">Housekeeper</option>
-                  <option value="Information Technology Professional">
-                    Information Technology Professional
-                  </option>
-                  <option value="Investor">Investor</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Laborer">Laborer</option>
-                  <option value="Lawyer">Lawyer</option>
-                  <option value="Librarian">Librarian</option>
-                  <option value="Maintenance Worker">Maintenance Worker</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manufacturing Worker">
-                    Manufacturing Worker
-                  </option>
-                  <option value="Marketing Professional">
-                    Marketing Professional
-                  </option>
-                  <option value="Mathematician">Mathematician</option>
-                  <option value="Mechanic">Mechanic</option>
-                  <option value="Medical Professional">
-                    Medical Professional
-                  </option>
-                  <option value="Merchant">Merchant</option>
-                  <option value="Midwife">Midwife</option>
-                  <option value="Military Personnel">Military Personnel</option>
-                  <option value="Musician">Musician</option>
-                  <option value="Nanny">Nanny</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Office Clerk">Office Clerk</option>
-                  <option value="Office Worker">Office Worker</option>
-                  <option value="Optician">Optician</option>
-                  <option value="Performance Artist">Performance Artist</option>
-                  <option value="Photographer">Photographer</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="Politician">Politician</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Railroad Engineer">Railroad Engineer</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Retail Employee">Retail Employee</option>
-                  <option value="Retiree">Retiree</option>
-                  <option value="Rigger">Rigger</option>
-                  <option value="Sailor">Sailor</option>
-                  <option value="Salesperson">Salesperson</option>
-                  <option value="Scientist">Scientist</option>
-                  <option value="Sea Captain">Sea Captain</option>
-                  <option value="Secretary">Secretary</option>
-                  <option value="Self-Employed">Self-Employed</option>
-                  <option value="Small Business Owner">
-                    Small Business Owner
-                  </option>
-                  <option value="Social Worker">Social Worker</option>
-                  <option value="Software Developer">Software Developer</option>
-                  <option value="Spokesperson">Spokesperson</option>
-                  <option value="Statistician">Statistician</option>
-                  <option value="Stay-At-Home Parent">
-                    Stay-At-Home Parent
-                  </option>
-                  <option value="Student">Student</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surveyor">Surveyor</option>
-                  <option value="Tailor">Tailor</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Technician">Technician</option>
-                  <option value="Tradesperson">Tradesperson</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Translator">Translator</option>
-                  <option value="Truck Driver">Truck Driver</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Unemployed">Unemployed</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Videographer">Videographer</option>
-                  <option value="Waiter">Waiter</option>
-                  <option value="Waste Collector">Waste Collector</option>
-                  <option value="Writer">Writer</option>
-                  <option value="Zoologist">Zoologist</option>
                 </select>
               </div>
 
@@ -1283,193 +892,7 @@
                         />
                       </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >NFL DIVISION<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        formControlName="registerDivision"
-                        class="form-select"
-                        aria-label="Default select example"
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerDivision')?.touched ||
-                              !form3.get('registerDivision')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="AFC North">AFC North</option>
-                        <option value="AFC South">AFC South</option>
-                        <option value="AFC East">AFC East</option>
-                        <option value="AFC West">AFC West</option>
-                        <option value="NFC North">NFC North</option>
-                        <option value="NFC South">NFC South</option>
-                        <option value="NFC East">NFC East</option>
-                        <option value="NFC West">NFC West</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >POSITION<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        class="form-select"
-                        aria-label="Default select example"
-                        formControlName="registerPosition"
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerPosition')?.touched ||
-                              !form3.get('registerPosition')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Coach">Coach</option>
-                        <option value="Football Quarterback">
-                          Football Quarterback
-                        </option>
-                        <option value="Wide Receiver">Wide Receiver</option>
-                        <option value="Linebacker">Linebacker</option>
-                        <option value="Safety">Safety</option>
-                        <option value="Cornerback">Cornerback</option>
-                        <option value="Running Back">Running Back</option>
-                        <option value="Center">Center</option>
-                        <option value="Guard">Guard</option>
-                        <option value="Tackle">Tackle</option>
-                        <option value="Place Kicker">Place Kicker</option>
-                        <option value="Defensive Back">Defensive Back</option>
-                        <option value="Defensive End">Defensive End</option>
-                        <option value="Tight End">Tight End</option>
-                        <option value="Full Back">Full Back</option>
-                        <option value="Long Snapper">Long Snapper</option>
-                        <option value="Half Back">Half Back</option>
-                        <option value="Kick Off Returner">
-                          Kick Off Returner
-                        </option>
-                        <option value="Defensive Tackle">
-                          Defensive Tackle
-                        </option>
-                        <option value="Lineman">Lineman</option>
-                        <option value="Return Specialist">
-                          Return Specialist
-                        </option>
-                        <option value="Gunner">Gunner</option>
-                        <option value="Nose Tackle">Nose Tackle</option>
-                        <option value="Fan">Fan</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >NFL TEAM<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTeam')?.touched ||
-                              !form3.get('registerTeam')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        class="form-select"
-                        aria-label="Default select example"
-                        formControlName="registerTeam"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Baltimore Ravens">
-                          Baltimore Ravens
-                        </option>
-                        <option value="Cincinnati Bengals">
-                          Cincinnati Bengals
-                        </option>
-                        <option value="Cleveland Browns">
-                          Cleveland Browns
-                        </option>
-                        <option value="Pittsburgh Steelers">
-                          Pittsburgh Steelers
-                        </option>
-                        <option value="AFC East">AFC East</option>
-                        <option value="Buffalo Bills">Buffalo Bills</option>
-                        <option value="Miami Dolphins">Miami Dolphins</option>
-                        <option value="New England Patriots">
-                          New England Patriots
-                        </option>
-                        <option value="New York Jets">New York Jets</option>
-                        <option value="AFC West">AFC West</option>
-                        <option value="Denver Broncos">Denver Broncos</option>
-                        <option value="Kansas City Chiefs">
-                          Kansas City Chiefs
-                        </option>
-                        <option value="Las Vegas Raiders">
-                          Las Vegas Raiders
-                        </option>
-                        <option value="Los Angeles Chargers">
-                          Los Angeles Chargers
-                        </option>
-                        <option value="Houston Texans">Houston Texans</option>
-                        <option value="Indianapolis Colts">
-                          Indianapolis Colts
-                        </option>
-                        <option value="Jacksonville Jaguars">
-                          Jacksonville Jaguars
-                        </option>
-                        <option value="Tennessee Titans">
-                          Tennessee Titans
-                        </option>
-                        <option value="Chicago Bears">Chicago Bears</option>
-                        <option value="Detroit Lions">Detroit Lions</option>
-                        <option value="Green Bay Packers">
-                          Green Bay Packers
-                        </option>
-                        <option value="Minnesota Vikings">
-                          Minnesota Vikings
-                        </option>
-                        <option value="Dallas Cowboys">Dallas Cowboys</option>
-                        <option value="New York Giants">New York Giants</option>
-                        <option value="Philadelphia Eagles">
-                          Philadelphia Eagles
-                        </option>
-                        <option value="Washington Commanders">
-                          Washington Commanders
-                        </option>
-                        <option value="Arizona Cardinals">
-                          Arizona Cardinals
-                        </option>
-                        <option value="Los Angeles Rams">
-                          Los Angeles Rams
-                        </option>
-                        <option value="San Francisco 49ers">
-                          San Francisco 49ers
-                        </option>
-                        <option value="Seattle Seahawks">
-                          Seattle Seahawks
-                        </option>
-                        <option value="Atlanta Falcons">Atlanta Falcons</option>
-                        <option value="Carolina Panthers">
-                          Carolina Panthers
-                        </option>
-                        <option value="New Orleans Saints">
-                          New Orleans Saints
-                        </option>
-                        <option value="Tampa Bay Buccaneers">
-                          Tampa Bay Buccaneers
-                        </option>
-                      </select>
-                    </div>
+
                     <div class="col-lg-6 mb-4">
                       <div class="form-group">
                         <label style="font-size: 20px; font-weight: 600"
@@ -1492,425 +915,17 @@
                         />
                       </div>
                     </div>
+
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >YEAR IN NFL<sup style="color: red; font-size: 20px"
+                        >Select State<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerYear')?.touched ||
-                              !form3.get('registerYear')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        formControlName="registerYear"
                         class="form-select"
                         aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="1920">1920</option>
-                        <option value="1921">1921</option>
-                        <option value="1922">1922</option>
-                        <option value="1923">1923</option>
-                        <option value="1924">1924</option>
-                        <option value="1925">1925</option>
-                        <option value="1926">1926</option>
-                        <option value="1927">1927</option>
-                        <option value="1928">1928</option>
-                        <option value="1929">1929</option>
-                        <option value="1930">1930</option>
-                        <option value="1931">1931</option>
-                        <option value="1932">1932</option>
-                        <option value="1933">1933</option>
-                        <option value="1934">1934</option>
-                        <option value="1935">1935</option>
-                        <option value="1936">1936</option>
-                        <option value="1937">1937</option>
-                        <option value="1938">1938</option>
-                        <option value="1939">1939</option>
-                        <option value="1940">1940</option>
-                        <option value="1941">1941</option>
-                        <option value="1942">1942</option>
-                        <option value="1943">1943</option>
-                        <option value="1944">1944</option>
-                        <option value="1945">1945</option>
-                        <option value="1946">1946</option>
-                        <option value="1947">1947</option>
-                        <option value="1948">1948</option>
-                        <option value="1949">1949</option>
-                        <option value="1950">1950</option>
-                        <option value="1951">1951</option>
-                        <option value="1952">1952</option>
-                        <option value="1953">1953</option>
-                        <option value="1954">1954</option>
-                        <option value="1955">1955</option>
-                        <option value="1956">1956</option>
-                        <option value="1957">1957</option>
-                        <option value="1958">1958</option>
-                        <option value="1959">1959</option>
-                        <option value="1960">1960</option>
-                        <option value="1961">1961</option>
-                        <option value="1962">1962</option>
-                        <option value="1963">1963</option>
-                        <option value="1964">1964</option>
-                        <option value="1965">1965</option>
-                        <option value="1966">1966</option>
-                        <option value="1967">1967</option>
-                        <option value="1968">1968</option>
-                        <option value="1969">1969</option>
-                        <option value="1970">1970</option>
-                        <option value="1971">1971</option>
-                        <option value="1972">1972</option>
-                        <option value="1973">1973</option>
-                        <option value="1974">1974</option>
-                        <option value="1975">1975</option>
-                        <option value="1976">1976</option>
-                        <option value="1977">1977</option>
-                        <option value="1978">1978</option>
-                        <option value="1979">1979</option>
-                        <option value="1980">1980</option>
-                        <option value="1981">1981</option>
-                        <option value="1982">1982</option>
-                        <option value="1983">1983</option>
-                        <option value="1984">1984</option>
-                        <option value="1985">1985</option>
-                        <option value="1986">1986</option>
-                        <option value="1987">1987</option>
-                        <option value="1988">1988</option>
-                        <option value="1989">1989</option>
-                        <option value="1990">1990</option>
-                        <option value="1991">1991</option>
-                        <option value="1992">1992</option>
-                        <option value="1993">1993</option>
-                        <option value="1994">1994</option>
-                        <option value="1995">1995</option>
-                        <option value="1996">1996</option>
-                        <option value="1997">1997</option>
-                        <option value="1998">1998</option>
-                        <option value="1999">1999</option>
-                        <option value="2000">2000</option>
-                        <option value="2001">2001</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                        <option value="2004">2004</option>
-                        <option value="2005">2005</option>
-                        <option value="2006">2006</option>
-                        <option value="2007">2007</option>
-                        <option value="2008">2008</option>
-                        <option value="2009">2009</option>
-                        <option value="2010">2010</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                      </select>
-                    </div>
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Race<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerRaceType')?.touched ||
-                              !form3.get('registerRaceType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerRaceType"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-
-                        <option value="African Americans">
-                          African Americans
-                        </option>
-                        <option value="European">European</option>
-                        <option value="Mexican-american">
-                          Mexican-american
-                        </option>
-                        <option value="Hispanic -Latino">
-                          Hispanic -Latino
-                        </option>
-                        <option value="Asian">Asian</option>
-                        <option value="German">German</option>
-                        <option value="Serbia">Serbia</option>
-                        <option value="Lithuanians">Lithuanians</option>
-                        <option value="Cameroonian">Cameroonian</option>
-                        <option value="Dominican's">Dominican's</option>
-                        <option value="Latvian">Latvian</option>
-                        <option value="Australian">Australian</option>
-                        <option value="Montenegro">Montenegro</option>
-                        <option value="Canadian">Canadian</option>
-                        <option value="Greece">Greece</option>
-                        <option value="Slovenia">Slovenia</option>
-                        <option value="American Indian">American Indian</option>
-                        <option value="Alaska Native">Alaska Native</option>
-                        <option value="Native Hawaiian">Native Hawaiian</option>
-                        <option value="Two or More Race">
-                          Two or More Race
-                        </option>
-                        <option value="French">French</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >AWARDS<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTrophy')?.touched ||
-                              !form3.get('registerTrophy')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerTrophy"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="MVP">MVP</option>
-                        <option value="Super Bowl">Super Bowl</option>
-                        <option value="Rookie Of the Year">
-                          Rookie Of the Year
-                        </option>
-                        <option value="Hall Of Fame">Hall Of Fame</option>
-                        <option value="Fan Of the Year">Fan Of the Year</option>
-                        <option value="Coach Of The Year">
-                          Coach Of The Year
-                        </option>
-                        <option value="Offensive Player of The Year">
-                          Offensive Player of The Year
-                        </option>
-                        <option value="Defensive Player of The Year">
-                          Defensive Player of The Year
-                        </option>
-                        <option value="Comeback Player of The Year">
-                          Comeback Player of The Year
-                        </option>
-                        <option value="Walter Payton Man of The Year">
-                          Walter Payton Man of The Year
-                        </option>
-                      </select>
-                    </div>
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >BUSINESS TYPE<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerBusiness')?.touched ||
-                              !form3.get('registerBusiness')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerBusiness"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="Actor">Actor</option>
-                        <option value="Actuary">Actuary</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agricultural Worker">
-                          Agricultural Worker
-                        </option>
-                        <option value="Air Traffic Controller">
-                          Air Traffic Controller
-                        </option>
-                        <option value="Ambulance Officer">
-                          Ambulance Officer
-                        </option>
-                        <option value="Architect">Architect</option>
-                        <option value="Art Director">Art Director</option>
-                        <option value="Artist">Artist</option>
-                        <option value="Athlete">Athlete</option>
-                        <option value="Auditor">Auditor</option>
-                        <option value="Baker">Baker</option>
-                        <option value="Barista">Barista</option>
-                        <option value="Bartender">Bartender</option>
-                        <option value="Board Member">Board Member</option>
-                        <option value="Business Analyst">
-                          Business Analyst
-                        </option>
-                        <option value="Chef">Chef</option>
-                        <option value="Childcare Worker">
-                          Childcare Worker
-                        </option>
-                        <option value="Civil Servant">Civil Servant</option>
-                        <option value="Cleaner">Cleaner</option>
-                        <option value="Company Worker">Company Worker</option>
-                        <option value="Computer Scientist">
-                          Computer Scientist
-                        </option>
-                        <option value="Construction Worker">
-                          Construction Worker
-                        </option>
-                        <option value="Cook">Cook</option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Craftsperson">Craftsperson</option>
-                        <option value="Curator">Curator</option>
-                        <option value="Customer Service Representative">
-                          Customer Service Representative
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Economist">Economist</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Equipment Operator">
-                          Equipment Operator
-                        </option>
-                        <option value="Executive Manager">
-                          Executive Manager
-                        </option>
-                        <option value="Farmer">Farmer</option>
-                        <option value="Film Maker">Film Maker</option>
-                        <option value="Firefighter">Firefighter</option>
-                        <option value="Fisherman">Fisherman</option>
-                        <option value="Fitness Trainer">Fitness Trainer</option>
-                        <option value="Flight Attendant">
-                          Flight Attendant
-                        </option>
-                        <option value="Florist">Florist</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Gardener">Gardener</option>
-                        <option value="Hair Stylist">Hair Stylist</option>
-                        <option value="Home Care Aid">Home Care Aid</option>
-                        <option value="Homemaker">Homemaker</option>
-                        <option value="Hospitality Worker">
-                          Hospitality Worker
-                        </option>
-                        <option value="Housekeeper">Housekeeper</option>
-                        <option value="Information Technology Professional">
-                          Information Technology Professional
-                        </option>
-                        <option value="Investor">Investor</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Laborer">Laborer</option>
-                        <option value="Lawyer">Lawyer</option>
-                        <option value="Librarian">Librarian</option>
-                        <option value="Maintenance Worker">
-                          Maintenance Worker
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Manufacturing Worker">
-                          Manufacturing Worker
-                        </option>
-                        <option value="Marketing Professional">
-                          Marketing Professional
-                        </option>
-                        <option value="Mathematician">Mathematician</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Medical Professional">
-                          Medical Professional
-                        </option>
-                        <option value="Merchant">Merchant</option>
-                        <option value="Midwife">Midwife</option>
-                        <option value="Military Personnel">
-                          Military Personnel
-                        </option>
-                        <option value="Musician">Musician</option>
-                        <option value="Nanny">Nanny</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Office Clerk">Office Clerk</option>
-                        <option value="Office Worker">Office Worker</option>
-                        <option value="Optician">Optician</option>
-                        <option value="Performance Artist">
-                          Performance Artist
-                        </option>
-                        <option value="Photographer">Photographer</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="Politician">Politician</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Railroad Engineer">
-                          Railroad Engineer
-                        </option>
-                        <option value="Researcher">Researcher</option>
-                        <option value="Retail Employee">Retail Employee</option>
-                        <option value="Retiree">Retiree</option>
-                        <option value="Rigger">Rigger</option>
-                        <option value="Sailor">Sailor</option>
-                        <option value="Salesperson">Salesperson</option>
-                        <option value="Scientist">Scientist</option>
-                        <option value="Sea Captain">Sea Captain</option>
-                        <option value="Secretary">Secretary</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Small Business Owner">
-                          Small Business Owner
-                        </option>
-                        <option value="Social Worker">Social Worker</option>
-                        <option value="Software Developer">
-                          Software Developer
-                        </option>
-                        <option value="Spokesperson">Spokesperson</option>
-                        <option value="Statistician">Statistician</option>
-                        <option value="Stay-At-Home Parent">
-                          Stay-At-Home Parent
-                        </option>
-                        <option value="Student">Student</option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surveyor">Surveyor</option>
-                        <option value="Tailor">Tailor</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Tradesperson">Tradesperson</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Translator">Translator</option>
-                        <option value="Truck Driver">Truck Driver</option>
-                        <option value="Tutor">Tutor</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Videographer">Videographer</option>
-                        <option value="Waiter">Waiter</option>
-                        <option value="Waste Collector">Waste Collector</option>
-                        <option value="Writer">Writer</option>
-                        <option value="Zoologist">Zoologist</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >State<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
+                        formControlName="registerStateType"
                         [ngClass]="{
                           'invalid-input':
                             (!form3.get('registerStateType')?.touched ||
@@ -1918,10 +933,6 @@
                             submitButtonClicked &&
                             !form3.valid
                         }"
-                        required
-                        formControlName="registerStateType"
-                        class="form-select"
-                        aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
@@ -1977,6 +988,126 @@
                         <option value="Wisconsin">Wisconsin</option>
                         <option value="Wyoming">Wyoming</option>
                         <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Business Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        formControlName="registerBusinessType"
+                        class="form-select"
+                        aria-label="Default select example"
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerBusinessType')?.touched ||
+                              !form3.get('registerBusinessType')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option
+                          [value]="type.business_type"
+                          *ngFor="let type of businessType"
+                        >
+                          {{ type.business_type }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Age Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerAgeType')?.touched ||
+                              !form3.get('registerAgeType')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        class="form-select"
+                        aria-label="Default select example"
+                        formControlName="registerAgeType"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option
+                          [value]="type.name"
+                          *ngFor="let type of ageType"
+                        >
+                          {{ type.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Sports Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerSportType')?.touched ||
+                              !form3.get('registerSportType')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        (change)="onRegisterSportTypeChange()"
+                        formControlName="registerSportType"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+
+                        <option
+                          [value]="type.name"
+                          *ngFor="let type of sportType"
+                        >
+                          {{ type.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Position Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerPositionType')?.touched ||
+                              !form3.get('registerPositionType')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerPositionType"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+
+                        <option
+                          [value]="type.name"
+                          *ngFor="let type of positionType"
+                        >
+                          {{ type.name }}
+                        </option>
                       </select>
                     </div>
 
