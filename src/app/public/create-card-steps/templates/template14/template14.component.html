@@ -116,10 +116,10 @@
       <i class="fa-solid fa-share forward"></i>
       <h3>Forward My Card</h3>
     </button>
-    <button type="button" class="ctrl-item">
+    <a [routerLink]="['/']" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
       <h3>Sign Up</h3>
-    </button>
+    </a>
     <button type="button" class="ctrl-item" *ngIf="saveCard">
       <i class="fa-solid fa-download save"></i>
       <h3>Save My Card</h3>
