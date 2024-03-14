@@ -26,6 +26,7 @@ export class Template02Component implements OnChanges {
   @Input() productImages: File; 
   @Input() youtubeArray:any
   @Input() umyotubeArray:any
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() vimeoArray:any
   constructor(private sanitizer: DomSanitizer) {}
   sanitizeYouTubeLink(youtubeLink: string): any {

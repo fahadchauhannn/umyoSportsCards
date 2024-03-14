@@ -21,6 +21,7 @@ export class Template09Component implements OnChanges {
   @Input() saveCard: boolean;  
   @Input() inviteCode: boolean;  
   @Input() referal: any; 
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 
   @Input() productImages: File; 

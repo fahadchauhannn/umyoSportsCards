@@ -20,6 +20,7 @@ export class Template12Component implements OnChanges {
   @Input() forwardCard: boolean;  
   @Input() saveCard: boolean;  
   @Input() inviteCode: boolean;  
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 

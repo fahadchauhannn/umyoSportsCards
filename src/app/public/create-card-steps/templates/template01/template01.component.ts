@@ -23,6 +23,10 @@ export class Template01Component implements OnChanges {
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
+
+
+
 
 
   @Input() productImages: File;
@@ -42,6 +46,9 @@ export class Template01Component implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['photo']) {
       this.loadImage();
+    }
+    if (changes['buttons']) {
+      console.log(this.buttons);
     }
     if (changes['logo']) {
       this.loadImageLogo();

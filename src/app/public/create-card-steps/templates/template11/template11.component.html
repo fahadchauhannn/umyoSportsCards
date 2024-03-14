@@ -130,6 +130,28 @@
       <h3>Save My Card</h3>
     </button>
   </div>
+  <div class="buttons-container" style="display: flex; flex-wrap: wrap">
+    <ng-container *ngFor="let button of buttons">
+      <a
+        [href]="button.LinkButtonLink"
+        type="button"
+        class="ctrl-item"
+        *ngIf="button"
+        style="
+          margin: 5px;
+          padding: 12px;
+          border-radius: 32px;
+
+          color: white;
+          text-decoration: none;
+          text-align: center;
+        "
+        [style.background-color]="buttonColor"
+      >
+        <h3 style="font-size: 15px">{{ button.LinkButtonTitle }}</h3>
+      </a>
+    </ng-container>
+  </div>
   <footer>
     <img src="../../../../../assets/images/qrcode.jpg" alt="" />
     <!-- replace with auto generated in production -->

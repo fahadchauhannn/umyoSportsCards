@@ -33,8 +33,7 @@ export class PreviewCardComponent implements  OnInit{
       VimeoLink:any
       UmyotubeTitle:any
       UmyotubeLink:any
-      LinkButtonTitle:any
-      LinkButtonLink:any
+      buttons:any
       FacebookLink:any
       
       Facebook:any
@@ -132,8 +131,8 @@ user_id  = parseInt(this.id, 10);
             this.VimeoLink = response.Card.socialFormData?.vimeoVideos[0]?.vimeoLink;
             this.UmyotubeTitle = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeTitle;
             this.UmyotubeLink = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeLink;
-            this.LinkButtonTitle = response.Card.socialFormData?.linkButtons[0]?.linkButtonTitle;
-            this.LinkButtonLink = response.Card.socialFormData?.linkButtons[0]?.websiteLink;
+            this.buttons = response.Card.socialFormData?.linkButtons;
+            
             this.FacebookLink = response.Card.FacebookLink;
   
             

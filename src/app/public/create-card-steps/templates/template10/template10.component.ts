@@ -22,6 +22,7 @@ export class Template10Component implements OnChanges {
   @Input() inviteCode: boolean;  
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() logo: File; 
   @Input() productImages: File; 
   @Input() youtubeArray:any

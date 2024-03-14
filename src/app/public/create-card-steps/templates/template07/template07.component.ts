@@ -18,6 +18,7 @@ export class Template07Component implements OnChanges {
   @Input() phone: string; 
   @Input() phoneAllow: boolean; 
   @Input() forwardCard: boolean;  
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() saveCard: boolean;  
   @Input() inviteCode: boolean;  
   @Input() referal: any; 

@@ -19,6 +19,7 @@ export class Template05Component implements OnChanges {
   @Input() phoneAllow: boolean; 
   @Input() forwardCard: boolean;  
   @Input() saveCard: boolean;  
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() inviteCode: boolean;  
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File

@@ -15,6 +15,7 @@ export class Template15Component implements OnChanges {
   @Input() content: string; 
   @Input() email: string; 
   @Input() address: string; 
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() phone: string; 
   @Input() phoneAllow: boolean; 
   @Input() forwardCard: boolean;  

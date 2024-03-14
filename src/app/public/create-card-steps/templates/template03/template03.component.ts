@@ -23,6 +23,7 @@ export class Template03Component implements OnChanges {
   @Input() referal: any; 
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() productImages: File; 
   @Input() youtubeArray:any
   @Input() umyotubeArray:any
