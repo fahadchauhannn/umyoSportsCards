@@ -108,7 +108,7 @@
     height: 140px;
   }
   .slick-arrow {
-    display: none !important;
+    /* display: none !important; */
   }
   .lft-video .overlay {
     position: absolute;
