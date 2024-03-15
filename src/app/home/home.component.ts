@@ -691,14 +691,19 @@ export class HomeComponent implements AfterViewInit {
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        selectedLocation: [''],
+        // selectedLocation: [''],
         selectedGender: [''],
         selectedCity: [''],
 
-        selectedBase: [''],
-        selectedBranch: [''],
-        selectedRank: [''],
-        selectedType: [''],
+        // selectedBase: [''],
+        // selectedBranch: [''],
+        // selectedRank: [''],
+        // selectedType: [''],
+        selectedCollege:[''],
+        selectedYear:[''],
+        selectedDegree:[''],
+        selectedStudy:[''],
+        
      
 
         
