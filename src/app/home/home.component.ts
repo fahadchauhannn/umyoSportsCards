@@ -652,7 +652,7 @@ if ($('.moreless-button14').text() == "Read more") {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyonfl.site'
+                window.location.href='https://umyosportscards.com'
             }
           );
         }
