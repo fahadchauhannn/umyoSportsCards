@@ -60,6 +60,8 @@ export class EditCardComponent  implements  OnInit{
       ConvertedPhoto:any
      ConvertedLogo:any
      ConvertedProductImage:any
+     iPic:any
+     iLogo:any
   
 
   displayStep(stepNumber: number) {
@@ -457,6 +459,8 @@ user_id  = parseInt(this.id, 10);
             
             this.Form.get('Photo').setValue(this.convertDataURLtoFile(response.Card.change_photo, 'photo'));
             this.Form.get('Logo').setValue(this.convertDataURLtoFile(response.Card.change_logo, 'logo'));
+            this.iPic=response.Card.change_photo
+            this.iLogo=response.Card.change_logo
             this.Form.get('ProductImages').setValue('');
 
             this.Form.get('YoutubeVideos').setValue(response.Card.socialFormData?.youtubeVideos[0]?.youtubeTitle);
@@ -663,8 +667,8 @@ const infoFormData={
     const formData={
       buttonColor:this.Form.value.selectedColor,
       cardTitle:this.Form.value.CardTitle,
-      change_logo:null,
-      change_photo:null,
+      change_logo:this.iLogo,
+      change_photo:this.iPic,
       colorTheme:this.Form.value.selectedColor,
       user_id:this.id,
       card_id:this.card_id,
@@ -677,14 +681,21 @@ const infoFormData={
     if(this.ConvertedPhoto!=null || ''){
       formData.change_photo = this.ConvertedPhoto;
     }
-    else{
+    else if(this.iPic==null || this.iPic==undefined || this.iPic==""){
       formData.change_photo = this.Form.value.photo;
+    }
+    
+    else{
+      formData.change_photo = this.iPic
     }
     if(this.ConvertedLogo!=null || ''){
       formData.change_logo = this.ConvertedLogo;
     }
-    else{
+    else if(this.iLogo==null || this.iLogo==undefined || this.iLogo==""){
       formData.change_logo = this.Form.value.logo;
+    }
+    else{
+      formData.change_logo = this.iLogo
     }
 
 
