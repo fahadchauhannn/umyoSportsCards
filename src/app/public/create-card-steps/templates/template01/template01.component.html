@@ -123,41 +123,67 @@
       </div>
 
       <div class="three-ctrls">
-        <button type="button" class="ctrl-item" *ngIf="forwardCard">
+        <button type="button" class="ctrl-item" *ngIf="forwardCard" 
+        data-bs-toggle="modal"
+        data-bs-target="#shareCard"
+        >
           <i class="fa-solid fa-share forward"></i>
           <h3>Forward My Card</h3>
         </button>
         <a [routerLink]="['/']" type="button" class="ctrl-item">
           <i class="fa-solid fa-right-to-bracket signup"></i>
-          <h3>Sign Up</h3>
+          <h3 style="color: black">Sign Up</h3>
         </a>
-        <button type="button" class="ctrl-item" *ngIf="saveCard">
+        <button
+          type="button"
+          class="ctrl-item"
+          *ngIf="saveCard"
+          (click)="downloadVCard()"
+        >
           <i class="fa-solid fa-download save"></i>
           <h3>Save My Card</h3>
         </button>
       </div>
-      <div class="buttons-container" style="display: flex; flex-wrap: wrap">
-        <ng-container *ngFor="let button of buttons">
-          <a
-            [href]="button.LinkButtonLink"
-            type="button"
-            class="ctrl-item"
-            *ngIf="button"
-            style="
-              margin: 5px;
-              padding: 12px;
-              border-radius: 32px;
-
-              color: white;
-              text-decoration: none;
-              text-align: center;
-            "
-            [style.background-color]="buttonColor"
-          >
-            <h3 style="font-size: 15px">{{ button.LinkButtonTitle }}</h3>
-          </a>
-        </ng-container>
+      <div
+        *ngIf="
+          buttons && buttons.length > 0 && buttons[0].LinkButtonTitle != ''
+        "
+      >
+        <div
+          class="buttons-container"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            gap: 5px;
+          "
+        >
+          <ng-container *ngFor="let button of buttons">
+            <a
+              [href]="button.LinkButtonLink"
+              type="button"
+              class="ctrl-item"
+              *ngIf="button"
+              style="
+                padding: 12px;
+                border-radius: 8px;
+                width: 100%;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+              "
+              [style.background-color]="buttonColor"
+            >
+              <h3 style="font-size: 15px">{{ button.LinkButtonTitle }}</h3>
+            </a>
+          </ng-container>
+        </div>
       </div>
+
       <footer>
         <img src="../../../../../assets/images/qrcode.jpg" alt="" />
         <!-- replace with auto generated in production -->

@@ -54,6 +54,7 @@ export class PreviewCardComponent implements  OnInit{
       card_id:any
       ConvertedPhoto:any
      ConvertedLogo:any
+     shareCardId:any
      ConvertedProductImage:any
 
 
@@ -100,6 +101,7 @@ user_id  = parseInt(this.id, 10);
     this.apiService.getSingleCard(payload).subscribe(
       (response)=>{
           if(response.status=='Success'){
+            this.shareCardId=response.Card.id
             this.templateId=response.Card.infoFormData.templateId
             this.selectedColor = response.Card.colorTheme;
             this.FirstName = response.Card.infoFormData.firstName;

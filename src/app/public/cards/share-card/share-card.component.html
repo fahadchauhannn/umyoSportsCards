@@ -414,3 +414,58 @@
     </div>
   </div> -->
 </div>
+
+<div
+  class="modal fade"
+  id="shareCard"
+  tabindex="-1"
+  aria-labelledby="shareCardLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="shareCardLabel">Forward Card</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="row"
+          style="
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <h5 style="width: 100%; text-align: center; padding-bottom: 25px">
+            https://umyobizdfw.com/cards/share-card/{{ shareCardId }}
+          </h5>
+
+          <h3
+            style="
+              width: 100%;
+              text-align: center;
+              padding-bottom: 25px;
+              padding-top: 40px;
+              font-size: medium;
+            "
+          >
+            Copy link to share your card.
+          </h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

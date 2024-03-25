@@ -57,6 +57,7 @@ export class ShareCardComponent  implements  OnInit{
       ConvertedPhoto:any
      ConvertedLogo:any
      ConvertedProductImage:any
+     shareCardId:any
 
 
 
@@ -102,6 +103,7 @@ user_id  = parseInt(this.id, 10);
     this.apiService.getSingleCard(payload).subscribe(
       (response)=>{
           if(response.status=='Success'){
+            this.shareCardId=response.Card.id
             this.templateId=response.Card.infoFormData.templateId
             this.selectedColor = response.Card.colorTheme;
             this.FirstName = response.Card.infoFormData.firstName;

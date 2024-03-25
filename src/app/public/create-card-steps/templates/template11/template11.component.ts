@@ -79,4 +79,26 @@ export class Template11Component implements OnChanges {
     }
     
   }
+  downloadVCard(): void {
+    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:${this.firstName} ${this.lastName}
+ORG:${this.companyName}
+EMAIL:${this.email}
+TEL:${this.phone}
+ADR:${this.address}
+END:VCARD`;
+
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contact.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  }
 }
+

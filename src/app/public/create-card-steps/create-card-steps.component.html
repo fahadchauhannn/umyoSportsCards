@@ -50,6 +50,11 @@
                 <div class="template-box">
                   <app-template01
                     *ngIf="templateId == 1"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
