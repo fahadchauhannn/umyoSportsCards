@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./template13.component.css']
 })
 export class Template13Component implements OnChanges {
+  
   @Input() buttonColor: string;
   @Input() firstName: string;
   @Input() lastName: string;
@@ -15,6 +16,19 @@ export class Template13Component implements OnChanges {
   @Input() jobTitle: string;
   @Input() content: string; 
   @Input() email: string; 
+
+  @Input() linkedin: string; 
+  @Input() youtube: string; 
+  @Input() twitter: string; 
+  @Input() facebook: string; 
+  @Input() instagram: string; 
+  @Input() gpa: string; 
+  @Input() age: string; 
+  @Input() weight: string; 
+  @Input() height: string; 
+  @Input() school: string; 
+  @Input() grade: string; 
+
   @Input() address: string; 
   @Input() phone: string; 
   @Input() phoneAllow: boolean; 
@@ -22,10 +36,16 @@ export class Template13Component implements OnChanges {
   @Input() saveCard: boolean;  
   @Input() inviteCode: boolean;  
   @Input() referal: any; 
-  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
   @Input() photo: File;  // Change the type to File
   @Input() logo: File; 
-  @Input() productImages: File; 
+  @Input() buttons: Array<{ LinkButtonLink: string, LinkButtonTitle: string }>;
+
+
+
+
+
+  @Input() productImages: File;
+
   @Input() youtubeArray:any
   @Input() umyotubeArray:any
   @Input() vimeoArray:any
@@ -33,6 +53,7 @@ export class Template13Component implements OnChanges {
   sanitizeYouTubeLink(youtubeLink: string): any {
     return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeLink);
   }
+
   imageSrc: string | ArrayBuffer | null = 'assets/images/john-doe-avatar.jpg';
   imageSrcLogo: string | ArrayBuffer | null = 'assets/images/unmasking-yourself.jpg';
   imageSrcProductImage: string | ArrayBuffer | null = 'assets/images/app-devices.jpg';
@@ -40,6 +61,9 @@ export class Template13Component implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['photo']) {
       this.loadImage();
+    }
+    if (changes['buttons']) {
+      console.log(this.buttons);
     }
     if (changes['logo']) {
       this.loadImageLogo();
@@ -49,8 +73,10 @@ export class Template13Component implements OnChanges {
     }
   }
 
+ 
   private loadImage(): void {
     if (this.photo) {
+      
       const reader = new FileReader();
       reader.onload = (event) => {
         this.imageSrc = event.target?.result;

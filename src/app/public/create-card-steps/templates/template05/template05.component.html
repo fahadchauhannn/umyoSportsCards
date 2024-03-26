@@ -46,6 +46,7 @@
         <i class="fa-solid fa-location-dot"></i>
       </a>
     </div>
+
     <div class="col img">
       <img [src]="imageSrc" alt="profileImage" />
     </div>
@@ -57,24 +58,52 @@
     </div>
     <div class="clearfix"><br /></div>
     <div class="social">
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="linkedin"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-linkedin-in"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="instagram"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-instagram"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="facebook"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-facebook-f"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a [href]="twitter" target="_blank" [style.background-color]="buttonColor"
         ><i class="fa-brands fa-twitter"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a [href]="youtube" target="_blank" [style.background-color]="buttonColor"
         ><i class="fa-brands fa-youtube"></i
       ></a>
     </div>
     <div class="clearfix"><br /></div>
   </section>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+    "
+  >
+    <p *ngIf="gpa">GPA: {{ gpa }}</p>
+    <p *ngIf="school">School: {{ school }}</p>
+    <p *ngIf="grade">Grade: {{ grade }}</p>
+
+    <p *ngIf="height">Height: {{ height }}</p>
+    <p *ngIf="age">Age: {{ age }}</p>
+    <p *ngIf="weight">Weight: {{ weight }}</p>
+  </div>
   <div *ngIf="youtubeArray && youtubeArray.length > 0">
     <div *ngFor="let video of youtubeArray">
       <p>{{ video.youtubeTitle }}</p>
@@ -126,7 +155,7 @@
       data-bs-target="#shareCard"
     >
       <i class="fa-solid fa-share forward"></i>
-      <h3>Forward My Card</h3>
+      <h3>Forward</h3>
     </button>
     <a [routerLink]="['/']" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>

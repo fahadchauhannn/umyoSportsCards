@@ -342,31 +342,15 @@
 
 
     .px__screen__frame {
-        --sb-track-color: #e7e7e7;
+        /* --sb-track-color: #e7e7e7;
         --sb-thumb-color: #40637f;
         --sb-size: 10px;
     
         scrollbar-color: #e7e7e7
-        #40637f;
+        #40637f; */
     }
     
-    .px__screen__frame::-webkit-scrollbar {
-        width: 10px;
-        
-        
-    }
     
-    .px__screen__frame::-webkit-scrollbar-track {
-        background: #e7e7e7;
-        border-radius: 10px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .px__screen__frame::-webkit-scrollbar-thumb {
-        background: #40637f;
-        border-radius: 10px;
-    }
 
     .px__screen__frame {
         overflow-y: scroll;
@@ -387,4 +371,30 @@
     left: 50%;
     font-size: 5em;
     transform: translate(-50%,-50%);
+    }
+
+    .px__screen__frame::-webkit-scrollbar {
+      width: 0 !important; /* Hide the scrollbar */
+      background: transparent !important; /* Adjust the background color of the scrollbar track */
+    } 
+  .loading-spinner {
+      position: fixed;
+      top: 50%;
+      left: calc(50% - 22px);
+      transform: translate(-50%, -50%);
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s infinite linear;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }

@@ -35,7 +35,7 @@ export class ShareCardComponent  implements  OnInit{
       LinkButtonTitle:any
       LinkButtonLink:any
       FacebookLink:any
-      
+      loading: boolean = true;
       Facebook:any
       Youtube:any
       Linkedin:any
@@ -59,6 +59,13 @@ export class ShareCardComponent  implements  OnInit{
      ConvertedProductImage:any
      shareCardId:any
 
+gpa:any
+school:any
+grade:any
+height:any
+age:any
+weight:any
+
 
 
      id=localStorage.getItem('user_id')
@@ -75,7 +82,9 @@ user_id  = parseInt(this.id, 10);
 
 
   convertDataURLtoFile(dataURL: string, fileName: string): File | null {
+    
     if (!dataURL || typeof dataURL !== 'string' || !dataURL.startsWith('data:image')) {
+      console.log(fileName);
       console.error('Invalid data URL');
       return null;
     }
@@ -116,6 +125,20 @@ user_id  = parseInt(this.id, 10);
             this.PhoneNumber = response.Card.infoFormData.phoneNumber;
             this.PhoneNumber2 = response.Card.infoFormData.alternativePhoneNo;
 
+            this.gpa = response.Card.infoFormData?.gpa;
+            this.age = response.Card.infoFormData?.age;
+            this.weight = response.Card.infoFormData?.weight;
+            this.grade = response.Card.infoFormData?.grade;
+            this.height = response.Card.infoFormData?.height;
+            this.school = response.Card.infoFormData?.school;
+
+
+            this.Facebook = response.Card.socialFormData.facebook.replace(/\\/g, '');
+            this.Twitter = response.Card.socialFormData.twitter.replace(/\\/g, '');
+            this.Youtube = response.Card.socialFormData.youtube.replace(/\\/g, '');
+            this.Instagram = response.Card.socialFormData.instagram.replace(/\\/g, '');
+            this.Linkedin = response.Card.socialFormData.linkedin.replace(/\\/g, '');
+
             this.PhoneAllow = response.Card.infoFormData.phoneTextAllow;
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
             this.SaveCard = response.Card.infoFormData.showSaveButton;
@@ -140,7 +163,8 @@ user_id  = parseInt(this.id, 10);
             
   
             this.referalCode = response.Card.infoFormData.inviteCode;
-  
+            
+            this.loading = false;
             
           }
           else{
