@@ -590,21 +590,24 @@
 
                   <div class="color_picker_wrap">
                     <h3 class="title">Choose Button Color:</h3>
-                    <div class="color-picker">
+                    <!-- <div class="color-picker">
                       <div
                         *ngFor="let color of colorOptions"
                         class="color-item"
                       >
-                        <input
-                          type="radio"
-                          [id]="color"
-                          [value]="color"
-                          formControlName="selectedColor"
-                        />
+                        <input type="radio" [id]="color" [value]="color" />
                         <label [for]="color"
                           ><span [class]="color"></span
                         ></label>
                       </div>
+                    </div> -->
+                    <div *ngIf="colorPickerLoaded">
+                      <color-sketch
+                        [width]="300"
+                        formControlName="selectedColor"
+                        [color]="selectedColor"
+                        (onChangeComplete)="changeComplete($event)"
+                      ></color-sketch>
                     </div>
                   </div>
                 </div>

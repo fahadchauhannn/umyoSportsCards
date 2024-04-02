@@ -1926,3 +1926,8 @@ body{
 .input-group .input-group-text {
     width: 45px;
 }
+
+.sketch-wrap[_ngcontent-vkm-c79]{
+  width: 35px !important;
+  height: 35px !important;
+}

@@ -1,4 +1,4 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component,ChangeDetectorRef, OnInit, AfterViewInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 declare var $: any;
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-card.component.html',
   styleUrls: ['./edit-card.component.css']
 })
-export class EditCardComponent  implements  OnInit{
+export class EditCardComponent  implements  AfterViewInit{
 
   selectedColor:any
       FirstName: any
@@ -26,6 +26,7 @@ export class EditCardComponent  implements  OnInit{
       PhoneNumber2: any
       PhoneAllow: any
       ForwardCard: any
+      colorPickerLoaded: boolean = false;
       SaveCard: any
       InviteCode: any
       Photo:any
@@ -62,8 +63,15 @@ export class EditCardComponent  implements  OnInit{
      ConvertedProductImage:any
      iPic:any
      iLogo:any
-  
 
+     changeComplete(color: any) {
+      
+      this.selectedColor = color.hex; // Update the selected color
+    }
+    
+     ngAfterViewInit() {
+      this.colorPickerLoaded = true;
+    }
   displayStep(stepNumber: number) {
     console.log('display stepp');
     if (stepNumber >= 1 && stepNumber <= 3) {
@@ -436,6 +444,7 @@ user_id  = parseInt(this.id, 10);
 
           if(response.status=='Success'){
             this.templateId=response.Card.infoFormData.templateId
+            this.selectedColor=response.Card.colorTheme
             this.Form.get('selectedColor').setValue(response.Card.colorTheme);
             this.Form.get('FirstName').setValue(response.Card.infoFormData.firstName);
             this.Form.get('LastName').setValue(response.Card.infoFormData.lastName);
