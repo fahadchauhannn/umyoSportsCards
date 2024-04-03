@@ -72,6 +72,7 @@ import { ShareCardComponent } from './public/cards/share-card/share-card.compone
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TruckersComponent } from './truckers/truckers.component';
 
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 
 
@@ -170,6 +171,7 @@ import { AiComponent } from './ai/ai.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ColorSketchModule, 
     ToastrModule.forRoot({
       positionClass: 'custom-toast-position',
     }),

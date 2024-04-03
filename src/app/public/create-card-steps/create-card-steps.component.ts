@@ -1,4 +1,4 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component,ChangeDetectorRef, OnInit, AfterViewInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 
@@ -15,7 +15,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-card-steps.component.css'],
   
 })
-export class CreateCardStepsComponent implements  OnInit{
+export class CreateCardStepsComponent implements  AfterViewInit{
+  ngAfterViewInit() {
+    this.colorPickerLoaded = true;
+  }
   displayStep(stepNumber: number) {
     console.log('display stepp');
     if (stepNumber >= 1 && stepNumber <= 3) {
@@ -42,7 +45,7 @@ export class CreateCardStepsComponent implements  OnInit{
   selectedColor='red'
   
   referalCode:any
-  
+  colorPickerLoaded: boolean = false;
   templateId:any
   
   ConvertedPhoto:any
@@ -56,7 +59,10 @@ user_id  = parseInt(this.id, 10);
     buttons: ST_BUTTONS,
   };
   
-
+  changeComplete(color: any) {
+    
+    this.selectedColor = color.hex; // Update the selected color
+  }
 
   constructor(private fb: FormBuilder,private cdr: ChangeDetectorRef, private apiService:ApiService,private route:ActivatedRoute,private router: Router,) {
     this.Form = this.fb.group({

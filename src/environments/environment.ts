@@ -8,7 +8,7 @@
 // };
 export const environment = {
   production: false,
-  apiUrl: "https://umyobizdfw.com/api_umyocards/public/api/"
+  apiUrl: "https://umyohbcu.site/api_umyocards/public/api/"
 };
 
 

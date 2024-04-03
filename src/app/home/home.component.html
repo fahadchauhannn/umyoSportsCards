@@ -1,4 +1,4 @@
-<section id="header" style="background: #3f2305 !important">
+<section id="header" style="background: #5d9c59 !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -9,7 +9,7 @@
         <a href="index.html" class="navbar-brand">
           <!-- <h1 class="text-white display-6">UMYO</h1> -->
           <img
-            src="assets/dfw/logo.png"
+            src="assets/hbcu/logo.png"
             class="img-fluid rounded-circle"
             style="width: 4rem; height: 4rem"
           />
@@ -31,9 +31,9 @@
             >
             <a
               style="white-space: nowrap"
-              href="https://dfwtalks.site"
+              href="https://hbcutalks.site"
               class="nav-item nav-link"
-              >DFW Talk</a
+              >HBCU Talk</a
             >
             <a href="http://vibetalktv.com/" class="nav-item nav-link"
               >Podcast</a
@@ -45,12 +45,6 @@
               >ChatGpt</a
             >
 
-            <a
-              class="nav-link"
-              style="white-space: nowrap"
-              href="http://dfwtweets.site/"
-              >DFW Tweet</a
-            >
             <a href="" style="white-space: nowrap" class="nav-item nav-link"
               >Booking Appt</a
             >
@@ -133,9 +127,9 @@
               <li class="nav-item">
                 <a
                   style="white-space: nowrap"
-                  href="https://dfwtalks.site"
+                  href="https://hbcutalks.site"
                   class="nav-item nav-link"
-                  >DFW Talk</a
+                  >HBCU Talk</a
                 >
               </li>
               <li class="nav-item">
@@ -152,14 +146,6 @@
                   style="white-space: nowrap"
                   href="http://uchatyes.com/"
                   >ChatGpt</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="white-space: nowrap"
-                  href="http://dfwtweets.site/"
-                  >DFW Tweet</a
                 >
               </li>
 
@@ -310,7 +296,7 @@
   <!-- <div class="page-width">
   <div class="lft-hero__content">
   <h1>CREATE IMPRESSIVE MILITARY CARDS</h1>
-      <p>UMYO DFW Connect introduces an innovative networking solution exclusively for military personnel.</p>
+      <p>UMYO HBCU Connect introduces an innovative networking solution exclusively for military personnel.</p>
   
   
   <a class="button js-no-transition" href="#linq-form" onclick="track('Clicked LFT hero cta')">Read More</a>
@@ -318,7 +304,7 @@
   </div> -->
 </section>
 
-<section id="logo-slider" style="background: #3f2305 !important">
+<section id="logo-slider" style="background: #5d9c59 !important">
   <div class="container-fluid mt-5">
     <div class="container-fluid mt-1 mobile" style="overflow-x: hidden">
       <h1 class="text-center mb-5 text-white">
@@ -400,7 +386,7 @@
 
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #3f2305 !important">
+<section id="header" style="background: #5d9c59 !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
       <h1 class="text-white text-center mb-3" style="font-weight: 600">
@@ -1674,6 +1660,367 @@
                         <option value="Other">Other</option>
                       </select>
                     </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Degree<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        formControlName="registerDegree"
+                        class="form-select"
+                        aria-label="Default select example"
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerDegree')?.touched ||
+                              !form3.get('registerDegree')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Associate">Associate</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Doctoral">Doctoral</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Student">Student</option>
+                        <option value="Non Graduate">Non Graduate</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >College / University<sup
+                          style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        formControlName="registerCollege"
+                        class="form-select"
+                        aria-label="Default select example"
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerCollege')?.touched ||
+                              !form3.get('registerCollege')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Alabama A&M University">
+                          Alabama A&M University
+                        </option>
+                        <option value="Alabama State University">
+                          Alabama State University
+                        </option>
+                        <option value="Albany State University">
+                          Albany State University
+                        </option>
+                        <option value="Alcorn State University">
+                          Alcorn State University
+                        </option>
+                        <option value="Allen University">
+                          Allen University
+                        </option>
+                        <option value="American Baptist College">
+                          American Baptist College
+                        </option>
+                        <option value="University of Arkansas at Pine Bluff">
+                          University of Arkansas at Pine Bluff
+                        </option>
+                        <option value="Arkansas Baptist College">
+                          Arkansas Baptist College
+                        </option>
+                        <option value="Barber-Scotia College">
+                          Barber-Scotia College
+                        </option>
+                        <option value="Benedict College">
+                          Benedict College
+                        </option>
+                        <option value="Bennett College">Bennett College</option>
+                        <option value="Bethune-Cookman University">
+                          Bethune-Cookman University
+                        </option>
+                        <option value="Bishop State Community College">
+                          Bishop State Community College
+                        </option>
+                        <option value="Bluefield State College">
+                          Bluefield State College
+                        </option>
+                        <option value="Bowie State University">
+                          Bowie State University
+                        </option>
+                        <option value="Carver College">Carver College</option>
+                        <option value="Central State University">
+                          Central State University
+                        </option>
+                        <option value="Cheyney University of Pennsylvania">
+                          Cheyney University of Pennsylvania
+                        </option>
+                        <option value="Claflin University">
+                          Claflin University
+                        </option>
+                        <option value="Clark Atlanta University">
+                          Clark Atlanta University
+                        </option>
+                        <option value="Clinton College">Clinton College</option>
+                        <option value="Coahoma Community College">
+                          Coahoma Community College
+                        </option>
+                        <option
+                          value="Concordia College, Alabama (closed 2018)"
+                        >
+                          Concordia College, Alabama (closed 2018)
+                        </option>
+                        <option value="Coppin State University">
+                          Coppin State University
+                        </option>
+                        <option value="Delaware State University">
+                          Delaware State University
+                        </option>
+                        <option value="Denmark Technical College">
+                          Denmark Technical College
+                        </option>
+                        <option value="Dillard University">
+                          Dillard University
+                        </option>
+                        <option value="University of the District of Columbia">
+                          University of the District of Columbia
+                        </option>
+                        <option value="Edward Waters University">
+                          Edward Waters University
+                        </option>
+                        <option value="Elizabeth City State University">
+                          Elizabeth City State University
+                        </option>
+                        <option value="Fayetteville State University">
+                          Fayetteville State University
+                        </option>
+                        <option value="Fisk University">Fisk University</option>
+                        <option value="Florida A&M University">
+                          Florida A&M University
+                        </option>
+                        <option value="Florida Memorial University">
+                          Florida Memorial University
+                        </option>
+                        <option value="Fort Valley State University">
+                          Fort Valley State University
+                        </option>
+                        <option
+                          value="Gadsden State Community College (Valley Street campus)"
+                        >
+                          Gadsden State Community College (Valley Street campus)
+                        </option>
+                        <option value="Grambling State University">
+                          Grambling State University
+                        </option>
+                        <option value="Harris-Stowe State University">
+                          Harris-Stowe State University
+                        </option>
+                        <option value="Hinds Community College at Utica">
+                          Hinds Community College at Utica
+                        </option>
+                        <option value="Hood Theological Seminary">
+                          Hood Theological Seminary
+                        </option>
+                        <option value="Howard University">
+                          Howard University
+                        </option>
+                        <option value="Huston-Tillotson University">
+                          Huston-Tillotson University
+                        </option>
+                        <option value="Interdenominational Theological Center">
+                          Interdenominational Theological Center
+                        </option>
+                        <option value="J. F. Drake State Technical College">
+                          J. F. Drake State Technical College
+                        </option>
+                        <option value="Jackson State University">
+                          Jackson State University
+                        </option>
+                        <option value="Jarvis Christian University">
+                          Jarvis Christian University
+                        </option>
+                        <option value="Johnson C. Smith University">
+                          Johnson C. Smith University
+                        </option>
+                        <option value="Johnson C. Smith Theological Seminary">
+                          Johnson C. Smith Theological Seminary
+                        </option>
+                        <option value="Kentucky State University">
+                          Kentucky State University
+                        </option>
+                        <option value="Knoxville College">
+                          Knoxville College
+                        </option>
+                        <option value="Lane College">Lane College</option>
+                        <option value="Langston University">
+                          Langston University
+                        </option>
+                        <option value="Lawson State Community College">
+                          Lawson State Community College
+                        </option>
+                        <option value="LeMoyne-Owen College">
+                          LeMoyne-Owen College
+                        </option>
+                        <option value="Lewis College of Business">
+                          Lewis College of Business
+                        </option>
+                        <option value="Lincoln University (Missouri)">
+                          Lincoln University (Missouri)
+                        </option>
+                        <option value="Lincoln University (Pennsylvania)">
+                          Lincoln University (Pennsylvania)
+                        </option>
+                        <option value="Livingstone College">
+                          Livingstone College
+                        </option>
+                        <option value="University of Maryland Eastern Shore">
+                          University of Maryland Eastern Shore
+                        </option>
+                        <option value="Meharry Medical College">
+                          Meharry Medical College
+                        </option>
+                        <option value="Miles College">Miles College</option>
+                        <option value="Miles School of Law">
+                          Miles School of Law
+                        </option>
+                        <option value="Mississippi Valley State University">
+                          Mississippi Valley State University
+                        </option>
+                        <option value="Morehouse School of Medicine">
+                          Morehouse School of Medicine
+                        </option>
+                        <option value="Morgan State University">
+                          Morgan State University
+                        </option>
+                        <option value="Morris Brown College">
+                          Morris Brown College
+                        </option>
+                        <option value="Morris College">Morris College</option>
+                        <option value="Norfolk State University">
+                          Norfolk State University
+                        </option>
+                        <option value="North Carolina A&T State University">
+                          North Carolina A&T State University
+                        </option>
+                        <option value="North Carolina Central University">
+                          North Carolina Central University
+                        </option>
+                        <option value="Oakwood University">
+                          Oakwood University
+                        </option>
+                        <option value="Paine College">Paine College</option>
+                        <option value="Paul Quinn College">
+                          Paul Quinn College
+                        </option>
+                        <option value="Payne Theological Seminary">
+                          Payne Theological Seminary
+                        </option>
+                        <option value="Philander Smith College">
+                          Philander Smith College
+                        </option>
+                        <option value="Prairie View A&M University">
+                          Prairie View A&M University
+                        </option>
+                        <option value="Rust College">Rust College</option>
+                        <option value="Saint Paul's College">
+                          Saint Paul's College
+                        </option>
+                        <option value="Savannah State University">
+                          Savannah State University
+                        </option>
+                        <option value="Selma University">
+                          Selma University
+                        </option>
+                        <option value="Shaw University">Shaw University</option>
+                        <option
+                          value="Shelton State Community College - C.A. Fredd Campus"
+                        >
+                          Shelton State Community College - C.A. Fredd Campus
+                        </option>
+                        <option value="Shorter College">Shorter College</option>
+                        <option value="Simmons College of Kentucky">
+                          Simmons College of Kentucky
+                        </option>
+                        <option value="South Carolina State University">
+                          South Carolina State University
+                        </option>
+                        <option value="Southern University at New Orleans">
+                          Southern University at New Orleans
+                        </option>
+                        <option value="Southern University at Shreveport">
+                          Southern University at Shreveport
+                        </option>
+                        <option value="Southern University and A&M College">
+                          Southern University and A&M College
+                        </option>
+                        <option value="Southwestern Christian College">
+                          Southwestern Christian College
+                        </option>
+                        <option value="Spelman College">Spelman College</option>
+                        <option value="St. Augustine's University">
+                          St. Augustine's University
+                        </option>
+                        <option value="St. Philip's College">
+                          St. Philip's College
+                        </option>
+                        <option value="Stillman College">
+                          Stillman College
+                        </option>
+                        <option value="Talladega College">
+                          Talladega College
+                        </option>
+                        <option value="Tennessee State University">
+                          Tennessee State University
+                        </option>
+                        <option value="Texas College">Texas College</option>
+                        <option value="Texas Southern University">
+                          Texas Southern University
+                        </option>
+                        <option value="Tougaloo College">
+                          Tougaloo College
+                        </option>
+                        <option
+                          value="H. Councill Trenholm State Community College"
+                        >
+                          H. Councill Trenholm State Community College
+                        </option>
+                        <option value="Tuskegee University">
+                          Tuskegee University
+                        </option>
+                        <option value="University of the Virgin Islands">
+                          University of the Virgin Islands
+                        </option>
+                        <option value="Virginia State University">
+                          Virginia State University
+                        </option>
+                        <option value="Virginia Union University">
+                          Virginia Union University
+                        </option>
+                        <option value="Virginia University of Lynchburg">
+                          Virginia University of Lynchburg
+                        </option>
+                        <option value="Voorhees College">
+                          Voorhees College
+                        </option>
+                        <option value="West Virginia State University">
+                          West Virginia State University
+                        </option>
+                        <option value="Wilberforce University">
+                          Wilberforce University
+                        </option>
+                        <option value="Wiley College">Wiley College</option>
+                        <option value="Winston-Salem State University">
+                          Winston-Salem State University
+                        </option>
+                        <option value="Xavier University of Louisiana">
+                          Xavier University of Louisiana
+                        </option>
+                      </select>
+                    </div>
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
@@ -1695,144 +2042,516 @@
                           Please Select
                         </option>
                         <option value="Asian">Asian</option>
-                        <option value="African American">
-                          African American
-                        </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="American Indian">American Indian</option>
-                        <option value="Hispanics">Hispanics</option>
-                        <option value="Europeans">Europeans</option>
-                        <option value="Alaska Native">Alaska Native</option>
-                        <option value="Native Hawaiian">Native Hawaiian</option>
-                        <option value="Pacific Islander">
-                          Pacific Islander
-                        </option>
-                        <option value="Middle Easterners">
-                          Middle Easterners
-                        </option>
-                        <option value="North American Africans">
-                          North American Africans
-                        </option>
-                        <option value="Two or More races">
-                          Two or More races
-                        </option>
-                        <option value="Other">Other</option>
+                        <option value="Asian">Asian</option>
+
+                        <option value="Hispanic">Hispanic</option>
+                        <option value="Afro American">Afro American</option>
+                        <option value="White">White</option>
+                        <option value="Indian">Indian</option>
                       </select>
                     </div>
-
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >DFW City<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
+                        >State<sup style="color: red; font-size: 20px">*</sup>
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerCityType')?.touched ||
-                              !form3.get('registerCityType')?.valid) &&
+                            (!form3.get('registerStateType')?.touched ||
+                              !form3.get('registerStateType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
-                        formControlName="registerCityType"
                         class="form-select"
                         aria-label="Default select example"
+                        formControlName="registerStateType"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-
-                        <option value="Dallas">Dallas</option>
-                        <option value="Plano">Plano</option>
-                        <option value="Irving">Irving</option>
-                        <option value="Fort Worth">Fort Worth</option>
-                        <option value="Richardson">Richardson</option>
-                        <option value="Addison">Addison</option>
-                        <option value="Frisco">Frisco</option>
-                        <option value="Arlington">Arlington</option>
-                        <option value="Carrollton">Carrollton</option>
-                        <option value="Southlake">Southlake</option>
-                        <option value="Lewisville">Lewisville</option>
-                        <option value="Garland">Garland</option>
-                        <option value="Mckinney">Mckinney</option>
-                        <option value="Allen">Allen</option>
-                        <option value="Coppell">Coppell</option>
-                        <option value="Denton">Denton</option>
-                        <option value="Grapevine">Grapevine</option>
-                        <option value="Grand Prairie">Grand Prairie</option>
-                        <option value="Flower Mound">Flower Mound</option>
-                        <option value="Mesquite">Mesquite</option>
-                        <option value="Bedford">Bedford</option>
-                        <option value="Rockwall">Rockwall</option>
-                        <option value="Sunnyvale">Sunnyvale</option>
-                        <option value="Hurst">Hurst</option>
-                        <option value="North Richland Hills">
-                          North Richland Hills
+                        <option value="Alabama">Alabama</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="District of Columbia">
+                          District of Columbia
                         </option>
-                        <option value="Sachse">Sachse</option>
-                        <option value="Little Elm">Little Elm</option>
-                        <option value="Keller">Keller</option>
-                        <option value="Lancaster">Lancaster</option>
-                        <option value="Highland Park">Highland Park</option>
-                        <option value="University Park">University Park</option>
-                        <option value="Balch Springs">Balch Springs</option>
-                        <option value="Duncanville">Duncanville</option>
-                        <option value="Farmers Branch">Farmers Branch</option>
-                        <option value="DeSoto">DeSoto</option>
-                        <option value="Cockrell Hill">Cockrell Hill</option>
-                        <option value="Combine">Combine</option>
-                        <option value="Rowlett">Rowlett</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="US Virgin Island">
+                          US Virgin Island
+                        </option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="West Virginia">West Virginia</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Studies<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerStudy')?.touched ||
+                              !form3.get('registerStudy')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        class="form-select"
+                        aria-label="Default select example"
+                        formControlName="registerStudy"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="Accounting">Accounting</option>
+                        <option value="Actuarial Science">
+                          Actuarial Science
+                        </option>
+                        <option
+                          value="Adult-Gerontology Acute Care Nurse Practitioner"
+                        >
+                          Adult-Gerontology Acute Care Nurse Practitioner
+                        </option>
+                        <option value="Aerospace Studies">
+                          Aerospace Studies
+                        </option>
+                        <option value="African American and Africana Studies">
+                          African American and Africana Studies
+                        </option>
+                        <option value="Allied Health Sciences">
+                          Allied Health Sciences
+                        </option>
+                        <option value="Anthropology">Anthropology</option>
+                        <option value="Architectural Lighting Design">
+                          Architectural Lighting Design
+                        </option>
+                        <option value="Art Education">Art Education</option>
+                        <option value="Art History">Art History</option>
+                        <option value="Arts Leadership & Entrepreneurship">
+                          Arts Leadership & Entrepreneurship
+                        </option>
+                        <option value="Asian Studies">Asian Studies</option>
+                        <option value="Asian Studies">Asian Studies</option>
+                        <option value="Athletic Training">
+                          Athletic Training
+                        </option>
+                        <option value="Biochemistry">Biochemistry</option>
+                        <option value="Biology">Biology</option>
+                        <option value="Brass">Brass</option>
+                        <option
+                          value="British Colonial and Post-Colonial Studies"
+                        >
+                          British Colonial and Post-Colonial Studies
+                        </option>
+                        <option value="Business Analytics">
+                          Business Analytics
+                        </option>
+                        <option value="Business Information Systems">
+                          Business Information Systems
+                        </option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Child Development">
+                          Child Development
+                        </option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Classical Studies">
+                          Classical Studies
+                        </option>
+                        <option value="Collaborative Piano">
+                          Collaborative Piano
+                        </option>
+                        <option value="Communication Studies">
+                          Communication Studies
+                        </option>
+                        <option value="Comparative Race and Ethnic Studies">
+                          Comparative Race and Ethnic Studies
+                        </option>
+                        <option value="Computer Information Technology">
+                          Computer Information Technology
+                        </option>
+                        <option value="Computer Science">
+                          Computer Science
+                        </option>
+                        <option value="Conducting">Conducting</option>
+                        <option value="Counseling and Counselor Education">
+                          Counseling and Counselor Education
+                        </option>
+                        <option value="Creative Writing">
+                          Creative Writing
+                        </option>
+                        <option value="Criminal Justice">
+                          Criminal Justice
+                        </option>
+                        <option value="Curriculum Studies">
+                          Curriculum Studies
+                        </option>
+                        <option value="Curriculum and Instruction">
+                          Curriculum and Instruction
+                        </option>
+                        <option value="Dance">Dance</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Deaf & Hard of Hearing Studies">
+                          Deaf & Hard of Hearing Studies
+                        </option>
+                        <option value="Design Studies">Design Studies</option>
+                        <option value="Developmental Trauma">
+                          Developmental Trauma
+                        </option>
+                        <option value="Dietetics">Dietetics</option>
+                        <option value="Digital Culture and Data Analytics">
+                          Digital Culture and Data Analytics
+                        </option>
+                        <option value="Early Childhood-6th Grade Education">
+                          Early Childhood-6th Grade Education
+                        </option>
+                        <option value="Earth Systems Science">
+                          Earth Systems Science
+                        </option>
+                        <option value="Earth Systems Science">
+                          Earth Systems Science
+                        </option>
+                        <option value="Educational Studies">
+                          Educational Studies
+                        </option>
+                        <option value="Energy MBA">Energy MBA</option>
+                        <option value="Energy and Business">
+                          Energy and Business
+                        </option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="English">English</option>
+                        <option value="Entrepreneurship and Innovation">
+                          Entrepreneurship and Innovation
+                        </option>
+                        <option value="Environmental Science">
+                          Environmental Science
+                        </option>
+                        <option value="Executive MBA">Executive MBA</option>
+                        <option value="Family Nurse Practitioner">
+                          Family Nurse Practitioner
+                        </option>
+                        <option value="Fashion Merchandising">
+                          Fashion Merchandising
+                        </option>
+                        <option value="Film, Television and Digital Media">
+                          Film, Television and Digital Media
+                        </option>
+                        <option value="Finance">Finance</option>
+                        <option value="Finance With Real Estate">
+                          Finance With Real Estate
+                        </option>
+                        <option value="Food Management">Food Management</option>
+                        <option value="French">French</option>
+                        <option value="General Business">
+                          General Business
+                        </option>
+                        <option value="General Studies">General Studies</option>
+                        <option value="Geography">Geography</option>
+                        <option value="Geology">Geology</option>
+                        <option value="German">German</option>
+                        <option value="Global Business">Global Business</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Health & Fitness">
+                          Health & Fitness
+                        </option>
+                        <option value="Health Communication and Media">
+                          Health Communication and Media
+                        </option>
+                        <option value="Health Sciences">Health Sciences</option>
+                        <option value="History">History</option>
+                        <option value="Human-Animal Relationships">
+                          Human-Animal Relationships
+                        </option>
+                        <option value="Interdisciplinary Inquiry">
+                          Interdisciplinary Inquiry
+                        </option>
+                        <option value="Interior Design">Interior Design</option>
+                        <option value="International Economics">
+                          International Economics
+                        </option>
+                        <option value="International Relations">
+                          International Relations
+                        </option>
+                        <option value="Italian">Italian</option>
+                        <option value="Journalism">Journalism</option>
+                        <option value="Kinesiology">Kinesiology</option>
+                        <option value="Latin American Studies">
+                          Latin American Studies
+                        </option>
+                        <option value="Latinx Studies">Latinx Studies</option>
+                        <option value="Management and Leadership">
+                          Management and Leadership
+                        </option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Master of Liberal Arts">
+                          Master of Liberal Arts
+                        </option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Middle East Studies">
+                          Middle East Studies
+                        </option>
+                        <option value="Middle School Education">
+                          Middle School Education
+                        </option>
+                        <option value="Military Science">
+                          Military Science
+                        </option>
+                        <option value="Modern Language Studies">
+                          Modern Language Studies
+                        </option>
+                        <option value="Movement Science">
+                          Movement Science
+                        </option>
+                        <option value="Music">Music</option>
+                        <option value="Music Education">Music Education</option>
+                        <option value="Music Theory & Composition">
+                          Music Theory & Composition
+                        </option>
+                        <option value="Musicology">Musicology</option>
+                        <option value="Neuroscience">Neuroscience</option>
+                        <option value="Nurse Anesthesia">
+                          Nurse Anesthesia
+                        </option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="Nursing Education">
+                          Nursing Education
+                        </option>
+                        <option value="Nutrition">Nutrition</option>
+                        <option value="Organ & Church Music">
+                          Organ & Church Music
+                        </option>
+                        <option value="Percussion">Percussion</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Physical Education">
+                          Physical Education
+                        </option>
+                        <option value="Physics">Physics</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Piano Pedagogy">Piano Pedagogy</option>
+                        <option value="Political Science">
+                          Political Science
+                        </option>
+                        <option value="Post-Master’s DNP">
+                          Post-Master’s DNP
+                        </option>
+                        <option value="Pre-Health Professions Track">
+                          Pre-Health Professions Track
+                        </option>
+                        <option value="Professional MBA">
+                          Professional MBA
+                        </option>
+                        <option
+                          value="Psychiatric Mental Health Nurse Practitioner"
+                        >
+                          Psychiatric Mental Health Nurse Practitioner
+                        </option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Ranch Management">
+                          Ranch Management
+                        </option>
+                        <option value="Religion">Religion</option>
+                        <option value="Rhetoric and Composition">
+                          Rhetoric and Composition
+                        </option>
+                        <option value="Science Education">
+                          Science Education
+                        </option>
+                        <option value="Secondary Education">
+                          Secondary Education
+                        </option>
+                        <option value="Social Work">Social Work</option>
+                        <option value="Sociology">Sociology</option>
+                        <option value="Spanish and Hispanic Studies">
+                          Spanish and Hispanic Studies
+                        </option>
+                        <option value="Special Education">
+                          Special Education
+                        </option>
+                        <option value="Speech-Language Pathology">
+                          Speech-Language Pathology
+                        </option>
+                        <option value="Strategic Communication">
+                          Strategic Communication
+                        </option>
+                        <option value="Strings">Strings</option>
+                        <option value="Studio Art">Studio Art</option>
+                        <option value="Supply and Value Chain Management">
+                          Supply and Value Chain Management
+                        </option>
+                        <option value="Sustainability">Sustainability</option>
+                        <option value="Theatre">Theatre</option>
+                        <option value="Urban Studies">Urban Studies</option>
+                        <option value="Voice">Voice</option>
+                        <option value="Women & Gender Studies">
+                          Women & Gender Studies
+                        </option>
+                        <option value="Woodwinds">Woodwinds</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Youth Advocacy and Educational Studies">
+                          Youth Advocacy and Educational Studies
+                        </option>
                       </select>
                     </div>
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Location<sup style="color: red; font-size: 20px"
+                        >City<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+
+                      <input
+                        type="text"
+                        formControlName="registerCityType"
+                        class="form-control"
+                        required
+                        [ngClass]="{
+                          'invalid-input':
+                            !form3.get('registerCityType')?.touched &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      />
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >YEAR IN COLLEGE<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerLocation')?.touched ||
-                              !form3.get('registerLocation')?.valid) &&
+                            (!form3.get('registerYear')?.touched ||
+                              !form3.get('registerYear')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerLocation"
+                        formControlName="registerYear"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Business">Business</option>
-                        <option value="CEO">CEO</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Corporation">Corporation</option>
-                        <option value="Exclusive">Exclusive</option>
-                        <option value="Founder">Founder</option>
-                        <option value="CFO">CFO</option>
-                        <option value="COO">COO</option>
-                        <option value="Home Owner">Home Owner</option>
-                        <option value="Mall">Mall</option>
-                        <option value="Mass">Mass</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Non Profit">Non Profit</option>
-                        <option value="Office">Office</option>
-                        <option value="Online">Online</option>
-                        <option value="Partners">Partners</option>
-                        <option value="Private">Private</option>
-                        <option value="Retail and Consultants">
-                          Retail and Consultants
-                        </option>
-                        <option value="Community Pledge">
-                          Community Pledge
-                        </option>
-                        <option value="Store Front">Store Front</option>
-                        <option value="Pop Up Shop">Pop Up Shop</option>
-                        <option value="Vehicle">Vehicle</option>
+                        <option value="1920">1920</option>
+                        <option value="1921">1921</option>
+                        <option value="1922">1922</option>
+                        <option value="1923">1923</option>
+                        <option value="1924">1924</option>
+                        <option value="1925">1925</option>
+                        <option value="1926">1926</option>
+                        <option value="1927">1927</option>
+                        <option value="1928">1928</option>
+                        <option value="1929">1929</option>
+                        <option value="1930">1930</option>
+                        <option value="1931">1931</option>
+                        <option value="1932">1932</option>
+                        <option value="1933">1933</option>
+                        <option value="1934">1934</option>
+                        <option value="1935">1935</option>
+                        <option value="1936">1936</option>
+                        <option value="1937">1937</option>
+                        <option value="1938">1938</option>
+                        <option value="1939">1939</option>
+                        <option value="1940">1940</option>
+                        <option value="1941">1941</option>
+                        <option value="1942">1942</option>
+                        <option value="1943">1943</option>
+                        <option value="1944">1944</option>
+                        <option value="1945">1945</option>
+                        <option value="1946">1946</option>
+                        <option value="1947">1947</option>
+                        <option value="1948">1948</option>
+                        <option value="1949">1949</option>
+                        <option value="1950">1950</option>
+                        <option value="1951">1951</option>
+                        <option value="1952">1952</option>
+                        <option value="1953">1953</option>
+                        <option value="1954">1954</option>
+                        <option value="1955">1955</option>
+                        <option value="1956">1956</option>
+                        <option value="1957">1957</option>
+                        <option value="1958">1958</option>
+                        <option value="1959">1959</option>
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2078,38 +2797,21 @@
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">
-        DFW Businesses and Community Connect
-      </h1>
+      <h1 class="text-white my-3 featurs">HBCU's Connects presents</h1>
       <p class="text-white my-3">
-        Through Umyo DFW Businesses and Community Connect, you can effortlessly
-        upload your business records...
+        An Innovative Networking Solution Exclusively for HBCU'S and the
+        Educational industry.
       </p>
       <div class="moretext" style="display: none">
         <p class="text-white my-3">
-          community achievements, interviews, local insights, images, and
-          community milestones for a wide-reaching audience. It's the premier
-          destination for DFW businesses and those involved in the local
-          community, providing them with a safe space exclusively for them.DFW
-          businesses and community professionals can reciprocate the support
-          provided by organizations that support the local community. Business
-          owners now have the opportunity to register their companies and
-          connect them with specific community members using unique ID codes
-          during the registration process.
-        </p>
-        <p class="text-white my-3">
-          Umyo DFW Businesses and Community Connect is a groundbreaking social
-          network app designed exclusively for the DFW community, connecting
-          businesses, community members, local experts, and organizations eager
-          to support the growth of our community as they strive for success.
-        </p>
-        <p class="text-white my-3">
-          Share your Business Portfolio, Community Achievements, Local Insights,
-          Interviews, Experiences, Images, and Community Highlights for a wide
-          audience to explore. This all-in-one platform is essential for DFW
-          professionals seeking greater visibility using virtual interactive
-          concepts to network with others just like you. A safe and positive
-          place to thrive in the DFW community.
+          Our groundbreaking app unites HBCU’S, students, logistics
+          professionals, business owners, graduates, Alumni’s, and affiliated
+          businesses on a specialized platform, dedicated to advancing the
+          careers of students and promoting the growth of the HBCU'S industry.
+          Our app is the first in its category, enabling students, staff, and
+          professionals to network with fellow students, industry experts, and
+          businesses while showcasing their skills and expertise, receiving the
+          recognition and support they rightfully deserve.
         </p>
       </div>
       <a
@@ -2412,24 +3114,27 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/1.jpg" class="img-fluid" />
+                <img src="assets/hbcu/1.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">uChatYes.com</h2>
+        <h2 class="mt-4">Virtual Interactive Divine Nine Card Directory</h2>
         <div class="moretext1" style="display: none">
+          <p>1. A Social Networking Platform & Search Engine Directory</p>
           <p>
-            uChatYes.com - Create unique and engaging content that will increase
-            conversions and drive sales.Harness the power of artificial
-            intelligence and transform the way you produce unique content.
+            2. Virtual Business and Community Cards /with Social Media Icons
+            that Links to Social Media & Websites.
           </p>
-          <h5>Transcriptions</h5>
           <p>
-            Extract the contents of audio files and turn them into fully
-            editable documents. Generate original content for your website,
-            marketing, and social activities.
+            3. Members Befriend, Network, Chat and Share Members ID cards via
+            Social Media.
           </p>
+          <p>
+            4. Search Engine for community, visitors & members to find
+            registered businesses.
+          </p>
+          <p>5. Daily $$$ giveaways to military officers and family.</p>
         </div>
         <a class="moreless-button1 btn btn-dark" href="#text1">Read more</a>
       </div>
@@ -2438,30 +3143,18 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/2.png" class="img-fluid" />
+                <img src="assets/hbcu/2.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">Virtual Interactive Business Card Directory</h2>
+        <h2 class="mt-4">Timeline</h2>
         <div class="moretext2" style="display: none">
           <p>
-            1. A Social Networking Platform & Search Engine Directory for The
-            City OF DFW.
+            <strong>**Timeline:** </strong> Stay in the loop with the latest
+            posts, photos, and life events of your friends. Scroll through your
+            personalized timeline to ensure you never miss a moment.
           </p>
-          <p>
-            2. Virtual Business and Community Cards /with Social Media Icons
-            that links to Social Media & Websites.
-          </p>
-          <p>
-            3. Members Befriend, Network, Chat and Share Members ID cards via
-            Social Media.
-          </p>
-          <p>
-            4. Search Engine for community, visitors & members to find
-            registered businesses and each other.
-          </p>
-          <p>5. Daily $$$ giveaways to community</p>
         </div>
         <a class="moreless-button2 btn btn-dark" href="#text2">Read more</a>
       </div>
@@ -2470,19 +3163,18 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/3.png" class="img-fluid" />
+                <img src="assets/hbcu/3.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Music</h2>
+        <h2 class="mt-4">Live</h2>
         <div class="moretext3" style="display: none">
           <p>
-            Umyomusic is a popular music streaming service that allows users to
-            listen to a vast catalog of songs, albums, and playlists from a wide
-            range of artists and genres. It was founded in [Insert founding
-            location and year] and has since become one of the most widely used
-            music streaming platforms in the world.
+            <strong>**Live:**</strong> Share live broadcasts with your followers
+            or tune in to watch live content from around the world from other
+            military personnel, their family, friends. Interact with
+            broadcasters in real-time.
           </p>
         </div>
         <a class="moreless-button3 btn btn-dark" href="#text3">Read more</a>
@@ -2493,19 +3185,16 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/4.png" class="img-fluid" />
+                <img src="assets/hbcu/4.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Market</h2>
+        <h2 class="mt-4">Chat</h2>
         <div class="moretext4" style="display: none">
           <p>
-            UMYO Market serves as a dedicated platform for pop-up shops and
-            entrepreneurs seeking to showcase their products on a digital shelf.
-            It offers a unique marketplace for these sellers to reach a global
-            customer base and bring their innovative products to a wider
-            audience.
+            <strong>**Chat:**</strong> Connect with friends through private
+            messages or group chats. Share text, photos, videos, and more.
           </p>
         </div>
         <a class="moreless-button4 btn btn-dark" href="#text4">Read more</a>
@@ -2516,22 +3205,17 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/5.png" class="img-fluid" />
+                <img src="assets/hbcu/5.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Hosting</h2>
+        <h2 class="mt-4">Calling</h2>
         <div class="moretext5" style="display: none">
           <p>
-            A hosting website, often referred to as a web hosting service
-            provider, is a company that offers the necessary infrastructure and
-            technology for individuals, businesses, or organizations to store
-            and make their websites accessible on the internet. These services
-            typically include server space, domain name registration, website
-            file storage, email hosting, and technical support. Hosting websites
-            allow users to publish their websites, making them available for
-            online visitors to access 24/7.
+            <strong>**Calling:**</strong> Make high-quality voice and video
+            calls to your contacts, keeping you connected no matter where you
+            are.
           </p>
         </div>
         <a class="moreless-button5 btn btn-dark" href="#text5">Read more</a>
@@ -2541,20 +3225,16 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/6.png" class="img-fluid" />
+                <img src="assets/hbcu/6.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UChatYes</h2>
+        <h2 class="mt-4">Events Booking</h2>
         <div class="moretext6" style="display: none">
           <p>
-            uChatYes.com - Create unique and engaging content that will increase
-            conversions and drive sales.Harness the power of artificial
-            intelligence and transform the way you produce unique content.
-            Extract the contents of audio files and turn them into fully
-            editable documents. Generate original content for your website,
-            marketing, and social activities
+            <strong>**Events Booking:**</strong> Discover and book events in
+            your area or share your own events with the community.
           </p>
         </div>
         <a class="moreless-button6 btn btn-dark" href="#text6">Read more</a>
@@ -2564,23 +3244,18 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/7.png" class="img-fluid" />
+                <img src="assets/hbcu/7.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Tweets</h2>
+        <h2 class="mt-4">Dating</h2>
         <div class="moretext7" style="display: none">
           <p>
-            UMYO Tweets is a new social media platform and microblogging service
-            that allows users to send and read short messages called "tweets."
-            These tweets can be up to 280 characters in length, and they are
-            typically used to share thoughts, ideas, news, links to articles or
-            other websites, images, videos, and engage in conversations with
-            other users. UMYO Tweets is known for its real-time and fast-paced
-            nature, making it a popular platform for staying updated on current
-            events, following public figures, and sharing and discussing various
-            topics.
+            <strong>**Dating:**</strong> Find meaningful connections with
+            like-minded people through our dating feature. HBCU Talk is more
+            than just a social app; it's a place to meet new people and
+            potentially find love.
           </p>
         </div>
         <a class="moreless-button7 btn btn-dark" href="#text7">Read more</a>
@@ -2591,23 +3266,17 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/8.png" class="img-fluid" />
+                <img src="assets/hbcu/8.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">CP Swipe</h2>
+        <h2 class="mt-4">Podcasts</h2>
         <div class="moretext8" style="display: none">
           <p>
-            A "CP Swipe" refers to a combination social encounter dating app
-            similar to Tinder and Only Fans, where individuals meet in person
-            with the intention of getting to know each other romantically or
-            platonically. As well as an online platform where content creators
-            share exclusive, often adult-oriented, content with subscribers for
-            a fee. Both on one platform are related to social interactions and
-            connections, albeit in different ways—one facilitates real-life
-            meetings, while the other involves online content creation and
-            subscription-based access.
+            <strong>**Podcasts:**</strong> Listen to and create your own
+            podcasts on topics you're passionate about. Share your voice with
+            the world.
           </p>
         </div>
         <a class="moreless-button8 btn btn-dark" href="#text8">Read more</a>
@@ -2617,20 +3286,16 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/9.png" class="img-fluid" />
+                <img src="assets/hbcu/9.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Connect</h2>
+        <h2 class="mt-4">Fundraising</h2>
         <div class="moretext9" style="display: none">
           <p>
-            The app that transforms your online interactions into a dynamic
-            social experience. UMYO Connect is your comprehensive platform for
-            connecting, sharing, and engaging with friends, family, and global
-            communities. Loaded with a wide range of robust functionalities,
-            UMYO Connect offers all the tools you require in a social networking
-            application.
+            **Fundraising:** Support and create fundraising campaigns for causes
+            that matter to you. Make a positive impact on your community.
           </p>
         </div>
         <a class="moreless-button9 btn btn-dark" href="#text9">Read more</a>
@@ -2641,19 +3306,22 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/10.png" class="img-fluid" />
+                <img src="assets/hbcu/10.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Talk</h2>
+        <h2 class="mt-4">HBCU’s Group</h2>
         <div class="moretext10" style="display: none">
           <p>
-            UMYO Talk is a popular messaging app that allows users to send text
-            messages, make voice and video calls, and share multimedia content
-            with individuals or groups. It operates over the internet and is
-            available on various platforms, making it a convenient and widely
-            used communication tool.
+            Creating groups involves forming distinct communities within the
+            platform where users with common interests or affiliations can join
+            and interact. These groups provide a space for like-minded
+            individuals to share content, engage in discussions, and connect
+            with one another based on shared topics, hobbies, or goals. Group
+            members can typically post and comment on discussions relevant to
+            the group's theme, fostering a more focused and engaged online
+            community.
           </p>
         </div>
         <a class="moreless-button10 btn btn-dark" href="#text10">Read more</a>
@@ -2664,17 +3332,18 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/11.png" class="img-fluid" />
+                <img src="assets/hbcu/11.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Tube</h2>
+        <h2 class="mt-4">Nearby Offers</h2>
         <div class="moretext11" style="display: none">
           <p>
-            A platform for content creators and users looking to share articles,
-            videos, conduct live streaming with external cameras, offer
-            pay-per-view events, enable donations for online channels, and more.
+            <strong> **Nearby Offers:** </strong> Access exclusive offers and
+            discounts from businesses in your area. HBCU Talk helps you save
+            from online registered businesses while you explore your
+            surroundings.
           </p>
         </div>
         <a class="moreless-button11 btn btn-dark" href="#text11">Read more</a>
@@ -2685,20 +3354,23 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/12.png" class="img-fluid" />
+                <img src="assets/hbcu/12.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO SMS</h2>
+        <h2 class="mt-4">Short Video</h2>
         <div class="moretext12" style="display: none">
           <p>
-            Constant Contact is an email marketing platform that enables
-            businesses and organizations to create, send, and track email
-            campaigns. It provides tools for building and managing email lists,
-            designing professional-looking emails, and analyzing the performance
-            of email marketing efforts, making it a valuable resource for email
-            marketing and communication strategies.
+            Creating short videos entails producing and sharing concise video
+            content that is typically brief in duration, often lasting anywhere
+            from a few seconds to a few minutes. These short videos are designed
+            to capture attention quickly and are well-suited for sharing on
+            platforms like TikTok, Instagram Reels, or Snapchat. Users can use
+            various creative tools and features to record, edit, and enhance
+            their videos to tell stories, share moments, provide entertainment,
+            or convey messages in a concise and engaging format. The goal is to
+            engage the audience and make an impact in a short span of time.
           </p>
         </div>
         <a class="moreless-button12 btn btn-dark" href="#text12">Read more</a>
@@ -2708,362 +3380,30 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/dfw/23.png" class="img-fluid" />
+                <img src="assets/hbcu/13.png" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO'S ADVANCED LMS & SOCIAL MEDIA NETWORKING</h2>
+        <h2 class="mt-4">HCBU Tweets</h2>
         <div class="moretext15" style="display: none">
           <p>
-            Similar to UMYO Educator, only, it's our LMS on steroids. Here you
-            can network, podcast, conference, live stream, audio stream, PPV,
-            donation, and more. IT’S KRAZY!!! It’s a community networking
-            platform that can be used for educational purposes as well as
-            edutainment purposes. Rather you prefer zoom or you prefer our
-            version of zoom, its community based and educational as well.
+            is a microblogging platform where users share short messages called
+            tweets, limited to 280 characters. It's a hub for HCBU Students past
+            and present to add real-time updates, discussions, and a variety of
+            content, often accompanied by hashtags to categorize topics.
           </p>
-          <small
-            >Here are some key aspects of a learning management system:</small
-          >
-          <h4>1. Course Management:</h4>
           <p>
-            LMS platforms allow for the creation, organization, and management
-            of courses. This includes features like uploading course materials,
-            creating assignments, and structuring content in a way that
-            facilitates learning.
+            HBCU's Tweets were crafted to provide a safe and inclusive space for
+            our military and their families. Our robust privacy settings and
+            content moderation ensure a secure environment for all users.
           </p>
-          <h4>2. User Management:</h4>
           <p>
-            <strong> LMS systems typically include user management</strong>
-            features, allowing administrators to add, remove, or modify user
-            accounts. This is crucial for tracking individual progress and
-            managing access to different courses or modules.
-          </p>
-          <h4>3. Assessment and Evaluation:</h4>
-          <p>
-            LMS platforms often provide tools for creating quizzes, exams, and
-            other assessment methods. These features help in evaluating the
-            learners' understanding of the material and tracking their progress.
-          </p>
-          <h4>4. Collaboration and Communication:</h4>
-          <p>
-            Many LMS platforms include communication tools such as discussion
-            forums, chat, and messaging systems. These features facilitate
-            interaction between learners, instructors, and sometimes even peers.
-          </p>
-          <h4>5. Tracking and Reporting:</h4>
-          <p>
-            LMS systems offer tracking and reporting functionalities, allowing
-            administrators and instructors to monitor the progress of learners.
-            This includes data on completion rates, assessment scores, and other
-            relevant metrics.
-          </p>
-          <h4>6. Content Delivery:</h4>
-          <p>
-            LMS platforms support various formats of content delivery, including
-            multimedia, documents, and interactive elements. This flexibility
-            enables diverse and engaging learning experiences.
-          </p>
-          <h4>7. Integration with Other Systems:</h4>
-          <p>
-            Many LMS platforms are designed to integrate with other systems,
-            such as HR systems, to streamline processes like user onboarding and
-            data management.
-          </p>
-          <h4>8. Mobile Accessibility:</h4>
-          <p>
-            With the increasing use of mobile devices, many LMS platforms offer
-            mobile-friendly interfaces or dedicated apps to allow learners to
-            access content on the go.
-          </p>
-          <h4>9. Customization and Branding:</h4>
-          <p>
-            Organizations often appreciate the ability to customize the look and
-            feel of their LMS to align with their branding and create a more
-            personalized learning experience.
-          </p>
-          <h4>10. Security and Compliance:</h4>
-          <p>
-            Given the sensitive nature of educational and training data, LMS
-            platforms prioritize security features. They often include
-            authentication protocols, data encryption, and compliance with
-            relevant regulations.
+            Join the HBCU's Tweets community today and embark on a social media
+            experience like no other. - Where HBCU's Connections Come to Life!
           </p>
         </div>
         <a class="moreless-button15 btn btn-dark" href="#text15">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text16">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/14.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO VPN</h2>
-        <div class="moretext16" style="display: none">
-          <p>
-            UMYO VPN Protects you and your guest browsers privacy. Browse with a
-            virtual I.P. Address that helps you hide your location and lets you
-            view the web with enhance online privacy within the android and
-            desktop
-          </p>
-        </div>
-        <a class="moreless-button16 btn btn-dark" href="#text16">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text17">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/24.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Web Design</h2>
-        <div class="moretext17" style="display: none">
-          <p>
-            UMYO Web design is the process of planning, creating, and arranging
-            the visual and structural elements of a website. It involves the use
-            of various design principles, such as layout, color, typography, and
-            user interface, to ensure that a website is both aesthetically
-            appealing and user-friendly. Web designers work to create a
-            well-organized, visually engaging, and functional digital
-            environment that effectively conveys information, promotes
-            businesses, and enhances user experiences on the internet.
-          </p>
-        </div>
-        <a class="moreless-button17 btn btn-dark" href="#text17">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text18">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/16.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Virtual Conference Platform</h2>
-        <div class="moretext18" style="display: none">
-          <ul>
-            <li>
-              Share External Video, Share Screen, Create Rooms, Create
-              Backrooms.
-            </li>
-            <li>
-              Shared Notes, Public Chat/Save Copy/Delete, Manage Presentation.
-            </li>
-            <li>
-              Start A Poll, Select Random User, Mute, Leave Audio, Share Webcam.
-            </li>
-            <li>
-              Manage Presentation, Raise Hands, Recording, Keyboard Shortcuts &
-              More.
-            </li>
-            <li>
-              Weekly Support Channels for Students, Student Only Channels.
-            </li>
-            <li>
-              Audio Conference -Enable you to conference with only audio with
-              optional screen share features like a group voice call.
-            </li>
-            <li>
-              Video Conference -enables you to conference with others with audio
-              and video with optional screen sharing features.
-            </li>
-            <li>
-              Webinar -Enables you to stream yourself live with video and audio
-              with optional screen sharing feature.
-            </li>
-            <li>
-              Live Classes ( backrooms) -Enables you to stream live with audio
-              and video , where you can see and hear anyone but they can see and
-              hear only you , not each other.
-            </li>
-            <li>
-              Podcast -Enables you to stream your audio live with others who
-              invited.They can only hear your voice over audio stream.
-            </li>
-          </ul>
-        </div>
-        <a class="moreless-button18 btn btn-dark" href="#text18">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text19">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/17.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Virtual Coupon Booklet</h2>
-        <div class="moretext19" style="display: none">
-          <p>
-            Booklet that links to other pages, videos, images, online contests,
-            websites social media and more.
-          </p>
-          <p>
-            First ever Kiosk Touch screen business kiosk that can be shared by
-            thousands to thousands within minutes.
-          </p>
-        </div>
-        <a class="moreless-button19 btn btn-dark" href="#text19">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text20">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/18.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Contests</h2>
-        <div class="moretext20" style="display: none">
-          <p>
-            By encouraging more subscriptions to our platforms, we are able to
-            offer increased rewards and money giveaways to our valued community
-            members. As our platform grows, so do the benefits for our dedicated
-            users. Join us in this exciting journey and stand a chance to win
-            bigger prizes and be part of a thriving community."
-          </p>
-        </div>
-        <a class="moreless-button20 btn btn-dark" href="#text20">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text21">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/19.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Tok</h2>
-        <div class="moretext21" style="display: none">
-          <p>
-            UMYO Tok is a popular social media platform known for short-form
-            videos. It allows users to create, share, and discover engaging
-            video content that is often set to music. UMYO Tok videos typically
-            range from a few seconds to one minute in length and cover a wide
-            variety of topics, including music, comedy, dance, challenges,
-            education, and more. The platform has gained immense popularity for
-            its user-friendly interface and the ability for creators to showcase
-            their creativity in a fun and interactive way, making it a hub for
-            viral trends and creative expression.
-          </p>
-        </div>
-        <a class="moreless-button21 btn btn-dark" href="#text21">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text22">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/20.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Games</h2>
-        <div class="moretext22" style="display: none">
-          <p>
-            UMYO games are video games designed to be played on smartphones and
-            tablets. These games are typically downloaded from app stores and
-            are designed to be easily accessible and playable on mobile devices.
-            They cover a wide range of genres, including puzzle, action,
-            strategy, role-playing, and more. UMYO games are known for their
-            portability and ease of use, making them a popular form of
-            entertainment and a significant segment of the global gaming
-            industry. Players can enjoy these games on the go, during short
-            breaks, or in more extended gaming sessions, depending on the game's
-            complexity and their preferences.
-          </p>
-        </div>
-        <a class="moreless-button22 btn btn-dark" href="#text22">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text23">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/21.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Mail</h2>
-        <div class="moretext23" style="display: none">
-          <h4>Looking for privacy emails?</h4>
-          <p>
-            Create virtual email IDs, with inbox, compose, sent items, and
-            drafts within our web panel.
-          </p>
-          <h4>What is an email server?</h4>
-          <p>
-            An email server is a computer system or software application
-            responsible for sending, receiving, and storing email messages. It
-            uses standard email protocols like SMTP (Simple Mail Transfer
-            Protocol) for sending emails and IMAP (Internet Message Access
-            Protocol) or POP3 (Post Office Protocol) for receiving and storing
-            emails. Email servers play a crucial role in managing electronic
-            communication by routing messages between users and ensuring their
-            delivery.
-          </p>
-        </div>
-        <a class="moreless-button23 btn btn-dark" href="#text23">Read more</a>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text24">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/22.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Fans</h2>
-        <div class="moretext24" style="display: none">
-          <p>
-            Empower content creators to monetize their work by receiving
-            subscriptions from loyal followers and enthusiasts across various
-            creative fields.
-          </p>
-        </div>
-        <a class="moreless-button24 btn btn-dark" href="#text24">Read more</a>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text27">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/dfw/25.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Virtual Coupon</h2>
-        <div class="moretext27" style="display: none">
-          <p>
-            UMYO Virtual Coupon booklet links to other pages, videos, images,
-            online contests, websites, social media and more.First ever Kiosk
-            Touch screen business kiosk that can be shared by thousands to
-            thousands within minutes.
-          </p>
-        </div>
-        <a class="moreless-button27 btn btn-dark" href="#text27">Read more</a>
       </div>
     </div>
     <!-- <div class="row g-4 py-5">
@@ -3073,11 +3413,10 @@
       </div> -->
   </div>
 </div>
-
 <!-- Featurs Section End -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #3f2305 !important; height: 100% !important"
+  style="background: #5d9c59 !important; height: 100% !important"
 >
   <div class="container py-5">
     <div class="row g-4">
@@ -3249,7 +3588,7 @@
   
   Who We Are
   
-  Welcome! We are UMYO DFW  Inc., a Texas corporation, or as we prefer to be known, "UMYO DFW ,"
+  Welcome! We are UMYO HBCU  Inc., a Texas corporation, or as we prefer to be known, "UMYO HBCU ,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -3263,7 +3602,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@UMYO DFW .com or by mail at UMYO DFW  Inc., Attn: Data Privacy
+  email at data-privacy@UMYO HBCU .com or by mail at UMYO HBCU  Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -3447,8 +3786,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “UMYO DFW  for Teams” subscription, the administrator 
-  associated with your “UMYO DFW  for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “UMYO HBCU  for Teams” subscription, the administrator 
+  associated with your “UMYO HBCU  for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -3489,7 +3828,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to UMYO DFW ! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to UMYO HBCU ! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -3581,8 +3920,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@UMYO DFW .com] (mailto:data-privacy@UMYO DFW .com) or by mail at
-  UMYO DFW  Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@UMYO HBCU .com] (mailto:data-privacy@UMYO HBCU .com) or by mail at
+  UMYO HBCU  Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -3611,10 +3950,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@UMYO DFW .com](mailto:data-privacy@UMYO DFW .com) or by mail at
-  UMYO DFW  Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@UMYO HBCU .com](mailto:data-privacy@UMYO HBCU .com) or by mail at
+  UMYO HBCU  Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at UMYO DFW **
+  **Changes to Our Privacy Policy at UMYO HBCU **
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -3657,7 +3996,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at UMYO DFW **
+              **Refund Policy at UMYO HBCU **
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -3730,9 +4069,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to UMYO DFW !
+              Welcome to UMYO HBCU !
   
-  **Terms of Service and Sale - UMYO DFW **
+  **Terms of Service and Sale - UMYO HBCU **
   
   **Last Revised: December 22, 2023**
   
@@ -3740,7 +4079,7 @@
   
   **Introduction**
   
-  Welcome! We are UMYO DFW , a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are UMYO HBCU , a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -3840,11 +4179,11 @@
   
   ---
   
-  **UMYO DFW  App Terms of Service**
+  **UMYO HBCU  App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your UMYO DFW 
+  (g) You must provide accurate, current, and complete information for your UMYO HBCU 
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -3861,7 +4200,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on UMYO DFW . Posted Content is not confidential,
+  (a) Users can post content ("Content") on UMYO HBCU . Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   

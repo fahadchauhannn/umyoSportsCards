@@ -458,15 +458,15 @@ export class HomeComponent implements AfterViewInit {
   
     // search cards 
     searchCards(){
-      
+     
        const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
-       base : this.form2.get('selectedBase').value,
-       branch : this.form2.get('selectedBranch').value,
-       type : this.form2.get('selectedType').value,
-       location : this.form2.get('selectedLocation').value,
-       rank : this.form2.get('selectedRank').value,
+       college : this.form2.get('selectedCollege').value,
+       year : this.form2.get('selectedYear').value,
+       study : this.form2.get('selectedStudy').value,
+       degree : this.form2.get('selectedDegree').value,
+       
        business_type : this.form2.get('selectedBusiness').value,
       
        name : this.form2.get('selectedName').value,
@@ -663,7 +663,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyobizdfw.com/'
+                window.location.href='https://umyohbcu.site/'
             }
           );
         }
@@ -719,9 +719,18 @@ export class HomeComponent implements AfterViewInit {
         registerRaceType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
         registerBusiness: ['', Validators.required],
+
+        registerStateType: ['', Validators.required],
+        registerCollege: ['', Validators.required],
+        registerYear: ['', Validators.required],
+        registerStudy: ['', Validators.required],
+        registerDegree: ['', Validators.required],
+        
+
+
         
         
-        registerLocation: ['', Validators.required],
+        
         
         
         

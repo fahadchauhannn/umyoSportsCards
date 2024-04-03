@@ -103,12 +103,13 @@ if (expireInValue.includes("year")) {
               location: form3.get('registerLocation')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              branch: form3.get('registerBranch')?.value,
+              degree: form3.get('registerDegree')?.value,
 
-              base: form3.get('registerBase')?.value,
-              type: form3.get('registerType')?.value,
-              rank: form3.get('registerRank')?.value,
+              college: form3.get('registerCollege')?.value,
+              year: form3.get('registerYear')?.value,
+              study: form3.get('registerStudy')?.value,
               
+
         
         
         
@@ -179,12 +180,13 @@ if (expireInValue.includes("year")) {
       location: form3.get('registerLocation')?.value,
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
-      branch: form3.get('registerBranch')?.value,
+      degree: form3.get('registerDegree')?.value,
 
-              base: form3.get('registerBase')?.value,
-              type: form3.get('registerType')?.value,
-              rank: form3.get('registerRank')?.value,
-              
+      college: form3.get('registerCollege')?.value,
+      year: form3.get('registerYear')?.value,
+      study: form3.get('registerStudy')?.value,
+      
+
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -285,12 +287,13 @@ if (expireInValue.includes("year")) {
       
       
       
-      branch: form3.get('registerBranch')?.value,
+      degree: form3.get('registerDegree')?.value,
 
-      base: form3.get('registerBase')?.value,
-      type: form3.get('registerType')?.value,
-      rank: form3.get('registerRank')?.value,
+      college: form3.get('registerCollege')?.value,
+      year: form3.get('registerYear')?.value,
+      study: form3.get('registerStudy')?.value,
       
+
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))
         window.location.href = approvalLink;

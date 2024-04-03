@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./template01.component.css']
 })
 export class Template01Component implements OnChanges {
+  
   @Input() buttonColor: string;
   @Input() firstName: string;
   @Input() lastName: string;
@@ -14,6 +15,19 @@ export class Template01Component implements OnChanges {
   @Input() jobTitle: string;
   @Input() content: string; 
   @Input() email: string; 
+
+  @Input() linkedin: string; 
+  @Input() youtube: string; 
+  @Input() twitter: string; 
+  @Input() facebook: string; 
+  @Input() instagram: string; 
+  @Input() gpa: string; 
+  @Input() age: string; 
+  @Input() weight: string; 
+  @Input() height: string; 
+  @Input() school: string; 
+  @Input() grade: string; 
+
   @Input() address: string; 
   @Input() phone: string; 
   @Input() phoneAllow: boolean; 
@@ -58,8 +72,10 @@ export class Template01Component implements OnChanges {
     }
   }
 
+ 
   private loadImage(): void {
     if (this.photo) {
+      
       const reader = new FileReader();
       reader.onload = (event) => {
         this.imageSrc = event.target?.result;
@@ -88,5 +104,26 @@ export class Template01Component implements OnChanges {
       reader.readAsDataURL(this.productImages);
     }
     
+  }
+  downloadVCard(): void {
+    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:${this.firstName} ${this.lastName}
+ORG:${this.companyName}
+EMAIL:${this.email}
+TEL:${this.phone}
+ADR:${this.address}
+END:VCARD`;
+
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contact.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
   }
 }
