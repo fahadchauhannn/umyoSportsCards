@@ -103,11 +103,11 @@ if (expireInValue.includes("year")) {
               location: form3.get('registerLocation')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              degree: form3.get('registerDegree')?.value,
+              
 
-              college: form3.get('registerCollege')?.value,
-              year: form3.get('registerYear')?.value,
-              study: form3.get('registerStudy')?.value,
+              type: form3.get('registerType')?.value,
+              talent: form3.get('registerTalent')?.value,
+              
               
 
         
@@ -186,7 +186,10 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       study: form3.get('registerStudy')?.value,
       
-
+      type: form3.get('registerType')?.value,
+      talent: form3.get('registerTalent')?.value,
+      
+      
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -282,6 +285,9 @@ if (expireInValue.includes("year")) {
       age_type: form3.get('registerAgeType')?.value,
       business_type: form3.get('registerBusiness')?.value,
       position: form3.get('registerPositionType')?.value,
+      
+      type: form3.get('registerType')?.value,
+      talent: form3.get('registerTalent')?.value,
       
       
       

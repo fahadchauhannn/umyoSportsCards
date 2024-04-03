@@ -462,12 +462,11 @@ export class HomeComponent implements AfterViewInit {
        const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
-       college : this.form2.get('selectedCollege').value,
-       year : this.form2.get('selectedYear').value,
-       study : this.form2.get('selectedStudy').value,
-       degree : this.form2.get('selectedDegree').value,
+       type : this.form2.get('selectedType').value,
+       talent : this.form2.get('selectedTalent').value,
        
-       business_type : this.form2.get('selectedBusiness').value,
+       
+
       
        name : this.form2.get('selectedName').value,
        gender : this.form2.get('selectedGender').value,
@@ -663,7 +662,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyohbcu.site/'
+                window.location.href='https://umyoentertainment.site/'
             }
           );
         }
@@ -687,22 +686,16 @@ export class HomeComponent implements AfterViewInit {
       });
   
       this.form2 = this.fb.group({
-        selectedBusiness: [''],
+        
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        // selectedLocation: [''],
+        selectedLocation: [''],
         selectedGender: [''],
         selectedCity: [''],
-
-        // selectedBase: [''],
-        // selectedBranch: [''],
-        // selectedRank: [''],
-        // selectedType: [''],
-        selectedCollege:[''],
-        selectedYear:[''],
-        selectedDegree:[''],
-        selectedStudy:[''],
+        selectedType:[''],
+        selectedTalent:[''],
+        
         
      
 
@@ -718,13 +711,13 @@ export class HomeComponent implements AfterViewInit {
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-        registerBusiness: ['', Validators.required],
+        registerLocation: ['', Validators.required],
+        registerType: ['', Validators.required],
+  
 
         registerStateType: ['', Validators.required],
-        registerCollege: ['', Validators.required],
-        registerYear: ['', Validators.required],
-        registerStudy: ['', Validators.required],
-        registerDegree: ['', Validators.required],
+        registerTalent: ['', Validators.required],
+      
         
 
 
