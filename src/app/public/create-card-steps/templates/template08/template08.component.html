@@ -72,6 +72,18 @@
       </a>
     </div>
   </section>
+
+  <section class="section_three">
+    <img [src]="imageSrcLogo" alt="logoimage" />
+    <div class="btn-wrapper">
+      <a
+        href="#"
+        class="btn btn-primary btn-block"
+        [style.background-color]="buttonColor"
+        >Learn more</a
+      >
+    </div>
+  </section>
   <div
     style="
       display: flex;
@@ -91,19 +103,12 @@
     <p *ngIf="age">Age: {{ age }}</p>
     <p *ngIf="weight">Weight: {{ weight }}</p>
   </div>
-  <section class="section_three">
-    <img [src]="imageSrcLogo" alt="logoimage" />
-    <div class="btn-wrapper">
-      <a
-        href="#"
-        class="btn btn-primary btn-block"
-        [style.background-color]="buttonColor"
-        >Learn more</a
-      >
-    </div>
-  </section>
   <section class="section_four">
-    <img src="assets/images/template-img-001.jpg" alt="" />
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
     <div class="clearfix"><br /></div>
   </section>
   <div *ngIf="youtubeArray && youtubeArray.length > 0">
@@ -159,9 +164,9 @@
       <i class="fa-solid fa-share forward"></i>
       <h3>Forward</h3>
     </button>
-    <a [routerLink]="['/']" type="button" class="ctrl-item">
+    <a (click)="navigateToHome()" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
-      <h3>Sign Up</h3>
+      <h3 style="color: black">Sign Up</h3>
     </a>
     <button
       type="button"

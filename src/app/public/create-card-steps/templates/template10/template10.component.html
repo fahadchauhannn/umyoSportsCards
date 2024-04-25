@@ -72,7 +72,11 @@
   </div>
 
   <section class="section_four">
-    <img src="assets/images/template-img-001.jpg" alt="" />
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
     <div class="clearfix"><br /></div>
     <div class="col social">
       <a
@@ -155,7 +159,7 @@
       <i class="fa-solid fa-share forward"></i>
       <h3>Forward</h3>
     </button>
-    <a [routerLink]="['/']" type="button" class="ctrl-item">
+    <a (click)="navigateToHome()" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
       <h3 style="color: black">Sign Up</h3>
     </a>

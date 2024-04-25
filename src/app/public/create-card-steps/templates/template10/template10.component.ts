@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template10',
@@ -48,7 +49,9 @@ export class Template10Component implements OnChanges {
   @Input() youtubeArray:any
   @Input() umyotubeArray:any
   @Input() vimeoArray:any
-  constructor(private sanitizer: DomSanitizer) {}
+  
+  constructor(private sanitizer: DomSanitizer, private router: Router) {}
+
   sanitizeYouTubeLink(youtubeLink: string): any {
     return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeLink);
   }
@@ -71,7 +74,13 @@ export class Template10Component implements OnChanges {
       this.loadImageProductImage();
     }
   }
-
+  navigateToHome(): void {
+    // Assuming 'referal' holds the referral ID
+    localStorage.clear()
+    const referralId = this.referal || ''; // Default to empty string if referral ID is not available
+    this.router.navigate(['/'], { queryParams: { referralId } });
+  }
+  
  
   private loadImage(): void {
     if (this.photo) {

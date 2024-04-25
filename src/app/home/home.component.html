@@ -1655,7 +1655,7 @@
   [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
   style="background-color: rgb(0, 0, 0, 0.8)"
 >
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">
@@ -1677,10 +1677,16 @@
               }}
             </h3>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
                   >
                   <input
                     type="text"
@@ -1692,11 +1698,17 @@
                   />
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
                   <input
                     type="text"
                     class="form-control"
@@ -1707,9 +1719,17 @@
                   />
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -1723,14 +1743,21 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-12">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
                 <button
                   type="submit"
                   class="btn btn-primary"
                   data-bs-toggle="modal"
                   id="pay-button"
                   (click)="pay()"
-                  [disabled]="!paymentForm.valid"
                 >
                   Pay Now
                 </button>
@@ -1806,7 +1833,8 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="container">
-          <h3>Confirming Payment...</h3>
+          <h3>{{ paypalTitleMessage }}</h3>
+          <p style="padding-top: 15px">{{ paypalMessage }}</p>
         </div>
       </div>
     </div>

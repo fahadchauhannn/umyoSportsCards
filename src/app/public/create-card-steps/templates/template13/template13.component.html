@@ -25,25 +25,7 @@
         <i class="fa-solid fa-location-dot"></i>
       </a>
     </div>
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        flex-direction: column;
-        gap: 10px;
-        padding: 5px;
-      "
-    >
-      <p *ngIf="gpa">GPA: {{ gpa }}</p>
-      <p *ngIf="school">School: {{ school }}</p>
-      <p *ngIf="grade">Grade: {{ grade }}</p>
 
-      <p *ngIf="height">Height: {{ height }}</p>
-      <p *ngIf="age">Age: {{ age }}</p>
-      <p *ngIf="weight">Weight: {{ weight }}</p>
-    </div>
     <div class="col img">
       <img [src]="imageSrc" alt="profileImage" />
     </div>
@@ -99,9 +81,33 @@
       </div>
     </div>
   </section>
+
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+    "
+  >
+    <p *ngIf="gpa">GPA: {{ gpa }}</p>
+    <p *ngIf="school">School: {{ school }}</p>
+    <p *ngIf="grade">Grade: {{ grade }}</p>
+
+    <p *ngIf="height">Height: {{ height }}</p>
+    <p *ngIf="age">Age: {{ age }}</p>
+    <p *ngIf="weight">Weight: {{ weight }}</p>
+  </div>
   <section class="section_four">
-    <img src="assets/images/template-img-001.jpg" alt="" />
-    <img src="assets/images/template-img-001.jpg" alt="" />
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
+
     <div class="clearfix"><br /></div>
   </section>
   <div *ngIf="youtubeArray && youtubeArray.length > 0">
@@ -157,7 +163,7 @@
       <i class="fa-solid fa-share forward"></i>
       <h3>Forward</h3>
     </button>
-    <a [routerLink]="['/']" type="button" class="ctrl-item">
+    <a (click)="navigateToHome()" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
       <h3 style="color: black">Sign Up</h3>
     </a>

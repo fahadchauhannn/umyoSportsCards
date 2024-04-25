@@ -373,10 +373,7 @@
     transform: translate(-50%,-50%);
     }
 
-    .px__screen__frame::-webkit-scrollbar {
-      width: 0 !important; /* Hide the scrollbar */
-      background: transparent !important; /* Adjust the background color of the scrollbar track */
-    } 
+   
   .loading-spinner {
       position: fixed;
       top: 50%;

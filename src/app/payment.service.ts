@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter } from '@angular/core';
 import { ApiService } from './api.service'; 
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
@@ -12,6 +12,8 @@ import {User,registerResponse} from './models/register-response.model'
 })
 export class PaymentService {
 
+  loadingStatus = new EventEmitter<boolean>();
+   
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -38,17 +40,17 @@ export class PaymentService {
 const expireInValue = selectedPackage.expire_in.toLowerCase(); 
 
 if (expireInValue.includes("year")) {
-  interval = "YEAR";
+  interval = "year";
   interval_count = 1;
 } else if (expireInValue.includes("6 month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 6;
 } else if (expireInValue.includes("month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 } else {
   
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 }
     this.apiService.AddCustomer({
@@ -108,7 +110,7 @@ if (expireInValue.includes("year")) {
               type: form3.get('registerType')?.value,
               talent: form3.get('registerTalent')?.value,
               
-              
+              subscription_id:"",
 
         
         
@@ -130,7 +132,9 @@ if (expireInValue.includes("year")) {
                   this.router.navigate(['/email-verification']);
                 }
                 else{
+
                   alert(response.status + response.message)
+                  this.loadingStatus.emit(false);
                 }
                 
               }
@@ -142,12 +146,20 @@ if (expireInValue.includes("year")) {
             
           } else {
             alert(response.message)
+            this.loadingStatus.emit(false);
           }
         })
       } else {
-        alert("failesd")
+        alert("Payment Failed")
+        this.loadingStatus.emit(false);
       }
-    }, error => alert(error.error.message))
+    }, error => {
+
+      alert(error.error.message)
+      this.loadingStatus.emit(false);
+    }
+  )
+
   }
 
 
@@ -189,7 +201,7 @@ if (expireInValue.includes("year")) {
       type: form3.get('registerType')?.value,
       talent: form3.get('registerTalent')?.value,
       
-      
+      subscription_id:"",
 
       reffered_from: form3.get('registerReferralCode').value,
       
@@ -290,7 +302,7 @@ if (expireInValue.includes("year")) {
       talent: form3.get('registerTalent')?.value,
       
       
-      
+      subscription_id:"",
       
       
       degree: form3.get('registerDegree')?.value,
