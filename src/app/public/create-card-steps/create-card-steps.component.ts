@@ -1,5 +1,5 @@
 import { Component,ChangeDetectorRef, OnInit, AfterViewInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 
 import { ApiService } from 'src/app/api.service';
@@ -18,6 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CreateCardStepsComponent implements  AfterViewInit{
   ngAfterViewInit() {
     this.colorPickerLoaded = true;
+    this.isLoading=false
   }
   displayStep(stepNumber: number) {
     console.log('display stepp');
@@ -40,10 +41,15 @@ export class CreateCardStepsComponent implements  AfterViewInit{
   
     }
   }
+
+  showLoadingModal:any;
+  isLoading:any
+  loadingTitle:any='Please Wait.';
+  loadingMessage:any="Saving Your Card...";
   Form: FormGroup;
   colorOptions: string[] = ['red', 'green', 'yellow', 'olive', 'orange', 'teal', 'blue', 'violet', 'purple', 'pink'];
   selectedColor='red'
-  
+  productImagesQuantity:any
   referalCode:any
   colorPickerLoaded: boolean = false;
   templateId:any
@@ -65,6 +71,8 @@ user_id  = parseInt(this.id, 10);
   }
 
   constructor(private fb: FormBuilder,private cdr: ChangeDetectorRef, private apiService:ApiService,private route:ActivatedRoute,private router: Router,) {
+    this.showLoadingModal=false
+    this.isLoading=true
     this.Form = this.fb.group({
       selectedColor:['red'],
       FirstName: ['John'],
@@ -90,7 +98,7 @@ user_id  = parseInt(this.id, 10);
       InviteCode: [true],
       Photo: ['assets/images/john-doe-avatar.jpg'],
       Logo: ['assets/images/unmasking-yourself.jpg'],
-      ProductImages: ['assets/images/app-devices.jpg'],
+      ProductImages: [['assets/images/app-devices.jpg']],
 
 
 
@@ -269,17 +277,29 @@ user_id  = parseInt(this.id, 10);
 
 
   onProductImagesChange(event: any): void {
-    const file = event?.target?.files[0];
+    console.log('product image chagnedddd');
+    const files = event?.target?.files;
+    if (files) {
+        const base64Images = [];
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                base64Images.push(reader.result);
+                if (base64Images.length === files.length) {
 
-    if (file) {
-      this.Form.patchValue({
-        ProductImages: file,
-      });
+                    this.Form.patchValue({
+                        ProductImages: base64Images,
 
-      
-      this.cdr.detectChanges();
+                    });
+                    this.ConvertedProductImage=base64Images
+                    this.cdr.detectChanges();
+                }
+            };
+        }
     }
-  }
+}
   
   ngOnInit(): void {
 
@@ -298,15 +318,71 @@ user_id  = parseInt(this.id, 10);
       console.log(this.templateId);
   })
 
-    this.apiService.getUserById(this.user_id).subscribe(
-      (response)=>{
-        if(response.status='Success'){
-          this.referalCode=response.Users.refer_code
-        }else{console.log('error fetching user data on create card steps');}
-      },(error)=>{
-        console.log('error fetching request to get user data on create card steps')
+     // Fetch user data
+     this.apiService.getUserById(this.user_id).subscribe(
+      (response) => {
+        if (response.status === 'Success') {
+          this.referalCode = response.Users.refer_code;
+          this.productImagesQuantity = response.Users.PackageData.product_image;
+          console.log('quantity');
+          console.log(this.productImagesQuantity);
+
+          // Set validators based on productImagesQuantity
+          if (this.productImagesQuantity === '3 image') {
+            console.log('3 image validation applied');
+            
+            this.Form.controls['ProductImages'].setValidators(
+              Validators.maxLength(3)
+            );
+          }
+          if (this.productImagesQuantity === '1 image') {
+            console.log('3 image validation applied');
+            this.Form.controls['ProductImages'].setValidators(
+              Validators.maxLength(1)
+            );
+          }
+          if (this.productImagesQuantity === 'No image') {
+            this.Form.controls['ProductImages'].setValidators(
+              Validators.maxLength(1))
+          }
+          
+
+          // Trigger validation status change subscription
+          this.Form.controls['ProductImages'].statusChanges.subscribe(
+
+
+            
+            (status) => {
+              console.log('status changeddd');
+              if (this.productImagesQuantity === 'No image') {
+                if (JSON.stringify(this.Form.controls['ProductImages'].value) !== JSON.stringify(['assets/images/app-devices.jpg'])) {
+                  alert("You are not allowed to upload a product image. Please upgrade your package to use this feature.");
+                  this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+                }
+              }
+              if (status === 'INVALID') {
+                if (this.productImagesQuantity === '3 image') {
+                  this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+                  alert('You are only allowed to upload a maximum of 3 product images in your current package.');
+                }
+                if (this.productImagesQuantity === '1 image') {
+                  this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+                  alert('You are only allowed to upload a maximum of 1 product image in your current package.');
+                }
+              }
+            }
+          );
+
+        } else {
+          console.log('error fetching user data on create card steps');
+        }
+      },
+      (error) => {
+        console.log(
+          'error fetching request to get user data on create card steps'
+        );
       }
-    )
+    );
 
     
     this.displayStep(2);
@@ -424,7 +500,7 @@ check(){
   
    saveCard(){
 
-
+    this.showLoadingModal=true;
     const youtubeVideosArray = this.Form.get('YoutubeVideos') as FormArray;
     const umyotubeVideosArray = this.Form.get('UmyotubeVideos') as FormArray;
     const vimeoVideosArray = this.Form.get('VimeoVideos') as FormArray;
@@ -435,9 +511,9 @@ check(){
       return { youtubeTitle, youtubeLink };
     });
     const umyotubeData = umyotubeVideosArray.controls.map((control) => {  
-      const umtotubeTitle = control.get('umyotubeTitle').value;
+      const umyotubeTitle = control.get('umyotubeTitle').value;
       const umyotubeLink = control.get('umyotubeLink').value;
-      return { umtotubeTitle, umyotubeLink };
+      return { umyotubeTitle, umyotubeLink };
     });
     const vimeoVideosData = vimeoVideosArray.controls.map((control) => {  
       const vimeoVideoTitle = control.get('vimeoVideoTitle').value;
@@ -501,11 +577,14 @@ const infoFormData={
     inviteCode:this.referalCode,
     
 }
+
+
     const formData={
       buttonColor:this.Form.value.selectedColor,
       cardTitle:this.Form.value.CardTitle,
       change_logo:this.ConvertedLogo,
       change_photo:this.ConvertedPhoto,
+      changeProductImages:JSON.stringify(this.ConvertedProductImage),
       colorTheme:this.Form.value.selectedColor,
       user_id:this.id,
       infoFormData:JSON.stringify(infoFormData),
@@ -519,16 +598,20 @@ const infoFormData={
 
   this.apiService.saveCard(formData).subscribe(
     (response)=>{
+      this.showLoadingModal=false;
       if(response.status!='Failed'){
+        this.showLoadingModal=false;
         alert("Card Saved! ")
         this.router.navigate(['/cards']);
       }
       else{
+        this.showLoadingModal=false;
         alert("Failed! "+ response.message)
 
       }
 
     },(error)=>{
+      this.showLoadingModal=false;
 alert("Failed! " + error)
     }
   )

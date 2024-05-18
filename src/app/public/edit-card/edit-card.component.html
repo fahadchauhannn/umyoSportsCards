@@ -1,6 +1,14 @@
 <app-nav></app-nav>
 
-<section class="create-card-section" id="create-card-section">
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section
+  class="create-card-section"
+  id="create-card-section"
+  [class.hiddenDisplay]="isLoading"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -50,17 +58,6 @@
                 <div class="template-box">
                   <app-template01
                     *ngIf="templateId == 1"
-                    [linkedin]="Form.value.Linkedin"
-                    [twitter]="Form.value.Twitter"
-                    [facebook]="Form.value.Facebook"
-                    [youtube]="Form.value.Youtube"
-                    [instagram]="Form.value.Instagram"
-                    [gpa]="Form.value.Gpa"
-                    [age]="Form.value.Age"
-                    [weight]="Form.value.Weight"
-                    [height]="Form.value.Height"
-                    [grade]="Form.value.Grade"
-                    [school]="Form.value.School"
                     [linkedin]="Form.value.Linkedin"
                     [twitter]="Form.value.Twitter"
                     [facebook]="Form.value.Facebook"
@@ -3541,3 +3538,22 @@
     </div>
   </div>
 </section>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

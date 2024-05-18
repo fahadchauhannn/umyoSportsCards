@@ -1,6 +1,14 @@
 <app-nav></app-nav>
 
-<section class="create-card-section" id="create-card-section">
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section
+  class="create-card-section"
+  id="create-card-section"
+  [class.hiddenDisplay]="isLoading"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -1963,6 +1971,21 @@
                       (change)="onLogoChange($event)"
                     />
                   </div>
+
+                  <!-- <div class="upload_box cyan" role="button" data-target="pimg">
+                    <i class="fa fa-check"></i>
+                    Change Product Images
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg"
+                      id="pimg"
+                      (change)="onProductImagesChange($event)"
+                      multiple
+                    />
+                  </div> -->
+
                   <div class="upload_box cyan" role="button" data-target="pimg">
                     <i class="fa fa-check"></i>
                     Change Product Images
@@ -1976,6 +1999,24 @@
                       multiple
                     />
                   </div>
+
+                  <!-- <div
+                    class="upload_box cyan"
+                    role="button"
+                    *ngIf="productImagesQuantity === '1 image'"
+                    data-target="pimg2"
+                  >
+                    <i class="fa fa-check"></i>
+                    Change Product Image
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg2"
+                      id="pimg2"
+                      (change)="onProductImagesChange($event)"
+                    />
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -3525,3 +3566,22 @@
     </div>
   </div>
 </section>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

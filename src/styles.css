@@ -16,3 +16,43 @@
 overflow-x: hidden !important;
   }
    */
+
+   /* .slick-prev{
+    left: 9px !important;
+    z-index: 11111 !important;
+}
+
+.slick-next {
+    right: 4px !important;
+    z-index: 1111111 !important;
+} */
+
+.custom-prev-arrow, .custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-prev-arrow {
+  left: 10px;
+}
+
+.custom-next-arrow {
+  right: 10px;
+}
+
+.carousel-control-prev{
+  left: -24px !important;
+}
+
+.carousel-control-prev{
+  top: 142px !important;
+}
+.carousel-control-next{
+  top: 142px !important;
+}
+.carousel-control-next{
+  right: -18px !important;
+}

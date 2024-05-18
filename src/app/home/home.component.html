@@ -719,23 +719,21 @@
           <div class="content">
             <!-- Nav pills -->
             <ul class="nav nav-pills" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
                   [class.active]="showLoginTab"
                   data-toggle="pill"
-                  href="#login"
                   >Login</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
-                  [class.active]="showRegisterTab"
+                  [class.active]="!showLoginTab"
                   data-toggle="pill"
-                  href="#regis"
                   >Register</a
                 >
               </li>
@@ -872,7 +870,7 @@
               <div
                 id="regis"
                 class="container tab-pane"
-                [class.active]="showRegisterTab"
+                [class.active]="!showLoginTab"
               >
                 <form [formGroup]="form3">
                   <div class="row justify-content-center">

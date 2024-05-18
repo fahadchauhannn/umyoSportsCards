@@ -20,7 +20,7 @@ declare var $: any;
 export class HomeComponent implements AfterViewInit {
   
 
-  showLoginTab: boolean;
+  showLoginTab: boolean=true;
   showAgeModal: boolean=false;
   showRegisterTab: boolean;
   isMoreTextVisible:boolean = false;
@@ -66,17 +66,7 @@ export class HomeComponent implements AfterViewInit {
        
       this.form3.get('registerReferralCode')?.setValue(referralId); // Set the referral ID to the form control
     });
-    this.route.fragment.subscribe(fragment => {
-      
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
-    });
+   
   
     const videoPath = 'assets/video.mp4';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
@@ -439,16 +429,8 @@ export class HomeComponent implements AfterViewInit {
   
     // check route for mobile view for registration and login tab
     checkRoute(){
-      this.route.fragment.subscribe(fragment => {
-        
-        if (fragment === 'regis') {
-          this.showLoginTab = false;
-          this.showRegisterTab = true;
-        } else {
-          this.showLoginTab = true;
-          this.showRegisterTab = false;
-        }
-      });
+    
+          this.showLoginTab = !this.showLoginTab;
     }
     
     // toggle read more buttons 

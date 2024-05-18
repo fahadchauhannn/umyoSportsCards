@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import {ApiService} from '../../../api.service'
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -7,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './share-card.component.html',
   styleUrls: ['./share-card.component.css']
 })
-export class ShareCardComponent  implements  OnInit{
+export class ShareCardComponent implements  OnInit{
 
   selectedColor:any
       FirstName: any
@@ -17,6 +16,7 @@ export class ShareCardComponent  implements  OnInit{
       ccontent:any
       Email: any
       Address: any
+      loading: boolean = true;
       PhoneNumber: any
       PhoneNumber2: any
       PhoneAllow: any
@@ -26,16 +26,16 @@ export class ShareCardComponent  implements  OnInit{
       Photo:any
       Logo: any
       ProductImages: any
-      YoutubeTitle:any
-      YoutubeLink:any
+      YoutubeArray:any
+      UmyotubeArray:any
+      VimeoVideoArray:any
       VimeoTitle:any
       VimeoLink:any
       UmyotubeTitle:any
       UmyotubeLink:any
-      LinkButtonTitle:any
-      LinkButtonLink:any
+      buttons:any
       FacebookLink:any
-      loading: boolean = true;
+      
       Facebook:any
       Youtube:any
       Linkedin:any
@@ -49,16 +49,9 @@ export class ShareCardComponent  implements  OnInit{
       Skype:any
       CardTitle:any
       referalCode:any
-      YoutubeArray:any
-      UmyotubeArray:any
-      VimeoVideoArray:any
+  
       templateId:any=1
-      card_id:any
-      ConvertedPhoto:any
-     ConvertedLogo:any
-     ConvertedProductImage:any
-     shareCardId:any
-
+      
 gpa:any
 school:any
 grade:any
@@ -66,11 +59,17 @@ height:any
 age:any
 weight:any
 
+      card_id:any
+      ConvertedPhoto:any
+     ConvertedLogo:any
+     shareCardId:any
+     ConvertedProductImage:any
+
 
 
      id=localStorage.getItem('user_id')
 user_id  = parseInt(this.id, 10);
-  buttons: any;
+
 
 
   constructor(private apiService: ApiService,private route:ActivatedRoute,private router: Router,)  {
@@ -82,9 +81,7 @@ user_id  = parseInt(this.id, 10);
 
 
   convertDataURLtoFile(dataURL: string, fileName: string): File | null {
-    
     if (!dataURL || typeof dataURL !== 'string' || !dataURL.startsWith('data:image')) {
-      console.log(fileName);
       console.error('Invalid data URL');
       return null;
     }
@@ -125,6 +122,7 @@ user_id  = parseInt(this.id, 10);
             this.PhoneNumber = response.Card.infoFormData.phoneNumber;
             this.PhoneNumber2 = response.Card.infoFormData.alternativePhoneNo;
 
+            
             this.gpa = response.Card.infoFormData?.gpa;
             this.age = response.Card.infoFormData?.age;
             this.weight = response.Card.infoFormData?.weight;
@@ -138,33 +136,35 @@ user_id  = parseInt(this.id, 10);
             this.Youtube = response.Card.socialFormData.youtube.replace(/\\/g, '');
             this.Instagram = response.Card.socialFormData.instagram.replace(/\\/g, '');
             this.Linkedin = response.Card.socialFormData.linkedin.replace(/\\/g, '');
-
             this.PhoneAllow = response.Card.infoFormData.phoneTextAllow;
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
             this.SaveCard = response.Card.infoFormData.showSaveButton;
             this.InviteCode = response.Card.infoFormData.showInviteCode;
-            
             console.log('phone allow'+this.PhoneAllow);
             console.log('forward card'+ this.ForwardCard);
             console.log('save card'+ this.SaveCard);
             console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
-            this.ProductImages = '';
-            this.YoutubeTitle = response.Card.socialFormData?.youtubeVideos[0]?.youtubeTitle;
-            this.YoutubeLink = response.Card.socialFormData?.youtubeVideos[0]?.youtubeLink;
+            this.ProductImages = JSON.parse(response.Card.changeProductImages);
+            
+            console.log(this.ProductImages);
+            this.YoutubeArray = response.Card.socialFormData?.youtubeVideos;
+            this.UmyotubeArray = response.Card.socialFormData?.umyotubeVideos;
+            this.VimeoVideoArray = response.Card.socialFormData?.vimeoVideos;
+            
             this.VimeoTitle = response.Card.socialFormData?.vimeoVideos[0]?.vimeoTitle;
             this.VimeoLink = response.Card.socialFormData?.vimeoVideos[0]?.vimeoLink;
             this.UmyotubeTitle = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeTitle;
             this.UmyotubeLink = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeLink;
             this.buttons = response.Card.socialFormData?.linkButtons;
+            
             this.FacebookLink = response.Card.FacebookLink;
   
             
   
             this.referalCode = response.Card.infoFormData.inviteCode;
-            
-            this.loading = false;
+  this.loading=false
             
           }
           else{

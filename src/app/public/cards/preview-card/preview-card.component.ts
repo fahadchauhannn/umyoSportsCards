@@ -1,5 +1,4 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../../api.service'
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -147,7 +146,9 @@ user_id  = parseInt(this.id, 10);
             console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
-            this.ProductImages = '';
+            this.ProductImages = JSON.parse(response.Card.changeProductImages);
+            
+            console.log(this.ProductImages);
             this.YoutubeArray = response.Card.socialFormData?.youtubeVideos;
             this.UmyotubeArray = response.Card.socialFormData?.umyotubeVideos;
             this.VimeoVideoArray = response.Card.socialFormData?.vimeoVideos;

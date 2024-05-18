@@ -410,6 +410,8 @@ localStorage.setItem('user_id', response.user.id.toString());
 }
 
 
+
+
 upgradePaypal(userData:any,user_id:any,selectedPackage:any){
 this.paypal_upgrade_billing_plan(userData,selectedPackage)
 }
