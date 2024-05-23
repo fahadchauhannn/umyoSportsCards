@@ -42,7 +42,7 @@ export class EditCardComponent  implements  AfterViewInit{
       LinkButtonTitle:any
       LinkButtonLink:any
       FacebookLink:any
-      
+      userPackageId:any
       Facebook:any
       Youtube:any
       Linkedin:any
@@ -394,6 +394,10 @@ user_id  = parseInt(this.id, 10);
     if(this.userPackageData.logo=="No"){
       alert("You are not allowed to upload logo in your current package")
     }
+    
+    if(this.userPackageId=="14"){
+      alert("You are not allowed update you logo image in your current package.")
+    }
     else{
       const file = event?.target?.files[0];
 
@@ -617,7 +621,7 @@ this.apiService.getUserById(this.user_id).subscribe(
       this.referalCode = response.Users.refer_code;
       this.productImagesQuantity = response.Users.PackageData.product_image;
       this.userPackageData = response.Users.PackageData
-      
+      this.userPackageId=response.Users.package_id  
 
       // Set validators based on productImagesQuantity
       if (this.productImagesQuantity === '3 image') {
