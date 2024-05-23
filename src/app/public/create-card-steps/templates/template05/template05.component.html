@@ -7,6 +7,82 @@
       <img src="assets/images/unmasking-yourself.jpg" alt="logoimage" />
     </div>
   </section>
+
+  <div *ngIf="youtubeArray && youtubeArray.length > 0">
+    <div *ngFor="let video of youtubeArray">
+      <div
+        *ngIf="
+          video.youtubeLink &&
+          video.youtubeLink.startsWith('https://www.youtube.com/')
+        "
+      >
+        <p>{{ video.youtubeTitle }}</p>
+        <iframe
+          *ngIf="video.youtubeLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(video.youtubeLink)"
+          [title]="video.youtubeTitle"
+          frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
+    <div *ngFor="let umyoVideo of umyotubeArray">
+      <div *ngIf="umyoVideo.umyotubeLink">
+        <p style="color: black; text-align: center">
+          {{ umyoVideo.umyotubeTitle }}
+        </p>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://youtu.be/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://dai.ly/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeDailymotionUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="vimeoArray && vimeoArray.length > 0">
+    <div *ngFor="let video of vimeoArray">
+      <div
+        *ngIf="
+          video.vimeoVideoLink &&
+          video.vimeoVideoLink.startsWith('https://player.vimeo.com/')
+        "
+      >
+        <p>{{ video.vimeoVideoTitle }}</p>
+        <iframe
+          *ngIf="video.vimeoVideoLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeVimeo(video.vimeoVideoLink)"
+          [title]="video.vimeoVideoTitle"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
   <section class="section_two">
     <img
       *ngIf="youtubeArray[0]?.youtubeLink == ''"
@@ -128,74 +204,6 @@
       </ng-template>
     </ngb-carousel>
   </ng-container>
-
-  <div *ngIf="youtubeArray && youtubeArray.length > 0">
-    <div *ngFor="let video of youtubeArray">
-      <div
-        *ngIf="
-          video.youtubeLink &&
-          video.youtubeLink.startsWith('https://www.youtube.com/')
-        "
-      >
-        <p>{{ video.youtubeTitle }}</p>
-        <iframe
-          *ngIf="video.youtubeLink"
-          style="width: 100%; padding: 10px"
-          height="200"
-          [src]="sanitizeYouTubeUrl(video.youtubeLink)"
-          [title]="video.youtubeTitle"
-          frameborder="0"
-          referrerpolicy="strict-origin-when-cross-origin"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
-    <div *ngFor="let umyoVideo of umyotubeArray">
-      <div *ngIf="umyoVideo.umyotubeLink">
-        <p style="color: black; text-align: center">
-          {{ umyoVideo.umyotubeTitle }}
-        </p>
-        <iframe
-          *ngIf="
-            umyoVideo.umyotubeLink &&
-            umyoVideo.umyotubeLink.startsWith('https://youtu.be/')
-          "
-          style="width: 100%; padding: 10px"
-          height="200"
-          [src]="sanitizeYouTubeUrl(umyoVideo.umyotubeLink)"
-          title="Umyotube player"
-          frameborder="0"
-        ></iframe>
-        <iframe
-          *ngIf="
-            umyoVideo.umyotubeLink &&
-            umyoVideo.umyotubeLink.startsWith('https://dai.ly/')
-          "
-          style="width: 100%; padding: 10px"
-          height="200"
-          [src]="sanitizeDailymotionUrl(umyoVideo.umyotubeLink)"
-          title="Umyotube player"
-          frameborder="0"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="vimeoArray && vimeoArray.length > 0">
-    <div *ngFor="let video of vimeoArray">
-      <p>{{ video.vimeoVideoTitle }}</p>
-      <iframe
-        *ngIf="video.vimeoVideoLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="video.vimeoVideoLink"
-        title="Vimeo video player"
-        frameborder="0"
-      ></iframe>
-    </div>
-  </div>
 
   <div class="three-ctrls">
     <button

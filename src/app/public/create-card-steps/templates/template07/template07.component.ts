@@ -130,6 +130,30 @@ return ""
     }
   }
 
+
+  formatVimeoUrl(url: string): string {
+    const match = url.match(/vimeo\.com\/(\d+)/);
+    if (match && match[1]) {
+      const videoId = match[1];
+      return `https://player.vimeo.com/video/${videoId}?h=b550e8409e&title=0&byline=0&portrait=0`;
+    }
+    return '';
+  }
+
+ sanitizeVimeo(url: string): SafeResourceUrl {
+    const formattedUrl = url
+    if (formattedUrl === '') {
+      return '';
+    }
+    if (this.sanitizedUrlsCache.has(formattedUrl)) {
+      return this.sanitizedUrlsCache.get(formattedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formattedUrl);
+      this.sanitizedUrlsCache.set(formattedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
+
   validateYouTubeUrl(url: string): boolean {
     // Regular expression to match YouTube URL formats
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;

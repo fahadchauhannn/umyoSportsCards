@@ -59,6 +59,7 @@ export class EditCardComponent  implements  AfterViewInit{
       referalCode:any
   
       templateId:any=1
+      userPackageData:any
       card_id:any
       ConvertedPhoto:any
      ConvertedLogo:any
@@ -286,16 +287,51 @@ user_id  = parseInt(this.id, 10);
   }
 
 
+  
+
   addYoutube() {
-    this.YoutubeVideos.push(this.createYoutubeVideoGroup());
-  }
+    const videoLimit = {
+        "1 video link": 1,
+        "2 video link": 2,
+        "3 video link": 3,
+        "Unlimited(General)": Infinity
+    };
+
+    const currentVideoCount = this.YoutubeVideos.value.length;
+    const maxVideosAllowed = videoLimit[this.userPackageData.videos];
+
+    if (currentVideoCount < maxVideosAllowed) {
+        this.YoutubeVideos.push(this.createYoutubeVideoGroup());
+    } else {
+        alert(`You are only allowed to have ${maxVideosAllowed} youtube video link${maxVideosAllowed > 1 ? 's' : ''}`);
+    }
+}
 
   removeYoutube(index: number) {
     this.YoutubeVideos.removeAt(index);
   }
  
   addUmyotubeVideos() {
+    
+    const videoLimit = {
+      "1 video link": 1,
+      "2 video link": 2,
+      "3 video link": 3,
+      "Unlimited(General)": Infinity
+  };
+
+  const currentVideoCount = this.YoutubeVideos.value.length;
+  const maxVideosAllowed = videoLimit[this.userPackageData.umyotube];
+
+  if (currentVideoCount < maxVideosAllowed) {
     this.UmyotubeVideos.push(this.createUmyotubeVideoGroup());
+  } else {
+      alert(`You are only allowed to have ${maxVideosAllowed} umyotube video link${maxVideosAllowed > 1 ? 's' : ''}`);
+  }
+
+
+
+
   }
 
   removeUmyotubeVideos(index: number) {
@@ -303,7 +339,25 @@ user_id  = parseInt(this.id, 10);
   }
 
   addVimeoVideos() {
+    
+        
+    const videoLimit = {
+      "1 video link": 1,
+      "2 video link": 2,
+      "3 video link": 3,
+      "Unlimited(General)": Infinity
+  };
+
+  const currentVideoCount = this.YoutubeVideos.value.length;
+  const maxVideosAllowed = videoLimit[this.userPackageData.umyotube];
+
+  if (currentVideoCount < maxVideosAllowed) {
     this.VimeoVideos.push(this.createVimeoVideoGroup());
+  } else {
+      alert(`You are only allowed to have ${maxVideosAllowed} vimeo video link${maxVideosAllowed > 1 ? 's' : ''}`);
+  }
+
+
   }
 
   removeVimeoVideos(index: number) {
@@ -337,19 +391,27 @@ user_id  = parseInt(this.id, 10);
     }
   }
   onLogoChange(event: any): void {
-    const file = event?.target?.files[0];
-
-    if (file) {
-      this.Form.patchValue({
-        Logo: file,
-      });
-      this.convertFileToDataURL(this.Form.value.Logo).then((dataUrl) => {
-        this.ConvertedLogo = dataUrl;
-      }),
-      
-      this.cdr.detectChanges();
+    if(this.userPackageData.logo=="No"){
+      alert("You are not allowed to upload logo in your current package")
     }
+    else{
+      const file = event?.target?.files[0];
+
+      if (file) {
+        this.Form.patchValue({
+          Logo: file,
+        });
+        this.convertFileToDataURL(this.Form.value.Logo).then((dataUrl) => {
+          this.ConvertedLogo = dataUrl;
+        }),
+        
+        this.cdr.detectChanges();
+      }
+    }
+    
   }
+
+  
 
 
   
@@ -554,7 +616,7 @@ this.apiService.getUserById(this.user_id).subscribe(
     if (response.status === 'Success') {
       this.referalCode = response.Users.refer_code;
       this.productImagesQuantity = response.Users.PackageData.product_image;
-      
+      this.userPackageData = response.Users.PackageData
       
 
       // Set validators based on productImagesQuantity

@@ -183,18 +183,24 @@
 
   <div *ngIf="vimeoArray && vimeoArray.length > 0">
     <div *ngFor="let video of vimeoArray">
-      <p>{{ video.vimeoVideoTitle }}</p>
-      <iframe
-        *ngIf="video.vimeoVideoLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="video.vimeoVideoLink"
-        title="Vimeo video player"
-        frameborder="0"
-      ></iframe>
+      <div
+        *ngIf="
+          video.vimeoVideoLink &&
+          video.vimeoVideoLink.startsWith('https://player.vimeo.com/')
+        "
+      >
+        <p>{{ video.vimeoVideoTitle }}</p>
+        <iframe
+          *ngIf="video.vimeoVideoLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeVimeo(video.vimeoVideoLink)"
+          [title]="video.vimeoVideoTitle"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
   </div>
-
   <div class="three-ctrls">
     <button
       type="button"
