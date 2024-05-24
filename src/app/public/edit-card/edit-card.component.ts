@@ -391,29 +391,29 @@ user_id  = parseInt(this.id, 10);
     }
   }
   onLogoChange(event: any): void {
-    if(this.userPackageData.logo=="No"){
-      alert("You are not allowed to upload logo in your current package")
+    if (this.userPackageData.logo === "No") {
+      alert("You are not allowed to upload a logo in your current package.");
+      return;
     }
-    
-    if(this.userPackageId=="14"){
-      alert("You are not allowed update you logo image in your current package.")
+  
+    if (this.userPackageId === 14) {
+      alert("You are not allowed to update your logo image in your current package.");
+      return;
     }
-    else{
-      const file = event?.target?.files[0];
-
-      if (file) {
-        this.Form.patchValue({
-          Logo: file,
-        });
-        this.convertFileToDataURL(this.Form.value.Logo).then((dataUrl) => {
-          this.ConvertedLogo = dataUrl;
-        }),
-        
+console.log('oaaaaakege iddddddddddddddd');
+    console.log(this.userPackageId);
+  
+    const file = event?.target?.files[0];
+    if (file) {
+      this.Form.patchValue({ Logo: file });
+      this.convertFileToDataURL(this.Form.value.Logo).then((dataUrl) => {
+        this.ConvertedLogo = dataUrl;
+      }).finally(() => {
         this.cdr.detectChanges();
-      }
+      });
     }
-    
   }
+  
 
   
 

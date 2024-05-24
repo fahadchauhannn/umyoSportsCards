@@ -54,80 +54,7 @@
     <p *ngIf="age">Age: {{ age }}</p>
     <p *ngIf="weight">Weight: {{ weight }}</p>
   </div>
-  <section class="section_four">
-    <img
-      *ngIf="youtubeArray[0]?.youtubeLink == ''"
-      src="assets/images/template-img-001.jpg"
-      alt=""
-    />
-    <div class="social">
-      <a
-        [href]="linkedin"
-        target="_blank"
-        [style.background-color]="buttonColor"
-        ><i class="fa-brands fa-linkedin-in"></i
-      ></a>
-      <a
-        [href]="instagram"
-        target="_blank"
-        [style.background-color]="buttonColor"
-        ><i class="fa-brands fa-instagram"></i
-      ></a>
-      <a
-        [href]="facebook"
-        target="_blank"
-        [style.background-color]="buttonColor"
-        ><i class="fa-brands fa-facebook-f"></i
-      ></a>
-      <a [href]="twitter" target="_blank" [style.background-color]="buttonColor"
-        ><i class="fa-brands fa-twitter"></i
-      ></a>
-      <a [href]="youtube" target="_blank" [style.background-color]="buttonColor"
-        ><i class="fa-brands fa-youtube"></i
-      ></a>
-    </div>
-  </section>
-  <section class="section_five">
-    <div class="img" *ngIf="photo == null">
-      <img src="assets/images/john-doe-avatar.jpg" alt="profileImage" />
-    </div>
-    <div class="img" *ngIf="photo != null">
-      <img [src]="imageSrc" alt="profileImage" />
-    </div>
 
-    <div class="section_heading">
-      <h1 [style.color]="buttonColor">{{ firstName + " " + lastName }}</h1>
-      <p>{{ jobTitle + ", " + companyName }}</p>
-    </div>
-    <div class="clearfix"><br /></div>
-    <div class="contact-icons">
-      <!-- phone to -->
-      <a [href]="'tel:' + phone" [style.background-color]="buttonColor">
-        <i class="fa-solid fa-phone"></i>
-      </a>
-      <!-- message to  -->
-      <a
-        [href]="'sms:' + phone"
-        *ngIf="phoneAllow"
-        [style.background-color]="buttonColor"
-      >
-        <i class="fa-solid fa-comments"></i>
-      </a>
-      <!-- mail to  -->
-      <a [href]="'mailto:' + email" [style.background-color]="buttonColor">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-      <!-- open map  -->
-      <a
-        [href]="'https://www.google.com/maps?q=' + address"
-        [style.background-color]="buttonColor"
-      >
-        <i class="fa-solid fa-location-dot"></i>
-      </a>
-    </div>
-
-    <div class="clearfix"><br /></div>
-  </section>
   <div *ngIf="youtubeArray && youtubeArray.length > 0">
     <div *ngFor="let video of youtubeArray">
       <div
@@ -202,6 +129,80 @@
       </div>
     </div>
   </div>
+  <section class="section_four">
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
+    <div class="social">
+      <a
+        [href]="linkedin"
+        target="_blank"
+        [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-linkedin-in"></i
+      ></a>
+      <a
+        [href]="instagram"
+        target="_blank"
+        [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a
+        [href]="facebook"
+        target="_blank"
+        [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-facebook-f"></i
+      ></a>
+      <a [href]="twitter" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-twitter"></i
+      ></a>
+      <a [href]="youtube" target="_blank" [style.background-color]="buttonColor"
+        ><i class="fa-brands fa-youtube"></i
+      ></a>
+    </div>
+  </section>
+  <section class="section_five">
+    <div class="img" *ngIf="photo == null">
+      <img src="assets/images/john-doe-avatar.jpg" alt="profileImage" />
+    </div>
+    <div class="img" *ngIf="photo != null">
+      <img [src]="imageSrc" alt="profileImage" />
+    </div>
+
+    <div class="section_heading">
+      <h1 [style.color]="buttonColor">{{ firstName + " " + lastName }}</h1>
+      <p>{{ jobTitle + ", " + companyName }}</p>
+    </div>
+    <div class="clearfix"><br /></div>
+    <div class="contact-icons">
+      <!-- phone to -->
+      <a [href]="'tel:' + phone" [style.background-color]="buttonColor">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+      <!-- message to  -->
+      <a
+        [href]="'sms:' + phone"
+        *ngIf="phoneAllow"
+        [style.background-color]="buttonColor"
+      >
+        <i class="fa-solid fa-comments"></i>
+      </a>
+      <!-- mail to  -->
+      <a [href]="'mailto:' + email" [style.background-color]="buttonColor">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <!-- open map  -->
+      <a
+        [href]="'https://www.google.com/maps?q=' + address"
+        [style.background-color]="buttonColor"
+      >
+        <i class="fa-solid fa-location-dot"></i>
+      </a>
+    </div>
+
+    <div class="clearfix"><br /></div>
+  </section>
 
   <div class="three-ctrls">
     <button
@@ -246,7 +247,7 @@
     >
       <ng-container *ngFor="let button of buttons">
         <a
-          [href]="button.LinkButtonLink"
+          [href]="button.LinkButtonLink ? button.LinkButtonLink : '#'"
           type="button"
           class="ctrl-item"
           *ngIf="button"
