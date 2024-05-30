@@ -1,9 +1,94 @@
 <div class="template_006">
   <section class="section_three">
-    <img [src]="imageSrcLogo" alt="logoimage" />
+    <div *ngIf="logo != null">
+      <img [src]="imageSrcLogo" alt="logoimage" />
+    </div>
+    <div *ngIf="logo == null">
+      <img src="assets/images/unmasking-yourself.jpg" alt="logoimage" />
+    </div>
   </section>
+
+  <div *ngIf="youtubeArray && youtubeArray.length > 0">
+    <div *ngFor="let video of youtubeArray">
+      <div
+        *ngIf="
+          video.youtubeLink &&
+          video.youtubeLink.startsWith('https://www.youtube.com/')
+        "
+      >
+        <p>{{ video.youtubeTitle }}</p>
+        <iframe
+          *ngIf="video.youtubeLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(video.youtubeLink)"
+          [title]="video.youtubeTitle"
+          frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
+    <div *ngFor="let umyoVideo of umyotubeArray">
+      <div *ngIf="umyoVideo.umyotubeLink">
+        <p style="color: black; text-align: center">
+          {{ umyoVideo.umyotubeTitle }}
+        </p>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://youtu.be/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://dai.ly/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeDailymotionUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="vimeoArray && vimeoArray.length > 0">
+    <div *ngFor="let video of vimeoArray">
+      <div
+        *ngIf="
+          video.vimeoVideoLink &&
+          video.vimeoVideoLink.startsWith('https://player.vimeo.com/')
+        "
+      >
+        <p>{{ video.vimeoVideoTitle }}</p>
+        <iframe
+          *ngIf="video.vimeoVideoLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeVimeo(video.vimeoVideoLink)"
+          [title]="video.vimeoVideoTitle"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
   <section class="section_two">
-    <img src="assets/images/template-img-001.jpg" alt="" />
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
     <div class="section_two_inner">
       <div class="profile-info">
         <div class="clearfix"><br /></div>
@@ -19,26 +104,56 @@
       >
     </div>
     <div class="social">
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="linkedin"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-linkedin-in"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="instagram"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-instagram"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a
+        [href]="facebook"
+        target="_blank"
+        [style.background-color]="buttonColor"
         ><i class="fa-brands fa-facebook-f"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a [href]="twitter" target="_blank" [style.background-color]="buttonColor"
         ><i class="fa-brands fa-twitter"></i
       ></a>
-      <a href="#" target="_blank" [style.background-color]="buttonColor"
+      <a [href]="youtube" target="_blank" [style.background-color]="buttonColor"
         ><i class="fa-brands fa-youtube"></i
       ></a>
     </div>
   </section>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+    "
+  >
+    <p *ngIf="gpa">GPA: {{ gpa }}</p>
+    <p *ngIf="school">School: {{ school }}</p>
+    <p *ngIf="grade">Grade: {{ grade }}</p>
 
+    <p *ngIf="height">Height: {{ height }}</p>
+    <p *ngIf="age">Age: {{ age }}</p>
+    <p *ngIf="weight">Weight: {{ weight }}</p>
+  </div>
   <section class="section_one">
-    <div class="col img">
+    <div class="col img" *ngIf="photo == null">
+      <img src="assets/images/john-doe-avatar.jpg" alt="profileImage" />
+    </div>
+    <div class="col img" *ngIf="photo != null">
       <img [src]="imageSrc" alt="profileImage" />
     </div>
     <div class="contact-icons">
@@ -67,6 +182,7 @@
       </a>
     </div>
   </section>
+
   <section class="section_five">
     <div class="section_heading">
       <h1 [style.color]="buttonColor">{{ firstName + " " + lastName }}</h1>
@@ -74,61 +190,80 @@
     </div>
     <div class="clearfix"><br /></div>
   </section>
-  <div *ngIf="youtubeArray && youtubeArray.length > 0">
-    <div *ngFor="let video of youtubeArray">
-      <p>{{ video.youtubeTitle }}</p>
-      <iframe
-        *ngIf="video.youtubeLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.youtubeLink)"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
-      ></iframe>
-    </div>
+
+  <div *ngIf="productImages == null">
+    <img src="assets/images/app-devices.jpg" alt="productImage" />
   </div>
 
-  <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
-    <div *ngFor="let video of umyotubeArray">
-      <p>{{ video.umtotubeTitle }}</p>
-      <iframe
-        *ngIf="video.umyotubeLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.umyotubeLink)"
-        title="Umyotube player"
-        frameborder="0"
-      ></iframe>
-    </div>
-  </div>
-  <div *ngIf="vimeoArray && vimeoArray.length > 0">
-    <div *ngFor="let video of vimeoArray">
-      <p>{{ video.vimeoVideoTitle }}</p>
-      <iframe
-        *ngIf="video.vimeoVideoLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.vimeoVideoLink)"
-        title="Vimeo video player"
-        frameborder="0"
-      ></iframe>
-    </div>
-  </div>
+  <ng-container *ngIf="productImages && productImages.length > 0">
+    <ngb-carousel [showNavigationArrows]="true">
+      <ng-template ngbSlide *ngFor="let productImage of productImages">
+        <img [src]="productImage" alt="productImage" />
+      </ng-template>
+    </ngb-carousel>
+  </ng-container>
 
   <div class="three-ctrls">
-    <button type="button" class="ctrl-item" *ngIf="forwardCard">
+    <button
+      type="button"
+      class="ctrl-item"
+      *ngIf="forwardCard"
+      data-bs-toggle="modal"
+      data-bs-target="#shareCard"
+    >
       <i class="fa-solid fa-share forward"></i>
-      <h3>Forward My Card</h3>
+      <h3>Forward</h3>
     </button>
-    <button type="button" class="ctrl-item">
+    <a (click)="navigateToHome()" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
-      <h3>Sign Up</h3>
-    </button>
-    <button type="button" class="ctrl-item" *ngIf="saveCard">
+      <h3 style="color: black">Sign Up</h3>
+    </a>
+    <button
+      type="button"
+      class="ctrl-item"
+      *ngIf="saveCard"
+      (click)="downloadVCard()"
+    >
       <i class="fa-solid fa-download save"></i>
-      <h3>Save My Card</h3>
+      <h3 style="color: black">Save My Card</h3>
     </button>
+  </div>
+  <div
+    *ngIf="buttons && buttons.length > 0 && buttons[0].LinkButtonTitle != ''"
+  >
+    <div
+      class="buttons-container"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 5px;
+      "
+    >
+      <ng-container *ngFor="let button of buttons">
+        <a
+          [href]="button.LinkButtonLink"
+          type="button"
+          class="ctrl-item"
+          *ngIf="button"
+          style="
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+          "
+          [style.background-color]="buttonColor"
+        >
+          <h3 style="font-size: 15px">{{ button.LinkButtonTitle }}</h3>
+        </a>
+      </ng-container>
+    </div>
   </div>
   <footer>
     <img src="../../../../../assets/images/qrcode.jpg" alt="" />
@@ -148,9 +283,9 @@
         placeholder="XXXXX"
       />
     </form>
-    <button class="call-to-action">
+    <a [routerLink]="['/']" class="call-to-action">
       <span class="left">Click<br />Here</span>
       <span class="right">Design your card now!</span>
-    </button>
+    </a>
   </footer>
 </div>

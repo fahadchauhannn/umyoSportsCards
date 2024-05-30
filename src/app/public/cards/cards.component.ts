@@ -29,6 +29,10 @@ export class CardsComponent implements AfterViewInit{
 
   // userId:any
   id=localStorage.getItem('user_id')
+  isLoading:any;
+  showLoadingModal:any=false;
+  loadingTitle:any='Please Wait.';
+  loadingMessage:any="Deleting Your Card...";
   cards:any
   packages:any
   selectedPackage:any
@@ -79,7 +83,7 @@ export class CardsComponent implements AfterViewInit{
   const errorCorrectionLevel = 'L'; 
 
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
-  qrCode.addData('https://umyonba.site/cards/share-card/' + id);
+  qrCode.addData('https://umyonfl.site/cards/share-card/' + id);
   qrCode.make();
 
   // Create a data URI for the QR code image
@@ -93,13 +97,17 @@ export class CardsComponent implements AfterViewInit{
 }
 
   constructor(private apiService: ApiService,private paymentService:PaymentService,private fb: FormBuilder,) {
+    this.isLoading=true;
     this.apiService.getUserById(parseInt(this.id, 10)).subscribe(
       (response)=>{
+        
         if(response.status=='Success'){
+          
           this.userData=response.Users
    
           this.apiService.getCards(this.payload).subscribe(
             (response)=>{
+              this.isLoading=false;
               if(response.status=='Success'){
                 this.cards=response.Card
               }
@@ -108,6 +116,7 @@ export class CardsComponent implements AfterViewInit{
               }
           
             },(error)=>{
+              this.isLoading=false;
               alert("failed to fetch cards."+error.message)
             }
           )
@@ -161,7 +170,7 @@ export class CardsComponent implements AfterViewInit{
                   alert("Failed to Verify Paypal Payment")
                   localStorage.removeItem("updatePaypalId");
                   localStorage.removeItem("updatedToken");
-                  window.location.href='https://umyotruckers.site'
+                  window.location.href='https://umyonfl.site/'
               }
             );
           }
@@ -210,7 +219,7 @@ this.paymentForm = this.fb.group({
     
   }
   openShareDialog() {
-    const shareUrl = `https://umyosportscards.com/cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://umyonfl.site//cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
 
     // Open a new window for sharing
@@ -219,24 +228,33 @@ this.paymentForm = this.fb.group({
 
 
   deleteCard(id:any){
+    this.showLoadingModal=true
     const payload={
       card_id:id,
       user_id:this.id
     }
     this.apiService.deleteCard(payload).subscribe(
       (response)=>{
+        this.showLoadingModal=false
         if(response.status=='Success'){
+          this.showLoadingModal=true
+          this.loadingMessage="Updating Card List.."
           alert('Card Delted Sucessfully! ')
           this.apiService.getCards(this.payload).subscribe(
+            
             (response)=>{
+              this.showLoadingModal=false;
               if(response.status=='Success'){
                 this.cards=response.Card
+                this.showLoadingModal=false;
               }
               else{
+                this.showLoadingModal=false;
                 alert("failed to fetch cards.")
               }
           
             },(error)=>{
+              this.showLoadingModal=false;
               alert("failed to fetch cards."+error.message)
             }
           )
@@ -244,10 +262,12 @@ this.paymentForm = this.fb.group({
           
         }
         else{
+          this.showLoadingModal=false
           alert('Failed to delete Card. ')
         }
 
       },(error)=>{
+        this.showLoadingModal=false
         alert('Failed to delete Card. '+ error.message)
       }
     )

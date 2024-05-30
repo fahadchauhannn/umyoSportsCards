@@ -48,6 +48,29 @@ export class ApiService {
     return this.http.post(baseUrl + `getPackages`, {}, { headers });
   }
 
+  
+
+
+ changeStatus(id: string): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    
+  });
+
+  return this.http.post(baseUrl + `changeStatus`, {id:id}, { headers });
+}
+
+
+getUserReferals(userId:any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    
+  });
+
+  return this.http.post(baseUrl + `listOfReferals`, {"user_id":userId}, { headers });
+}
+
+
 
   getReferals(bearerToken: string): Observable<any> {
     const headers = new HttpHeaders({

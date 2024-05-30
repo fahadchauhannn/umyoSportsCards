@@ -1,5 +1,10 @@
 <app-nav></app-nav>
-<section class="cards-grid">
+
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section class="cards-grid" *ngIf="!isLoading">
   <div class="container">
     <div class="row">
       <div class="col-lg-3" *ngFor="let card of cards">
@@ -95,6 +100,7 @@
     ><i class="fa-solid fa-plus"></i
   ></a>
 </section>
+
 <button
   type="button"
   class="upgrade"
@@ -346,6 +352,25 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancel
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../../api.service'
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -17,6 +16,7 @@ export class PreviewCardComponent implements  OnInit{
       ccontent:any
       Email: any
       Address: any
+      loading: boolean = true;
       PhoneNumber: any
       PhoneNumber2: any
       PhoneAllow: any
@@ -33,8 +33,7 @@ export class PreviewCardComponent implements  OnInit{
       VimeoLink:any
       UmyotubeTitle:any
       UmyotubeLink:any
-      LinkButtonTitle:any
-      LinkButtonLink:any
+      buttons:any
       FacebookLink:any
       
       Facebook:any
@@ -52,9 +51,18 @@ export class PreviewCardComponent implements  OnInit{
       referalCode:any
   
       templateId:any=1
+      
+gpa:any
+school:any
+grade:any
+height:any
+age:any
+weight:any
+
       card_id:any
       ConvertedPhoto:any
      ConvertedLogo:any
+     shareCardId:any
      ConvertedProductImage:any
 
 
@@ -101,6 +109,7 @@ user_id  = parseInt(this.id, 10);
     this.apiService.getSingleCard(payload).subscribe(
       (response)=>{
           if(response.status=='Success'){
+            this.shareCardId=response.Card.id
             this.templateId=response.Card.infoFormData.templateId
             this.selectedColor = response.Card.colorTheme;
             this.FirstName = response.Card.infoFormData.firstName;
@@ -113,6 +122,20 @@ user_id  = parseInt(this.id, 10);
             this.PhoneNumber = response.Card.infoFormData.phoneNumber;
             this.PhoneNumber2 = response.Card.infoFormData.alternativePhoneNo;
 
+            
+            this.gpa = response.Card.infoFormData?.gpa;
+            this.age = response.Card.infoFormData?.age;
+            this.weight = response.Card.infoFormData?.weight;
+            this.grade = response.Card.infoFormData?.grade;
+            this.height = response.Card.infoFormData?.height;
+            this.school = response.Card.infoFormData?.school;
+
+
+            this.Facebook = response.Card.socialFormData.facebook.replace(/\\/g, '');
+            this.Twitter = response.Card.socialFormData.twitter.replace(/\\/g, '');
+            this.Youtube = response.Card.socialFormData.youtube.replace(/\\/g, '');
+            this.Instagram = response.Card.socialFormData.instagram.replace(/\\/g, '');
+            this.Linkedin = response.Card.socialFormData.linkedin.replace(/\\/g, '');
             this.PhoneAllow = response.Card.infoFormData.phoneTextAllow;
             this.ForwardCard = response.Card.infoFormData.showForwardButton;
             this.SaveCard = response.Card.infoFormData.showSaveButton;
@@ -123,7 +146,9 @@ user_id  = parseInt(this.id, 10);
             console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
-            this.ProductImages = '';
+            this.ProductImages = JSON.parse(response.Card.changeProductImages);
+            
+            console.log(this.ProductImages);
             this.YoutubeArray = response.Card.socialFormData?.youtubeVideos;
             this.UmyotubeArray = response.Card.socialFormData?.umyotubeVideos;
             this.VimeoVideoArray = response.Card.socialFormData?.vimeoVideos;
@@ -132,14 +157,14 @@ user_id  = parseInt(this.id, 10);
             this.VimeoLink = response.Card.socialFormData?.vimeoVideos[0]?.vimeoLink;
             this.UmyotubeTitle = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeTitle;
             this.UmyotubeLink = response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeLink;
-            this.LinkButtonTitle = response.Card.socialFormData?.linkButtons[0]?.linkButtonTitle;
-            this.LinkButtonLink = response.Card.socialFormData?.linkButtons[0]?.websiteLink;
+            this.buttons = response.Card.socialFormData?.linkButtons;
+            
             this.FacebookLink = response.Card.FacebookLink;
   
             
   
             this.referalCode = response.Card.infoFormData.inviteCode;
-  
+  this.loading=false
             
           }
           else{
