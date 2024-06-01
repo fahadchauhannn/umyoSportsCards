@@ -115,7 +115,7 @@
 #card_section .pro_c{
     margin-top: 10rem;
 }
-.slick-arrow.slick-disabled {
+.slick-disabled {
   display: none !important;
 }
 .slick-slide img{
