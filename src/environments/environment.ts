@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: "https://umyonfl.site/api_umyocards/public/api/"
-  apiUrl: "https://umyoentertainment.site/api_umyocards/public/api/"
+  apiUrl: "https://umyonfl.site/api_umyocards/public/api/"
+  // apiUrl: "https://umyoentertainment.site/api_umyocards/public/api/"
 };
 
 
