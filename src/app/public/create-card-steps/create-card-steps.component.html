@@ -1,6 +1,14 @@
 <app-nav></app-nav>
 
-<section class="create-card-section" id="create-card-section">
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section
+  class="create-card-section"
+  id="create-card-section"
+  [class.hiddenDisplay]="isLoading"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -50,6 +58,17 @@
                 <div class="template-box">
                   <app-template01
                     *ngIf="templateId == 1"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -70,9 +89,21 @@
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
                     [productImages]="Form.value.ProductImages"
+                    [buttons]="Form.value.LinkButton"
                   ></app-template01>
                   <app-template02
                     *ngIf="templateId == 2"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -81,6 +112,7 @@
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
+                    [buttons]="Form.value.LinkButton"
                     [phone]="Form.value.PhoneNumber"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
@@ -96,6 +128,17 @@
                   ></app-template02>
                   <app-template03
                     *ngIf="templateId == 3"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -103,6 +146,7 @@
                     [saveCard]="Form.value.SaveCard"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
+                    [buttons]="Form.value.LinkButton"
                     [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
@@ -119,12 +163,24 @@
                   ></app-template03>
                   <app-template04
                     *ngIf="templateId == 4"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
@@ -142,6 +198,17 @@
                   ></app-template04>
                   <app-template05
                     *ngIf="templateId == 5"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [youtubeArray]="Form.value.YoutubeVideos"
@@ -149,6 +216,7 @@
                     [vimeoArray]="Form.value.VimeoVideos"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
+                    [buttons]="Form.value.LinkButton"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
@@ -165,6 +233,17 @@
                   ></app-template05>
                   <app-template06
                     *ngIf="templateId == 6"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -180,6 +259,7 @@
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
                     [saveCard]="Form.value.SaveCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
@@ -188,6 +268,17 @@
                   ></app-template06>
                   <app-template07
                     *ngIf="templateId == 7"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -195,6 +286,7 @@
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
@@ -211,6 +303,17 @@
                   ></app-template07>
                   <app-template08
                     *ngIf="templateId == 8"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -220,6 +323,7 @@
                     [vimeoArray]="Form.value.VimeoVideos"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -235,6 +339,17 @@
 
                   <app-template09
                     *ngIf="templateId == 9"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -247,6 +362,7 @@
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
@@ -259,6 +375,17 @@
 
                   <app-template10
                     *ngIf="templateId == 10"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -269,6 +396,7 @@
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [youtubeArray]="Form.value.YoutubeVideos"
+                    [buttons]="Form.value.LinkButton"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
                     [inviteCode]="Form.value.InviteCode"
@@ -283,6 +411,17 @@
                   </app-template10>
                   <app-template11
                     *ngIf="templateId == 11"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -294,6 +433,7 @@
                     [content]="Form.value.ccontent"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -307,8 +447,20 @@
                   </app-template11>
                   <app-template12
                     *ngIf="templateId == 12"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
                     [saveCard]="Form.value.SaveCard"
                     [firstName]="Form.value.FirstName"
                     [youtubeArray]="Form.value.YoutubeVideos"
@@ -331,6 +483,17 @@
                   </app-template12>
                   <app-template13
                     *ngIf="templateId == 13"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -339,6 +502,7 @@
                     [saveCard]="Form.value.SaveCard"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [buttons]="Form.value.LinkButton"
                     [vimeoArray]="Form.value.VimeoVideos"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
@@ -355,12 +519,24 @@
                   </app-template13>
                   <app-template14
                     *ngIf="templateId == 14"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
@@ -379,6 +555,17 @@
                   </app-template14>
                   <app-template15
                     *ngIf="templateId == 15"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -386,6 +573,7 @@
                     [jobTitle]="Form.value.JobTitle"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
@@ -410,21 +598,24 @@
 
                   <div class="color_picker_wrap">
                     <h3 class="title">Choose Button Color:</h3>
-                    <div class="color-picker">
+                    <!-- <div class="color-picker">
                       <div
                         *ngFor="let color of colorOptions"
                         class="color-item"
                       >
-                        <input
-                          type="radio"
-                          [id]="color"
-                          [value]="color"
-                          formControlName="selectedColor"
-                        />
+                        <input type="radio" [id]="color" [value]="color" />
                         <label [for]="color"
                           ><span [class]="color"></span
                         ></label>
                       </div>
+                    </div> -->
+                    <div *ngIf="colorPickerLoaded">
+                      <color-sketch
+                        [width]="300"
+                        formControlName="selectedColor"
+                        [color]="selectedColor"
+                        (onChangeComplete)="changeComplete($event)"
+                      ></color-sketch>
                     </div>
                   </div>
                 </div>
@@ -446,29 +637,52 @@
                 <div class="template-box">
                   <app-template01
                     *ngIf="templateId == 1"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
                     [productImages]="Form.value.ProductImages"
+                    [buttons]="Form.value.LinkButton"
                   ></app-template01>
                   <app-template02
                     *ngIf="templateId == 2"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -476,11 +690,12 @@
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
+                    [address]="Form.value.Address"
+                    [buttons]="Form.value.LinkButton"
+                    [phone]="Form.value.PhoneNumber"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [address]="Form.value.Address"
-                    [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [inviteCode]="Form.value.InviteCode"
@@ -492,6 +707,17 @@
                   ></app-template02>
                   <app-template03
                     *ngIf="templateId == 3"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -499,10 +725,11 @@
                     [saveCard]="Form.value.SaveCard"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
+                    [buttons]="Form.value.LinkButton"
+                    [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -515,14 +742,26 @@
                   ></app-template03>
                   <app-template04
                     *ngIf="templateId == 4"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
-                    [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
@@ -538,13 +777,25 @@
                   ></app-template04>
                   <app-template05
                     *ngIf="templateId == 5"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
-                    [lastName]="Form.value.LastName"
-                    [companyName]="Form.value.CompanyName"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [lastName]="Form.value.LastName"
+                    [companyName]="Form.value.CompanyName"
+                    [buttons]="Form.value.LinkButton"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
@@ -561,21 +812,33 @@
                   ></app-template05>
                   <app-template06
                     *ngIf="templateId == 6"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
                     [saveCard]="Form.value.SaveCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
@@ -584,16 +847,28 @@
                   ></app-template06>
                   <app-template07
                     *ngIf="templateId == 7"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
-                    [content]="Form.value.ccontent"
-                    [email]="Form.value.Email"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
@@ -607,19 +882,31 @@
                   ></app-template07>
                   <app-template08
                     *ngIf="templateId == 8"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [forwardCard]="Form.value.ForwardCard"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
@@ -631,6 +918,17 @@
 
                   <app-template09
                     *ngIf="templateId == 9"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -640,14 +938,15 @@
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
                     [productImages]="Form.value.ProductImages"
@@ -655,6 +954,17 @@
 
                   <app-template10
                     *ngIf="templateId == 10"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -665,6 +975,7 @@
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [youtubeArray]="Form.value.YoutubeVideos"
+                    [buttons]="Form.value.LinkButton"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
                     [inviteCode]="Form.value.InviteCode"
@@ -679,17 +990,29 @@
                   </app-template10>
                   <app-template11
                     *ngIf="templateId == 11"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -703,13 +1026,25 @@
                   </app-template11>
                   <app-template12
                     *ngIf="templateId == 12"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
+                    [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
+                    [saveCard]="Form.value.SaveCard"
+                    [firstName]="Form.value.FirstName"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [inviteCode]="Form.value.InviteCode"
-                    [saveCard]="Form.value.SaveCard"
-                    [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
@@ -727,15 +1062,27 @@
                   </app-template12>
                   <app-template13
                     *ngIf="templateId == 13"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [inviteCode]="Form.value.InviteCode"
+                    [saveCard]="Form.value.SaveCard"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [buttons]="Form.value.LinkButton"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [saveCard]="Form.value.SaveCard"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
@@ -751,22 +1098,34 @@
                   </app-template13>
                   <app-template14
                     *ngIf="templateId == 14"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
@@ -775,6 +1134,17 @@
                   </app-template14>
                   <app-template15
                     *ngIf="templateId == 15"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -782,18 +1152,19 @@
                     [jobTitle]="Form.value.JobTitle"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [productImages]="Form.value.ProductImages"
                   >
                   </app-template15>
@@ -989,7 +1360,7 @@
                       formControlName="ForwardCard"
                     />
                     <label class="form-check-label" for="forwardCardButton"
-                      >Show Forward my Card Button</label
+                      >Show Forward Button</label
                     >
                   </div>
                   <div class="form-check form-switch mb-3">
@@ -1035,6 +1406,17 @@
                 <div class="template-box">
                   <app-template01
                     *ngIf="templateId == 1"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -1042,22 +1424,34 @@
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
                     [productImages]="Form.value.ProductImages"
+                    [buttons]="Form.value.LinkButton"
                   ></app-template01>
                   <app-template02
                     *ngIf="templateId == 2"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -1066,6 +1460,7 @@
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
+                    [buttons]="Form.value.LinkButton"
                     [phone]="Form.value.PhoneNumber"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
@@ -1081,6 +1476,17 @@
                   ></app-template02>
                   <app-template03
                     *ngIf="templateId == 3"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -1088,10 +1494,11 @@
                     [saveCard]="Form.value.SaveCard"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
+                    [buttons]="Form.value.LinkButton"
+                    [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -1104,15 +1511,27 @@
                   ></app-template03>
                   <app-template04
                     *ngIf="templateId == 4"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
-                    [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
-                    [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [companyName]="Form.value.CompanyName"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
@@ -1127,13 +1546,25 @@
                   ></app-template04>
                   <app-template05
                     *ngIf="templateId == 5"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
-                    [lastName]="Form.value.LastName"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
+                    [buttons]="Form.value.LinkButton"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
@@ -1150,21 +1581,33 @@
                   ></app-template05>
                   <app-template06
                     *ngIf="templateId == 6"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
-                    [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
                     [saveCard]="Form.value.SaveCard"
                     [referal]="referalCode"
                     [photo]="Form.value.Photo"
@@ -1173,14 +1616,26 @@
                   ></app-template06>
                   <app-template07
                     *ngIf="templateId == 7"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
@@ -1196,17 +1651,29 @@
                   ></app-template07>
                   <app-template08
                     *ngIf="templateId == 8"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
-                    [jobTitle]="Form.value.JobTitle"
-                    [content]="Form.value.ccontent"
-                    [email]="Form.value.Email"
-                    [address]="Form.value.Address"
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [jobTitle]="Form.value.JobTitle"
+                    [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
+                    [email]="Form.value.Email"
+                    [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
@@ -1220,6 +1687,17 @@
 
                   <app-template09
                     *ngIf="templateId == 9"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -1232,6 +1710,7 @@
                     [youtubeArray]="Form.value.YoutubeVideos"
                     [umyotubeArray]="Form.value.UmyotubeVideos"
                     [vimeoArray]="Form.value.VimeoVideos"
+                    [buttons]="Form.value.LinkButton"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
@@ -1244,6 +1723,17 @@
 
                   <app-template10
                     *ngIf="templateId == 10"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
@@ -1253,14 +1743,15 @@
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [photo]="Form.value.Photo"
                     [logo]="Form.value.Logo"
                     [productImages]="Form.value.ProductImages"
@@ -1268,19 +1759,31 @@
                   </app-template10>
                   <app-template11
                     *ngIf="templateId == 11"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
@@ -1292,18 +1795,30 @@
                   </app-template11>
                   <app-template12
                     *ngIf="templateId == 12"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [inviteCode]="Form.value.InviteCode"
+                    [buttons]="Form.value.LinkButton"
                     [saveCard]="Form.value.SaveCard"
                     [firstName]="Form.value.FirstName"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
@@ -1316,18 +1831,30 @@
                   </app-template12>
                   <app-template13
                     *ngIf="templateId == 13"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [buttons]="Form.value.LinkButton"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
                     [phoneAllow]="Form.value.PhoneAllow"
@@ -1340,12 +1867,24 @@
                   </app-template13>
                   <app-template14
                     *ngIf="templateId == 14"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [content]="Form.value.ccontent"
+                    [buttons]="Form.value.LinkButton"
                     [email]="Form.value.Email"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
@@ -1364,20 +1903,32 @@
                   </app-template14>
                   <app-template15
                     *ngIf="templateId == 15"
+                    [linkedin]="Form.value.Linkedin"
+                    [twitter]="Form.value.Twitter"
+                    [facebook]="Form.value.Facebook"
+                    [youtube]="Form.value.Youtube"
+                    [instagram]="Form.value.Instagram"
+                    [gpa]="Form.value.Gpa"
+                    [age]="Form.value.Age"
+                    [weight]="Form.value.Weight"
+                    [height]="Form.value.Height"
+                    [grade]="Form.value.Grade"
+                    [school]="Form.value.School"
                     [buttonColor]="Form.value.selectedColor"
                     [firstName]="Form.value.FirstName"
-                    [youtubeArray]="Form.value.YoutubeVideos"
-                    [umyotubeArray]="Form.value.UmyotubeVideos"
-                    [vimeoArray]="Form.value.VimeoVideos"
                     [lastName]="Form.value.LastName"
                     [companyName]="Form.value.CompanyName"
                     [jobTitle]="Form.value.JobTitle"
                     [inviteCode]="Form.value.InviteCode"
                     [saveCard]="Form.value.SaveCard"
+                    [buttons]="Form.value.LinkButton"
                     [content]="Form.value.ccontent"
                     [email]="Form.value.Email"
                     [address]="Form.value.Address"
                     [phone]="Form.value.PhoneNumber"
+                    [youtubeArray]="Form.value.YoutubeVideos"
+                    [umyotubeArray]="Form.value.UmyotubeVideos"
+                    [vimeoArray]="Form.value.VimeoVideos"
                     [phoneAllow]="Form.value.PhoneAllow"
                     [forwardCard]="Form.value.ForwardCard"
                     [referal]="referalCode"
@@ -1420,6 +1971,21 @@
                       (change)="onLogoChange($event)"
                     />
                   </div>
+
+                  <!-- <div class="upload_box cyan" role="button" data-target="pimg">
+                    <i class="fa fa-check"></i>
+                    Change Product Images
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg"
+                      id="pimg"
+                      (change)="onProductImagesChange($event)"
+                      multiple
+                    />
+                  </div> -->
+
                   <div class="upload_box cyan" role="button" data-target="pimg">
                     <i class="fa fa-check"></i>
                     Change Product Images
@@ -1433,6 +1999,24 @@
                       multiple
                     />
                   </div>
+
+                  <!-- <div
+                    class="upload_box cyan"
+                    role="button"
+                    *ngIf="productImagesQuantity === '1 image'"
+                    data-target="pimg2"
+                  >
+                    <i class="fa fa-check"></i>
+                    Change Product Image
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg2"
+                      id="pimg2"
+                      (change)="onProductImagesChange($event)"
+                    />
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -1451,9 +2035,17 @@
               <div class="template-box">
                 <app-template01
                   *ngIf="templateId == 1"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
@@ -1465,31 +2057,47 @@
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
+                  [buttons]="Form.value.LinkButton"
                 ></app-template01>
                 <app-template02
                   *ngIf="templateId == 2"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
+                  [buttons]="Form.value.LinkButton"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -1497,17 +2105,29 @@
                 ></app-template02>
                 <app-template03
                   *ngIf="templateId == 3"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [companyName]="Form.value.CompanyName"
-                  [jobTitle]="Form.value.JobTitle"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [buttons]="Form.value.LinkButton"
                   [content]="Form.value.ccontent"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
@@ -1520,14 +2140,24 @@
                 ></app-template03>
                 <app-template04
                   *ngIf="templateId == 4"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [buttonColor]="Form.value.selectedColor"
-                  [firstName]="Form.value.FirstName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
-                  [lastName]="Form.value.LastName"
+                  [buttons]="Form.value.LinkButton"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
@@ -1540,21 +2170,35 @@
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                 ></app-template04>
                 <app-template05
                   *ngIf="templateId == 5"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [buttonColor]="Form.value.selectedColor"
-                  [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [companyName]="Form.value.CompanyName"
+                  [buttons]="Form.value.LinkButton"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
@@ -1566,22 +2210,34 @@
                 ></app-template05>
                 <app-template06
                   *ngIf="templateId == 6"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [buttons]="Form.value.LinkButton"
+                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -1589,46 +2245,70 @@
                 ></app-template06>
                 <app-template07
                   *ngIf="templateId == 7"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [buttons]="Form.value.LinkButton"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                 ></app-template07>
                 <app-template08
                   *ngIf="templateId == 8"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [buttons]="Form.value.LinkButton"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
-                  [referal]="referalCode"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
@@ -1636,13 +2316,19 @@
 
                 <app-template09
                   *ngIf="templateId == 9"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
@@ -1650,9 +2336,15 @@
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [buttons]="Form.value.LinkButton"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
@@ -1660,9 +2352,17 @@
 
                 <app-template10
                   *ngIf="templateId == 10"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
@@ -1670,10 +2370,14 @@
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [buttons]="Form.value.LinkButton"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
@@ -1684,18 +2388,30 @@
                 </app-template10>
                 <app-template11
                   *ngIf="templateId == 11"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
-                  [email]="Form.value.Email"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [buttons]="Form.value.LinkButton"
+                  [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
@@ -1708,15 +2424,27 @@
                 </app-template11>
                 <app-template12
                   *ngIf="templateId == 12"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
+                  [buttonColor]="Form.value.selectedColor"
+                  [inviteCode]="Form.value.InviteCode"
+                  [buttons]="Form.value.LinkButton"
+                  [saveCard]="Form.value.SaveCard"
+                  [firstName]="Form.value.FirstName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [buttonColor]="Form.value.selectedColor"
-                  [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
@@ -1732,17 +2460,29 @@
                 </app-template12>
                 <app-template13
                   *ngIf="templateId == 13"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
-                  [jobTitle]="Form.value.JobTitle"
-                  [content]="Form.value.ccontent"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [buttons]="Form.value.LinkButton"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [jobTitle]="Form.value.JobTitle"
+                  [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
@@ -1756,18 +2496,30 @@
                 </app-template13>
                 <app-template14
                   *ngIf="templateId == 14"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [buttons]="Form.value.LinkButton"
                   [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
@@ -1780,20 +2532,32 @@
                 </app-template14>
                 <app-template15
                   *ngIf="templateId == 15"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [buttons]="Form.value.LinkButton"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
@@ -1805,444 +2569,586 @@
               </div>
               <div class="edit-fields">
                 <h3>Social Links</h3>
-                <div class="text-start mb-3">
-                  <label for="facebook" class="form-label text-start"
-                    >Facebook</label
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.social_media_listing === 'No'
+                  }"
+                >
+                  <div class="text-start mb-3">
+                    <label for="facebook" class="form-label text-start"
+                      >Facebook</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-facebook"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Facebook"
+                        class="form-control"
+                        id="Facebook"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="twitter" class="form-label text-start"
+                      >Twitter</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-twitter"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Twitter"
+                        class="form-control"
+                        id="twitter"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="youtube" class="form-label text-start"
+                      >Youtube</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-youtube"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Youtube"
+                        class="form-control"
+                        id="youtube"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="instagram" class="form-label text-start"
+                      >Instagram</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-instagram"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Instagram"
+                        class="form-control"
+                        id="instagram"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="linkedin" class="form-label text-start"
+                      >Linkedin</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-linkedin"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Linkedin"
+                        class="form-control"
+                        id="linkedin"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="pinterest" class="form-label text-start"
+                      >Pinterest</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-pinterest"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Pinterest"
+                        class="form-control"
+                        id="pinterest"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  *ngIf="userPackageData.social_media_listing === 'No'"
+                  class=""
+                >
+                  <p
+                    style="
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
+                    "
                   >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-facebook"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Facebook"
-                      class="form-control"
-                      id="Facebook"
-                    />
-                  </div>
+                    You are not allowed to add Social links in your current
+                    package.
+                  </p>
                 </div>
-                <div class="text-start mb-3">
-                  <label for="twitter" class="form-label text-start"
-                    >Twitter</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-twitter"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Twitter"
-                      class="form-control"
-                      id="twitter"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="youtube" class="form-label text-start"
-                    >Youtube</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-youtube"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Youtube"
-                      class="form-control"
-                      id="youtube"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="instagram" class="form-label text-start"
-                    >Instagram</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-instagram"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Instagram"
-                      class="form-control"
-                      id="instagram"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="linkedin" class="form-label text-start"
-                    >Linkedin</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-linkedin"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Linkedin"
-                      class="form-control"
-                      id="linkedin"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="pinterest" class="form-label text-start"
-                    >Pinterest</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-pinterest"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Pinterest"
-                      class="form-control"
-                      id="pinterest"
-                    />
-                  </div>
-                </div>
-                <h3>Communication</h3>
-                <div class="text-start mb-3">
-                  <label for="skype" class="form-label text-start">Skype</label>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fab fa-skype"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Skype"
-                      class="form-control"
-                      id="skype"
-                      placeholder="Skype ID"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="whatsapp" class="form-label text-start"
-                    >Whatsapp</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-whatsapp"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Whatsapp"
-                      class="form-control"
-                      placeholder="Whatsapp ID"
-                      id="facebook"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="snapchat" class="form-label text-start"
-                    >Snapchat</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-snapchat"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Snapchat"
-                      placeholder="Snapchat"
-                      class="form-control"
-                      id="snapchat"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="line" class="form-label text-start">Line</label>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-line"></i
-                    ></span>
 
-                    <input
-                      type="text"
-                      formControlName="Line"
-                      placeholder="Line ID"
-                      class="form-control"
-                      id="line"
-                    />
+                <h3>Communication</h3>
+
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.social_media_listing === 'No'
+                  }"
+                >
+                  <div class="text-start mb-3">
+                    <label for="skype" class="form-label text-start"
+                      >Skype</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fab fa-skype"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Skype"
+                        class="form-control"
+                        id="skype"
+                        placeholder="Skype ID"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="whatsapp" class="form-label text-start"
+                      >Whatsapp</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-whatsapp"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Whatsapp"
+                        class="form-control"
+                        placeholder="Whatsapp ID"
+                        id="facebook"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="snapchat" class="form-label text-start"
+                      >Snapchat</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-snapchat"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Snapchat"
+                        placeholder="Snapchat"
+                        class="form-control"
+                        id="snapchat"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="line" class="form-label text-start">Line</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-line"></i
+                      ></span>
+
+                      <input
+                        type="text"
+                        formControlName="Line"
+                        placeholder="Line ID"
+                        class="form-control"
+                        id="line"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="voxrer" class="form-label text-start"
+                      >Voxer</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i
+                          ><img
+                            alt="Voxer"
+                            src="assets/images/voxer_black.png"
+                            width="25" /></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Voxer"
+                        class="form-control"
+                        id="voxer"
+                        placeholder="Voxer ID"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="text-start mb-3">
-                  <label for="voxrer" class="form-label text-start"
-                    >Voxer</label
+
+                <div
+                  *ngIf="userPackageData.social_media_listing === 'No'"
+                  class=""
+                >
+                  <p
+                    style="
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
+                    "
                   >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i
-                        ><img
-                          alt="Voxer"
-                          src="assets/images/voxer_black.png"
-                          width="25" /></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Voxer"
-                      class="form-control"
-                      id="voxer"
-                      placeholder="Voxer ID"
-                    />
-                  </div>
+                    You are not allowed to add Communication links in your
+                    current package.
+                  </p>
                 </div>
                 <!-- Use formArrayName with lowercase 'youtubeVideos' -->
-                <div formArrayName="YoutubeVideos">
-                  <label for="youtubeL" class="form-label text-start"
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.videos === 'No video'
+                  }"
+                >
+                  <div formArrayName="YoutubeVideos">
+                    <label for="youtubeL" class="form-label text-start"
+                      >Youtube</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let youtubeVideo of YoutubeVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="youtubeTitle"
+                            placeholder="Youtube Title"
+                            [formControl]="getYoutubeTitleControl(i)"
+                          />
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="youtubeLink"
+                            placeholder="Youtube Link"
+                            [formControl]="getYoutubeLinkControl(i)"
+                          />
+                        </div>
+                      </div>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeYoutube(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addYoutube()"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="userPackageData.videos === 'No video'" class="">
+                  <label for="noyoutube" class="form-label text-start"
                     >Youtube</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let youtubeVideo of YoutubeVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="youtubeTitle"
-                          placeholder="Youtube Title"
-                          [formControl]="getYoutubeTitleControl(i)"
-                        />
-                      </div>
+                    You are not allowed to add YouTube videos in your current
+                    package.
+                  </p>
+                </div>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.vimeo === 'No video'
+                  }"
+                >
+                  <div formArrayName="VimeoVideos">
+                    <label for="VimeoL" class="form-label text-start"
+                      >Vimeo</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let VimeoVideo of VimeoVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-vimeo"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="vimeoTitle"
+                            placeholder="Vimeo Title"
+                            [formControl]="getVimeoVideoTitleControl(i)"
+                          />
+                        </div>
 
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="youtubeLink"
-                          placeholder="Youtube Link"
-                          [formControl]="getYoutubeLinkControl(i)"
-                        />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-vimeo"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="vimeoLink"
+                            placeholder="Vimeo Link"
+                            [formControl]="getVimeoVideoLinkControl(i)"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeYoutube(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addYoutube()"
-                      >
-                        +
-                      </button>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeVimeoVideos(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addVimeoVideos()"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div formArrayName="VimeoVideos">
-                  <label for="VimeoL" class="form-label text-start"
+                <div *ngIf="userPackageData.vimeo === 'No video'" class="">
+                  <label for="novimeo" class="form-label text-start"
                     >Vimeo</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let VimeoVideo of VimeoVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-vimeo"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="vimeoTitle"
-                          placeholder="Vimeo Title"
-                          [formControl]="getVimeoVideoTitleControl(i)"
-                        />
-                      </div>
+                    You are not allowed to add Vimeo videos in your current
+                    package.
+                  </p>
+                </div>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-vimeo"></i>
-                        </span>
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.umyotube === 'No video'
+                  }"
+                >
+                  <div formArrayName="UmyotubeVideos">
+                    <label for="UmyotubeL" class="form-label text-start"
+                      >Umyotube</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let UmyotubeVideo of UmyotubeVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="UmyotubeTitle"
+                            placeholder="Umyotube Title"
+                            [formControl]="getUmyotubeTitleControl(i)"
+                          />
+                        </div>
 
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="vimeoLink"
-                          placeholder="Vimeo Link"
-                          [formControl]="getVimeoVideoLinkControl(i)"
-                        />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="UmyotubeLink"
+                            placeholder="Umyotube Link"
+                            [formControl]="getUmyotubeLinkControl(i)"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeVimeoVideos(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addVimeoVideos()"
-                      >
-                        +
-                      </button>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeUmyotubeVideos(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addUmyotubeVideos()"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div formArrayName="UmyotubeVideos">
-                  <label for="UmyotubeL" class="form-label text-start"
+                <div *ngIf="userPackageData.umyotube === 'No video'" class="">
+                  <label for="novimeo" class="form-label text-start"
                     >Umyotube</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let UmyotubeVideo of UmyotubeVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="UmyotubeTitle"
-                          placeholder="Umyotube Title"
-                          [formControl]="getUmyotubeTitleControl(i)"
-                        />
-                      </div>
-
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="UmyotubeLink"
-                          placeholder="Umyotube Link"
-                          [formControl]="getUmyotubeLinkControl(i)"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeUmyotubeVideos(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addUmyotubeVideos()"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
+                    You are not allowed to add Umyotube videos in your current
+                    package.
+                  </p>
                 </div>
 
-                <div formArrayName="LinkButton">
-                  <label for="LinkButtonL" class="form-label text-start"
-                    >Link Buttons</label
-                  >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="let LinkBtn of LinkButton.controls; let i = index"
+
+                <div [ngClass]="{
+                  hiddenDisplay: userPackageData.website === 'No'
+                }">
+
+
+<div formArrayName="LinkButton">
+  <label for="LinkButtonL" class="form-label text-start"
+    >Link Buttons</label
+  >
+  <div
+    class="text-start mb-3"
+    *ngFor="let LinkBtn of LinkButton.controls; let i = index"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div>
+      <div class="input-group mb-3">
+        <!-- Use a unique formControlName for the title input -->
+        <input
+          type="text"
+          class="form-control"
+          id="linkbtntitle"
+          placeholder="Link Button Title"
+          [formControl]="getLinkButtonTitleControl(i)"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="linkbtnLink"
+          placeholder="Website Link"
+          [formControl]="getLinkButtonLinkControl(i)"
+        />
+      </div>
+    </div>
+    <div class="input-group-append">
+      <button
+        *ngIf="i > 0"
+        class="btn btn-primary plus-button"
+        type="button"
+        (click)="removeLinkButton(i)"
+      >
+        −
+      </button>
+      <button
+        *ngIf="i == 0"
+        class="btn btn-primary plus-button"
+        type="button"
+        (click)="addLinkButton()"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>
+
+                </div>
+               
+
+                <div *ngIf="userPackageData.website === 'No'" class="">
+                  <label for="nolinkbuttons" class="form-label text-start"
+    >Link Buttons</label
+  >
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="linkbtntitle"
-                          placeholder="Link Button Title"
-                          [formControl]="getLinkButtonTitleControl(i)"
-                        />
-                      </div>
-
-                      <div class="input-group mb-3">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="linkbtnLink"
-                          placeholder="Website Link"
-                          [formControl]="getLinkButtonLinkControl(i)"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeLinkButton(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addLinkButton()"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
+                    You are not allowed to add Website Link Buttons in your current
+                    package.
+                  </p>
                 </div>
+
+
               </div>
+
+
+              
             </div>
           </div>
           <div class="step step-6">
@@ -2263,9 +3169,17 @@
               <div class="template-box">
                 <app-template01
                   *ngIf="templateId == 1"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
@@ -2277,18 +3191,30 @@
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
-                  [referal]="referalCode"
-                  [photo]="Form.value.Photo"
-                  [logo]="Form.value.Logo"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
-                  [productImages]="Form.value.ProductImages"
-                ></app-template01>
-                <app-template02
-                  *ngIf="templateId == 2"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [referal]="referalCode"
+                  [photo]="Form.value.Photo"
+                  [logo]="Form.value.Logo"
+                  [productImages]="Form.value.ProductImages"
+                  [buttons]="Form.value.LinkButton"
+                ></app-template01>
+                <app-template02
+                  *ngIf="templateId == 2"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
@@ -2297,7 +3223,11 @@
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
+                  [buttons]="Form.value.LinkButton"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [inviteCode]="Form.value.InviteCode"
@@ -2309,18 +3239,30 @@
                 ></app-template02>
                 <app-template03
                   *ngIf="templateId == 3"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [companyName]="Form.value.CompanyName"
-                  [jobTitle]="Form.value.JobTitle"
-                  [content]="Form.value.ccontent"
-                  [email]="Form.value.Email"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [companyName]="Form.value.CompanyName"
+                  [jobTitle]="Form.value.JobTitle"
+                  [buttons]="Form.value.LinkButton"
+                  [content]="Form.value.ccontent"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
@@ -2332,18 +3274,28 @@
                 ></app-template03>
                 <app-template04
                   *ngIf="templateId == 4"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [buttons]="Form.value.LinkButton"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
@@ -2352,25 +3304,39 @@
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                 ></app-template04>
                 <app-template05
                   *ngIf="templateId == 5"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
+                  [buttonColor]="Form.value.selectedColor"
+                  [firstName]="Form.value.FirstName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [buttonColor]="Form.value.selectedColor"
-                  [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
+                  [buttons]="Form.value.LinkButton"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -2378,22 +3344,34 @@
                 ></app-template05>
                 <app-template06
                   *ngIf="templateId == 6"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [buttons]="Form.value.LinkButton"
+                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -2401,21 +3379,33 @@
                 ></app-template06>
                 <app-template07
                   *ngIf="templateId == 7"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [buttons]="Form.value.LinkButton"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
@@ -2424,22 +3414,34 @@
                 ></app-template07>
                 <app-template08
                   *ngIf="templateId == 8"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
+                  [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [lastName]="Form.value.LastName"
-                  [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [buttons]="Form.value.LinkButton"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -2448,11 +3450,19 @@
 
                 <app-template09
                   *ngIf="templateId == 9"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
@@ -2460,9 +3470,15 @@
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [buttons]="Form.value.LinkButton"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
                   [productImages]="Form.value.ProductImages"
@@ -2470,20 +3486,32 @@
 
                 <app-template10
                   *ngIf="templateId == 10"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [buttons]="Form.value.LinkButton"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
@@ -2494,17 +3522,29 @@
                 </app-template10>
                 <app-template11
                   *ngIf="templateId == 11"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
+                  [companyName]="Form.value.CompanyName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
                   [vimeoArray]="Form.value.VimeoVideos"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
-                  [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [buttons]="Form.value.LinkButton"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
@@ -2518,7 +3558,21 @@
                 </app-template11>
                 <app-template12
                   *ngIf="templateId == 12"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
+                  [inviteCode]="Form.value.InviteCode"
+                  [buttons]="Form.value.LinkButton"
+                  [saveCard]="Form.value.SaveCard"
                   [firstName]="Form.value.FirstName"
                   [youtubeArray]="Form.value.YoutubeVideos"
                   [umyotubeArray]="Form.value.UmyotubeVideos"
@@ -2530,8 +3584,6 @@
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
@@ -2542,15 +3594,27 @@
                 </app-template12>
                 <app-template13
                   *ngIf="templateId == 13"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
                   [inviteCode]="Form.value.InviteCode"
                   [saveCard]="Form.value.SaveCard"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [buttons]="Form.value.LinkButton"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
@@ -2566,21 +3630,33 @@
                 </app-template13>
                 <app-template14
                   *ngIf="templateId == 14"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
                   [content]="Form.value.ccontent"
+                  [buttons]="Form.value.LinkButton"
                   [email]="Form.value.Email"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
                   [phoneAllow]="Form.value.PhoneAllow"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [forwardCard]="Form.value.ForwardCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
@@ -2590,22 +3666,34 @@
                 </app-template14>
                 <app-template15
                   *ngIf="templateId == 15"
-                  [youtubeArray]="Form.value.YoutubeVideos"
-                  [umyotubeArray]="Form.value.UmyotubeVideos"
-                  [vimeoArray]="Form.value.VimeoVideos"
+                  [linkedin]="Form.value.Linkedin"
+                  [twitter]="Form.value.Twitter"
+                  [facebook]="Form.value.Facebook"
+                  [youtube]="Form.value.Youtube"
+                  [instagram]="Form.value.Instagram"
+                  [gpa]="Form.value.Gpa"
+                  [age]="Form.value.Age"
+                  [weight]="Form.value.Weight"
+                  [height]="Form.value.Height"
+                  [grade]="Form.value.Grade"
+                  [school]="Form.value.School"
                   [buttonColor]="Form.value.selectedColor"
                   [firstName]="Form.value.FirstName"
                   [lastName]="Form.value.LastName"
                   [companyName]="Form.value.CompanyName"
                   [jobTitle]="Form.value.JobTitle"
+                  [inviteCode]="Form.value.InviteCode"
+                  [saveCard]="Form.value.SaveCard"
+                  [buttons]="Form.value.LinkButton"
                   [content]="Form.value.ccontent"
                   [email]="Form.value.Email"
                   [address]="Form.value.Address"
                   [phone]="Form.value.PhoneNumber"
+                  [youtubeArray]="Form.value.YoutubeVideos"
+                  [umyotubeArray]="Form.value.UmyotubeVideos"
+                  [vimeoArray]="Form.value.VimeoVideos"
                   [phoneAllow]="Form.value.PhoneAllow"
                   [forwardCard]="Form.value.ForwardCard"
-                  [inviteCode]="Form.value.InviteCode"
-                  [saveCard]="Form.value.SaveCard"
                   [referal]="referalCode"
                   [photo]="Form.value.Photo"
                   [logo]="Form.value.Logo"
@@ -2620,3 +3708,22 @@
     </div>
   </div>
 </section>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 <div *ngIf="isLoading" class="outer-spinner">
   <div class="loading-spinner"></div>
 </div>
-<div class="outside" *ngIf="amount">
+<div class="outside" *ngIf="amount.length > 0">
   <div class="head">
     <h1>Bonus Amount</h1>
   </div>
@@ -23,7 +23,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let amt of amount; let i = index">
-          <td>{{ i }}</td>
+          <td>{{ i + 1 }}</td>
           <td>{{ amt.PurchasedDate }}</td>
           <td>{{ amt.referalEmail }}</td>
           <td>{{ amt.ReferalCode }}</td>
@@ -41,9 +41,12 @@
                   gap: 20px;
                 "
               >
-                <a routerLink="/user/{{ amt.id }}/edit">
-                  <button class="btn btn-sm btn-primary">Change Status</button>
-                </a>
+                <button
+                  class="btn btn-sm btn-primary"
+                  (click)="changeStatus(amt.id)"
+                >
+                  Change Status
+                </button>
               </div>
             </div>
 

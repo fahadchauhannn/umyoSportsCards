@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter } from '@angular/core';
 import { ApiService } from './api.service'; 
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
@@ -12,6 +12,8 @@ import {User,registerResponse} from './models/register-response.model'
 })
 export class PaymentService {
 
+  loadingStatus = new EventEmitter<boolean>();
+   
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -38,17 +40,17 @@ export class PaymentService {
 const expireInValue = selectedPackage.expire_in.toLowerCase(); 
 
 if (expireInValue.includes("year")) {
-  interval = "YEAR";
+  interval = "year";
   interval_count = 1;
 } else if (expireInValue.includes("6 month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 6;
 } else if (expireInValue.includes("month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 } else {
   
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 }
     this.apiService.AddCustomer({
@@ -81,6 +83,7 @@ if (expireInValue.includes("year")) {
           if (response.status == "Success") {
             // proceed to email verification screen
             this.setUserData({
+
               firstname: form3.get('registerFirstName').value,
               lastname: form3.get('registerLastName').value,
               phone: form3.get('registerPhone').value,
@@ -115,7 +118,12 @@ if (expireInValue.includes("year")) {
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
         
+                            
+        
+        
+        
               reffered_from: form3.get('registerReferralCode').value,
+
               
             });
 
@@ -132,7 +140,9 @@ if (expireInValue.includes("year")) {
                   this.router.navigate(['/email-verification']);
                 }
                 else{
+
                   alert(response.status + response.message)
+                  this.loadingStatus.emit(false);
                 }
                 
               }
@@ -144,12 +154,20 @@ if (expireInValue.includes("year")) {
             
           } else {
             alert(response.message)
+            this.loadingStatus.emit(false);
           }
         })
       } else {
-        alert("failesd")
+        alert("Payment Failed")
+        this.loadingStatus.emit(false);
       }
-    }, error => alert(error.error.message))
+    }, error => {
+
+      alert(error.error.message)
+      this.loadingStatus.emit(false);
+    }
+  )
+
   }
 
 
@@ -159,8 +177,7 @@ if (expireInValue.includes("year")) {
   testing(form3:any, selectedPackage: Package){
 
     this.setUserData({
-      
-      
+       
       friend_id: null,
       package_id: selectedPackage.id,
       balance_transaction: null,
@@ -199,10 +216,19 @@ if (expireInValue.includes("year")) {
 
 
       
-
-
+              
 
       reffered_from: form3.get('registerReferralCode').value,
+
+
+
+
+
+      
+
+
+
+      
       
     });
 
@@ -268,6 +294,7 @@ if (expireInValue.includes("year")) {
         console.log("this is approval link"+approvalLink);
         
         this.setUserData({
+
           firstname: form3.get('registerFirstName').value,
           lastname: form3.get('registerLastName').value,
           phone: form3.get('registerPhone').value,
@@ -311,7 +338,10 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
-  
+
+
+      
+
 });
 localStorage.setItem('register_vale',JSON.stringify(this.userData))
         window.location.href = approvalLink;
@@ -400,6 +430,7 @@ localStorage.setItem('lastname', response.user.lastname);
 localStorage.setItem('phone', response.user.phone);
 localStorage.setItem('email', response.user.email);
 localStorage.setItem('user_id', response.user.id.toString());
+this.loadingStatus.emit(false);
         this.router.navigate(['/email-verification']);
       }
       else{
@@ -408,6 +439,8 @@ localStorage.setItem('user_id', response.user.id.toString());
     }
   )
 }
+
+
 
 
 upgradePaypal(userData:any,user_id:any,selectedPackage:any){
