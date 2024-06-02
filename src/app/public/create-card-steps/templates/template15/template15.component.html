@@ -1,9 +1,18 @@
 <div class="template_015">
   <section class="section_one">
-    <div class="img">
+    <div class="img" *ngIf="photo == null">
+      <img src="assets/images/john-doe-avatar.jpg" alt="profileImage" />
+    </div>
+    <div class="img" *ngIf="photo != null">
       <img [src]="imageSrc" alt="profileImage" />
     </div>
-    <img [src]="imageSrcLogo" alt="logoimage" />
+
+    <div *ngIf="logo != null">
+      <img [src]="imageSrcLogo" alt="logoimage" />
+    </div>
+    <div *ngIf="logo == null">
+      <img src="assets/images/unmasking-yourself.jpg" alt="logoimage" />
+    </div>
   </section>
   <section class="section_two">
     <div class="contact-icons">
@@ -31,25 +40,7 @@
         <i class="fa-solid fa-location-dot"></i>
       </a>
     </div>
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        flex-direction: column;
-        gap: 10px;
-        padding: 5px;
-      "
-    >
-      <p *ngIf="gpa">GPA: {{ gpa }}</p>
-      <p *ngIf="school">School: {{ school }}</p>
-      <p *ngIf="grade">Grade: {{ grade }}</p>
 
-      <p *ngIf="height">Height: {{ height }}</p>
-      <p *ngIf="age">Age: {{ age }}</p>
-      <p *ngIf="weight">Weight: {{ weight }}</p>
-    </div>
     <div class="profile-info">
       <div class="seciton_heading">
         <h1 [style.color]="buttonColor">{{ firstName + " " + lastName }}</h1>
@@ -94,51 +85,119 @@
         ><i class="fa-brands fa-youtube"></i
       ></a>
     </div>
-    <img src="assets/images/template-img-001.jpg" alt="" />
+    <img
+      *ngIf="youtubeArray[0]?.youtubeLink == ''"
+      src="assets/images/template-img-001.jpg"
+      alt=""
+    />
     <div class="clearfix"><br /></div>
   </section>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+    "
+  >
+    <p *ngIf="gpa">GPA: {{ gpa }}</p>
+    <p *ngIf="school">School: {{ school }}</p>
+    <p *ngIf="grade">Grade: {{ grade }}</p>
+
+    <p *ngIf="height">Height: {{ height }}</p>
+    <p *ngIf="age">Age: {{ age }}</p>
+    <p *ngIf="weight">Weight: {{ weight }}</p>
+  </div>
+
+  <div *ngIf="productImages == null">
+    <img src="assets/images/app-devices.jpg" alt="productImage" />
+  </div>
+
+  <ng-container *ngIf="productImages && productImages.length > 0">
+    <ngb-carousel [showNavigationArrows]="true">
+      <ng-template ngbSlide *ngFor="let productImage of productImages">
+        <img [src]="productImage" alt="productImage" />
+      </ng-template>
+    </ngb-carousel>
+  </ng-container>
+
   <div *ngIf="youtubeArray && youtubeArray.length > 0">
     <div *ngFor="let video of youtubeArray">
-      <p>{{ video.youtubeTitle }}</p>
-      <iframe
-        *ngIf="video.youtubeLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.youtubeLink)"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
-      ></iframe>
+      <div
+        *ngIf="
+          video.youtubeLink &&
+          video.youtubeLink.startsWith('https://www.youtube.com/')
+        "
+      >
+        <p>{{ video.youtubeTitle }}</p>
+        <iframe
+          *ngIf="video.youtubeLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(video.youtubeLink)"
+          [title]="video.youtubeTitle"
+          frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
     </div>
   </div>
 
   <div *ngIf="umyotubeArray && umyotubeArray.length > 0">
-    <div *ngFor="let video of umyotubeArray">
-      <p>{{ video.umtotubeTitle }}</p>
-      <iframe
-        *ngIf="video.umyotubeLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.umyotubeLink)"
-        title="Umyotube player"
-        frameborder="0"
-      ></iframe>
-    </div>
-  </div>
-  <div *ngIf="vimeoArray && vimeoArray.length > 0">
-    <div *ngFor="let video of vimeoArray">
-      <p>{{ video.vimeoVideoTitle }}</p>
-      <iframe
-        *ngIf="video.vimeoVideoLink"
-        style="width: 100%; padding: 10px"
-        height="200"
-        [src]="sanitizeYouTubeLink(video.vimeoVideoLink)"
-        title="Vimeo video player"
-        frameborder="0"
-      ></iframe>
+    <div *ngFor="let umyoVideo of umyotubeArray">
+      <div *ngIf="umyoVideo.umyotubeLink">
+        <p style="color: black; text-align: center">
+          {{ umyoVideo.umyotubeTitle }}
+        </p>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://youtu.be/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeYouTubeUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://dai.ly/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeDailymotionUrl(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
   </div>
 
+  <div *ngIf="vimeoArray && vimeoArray.length > 0">
+    <div *ngFor="let video of vimeoArray">
+      <div
+        *ngIf="
+          video.vimeoVideoLink &&
+          video.vimeoVideoLink.startsWith('https://player.vimeo.com/')
+        "
+      >
+        <p>{{ video.vimeoVideoTitle }}</p>
+        <iframe
+          *ngIf="video.vimeoVideoLink"
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeVimeo(video.vimeoVideoLink)"
+          [title]="video.vimeoVideoTitle"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
   <div class="three-ctrls">
     <button
       type="button"
@@ -150,7 +209,7 @@
       <i class="fa-solid fa-share forward"></i>
       <h3>Forward</h3>
     </button>
-    <a [routerLink]="['/']" type="button" class="ctrl-item">
+    <a (click)="navigateToHome()" type="button" class="ctrl-item">
       <i class="fa-solid fa-right-to-bracket signup"></i>
       <h3 style="color: black">Sign Up</h3>
     </a>

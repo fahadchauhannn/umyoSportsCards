@@ -1,6 +1,14 @@
 <app-nav></app-nav>
 
-<section class="create-card-section" id="create-card-section">
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section
+  class="create-card-section"
+  id="create-card-section"
+  [class.hiddenDisplay]="isLoading"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -1963,6 +1971,21 @@
                       (change)="onLogoChange($event)"
                     />
                   </div>
+
+                  <!-- <div class="upload_box cyan" role="button" data-target="pimg">
+                    <i class="fa fa-check"></i>
+                    Change Product Images
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg"
+                      id="pimg"
+                      (change)="onProductImagesChange($event)"
+                      multiple
+                    />
+                  </div> -->
+
                   <div class="upload_box cyan" role="button" data-target="pimg">
                     <i class="fa fa-check"></i>
                     Change Product Images
@@ -1976,6 +1999,24 @@
                       multiple
                     />
                   </div>
+
+                  <!-- <div
+                    class="upload_box cyan"
+                    role="button"
+                    *ngIf="productImagesQuantity === '1 image'"
+                    data-target="pimg2"
+                  >
+                    <i class="fa fa-check"></i>
+                    Change Product Image
+                    <p>Recommended resolution 800x800px</p>
+                    <input
+                      type="file"
+                      formControlName="ProductImages"
+                      name="pimg2"
+                      id="pimg2"
+                      (change)="onProductImagesChange($event)"
+                    />
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -2528,444 +2569,586 @@
               </div>
               <div class="edit-fields">
                 <h3>Social Links</h3>
-                <div class="text-start mb-3">
-                  <label for="facebook" class="form-label text-start"
-                    >Facebook</label
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.social_media_listing === 'No'
+                  }"
+                >
+                  <div class="text-start mb-3">
+                    <label for="facebook" class="form-label text-start"
+                      >Facebook</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-facebook"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Facebook"
+                        class="form-control"
+                        id="Facebook"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="twitter" class="form-label text-start"
+                      >Twitter</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-twitter"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Twitter"
+                        class="form-control"
+                        id="twitter"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="youtube" class="form-label text-start"
+                      >Youtube</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-youtube"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Youtube"
+                        class="form-control"
+                        id="youtube"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="instagram" class="form-label text-start"
+                      >Instagram</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-instagram"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Instagram"
+                        class="form-control"
+                        id="instagram"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="linkedin" class="form-label text-start"
+                      >Linkedin</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-linkedin"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Linkedin"
+                        class="form-control"
+                        id="linkedin"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="pinterest" class="form-label text-start"
+                      >Pinterest</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-pinterest"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Pinterest"
+                        class="form-control"
+                        id="pinterest"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  *ngIf="userPackageData.social_media_listing === 'No'"
+                  class=""
+                >
+                  <p
+                    style="
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
+                    "
                   >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-facebook"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Facebook"
-                      class="form-control"
-                      id="Facebook"
-                    />
-                  </div>
+                    You are not allowed to add Social links in your current
+                    package.
+                  </p>
                 </div>
-                <div class="text-start mb-3">
-                  <label for="twitter" class="form-label text-start"
-                    >Twitter</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-twitter"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Twitter"
-                      class="form-control"
-                      id="twitter"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="youtube" class="form-label text-start"
-                    >Youtube</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-youtube"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Youtube"
-                      class="form-control"
-                      id="youtube"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="instagram" class="form-label text-start"
-                    >Instagram</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-instagram"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Instagram"
-                      class="form-control"
-                      id="instagram"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="linkedin" class="form-label text-start"
-                    >Linkedin</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-linkedin"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Linkedin"
-                      class="form-control"
-                      id="linkedin"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="pinterest" class="form-label text-start"
-                    >Pinterest</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-pinterest"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Pinterest"
-                      class="form-control"
-                      id="pinterest"
-                    />
-                  </div>
-                </div>
-                <h3>Communication</h3>
-                <div class="text-start mb-3">
-                  <label for="skype" class="form-label text-start">Skype</label>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fab fa-skype"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Skype"
-                      class="form-control"
-                      id="skype"
-                      placeholder="Skype ID"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="whatsapp" class="form-label text-start"
-                    >Whatsapp</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-whatsapp"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Whatsapp"
-                      class="form-control"
-                      placeholder="Whatsapp ID"
-                      id="facebook"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="snapchat" class="form-label text-start"
-                    >Snapchat</label
-                  >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-square-snapchat"></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Snapchat"
-                      placeholder="Snapchat"
-                      class="form-control"
-                      id="snapchat"
-                    />
-                  </div>
-                </div>
-                <div class="text-start mb-3">
-                  <label for="line" class="form-label text-start">Line</label>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa-brands fa-line"></i
-                    ></span>
 
-                    <input
-                      type="text"
-                      formControlName="Line"
-                      placeholder="Line ID"
-                      class="form-control"
-                      id="line"
-                    />
+                <h3>Communication</h3>
+
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.social_media_listing === 'No'
+                  }"
+                >
+                  <div class="text-start mb-3">
+                    <label for="skype" class="form-label text-start"
+                      >Skype</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fab fa-skype"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Skype"
+                        class="form-control"
+                        id="skype"
+                        placeholder="Skype ID"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="whatsapp" class="form-label text-start"
+                      >Whatsapp</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-whatsapp"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Whatsapp"
+                        class="form-control"
+                        placeholder="Whatsapp ID"
+                        id="facebook"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="snapchat" class="form-label text-start"
+                      >Snapchat</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-square-snapchat"></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Snapchat"
+                        placeholder="Snapchat"
+                        class="form-control"
+                        id="snapchat"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="line" class="form-label text-start">Line</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa-brands fa-line"></i
+                      ></span>
+
+                      <input
+                        type="text"
+                        formControlName="Line"
+                        placeholder="Line ID"
+                        class="form-control"
+                        id="line"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-start mb-3">
+                    <label for="voxrer" class="form-label text-start"
+                      >Voxer</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i
+                          ><img
+                            alt="Voxer"
+                            src="assets/images/voxer_black.png"
+                            width="25" /></i
+                      ></span>
+                      <input
+                        type="text"
+                        formControlName="Voxer"
+                        class="form-control"
+                        id="voxer"
+                        placeholder="Voxer ID"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="text-start mb-3">
-                  <label for="voxrer" class="form-label text-start"
-                    >Voxer</label
+
+                <div
+                  *ngIf="userPackageData.social_media_listing === 'No'"
+                  class=""
+                >
+                  <p
+                    style="
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
+                    "
                   >
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i
-                        ><img
-                          alt="Voxer"
-                          src="assets/images/voxer_black.png"
-                          width="25" /></i
-                    ></span>
-                    <input
-                      type="text"
-                      formControlName="Voxer"
-                      class="form-control"
-                      id="voxer"
-                      placeholder="Voxer ID"
-                    />
-                  </div>
+                    You are not allowed to add Communication links in your
+                    current package.
+                  </p>
                 </div>
                 <!-- Use formArrayName with lowercase 'youtubeVideos' -->
-                <div formArrayName="YoutubeVideos">
-                  <label for="youtubeL" class="form-label text-start"
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.videos === 'No video'
+                  }"
+                >
+                  <div formArrayName="YoutubeVideos">
+                    <label for="youtubeL" class="form-label text-start"
+                      >Youtube</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let youtubeVideo of YoutubeVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="youtubeTitle"
+                            placeholder="Youtube Title"
+                            [formControl]="getYoutubeTitleControl(i)"
+                          />
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="youtubeLink"
+                            placeholder="Youtube Link"
+                            [formControl]="getYoutubeLinkControl(i)"
+                          />
+                        </div>
+                      </div>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeYoutube(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addYoutube()"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="userPackageData.videos === 'No video'" class="">
+                  <label for="noyoutube" class="form-label text-start"
                     >Youtube</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let youtubeVideo of YoutubeVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="youtubeTitle"
-                          placeholder="Youtube Title"
-                          [formControl]="getYoutubeTitleControl(i)"
-                        />
-                      </div>
+                    You are not allowed to add YouTube videos in your current
+                    package.
+                  </p>
+                </div>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.vimeo === 'No video'
+                  }"
+                >
+                  <div formArrayName="VimeoVideos">
+                    <label for="VimeoL" class="form-label text-start"
+                      >Vimeo</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let VimeoVideo of VimeoVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-vimeo"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="vimeoTitle"
+                            placeholder="Vimeo Title"
+                            [formControl]="getVimeoVideoTitleControl(i)"
+                          />
+                        </div>
 
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="youtubeLink"
-                          placeholder="Youtube Link"
-                          [formControl]="getYoutubeLinkControl(i)"
-                        />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-vimeo"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="vimeoLink"
+                            placeholder="Vimeo Link"
+                            [formControl]="getVimeoVideoLinkControl(i)"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeYoutube(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addYoutube()"
-                      >
-                        +
-                      </button>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeVimeoVideos(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addVimeoVideos()"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div formArrayName="VimeoVideos">
-                  <label for="VimeoL" class="form-label text-start"
+                <div *ngIf="userPackageData.vimeo === 'No video'" class="">
+                  <label for="novimeo" class="form-label text-start"
                     >Vimeo</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let VimeoVideo of VimeoVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-vimeo"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="vimeoTitle"
-                          placeholder="Vimeo Title"
-                          [formControl]="getVimeoVideoTitleControl(i)"
-                        />
-                      </div>
+                    You are not allowed to add Vimeo videos in your current
+                    package.
+                  </p>
+                </div>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-vimeo"></i>
-                        </span>
+                <div
+                  [ngClass]="{
+                    hiddenDisplay: userPackageData.umyotube === 'No video'
+                  }"
+                >
+                  <div formArrayName="UmyotubeVideos">
+                    <label for="UmyotubeL" class="form-label text-start"
+                      >Umyotube</label
+                    >
+                    <div
+                      class="text-start mb-3"
+                      *ngFor="
+                        let UmyotubeVideo of UmyotubeVideos.controls;
+                        let i = index
+                      "
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+                          <!-- Use a unique formControlName for the title input -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="UmyotubeTitle"
+                            placeholder="Umyotube Title"
+                            [formControl]="getUmyotubeTitleControl(i)"
+                          />
+                        </div>
 
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="vimeoLink"
-                          placeholder="Vimeo Link"
-                          [formControl]="getVimeoVideoLinkControl(i)"
-                        />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-brands fa-square-youtube"></i>
+                          </span>
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="UmyotubeLink"
+                            placeholder="Umyotube Link"
+                            [formControl]="getUmyotubeLinkControl(i)"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeVimeoVideos(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addVimeoVideos()"
-                      >
-                        +
-                      </button>
+                      <div class="input-group-append">
+                        <button
+                          *ngIf="i > 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="removeUmyotubeVideos(i)"
+                        >
+                          −
+                        </button>
+                        <button
+                          *ngIf="i == 0"
+                          class="btn btn-primary plus-button"
+                          type="button"
+                          (click)="addUmyotubeVideos()"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div formArrayName="UmyotubeVideos">
-                  <label for="UmyotubeL" class="form-label text-start"
+                <div *ngIf="userPackageData.umyotube === 'No video'" class="">
+                  <label for="novimeo" class="form-label text-start"
                     >Umyotube</label
                   >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="
-                      let UmyotubeVideo of UmyotubeVideos.controls;
-                      let i = index
-                    "
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="UmyotubeTitle"
-                          placeholder="Umyotube Title"
-                          [formControl]="getUmyotubeTitleControl(i)"
-                        />
-                      </div>
-
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                          <i class="fa-brands fa-square-youtube"></i>
-                        </span>
-
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="UmyotubeLink"
-                          placeholder="Umyotube Link"
-                          [formControl]="getUmyotubeLinkControl(i)"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeUmyotubeVideos(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addUmyotubeVideos()"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
+                    You are not allowed to add Umyotube videos in your current
+                    package.
+                  </p>
                 </div>
 
-                <div formArrayName="LinkButton">
-                  <label for="LinkButtonL" class="form-label text-start"
-                    >Link Buttons</label
-                  >
-                  <div
-                    class="text-start mb-3"
-                    *ngFor="let LinkBtn of LinkButton.controls; let i = index"
+
+                <div [ngClass]="{
+                  hiddenDisplay: userPackageData.website === 'No'
+                }">
+
+
+<div formArrayName="LinkButton">
+  <label for="LinkButtonL" class="form-label text-start"
+    >Link Buttons</label
+  >
+  <div
+    class="text-start mb-3"
+    *ngFor="let LinkBtn of LinkButton.controls; let i = index"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div>
+      <div class="input-group mb-3">
+        <!-- Use a unique formControlName for the title input -->
+        <input
+          type="text"
+          class="form-control"
+          id="linkbtntitle"
+          placeholder="Link Button Title"
+          [formControl]="getLinkButtonTitleControl(i)"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="linkbtnLink"
+          placeholder="Website Link"
+          [formControl]="getLinkButtonLinkControl(i)"
+        />
+      </div>
+    </div>
+    <div class="input-group-append">
+      <button
+        *ngIf="i > 0"
+        class="btn btn-primary plus-button"
+        type="button"
+        (click)="removeLinkButton(i)"
+      >
+        −
+      </button>
+      <button
+        *ngIf="i == 0"
+        class="btn btn-primary plus-button"
+        type="button"
+        (click)="addLinkButton()"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>
+
+                </div>
+               
+
+                <div *ngIf="userPackageData.website === 'No'" class="">
+                  <label for="nolinkbuttons" class="form-label text-start"
+    >Link Buttons</label
+  >
+                  <p
                     style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+                      border: 0.1px solid;
+                      border-color: #d3d3d3;
+                      padding: 20px;
                     "
                   >
-                    <div>
-                      <div class="input-group mb-3">
-                        <!-- Use a unique formControlName for the title input -->
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="linkbtntitle"
-                          placeholder="Link Button Title"
-                          [formControl]="getLinkButtonTitleControl(i)"
-                        />
-                      </div>
-
-                      <div class="input-group mb-3">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="linkbtnLink"
-                          placeholder="Website Link"
-                          [formControl]="getLinkButtonLinkControl(i)"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-group-append">
-                      <button
-                        *ngIf="i > 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="removeLinkButton(i)"
-                      >
-                        −
-                      </button>
-                      <button
-                        *ngIf="i == 0"
-                        class="btn btn-primary plus-button"
-                        type="button"
-                        (click)="addLinkButton()"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
+                    You are not allowed to add Website Link Buttons in your current
+                    package.
+                  </p>
                 </div>
+
+
               </div>
+
+
+              
             </div>
           </div>
           <div class="step step-6">
@@ -3525,3 +3708,22 @@
     </div>
   </div>
 </section>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
