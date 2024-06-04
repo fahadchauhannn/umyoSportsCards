@@ -704,15 +704,9 @@ export class HomeComponent implements AfterViewInit {
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
-
-        selectedDivision: [''],
-        selectedPosition: [''],
-        selectedTeam: [''],
-        selectedYear: [''],
-        selectedTrophy: [''],
-        selectedHonor: [''],
         selectedBusiness: [''],
-
+        selectedLocation:[''],
+        selectedGender:['']
      
         
         
@@ -727,13 +721,10 @@ export class HomeComponent implements AfterViewInit {
         registerPhone: ['', Validators.required],
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
+        registerLocation: ['', Validators.required],
+        registerGenderType: ['', Validators.required],
 
-        registerDivision: ['', Validators.required],
-        registerPosition: ['', Validators.required],
-        registerTeam: ['', Validators.required],
-        registerYear: ['', Validators.required],
-        registerTrophy: ['', Validators.required],
-        registerHonor: ['', Validators.required],
+        
         registerBusiness: ['', Validators.required],
         
 
