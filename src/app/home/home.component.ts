@@ -451,7 +451,7 @@ export class HomeComponent implements AfterViewInit {
     searchCards(){
       
       const payload={
-        state : this.form2.get('selectedStateType').value,
+        
        city : this.form2.get('selectedCity').value,
       
        name : this.form2.get('selectedName').value,
@@ -700,7 +700,7 @@ export class HomeComponent implements AfterViewInit {
         
     
         
-        selectedStateType: [''],
+        
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
@@ -729,7 +729,7 @@ export class HomeComponent implements AfterViewInit {
         
 
 
-        registerStateType: ['', Validators.required],
+        
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
 
