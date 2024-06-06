@@ -98,6 +98,7 @@ if (expireInValue.includes("year")) {
               balance_transaction: null,
               balance_transaction_type: 'stripe',
               business_type: form3.get('registerBusiness')?.value,
+              medical: form3.get('registerMedical')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
               
@@ -191,6 +192,7 @@ if (expireInValue.includes("year")) {
 
       
       business_type: form3.get('registerBusiness')?.value,
+      medical: form3.get('registerMedical')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       
@@ -319,6 +321,7 @@ if (expireInValue.includes("year")) {
           plan_id:response.plan_id,
 
           business_type: form3.get('registerBusiness')?.value,
+          medical: form3.get('registerMedical')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       

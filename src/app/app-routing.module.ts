@@ -50,7 +50,7 @@ import { TruckersComponent } from './truckers/truckers.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
 import { PackageComponent } from './package/package.component';
-import { NbaComponent } from './nba/nba.component';
+
 
 
 

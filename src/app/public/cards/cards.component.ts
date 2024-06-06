@@ -83,7 +83,7 @@ export class CardsComponent implements AfterViewInit{
   const errorCorrectionLevel = 'L'; 
 
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
-  qrCode.addData('https://umyonba.site/cards/share-card/' + id);
+  qrCode.addData('https://umyomedical.site/cards/share-card/' + id);
   qrCode.make();
 
   // Create a data URI for the QR code image
@@ -170,7 +170,7 @@ export class CardsComponent implements AfterViewInit{
                   alert("Failed to Verify Paypal Payment")
                   localStorage.removeItem("updatePaypalId");
                   localStorage.removeItem("updatedToken");
-                  window.location.href='https://umyonba.site/'
+                  window.location.href='https://umyomedical.site/'
               }
             );
           }
@@ -219,7 +219,7 @@ this.paymentForm = this.fb.group({
     
   }
   openShareDialog() {
-    const shareUrl = `https://umyonba.site//cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://umyomedical.site//cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
 
     // Open a new window for sharing

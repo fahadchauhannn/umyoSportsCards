@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nba',
-  templateUrl: './nba.component.html',
-  styleUrls: ['./nba.component.css']
+  selector: 'app-medical',
+  templateUrl: './medical.component.html',
+  styleUrls: ['./medical.component.css']
 })
-export class NbaComponent {
+export class medicalComponent {
 
 }
