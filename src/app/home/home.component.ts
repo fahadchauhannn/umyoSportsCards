@@ -454,14 +454,20 @@ export class HomeComponent implements AfterViewInit {
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
        gender : this.form2.get('selectedGender').value,
-       location : this.form2.get('selectedLocation').value,
-       
-      
        name : this.form2.get('selectedName').value,
-       
        race : this.form2.get('selectedRace').value,
-      
-       medical : this.form2.get('selectedMedical').value,
+       business_type : this.form2.get('selectedBussniesType').value,
+       business_city : this.form2.get('selectedBussniesCity').value,
+       business_state : this.form2.get('selectedBussniesState').value,
+       author : this.form2.get('selectedTypeOfAuthors').value,
+       book : this.form2.get('selectedBookType').value,
+       writer : this.form2.get('selectedTypeOfWriters').value,
+
+               
+       
+       
+       
+       
 
        
        
@@ -671,7 +677,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyomedical.site/'
+                window.location.href='https://umyoauthor.site/'
             }
           );
         }
@@ -698,13 +704,18 @@ export class HomeComponent implements AfterViewInit {
         
     
         
-        selectedStateType: [''],
         selectedName: [''],
-        selectedRace: [''],
         selectedCity: [''],
-        selectedMedical: [''],
-        selectedLocation:[''],
-        selectedGender:['']
+        selectedTypeOfAuthors:[''],
+        selectedBookType:[''],
+        selectedTypeOfWriters:[''],
+        selectedStateType: [''],
+        selectedGender:[''],
+        selectedRace: [''],
+        selectedBussniesType:[''],
+        selectedBussniesCity:[''],
+        selectedBussniesState:['']
+        
      
         
         
@@ -719,14 +730,20 @@ export class HomeComponent implements AfterViewInit {
         registerPhone: ['', Validators.required],
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
-        registerLocation: ['', Validators.required],
+        
         registerGenderType: ['', Validators.required],
 
         
-        registerMedical: ['', Validators.required],
         
-
-
+        
+        registerTypeOfAuthors: ['', Validators.required],
+        registerBookType: ['', Validators.required],
+        registerTypeOfWriters: ['', Validators.required],
+        
+        
+        registerBusiness: ['', Validators.required],
+        registerBussniesCity: ['', Validators.required],
+        registerBussniesState: ['', Validators.required],
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })

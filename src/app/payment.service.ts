@@ -118,8 +118,32 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
+
+
+      author: form3.get('registerTypeOfAuthors')?.value,
+      book: form3.get('registerBookType')?.value,
+      writer: form3.get('registerTypeOfWriters')?.value,
+      business_city: form3.get('registerBussniesCity')?.value,
+      business_state: form3.get('registerBussniesState')?.value,
+      
+
+
         
-                            
+          
+      
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
         
         
         
@@ -216,7 +240,12 @@ if (expireInValue.includes("year")) {
 
 
 
-
+      author: form3.get('registerTypeOfAuthors')?.value,
+      book: form3.get('registerBookType')?.value,
+      writer: form3.get('registerTypeOfWriters')?.value,
+      business_city: form3.get('registerBussniesCity')?.value,
+      business_state: form3.get('registerBussniesState')?.value,
+      
       
               
 
@@ -343,6 +372,14 @@ if (expireInValue.includes("year")) {
       honor: form3.get('registerHonor')?.value,
 
 
+
+      
+      author: form3.get('registerTypeOfAuthors')?.value,
+      book: form3.get('registerBookType')?.value,
+      writer: form3.get('registerTypeOfWriters')?.value,
+      business_city: form3.get('registerBussniesCity')?.value,
+      business_state: form3.get('registerBussniesState')?.value,
+      
       
 
 });
