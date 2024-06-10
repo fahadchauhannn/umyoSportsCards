@@ -83,7 +83,7 @@ export class CardsComponent implements AfterViewInit{
   const errorCorrectionLevel = 'L'; 
 
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
-  qrCode.addData('https://umyomedical.site/cards/share-card/' + id);
+  qrCode.addData('https://umyopd.site/cards/share-card/' + id);
   qrCode.make();
 
   // Create a data URI for the QR code image

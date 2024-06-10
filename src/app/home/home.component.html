@@ -9,11 +9,12 @@
       >
         <a [routerLink]="['']" class="navbar-brand">
           <!-- <h1 class="text-white display-6">LT  HUB</h1> -->
-          <img
-            src="assets/authors/logo.png"
+          <!-- <img
+            src="assets/Police/logo.png"
             class="img-fluid rounded"
             style="width: auto; height: 120px"
-          />
+          /> -->
+          <h1 class="text-white display-6">Umyo Police</h1>
         </a>
         <button
           class="navbar-toggler py-2 px-3"
@@ -26,11 +27,11 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav d-lg-none">
             <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-            <a href="http://authortalks.site/" class="nav-item nav-link"
-              >AuthorTalks</a
+            <a href="https://pdtalks.site/" class="nav-item nav-link"
+              >PDTalks</a
             >
-            <a href="http://authorstweet.site/" class="nav-item nav-link"
-              >AuthorsTweet</a
+            <a href="https://pdtweets.site/" class="nav-item nav-link"
+              >PDTweets</a
             >
             <a href="https://umyoappt.site/" class="nav-item nav-link"
               >Booking</a
@@ -41,7 +42,6 @@
             <a href="https://live.umyoconvo.site/" class="nav-item nav-link"
               >Podcast</a
             >
-            <a href="https://uchatyes.com/" class="nav-item nav-link">ChaGPT</a>
             <a href="https://uchatyes.com/" class="nav-item nav-link">ChaGPT</a>
             <a [routerLink]="['/cf']" class="nav-item nav-link"
               >Card Features</a
@@ -83,14 +83,10 @@
                 <a [routerLink]="['']" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="http://authortalks.site/" class="nav-link"
-                  >AuthorTalks</a
-                >
+                <a href="https://pdtalks.site/" class="nav-link">PDTalks</a>
               </li>
               <li class="nav-item">
-                <a href="http://authorstweet.site/" class="nav-link"
-                  >AuthorsTweet</a
-                >
+                <a href="https://pdtweets.site/" class="nav-link">PDTweets</a>
               </li>
               <li class="nav-item">
                 <a href="https://umyoappt.site/" class="nav-link">Booking</a>
@@ -189,28 +185,24 @@
       <div class="col-md-12 col-lg-7">
         <div class="page-width">
           <div class="lft-hero__content">
-            <h1 class="mb-3">UMYO Writers' Hub</h1>
+            <h1 class="mb-3">
+              Elevating Networking for Law Enforcement Nationwide
+            </h1>
             <p class="mb-5">
-              Introducing UMYO Writers' Hub, a dynamic platform tailored for
-              authors, publishers, and literary enthusiasts alike.Seamlessly
-              upload your latest manuscripts, author interviews, literary
-              events, industry insights, and publishing milestones to engage
-              with a vast audience of fellow writers and book enthusiasts.
+              UMYO Police Connect proudly presents an innovative networking
+              solution tailored exclusively for police officers across the
+              country. Our groundbreaking app brings together law enforcement
+              professionals, officers, recruiters, instructors, police
+              institutions, and affiliated businesses on a specialized platform
+              dedicated to advancing the careers of police personnel.
             </p>
             <div class="moretext-he" style="display: none">
               <p class="mb-5">
-                UMYO Writers' Hub serves as the ultimate nexus for writers
-                across various genres, fostering connections, collaborations,
-                and mutual support within the literary community. Authors and
-                publishers can now register their profiles and link up with
-                like-minded individuals using personalized ID codes,
-                streamlining networking and collaboration opportunities.
-              </p>
-              <p class="mb-5">
-                Join UMYO Writers' Hub today and immerse yourself in a vibrant
-                ecosystem dedicated to nurturing creativity, fostering
-                professional growth, and celebrating the diverse voices that
-                enrich our literary landscape.
+                As the first of its kind, our app empowers officers to connect
+                with colleagues, family, and friends while showcasing their
+                skills and expertise. UMYO Police Connect offers a unique space
+                where law enforcement professionals can receive the recognition
+                and support they deserve from their peers.
               </p>
             </div>
             <a
@@ -244,7 +236,7 @@
   <!-- <div class="page-width">
   <div class="lft-hero__content">
   <h1>CREATE IMPRESSIVE MILITARY CARDS</h1>
-      <p>UMYO Authors  Connect introduces an innovative networking solution exclusively for military personnel.</p>
+      <p>UMYO Police  Connect introduces an innovative networking solution exclusively for military personnel.</p>
   
   
   <a class="button js-no-transition" href="#linq-form" onclick="track('Clicked LFT hero cta')">Read More</a>
@@ -341,11 +333,11 @@
         class="text-white text-center"
         style="font-weight: 600; margin-bottom: 60px"
       >
-        Search For UMYO Authors of All Types
+        Search For UMYO Police of All Types
       </h1>
       <div class="row">
         <div class="col-lg-5">
-          <h4 class="mb-4 text-white">Search For The UMYO Authors</h4>
+          <h4 class="mb-4 text-white">Search For The UMYO Police</h4>
           <form [formGroup]="form2" class="text-center">
             <div class="row">
               <div class="col-lg-6 mb-4">
@@ -357,13 +349,22 @@
                 />
               </div>
 
+              <div class="col-lg-6 mb-4">
+                <input
+                  type="name"
+                  formControlName="selectedDepartmentName"
+                  class="form-control"
+                  placeholder="Name of Department"
+                />
+              </div>
+
               <!-- city here -->
               <div class="col-lg-6 mb-4">
                 <input
                   type="text"
                   formControlName="selectedCity"
                   class="form-control"
-                  placeholder="City"
+                  placeholder="City of Department"
                 />
               </div>
 
@@ -371,28 +372,55 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedTypeOfAuthors"
+                  formControlName="selectedTypeOfOfficer"
                 >
-                  <option selected value="" disabled>Type of Authors</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Writers">Writers</option>
-                  <option value="Journalists">Journalists</option>
-                  <option value="Novelist">Novelist</option>
-                  <option value="Professional Writers">
-                    Professional Writers
+                  <option selected value="" disabled>Type of Officers</option>
+                  <option value="Police Officer">Police Officer</option>
+                  <option value="State Trooper">State Trooper</option>
+                  <option value="Detective">Detective</option>
+                  <option value="Sheriff">Sheriff</option>
+                  <option value="FBI">FBI</option>
+                  <option value="Game Warden">Game Warden</option>
+                  <option value="Officer">Officer</option>
+                  <option value="Secret Service">Secret Service</option>
+                  <option value="Uninformed Officer">Uninformed Officer</option>
+                  <option value="Border Patrol Officers">
+                    Border Patrol Officers
                   </option>
-                  <option value="Screenwriter">Screenwriter</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Lyricist">Lyricist</option>
-                  <option value="Blogger">Blogger</option>
-                  <option value="Columnist">Columnist</option>
-                  <option value="Epic Writer">Epic Writer</option>
-                  <option value="Biographer">Biographer</option>
-                  <option value="Playwright">Playwright</option>
-                  <option value="Poet">Poet</option>
-                  <option value="Songwriter">Songwriter</option>
-                  <option value="Short Story">Short Story</option>
-                  <option value="Business writers">Business writers</option>
+                  <option value="Private Investigator">
+                    Private Investigator
+                  </option>
+                  <option value="Air Marshal">Air Marshal</option>
+                  <option value="Resource Officer">Resource Officer</option>
+                  <option value="DEA">DEA</option>
+                  <option value="investigation">investigation</option>
+                  <option value="Special Jurisdiction">
+                    Special Jurisdiction
+                  </option>
+                  <option value="Transit Officer">Transit Officer</option>
+                  <option value="Security Officer">Security Officer</option>
+                  <option value="Military Officer">Military Officer</option>
+                  <option value="Environmental Police">
+                    Environmental Police
+                  </option>
+                  <option value="Lieutenant">Lieutenant</option>
+                  <option value="United States Martial">
+                    United States Martial
+                  </option>
+                  <option value="Park Ranger">Park Ranger</option>
+                  <option value="Sergeant">Sergeant</option>
+                  <option value="Advocate">Advocate</option>
+                  <option value="Assistant Chief">Assistant Chief</option>
+                  <option value="Chief">Chief</option>
+                  <option value="Retired">Retired</option>
+                  <option value="Family">Family</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Businesses Supporting Officers">
+                    Businesses Supporting Officers
+                  </option>
+                  <option value="Officer & Business Owner">
+                    Officer & Business Owner
+                  </option>
                 </select>
               </div>
 
@@ -400,52 +428,42 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedBookType"
+                  formControlName="selectedOfficerRanking"
                 >
-                  <option selected value="" disabled>Book Type</option>
-                  <option value="Fiction">Fiction</option>
-                  <option value="Non Fiction">Non Fiction</option>
-                </select>
-              </div>
-
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedTypeOfWriters"
-                >
-                  <option selected value="" disabled>Type of Writers</option>
-                  <option value="Literary Genre">Literary Genre</option>
-                  <option value="Drama">Drama</option>
-                  <option value="Fable">Fable</option>
-                  <option value="Fairytale">Fairytale</option>
-                  <option value="Fantasy">Fantasy</option>
-                  <option value="Fiction">Fiction</option>
-                  <option value="Fiction in verse">Fiction in verse</option>
-                  <option value="Folklore">Folklore</option>
-                  <option value="Historical Fiction">Historical Fiction</option>
-                  <option value="Horror">Horror</option>
-                  <option value="Humor">Humor</option>
-                  <option value="Legend">Legend</option>
-                  <option value="Poet">Poet</option>
-                  <option value="Mystery">Mystery</option>
-                  <option value="Mythology">Mythology</option>
-                  <option value="Realistic Fiction">Realistic Fiction</option>
-                  <option value="Non Fiction">Non Fiction</option>
-                  <option value="Short Story Tale">Short Story Tale</option>
-                  <option value="Audio">Audio</option>
-                  <option value="Audio /Video/Images">
-                    Audio /Video/Images
+                  <option selected value="" disabled>Officers Ranking</option>
+                  <option value="Police Officer III+1">
+                    Police Officer III+1
                   </option>
-                  <option value="Biography /Autobiography">
-                    Biography /Autobiography
+                  <option value="Police Officer III..">
+                    Police Officer III..
                   </option>
-                  <option value="Essay">Essay</option>
-                  <option value="Narrative NonFiction">
-                    Narrative NonFiction
+                  <option value="Sergeant 1">Sergeant 1</option>
+                  <option value="Sergeant II">Sergeant II</option>
+                  <option value="Detective I">Detective I</option>
+                  <option value="Detective II">Detective II</option>
+                  <option value="Detective III">Detective III</option>
+                  <option value="Lieutenant">Lieutenant</option>
+                  <option value="Captain">Captain</option>
+                  <option value="Commander">Commander</option>
+                  <option value="Deputy Chief">Deputy Chief</option>
+                  <option value="Assistant Chief">Assistant Chief</option>
+                  <option value="Chief">Chief</option>
+                  <option value="Warrant Officer">Warrant Officer</option>
+                  <option value="Major General">Major General</option>
+                  <option value="General">General</option>
+                  <option value="Lieutenant General">Lieutenant General</option>
+                  <option value="Second Lieutenant">Second Lieutenant</option>
+                  <option value="Major">Major</option>
+                  <option value="First Lieutenant">First Lieutenant</option>
+                  <option value="Master Sergeant">Master Sergeant</option>
+                  <option value="Colonel">Colonel</option>
+                  <option value="Captain">Captain</option>
+                  <option value="Lieutenant">Lieutenant</option>
+                  <option value="Sergeant Major">Sergeant Major</option>
+                  <option value="Commander">Commander</option>
+                  <option value="Chief Warrant Officer">
+                    Chief Warrant Officer
                   </option>
-                  <option value="Non Fiction">Non Fiction</option>
-                  <option value="Speech">Speech</option>
                 </select>
               </div>
 
@@ -545,6 +563,15 @@
                   <option value="Vietnamese">Vietnamese</option>
                   <option value="Other">Other</option>
                 </select>
+              </div>
+
+              <div class="col-lg-6 mb-4">
+                <input
+                  type="name"
+                  formControlName="selectedBussniesSupporter"
+                  class="form-control"
+                  placeholder="Business Supporters"
+                />
               </div>
 
               <div class="col-lg-6 mb-4">
@@ -822,9 +849,9 @@
               >
                 <form [formGroup]="form">
                   <div class="row">
-                    <h1 class="text-center">UMYO For UMYO Authors</h1>
+                    <h1 class="text-center">UMYO For UMYO Police</h1>
                     <p class="text-center">
-                      Register to Connect with UMYO Authors
+                      Register to Connect with UMYO Police
                     </p>
 
                     <br /><br /><br /><br /><br /><br />
@@ -1101,12 +1128,36 @@
                       </div>
                     </div>
 
+                    <!-- depart name -->
+
+                    <div class="col-lg-6 mb-4">
+                      <div class="form-group">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Department Name
+                          <sup style="color: red; font-size: 20px"
+                            >*</sup
+                          ></label
+                        >
+                        <input
+                          type="text"
+                          formControlName="registerDepartmentName"
+                          class="form-control"
+                          required
+                          [ngClass]="{
+                            'invalid-input':
+                              !form3.get('registerDepartmentName')?.touched &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        />
+                      </div>
+                    </div>
                     <!-- normal city -->
 
                     <div class="col-lg-6 mb-4">
                       <div class="form-group">
                         <label style="font-size: 20px; font-weight: 600"
-                          >City
+                          >Department City
                           <sup style="color: red; font-size: 20px"
                             >*</sup
                           ></label
@@ -1126,150 +1177,153 @@
                       </div>
                     </div>
 
-                    <!-- type of author -->
+                    <!-- type of depart -->
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Type of Author<sup style="color: red; font-size: 20px"
+                        >Type of Officer<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerTypeOfAuthors')?.touched ||
-                              !form3.get('registerTypeOfAuthors')?.valid) &&
+                            (!form3.get('registerTypeOfOfficer')?.touched ||
+                              !form3.get('registerTypeOfOfficer')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerTypeOfAuthors"
+                        formControlName="registerTypeOfOfficer"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Writers">Writers</option>
-                        <option value="Journalists">Journalists</option>
-                        <option value="Novelist">Novelist</option>
-                        <option value="Professional Writers">
-                          Professional Writers
+                        <option value="Police Officer">Police Officer</option>
+                        <option value="State Trooper">State Trooper</option>
+                        <option value="Detective">Detective</option>
+                        <option value="Sheriff">Sheriff</option>
+                        <option value="FBI">FBI</option>
+                        <option value="Game Warden">Game Warden</option>
+                        <option value="Officer">Officer</option>
+                        <option value="Secret Service">Secret Service</option>
+                        <option value="Uninformed Officer">
+                          Uninformed Officer
                         </option>
-                        <option value="Screenwriter">Screenwriter</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Lyricist">Lyricist</option>
-                        <option value="Blogger">Blogger</option>
-                        <option value="Columnist">Columnist</option>
-                        <option value="Epic Writer">Epic Writer</option>
-                        <option value="Biographer">Biographer</option>
-                        <option value="Playwright">Playwright</option>
-                        <option value="Poet">Poet</option>
-                        <option value="Songwriter">Songwriter</option>
-                        <option value="Short Story">Short Story</option>
-                        <option value="Business writers">
-                          Business writers
+                        <option value="Border Patrol Officers">
+                          Border Patrol Officers
+                        </option>
+                        <option value="Private Investigator">
+                          Private Investigator
+                        </option>
+                        <option value="Air Marshal">Air Marshal</option>
+                        <option value="Resource Officer">
+                          Resource Officer
+                        </option>
+                        <option value="DEA">DEA</option>
+                        <option value="investigation">investigation</option>
+                        <option value="Special Jurisdiction">
+                          Special Jurisdiction
+                        </option>
+                        <option value="Transit Officer">Transit Officer</option>
+                        <option value="Security Officer">
+                          Security Officer
+                        </option>
+                        <option value="Military Officer">
+                          Military Officer
+                        </option>
+                        <option value="Environmental Police">
+                          Environmental Police
+                        </option>
+                        <option value="Lieutenant">Lieutenant</option>
+                        <option value="United States Martial">
+                          United States Martial
+                        </option>
+                        <option value="Park Ranger">Park Ranger</option>
+                        <option value="Sergeant">Sergeant</option>
+                        <option value="Advocate">Advocate</option>
+                        <option value="Assistant Chief">Assistant Chief</option>
+                        <option value="Chief">Chief</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Family">Family</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Businesses Supporting Officers">
+                          Businesses Supporting Officers
+                        </option>
+                        <option value="Officer & Business Owner">
+                          Officer & Business Owner
                         </option>
                       </select>
                     </div>
 
-                    <!-- book type -->
+                    <!-- Officers Ranking -->
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Book Type<sup style="color: red; font-size: 20px"
+                        >Officers Ranking<sup
+                          style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerBookType')?.touched ||
-                              !form3.get('registerBookType')?.valid) &&
+                            (!form3.get('registerOfficerRanking')?.touched ||
+                              !form3.get('registerOfficerRanking')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerBookType"
+                        formControlName="registerOfficerRanking"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Non Fiction">Non Fiction</option>
+                        <option value="Police Officer III+1">
+                          Police Officer III+1
+                        </option>
+                        <option value="Police Officer III..">
+                          Police Officer III..
+                        </option>
+                        <option value="Sergeant 1">Sergeant 1</option>
+                        <option value="Sergeant II">Sergeant II</option>
+                        <option value="Detective I">Detective I</option>
+                        <option value="Detective II">Detective II</option>
+                        <option value="Detective III">Detective III</option>
+                        <option value="Lieutenant">Lieutenant</option>
+                        <option value="Captain">Captain</option>
+                        <option value="Commander">Commander</option>
+                        <option value="Deputy Chief">Deputy Chief</option>
+                        <option value="Assistant Chief">Assistant Chief</option>
+                        <option value="Chief">Chief</option>
+                        <option value="Warrant Officer">Warrant Officer</option>
+                        <option value="Major General">Major General</option>
+                        <option value="General">General</option>
+                        <option value="Lieutenant General">
+                          Lieutenant General
+                        </option>
+                        <option value="Second Lieutenant">
+                          Second Lieutenant
+                        </option>
+                        <option value="Major">Major</option>
+                        <option value="First Lieutenant">
+                          First Lieutenant
+                        </option>
+                        <option value="Master Sergeant">Master Sergeant</option>
+                        <option value="Colonel">Colonel</option>
+                        <option value="Captain">Captain</option>
+                        <option value="Lieutenant">Lieutenant</option>
+                        <option value="Sergeant Major">Sergeant Major</option>
+                        <option value="Commander">Commander</option>
+                        <option value="Chief Warrant Officer">
+                          Chief Warrant Officer
+                        </option>
                       </select>
                     </div>
-
-                    <!-- type of writeer -->
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Type of Writer<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerTypeOfWriters')?.touched ||
-                              !form3.get('registerTypeOfWriters')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerTypeOfWriters"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option value="Literary Genre">Literary Genre</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Fable">Fable</option>
-                        <option value="Fairytale">Fairytale</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Fiction in verse">
-                          Fiction in verse
-                        </option>
-                        <option value="Folklore">Folklore</option>
-                        <option value="Historical Fiction">
-                          Historical Fiction
-                        </option>
-                        <option value="Horror">Horror</option>
-                        <option value="Humor">Humor</option>
-                        <option value="Legend">Legend</option>
-                        <option value="Poet">Poet</option>
-                        <option value="Mystery">Mystery</option>
-                        <option value="Mythology">Mythology</option>
-                        <option value="Realistic Fiction">
-                          Realistic Fiction
-                        </option>
-                        <option value="Non Fiction">Non Fiction</option>
-                        <option value="Short Story Tale">
-                          Short Story Tale
-                        </option>
-                        <option value="Audio">Audio</option>
-                        <option value="Audio /Video/Images">
-                          Audio /Video/Images
-                        </option>
-                        <option value="Biography /Autobiography">
-                          Biography /Autobiography
-                        </option>
-                        <option value="Essay">Essay</option>
-                        <option value="Narrative NonFiction">
-                          Narrative NonFiction
-                        </option>
-                        <option value="Non Fiction">Non Fiction</option>
-                        <option value="Speech">Speech</option>
-                      </select>
-                    </div>
-
-                    <!-- state type -->
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
@@ -1416,6 +1470,29 @@
                       </select>
                     </div>
 
+                    <div class="col-lg-6 mb-4">
+                      <div class="form-group">
+                        <label style="font-size: 20px; font-weight: 600"
+                          >Business Supporters
+                          <sup style="color: red; font-size: 20px"
+                            >*</sup
+                          ></label
+                        >
+                        <input
+                          type="text"
+                          formControlName="registerBusinessSupporter"
+                          class="form-control"
+                          required
+                          [ngClass]="{
+                            'invalid-input':
+                              !form3.get('registerBusinessSupporter')
+                                ?.touched &&
+                              submitButtonClicked &&
+                              !form3.valid
+                          }"
+                        />
+                      </div>
+                    </div>
                     <!-- busniess type -->
 
                     <div class="col-lg-6 mb-4">
@@ -1764,19 +1841,46 @@
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">Writers Hub</h1>
+      <h1 class="text-white my-3 featurs">UMYO Police Connect</h1>
       <p class="text-white my-3">
-        Share your Business Portfolio, Community Achievements, Local Insights,
-        Interviews, Experiences, Images
+        Imagine the positive impact: daily giveaways and support for police
+        families, assistance to those in need, aid to families of officers in
+        hospitals, and businesses contributing to the law enforcement community,
+        reciprocated by widespread support. Initiatives like free online courses
+        through our Learning Management System (LMS) empower and educate,
+        shaping a brighter future...
       </p>
       <div class="moretext" style="display: none">
         <p class="text-white my-3">
-          Community Highlights for a wide audience to explore. This all-in-one
-          platform is essential for Writers UMYO Businesses and Community
-          Connect professionals seeking greater visibility using virtual
-          interactive concepts to network with others just like you. A safe and
-          positive place to thrive in the Writers UMYO Businesses and Community
-          Connect community.
+          With UMYO Police Connect, you can effortlessly upload your performance
+          data, training records, interviews, podcasts, images, and
+          achievements, reaching a wide audience. It stands as the premier
+          destination for police personnel nationwide, providing a secure and
+          exclusive space tailored just for them.
+        </p>
+        <p class="text-white my-3">
+          But it's not just about individual recognition. UMYO Police Connect
+          encourages businesses to reciprocate the support provided by police
+          officers. Business owners now have the opportunity to register their
+          enterprises, connecting with specific officers using unique ID codes
+          during the registration process.
+        </p>
+        <p class="text-white my-3">
+          UMYO Police Connect is a groundbreaking social network app designed
+          exclusively for the law enforcement community, linking officers,
+          veterans, recruiters, coaches, educational institutions, and
+          businesses eager to support the journey of our police personnel as
+          they strive for success.
+        </p>
+        <p class="text-white my-3">
+          Share your Police Service Record, Educational Achievements, Online
+          Talent Contests, Interviews, Podcasts, Images, and Law Enforcement
+          Experience for a wide audience to explore. This all-in-one platform is
+          essential for police personnel seeking greater visibility, utilizing
+          virtual interactive concepts to network with others just like you.
+          It's a safe and positive space to connect, have fun, and propel your
+          law enforcement career forward. Join us on UMYO Police Connect and
+          experience networking redefined for the law enforcement community.
         </p>
       </div>
       <a
@@ -2114,7 +2218,7 @@
 
 <!------- tab section end ---------->
 
-<div class="container-fluid featurs pt-3 mb-5">
+<div class="container-fluid featurs pt-3 mt-3 mb-5">
   <div class="container">
     <div class="row g-4">
       <div class="col-12">
@@ -2126,86 +2230,64 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/1.jpg" class="img-fluid" />
+                <img src="assets/police/1.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">uChatYes.com</h2>
+        <h2 class="mt-4">Military Connects</h2>
         <div class="moretext1" style="display: none">
           <p>
-            uChatYes.com - Create unique and engaging content that will increase
-            conversions and drive sales.Harness the power of artificial
-            intelligence and transform the way you produce unique content.
-          </p>
-          <h5>Transcriptions</h5>
-          <p>
-            Extract the contents of audio files and turn them into fully
-            editable documents. Generate original content for your website,
-            marketing, and social activities.
+            Introducing Military Connect, the app that transforms your online
+            interactions into a dynamic social experience. Military Connect is
+            your comprehensive platform for connecting, sharing, and engaging
+            with friends, family, and the military global community. Loaded with
+            a wide range of robust functionalities, Military Connect offers all
+            the tools you require in a social networking application.
           </p>
         </div>
-        <a class="moreless-button1 btn btn-dark text-white" href="#text1"
-          >Read more</a
-        >
+        <a class="moreless-button1 btn btn-dark" href="#text1">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text2">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/2.png" class="img-fluid" />
+                <img src="assets/police/2.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">Virtual Interactive Business Card Directory</h2>
+        <h2 class="mt-4">Timeline</h2>
         <div class="moretext2" style="display: none">
           <p>
-            1. A Social Networking Platform & Search Engine Directory for The
-            City OF DFW.
+            <strong>**Timeline:** </strong> Stay in the loop with the latest
+            posts, photos, and life events of your friends. Scroll through your
+            personalized timeline to ensure you never miss a moment.
           </p>
-          <p>
-            2. Virtual Business and Community Cards /with Social Media Icons
-            that links to Social Media & Websites.
-          </p>
-          <p>
-            3. Members Befriend, Network, Chat and Share Members ID cards via
-            Social Media.
-          </p>
-          <p>
-            4. Search Engine for community, visitors & members to find
-            registered businesses and each other.
-          </p>
-          <p>5. Daily $$$ giveaways to community</p>
         </div>
-        <a class="moreless-button2 btn btn-dark text-white" href="#text2"
-          >Read more</a
-        >
+        <a class="moreless-button2 btn btn-dark" href="#text2">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text3">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/3.png" class="img-fluid" />
+                <img src="assets/police/3.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Music</h2>
+        <h2 class="mt-4">Live</h2>
         <div class="moretext3" style="display: none">
           <p>
-            Umyomusic is a popular music streaming service that allows users to
-            listen to a vast catalog of songs, albums, and playlists from a wide
-            range of artists and genres. It was founded in [Insert founding
-            location and year] and has since become one of the most widely used
-            music streaming platforms in the world.
+            <strong>**Live:**</strong> Share live broadcasts with your followers
+            or tune in to watch live content from around the world from other
+            military personnel, their family, friends. Interact with
+            broadcasters in real-time.
           </p>
         </div>
-        <a class="moreless-button3 btn btn-dark text-white" href="#text3"
-          >Read more</a
-        >
+        <a class="moreless-button3 btn btn-dark" href="#text3">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text4">
@@ -2213,24 +2295,19 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/4.png" class="img-fluid" />
+                <img src="assets/police/4.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Market</h2>
+        <h2 class="mt-4">Chat</h2>
         <div class="moretext4" style="display: none">
           <p>
-            UMYO Market serves as a dedicated platform for pop-up shops and
-            entrepreneurs seeking to showcase their products on a digital shelf.
-            It offers a unique marketplace for these sellers to reach a global
-            customer base and bring their innovative products to a wider
-            audience.
+            <strong>**Chat:**</strong> Connect with friends through private
+            messages or group chats. Share text, photos, videos, and more.
           </p>
         </div>
-        <a class="moreless-button4 btn btn-dark text-white" href="#text4"
-          >Read more</a
-        >
+        <a class="moreless-button4 btn btn-dark" href="#text4">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text5">
@@ -2238,80 +2315,60 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/5.png" class="img-fluid" />
+                <img src="assets/police/5.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Hosting</h2>
+        <h2 class="mt-4">Calling</h2>
         <div class="moretext5" style="display: none">
           <p>
-            A hosting website, often referred to as a web hosting service
-            provider, is a company that offers the necessary infrastructure and
-            technology for individuals, businesses, or organizations to store
-            and make their websites accessible on the internet. These services
-            typically include server space, domain name registration, website
-            file storage, email hosting, and technical support. Hosting websites
-            allow users to publish their websites, making them available for
-            online visitors to access 24/7.
+            <strong>**Calling:**</strong> Make high-quality voice and video
+            calls to your contacts, keeping you connected no matter where you
+            are.
           </p>
         </div>
-        <a class="moreless-button5 btn btn-dark text-white" href="#text5"
-          >Read more</a
-        >
+        <a class="moreless-button5 btn btn-dark" href="#text5">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text6">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/6.png" class="img-fluid" />
+                <img src="assets/police/6.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UChatYes</h2>
+        <h2 class="mt-4">Events Booking</h2>
         <div class="moretext6" style="display: none">
           <p>
-            uChatYes.com - Create unique and engaging content that will increase
-            conversions and drive sales.Harness the power of artificial
-            intelligence and transform the way you produce unique content.
-            Extract the contents of audio files and turn them into fully
-            editable documents. Generate original content for your website,
-            marketing, and social activities
+            <strong>**Events Booking:**</strong> Discover and book events in
+            your area or share your own events with the community.
           </p>
         </div>
-        <a class="moreless-button6 btn btn-dark text-white" href="#text6"
-          >Read more</a
-        >
+        <a class="moreless-button6 btn btn-dark" href="#text6">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text7">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/7.png" class="img-fluid" />
+                <img src="assets/police/7.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Tweets</h2>
+        <h2 class="mt-4">Dating</h2>
         <div class="moretext7" style="display: none">
           <p>
-            UMYO Tweets is a new social media platform and microblogging service
-            that allows users to send and read short messages called "tweets."
-            These tweets can be up to 280 characters in length, and they are
-            typically used to share thoughts, ideas, news, links to articles or
-            other websites, images, videos, and engage in conversations with
-            other users. UMYO Tweets is known for its real-time and fast-paced
-            nature, making it a popular platform for staying updated on current
-            events, following public figures, and sharing and discussing various
-            topics.
+            <strong>**Dating:**</strong> Find meaningful connections with
+            like-minded people through our dating feature. Belief Talk is more
+            than just a social app; it's a place to meet new people and
+            potentially find love.
           </p>
         </div>
-        <a class="moreless-button7 btn btn-dark text-white" href="#text7"
-          >Read more</a
-        >
+        <a class="moreless-button7 btn btn-dark" href="#text7">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text8">
@@ -2319,53 +2376,39 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/8.png" class="img-fluid" />
+                <img src="assets/police/8.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">CP Swipe</h2>
+        <h2 class="mt-4">Podcasts</h2>
         <div class="moretext8" style="display: none">
           <p>
-            A "CP Swipe" refers to a combination social encounter dating app
-            similar to Tinder and Only Fans, where individuals meet in person
-            with the intention of getting to know each other romantically or
-            platonically. As well as an online platform where content creators
-            share exclusive, often adult-oriented, content with subscribers for
-            a fee. Both on one platform are related to social interactions and
-            connections, albeit in different ways—one facilitates real-life
-            meetings, while the other involves online content creation and
-            subscription-based access.
+            <strong>**Podcasts:**</strong> Listen to and create your own
+            podcasts on topics you're passionate about. Share your voice with
+            the world.
           </p>
         </div>
-        <a class="moreless-button8 btn btn-dark text-white" href="#text8"
-          >Read more</a
-        >
+        <a class="moreless-button8 btn btn-dark" href="#text8">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text9">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/9.png" class="img-fluid" />
+                <img src="assets/police/9.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Connect</h2>
+        <h2 class="mt-4">Fundraising</h2>
         <div class="moretext9" style="display: none">
           <p>
-            The app that transforms your online interactions into a dynamic
-            social experience. UMYO Connect is your comprehensive platform for
-            connecting, sharing, and engaging with friends, family, and the
-            military global community. Loaded with a wide range of robust
-            functionalities, UMYO Connect offers all the tools you require in a
-            social networking application.
+            **Fundraising:** Support and create fundraising campaigns for causes
+            that matter to you. Make a positive impact on your community.
           </p>
         </div>
-        <a class="moreless-button9 btn btn-dark text-white" href="#text9"
-          >Read more</a
-        >
+        <a class="moreless-button9 btn btn-dark" href="#text9">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text10">
@@ -2373,24 +2416,25 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/10.png" class="img-fluid" />
+                <img src="assets/police/10.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Talk</h2>
+        <h2 class="mt-4">Create Group</h2>
         <div class="moretext10" style="display: none">
           <p>
-            UMYO Talk is a popular messaging app that allows users to send text
-            messages, make voice and video calls, and share multimedia content
-            with individuals or groups. It operates over the internet and is
-            available on various platforms, making it a convenient and widely
-            used communication tool.
+            Creating groups involves forming distinct communities within the
+            platform where users with common interests or affiliations can join
+            and interact. These groups provide a space for like-minded
+            individuals to share content, engage in discussions, and connect
+            with one another based on shared topics, hobbies, or goals. Group
+            members can typically post and comment on discussions relevant to
+            the group's theme, fostering a more focused and engaged online
+            community.
           </p>
         </div>
-        <a class="moreless-button10 btn btn-dark text-white" href="#text10"
-          >Read more</a
-        >
+        <a class="moreless-button10 btn btn-dark" href="#text10">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text11">
@@ -2398,22 +2442,21 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/11.png" class="img-fluid" />
+                <img src="assets/police/11.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO Tube</h2>
+        <h2 class="mt-4">Nearby Offers</h2>
         <div class="moretext11" style="display: none">
           <p>
-            A platform for content creators and users looking to share articles,
-            videos, conduct live streaming with external cameras, offer
-            pay-per-view events, enable donations for online channels, and more.
+            <strong> **Nearby Offers:** </strong> Access exclusive offers and
+            discounts from businesses in your area. Military Connects helps you
+            save from online registered businesses while you explore your
+            surroundings.
           </p>
         </div>
-        <a class="moreless-button11 btn btn-dark text-white" href="#text11"
-          >Read more</a
-        >
+        <a class="moreless-button11 btn btn-dark" href="#text11">Read more</a>
       </div>
 
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text12">
@@ -2421,418 +2464,69 @@
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/12.png" class="img-fluid" />
+                <img src="assets/police/12.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO SMS</h2>
+        <h2 class="mt-4">Short Video</h2>
         <div class="moretext12" style="display: none">
           <p>
-            Constant Contact is an email marketing platform that enables
-            businesses and organizations to create, send, and track email
-            campaigns. It provides tools for building and managing email lists,
-            designing professional-looking emails, and analyzing the performance
-            of email marketing efforts, making it a valuable resource for email
-            marketing and communication strategies.
+            Creating short videos entails producing and sharing concise video
+            content that is typically brief in duration, often lasting anywhere
+            from a few seconds to a few minutes. These short videos are designed
+            to capture attention quickly and are well-suited for sharing on
+            platforms like TikTok, Instagram Reels, or Snapchat. Users can use
+            various creative tools and features to record, edit, and enhance
+            their videos to tell stories, share moments, provide entertainment,
+            or convey messages in a concise and engaging format. The goal is to
+            engage the audience and make an impact in a short span of time.
           </p>
         </div>
-        <a class="moreless-button12 btn btn-dark text-white" href="#text12"
-          >Read more</a
-        >
+        <a class="moreless-button12 btn btn-dark" href="#text12">Read more</a>
       </div>
       <div class="col-lg-4 col-md-6 mt-5 px-5" id="text15">
         <div class="position-relative fruite-item">
           <div class="fruite-img">
             <div class="videos__wrapper">
               <div class="videos__wrapper--video2">
-                <img src="assets/authors/23.png" class="img-fluid" />
+                <img src="assets/police/13.jpeg" class="img-fluid" />
               </div>
             </div>
           </div>
         </div>
-        <h2 class="mt-4">UMYO'S ADVANCED LMS & SOCIAL MEDIA NETWORKING</h2>
+        <h2 class="mt-4">Virtual Educational Management System</h2>
         <div class="moretext15" style="display: none">
           <p>
-            Similar to UMYO Educator, only, it's our LMS on steroids. Here you
-            can network, podcast, conference, live stream, audio stream, PPV,
-            donation, and more. IT’S KRAZY!!! It’s a community networking
-            platform that can be used for educational purposes as well as
-            edutainment purposes. Rather you prefer zoom or you prefer our
-            version of zoom, its community based and educational as well.
-          </p>
-          <small
-            >Here are some key aspects of a learning management system:</small
-          >
-          <h4>1. Course Management:</h4>
-          <p>
-            LMS platforms allow for the creation, organization, and management
-            of courses. This includes features like uploading course materials,
-            creating assignments, and structuring content in a way that
-            facilitates learning.
-          </p>
-          <h4>2. User Management:</h4>
-          <p>
-            <strong> LMS systems typically include user management</strong>
-            features, allowing administrators to add, remove, or modify user
-            accounts. This is crucial for tracking individual progress and
-            managing access to different courses or modules.
-          </p>
-          <h4>3. Assessment and Evaluation:</h4>
-          <p>
-            LMS platforms often provide tools for creating quizzes, exams, and
-            other assessment methods. These features help in evaluating the
-            learners' understanding of the material and tracking their progress.
-          </p>
-          <h4>4. Collaboration and Communication:</h4>
-          <p>
-            Many LMS platforms include communication tools such as discussion
-            forums, chat, and messaging systems. These features facilitate
-            interaction between learners, instructors, and sometimes even peers.
-          </p>
-          <h4>5. Tracking and Reporting:</h4>
-          <p>
-            LMS systems offer tracking and reporting functionalities, allowing
-            administrators and instructors to monitor the progress of learners.
-            This includes data on completion rates, assessment scores, and other
-            relevant metrics.
-          </p>
-          <h4>6. Content Delivery:</h4>
-          <p>
-            LMS platforms support various formats of content delivery, including
-            multimedia, documents, and interactive elements. This flexibility
-            enables diverse and engaging learning experiences.
-          </p>
-          <h4>7. Integration with Other Systems:</h4>
-          <p>
-            Many LMS platforms are designed to integrate with other systems,
-            such as HR systems, to streamline processes like user onboarding and
-            data management.
-          </p>
-          <h4>8. Mobile Accessibility:</h4>
-          <p>
-            With the increasing use of mobile devices, many LMS platforms offer
-            mobile-friendly interfaces or dedicated apps to allow learners to
-            access content on the go.
-          </p>
-          <h4>9. Customization and Branding:</h4>
-          <p>
-            Organizations often appreciate the ability to customize the look and
-            feel of their LMS to align with their branding and create a more
-            personalized learning experience.
-          </p>
-          <h4>10. Security and Compliance:</h4>
-          <p>
-            Given the sensitive nature of educational and training data, LMS
-            platforms prioritize security features. They often include
-            authentication protocols, data encryption, and compliance with
-            relevant regulations.
-          </p>
-        </div>
-        <a class="moreless-button15 btn btn-dark text-white" href="#text15"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text16">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/14.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO VPN</h2>
-        <div class="moretext16" style="display: none">
-          <p>
-            UMYO VPN Protects you and your guest browsers privacy. Browse with a
-            virtual I.P. Address that helps you hide your location and lets you
-            view the web with enhance online privacy within the android and
-            desktop
-          </p>
-        </div>
-        <a class="moreless-button16 btn btn-dark text-white" href="#text16"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text17">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/24.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Web Design</h2>
-        <div class="moretext17" style="display: none">
-          <p>
-            UMYO Web design is the process of planning, creating, and arranging
-            the visual and structural elements of a website. It involves the use
-            of various design principles, such as layout, color, typography, and
-            user interface, to ensure that a website is both aesthetically
-            appealing and user-friendly. Web designers work to create a
-            well-organized, visually engaging, and functional digital
-            environment that effectively conveys information, promotes
-            businesses, and enhances user experiences on the internet.
-          </p>
-        </div>
-        <a class="moreless-button17 btn btn-dark text-white" href="#text17"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text18">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/16.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Virtual Conference Platform</h2>
-        <div class="moretext18" style="display: none">
-          <ul>
-            <li>
-              Share External Video, Share Screen, Create Rooms, Create
-              Backrooms.
-            </li>
-            <li>
-              Shared Notes, Public Chat/Save Copy/Delete, Manage Presentation.
-            </li>
-            <li>
-              Start A Poll, Select Random User, Mute, Leave Audio, Share Webcam.
-            </li>
-            <li>
-              Manage Presentation, Raise Hands, Recording, Keyboard Shortcuts &
-              More.
-            </li>
-            <li>
-              Weekly Support Channels for Students, Student Only Channels.
-            </li>
-            <li>
-              Audio Conference -Enable you to conference with only audio with
-              optional screen share features like a group voice call.
-            </li>
-            <li>
-              Video Conference -enables you to conference with others with audio
-              and video with optional screen sharing features.
-            </li>
-            <li>
-              Webinar -Enables you to stream yourself live with video and audio
-              with optional screen sharing feature.
-            </li>
-            <li>
-              Live Classes ( backrooms) -Enables you to stream live with audio
-              and video , where you can see and hear anyone but they can see and
-              hear only you , not each other.
-            </li>
-            <li>
-              Podcast -Enables you to stream your audio live with others who
-              invited.They can only hear your voice over audio stream.
-            </li>
-          </ul>
-        </div>
-        <a class="moreless-button18 btn btn-dark text-white" href="#text18"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text19">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/17.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Virtual Coupon Booklet</h2>
-        <div class="moretext19" style="display: none">
-          <p>
-            Booklet that links to other pages, videos, images, online contests,
-            websites social media and more.
+            A guide to healthy interpersonal connections- This course is
+            designed to help individuals develop and maintain positive and
+            healthy relationships in various aspects of life, including romantic
+            partnerships, friendships, family connections, and professional
+            interactions. It covers communication skills, conflict resolution,
+            empathy, and self-awareness, offering valuable insights into
+            creating and nurturing positive relationships
           </p>
           <p>
-            First ever Kiosk Touch screen business kiosk that can be shared by
-            thousands to thousands within minutes.
+            Military Connects was crafted to provide a safe and inclusive space
+            for our military and their families. Our robust privacy settings and
+            content moderation ensure ga secure environment for all users.
           </p>
-        </div>
-        <a class="moreless-button19 btn btn-dark text-white" href="#text19"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text20">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/18.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Contests</h2>
-        <div class="moretext20" style="display: none">
           <p>
-            By encouraging more subscriptions to our platforms, we are able to
-            offer increased rewards and money giveaways to our valued community
-            members. As our platform grows, so do the benefits for our dedicated
-            users. Join us in this exciting journey and stand a chance to win
-            bigger prizes and be part of a thriving community."
+            Join the Military Connects community today and embark on a social
+            media experience like no other. - Where Military Connections Come to
+            Life!
           </p>
         </div>
-        <a class="moreless-button20 btn btn-dark text-white" href="#text20"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text21">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/19.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Tok</h2>
-        <div class="moretext21" style="display: none">
-          <p>
-            UMYO Tok is a popular social media platform known for short-form
-            videos. It allows users to create, share, and discover engaging
-            video content that is often set to music. UMYO Tok videos typically
-            range from a few seconds to one minute in length and cover a wide
-            variety of topics, including music, comedy, dance, challenges,
-            education, and more. The platform has gained immense popularity for
-            its user-friendly interface and the ability for creators to showcase
-            their creativity in a fun and interactive way, making it a hub for
-            viral trends and creative expression.
-          </p>
-        </div>
-        <a class="moreless-button21 btn btn-dark text-white" href="#text21"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text22">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/20.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Games</h2>
-        <div class="moretext22" style="display: none">
-          <p>
-            UMYO games are video games designed to be played on smartphones and
-            tablets. These games are typically downloaded from app stores and
-            are designed to be easily accessible and playable on mobile devices.
-            They cover a wide range of genres, including puzzle, action,
-            strategy, role-playing, and more. UMYO games are known for their
-            portability and ease of use, making them a popular form of
-            entertainment and a significant segment of the global gaming
-            industry. Players can enjoy these games on the go, during short
-            breaks, or in more extended gaming sessions, depending on the game's
-            complexity and their preferences.
-          </p>
-        </div>
-        <a class="moreless-button22 btn btn-dark text-white" href="#text22"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text23">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/21.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Mail</h2>
-        <div class="moretext23" style="display: none">
-          <h4>Looking for privacy emails?</h4>
-          <p>
-            Create virtual email IDs, with inbox, compose, sent items, and
-            drafts within our web panel.
-          </p>
-          <h4>What is an email server?</h4>
-          <p>
-            An email server is a computer system or software application
-            responsible for sending, receiving, and storing email messages. It
-            uses standard email protocols like SMTP (Simple Mail Transfer
-            Protocol) for sending emails and IMAP (Internet Message Access
-            Protocol) or POP3 (Post Office Protocol) for receiving and storing
-            emails. Email servers play a crucial role in managing electronic
-            communication by routing messages between users and ensuring their
-            delivery.
-          </p>
-        </div>
-        <a class="moreless-button23 btn btn-dark text-white" href="#text23"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text24">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/22.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">UMYO Fans</h2>
-        <div class="moretext24" style="display: none">
-          <p>
-            Empower content creators to monetize their work by receiving
-            subscriptions from loyal followers and enthusiasts across various
-            creative fields.
-          </p>
-        </div>
-        <a class="moreless-button24 btn btn-dark text-white" href="#text24"
-          >Read more</a
-        >
-      </div>
-      <div class="col-lg-4 col-md-6 mt-5 px-5" id="text27">
-        <div class="position-relative fruite-item">
-          <div class="fruite-img">
-            <div class="videos__wrapper">
-              <div class="videos__wrapper--video2">
-                <img src="assets/authors/25.png" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-4">Virtual Coupon</h2>
-        <div class="moretext27" style="display: none">
-          <p>
-            UMYO Virtual Coupon booklet links to other pages, videos, images,
-            online contests, websites, social media and more.First ever Kiosk
-            Touch screen business kiosk that can be shared by thousands to
-            thousands within minutes.
-          </p>
-        </div>
-        <a class="moreless-button27 btn btn-dark text-white" href="#text27"
-          >Read more</a
-        >
+        <a class="moreless-button15 btn btn-dark" href="#text15">Read more</a>
       </div>
     </div>
     <!-- <div class="row g-4 py-5">
-              <div class="col-lg-12 col-md-6 px-5 mt-5">
-              <img src="newlogo/naf.jpg" class="img-fluid">    
-              </div>
-          </div> -->
+          <div class="col-lg-12 col-md-6 px-5 mt-5">
+          <img src="newlogo/naf.jpg" class="img-fluid">    
+          </div>
+      </div> -->
   </div>
 </div>
-
 <!-- Featurs Section End -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
@@ -2998,7 +2692,7 @@
   
   Who We Are
   
-  Welcome! We are UMYO Authors   Inc., a Texas corporation, or as we prefer to be known, "UMYO Authors  ,"
+  Welcome! We are UMYO Police   Inc., a Texas corporation, or as we prefer to be known, "UMYO Police  ,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -3012,7 +2706,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@UMYO Authors  .com or by mail at UMYO Authors   Inc., Attn: Data Privacy
+  email at data-privacy@UMYO Police  .com or by mail at UMYO Police   Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -3196,8 +2890,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “UMYO Authors   for Teams” subscription, the administrator 
-  associated with your “UMYO Authors   for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “UMYO Police   for Teams” subscription, the administrator 
+  associated with your “UMYO Police   for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -3238,7 +2932,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to UMYO Authors  ! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to UMYO Police  ! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -3330,8 +3024,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@UMYO Authors  .com] (mailto:data-privacy@UMYO Authors  .com) or by mail at
-  UMYO Authors   Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@UMYO Police  .com] (mailto:data-privacy@UMYO Police  .com) or by mail at
+  UMYO Police   Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -3360,10 +3054,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@UMYO Authors  .com](mailto:data-privacy@UMYO Authors  .com) or by mail at
-  UMYO Authors   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@UMYO Police  .com](mailto:data-privacy@UMYO Police  .com) or by mail at
+  UMYO Police   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at UMYO Authors  **
+  **Changes to Our Privacy Policy at UMYO Police  **
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -3406,7 +3100,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at UMYO Authors  **
+              **Refund Policy at UMYO Police  **
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -3479,9 +3173,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to UMYO Authors  !
+              Welcome to UMYO Police  !
   
-  **Terms of Service and Sale - UMYO Authors  **
+  **Terms of Service and Sale - UMYO Police  **
   
   **Last Revised: December 22, 2023**
   
@@ -3489,7 +3183,7 @@
   
   **Introduction**
   
-  Welcome! We are UMYO Authors  , a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are UMYO Police  , a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -3589,11 +3283,11 @@
   
   ---
   
-  **UMYO Authors   App Terms of Service**
+  **UMYO Police   App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your UMYO Authors  
+  (g) You must provide accurate, current, and complete information for your UMYO Police  
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -3610,7 +3304,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on UMYO Authors  . Posted Content is not confidential,
+  (a) Users can post content ("Content") on UMYO Police  . Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   

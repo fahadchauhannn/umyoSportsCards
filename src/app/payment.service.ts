@@ -124,29 +124,15 @@ if (expireInValue.includes("year")) {
       book: form3.get('registerBookType')?.value,
       writer: form3.get('registerTypeOfWriters')?.value,
       business_city: form3.get('registerBussniesCity')?.value,
+
       business_state: form3.get('registerBussniesState')?.value,
-      
 
-
-        
-          
+      department: form3.get('registerDepartmentName')?.value,
+      officer: form3.get('registerTypeOfOfficer')?.value,
+      officerRanking: form3.get('registerOfficerRanking')?.value,
+      supporter: form3.get('registerBusinessSupporter')?.value,
       
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-
-        
-        
-        
+ 
               reffered_from: form3.get('registerReferralCode').value,
 
               
@@ -203,18 +189,19 @@ if (expireInValue.includes("year")) {
 
     this.setUserData({
        
-      friend_id: null,
-      package_id: selectedPackage.id,
-      balance_transaction: null,
-      balance_transaction_type: null,
-    
       firstname: form3.get('registerFirstName').value,
       lastname: form3.get('registerLastName').value,
       phone: form3.get('registerPhone').value,
       email: form3.get('registerEmail').value,
       password: form3.get('registerPassword').value,
-
-      
+      country: "",
+      sub_category: "",
+      stripe_customer_id:this.stripe_customer_id,
+      stripe_subscription_id:this.stripe_subscription_id,
+      friend_id: null,
+      package_id: selectedPackage.id,
+      balance_transaction: null,
+      balance_transaction_type: 'stripe',
       business_type: form3.get('registerBusiness')?.value,
       medical: form3.get('registerMedical')?.value,
       sport_type: form3.get('registerSportType')?.value,
@@ -231,26 +218,27 @@ if (expireInValue.includes("year")) {
       truckService: form3.get('registerTruckService')?.value,
 
       division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
-      team: form3.get('registerTeam')?.value,
-      year: form3.get('registerYear')?.value,
-      trophy: form3.get('registerTrophy')?.value,
-      honor: form3.get('registerHonor')?.value,
+position: form3.get('registerPosition')?.value,
+team: form3.get('registerTeam')?.value,
+year: form3.get('registerYear')?.value,
+trophy: form3.get('registerTrophy')?.value,
+honor: form3.get('registerHonor')?.value,
 
 
+author: form3.get('registerTypeOfAuthors')?.value,
+book: form3.get('registerBookType')?.value,
+writer: form3.get('registerTypeOfWriters')?.value,
+business_city: form3.get('registerBussniesCity')?.value,
 
+business_state: form3.get('registerBussniesState')?.value,
 
-      author: form3.get('registerTypeOfAuthors')?.value,
-      book: form3.get('registerBookType')?.value,
-      writer: form3.get('registerTypeOfWriters')?.value,
-      business_city: form3.get('registerBussniesCity')?.value,
-      business_state: form3.get('registerBussniesState')?.value,
-      
-      
-              
+department: form3.get('registerDepartmentName')?.value,
+officer: form3.get('registerTypeOfOfficer')?.value,
+officerRanking: form3.get('registerOfficerRanking')?.value,
+supporter: form3.get('registerBusinessSupporter')?.value,
+
 
       reffered_from: form3.get('registerReferralCode').value,
-
 
 
 
@@ -332,53 +320,50 @@ if (expireInValue.includes("year")) {
           email: form3.get('registerEmail').value,
           password: form3.get('registerPassword').value,
           country: "",
-          
           sub_category: "",
           stripe_customer_id:this.stripe_customer_id,
           stripe_subscription_id:this.stripe_subscription_id,
           friend_id: null,
           package_id: selectedPackage.id,
           balance_transaction: null,
-          balance_transaction_type: 'paypal',
-          
-          state: form3.get('registerStateType')?.value,
-          reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocationType')?.value,
-          city: form3.get('registerCityType')?.value,
-          race: form3.get('registerRaceType')?.value,
-          gender: form3.get('registerGenderType')?.value,
-          plan_id:response.plan_id,
-
+          balance_transaction_type: 'stripe',
           business_type: form3.get('registerBusiness')?.value,
           medical: form3.get('registerMedical')?.value,
-      sport_type: form3.get('registerSportType')?.value,
-      age_type: form3.get('registerAgeType')?.value,
-      
-      
-      
-      
-      
-      
-      truckType: form3.get('registerTypeOfTrucks')?.value,
-      truckLoad: form3.get('registerTruckLoads')?.value,
-      commonCarrier: form3.get('registerCommonCarrier')?.value,
+          sport_type: form3.get('registerSportType')?.value,
+          age_type: form3.get('registerAgeType')?.value,
+          
+          state: form3.get('registerStateType')?.value,
+          city: form3.get('registerCityType')?.value,
+          location: form3.get('registerLocationType')?.value,
+          race: form3.get('registerRaceType')?.value,
+          gender: form3.get('registerGenderType')?.value,
+          truckType: form3.get('registerTypeOfTrucks')?.value,
+          truckLoad: form3.get('registerTruckLoads')?.value,
+          commonCarrier: form3.get('registerCommonCarrier')?.value,
+          truckService: form3.get('registerTruckService')?.value,
 
-      truckService: form3.get('registerTruckService')?.value,
-      division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
-      team: form3.get('registerTeam')?.value,
-      year: form3.get('registerYear')?.value,
-      trophy: form3.get('registerTrophy')?.value,
-      honor: form3.get('registerHonor')?.value,
+          division: form3.get('registerDivision')?.value,
+  position: form3.get('registerPosition')?.value,
+  team: form3.get('registerTeam')?.value,
+  year: form3.get('registerYear')?.value,
+  trophy: form3.get('registerTrophy')?.value,
+  honor: form3.get('registerHonor')?.value,
 
 
+  author: form3.get('registerTypeOfAuthors')?.value,
+  book: form3.get('registerBookType')?.value,
+  writer: form3.get('registerTypeOfWriters')?.value,
+  business_city: form3.get('registerBussniesCity')?.value,
 
-      
-      author: form3.get('registerTypeOfAuthors')?.value,
-      book: form3.get('registerBookType')?.value,
-      writer: form3.get('registerTypeOfWriters')?.value,
-      business_city: form3.get('registerBussniesCity')?.value,
-      business_state: form3.get('registerBussniesState')?.value,
+  business_state: form3.get('registerBussniesState')?.value,
+
+  department: form3.get('registerDepartmentName')?.value,
+  officer: form3.get('registerTypeOfOfficer')?.value,
+  officerRanking: form3.get('registerOfficerRanking')?.value,
+  supporter: form3.get('registerBusinessSupporter')?.value,
+  
+
+          reffered_from: form3.get('registerReferralCode').value,
       
       
 

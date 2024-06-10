@@ -459,11 +459,18 @@ export class HomeComponent implements AfterViewInit {
        business_type : this.form2.get('selectedBussniesType').value,
        business_city : this.form2.get('selectedBussniesCity').value,
        business_state : this.form2.get('selectedBussniesState').value,
-       author : this.form2.get('selectedTypeOfAuthors').value,
-       book : this.form2.get('selectedBookType').value,
-       writer : this.form2.get('selectedTypeOfWriters').value,
+       
+       department : this.form2.get('selectedDepartmentName').value,
+       officer : this.form2.get('selectedTypeOfOfficer').value,
+       supporter : this.form2.get('selectedBussniesSupporter').value,
+       officerRanking : this.form2.get('selectedOfficerRanking').value,
 
                
+       
+        
+
+       
+
        
        
        
@@ -677,7 +684,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoauthor.site/'
+                window.location.href='https://umyopd.site/'
             }
           );
         }
@@ -705,16 +712,21 @@ export class HomeComponent implements AfterViewInit {
     
         
         selectedName: [''],
+        selectedDepartmentName: [''],
         selectedCity: [''],
-        selectedTypeOfAuthors:[''],
-        selectedBookType:[''],
-        selectedTypeOfWriters:[''],
+        selectedTypeOfOfficer:[''],
+        selectedOfficerRanking:[''],
         selectedStateType: [''],
         selectedGender:[''],
         selectedRace: [''],
+        selectedBussniesSupporter:[''],
         selectedBussniesType:[''],
         selectedBussniesCity:[''],
         selectedBussniesState:['']
+
+        
+        
+        
         
      
         
@@ -728,24 +740,21 @@ export class HomeComponent implements AfterViewInit {
         registerConfirmEmail: ['', [Validators.required, Validators.email]],
         registerPassword: ['', [Validators.required, Validators.minLength(6)]],
         registerPhone: ['', Validators.required],
+        registerDepartmentName: ['', Validators.required],
         registerCityType: ['', Validators.required],
-        registerRaceType: ['', Validators.required],
-        
+        registerTypeOfOfficer: ['', Validators.required],
+        registerOfficerRanking: ['', Validators.required],
+        registerStateType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-
-        
-        
-        
-        registerTypeOfAuthors: ['', Validators.required],
-        registerBookType: ['', Validators.required],
-        registerTypeOfWriters: ['', Validators.required],
-        
-        
+        registerRaceType: ['', Validators.required],
+        registerBusinessSupporter: ['', Validators.required],
         registerBusiness: ['', Validators.required],
         registerBussniesCity: ['', Validators.required],
         registerBussniesState: ['', Validators.required],
-        registerStateType: ['', Validators.required],
+        
+
         registerReferralCode: [''], // Not required
+
       }, { validators: this.emailMatchValidator })
 
 
