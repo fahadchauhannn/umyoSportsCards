@@ -452,18 +452,20 @@ export class HomeComponent implements AfterViewInit {
       
       const payload={
         
+
+
+       
+     
+
+       gender : this.form2.get('selectedGender').value,
        city : this.form2.get('selectedCity').value,
       
        name : this.form2.get('selectedName').value,
        
        race : this.form2.get('selectedRace').value,
-       division : this.form2.get('selectedDivision').value,
-       position : this.form2.get('selectedPosition').value,
-       team : this.form2.get('selectedTeam').value,
-       year : this.form2.get('selectedYear').value,
-       trophy : this.form2.get('selectedTrophy').value,
-       honor : this.form2.get('selectedHonor').value,
-       business : this.form2.get('selectedBusiness').value,
+       location : this.form2.get('selectedLocation').value,
+       
+       business_type : this.form2.get('selectedBusiness').value,
 
        
        
@@ -673,7 +675,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyonba.site/'
+                window.location.href='https://umyolgbtq.site/'
             }
           );
         }
