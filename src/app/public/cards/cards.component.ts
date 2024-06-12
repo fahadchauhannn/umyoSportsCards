@@ -83,7 +83,7 @@ export class CardsComponent implements AfterViewInit{
   const errorCorrectionLevel = 'L'; 
 
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
-  qrCode.addData('http://lieutenantsacademydfw.org/cards/share-card/' + id);
+  qrCode.addData('https://lieutenantsacademydfw.org/cards/share-card/' + id);
   qrCode.make();
   
   // Create a data URI for the QR code image
@@ -170,7 +170,7 @@ export class CardsComponent implements AfterViewInit{
                   alert("Failed to Verify Paypal Payment")
                   localStorage.removeItem("updatePaypalId");
                   localStorage.removeItem("updatedToken");
-                  window.location.href='http://lieutenantsacademydfw.org/'
+                  window.location.href='https://lieutenantsacademydfw.org/'
               }
             );
           }
@@ -219,7 +219,7 @@ this.paymentForm = this.fb.group({
     
   }
   openShareDialog() {
-    const shareUrl = `http://lieutenantsacademydfw.org/cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://lieutenantsacademydfw.org/cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
 
     // Open a new window for sharing
