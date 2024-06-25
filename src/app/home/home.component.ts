@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
 import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
+import { DropdownService } from './../dropdown.service';
 declare var $: any; 
 
 @Component({
@@ -42,11 +43,18 @@ export class HomeComponent implements AfterViewInit {
   email: string = ''
   password: string = ''
   form: FormGroup;
-  positionType: any = []
-  businessType: any = []
-  sportType: any = []
-  ageType: any = []
-  selectedSport: any
+  
+  
+businessType:any
+location:any
+state:any
+race:any
+gender:any
+
+
+
+  
+  
   form2: FormGroup;
   submitButtonClicked = false;
   form3: FormGroup
@@ -72,6 +80,16 @@ export class HomeComponent implements AfterViewInit {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
     this.paymentService.loadingStatus.subscribe((status: boolean) => {
       this.showLoadingModal = status;
+    });
+
+
+
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
+      this.location = data.location;
+      this.state = data.state;
+      this.gender = data.gender;
+      this.race = data.race;
     });
     
   }
@@ -480,34 +498,9 @@ export class HomeComponent implements AfterViewInit {
 
 
 
-    getPositionType(sport: any) {
-      this.apiService.getPositionType(sport).subscribe(
-        (response) => {
-          this.positionType = response.types;
-        }
-      );
-    }
-    getAgeType() {
-      this.apiService.getAgeType().subscribe(
-        (response) =>
-          this.ageType = response.types
-      )
-    }
-    onSportTypeChange() {
+ 
+ 
   
-      const selectedSport = this.form2.get('selectedSportType')?.value;
-      if (selectedSport) {
-        
-        this.getPositionType(selectedSport);
-      }
-    }
-    onRegisterSportTypeChange() {
-  
-      const selectedSport = this.form3.get('registerSportType')?.value;
-      if (selectedSport) {
-        this.getPositionType(selectedSport);
-      }
-    }
     
     selectPackage(selectedPackage: Package) {
       this.selectedPackage = selectedPackage;
@@ -627,7 +620,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute, private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
@@ -882,12 +875,7 @@ export class HomeComponent implements AfterViewInit {
       ];
   
     }
-    getSportType() {
-      this.apiService.getSportType().subscribe(
-        (response) =>
-          this.sportType = response.types
-      )
-    }
+  
   
     
     
