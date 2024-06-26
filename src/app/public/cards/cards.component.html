@@ -107,6 +107,7 @@
   id="upgrade"
   data-bs-toggle="modal"
   data-bs-target="#upgradePackages"
+  (click)="openPackageModal()"
 >
   <i class="fa-solid fa-arrow-up-short-wide"></i> Upgrade Package
 </button>
@@ -172,7 +173,7 @@
   </div>
 </div>
 
-<div class="modal" id="upgradePackages">
+<!-- <div class="modal" id="upgradePackages">
   <div class="modal-dialog modal-xl modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -355,7 +356,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div
   class="modal"
@@ -371,6 +372,242 @@
           <h3>{{ loadingTitle }}</h3>
           <p style="padding-top: 15px">{{ loadingMessage }}</p>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Select One Package
+        </h5>
+        <button type="button" class="close" (click)="closePackageModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let package of packages; let i = index">
+            <div
+              class="outerCard"
+              style="min-height: 30vh; cursor: pointer"
+              *ngIf="package.price !== '0'"
+            >
+              <div
+                class="card"
+                [ngClass]="{ cardSelect: selectedPackage === package }"
+                (click)="selectPackage(package)"
+              >
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                    $
+                    {{ package.net_price ? package.net_price : package.price }}
+                    <sup
+                      style="
+                        text-decoration: line-through;
+                        font-size: 20px;
+                        color: gray;
+                        padding-left: 15px;
+                      "
+                      *ngIf="package.net_price"
+                      >{{ package.price }}</sup
+                    >
+                  </h5>
+                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
+
+                  <div
+                    class="description-container"
+                    style="max-height: 100px; overflow-y: auto"
+                  >
+                    <p class="card-description">{{ package.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          (click)="closePackageModal()"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Close
+        </button>
+
+        <div
+          *ngIf="selectedPackage?.price != '0'"
+          [ngClass]="{
+            hidden: selectedPackage == null || selectedPackage?.price == '0',
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <!-- <div id="paypal-button-container"></div> -->
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="openStripeModal()"
+          >
+            Stripe
+          </button>
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="payWithPayPal(selectedPackage)"
+          >
+            paypal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- stripe modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Pay Through Stripe
+        </h5>
+        <button type="button" class="close" (click)="closeStripeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                    placeholder="XXX"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  id="pay-button"
+                  (click)="pay()"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeStripeModal()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

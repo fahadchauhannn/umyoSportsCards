@@ -404,36 +404,9 @@
                   formControlName="selectedTalent"
                 >
                   <option selected value="" disabled>Talent Type</option>
-                  <option value="Artist/Musician">Artist/Musician</option>
-                  <option value="Dancer/Dance">Dancer/Dance</option>
-                  <option value="Actor/Actress">Actor/Actress</option>
-                  <option value="Director">Director</option>
-                  <option value="Producer">Producer</option>
-                  <option value="Agents">Agents</option>
-                  <option value="Booking Agency">Booking Agency</option>
-                  <option value="Advertising Agency">Advertising Agency</option>
-                  <option value="Publicist">Publicist</option>
-                  <option value="Record Labels">Record Labels</option>
-                  <option value="Recording Studio">Recording Studio</option>
-                  <option value="Event Halls">Event Halls</option>
-                  <option value="Writers">Writers</option>
-                  <option value="Editors">Editors</option>
-                  <option value="N/A">N/A</option>
-                  <option value="Podcasters">Podcasters</option>
-                  <option value="Disc Jockey">Disc Jockey</option>
-                  <option value="Bloggers">Bloggers</option>
-                  <option value="Models">Models</option>
-                  <option value="Influencers">Influencers</option>
-                  <option value="Youtuber">Youtuber</option>
-                  <option value="Content Creator">Content Creator</option>
-                  <option value="Host">Host</option>
-                  <option value="Motivational Speakers">
-                    Motivational Speakers
+                  <option *ngFor="let item of talentType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Poets">Poets</option>
-                  <option value="Comedians">Comedians</option>
-                  <option value="Theater/Stage">Theater/Stage</option>
-                  <option value="Fashion Stylist">Fashion Stylist</option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -443,93 +416,9 @@
                   formControlName="selectedType"
                 >
                   <option selected value="" disabled>Speciality Type</option>
-                  <option value="Coach">Coach</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Choreographer">Choreographer</option>
-                  <option value="Amateur">Amateur</option>
-                  <option value="Professional">Professional</option>
-                  <option value="Sports ">Sports</option>
-                  <option value="Entertainment">Entertainment</option>
-                  <option value="Blogger ">Blogger</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Impersonator">Impersonator</option>
-                  <option value="Interpreter">Interpreter</option>
-                  <option value="Personality">Personality</option>
-                  <option value="Wildcard">Wildcard</option>
-                  <option value="Character Actor">Character Actor</option>
-                  <option value="Particle Emitter">Particle Emitter</option>
-                  <option value="Voice over">Voice over</option>
-                  <option value="Classical">Classical</option>
-                  <option value="Modern">Modern</option>
-                  <option value="Method">Method</option>
-                  <option value="Animation Genre">Animation Genre</option>
-                  <option value="Comedy Genre">Comedy Genre</option>
-                  <option value="Crime Genre">Crime Genre</option>
-                  <option value="Drama Genre">Drama Genre</option>
-                  <option value="Experimental Genre">Experimental Genre</option>
-                  <option value="Fantasy Genre">Fantasy Genre</option>
-                  <option value="Historical Genre">Historical Genre</option>
-                  <option value="Horror Genre">Horror Genre</option>
-                  <option value="Romance Genre">Romance Genre</option>
-                  <option value="Science Fiction Genre">
-                    Science Fiction Genre
+                  <option *ngFor="let item of specialityType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Thriller Genre">Thriller Genre</option>
-                  <option value="Western Genre">Western Genre</option>
-                  <option value="Action Genre">Action Genre</option>
-                  <option value="Theater">Theater</option>
-                  <option value="Stage">Stage</option>
-                  <option value="Improv">Improv</option>
-                  <option value="TV Show">TV Show</option>
-                  <option value="Sag Aftra">Sag Aftra</option>
-                  <option value="Reality">Reality</option>
-                  <option value="Movie">Movie</option>
-                  <option value="Children">Children</option>
-                  <option value="Teenage">Teenage</option>
-                  <option value="Adult">Adult</option>
-                  <option value="X-rated">X-rated</option>
-                  <option value="Fashion">Fashion</option>
-                  <option value="Twerking">Twerking</option>
-                  <option value="Swimsuit-Lingerie">Swimsuit-Lingerie</option>
-                  <option value="Commercial Model">Commercial Model</option>
-                  <option value="Fitness Model">Fitness Model</option>
-                  <option value="Parts Model">Parts Model</option>
-                  <option value="Fit Model">Fit Model</option>
-                  <option value="Promotional Model">Promotional Model</option>
-                  <option value="Glamour Model">Glamour Model</option>
-                  <option value="Print Model">Print Model</option>
-                  <option value="IG Model">IG Model</option>
-                  <option value="Video Vixen ">Video Vixen</option>
-                  <option value="Hair Model">Hair Model</option>
-                  <option value="Child Model">Child Model</option>
-                  <option value="Petite Model">Petite Model</option>
-                  <option value="BBW Model">BBW Model</option>
-                  <option value="Full Size">Full Size</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Influencer">Influencer</option>
-                  <option value="Catalog Model">Catalog Model</option>
-                  <option value="Mature Model">Mature Model</option>
-                  <option value="Ballet">Ballet</option>
-                  <option value="Tap Dance">Tap Dance</option>
-                  <option value="Hip Hop dance">Hip Hop dance</option>
-                  <option value="Modern Dance">Modern Dance</option>
-                  <option value="Break Dancing">Break Dancing</option>
-                  <option value="Folk Dance">Folk Dance</option>
-                  <option value="Free-Styling">Free-Styling</option>
-                  <option value="Popping and Locking">
-                    Popping and Locking
-                  </option>
-                  <option value="Waving">Waving</option>
-                  <option value="Robotics">Robotics</option>
-                  <option value="Vogueing">Vogueing</option>
-                  <option value="Tutting">Tutting</option>
-                  <option value="Krump">Krump</option>
-                  <option value="House Dance">House Dance</option>
-                  <option value="Bollywood">Bollywood</option>
-                  <option value="Bhangra">Bhangra</option>
-                  <option value="Odissi">Odissi</option>
-                  <option value="Kathak">Kathak</option>
-                  <option value="N/A">N/A</option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -539,44 +428,9 @@
                   formControlName="selectedLocation"
                 >
                   <option selected value="" disabled>Location</option>
-                  <option value="Alternative">Alternative</option>
-                  <option value="Anime">Anime</option>
-                  <option value="Blues">Blues</option>
-                  <option value="Children’s Music">Children’s Music</option>
-                  <option value="Classical">Classical</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Country">Country</option>
-                  <option value="Disney">Disney</option>
-                  <option value="Easy Listening">Easy Listening</option>
-                  <option value="Electronic">Electronic</option>
-                  <option value="Enka">Enka</option>
-                  <option value="Pop">Pop</option>
-                  <option value="N/A">N/A</option>
-                  <option value="Folk Music">Folk Music</option>
-                  <option value="Fitness & Workout">Fitness & Workout</option>
-                  <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
-                  <option value="Industrial">Industrial</option>
-                  <option value="Instructor">Instructor</option>
-                  <option value="Choreographer">Choreographer</option>
-                  <option value="Christian & Gospel">Christian & Gospel</option>
-                  <option value="Instrumental">Instrumental</option>
-                  <option value="Jazz">Jazz</option>
-                  <option value="Karaoke">Karaoke</option>
-                  <option value="Kayokyoku">Kayokyoku</option>
-                  <option value="Latin">Latin</option>
-                  <option value="Metal">Metal</option>
-                  <option value="New Age">New Age</option>
-                  <option value="Opera">Opera</option>
-                  <option value="R&B/Soul">R&B/Soul</option>
-                  <option value="Neo Soul">Neo Soul</option>
-                  <option value="Reggae">Reggae</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Singer/Songwriter">Singer/Songwriter</option>
-                  <option value="Soundtrack">Soundtrack</option>
-                  <option value="Spoken Word">Spoken Word</option>
-                  <option value="Tex-Mex / Tejano">Tex-Mex / Tejano</option>
-                  <option value="Vocal">Vocal</option>
-                  <option value="Mobile">Mobile</option>
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -600,56 +454,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska ">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -660,20 +467,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="Afrikans">Afrikans</option>
-                  <option value="Native American">Native American</option>
-                  <option value="Afro-Americans">Afro-Americans</option>
-                  <option value="Asian">Asian</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="European">European</option>
-                  <option value="Pacific Isalnder">Pacific Isalnder</option>
-                  <option value="German">German</option>
-                  <option value="Middle Easterner">Middle Easterner</option>
-                  <option value="Casun">Casun</option>
-                  <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -684,9 +480,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -1046,9 +842,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1072,40 +868,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Artist/Musician">Artist/Musician</option>
-                        <option value="Dancer/Dance">Dancer/Dance</option>
-                        <option value="Actor/Actress">Actor/Actress</option>
-                        <option value="Director">Director</option>
-                        <option value="Producer">Producer</option>
-                        <option value="Agents">Agents</option>
-                        <option value="Booking Agency">Booking Agency</option>
-                        <option value="Advertising Agency">
-                          Advertising Agency
+                        <option *ngFor="let item of talentType" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Publicist">Publicist</option>
-                        <option value="Record Labels">Record Labels</option>
-                        <option value="Recording Studio">
-                          Recording Studio
-                        </option>
-                        <option value="Event Halls">Event Halls</option>
-                        <option value="Writers">Writers</option>
-                        <option value="Editors">Editors</option>
-                        <option value="N/A">N/A</option>
-                        <option value="Podcasters">Podcasters</option>
-                        <option value="Disc Jockey">Disc Jockey</option>
-                        <option value="Bloggers">Bloggers</option>
-                        <option value="Models">Models</option>
-                        <option value="Influencers">Influencers</option>
-                        <option value="Youtuber">Youtuber</option>
-                        <option value="Content Creator">Content Creator</option>
-                        <option value="Host">Host</option>
-                        <option value="Motivational Speakers">
-                          Motivational Speakers
-                        </option>
-                        <option value="Poets">Poets</option>
-                        <option value="Comedians">Comedians</option>
-                        <option value="Theater/Stage">Theater/Stage</option>
-                        <option value="Fashion Stylist">Fashion Stylist</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1129,105 +894,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Coach">Coach</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Choreographer">Choreographer</option>
-                        <option value="Amateur">Amateur</option>
-                        <option value="Professional">Professional</option>
-                        <option value="Sports ">Sports</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Blogger ">Blogger</option>
-                        <option value="Social Media">Social Media</option>
-                        <option value="Impersonator">Impersonator</option>
-                        <option value="Interpreter">Interpreter</option>
-                        <option value="Personality">Personality</option>
-                        <option value="Wildcard">Wildcard</option>
-                        <option value="Character Actor">Character Actor</option>
-                        <option value="Particle Emitter">
-                          Particle Emitter
+                        <option
+                          *ngFor="let item of specialityType"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
-                        <option value="Voice over">Voice over</option>
-                        <option value="Classical">Classical</option>
-                        <option value="Modern">Modern</option>
-                        <option value="Method">Method</option>
-                        <option value="Animation Genre">Animation Genre</option>
-                        <option value="Comedy Genre">Comedy Genre</option>
-                        <option value="Crime Genre">Crime Genre</option>
-                        <option value="Drama Genre">Drama Genre</option>
-                        <option value="Experimental Genre">
-                          Experimental Genre
-                        </option>
-                        <option value="Fantasy Genre">Fantasy Genre</option>
-                        <option value="Historical Genre">
-                          Historical Genre
-                        </option>
-                        <option value="Horror Genre">Horror Genre</option>
-                        <option value="Romance Genre">Romance Genre</option>
-                        <option value="Science Fiction Genre">
-                          Science Fiction Genre
-                        </option>
-                        <option value="Thriller Genre">Thriller Genre</option>
-                        <option value="Western Genre">Western Genre</option>
-                        <option value="Action Genre">Action Genre</option>
-                        <option value="Theater">Theater</option>
-                        <option value="Stage">Stage</option>
-                        <option value="Improv">Improv</option>
-                        <option value="TV Show">TV Show</option>
-                        <option value="Sag Aftra">Sag Aftra</option>
-                        <option value="Reality">Reality</option>
-                        <option value="Movie">Movie</option>
-                        <option value="Children">Children</option>
-                        <option value="Teenage">Teenage</option>
-                        <option value="Adult">Adult</option>
-                        <option value="X-rated">X-rated</option>
-                        <option value="Fashion">Fashion</option>
-                        <option value="Twerking">Twerking</option>
-                        <option value="Swimsuit-Lingerie">
-                          Swimsuit-Lingerie
-                        </option>
-                        <option value="Commercial Model">
-                          Commercial Model
-                        </option>
-                        <option value="Fitness Model">Fitness Model</option>
-                        <option value="Parts Model">Parts Model</option>
-                        <option value="Fit Model">Fit Model</option>
-                        <option value="Promotional Model">
-                          Promotional Model
-                        </option>
-                        <option value="Glamour Model">Glamour Model</option>
-                        <option value="Print Model">Print Model</option>
-                        <option value="IG Model">IG Model</option>
-                        <option value="Video Vixen ">Video Vixen</option>
-                        <option value="Hair Model">Hair Model</option>
-                        <option value="Child Model">Child Model</option>
-                        <option value="Petite Model">Petite Model</option>
-                        <option value="BBW Model">BBW Model</option>
-                        <option value="Full Size">Full Size</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Influencer">Influencer</option>
-                        <option value="Catalog Model">Catalog Model</option>
-                        <option value="Mature Model">Mature Model</option>
-                        <option value="Ballet">Ballet</option>
-                        <option value="Tap Dance">Tap Dance</option>
-                        <option value="Hip Hop dance">Hip Hop dance</option>
-                        <option value="Modern Dance">Modern Dance</option>
-                        <option value="Break Dancing">Break Dancing</option>
-                        <option value="Folk Dance">Folk Dance</option>
-                        <option value="Free-Styling">Free-Styling</option>
-                        <option value="Popping and Locking">
-                          Popping and Locking
-                        </option>
-                        <option value="Waving">Waving</option>
-                        <option value="Robotics">Robotics</option>
-                        <option value="Vogueing">Vogueing</option>
-                        <option value="Tutting">Tutting</option>
-                        <option value="Krump">Krump</option>
-                        <option value="House Dance">House Dance</option>
-                        <option value="Bollywood">Bollywood</option>
-                        <option value="Bhangra">Bhangra</option>
-                        <option value="Odissi">Odissi</option>
-                        <option value="Kathak">Kathak</option>
-                        <option value="N/A">N/A</option>
                       </select>
                     </div>
 
@@ -1250,24 +922,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="Afrikans">Afrikans</option>
-                        <option value="Native American">Native American</option>
-                        <option value="Afro-Americans">Afro-Americans</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="European">European</option>
-                        <option value="Pacific Isalnder">
-                          Pacific Isalnder
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="German">German</option>
-                        <option value="Middle Easterner">
-                          Middle Easterner
-                        </option>
-                        <option value="Casun">Casun</option>
-                        <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1289,56 +946,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska ">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1362,54 +972,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alternative">Alternative</option>
-                        <option value="Anime">Anime</option>
-                        <option value="Blues">Blues</option>
-                        <option value="Children’s Music">
-                          Children’s Music
+                        <option *ngFor="let item of location" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Classical">Classical</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Country">Country</option>
-                        <option value="Disney">Disney</option>
-                        <option value="Easy Listening">Easy Listening</option>
-                        <option value="Electronic">Electronic</option>
-                        <option value="Enka">Enka</option>
-                        <option value="Pop">Pop</option>
-                        <option value="N/A">N/A</option>
-                        <option value="Folk Music">Folk Music</option>
-                        <option value="Fitness & Workout">
-                          Fitness & Workout
-                        </option>
-                        <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
-                        <option value="Industrial">Industrial</option>
-                        <option value="Instructor">Instructor</option>
-                        <option value="Choreographer">Choreographer</option>
-                        <option value="Christian & Gospel">
-                          Christian & Gospel
-                        </option>
-                        <option value="Instrumental">Instrumental</option>
-                        <option value="Jazz">Jazz</option>
-                        <option value="Karaoke">Karaoke</option>
-                        <option value="Kayokyoku">Kayokyoku</option>
-                        <option value="Latin">Latin</option>
-                        <option value="Metal">Metal</option>
-                        <option value="New Age">New Age</option>
-                        <option value="Opera">Opera</option>
-                        <option value="R&B/Soul">R&B/Soul</option>
-                        <option value="Neo Soul">Neo Soul</option>
-                        <option value="Reggae">Reggae</option>
-                        <option value="Rock">Rock</option>
-                        <option value="Singer/Songwriter">
-                          Singer/Songwriter
-                        </option>
-                        <option value="Soundtrack">Soundtrack</option>
-                        <option value="Spoken Word">Spoken Word</option>
-                        <option value="Tex-Mex / Tejano">
-                          Tex-Mex / Tejano
-                        </option>
-                        <option value="Vocal">Vocal</option>
-                        <option value="Mobile">Mobile</option>
                       </select>
                     </div>
 
