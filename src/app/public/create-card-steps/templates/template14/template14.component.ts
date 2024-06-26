@@ -205,7 +205,17 @@ return ""
     const referralId = this.referal || ''; // Default to empty string if referral ID is not available
     this.router.navigate(['/'], { queryParams: { referralId } });
   }
-  
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
 
   
  

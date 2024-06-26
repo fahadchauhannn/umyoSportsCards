@@ -58,6 +58,23 @@ export class ApiService {
     return this.http.post(baseUrl + `listOfReferals`, {}, { headers });
   }
 
+  incrementCardView(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementTotalViews`, {"card_id":card_id}, { headers });
+  }
+
+  incrementCardShare(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementSend`, {"card_id":card_id}, { headers });
+  }
 
 
 

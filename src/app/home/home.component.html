@@ -375,51 +375,8 @@
                   formControlName="selectedTypeOfOfficer"
                 >
                   <option selected value="" disabled>Type of Officers</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="State Trooper">State Trooper</option>
-                  <option value="Detective">Detective</option>
-                  <option value="Sheriff">Sheriff</option>
-                  <option value="FBI">FBI</option>
-                  <option value="Game Warden">Game Warden</option>
-                  <option value="Officer">Officer</option>
-                  <option value="Secret Service">Secret Service</option>
-                  <option value="Uninformed Officer">Uninformed Officer</option>
-                  <option value="Border Patrol Officers">
-                    Border Patrol Officers
-                  </option>
-                  <option value="Private Investigator">
-                    Private Investigator
-                  </option>
-                  <option value="Air Marshal">Air Marshal</option>
-                  <option value="Resource Officer">Resource Officer</option>
-                  <option value="DEA">DEA</option>
-                  <option value="investigation">investigation</option>
-                  <option value="Special Jurisdiction">
-                    Special Jurisdiction
-                  </option>
-                  <option value="Transit Officer">Transit Officer</option>
-                  <option value="Security Officer">Security Officer</option>
-                  <option value="Military Officer">Military Officer</option>
-                  <option value="Environmental Police">
-                    Environmental Police
-                  </option>
-                  <option value="Lieutenant">Lieutenant</option>
-                  <option value="United States Martial">
-                    United States Martial
-                  </option>
-                  <option value="Park Ranger">Park Ranger</option>
-                  <option value="Sergeant">Sergeant</option>
-                  <option value="Advocate">Advocate</option>
-                  <option value="Assistant Chief">Assistant Chief</option>
-                  <option value="Chief">Chief</option>
-                  <option value="Retired">Retired</option>
-                  <option value="Family">Family</option>
-                  <option value="Friend">Friend</option>
-                  <option value="Businesses Supporting Officers">
-                    Businesses Supporting Officers
-                  </option>
-                  <option value="Officer & Business Owner">
-                    Officer & Business Owner
+                  <option *ngFor="let item of officerType" [value]="item">
+                    {{ item }}
                   </option>
                 </select>
               </div>
@@ -431,38 +388,8 @@
                   formControlName="selectedOfficerRanking"
                 >
                   <option selected value="" disabled>Officers Ranking</option>
-                  <option value="Police Officer III+1">
-                    Police Officer III+1
-                  </option>
-                  <option value="Police Officer III..">
-                    Police Officer III..
-                  </option>
-                  <option value="Sergeant 1">Sergeant 1</option>
-                  <option value="Sergeant II">Sergeant II</option>
-                  <option value="Detective I">Detective I</option>
-                  <option value="Detective II">Detective II</option>
-                  <option value="Detective III">Detective III</option>
-                  <option value="Lieutenant">Lieutenant</option>
-                  <option value="Captain">Captain</option>
-                  <option value="Commander">Commander</option>
-                  <option value="Deputy Chief">Deputy Chief</option>
-                  <option value="Assistant Chief">Assistant Chief</option>
-                  <option value="Chief">Chief</option>
-                  <option value="Warrant Officer">Warrant Officer</option>
-                  <option value="Major General">Major General</option>
-                  <option value="General">General</option>
-                  <option value="Lieutenant General">Lieutenant General</option>
-                  <option value="Second Lieutenant">Second Lieutenant</option>
-                  <option value="Major">Major</option>
-                  <option value="First Lieutenant">First Lieutenant</option>
-                  <option value="Master Sergeant">Master Sergeant</option>
-                  <option value="Colonel">Colonel</option>
-                  <option value="Captain">Captain</option>
-                  <option value="Lieutenant">Lieutenant</option>
-                  <option value="Sergeant Major">Sergeant Major</option>
-                  <option value="Commander">Commander</option>
-                  <option value="Chief Warrant Officer">
-                    Chief Warrant Officer
+                  <option *ngFor="let item of officerRanking" [value]="item">
+                    {{ item }}
                   </option>
                 </select>
               </div>
@@ -474,57 +401,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -535,9 +414,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -548,20 +427,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="Afrikans">Afrikans</option>
-                  <option value="Native American">Native American</option>
-                  <option value="Afro-Americans">Afro-Americans</option>
-                  <option value="Asian">Asian</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="European">European</option>
-                  <option value="Pacific Islander">Pacific Islander</option>
-                  <option value="German">German</option>
-                  <option value="Middle Easterner">Middle Easterner</option>
-                  <option value="Casun">Casun</option>
-                  <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -581,143 +449,9 @@
                   formControlName="selectedBussniesType"
                 >
                   <option selected value="" disabled>Business Type</option>
-                  <option value="Accountant">Accountant</option>
-                  <option value="Actor">Actor</option>
-                  <option value="Actuary">Actuary</option>
-                  <option value="Administrator">Administrator</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agricultural Worker">
-                    Agricultural Worker
+                  <option *ngFor="let item of businessType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Air Traffic Controller">
-                    Air Traffic Controller
-                  </option>
-                  <option value="Ambulance Officer">Ambulance Officer</option>
-                  <option value="Architect">Architect</option>
-                  <option value="Art Director">Art Director</option>
-                  <option value="Artist">Artist</option>
-                  <option value="Athlete">Athlete</option>
-                  <option value="Auditor">Auditor</option>
-                  <option value="Baker">Baker</option>
-                  <option value="Barista">Barista</option>
-                  <option value="Bartender">Bartender</option>
-                  <option value="Board Member">Board Member</option>
-                  <option value="Business Analyst">Business Analyst</option>
-                  <option value="Chef">Chef</option>
-                  <option value="Childcare Worker">Childcare Worker</option>
-                  <option value="Civil Servant">Civil Servant</option>
-                  <option value="Cleaner">Cleaner</option>
-                  <option value="Company Worker">Company Worker</option>
-                  <option value="Computer Scientist">Computer Scientist</option>
-                  <option value="Construction Worker">
-                    Construction Worker
-                  </option>
-                  <option value="Cook">Cook</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Craftsperson">Craftsperson</option>
-                  <option value="Curator">Curator</option>
-                  <option value="Customer Service Representative">
-                    Customer Service Representative
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Designer">Designer</option>
-                  <option value="Doctor">Doctor</option>
-                  <option value="Driver">Driver</option>
-                  <option value="Economist">Economist</option>
-                  <option value="Electrician">Electrician</option>
-                  <option value="Entrepreneur">Entrepreneur</option>
-                  <option value="Equipment Operator">Equipment Operator</option>
-                  <option value="Executive Manager">Executive Manager</option>
-                  <option value="Farmer">Farmer</option>
-                  <option value="Film Maker">Film Maker</option>
-                  <option value="Firefighter">Firefighter</option>
-                  <option value="Fisherman">Fisherman</option>
-                  <option value="Fitness Trainer">Fitness Trainer</option>
-                  <option value="Flight Attendant">Flight Attendant</option>
-                  <option value="Florist">Florist</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Gardener">Gardener</option>
-                  <option value="Hair Stylist">Hair Stylist</option>
-                  <option value="Home Care Aid">Home Care Aid</option>
-                  <option value="Homemaker">Homemaker</option>
-                  <option value="Hospitality Worker">Hospitality Worker</option>
-                  <option value="Housekeeper">Housekeeper</option>
-                  <option value="Information Technology Professional">
-                    Information Technology Professional
-                  </option>
-                  <option value="Investor">Investor</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Laborer">Laborer</option>
-                  <option value="Lawyer">Lawyer</option>
-                  <option value="Librarian">Librarian</option>
-                  <option value="Maintenance Worker">Maintenance Worker</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manufacturing Worker">
-                    Manufacturing Worker
-                  </option>
-                  <option value="Marketing Professional">
-                    Marketing Professional
-                  </option>
-                  <option value="Mathematician">Mathematician</option>
-                  <option value="Mechanic">Mechanic</option>
-                  <option value="Medical Professional">
-                    Medical Professional
-                  </option>
-                  <option value="Merchant">Merchant</option>
-                  <option value="Midwife">Midwife</option>
-                  <option value="Military Personnel">Military Personnel</option>
-                  <option value="Musician">Musician</option>
-                  <option value="Nanny">Nanny</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Office Clerk">Office Clerk</option>
-                  <option value="Office Worker">Office Worker</option>
-                  <option value="Optician">Optician</option>
-                  <option value="Performance Artist">Performance Artist</option>
-                  <option value="Photographer">Photographer</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="Politician">Politician</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Railroad Engineer">Railroad Engineer</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Retail Employee">Retail Employee</option>
-                  <option value="Retiree">Retiree</option>
-                  <option value="Rigger">Rigger</option>
-                  <option value="Sailor">Sailor</option>
-                  <option value="Salesperson">Salesperson</option>
-                  <option value="Scientist">Scientist</option>
-                  <option value="Sea Captain">Sea Captain</option>
-                  <option value="Secretary">Secretary</option>
-                  <option value="Self-Employed">Self-Employed</option>
-                  <option value="Small Business Owner">
-                    Small Business Owner
-                  </option>
-                  <option value="Social Worker">Social Worker</option>
-                  <option value="Software Developer">Software Developer</option>
-                  <option value="Spokesperson">Spokesperson</option>
-                  <option value="Statistician">Statistician</option>
-                  <option value="Stay-At-Home Parent">
-                    Stay-At-Home Parent
-                  </option>
-                  <option value="Student">Student</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surveyor">Surveyor</option>
-                  <option value="Tailor">Tailor</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Technician">Technician</option>
-                  <option value="Tradesperson">Tradesperson</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Translator">Translator</option>
-                  <option value="Truck Driver">Truck Driver</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Unemployed">Unemployed</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Videographer">Videographer</option>
-                  <option value="Waiter">Waiter</option>
-                  <option value="Waste Collector">Waste Collector</option>
-                  <option value="Writer">Writer</option>
-                  <option value="Zoologist">Zoologist</option>
                 </select>
               </div>
 
@@ -737,57 +471,9 @@
                   formControlName="selectedBussniesState"
                 >
                   <option selected value="" disabled>Business State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of businessState" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -1201,59 +887,8 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="State Trooper">State Trooper</option>
-                        <option value="Detective">Detective</option>
-                        <option value="Sheriff">Sheriff</option>
-                        <option value="FBI">FBI</option>
-                        <option value="Game Warden">Game Warden</option>
-                        <option value="Officer">Officer</option>
-                        <option value="Secret Service">Secret Service</option>
-                        <option value="Uninformed Officer">
-                          Uninformed Officer
-                        </option>
-                        <option value="Border Patrol Officers">
-                          Border Patrol Officers
-                        </option>
-                        <option value="Private Investigator">
-                          Private Investigator
-                        </option>
-                        <option value="Air Marshal">Air Marshal</option>
-                        <option value="Resource Officer">
-                          Resource Officer
-                        </option>
-                        <option value="DEA">DEA</option>
-                        <option value="investigation">investigation</option>
-                        <option value="Special Jurisdiction">
-                          Special Jurisdiction
-                        </option>
-                        <option value="Transit Officer">Transit Officer</option>
-                        <option value="Security Officer">
-                          Security Officer
-                        </option>
-                        <option value="Military Officer">
-                          Military Officer
-                        </option>
-                        <option value="Environmental Police">
-                          Environmental Police
-                        </option>
-                        <option value="Lieutenant">Lieutenant</option>
-                        <option value="United States Martial">
-                          United States Martial
-                        </option>
-                        <option value="Park Ranger">Park Ranger</option>
-                        <option value="Sergeant">Sergeant</option>
-                        <option value="Advocate">Advocate</option>
-                        <option value="Assistant Chief">Assistant Chief</option>
-                        <option value="Chief">Chief</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Family">Family</option>
-                        <option value="Friend">Friend</option>
-                        <option value="Businesses Supporting Officers">
-                          Businesses Supporting Officers
-                        </option>
-                        <option value="Officer & Business Owner">
-                          Officer & Business Owner
+                        <option *ngFor="let item of officerType" [value]="item">
+                          {{ item }}
                         </option>
                       </select>
                     </div>
@@ -1283,44 +918,11 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Police Officer III+1">
-                          Police Officer III+1
-                        </option>
-                        <option value="Police Officer III..">
-                          Police Officer III..
-                        </option>
-                        <option value="Sergeant 1">Sergeant 1</option>
-                        <option value="Sergeant II">Sergeant II</option>
-                        <option value="Detective I">Detective I</option>
-                        <option value="Detective II">Detective II</option>
-                        <option value="Detective III">Detective III</option>
-                        <option value="Lieutenant">Lieutenant</option>
-                        <option value="Captain">Captain</option>
-                        <option value="Commander">Commander</option>
-                        <option value="Deputy Chief">Deputy Chief</option>
-                        <option value="Assistant Chief">Assistant Chief</option>
-                        <option value="Chief">Chief</option>
-                        <option value="Warrant Officer">Warrant Officer</option>
-                        <option value="Major General">Major General</option>
-                        <option value="General">General</option>
-                        <option value="Lieutenant General">
-                          Lieutenant General
-                        </option>
-                        <option value="Second Lieutenant">
-                          Second Lieutenant
-                        </option>
-                        <option value="Major">Major</option>
-                        <option value="First Lieutenant">
-                          First Lieutenant
-                        </option>
-                        <option value="Master Sergeant">Master Sergeant</option>
-                        <option value="Colonel">Colonel</option>
-                        <option value="Captain">Captain</option>
-                        <option value="Lieutenant">Lieutenant</option>
-                        <option value="Sergeant Major">Sergeant Major</option>
-                        <option value="Commander">Commander</option>
-                        <option value="Chief Warrant Officer">
-                          Chief Warrant Officer
+                        <option
+                          *ngFor="let item of officerRanking"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
                       </select>
                     </div>
@@ -1345,57 +947,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1421,9 +975,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1449,24 +1003,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="Afrikans">Afrikans</option>
-                        <option value="Native American">Native American</option>
-                        <option value="Afro-Americans">Afro-Americans</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="European">European</option>
-                        <option value="Pacific Islander">
-                          Pacific Islander
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="German">German</option>
-                        <option value="Middle Easterner">
-                          Middle Easterner
-                        </option>
-                        <option value="Casun">Casun</option>
-                        <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
 
@@ -1517,169 +1056,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="Actor">Actor</option>
-                        <option value="Actuary">Actuary</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agricultural Worker">
-                          Agricultural Worker
+                        <option
+                          *ngFor="let item of businessType"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
-                        <option value="Air Traffic Controller">
-                          Air Traffic Controller
-                        </option>
-                        <option value="Ambulance Officer">
-                          Ambulance Officer
-                        </option>
-                        <option value="Architect">Architect</option>
-                        <option value="Art Director">Art Director</option>
-                        <option value="Artist">Artist</option>
-                        <option value="Athlete">Athlete</option>
-                        <option value="Auditor">Auditor</option>
-                        <option value="Baker">Baker</option>
-                        <option value="Barista">Barista</option>
-                        <option value="Bartender">Bartender</option>
-                        <option value="Board Member">Board Member</option>
-                        <option value="Business Analyst">
-                          Business Analyst
-                        </option>
-                        <option value="Chef">Chef</option>
-                        <option value="Childcare Worker">
-                          Childcare Worker
-                        </option>
-                        <option value="Civil Servant">Civil Servant</option>
-                        <option value="Cleaner">Cleaner</option>
-                        <option value="Company Worker">Company Worker</option>
-                        <option value="Computer Scientist">
-                          Computer Scientist
-                        </option>
-                        <option value="Construction Worker">
-                          Construction Worker
-                        </option>
-                        <option value="Cook">Cook</option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Craftsperson">Craftsperson</option>
-                        <option value="Curator">Curator</option>
-                        <option value="Customer Service Representative">
-                          Customer Service Representative
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Economist">Economist</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Equipment Operator">
-                          Equipment Operator
-                        </option>
-                        <option value="Executive Manager">
-                          Executive Manager
-                        </option>
-                        <option value="Farmer">Farmer</option>
-                        <option value="Film Maker">Film Maker</option>
-                        <option value="Firefighter">Firefighter</option>
-                        <option value="Fisherman">Fisherman</option>
-                        <option value="Fitness Trainer">Fitness Trainer</option>
-                        <option value="Flight Attendant">
-                          Flight Attendant
-                        </option>
-                        <option value="Florist">Florist</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Gardener">Gardener</option>
-                        <option value="Hair Stylist">Hair Stylist</option>
-                        <option value="Home Care Aid">Home Care Aid</option>
-                        <option value="Homemaker">Homemaker</option>
-                        <option value="Hospitality Worker">
-                          Hospitality Worker
-                        </option>
-                        <option value="Housekeeper">Housekeeper</option>
-                        <option value="Information Technology Professional">
-                          Information Technology Professional
-                        </option>
-                        <option value="Investor">Investor</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Laborer">Laborer</option>
-                        <option value="Lawyer">Lawyer</option>
-                        <option value="Librarian">Librarian</option>
-                        <option value="Maintenance Worker">
-                          Maintenance Worker
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Manufacturing Worker">
-                          Manufacturing Worker
-                        </option>
-                        <option value="Marketing Professional">
-                          Marketing Professional
-                        </option>
-                        <option value="Mathematician">Mathematician</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Medical Professional">
-                          Medical Professional
-                        </option>
-                        <option value="Merchant">Merchant</option>
-                        <option value="Midwife">Midwife</option>
-                        <option value="Military Personnel">
-                          Military Personnel
-                        </option>
-                        <option value="Musician">Musician</option>
-                        <option value="Nanny">Nanny</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Office Clerk">Office Clerk</option>
-                        <option value="Office Worker">Office Worker</option>
-                        <option value="Optician">Optician</option>
-                        <option value="Performance Artist">
-                          Performance Artist
-                        </option>
-                        <option value="Photographer">Photographer</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="Politician">Politician</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Railroad Engineer">
-                          Railroad Engineer
-                        </option>
-                        <option value="Researcher">Researcher</option>
-                        <option value="Retail Employee">Retail Employee</option>
-                        <option value="Retiree">Retiree</option>
-                        <option value="Rigger">Rigger</option>
-                        <option value="Sailor">Sailor</option>
-                        <option value="Salesperson">Salesperson</option>
-                        <option value="Scientist">Scientist</option>
-                        <option value="Sea Captain">Sea Captain</option>
-                        <option value="Secretary">Secretary</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Small Business Owner">
-                          Small Business Owner
-                        </option>
-                        <option value="Social Worker">Social Worker</option>
-                        <option value="Software Developer">
-                          Software Developer
-                        </option>
-                        <option value="Spokesperson">Spokesperson</option>
-                        <option value="Statistician">Statistician</option>
-                        <option value="Stay-At-Home Parent">
-                          Stay-At-Home Parent
-                        </option>
-                        <option value="Student">Student</option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surveyor">Surveyor</option>
-                        <option value="Tailor">Tailor</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Tradesperson">Tradesperson</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Translator">Translator</option>
-                        <option value="Truck Driver">Truck Driver</option>
-                        <option value="Tutor">Tutor</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Videographer">Videographer</option>
-                        <option value="Waiter">Waiter</option>
-                        <option value="Waste Collector">Waste Collector</option>
-                        <option value="Writer">Writer</option>
-                        <option value="Zoologist">Zoologist</option>
                       </select>
                     </div>
 
@@ -1732,57 +1114,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
+                        <option
+                          *ngFor="let item of businessState"
+                          [value]="item"
+                        >
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 

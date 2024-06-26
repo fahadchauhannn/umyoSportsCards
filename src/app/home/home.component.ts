@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
 import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
+import { DropdownService } from './../dropdown.service';
 declare var $: any; 
 
 @Component({
@@ -36,6 +37,20 @@ export class HomeComponent implements AfterViewInit {
   slideConfig1: any;
   slideConfig2: any;
   slideConfig3: any;
+
+
+
+
+officerType:any
+officerRanking:any
+businessState:any
+businessType:any
+state:any
+race:any
+gender:any
+
+
+
   slideConfig4: any;
   slideConfig5: any;
   slideConfig6: any;
@@ -43,7 +58,7 @@ export class HomeComponent implements AfterViewInit {
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -61,6 +76,18 @@ export class HomeComponent implements AfterViewInit {
   paypalMessage:any;
   
   ngOnInit(): void {
+
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
+      this.businessState = data.businessState;
+      this.officerRanking = data.officerRanking;
+      this.officerType = data.officerType;
+      this.state = data.state;
+      this.gender = data.gender;
+      this.race = data.race;
+    });
+
+
     this.route.queryParams.subscribe(params => {
       const referralId = params['referralId'] || "";
        
@@ -546,13 +573,7 @@ export class HomeComponent implements AfterViewInit {
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
-    
+   
   
   
   
@@ -637,7 +658,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,private dropdownService: DropdownService, 
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');

@@ -159,7 +159,17 @@ return ""
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
     return youtubeRegex.test(url);
   }
-
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
 
   sanitizeYouTubeUrl(url: string): SafeResourceUrl {
     let formatedUrl=this.convertToEmbeddedFormat(url)
