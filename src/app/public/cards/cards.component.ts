@@ -39,6 +39,10 @@ export class CardsComponent implements AfterViewInit{
   paymentForm:FormGroup
   stripe_customer_id:any=null
   stripe_subscription_id:any=null
+  paypalTitleMessage:any;
+  paypalMessage:any;
+  showStripeModal:boolean = false;
+  showPackageModal:boolean = false;
   shareCardId:any
   updatedPlanId:any
   userData:any={}
@@ -85,7 +89,7 @@ export class CardsComponent implements AfterViewInit{
   const qrCode = QRCode(typeNumber, errorCorrectionLevel);
   qrCode.addData('https://umyolgbtq.site/cards/share-card/' + id);
   qrCode.make();
-
+  
   // Create a data URI for the QR code image
   const dataURL = qrCode.createDataURL(4, 10);
 
@@ -284,6 +288,11 @@ this.paymentForm = this.fb.group({
     confirmation=confirm("Are You Sure you want to cancel your old Subscription and update? ")
 
     if(confirmation){
+
+      this.closePackageModal()
+   this.loadingTitle="Redirecting to PayPal"
+   this.loadingMessage="You are now being redirected to the PayPal website to complete your transaction securely. Please wait a moment while we process your request. If you encounter any issues or have any questions, feel free to contact us for assistance."
+   this.showLoadingModal=true
       this.paymentService.upgradePaypal(this.userData,this.id,selectedPackage)
     }
 
@@ -309,6 +318,11 @@ this.DotsModal=true
     this.DotsModal=false
   }
 ngAfterViewInit(): void {
+
+  this.paymentService.loadingStatus.subscribe((status: boolean) => {
+    this.showLoadingModal = status;
+  });
+
   
 }
 
@@ -329,9 +343,39 @@ public cardOptions: StripeCardElementOptions = {
 
 
 
+
+openPackageModal() {
+  
+        this.showPackageModal = true;
+  
+}
+openStripeModal() {
+  this.showStripeModal = true;
+  this.closePackageModal()
+}
+
+closeStripeModal() {
+  this.showStripeModal = false;
+}
+closePackageModal() {
+  this.showPackageModal = false;
+}
+
+
+
 pay(){
 
-  const expiry = this.paymentForm.get("expiryDate").value;
+  if (this.paymentForm.valid) {
+    
+    this.closePackageModal();
+    this.closeStripeModal();
+    this.loadingTitle = "Please Wait";
+    this.loadingMessage = "Your Stripe payment is being processed. Your patience is appreciated.";
+
+    this.showLoadingModal=true
+
+
+    const expiry = this.paymentForm.get("expiryDate").value;
     const expiryMonth = expiry.split("/")[0];
     const expiryYear = expiry.split("/")[1];
 const payload={
@@ -342,20 +386,23 @@ let interval:any, interval_count:any;
 
 const expireInValue = this.selectedPackage.expire_in.toLowerCase(); 
 
+
 if (expireInValue.includes("year")) {
-  interval = "YEAR";
+  interval = "year";
   interval_count = 1;
 } else if (expireInValue.includes("6 month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 6;
 } else if (expireInValue.includes("month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 } else {
   
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 }
+
+
   this.apiService.cancelStripeSubscription(payload).subscribe(
     (response)=>{
       if(response.status=='Success'){
@@ -414,33 +461,83 @@ if (expireInValue.includes("year")) {
 
                               this.userData=response.User
                               alert("Package Upgraded Successfully !")
+                              this.showLoadingModal=false
                             }
-                            else{alert(response.message)}
-                        },error=>{error.error.message}
+                            else{alert(response.message)
+                              this.showLoadingModal=false
+                            }
+                        },error=>{alert(error.error.message)
+                          this.showLoadingModal=false
+                        }
                       )
                     }
                     else{
                       alert(response.status + response.message)
+                      this.showLoadingModal=false
                     }
                     
-                  },error=>{alert(error.error.message)}
+                  },error=>{alert(error.error.message)
+                    this.showLoadingModal=false
+                  }
                 )
-                
-                
-    
-    
                 
               } else {
                 alert(response.message)
+                this.showLoadingModal=false
               }
-            },error=>{alert(error.error.message)})
+            },error=>{alert(error.error.message)
+              this.showLoadingModal=false
+            }
+          )
           } else {
             alert("failesd"+response.message)
+            this.showLoadingModal=false
           }
-        }, error => alert(error.error.message))
+        }, error =>{
+          alert(error.error.message)
+          this.showLoadingModal=false
+        } )
       }else{alert("failed to cancel existing subscription")}
-    },error=>alert(error.error.message)
+    },error=>{
+      alert(error.error.message)
+      this.showLoadingModal=false
+
+    }
   )
+
+
+
+
+
+
+
+  } else {
+    // Display alert for each validation error
+    if (this.paymentForm.get('cardNumber').hasError('required')) {
+      alert('Please enter card number.');
+    }
+    if (this.paymentForm.get('cardNumber').hasError('invalidCardNumber')) {
+      alert('Invalid card number. Please enter a 16-digit number without dashes - XXXXXXXXXXXXXXXX');
+    }
+    if (this.paymentForm.get('expiryDate').hasError('required')) {
+      alert('Please enter expiry date.');
+    }
+    if (this.paymentForm.get('expiryDate').hasError('invalidExpiryDate')) {
+      alert('Invalid expiry date. Please enter in MM/YY format. for example: 12/28');
+    }
+    if (this.paymentForm.get('expiryDate').hasError('expiredExpiryDate')) {
+      alert('Card has already expired.');
+    }
+    if (this.paymentForm.get('cvc').hasError('required')) {
+      alert('Please enter CVC.');
+    }
+    if (this.paymentForm.get('cvc').hasError('minlength') || this.paymentForm.get('cvc').hasError('maxlength')) {
+      alert('Invalid CVC. Please enter a 3-digit number.');
+    }
+  }
+
+
+
 
 
 }
