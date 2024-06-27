@@ -84,11 +84,11 @@
           </div>
           <div class="rows">
             <div class="info">
-              <h3>Sends</h3>
+              <h3>Total Views</h3>
               <span>{{ card.sends }}</span>
             </div>
             <div class="info">
-              <h3>Total Views</h3>
+              <h3>Sends</h3>
               <span>{{ card.totalViews }}</span>
             </div>
           </div>
@@ -457,14 +457,15 @@
           }"
         >
           <!-- <div id="paypal-button-container"></div> -->
-          <button
+          <!-- hide stripe -->
+          <!-- <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
             class="btn btn-info"
             (click)="openStripeModal()"
           >
             Stripe
-          </button>
+          </button> -->
           <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
