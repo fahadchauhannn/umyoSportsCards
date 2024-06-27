@@ -359,107 +359,8 @@
                   formControlName="selectedMedical"
                 >
                   <option selected value="" disabled>MEDICAL TYPE</option>
-                  <option value="Medical Assistant">Medical Assistant</option>
-                  <option value="Pharmacy Technician">
-                    Pharmacy Technician
-                  </option>
-                  <option value="Certified Nursing Technician">
-                    Certified Nursing Technician
-                  </option>
-                  <option value="Phlebotomist">Phlebotomist</option>
-                  <option value="Laboratory Technician">
-                    Laboratory Technician
-                  </option>
-                  <option value="Emergency Medical Technician">
-                    Emergency Medical Technician
-                  </option>
-                  <option value="Paramedic">Paramedic</option>
-                  <option value="Emergency Dispatch">Emergency Dispatch</option>
-                  <option value="Registered Nurse">Registered Nurse</option>
-                  <option value="Dialysis Technician">
-                    Dialysis Technician
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Dental Assistant">Dental Assistant</option>
-                  <option value="Dental Hygienist">Dental Hygienist</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Veterinary Technician">
-                    Veterinary Technician
-                  </option>
-                  <option value="Radiography Technician">
-                    Radiography Technician
-                  </option>
-                  <option value="Respiratory Technician">
-                    Respiratory Technician
-                  </option>
-                  <option value="Athletic Trainer">Athletic Trainer</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surgical Tech">Surgical Tech</option>
-                  <option value="Medical Records Specialist">
-                    Medical Records Specialist
-                  </option>
-                  <option value="Physical Therapist">Physical Therapist</option>
-                  <option value="Physical Therapy Assistant">
-                    Physical Therapy Assistant
-                  </option>
-                  <option value="Occupational Therapist">
-                    Occupational Therapist
-                  </option>
-                  <option value="Speech Therapist">Speech Therapist</option>
-                  <option value="Child Life Therapist">
-                    Child Life Therapist
-                  </option>
-                  <option value="Family Physician">Family Physician</option>
-                  <option value="Housekeeping">Housekeeping</option>
-                  <option value="Perfusionist">Perfusionist</option>
-                  <option value="Audiologist">Audiologist</option>
-                  <option value="Physician Assistant">
-                    Physician Assistant
-                  </option>
-                  <option value="Nurse Practitioner">Nurse Practitioner</option>
-                  <option value="Nurse Midwife">Nurse Midwife</option>
-                  <option value="Anesthesiologist">Anesthesiologist</option>
-                  <option value="Health Education Specialist">
-                    Health Education Specialist
-                  </option>
-                  <option value="Public Health Official">
-                    Public Health Official
-                  </option>
-                  <option value="Cardiac Rehabilitation Specialist">
-                    Cardiac Rehabilitation Specialist
-                  </option>
-                  <option value="EKG Technician">EKG Technician</option>
-                  <option value="Dietician">Dietician</option>
-                  <option value="Licensed Clinical Social Worker">
-                    Licensed Clinical Social Worker
-                  </option>
-                  <option value="Case Manager">Case Manager</option>
-                  <option value="Hospital CEO">Hospital CEO</option>
-                  <option value="Healthcare Research">
-                    Healthcare Research
-                  </option>
-                  <option value="College Professor">College Professor</option>
-                  <option value="Pharmacist">Pharmacist</option>
-                  <option value="Diagnostic Medical Sonographer">
-                    Diagnostic Medical Sonographer
-                  </option>
-                  <option value="Psychologist">Psychologist</option>
-                  <option value="Psychiatrist">Psychiatrist</option>
-                  <option value="Massage Therapist">Massage Therapist</option>
-                  <option value="Dispensing Optician">
-                    Dispensing Optician
-                  </option>
-                  <option value="Chiropractor">Chiropractor</option>
-                  <option value="Optometrist">Optometrist</option>
-                  <option value="Genetic Counselor">Genetic Counselor</option>
-                  <option value="Medical Transcriptionist">
-                    Medical Transcriptionist
-                  </option>
-                  <option value="Podiatrist">Podiatrist</option>
-                  <option value="Prothetistist">Prothetistist</option>
-                  <option value="OSHA Technician">OSHA Technician</option>
-                  <option value="Recreational Therapist">
-                    Recreational Therapist
+                  <option *ngFor="let item of medicalType" [value]="item">
+                    {{ item }}
                   </option>
                 </select>
               </div>
@@ -471,54 +372,9 @@
                   formControlName="selectedLocation"
                 >
                   <option selected value="" disabled>Location</option>
-                  <option value="Ambulatory surgical center">
-                    Ambulatory surgical center
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Birth Centers">Birth Centers</option>
-                  <option value="Blood banks">Blood banks</option>
-                  <option value="Clinics and Medical Offices">
-                    Clinics and Medical Offices
-                  </option>
-                  <option value="Diabetes Education Centers">
-                    Diabetes Education Centers
-                  </option>
-                  <option value="Dialysis Centers">Dialysis Centers</option>
-                  <option value="Hospice Homes">Hospice Homes</option>
-                  <option value="Hospitals">Hospitals</option>
-                  <option value="Imagining and Radiology Center">
-                    Imagining and Radiology Center
-                  </option>
-                  <option value="Mental Health and Addiction Treatment">
-                    Mental Health and Addiction Treatment
-                  </option>
-                  <option value="Nursing Homes">Nursing Homes</option>
-                  <option value="Orthopedic Rehabilitation Center">
-                    Orthopedic Rehabilitation Center
-                  </option>
-                  <option value="Urgent Care">Urgent Care</option>
-                  <option value="Telehealth">Telehealth</option>
-                  <option value="Acute Care Hospitals">
-                    Acute Care Hospitals
-                  </option>
-                  <option value="Long Term Care Facilities">
-                    Long Term Care Facilities
-                  </option>
-                  <option value="Outpatient">Outpatient</option>
-                  <option value="Chemotherapy">Chemotherapy</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="College">College</option>
-                  <option value="Ethnic Specialty">Ethnic Specialty</option>
-                  <option value="Office">Office</option>
-                  <option value="Franchise">Franchise</option>
-                  <option value="Agency">Agency</option>
-                  <option value="CityWide">CityWide</option>
-                  <option value="State Wide">State Wide</option>
-                  <option value="Independent">Independent</option>
-                  <option value="Local">Local</option>
-                  <option value="Private">Private</option>
-                  <option value="Traveling">Traveling</option>
-                  <option value="School">School</option>
-                  <option value="Firm">Firm</option>
                 </select>
               </div>
 
@@ -538,57 +394,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -605,20 +413,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="Afrikans">Afrikans</option>
-                  <option value="Native American">Native American</option>
-                  <option value="Afro-Americans">Afro-Americans</option>
-                  <option value="Asian">Asian</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="European">European</option>
-                  <option value="Pacific Islander">Pacific Islander</option>
-                  <option value="German">German</option>
-                  <option value="Middle Easterner">Middle Easterner</option>
-                  <option value="Casun">Casun</option>
-                  <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -629,9 +426,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -993,135 +790,8 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Medical Assistant">
-                          Medical Assistant
-                        </option>
-                        <option value="Pharmacy Technician">
-                          Pharmacy Technician
-                        </option>
-                        <option value="Certified Nursing Technician">
-                          Certified Nursing Technician
-                        </option>
-                        <option value="Phlebotomist">Phlebotomist</option>
-                        <option value="Laboratory Technician">
-                          Laboratory Technician
-                        </option>
-                        <option value="Emergency Medical Technician">
-                          Emergency Medical Technician
-                        </option>
-                        <option value="Paramedic">Paramedic</option>
-                        <option value="Emergency Dispatch">
-                          Emergency Dispatch
-                        </option>
-                        <option value="Registered Nurse">
-                          Registered Nurse
-                        </option>
-                        <option value="Dialysis Technician">
-                          Dialysis Technician
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Dental Assistant">
-                          Dental Assistant
-                        </option>
-                        <option value="Dental Hygienist">
-                          Dental Hygienist
-                        </option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Veterinary Technician">
-                          Veterinary Technician
-                        </option>
-                        <option value="Radiography Technician">
-                          Radiography Technician
-                        </option>
-                        <option value="Respiratory Technician">
-                          Respiratory Technician
-                        </option>
-                        <option value="Athletic Trainer">
-                          Athletic Trainer
-                        </option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surgical Tech">Surgical Tech</option>
-                        <option value="Medical Records Specialist">
-                          Medical Records Specialist
-                        </option>
-                        <option value="Physical Therapist">
-                          Physical Therapist
-                        </option>
-                        <option value="Physical Therapy Assistant">
-                          Physical Therapy Assistant
-                        </option>
-                        <option value="Occupational Therapist">
-                          Occupational Therapist
-                        </option>
-                        <option value="Speech Therapist">
-                          Speech Therapist
-                        </option>
-                        <option value="Child Life Therapist">
-                          Child Life Therapist
-                        </option>
-                        <option value="Family Physician">
-                          Family Physician
-                        </option>
-                        <option value="Housekeeping">Housekeeping</option>
-                        <option value="Perfusionist">Perfusionist</option>
-                        <option value="Audiologist">Audiologist</option>
-                        <option value="Physician Assistant">
-                          Physician Assistant
-                        </option>
-                        <option value="Nurse Practitioner">
-                          Nurse Practitioner
-                        </option>
-                        <option value="Nurse Midwife">Nurse Midwife</option>
-                        <option value="Anesthesiologist">
-                          Anesthesiologist
-                        </option>
-                        <option value="Health Education Specialist">
-                          Health Education Specialist
-                        </option>
-                        <option value="Public Health Official">
-                          Public Health Official
-                        </option>
-                        <option value="Cardiac Rehabilitation Specialist">
-                          Cardiac Rehabilitation Specialist
-                        </option>
-                        <option value="EKG Technician">EKG Technician</option>
-                        <option value="Dietician">Dietician</option>
-                        <option value="Licensed Clinical Social Worker">
-                          Licensed Clinical Social Worker
-                        </option>
-                        <option value="Case Manager">Case Manager</option>
-                        <option value="Hospital CEO">Hospital CEO</option>
-                        <option value="Healthcare Research">
-                          Healthcare Research
-                        </option>
-                        <option value="College Professor">
-                          College Professor
-                        </option>
-                        <option value="Pharmacist">Pharmacist</option>
-                        <option value="Diagnostic Medical Sonographer">
-                          Diagnostic Medical Sonographer
-                        </option>
-                        <option value="Psychologist">Psychologist</option>
-                        <option value="Psychiatrist">Psychiatrist</option>
-                        <option value="Massage Therapist">
-                          Massage Therapist
-                        </option>
-                        <option value="Dispensing Optician">
-                          Dispensing Optician
-                        </option>
-                        <option value="Chiropractor">Chiropractor</option>
-                        <option value="Optometrist">Optometrist</option>
-                        <option value="Genetic Counselor">
-                          Genetic Counselor
-                        </option>
-                        <option value="Medical Transcriptionist">
-                          Medical Transcriptionist
-                        </option>
-                        <option value="Podiatrist">Podiatrist</option>
-                        <option value="Prothetistist">Prothetistist</option>
-                        <option value="OSHA Technician">OSHA Technician</option>
-                        <option value="Recreational Therapist">
-                          Recreational Therapist
+                        <option *ngFor="let item of medicalType" [value]="item">
+                          {{ item }}
                         </option>
                       </select>
                     </div>
@@ -1169,24 +839,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="Afrikans">Afrikans</option>
-                        <option value="Native American">Native American</option>
-                        <option value="Afro-Americans">Afro-Americans</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="European">European</option>
-                        <option value="Pacific Islander">
-                          Pacific Islander
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="German">German</option>
-                        <option value="Middle Easterner">
-                          Middle Easterner
-                        </option>
-                        <option value="Casun">Casun</option>
-                        <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
 
@@ -1210,57 +865,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1283,9 +890,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1311,58 +918,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Ambulatory surgical center">
-                          Ambulatory surgical center
+                        <option *ngFor="let item of location" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Birth Centers">Birth Centers</option>
-                        <option value="Blood banks">Blood banks</option>
-                        <option value="Clinics and Medical Offices">
-                          Clinics and Medical Offices
-                        </option>
-                        <option value="Diabetes Education Centers">
-                          Diabetes Education Centers
-                        </option>
-                        <option value="Dialysis Centers">
-                          Dialysis Centers
-                        </option>
-                        <option value="Hospice Homes">Hospice Homes</option>
-                        <option value="Hospitals">Hospitals</option>
-                        <option value="Imagining and Radiology Center">
-                          Imagining and Radiology Center
-                        </option>
-                        <option value="Mental Health and Addiction Treatment">
-                          Mental Health and Addiction Treatment
-                        </option>
-                        <option value="Nursing Homes">Nursing Homes</option>
-                        <option value="Orthopedic Rehabilitation Center">
-                          Orthopedic Rehabilitation Center
-                        </option>
-                        <option value="Urgent Care">Urgent Care</option>
-                        <option value="Telehealth">Telehealth</option>
-                        <option value="Acute Care Hospitals">
-                          Acute Care Hospitals
-                        </option>
-                        <option value="Long Term Care Facilities">
-                          Long Term Care Facilities
-                        </option>
-                        <option value="Outpatient">Outpatient</option>
-                        <option value="Chemotherapy">Chemotherapy</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="College">College</option>
-                        <option value="Ethnic Specialty">
-                          Ethnic Specialty
-                        </option>
-                        <option value="Office">Office</option>
-                        <option value="Franchise">Franchise</option>
-                        <option value="Agency">Agency</option>
-                        <option value="CityWide">CityWide</option>
-                        <option value="State Wide">State Wide</option>
-                        <option value="Independent">Independent</option>
-                        <option value="Local">Local</option>
-                        <option value="Private">Private</option>
-                        <option value="Traveling">Traveling</option>
-                        <option value="School">School</option>
-                        <option value="Firm">Firm</option>
                       </select>
                     </div>
 
@@ -1548,14 +1106,15 @@
           }"
         >
           <!-- <div id="paypal-button-container"></div> -->
-          <button
+          <!-- hide stripe -->
+          <!-- <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
             class="btn btn-info"
             (click)="openStripeModal()"
           >
             Stripe
-          </button>
+          </button> -->
           <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"

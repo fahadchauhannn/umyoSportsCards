@@ -406,17 +406,17 @@ localStorage.setItem('updatePaypalId',response.plan_id)
       },
       (error) => {
         console.error("Test: Failed to create billing plan", error);
+          alert("Failed To upgrade your Package.")
+        this.loadingStatus.emit(false);
        
-
 
 
       }
     )
    
 
-    
-
   }
+
   
 
 

@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
 import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
+import { DropdownService } from './../dropdown.service';
 declare var $: any; 
 
 @Component({
@@ -59,8 +60,26 @@ export class HomeComponent implements AfterViewInit {
   mode:any
   paypalTitleMessage:any;
   paypalMessage:any;
+
+  medicalType:any
+location:any
+state:any
+race:any
+gender:any
+
   
   ngOnInit(): void {
+
+
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.medicalType = data.medicalType;
+      this.location = data.location;
+      this.state = data.state;
+      this.gender = data.gender;
+      this.race = data.race;
+    });
+
+
     this.route.queryParams.subscribe(params => {
       const referralId = params['referralId'] || "";
        
@@ -624,7 +643,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute, private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');

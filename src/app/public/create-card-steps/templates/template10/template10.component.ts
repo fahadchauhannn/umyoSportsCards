@@ -149,7 +149,17 @@ return ""
     }
   }
  
-
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
    // Dailymotion functions
    convertDailymotionToEmbeddedFormat(url: string): string {
     const videoId = this.extractDailymotionVideoId(url);

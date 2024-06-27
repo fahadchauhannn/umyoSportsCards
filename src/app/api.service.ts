@@ -59,6 +59,24 @@ export class ApiService {
   }
 
 
+  incrementCardView(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementTotalViews`, {"card_id":card_id}, { headers });
+  }
+
+  incrementCardShare(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementSend`, {"card_id":card_id}, { headers });
+  }
+
 
 
   getChatRecord(bearerToken: string): Observable<any> {
