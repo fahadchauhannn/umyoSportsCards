@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DropdownService } from './../dropdown.service';
 import { PaymentService } from '../payment.service'; 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -43,7 +44,7 @@ export class HomeComponent implements AfterViewInit {
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -60,7 +61,32 @@ export class HomeComponent implements AfterViewInit {
   paypalTitleMessage:any;
   paypalMessage:any;
   
+  division:any
+  position:any
+  team:any
+  year:any
+  award:any
+  businessType:any
+  state:any
+  race:any
+  
+  
+
   ngOnInit(): void {
+
+    
+
+  this.dropdownService.getDropdownOptions().subscribe(data => {
+    this.division=data.division
+  this.position=data.position
+  this.team=data.team
+  this.year=data.year
+  this.award=data.award
+  this.businessType=data.businessType
+  this.state=data.state
+  this.race=data.race
+  });
+
     this.route.queryParams.subscribe(params => {
       const referralId = params['referralId'] || "";
        
@@ -535,12 +561,6 @@ export class HomeComponent implements AfterViewInit {
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
     
   
   
@@ -626,7 +646,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
