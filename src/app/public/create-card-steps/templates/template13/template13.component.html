@@ -182,6 +182,17 @@
           title="Umyotube player"
           frameborder="0"
         ></iframe>
+        <iframe
+          *ngIf="
+            umyoVideo.umyotubeLink &&
+            umyoVideo.umyotubeLink.startsWith('https://umyovideo.com/')
+          "
+          style="width: 100%; padding: 10px"
+          height="200"
+          [src]="sanitizeumyovideo(umyoVideo.umyotubeLink)"
+          title="Umyotube player"
+          frameborder="0"
+        ></iframe>
       </div>
     </div>
   </div>

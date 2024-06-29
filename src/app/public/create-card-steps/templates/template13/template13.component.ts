@@ -205,7 +205,17 @@ return ""
     this.router.navigate(['/'], { queryParams: { referralId } });
   }
   
-
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
   
  
   private loadImage(): void {

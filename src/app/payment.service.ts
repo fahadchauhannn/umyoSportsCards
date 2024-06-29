@@ -103,7 +103,7 @@ if (expireInValue.includes("year")) {
               
               state: form3.get('registerStateType')?.value,
               city: form3.get('registerCityType')?.value,
-              location: form3.get('registerLocationType')?.value,
+              location: form3.get('registerLocation')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
               truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -123,6 +123,10 @@ if (expireInValue.includes("year")) {
         
         
               reffered_from: form3.get('registerReferralCode').value,
+
+
+              
+              
 
               
             });
@@ -196,7 +200,7 @@ if (expireInValue.includes("year")) {
       
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
-      location: form3.get('registerLocationType')?.value,
+      location: form3.get('registerLocation')?.value,
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
       truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -312,7 +316,7 @@ if (expireInValue.includes("year")) {
           
           state: form3.get('registerStateType')?.value,
           reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocationType')?.value,
+          location: form3.get('registerLocation')?.value,
           city: form3.get('registerCityType')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
@@ -403,17 +407,17 @@ localStorage.setItem('updatePaypalId',response.plan_id)
       },
       (error) => {
         console.error("Test: Failed to create billing plan", error);
+          alert("Failed To upgrade your Package.")
+        this.loadingStatus.emit(false);
        
-
 
 
       }
     )
    
 
-    
-
   }
+
   
 
 
@@ -471,6 +475,3 @@ update_paypal_keys(subscription_id:any,user_id:any){
 
 }
 }
-
-
-

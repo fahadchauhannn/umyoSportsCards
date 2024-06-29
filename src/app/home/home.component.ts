@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { PaymentService } from '../payment.service'; 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { DropdownService } from './../dropdown.service';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
 import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
@@ -38,12 +39,27 @@ export class HomeComponent implements AfterViewInit {
   slideConfig3: any;
   slideConfig4: any;
   slideConfig5: any;
+  
+
+
+  division:any
+position:any
+team:any
+year:any
+race:any
+trophy:any
+honor:any
+businessType:any
+state:any
+
+
+
   slideConfig6: any;
   email: string = ''
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -61,6 +77,21 @@ export class HomeComponent implements AfterViewInit {
   paypalMessage:any;
   
   ngOnInit(): void {
+
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
+      this.division = data.division;
+      this.state = data.state;
+      this.year = data.year;
+      this.race = data.race;
+      this.trophy=data.trophy
+      this.honor=data.honor
+      this.position=data.position
+      this.team=data.team
+      
+    });
+
+
     this.route.queryParams.subscribe(params => {
       const referralId = params['referralId'] || "";
        
@@ -535,12 +566,7 @@ export class HomeComponent implements AfterViewInit {
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
+ 
     
   
   
@@ -626,7 +652,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute, private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
