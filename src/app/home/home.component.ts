@@ -8,6 +8,7 @@ import { PaymentService } from '../payment.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
+import { DropdownService } from './../dropdown.service';
 import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
 declare var $: any; 
@@ -20,7 +21,7 @@ declare var $: any;
 export class HomeComponent implements AfterViewInit {
   
 
-  showLoginTab: boolean;
+  showLoginTab: boolean=true;
   showAgeModal: boolean=false;
   showRegisterTab: boolean;
   isMoreTextVisible:boolean = false;
@@ -33,6 +34,19 @@ export class HomeComponent implements AfterViewInit {
   packages: any[] = [];
   slides1: any[] = [];
   slides2: any[] = [];
+
+
+
+gender:any
+race:any
+year:any
+study:any
+degree:any
+college:any
+state:any
+businessType:any
+
+
   slideConfig1: any;
   slideConfig2: any;
   slideConfig3: any;
@@ -43,7 +57,7 @@ export class HomeComponent implements AfterViewInit {
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -57,22 +71,37 @@ export class HomeComponent implements AfterViewInit {
   elements: any; 
   cardElement: any; 
   mode:any
+  paypalTitleMessage:any;
+  paypalMessage:any;
   
   ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
       
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
+      this.state = data.state;
+      this.gender = data.gender;
+      this.race = data.race;
+this.degree=data.degree;
+this.college=data.college
+this.year=data.year
+this.study=data.study
+    
+
+
     });
+
+    this.route.queryParams.subscribe(params => {
+      const referralId = params['referralId'] || "";
+       
+      this.form3.get('registerReferralCode')?.setValue(referralId); // Set the referral ID to the form control
+    });
+   
   
     const videoPath = 'assets/video.mp4';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
+    this.paymentService.loadingStatus.subscribe((status: boolean) => {
+      this.showLoadingModal = status;
+    });
     
   }
   
@@ -429,16 +458,8 @@ export class HomeComponent implements AfterViewInit {
   
     // check route for mobile view for registration and login tab
     checkRoute(){
-      this.route.fragment.subscribe(fragment => {
-        
-        if (fragment === 'regis') {
-          this.showLoginTab = false;
-          this.showRegisterTab = true;
-        } else {
-          this.showLoginTab = true;
-          this.showRegisterTab = false;
-        }
-      });
+    
+          this.showLoginTab = !this.showLoginTab;
     }
     
     // toggle read more buttons 
@@ -456,32 +477,34 @@ export class HomeComponent implements AfterViewInit {
   
   
   
-    // search cards 
     searchCards(){
      
-       const payload={
-        state : this.form2.get('selectedStateType').value,
-       city : this.form2.get('selectedCity').value,
-       college : this.form2.get('selectedCollege').value,
-       year : this.form2.get('selectedYear').value,
-       study : this.form2.get('selectedStudy').value,
-       degree : this.form2.get('selectedDegree').value,
-       
-       business_type : this.form2.get('selectedBusiness').value,
+      const payload={
+       state : this.form2.get('selectedStateType').value,
+      city : this.form2.get('selectedCity').value,
+      college : this.form2.get('selectedCollege').value,
+      year : this.form2.get('selectedYear').value,
+      study : this.form2.get('selectedStudy').value,
+      degree : this.form2.get('selectedDegree').value,
       
-       name : this.form2.get('selectedName').value,
-       gender : this.form2.get('selectedGender').value,
-       race : this.form2.get('selectedRace').value,
-       
+      business_type : this.form2.get('selectedBusiness').value,
+     
+      name : this.form2.get('selectedName').value,
+      gender : this.form2.get('selectedGender').value,
+      race : this.form2.get('selectedRace').value,
+      
+      }
+     
+     this.apiService.searchCard(payload).subscribe(
+       (response)=>{
+         this.cardsSearched=response.Cards
+         console.log(response);
        }
-      
-      this.apiService.searchCard(payload).subscribe(
-        (response)=>{
-          this.cardsSearched=response.Cards
-          console.log(response);
-        }
-      )
-    }
+     )
+   }
+
+
+
     getPositionType(sport: any) {
       this.apiService.getPositionType(sport).subscribe(
         (response) => {
@@ -529,19 +552,16 @@ export class HomeComponent implements AfterViewInit {
       if (this.form3.valid) {
         this.submitButtonClicked = false;
       }
+
+
+
+
     }
   
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
-    
-  
+   
   
   
     login() {
@@ -625,10 +645,12 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
+        
+         
         const updatedPlanId=localStorage.getItem("updatePaypalId")
         
         if(updatedPlanId!=null && updatedPlanId){
@@ -646,6 +668,10 @@ export class HomeComponent implements AfterViewInit {
     
         
         if(token && (updatedPlanId=='' || updatedPlanId==null)){
+          this.paypalTitleMessage="Please Wait"
+   this.paypalMessage="Your Paypal payment is being processed. Your patience is appreciated."
+
+   
           this.showLoadingModal=true
           
           this.apiService.executeAggrement(token)
@@ -653,6 +679,9 @@ export class HomeComponent implements AfterViewInit {
             (response) => {
               // Subscription is now active
               if(response.status=='Success'){
+                this.paypalTitleMessage="Payment Successful!"
+                
+                this.paypalMessage="Thank you for successfully completing your payment through PayPal. Your transaction has been processed, and it may take a few minutes for us to update your payment status on our end. We appreciate your patience. If you have any questions or concerns, please don't hesitate to contact us for assistance."
                 console.log("Billing agreement executed successfully", response);
                 this.paymentService.paypal_Register_user(response.subscription_id)
               }
@@ -662,7 +691,7 @@ export class HomeComponent implements AfterViewInit {
             (error) => {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
-                alert("Failed to Verify Paypal Payment")
+                alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
                 window.location.href='https://umyohbcu.site/'
             }
           );
@@ -687,6 +716,8 @@ export class HomeComponent implements AfterViewInit {
       });
   
       this.form2 = this.fb.group({
+        
+    
         selectedBusiness: [''],
         selectedStateType: [''],
         selectedName: [''],
@@ -704,9 +735,8 @@ export class HomeComponent implements AfterViewInit {
         selectedDegree:[''],
         selectedStudy:[''],
         
-     
-
         
+
       });
       this.form3 = this.fb.group({
         registerFirstName: ['', Validators.required],
@@ -736,6 +766,8 @@ export class HomeComponent implements AfterViewInit {
         
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
+
+
       // fetch packages
       this.apiService.getSignUpPackages(null).subscribe(
         (response) => {
@@ -914,10 +946,37 @@ export class HomeComponent implements AfterViewInit {
   };
   
   pay(): void {
-  this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);   
-  this.closePackageModal()
-  this.closeStripeModal()
-    
+    if (this.paymentForm.valid) {
+      this.paymentService.createPaymentIntent(this.paymentForm, this.form3, this.selectedPackage);
+      this.closePackageModal();
+      this.closeStripeModal();
+      this.paypalTitleMessage = "Please Wait";
+      this.paypalMessage = "Your Stripe payment is being processed. Your patience is appreciated.";
+      this.showLoadingModal=true
+    } else {
+      // Display alert for each validation error
+      if (this.paymentForm.get('cardNumber').hasError('required')) {
+        alert('Please enter card number.');
+      }
+      if (this.paymentForm.get('cardNumber').hasError('invalidCardNumber')) {
+        alert('Invalid card number. Please enter a 16-digit number without dashes - XXXXXXXXXXXXXXXX');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('required')) {
+        alert('Please enter expiry date.');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('invalidExpiryDate')) {
+        alert('Invalid expiry date. Please enter in MM/YY format. for example: 12/28');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('expiredExpiryDate')) {
+        alert('Card has already expired.');
+      }
+      if (this.paymentForm.get('cvc').hasError('required')) {
+        alert('Please enter CVC.');
+      }
+      if (this.paymentForm.get('cvc').hasError('minlength') || this.paymentForm.get('cvc').hasError('maxlength')) {
+        alert('Invalid CVC. Please enter a 3-digit number.');
+      }
+    }
   }
   
   
@@ -925,6 +984,8 @@ export class HomeComponent implements AfterViewInit {
   
   paypalClick(){
    this.closePackageModal()
+   this.paypalTitleMessage="Redirecting to PayPal"
+   this.paypalMessage="You are now being redirected to the PayPal website to complete your transaction securely. Please wait a moment while we process your request. If you encounter any issues or have any questions, feel free to contact us for assistance."
    this.showLoadingModal=true
    this.paymentService.paypal_create_billing_plan(this.form3,this.selectedPackage)
   }

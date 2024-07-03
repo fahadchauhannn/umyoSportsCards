@@ -1,5 +1,4 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../../api.service'
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -107,6 +106,16 @@ user_id  = parseInt(this.id, 10);
       card_id:this.card_id
     }
 
+
+this.apiService.incrementCardView(this.card_id).subscribe(
+  (response)=>{
+      console.log('card view updated');
+  },(error)=>{
+    console.log('error updating card view ');
+  }
+)
+
+
     this.apiService.getSingleCard(payload).subscribe(
       (response)=>{
           if(response.status=='Success'){
@@ -147,7 +156,9 @@ user_id  = parseInt(this.id, 10);
             console.log('invite code'+this.InviteCode);
             this.Photo = this.convertDataURLtoFile(response.Card.change_photo, 'photo');
             this.Logo = this.convertDataURLtoFile(response.Card.change_logo, 'logo');
-            this.ProductImages = '';
+            this.ProductImages = JSON.parse(response.Card.changeProductImages);
+            
+            console.log(this.ProductImages);
             this.YoutubeArray = response.Card.socialFormData?.youtubeVideos;
             this.UmyotubeArray = response.Card.socialFormData?.umyotubeVideos;
             this.VimeoVideoArray = response.Card.socialFormData?.vimeoVideos;

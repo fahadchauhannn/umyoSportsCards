@@ -281,7 +281,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -414,9 +414,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -426,12 +426,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Asian">Asian</option>
-
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="Afro American">Afro American</option>
-                  <option value="White">White</option>
-                  <option value="Indian">Indian</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -442,111 +439,9 @@
                   formControlName="selectedYear"
                 >
                   <option selected="" value="" disabled>YEAR IN College</option>
-                  <option value="1920">1920</option>
-                  <option value="1921">1921</option>
-                  <option value="1922">1922</option>
-                  <option value="1923">1923</option>
-                  <option value="1924">1924</option>
-                  <option value="1925">1925</option>
-                  <option value="1926">1926</option>
-                  <option value="1927">1927</option>
-                  <option value="1928">1928</option>
-                  <option value="1929">1929</option>
-                  <option value="1930">1930</option>
-                  <option value="1931">1931</option>
-                  <option value="1932">1932</option>
-                  <option value="1933">1933</option>
-                  <option value="1934">1934</option>
-                  <option value="1935">1935</option>
-                  <option value="1936">1936</option>
-                  <option value="1937">1937</option>
-                  <option value="1938">1938</option>
-                  <option value="1939">1939</option>
-                  <option value="1940">1940</option>
-                  <option value="1941">1941</option>
-                  <option value="1942">1942</option>
-                  <option value="1943">1943</option>
-                  <option value="1944">1944</option>
-                  <option value="1945">1945</option>
-                  <option value="1946">1946</option>
-                  <option value="1947">1947</option>
-                  <option value="1948">1948</option>
-                  <option value="1949">1949</option>
-                  <option value="1950">1950</option>
-                  <option value="1951">1951</option>
-                  <option value="1952">1952</option>
-                  <option value="1953">1953</option>
-                  <option value="1954">1954</option>
-                  <option value="1955">1955</option>
-                  <option value="1956">1956</option>
-                  <option value="1957">1957</option>
-                  <option value="1958">1958</option>
-                  <option value="1959">1959</option>
-                  <option value="1960">1960</option>
-                  <option value="1961">1961</option>
-                  <option value="1962">1962</option>
-                  <option value="1963">1963</option>
-                  <option value="1964">1964</option>
-                  <option value="1965">1965</option>
-                  <option value="1966">1966</option>
-                  <option value="1967">1967</option>
-                  <option value="1968">1968</option>
-                  <option value="1969">1969</option>
-                  <option value="1970">1970</option>
-                  <option value="1971">1971</option>
-                  <option value="1972">1972</option>
-                  <option value="1973">1973</option>
-                  <option value="1974">1974</option>
-                  <option value="1975">1975</option>
-                  <option value="1976">1976</option>
-                  <option value="1977">1977</option>
-                  <option value="1978">1978</option>
-                  <option value="1979">1979</option>
-                  <option value="1980">1980</option>
-                  <option value="1981">1981</option>
-                  <option value="1982">1982</option>
-                  <option value="1983">1983</option>
-                  <option value="1984">1984</option>
-                  <option value="1985">1985</option>
-                  <option value="1986">1986</option>
-                  <option value="1987">1987</option>
-                  <option value="1988">1988</option>
-                  <option value="1989">1989</option>
-                  <option value="1990">1990</option>
-                  <option value="1991">1991</option>
-                  <option value="1992">1992</option>
-                  <option value="1993">1993</option>
-                  <option value="1994">1994</option>
-                  <option value="1995">1995</option>
-                  <option value="1996">1996</option>
-                  <option value="1997">1997</option>
-                  <option value="1998">1998</option>
-                  <option value="1999">1999</option>
-                  <option value="2000">2000</option>
-                  <option value="2001">2001</option>
-                  <option value="2002">2002</option>
-                  <option value="2003">2003</option>
-                  <option value="2004">2004</option>
-                  <option value="2005">2005</option>
-                  <option value="2006">2006</option>
-                  <option value="2007">2007</option>
-                  <option value="2008">2008</option>
-                  <option value="2009">2009</option>
-                  <option value="2010">2010</option>
-                  <option value="2011">2011</option>
-                  <option value="2012">2012</option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
+                  <option *ngFor="let item of year" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6">
@@ -561,241 +456,8 @@
                   formControlName="selectedStudy"
                 >
                   <option selected="" value="" disabled>Studies</option>
-                  <option value="Accounting">Accounting</option>
-                  <option value="Actuarial Science">Actuarial Science</option>
-                  <option
-                    value="Adult-Gerontology Acute Care Nurse Practitioner"
-                  >
-                    Adult-Gerontology Acute Care Nurse Practitioner
-                  </option>
-                  <option value="Aerospace Studies">Aerospace Studies</option>
-                  <option value="African American and Africana Studies">
-                    African American and Africana Studies
-                  </option>
-                  <option value="Allied Health Sciences">
-                    Allied Health Sciences
-                  </option>
-                  <option value="Anthropology">Anthropology</option>
-                  <option value="Architectural Lighting Design">
-                    Architectural Lighting Design
-                  </option>
-                  <option value="Art Education">Art Education</option>
-                  <option value="Art History">Art History</option>
-                  <option value="Arts Leadership & Entrepreneurship">
-                    Arts Leadership & Entrepreneurship
-                  </option>
-                  <option value="Asian Studies">Asian Studies</option>
-                  <option value="Asian Studies">Asian Studies</option>
-                  <option value="Athletic Training">Athletic Training</option>
-                  <option value="Biochemistry">Biochemistry</option>
-                  <option value="Biology">Biology</option>
-                  <option value="Brass">Brass</option>
-                  <option value="British Colonial and Post-Colonial Studies">
-                    British Colonial and Post-Colonial Studies
-                  </option>
-                  <option value="Business Analytics">Business Analytics</option>
-                  <option value="Business Information Systems">
-                    Business Information Systems
-                  </option>
-                  <option value="Chemistry">Chemistry</option>
-                  <option value="Child Development">Child Development</option>
-                  <option value="Chinese">Chinese</option>
-                  <option value="Classical Studies">Classical Studies</option>
-                  <option value="Collaborative Piano">
-                    Collaborative Piano
-                  </option>
-                  <option value="Communication Studies">
-                    Communication Studies
-                  </option>
-                  <option value="Comparative Race and Ethnic Studies">
-                    Comparative Race and Ethnic Studies
-                  </option>
-                  <option value="Computer Information Technology">
-                    Computer Information Technology
-                  </option>
-                  <option value="Computer Science">Computer Science</option>
-                  <option value="Conducting">Conducting</option>
-                  <option value="Counseling and Counselor Education">
-                    Counseling and Counselor Education
-                  </option>
-                  <option value="Creative Writing">Creative Writing</option>
-                  <option value="Criminal Justice">Criminal Justice</option>
-                  <option value="Curriculum Studies">Curriculum Studies</option>
-                  <option value="Curriculum and Instruction">
-                    Curriculum and Instruction
-                  </option>
-                  <option value="Dance">Dance</option>
-                  <option value="Data Science">Data Science</option>
-                  <option value="Deaf & Hard of Hearing Studies">
-                    Deaf & Hard of Hearing Studies
-                  </option>
-                  <option value="Design Studies">Design Studies</option>
-                  <option value="Developmental Trauma">
-                    Developmental Trauma
-                  </option>
-                  <option value="Dietetics">Dietetics</option>
-                  <option value="Digital Culture and Data Analytics">
-                    Digital Culture and Data Analytics
-                  </option>
-                  <option value="Early Childhood-6th Grade Education">
-                    Early Childhood-6th Grade Education
-                  </option>
-                  <option value="Earth Systems Science">
-                    Earth Systems Science
-                  </option>
-                  <option value="Earth Systems Science">
-                    Earth Systems Science
-                  </option>
-                  <option value="Educational Studies">
-                    Educational Studies
-                  </option>
-                  <option value="Energy MBA">Energy MBA</option>
-                  <option value="Energy and Business">
-                    Energy and Business
-                  </option>
-                  <option value="Engineering">Engineering</option>
-                  <option value="English">English</option>
-                  <option value="Entrepreneurship and Innovation">
-                    Entrepreneurship and Innovation
-                  </option>
-                  <option value="Environmental Science">
-                    Environmental Science
-                  </option>
-                  <option value="Executive MBA">Executive MBA</option>
-                  <option value="Family Nurse Practitioner">
-                    Family Nurse Practitioner
-                  </option>
-                  <option value="Fashion Merchandising">
-                    Fashion Merchandising
-                  </option>
-                  <option value="Film, Television and Digital Media">
-                    Film, Television and Digital Media
-                  </option>
-                  <option value="Finance">Finance</option>
-                  <option value="Finance With Real Estate">
-                    Finance With Real Estate
-                  </option>
-                  <option value="Food Management">Food Management</option>
-                  <option value="French">French</option>
-                  <option value="General Business">General Business</option>
-                  <option value="General Studies">General Studies</option>
-                  <option value="Geography">Geography</option>
-                  <option value="Geology">Geology</option>
-                  <option value="German">German</option>
-                  <option value="Global Business">Global Business</option>
-                  <option value="Graphic Design">Graphic Design</option>
-                  <option value="Health & Fitness">Health & Fitness</option>
-                  <option value="Health Communication and Media">
-                    Health Communication and Media
-                  </option>
-                  <option value="Health Sciences">Health Sciences</option>
-                  <option value="History">History</option>
-                  <option value="Human-Animal Relationships">
-                    Human-Animal Relationships
-                  </option>
-                  <option value="Interdisciplinary Inquiry">
-                    Interdisciplinary Inquiry
-                  </option>
-                  <option value="Interior Design">Interior Design</option>
-                  <option value="International Economics">
-                    International Economics
-                  </option>
-                  <option value="International Relations">
-                    International Relations
-                  </option>
-                  <option value="Italian">Italian</option>
-                  <option value="Journalism">Journalism</option>
-                  <option value="Kinesiology">Kinesiology</option>
-                  <option value="Latin American Studies">
-                    Latin American Studies
-                  </option>
-                  <option value="Latinx Studies">Latinx Studies</option>
-                  <option value="Management and Leadership">
-                    Management and Leadership
-                  </option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Master of Liberal Arts">
-                    Master of Liberal Arts
-                  </option>
-                  <option value="Mathematics">Mathematics</option>
-                  <option value="Middle East Studies">
-                    Middle East Studies
-                  </option>
-                  <option value="Middle School Education">
-                    Middle School Education
-                  </option>
-                  <option value="Military Science">Military Science</option>
-                  <option value="Modern Language Studies">
-                    Modern Language Studies
-                  </option>
-                  <option value="Movement Science">Movement Science</option>
-                  <option value="Music">Music</option>
-                  <option value="Music Education">Music Education</option>
-                  <option value="Music Theory & Composition">
-                    Music Theory & Composition
-                  </option>
-                  <option value="Musicology">Musicology</option>
-                  <option value="Neuroscience">Neuroscience</option>
-                  <option value="Nurse Anesthesia">Nurse Anesthesia</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Nursing Education">Nursing Education</option>
-                  <option value="Nutrition">Nutrition</option>
-                  <option value="Organ & Church Music">
-                    Organ & Church Music
-                  </option>
-                  <option value="Percussion">Percussion</option>
-                  <option value="Philosophy">Philosophy</option>
-                  <option value="Physical Education">Physical Education</option>
-                  <option value="Physics">Physics</option>
-                  <option value="Piano">Piano</option>
-                  <option value="Piano Pedagogy">Piano Pedagogy</option>
-                  <option value="Political Science">Political Science</option>
-                  <option value="Post-Master’s DNP">Post-Master’s DNP</option>
-                  <option value="Pre-Health Professions Track">
-                    Pre-Health Professions Track
-                  </option>
-                  <option value="Professional MBA">Professional MBA</option>
-                  <option value="Psychiatric Mental Health Nurse Practitioner">
-                    Psychiatric Mental Health Nurse Practitioner
-                  </option>
-                  <option value="Psychology">Psychology</option>
-                  <option value="Ranch Management">Ranch Management</option>
-                  <option value="Religion">Religion</option>
-                  <option value="Rhetoric and Composition">
-                    Rhetoric and Composition
-                  </option>
-                  <option value="Science Education">Science Education</option>
-                  <option value="Secondary Education">
-                    Secondary Education
-                  </option>
-                  <option value="Social Work">Social Work</option>
-                  <option value="Sociology">Sociology</option>
-                  <option value="Spanish and Hispanic Studies">
-                    Spanish and Hispanic Studies
-                  </option>
-                  <option value="Special Education">Special Education</option>
-                  <option value="Speech-Language Pathology">
-                    Speech-Language Pathology
-                  </option>
-                  <option value="Strategic Communication">
-                    Strategic Communication
-                  </option>
-                  <option value="Strings">Strings</option>
-                  <option value="Studio Art">Studio Art</option>
-                  <option value="Supply and Value Chain Management">
-                    Supply and Value Chain Management
-                  </option>
-                  <option value="Sustainability">Sustainability</option>
-                  <option value="Theatre">Theatre</option>
-                  <option value="Urban Studies">Urban Studies</option>
-                  <option value="Voice">Voice</option>
-                  <option value="Women & Gender Studies">
-                    Women & Gender Studies
-                  </option>
-                  <option value="Woodwinds">Woodwinds</option>
-                  <option value="Writing">Writing</option>
-                  <option value="Youth Advocacy and Educational Studies">
-                    Youth Advocacy and Educational Studies
+                  <option *ngFor="let item of study" [value]="item">
+                    {{ item }}
                   </option>
                 </select>
               </div>
@@ -806,12 +468,9 @@
                   formControlName="selectedDegree"
                 >
                   <option selected="" value="" disabled>Degree</option>
-                  <option value="Associate">Associate</option>
-                  <option value="Bachelor">Bachelor</option>
-                  <option value="Doctoral">Doctoral</option>
-                  <option value="Masters">Masters</option>
-                  <option value="Student">Student</option>
-                  <option value="Non Graduate">Non Graduate</option>
+                  <option *ngFor="let item of degree" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -824,285 +483,8 @@
                     College / University
                   </option>
                   <option selected>College / University</option>
-                  <option value="Alabama A&M University">
-                    Alabama A&M University
-                  </option>
-                  <option value="Alabama State University">
-                    Alabama State University
-                  </option>
-                  <option value="Albany State University">
-                    Albany State University
-                  </option>
-                  <option value="Alcorn State University">
-                    Alcorn State University
-                  </option>
-                  <option value="Allen University">Allen University</option>
-                  <option value="American Baptist College">
-                    American Baptist College
-                  </option>
-                  <option value="University of Arkansas at Pine Bluff">
-                    University of Arkansas at Pine Bluff
-                  </option>
-                  <option value="Arkansas Baptist College">
-                    Arkansas Baptist College
-                  </option>
-                  <option value="Barber-Scotia College">
-                    Barber-Scotia College
-                  </option>
-                  <option value="Benedict College">Benedict College</option>
-                  <option value="Bennett College">Bennett College</option>
-                  <option value="Bethune-Cookman University">
-                    Bethune-Cookman University
-                  </option>
-                  <option value="Bishop State Community College">
-                    Bishop State Community College
-                  </option>
-                  <option value="Bluefield State College">
-                    Bluefield State College
-                  </option>
-                  <option value="Bowie State University">
-                    Bowie State University
-                  </option>
-                  <option value="Carver College">Carver College</option>
-                  <option value="Central State University">
-                    Central State University
-                  </option>
-                  <option value="Cheyney University of Pennsylvania">
-                    Cheyney University of Pennsylvania
-                  </option>
-                  <option value="Claflin University">Claflin University</option>
-                  <option value="Clark Atlanta University">
-                    Clark Atlanta University
-                  </option>
-                  <option value="Clinton College">Clinton College</option>
-                  <option value="Coahoma Community College">
-                    Coahoma Community College
-                  </option>
-                  <option value="Concordia College, Alabama (closed 2018)">
-                    Concordia College, Alabama (closed 2018)
-                  </option>
-                  <option value="Coppin State University">
-                    Coppin State University
-                  </option>
-                  <option value="Delaware State University">
-                    Delaware State University
-                  </option>
-                  <option value="Denmark Technical College">
-                    Denmark Technical College
-                  </option>
-                  <option value="Dillard University">Dillard University</option>
-                  <option value="University of the District of Columbia">
-                    University of the District of Columbia
-                  </option>
-                  <option value="Edward Waters University">
-                    Edward Waters University
-                  </option>
-                  <option value="Elizabeth City State University">
-                    Elizabeth City State University
-                  </option>
-                  <option value="Fayetteville State University">
-                    Fayetteville State University
-                  </option>
-                  <option value="Fisk University">Fisk University</option>
-                  <option value="Florida A&M University">
-                    Florida A&M University
-                  </option>
-                  <option value="Florida Memorial University">
-                    Florida Memorial University
-                  </option>
-                  <option value="Fort Valley State University">
-                    Fort Valley State University
-                  </option>
-                  <option
-                    value="Gadsden State Community College (Valley Street campus)"
-                  >
-                    Gadsden State Community College (Valley Street campus)
-                  </option>
-                  <option value="Grambling State University">
-                    Grambling State University
-                  </option>
-                  <option value="Harris-Stowe State University">
-                    Harris-Stowe State University
-                  </option>
-                  <option value="Hinds Community College at Utica">
-                    Hinds Community College at Utica
-                  </option>
-                  <option value="Hood Theological Seminary">
-                    Hood Theological Seminary
-                  </option>
-                  <option value="Howard University">Howard University</option>
-                  <option value="Huston-Tillotson University">
-                    Huston-Tillotson University
-                  </option>
-                  <option value="Interdenominational Theological Center">
-                    Interdenominational Theological Center
-                  </option>
-                  <option value="J. F. Drake State Technical College">
-                    J. F. Drake State Technical College
-                  </option>
-                  <option value="Jackson State University">
-                    Jackson State University
-                  </option>
-                  <option value="Jarvis Christian University">
-                    Jarvis Christian University
-                  </option>
-                  <option value="Johnson C. Smith University">
-                    Johnson C. Smith University
-                  </option>
-                  <option value="Johnson C. Smith Theological Seminary">
-                    Johnson C. Smith Theological Seminary
-                  </option>
-                  <option value="Kentucky State University">
-                    Kentucky State University
-                  </option>
-                  <option value="Knoxville College">Knoxville College</option>
-                  <option value="Lane College">Lane College</option>
-                  <option value="Langston University">
-                    Langston University
-                  </option>
-                  <option value="Lawson State Community College">
-                    Lawson State Community College
-                  </option>
-                  <option value="LeMoyne-Owen College">
-                    LeMoyne-Owen College
-                  </option>
-                  <option value="Lewis College of Business">
-                    Lewis College of Business
-                  </option>
-                  <option value="Lincoln University (Missouri)">
-                    Lincoln University (Missouri)
-                  </option>
-                  <option value="Lincoln University (Pennsylvania)">
-                    Lincoln University (Pennsylvania)
-                  </option>
-                  <option value="Livingstone College">
-                    Livingstone College
-                  </option>
-                  <option value="University of Maryland Eastern Shore">
-                    University of Maryland Eastern Shore
-                  </option>
-                  <option value="Meharry Medical College">
-                    Meharry Medical College
-                  </option>
-                  <option value="Miles College">Miles College</option>
-                  <option value="Miles School of Law">
-                    Miles School of Law
-                  </option>
-                  <option value="Mississippi Valley State University">
-                    Mississippi Valley State University
-                  </option>
-                  <option value="Morehouse School of Medicine">
-                    Morehouse School of Medicine
-                  </option>
-                  <option value="Morgan State University">
-                    Morgan State University
-                  </option>
-                  <option value="Morris Brown College">
-                    Morris Brown College
-                  </option>
-                  <option value="Morris College">Morris College</option>
-                  <option value="Norfolk State University">
-                    Norfolk State University
-                  </option>
-                  <option value="North Carolina A&T State University">
-                    North Carolina A&T State University
-                  </option>
-                  <option value="North Carolina Central University">
-                    North Carolina Central University
-                  </option>
-                  <option value="Oakwood University">Oakwood University</option>
-                  <option value="Paine College">Paine College</option>
-                  <option value="Paul Quinn College">Paul Quinn College</option>
-                  <option value="Payne Theological Seminary">
-                    Payne Theological Seminary
-                  </option>
-                  <option value="Philander Smith College">
-                    Philander Smith College
-                  </option>
-                  <option value="Prairie View A&M University">
-                    Prairie View A&M University
-                  </option>
-                  <option value="Rust College">Rust College</option>
-                  <option value="Saint Paul's College">
-                    Saint Paul's College
-                  </option>
-                  <option value="Savannah State University">
-                    Savannah State University
-                  </option>
-                  <option value="Selma University">Selma University</option>
-                  <option value="Shaw University">Shaw University</option>
-                  <option
-                    value="Shelton State Community College - C.A. Fredd Campus"
-                  >
-                    Shelton State Community College - C.A. Fredd Campus
-                  </option>
-                  <option value="Shorter College">Shorter College</option>
-                  <option value="Simmons College of Kentucky">
-                    Simmons College of Kentucky
-                  </option>
-                  <option value="South Carolina State University">
-                    South Carolina State University
-                  </option>
-                  <option value="Southern University at New Orleans">
-                    Southern University at New Orleans
-                  </option>
-                  <option value="Southern University at Shreveport">
-                    Southern University at Shreveport
-                  </option>
-                  <option value="Southern University and A&M College">
-                    Southern University and A&M College
-                  </option>
-                  <option value="Southwestern Christian College">
-                    Southwestern Christian College
-                  </option>
-                  <option value="Spelman College">Spelman College</option>
-                  <option value="St. Augustine's University">
-                    St. Augustine's University
-                  </option>
-                  <option value="St. Philip's College">
-                    St. Philip's College
-                  </option>
-                  <option value="Stillman College">Stillman College</option>
-                  <option value="Talladega College">Talladega College</option>
-                  <option value="Tennessee State University">
-                    Tennessee State University
-                  </option>
-                  <option value="Texas College">Texas College</option>
-                  <option value="Texas Southern University">
-                    Texas Southern University
-                  </option>
-                  <option value="Tougaloo College">Tougaloo College</option>
-                  <option value="H. Councill Trenholm State Community College">
-                    H. Councill Trenholm State Community College
-                  </option>
-                  <option value="Tuskegee University">
-                    Tuskegee University
-                  </option>
-                  <option value="University of the Virgin Islands">
-                    University of the Virgin Islands
-                  </option>
-                  <option value="Virginia State University">
-                    Virginia State University
-                  </option>
-                  <option value="Virginia Union University">
-                    Virginia Union University
-                  </option>
-                  <option value="Virginia University of Lynchburg">
-                    Virginia University of Lynchburg
-                  </option>
-                  <option value="Voorhees College">Voorhees College</option>
-                  <option value="West Virginia State University">
-                    West Virginia State University
-                  </option>
-                  <option value="Wilberforce University">
-                    Wilberforce University
-                  </option>
-                  <option value="Wiley College">Wiley College</option>
-                  <option value="Winston-Salem State University">
-                    Winston-Salem State University
-                  </option>
-                  <option value="Xavier University of Louisiana">
-                    Xavier University of Louisiana
+                  <option *ngFor="let item of college" [value]="item">
+                    {{ item }}
                   </option>
                 </select>
               </div>
@@ -1114,31 +496,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="District of Columbia">
-                    District of Columbia
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="US Virgin Island">US Virgin Island</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="West Virginia">West Virginia</option>
                 </select>
               </div>
 
@@ -1149,143 +509,9 @@
                   formControlName="selectedBusiness"
                 >
                   <option selected value="" disabled>Business Type</option>
-                  <option value="Accountant">Accountant</option>
-                  <option value="Actor">Actor</option>
-                  <option value="Actuary">Actuary</option>
-                  <option value="Administrator">Administrator</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agricultural Worker">
-                    Agricultural Worker
+                  <option *ngFor="let item of businessType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Air Traffic Controller">
-                    Air Traffic Controller
-                  </option>
-                  <option value="Ambulance Officer">Ambulance Officer</option>
-                  <option value="Architect">Architect</option>
-                  <option value="Art Director">Art Director</option>
-                  <option value="Artist">Artist</option>
-                  <option value="Athlete">Athlete</option>
-                  <option value="Auditor">Auditor</option>
-                  <option value="Baker">Baker</option>
-                  <option value="Barista">Barista</option>
-                  <option value="Bartender">Bartender</option>
-                  <option value="Board Member">Board Member</option>
-                  <option value="Business Analyst">Business Analyst</option>
-                  <option value="Chef">Chef</option>
-                  <option value="Childcare Worker">Childcare Worker</option>
-                  <option value="Civil Servant">Civil Servant</option>
-                  <option value="Cleaner">Cleaner</option>
-                  <option value="Company Worker">Company Worker</option>
-                  <option value="Computer Scientist">Computer Scientist</option>
-                  <option value="Construction Worker">
-                    Construction Worker
-                  </option>
-                  <option value="Cook">Cook</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Craftsperson">Craftsperson</option>
-                  <option value="Curator">Curator</option>
-                  <option value="Customer Service Representative">
-                    Customer Service Representative
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Designer">Designer</option>
-                  <option value="Doctor">Doctor</option>
-                  <option value="Driver">Driver</option>
-                  <option value="Economist">Economist</option>
-                  <option value="Electrician">Electrician</option>
-                  <option value="Entrepreneur">Entrepreneur</option>
-                  <option value="Equipment Operator">Equipment Operator</option>
-                  <option value="Executive Manager">Executive Manager</option>
-                  <option value="Farmer">Farmer</option>
-                  <option value="Film Maker">Film Maker</option>
-                  <option value="Firefighter">Firefighter</option>
-                  <option value="Fisherman">Fisherman</option>
-                  <option value="Fitness Trainer">Fitness Trainer</option>
-                  <option value="Flight Attendant">Flight Attendant</option>
-                  <option value="Florist">Florist</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Gardener">Gardener</option>
-                  <option value="Hair Stylist">Hair Stylist</option>
-                  <option value="Home Care Aid">Home Care Aid</option>
-                  <option value="Homemaker">Homemaker</option>
-                  <option value="Hospitality Worker">Hospitality Worker</option>
-                  <option value="Housekeeper">Housekeeper</option>
-                  <option value="Information Technology Professional">
-                    Information Technology Professional
-                  </option>
-                  <option value="Investor">Investor</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Laborer">Laborer</option>
-                  <option value="Lawyer">Lawyer</option>
-                  <option value="Librarian">Librarian</option>
-                  <option value="Maintenance Worker">Maintenance Worker</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manufacturing Worker">
-                    Manufacturing Worker
-                  </option>
-                  <option value="Marketing Professional">
-                    Marketing Professional
-                  </option>
-                  <option value="Mathematician">Mathematician</option>
-                  <option value="Mechanic">Mechanic</option>
-                  <option value="Medical Professional">
-                    Medical Professional
-                  </option>
-                  <option value="Merchant">Merchant</option>
-                  <option value="Midwife">Midwife</option>
-                  <option value="Military Personnel">Military Personnel</option>
-                  <option value="Musician">Musician</option>
-                  <option value="Nanny">Nanny</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Office Clerk">Office Clerk</option>
-                  <option value="Office Worker">Office Worker</option>
-                  <option value="Optician">Optician</option>
-                  <option value="Performance Artist">Performance Artist</option>
-                  <option value="Photographer">Photographer</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="Politician">Politician</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Railroad Engineer">Railroad Engineer</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Retail Employee">Retail Employee</option>
-                  <option value="Retiree">Retiree</option>
-                  <option value="Rigger">Rigger</option>
-                  <option value="Sailor">Sailor</option>
-                  <option value="Salesperson">Salesperson</option>
-                  <option value="Scientist">Scientist</option>
-                  <option value="Sea Captain">Sea Captain</option>
-                  <option value="Secretary">Secretary</option>
-                  <option value="Self-Employed">Self-Employed</option>
-                  <option value="Small Business Owner">
-                    Small Business Owner
-                  </option>
-                  <option value="Social Worker">Social Worker</option>
-                  <option value="Software Developer">Software Developer</option>
-                  <option value="Spokesperson">Spokesperson</option>
-                  <option value="Statistician">Statistician</option>
-                  <option value="Stay-At-Home Parent">
-                    Stay-At-Home Parent
-                  </option>
-                  <option value="Student">Student</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surveyor">Surveyor</option>
-                  <option value="Tailor">Tailor</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Technician">Technician</option>
-                  <option value="Tradesperson">Tradesperson</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Translator">Translator</option>
-                  <option value="Truck Driver">Truck Driver</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Unemployed">Unemployed</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Videographer">Videographer</option>
-                  <option value="Waiter">Waiter</option>
-                  <option value="Waste Collector">Waste Collector</option>
-                  <option value="Writer">Writer</option>
-                  <option value="Zoologist">Zoologist</option>
                 </select>
               </div>
 
@@ -1327,23 +553,21 @@
           <div class="content">
             <!-- Nav pills -->
             <ul class="nav nav-pills" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
                   [class.active]="showLoginTab"
                   data-toggle="pill"
-                  href="#login"
                   >Login</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
-                  [class.active]="showRegisterTab"
+                  [class.active]="!showLoginTab"
                   data-toggle="pill"
-                  href="#regis"
                   >Register</a
                 >
               </li>
@@ -1479,7 +703,7 @@
               <div
                 id="regis"
                 class="container tab-pane"
-                [class.active]="showRegisterTab"
+                [class.active]="!showLoginTab"
               >
                 <form [formGroup]="form3">
                   <div class="row justify-content-center">
@@ -1655,9 +879,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1679,12 +903,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Associate">Associate</option>
-                        <option value="Bachelor">Bachelor</option>
-                        <option value="Doctoral">Doctoral</option>
-                        <option value="Masters">Masters</option>
-                        <option value="Student">Student</option>
-                        <option value="Non Graduate">Non Graduate</option>
+                        <option *ngFor="let item of degree" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1709,315 +930,8 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama A&M University">
-                          Alabama A&M University
-                        </option>
-                        <option value="Alabama State University">
-                          Alabama State University
-                        </option>
-                        <option value="Albany State University">
-                          Albany State University
-                        </option>
-                        <option value="Alcorn State University">
-                          Alcorn State University
-                        </option>
-                        <option value="Allen University">
-                          Allen University
-                        </option>
-                        <option value="American Baptist College">
-                          American Baptist College
-                        </option>
-                        <option value="University of Arkansas at Pine Bluff">
-                          University of Arkansas at Pine Bluff
-                        </option>
-                        <option value="Arkansas Baptist College">
-                          Arkansas Baptist College
-                        </option>
-                        <option value="Barber-Scotia College">
-                          Barber-Scotia College
-                        </option>
-                        <option value="Benedict College">
-                          Benedict College
-                        </option>
-                        <option value="Bennett College">Bennett College</option>
-                        <option value="Bethune-Cookman University">
-                          Bethune-Cookman University
-                        </option>
-                        <option value="Bishop State Community College">
-                          Bishop State Community College
-                        </option>
-                        <option value="Bluefield State College">
-                          Bluefield State College
-                        </option>
-                        <option value="Bowie State University">
-                          Bowie State University
-                        </option>
-                        <option value="Carver College">Carver College</option>
-                        <option value="Central State University">
-                          Central State University
-                        </option>
-                        <option value="Cheyney University of Pennsylvania">
-                          Cheyney University of Pennsylvania
-                        </option>
-                        <option value="Claflin University">
-                          Claflin University
-                        </option>
-                        <option value="Clark Atlanta University">
-                          Clark Atlanta University
-                        </option>
-                        <option value="Clinton College">Clinton College</option>
-                        <option value="Coahoma Community College">
-                          Coahoma Community College
-                        </option>
-                        <option
-                          value="Concordia College, Alabama (closed 2018)"
-                        >
-                          Concordia College, Alabama (closed 2018)
-                        </option>
-                        <option value="Coppin State University">
-                          Coppin State University
-                        </option>
-                        <option value="Delaware State University">
-                          Delaware State University
-                        </option>
-                        <option value="Denmark Technical College">
-                          Denmark Technical College
-                        </option>
-                        <option value="Dillard University">
-                          Dillard University
-                        </option>
-                        <option value="University of the District of Columbia">
-                          University of the District of Columbia
-                        </option>
-                        <option value="Edward Waters University">
-                          Edward Waters University
-                        </option>
-                        <option value="Elizabeth City State University">
-                          Elizabeth City State University
-                        </option>
-                        <option value="Fayetteville State University">
-                          Fayetteville State University
-                        </option>
-                        <option value="Fisk University">Fisk University</option>
-                        <option value="Florida A&M University">
-                          Florida A&M University
-                        </option>
-                        <option value="Florida Memorial University">
-                          Florida Memorial University
-                        </option>
-                        <option value="Fort Valley State University">
-                          Fort Valley State University
-                        </option>
-                        <option
-                          value="Gadsden State Community College (Valley Street campus)"
-                        >
-                          Gadsden State Community College (Valley Street campus)
-                        </option>
-                        <option value="Grambling State University">
-                          Grambling State University
-                        </option>
-                        <option value="Harris-Stowe State University">
-                          Harris-Stowe State University
-                        </option>
-                        <option value="Hinds Community College at Utica">
-                          Hinds Community College at Utica
-                        </option>
-                        <option value="Hood Theological Seminary">
-                          Hood Theological Seminary
-                        </option>
-                        <option value="Howard University">
-                          Howard University
-                        </option>
-                        <option value="Huston-Tillotson University">
-                          Huston-Tillotson University
-                        </option>
-                        <option value="Interdenominational Theological Center">
-                          Interdenominational Theological Center
-                        </option>
-                        <option value="J. F. Drake State Technical College">
-                          J. F. Drake State Technical College
-                        </option>
-                        <option value="Jackson State University">
-                          Jackson State University
-                        </option>
-                        <option value="Jarvis Christian University">
-                          Jarvis Christian University
-                        </option>
-                        <option value="Johnson C. Smith University">
-                          Johnson C. Smith University
-                        </option>
-                        <option value="Johnson C. Smith Theological Seminary">
-                          Johnson C. Smith Theological Seminary
-                        </option>
-                        <option value="Kentucky State University">
-                          Kentucky State University
-                        </option>
-                        <option value="Knoxville College">
-                          Knoxville College
-                        </option>
-                        <option value="Lane College">Lane College</option>
-                        <option value="Langston University">
-                          Langston University
-                        </option>
-                        <option value="Lawson State Community College">
-                          Lawson State Community College
-                        </option>
-                        <option value="LeMoyne-Owen College">
-                          LeMoyne-Owen College
-                        </option>
-                        <option value="Lewis College of Business">
-                          Lewis College of Business
-                        </option>
-                        <option value="Lincoln University (Missouri)">
-                          Lincoln University (Missouri)
-                        </option>
-                        <option value="Lincoln University (Pennsylvania)">
-                          Lincoln University (Pennsylvania)
-                        </option>
-                        <option value="Livingstone College">
-                          Livingstone College
-                        </option>
-                        <option value="University of Maryland Eastern Shore">
-                          University of Maryland Eastern Shore
-                        </option>
-                        <option value="Meharry Medical College">
-                          Meharry Medical College
-                        </option>
-                        <option value="Miles College">Miles College</option>
-                        <option value="Miles School of Law">
-                          Miles School of Law
-                        </option>
-                        <option value="Mississippi Valley State University">
-                          Mississippi Valley State University
-                        </option>
-                        <option value="Morehouse School of Medicine">
-                          Morehouse School of Medicine
-                        </option>
-                        <option value="Morgan State University">
-                          Morgan State University
-                        </option>
-                        <option value="Morris Brown College">
-                          Morris Brown College
-                        </option>
-                        <option value="Morris College">Morris College</option>
-                        <option value="Norfolk State University">
-                          Norfolk State University
-                        </option>
-                        <option value="North Carolina A&T State University">
-                          North Carolina A&T State University
-                        </option>
-                        <option value="North Carolina Central University">
-                          North Carolina Central University
-                        </option>
-                        <option value="Oakwood University">
-                          Oakwood University
-                        </option>
-                        <option value="Paine College">Paine College</option>
-                        <option value="Paul Quinn College">
-                          Paul Quinn College
-                        </option>
-                        <option value="Payne Theological Seminary">
-                          Payne Theological Seminary
-                        </option>
-                        <option value="Philander Smith College">
-                          Philander Smith College
-                        </option>
-                        <option value="Prairie View A&M University">
-                          Prairie View A&M University
-                        </option>
-                        <option value="Rust College">Rust College</option>
-                        <option value="Saint Paul's College">
-                          Saint Paul's College
-                        </option>
-                        <option value="Savannah State University">
-                          Savannah State University
-                        </option>
-                        <option value="Selma University">
-                          Selma University
-                        </option>
-                        <option value="Shaw University">Shaw University</option>
-                        <option
-                          value="Shelton State Community College - C.A. Fredd Campus"
-                        >
-                          Shelton State Community College - C.A. Fredd Campus
-                        </option>
-                        <option value="Shorter College">Shorter College</option>
-                        <option value="Simmons College of Kentucky">
-                          Simmons College of Kentucky
-                        </option>
-                        <option value="South Carolina State University">
-                          South Carolina State University
-                        </option>
-                        <option value="Southern University at New Orleans">
-                          Southern University at New Orleans
-                        </option>
-                        <option value="Southern University at Shreveport">
-                          Southern University at Shreveport
-                        </option>
-                        <option value="Southern University and A&M College">
-                          Southern University and A&M College
-                        </option>
-                        <option value="Southwestern Christian College">
-                          Southwestern Christian College
-                        </option>
-                        <option value="Spelman College">Spelman College</option>
-                        <option value="St. Augustine's University">
-                          St. Augustine's University
-                        </option>
-                        <option value="St. Philip's College">
-                          St. Philip's College
-                        </option>
-                        <option value="Stillman College">
-                          Stillman College
-                        </option>
-                        <option value="Talladega College">
-                          Talladega College
-                        </option>
-                        <option value="Tennessee State University">
-                          Tennessee State University
-                        </option>
-                        <option value="Texas College">Texas College</option>
-                        <option value="Texas Southern University">
-                          Texas Southern University
-                        </option>
-                        <option value="Tougaloo College">
-                          Tougaloo College
-                        </option>
-                        <option
-                          value="H. Councill Trenholm State Community College"
-                        >
-                          H. Councill Trenholm State Community College
-                        </option>
-                        <option value="Tuskegee University">
-                          Tuskegee University
-                        </option>
-                        <option value="University of the Virgin Islands">
-                          University of the Virgin Islands
-                        </option>
-                        <option value="Virginia State University">
-                          Virginia State University
-                        </option>
-                        <option value="Virginia Union University">
-                          Virginia Union University
-                        </option>
-                        <option value="Virginia University of Lynchburg">
-                          Virginia University of Lynchburg
-                        </option>
-                        <option value="Voorhees College">
-                          Voorhees College
-                        </option>
-                        <option value="West Virginia State University">
-                          West Virginia State University
-                        </option>
-                        <option value="Wilberforce University">
-                          Wilberforce University
-                        </option>
-                        <option value="Wiley College">Wiley College</option>
-                        <option value="Winston-Salem State University">
-                          Winston-Salem State University
-                        </option>
-                        <option value="Xavier University of Louisiana">
-                          Xavier University of Louisiana
+                        <option *ngFor="let item of college" [value]="item">
+                          {{ item }}
                         </option>
                       </select>
                     </div>
@@ -2041,13 +955,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Asian">Asian</option>
-                        <option value="Asian">Asian</option>
-
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="Afro American">Afro American</option>
-                        <option value="White">White</option>
-                        <option value="Indian">Indian</option>
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2069,33 +979,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="District of Columbia">
-                          District of Columbia
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="US Virgin Island">
-                          US Virgin Island
-                        </option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="West Virginia">West Virginia</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2117,291 +1003,8 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Accounting">Accounting</option>
-                        <option value="Actuarial Science">
-                          Actuarial Science
-                        </option>
-                        <option
-                          value="Adult-Gerontology Acute Care Nurse Practitioner"
-                        >
-                          Adult-Gerontology Acute Care Nurse Practitioner
-                        </option>
-                        <option value="Aerospace Studies">
-                          Aerospace Studies
-                        </option>
-                        <option value="African American and Africana Studies">
-                          African American and Africana Studies
-                        </option>
-                        <option value="Allied Health Sciences">
-                          Allied Health Sciences
-                        </option>
-                        <option value="Anthropology">Anthropology</option>
-                        <option value="Architectural Lighting Design">
-                          Architectural Lighting Design
-                        </option>
-                        <option value="Art Education">Art Education</option>
-                        <option value="Art History">Art History</option>
-                        <option value="Arts Leadership & Entrepreneurship">
-                          Arts Leadership & Entrepreneurship
-                        </option>
-                        <option value="Asian Studies">Asian Studies</option>
-                        <option value="Asian Studies">Asian Studies</option>
-                        <option value="Athletic Training">
-                          Athletic Training
-                        </option>
-                        <option value="Biochemistry">Biochemistry</option>
-                        <option value="Biology">Biology</option>
-                        <option value="Brass">Brass</option>
-                        <option
-                          value="British Colonial and Post-Colonial Studies"
-                        >
-                          British Colonial and Post-Colonial Studies
-                        </option>
-                        <option value="Business Analytics">
-                          Business Analytics
-                        </option>
-                        <option value="Business Information Systems">
-                          Business Information Systems
-                        </option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="Child Development">
-                          Child Development
-                        </option>
-                        <option value="Chinese">Chinese</option>
-                        <option value="Classical Studies">
-                          Classical Studies
-                        </option>
-                        <option value="Collaborative Piano">
-                          Collaborative Piano
-                        </option>
-                        <option value="Communication Studies">
-                          Communication Studies
-                        </option>
-                        <option value="Comparative Race and Ethnic Studies">
-                          Comparative Race and Ethnic Studies
-                        </option>
-                        <option value="Computer Information Technology">
-                          Computer Information Technology
-                        </option>
-                        <option value="Computer Science">
-                          Computer Science
-                        </option>
-                        <option value="Conducting">Conducting</option>
-                        <option value="Counseling and Counselor Education">
-                          Counseling and Counselor Education
-                        </option>
-                        <option value="Creative Writing">
-                          Creative Writing
-                        </option>
-                        <option value="Criminal Justice">
-                          Criminal Justice
-                        </option>
-                        <option value="Curriculum Studies">
-                          Curriculum Studies
-                        </option>
-                        <option value="Curriculum and Instruction">
-                          Curriculum and Instruction
-                        </option>
-                        <option value="Dance">Dance</option>
-                        <option value="Data Science">Data Science</option>
-                        <option value="Deaf & Hard of Hearing Studies">
-                          Deaf & Hard of Hearing Studies
-                        </option>
-                        <option value="Design Studies">Design Studies</option>
-                        <option value="Developmental Trauma">
-                          Developmental Trauma
-                        </option>
-                        <option value="Dietetics">Dietetics</option>
-                        <option value="Digital Culture and Data Analytics">
-                          Digital Culture and Data Analytics
-                        </option>
-                        <option value="Early Childhood-6th Grade Education">
-                          Early Childhood-6th Grade Education
-                        </option>
-                        <option value="Earth Systems Science">
-                          Earth Systems Science
-                        </option>
-                        <option value="Earth Systems Science">
-                          Earth Systems Science
-                        </option>
-                        <option value="Educational Studies">
-                          Educational Studies
-                        </option>
-                        <option value="Energy MBA">Energy MBA</option>
-                        <option value="Energy and Business">
-                          Energy and Business
-                        </option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="English">English</option>
-                        <option value="Entrepreneurship and Innovation">
-                          Entrepreneurship and Innovation
-                        </option>
-                        <option value="Environmental Science">
-                          Environmental Science
-                        </option>
-                        <option value="Executive MBA">Executive MBA</option>
-                        <option value="Family Nurse Practitioner">
-                          Family Nurse Practitioner
-                        </option>
-                        <option value="Fashion Merchandising">
-                          Fashion Merchandising
-                        </option>
-                        <option value="Film, Television and Digital Media">
-                          Film, Television and Digital Media
-                        </option>
-                        <option value="Finance">Finance</option>
-                        <option value="Finance With Real Estate">
-                          Finance With Real Estate
-                        </option>
-                        <option value="Food Management">Food Management</option>
-                        <option value="French">French</option>
-                        <option value="General Business">
-                          General Business
-                        </option>
-                        <option value="General Studies">General Studies</option>
-                        <option value="Geography">Geography</option>
-                        <option value="Geology">Geology</option>
-                        <option value="German">German</option>
-                        <option value="Global Business">Global Business</option>
-                        <option value="Graphic Design">Graphic Design</option>
-                        <option value="Health & Fitness">
-                          Health & Fitness
-                        </option>
-                        <option value="Health Communication and Media">
-                          Health Communication and Media
-                        </option>
-                        <option value="Health Sciences">Health Sciences</option>
-                        <option value="History">History</option>
-                        <option value="Human-Animal Relationships">
-                          Human-Animal Relationships
-                        </option>
-                        <option value="Interdisciplinary Inquiry">
-                          Interdisciplinary Inquiry
-                        </option>
-                        <option value="Interior Design">Interior Design</option>
-                        <option value="International Economics">
-                          International Economics
-                        </option>
-                        <option value="International Relations">
-                          International Relations
-                        </option>
-                        <option value="Italian">Italian</option>
-                        <option value="Journalism">Journalism</option>
-                        <option value="Kinesiology">Kinesiology</option>
-                        <option value="Latin American Studies">
-                          Latin American Studies
-                        </option>
-                        <option value="Latinx Studies">Latinx Studies</option>
-                        <option value="Management and Leadership">
-                          Management and Leadership
-                        </option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Master of Liberal Arts">
-                          Master of Liberal Arts
-                        </option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Middle East Studies">
-                          Middle East Studies
-                        </option>
-                        <option value="Middle School Education">
-                          Middle School Education
-                        </option>
-                        <option value="Military Science">
-                          Military Science
-                        </option>
-                        <option value="Modern Language Studies">
-                          Modern Language Studies
-                        </option>
-                        <option value="Movement Science">
-                          Movement Science
-                        </option>
-                        <option value="Music">Music</option>
-                        <option value="Music Education">Music Education</option>
-                        <option value="Music Theory & Composition">
-                          Music Theory & Composition
-                        </option>
-                        <option value="Musicology">Musicology</option>
-                        <option value="Neuroscience">Neuroscience</option>
-                        <option value="Nurse Anesthesia">
-                          Nurse Anesthesia
-                        </option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Nursing Education">
-                          Nursing Education
-                        </option>
-                        <option value="Nutrition">Nutrition</option>
-                        <option value="Organ & Church Music">
-                          Organ & Church Music
-                        </option>
-                        <option value="Percussion">Percussion</option>
-                        <option value="Philosophy">Philosophy</option>
-                        <option value="Physical Education">
-                          Physical Education
-                        </option>
-                        <option value="Physics">Physics</option>
-                        <option value="Piano">Piano</option>
-                        <option value="Piano Pedagogy">Piano Pedagogy</option>
-                        <option value="Political Science">
-                          Political Science
-                        </option>
-                        <option value="Post-Master’s DNP">
-                          Post-Master’s DNP
-                        </option>
-                        <option value="Pre-Health Professions Track">
-                          Pre-Health Professions Track
-                        </option>
-                        <option value="Professional MBA">
-                          Professional MBA
-                        </option>
-                        <option
-                          value="Psychiatric Mental Health Nurse Practitioner"
-                        >
-                          Psychiatric Mental Health Nurse Practitioner
-                        </option>
-                        <option value="Psychology">Psychology</option>
-                        <option value="Ranch Management">
-                          Ranch Management
-                        </option>
-                        <option value="Religion">Religion</option>
-                        <option value="Rhetoric and Composition">
-                          Rhetoric and Composition
-                        </option>
-                        <option value="Science Education">
-                          Science Education
-                        </option>
-                        <option value="Secondary Education">
-                          Secondary Education
-                        </option>
-                        <option value="Social Work">Social Work</option>
-                        <option value="Sociology">Sociology</option>
-                        <option value="Spanish and Hispanic Studies">
-                          Spanish and Hispanic Studies
-                        </option>
-                        <option value="Special Education">
-                          Special Education
-                        </option>
-                        <option value="Speech-Language Pathology">
-                          Speech-Language Pathology
-                        </option>
-                        <option value="Strategic Communication">
-                          Strategic Communication
-                        </option>
-                        <option value="Strings">Strings</option>
-                        <option value="Studio Art">Studio Art</option>
-                        <option value="Supply and Value Chain Management">
-                          Supply and Value Chain Management
-                        </option>
-                        <option value="Sustainability">Sustainability</option>
-                        <option value="Theatre">Theatre</option>
-                        <option value="Urban Studies">Urban Studies</option>
-                        <option value="Voice">Voice</option>
-                        <option value="Women & Gender Studies">
-                          Women & Gender Studies
-                        </option>
-                        <option value="Woodwinds">Woodwinds</option>
-                        <option value="Writing">Writing</option>
-                        <option value="Youth Advocacy and Educational Studies">
-                          Youth Advocacy and Educational Studies
+                        <option *ngFor="let item of study" [value]="item">
+                          {{ item }}
                         </option>
                       </select>
                     </div>
@@ -2447,111 +1050,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="1920">1920</option>
-                        <option value="1921">1921</option>
-                        <option value="1922">1922</option>
-                        <option value="1923">1923</option>
-                        <option value="1924">1924</option>
-                        <option value="1925">1925</option>
-                        <option value="1926">1926</option>
-                        <option value="1927">1927</option>
-                        <option value="1928">1928</option>
-                        <option value="1929">1929</option>
-                        <option value="1930">1930</option>
-                        <option value="1931">1931</option>
-                        <option value="1932">1932</option>
-                        <option value="1933">1933</option>
-                        <option value="1934">1934</option>
-                        <option value="1935">1935</option>
-                        <option value="1936">1936</option>
-                        <option value="1937">1937</option>
-                        <option value="1938">1938</option>
-                        <option value="1939">1939</option>
-                        <option value="1940">1940</option>
-                        <option value="1941">1941</option>
-                        <option value="1942">1942</option>
-                        <option value="1943">1943</option>
-                        <option value="1944">1944</option>
-                        <option value="1945">1945</option>
-                        <option value="1946">1946</option>
-                        <option value="1947">1947</option>
-                        <option value="1948">1948</option>
-                        <option value="1949">1949</option>
-                        <option value="1950">1950</option>
-                        <option value="1951">1951</option>
-                        <option value="1952">1952</option>
-                        <option value="1953">1953</option>
-                        <option value="1954">1954</option>
-                        <option value="1955">1955</option>
-                        <option value="1956">1956</option>
-                        <option value="1957">1957</option>
-                        <option value="1958">1958</option>
-                        <option value="1959">1959</option>
-                        <option value="1960">1960</option>
-                        <option value="1961">1961</option>
-                        <option value="1962">1962</option>
-                        <option value="1963">1963</option>
-                        <option value="1964">1964</option>
-                        <option value="1965">1965</option>
-                        <option value="1966">1966</option>
-                        <option value="1967">1967</option>
-                        <option value="1968">1968</option>
-                        <option value="1969">1969</option>
-                        <option value="1970">1970</option>
-                        <option value="1971">1971</option>
-                        <option value="1972">1972</option>
-                        <option value="1973">1973</option>
-                        <option value="1974">1974</option>
-                        <option value="1975">1975</option>
-                        <option value="1976">1976</option>
-                        <option value="1977">1977</option>
-                        <option value="1978">1978</option>
-                        <option value="1979">1979</option>
-                        <option value="1980">1980</option>
-                        <option value="1981">1981</option>
-                        <option value="1982">1982</option>
-                        <option value="1983">1983</option>
-                        <option value="1984">1984</option>
-                        <option value="1985">1985</option>
-                        <option value="1986">1986</option>
-                        <option value="1987">1987</option>
-                        <option value="1988">1988</option>
-                        <option value="1989">1989</option>
-                        <option value="1990">1990</option>
-                        <option value="1991">1991</option>
-                        <option value="1992">1992</option>
-                        <option value="1993">1993</option>
-                        <option value="1994">1994</option>
-                        <option value="1995">1995</option>
-                        <option value="1996">1996</option>
-                        <option value="1997">1997</option>
-                        <option value="1998">1998</option>
-                        <option value="1999">1999</option>
-                        <option value="2000">2000</option>
-                        <option value="2001">2001</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                        <option value="2004">2004</option>
-                        <option value="2005">2005</option>
-                        <option value="2006">2006</option>
-                        <option value="2007">2007</option>
-                        <option value="2008">2008</option>
-                        <option value="2009">2009</option>
-                        <option value="2010">2010</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
+                        <option *ngFor="let item of year" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2576,169 +1077,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="Actor">Actor</option>
-                        <option value="Actuary">Actuary</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agricultural Worker">
-                          Agricultural Worker
+                        <option
+                          *ngFor="let item of businessType"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
-                        <option value="Air Traffic Controller">
-                          Air Traffic Controller
-                        </option>
-                        <option value="Ambulance Officer">
-                          Ambulance Officer
-                        </option>
-                        <option value="Architect">Architect</option>
-                        <option value="Art Director">Art Director</option>
-                        <option value="Artist">Artist</option>
-                        <option value="Athlete">Athlete</option>
-                        <option value="Auditor">Auditor</option>
-                        <option value="Baker">Baker</option>
-                        <option value="Barista">Barista</option>
-                        <option value="Bartender">Bartender</option>
-                        <option value="Board Member">Board Member</option>
-                        <option value="Business Analyst">
-                          Business Analyst
-                        </option>
-                        <option value="Chef">Chef</option>
-                        <option value="Childcare Worker">
-                          Childcare Worker
-                        </option>
-                        <option value="Civil Servant">Civil Servant</option>
-                        <option value="Cleaner">Cleaner</option>
-                        <option value="Company Worker">Company Worker</option>
-                        <option value="Computer Scientist">
-                          Computer Scientist
-                        </option>
-                        <option value="Construction Worker">
-                          Construction Worker
-                        </option>
-                        <option value="Cook">Cook</option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Craftsperson">Craftsperson</option>
-                        <option value="Curator">Curator</option>
-                        <option value="Customer Service Representative">
-                          Customer Service Representative
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Economist">Economist</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Equipment Operator">
-                          Equipment Operator
-                        </option>
-                        <option value="Executive Manager">
-                          Executive Manager
-                        </option>
-                        <option value="Farmer">Farmer</option>
-                        <option value="Film Maker">Film Maker</option>
-                        <option value="Firefighter">Firefighter</option>
-                        <option value="Fisherman">Fisherman</option>
-                        <option value="Fitness Trainer">Fitness Trainer</option>
-                        <option value="Flight Attendant">
-                          Flight Attendant
-                        </option>
-                        <option value="Florist">Florist</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Gardener">Gardener</option>
-                        <option value="Hair Stylist">Hair Stylist</option>
-                        <option value="Home Care Aid">Home Care Aid</option>
-                        <option value="Homemaker">Homemaker</option>
-                        <option value="Hospitality Worker">
-                          Hospitality Worker
-                        </option>
-                        <option value="Housekeeper">Housekeeper</option>
-                        <option value="Information Technology Professional">
-                          Information Technology Professional
-                        </option>
-                        <option value="Investor">Investor</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Laborer">Laborer</option>
-                        <option value="Lawyer">Lawyer</option>
-                        <option value="Librarian">Librarian</option>
-                        <option value="Maintenance Worker">
-                          Maintenance Worker
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Manufacturing Worker">
-                          Manufacturing Worker
-                        </option>
-                        <option value="Marketing Professional">
-                          Marketing Professional
-                        </option>
-                        <option value="Mathematician">Mathematician</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Medical Professional">
-                          Medical Professional
-                        </option>
-                        <option value="Merchant">Merchant</option>
-                        <option value="Midwife">Midwife</option>
-                        <option value="Military Personnel">
-                          Military Personnel
-                        </option>
-                        <option value="Musician">Musician</option>
-                        <option value="Nanny">Nanny</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Office Clerk">Office Clerk</option>
-                        <option value="Office Worker">Office Worker</option>
-                        <option value="Optician">Optician</option>
-                        <option value="Performance Artist">
-                          Performance Artist
-                        </option>
-                        <option value="Photographer">Photographer</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="Politician">Politician</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Railroad Engineer">
-                          Railroad Engineer
-                        </option>
-                        <option value="Researcher">Researcher</option>
-                        <option value="Retail Employee">Retail Employee</option>
-                        <option value="Retiree">Retiree</option>
-                        <option value="Rigger">Rigger</option>
-                        <option value="Sailor">Sailor</option>
-                        <option value="Salesperson">Salesperson</option>
-                        <option value="Scientist">Scientist</option>
-                        <option value="Sea Captain">Sea Captain</option>
-                        <option value="Secretary">Secretary</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Small Business Owner">
-                          Small Business Owner
-                        </option>
-                        <option value="Social Worker">Social Worker</option>
-                        <option value="Software Developer">
-                          Software Developer
-                        </option>
-                        <option value="Spokesperson">Spokesperson</option>
-                        <option value="Statistician">Statistician</option>
-                        <option value="Stay-At-Home Parent">
-                          Stay-At-Home Parent
-                        </option>
-                        <option value="Student">Student</option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surveyor">Surveyor</option>
-                        <option value="Tailor">Tailor</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Tradesperson">Tradesperson</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Translator">Translator</option>
-                        <option value="Truck Driver">Truck Driver</option>
-                        <option value="Tutor">Tutor</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Videographer">Videographer</option>
-                        <option value="Waiter">Waiter</option>
-                        <option value="Waste Collector">Waste Collector</option>
-                        <option value="Writer">Writer</option>
-                        <option value="Zoologist">Zoologist</option>
                       </select>
                     </div>
 
@@ -2943,7 +1287,7 @@
   [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
   style="background-color: rgb(0, 0, 0, 0.8)"
 >
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">
@@ -2965,10 +1309,16 @@
               }}
             </h3>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
                   >
                   <input
                     type="text"
@@ -2980,11 +1330,17 @@
                   />
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
                   <input
                     type="text"
                     class="form-control"
@@ -2995,9 +1351,17 @@
                   />
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12" style="padding-top: 17px">
                 <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -3011,14 +1375,21 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-12">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
                 <button
                   type="submit"
                   class="btn btn-primary"
                   data-bs-toggle="modal"
                   id="pay-button"
                   (click)="pay()"
-                  [disabled]="!paymentForm.valid"
                 >
                   Pay Now
                 </button>
@@ -3441,21 +1812,72 @@
         </div>
         <div class="moretext13" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">DFW Connects</a>
-            <a class="btn-link" href="">Military Connects</a>
-            <a class="btn-link" href="">Truckers Connects</a>
-            <a class="btn-link" href="">Automotive Connects</a>
-            <a class="btn-link" href="">Students Connects</a>
-            <a class="btn-link" href="">Sports Athletes Connects</a>
-            <a class="btn-link" href="">Realtors Connects</a>
-            <a class="btn-link" href="">Restaurants Connects</a>
-            <a class="btn-link" href="">Hair & Beauty Connects</a>
-            <a class="btn-link" href="">Hispanics Connects</a>
-            <a class="btn-link" href="">Nubians Connects</a>
-            <a class="btn-link" href="">Attorneys Connects</a>
-            <a class="btn-link" href="">Religions Connects</a>
-            <a class="btn-link" href="">Entertainers Connects</a>
-            <a class="btn-link" href="">Night Life Connects</a>
+            <a class="btn-link" href="https://umyobizdfw.com" target="_blank"
+              >DFW connects</a
+            >
+            <a class="btn-link" href="https://umyomilitary.site" target="_blank"
+              >Military Connects</a
+            >
+            <a class="btn-link" href="https://umyotruckers.site" target="_blank"
+              >Truckers Connects</a
+            >
+            <a class="btn-link" href="https://umyoauto.site" target="_blank"
+              >Automotive Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyohighschool.site"
+              target="_blank"
+              >Students Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyosportscards.com"
+              target="_blank"
+              >Sports Athletes Connects</a
+            >
+            <a class="btn-link" href="https://umyorealtor.site" target="_blank"
+              >Realtors Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyorestaurant.com"
+              target="_blank"
+              >Restaurants Connects</a
+            >
+            <a class="btn-link" href="https://umyostylist.com" target="_blank"
+              >Hair & Beauty Connects</a
+            >
+            <a class="btn-link" href="https://umyonegocio.site" target="_blank"
+              >Hispanics Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://nubianbizcards.com"
+              target="_blank"
+              >Nubians Connects</a
+            >
+            <a class="btn-link" href="https://umyolawyer.site" target="_blank"
+              >Attorneys Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoreligions.site"
+              target="_blank"
+              >Religions Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoentertainment.site"
+              target="_blank"
+              >Entertainers Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonightlife.site"
+              target="_blank"
+              >Night Life Connects</a
+            >
           </div>
         </div>
       </div>
@@ -3469,27 +1891,102 @@
         </div>
         <div class="moretext14" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">UMYO Conferences</a>
-            <a class="btn-link" href="">UMYO Music</a>
-            <a class="btn-link" href="">UMYO Market</a>
-            <a class="btn-link" href="">UMYO Hosting</a>
-            <a class="btn-link" href="">UMYO Chatgpt</a>
-            <a class="btn-link" href="">UMYO Tweets</a>
-            <a class="btn-link" href="">UMYO Date</a>
-            <a class="btn-link" href="">UMYO Tik Tok</a>
-            <a class="btn-link" href="">UMYO Connects</a>
-            <a class="btn-link" href="">UMYO Mail</a>
-            <a class="btn-link" href="">UMYO WhatsApp</a>
-            <a class="btn-link" href="">UMYO Games</a>
-            <a class="btn-link" href="">UMYO Tube</a>
-            <a class="btn-link" href="">UMYO SMS</a>
-            <a class="btn-link" href="">UMYO PPV</a>
-            <a class="btn-link" href="">UMYO LMS</a>
-            <a class="btn-link" href="">UMYO VPN</a>
-            <a class="btn-link" href="">UMYO Store</a>
-            <a class="btn-link" href="">UMYO Profile</a>
-            <a class="btn-link" href="">UMYO Ambassadors</a>
-            <a class="btn-link" href="">UMYO Articles</a>
+            <a
+              class="btn-link"
+              href="https://live.umyoconvo.site"
+              target="_blank"
+              >UMYO Conferences</a
+            >
+            <a class="btn-link" href="https://umyomusic.com" target="_blank"
+              >UMYO Music</a
+            >
+            <a class="btn-link" href="https://umyopopup.site" target="_blank"
+              >UMYO Market</a
+            >
+            <a class="btn-link" href="https://umyohost.com" target="_blank"
+              >UMYO Hosting</a
+            >
+            <a class="btn-link" href="https://uchatyes.com" target="_blank"
+              >UMYO Chatgpt</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyotweets.com/guest"
+              target="_blank"
+              >UMYO Tweets</a
+            >
+            <a class="btn-link" href="https://cpswipe.com" target="_blank"
+              >UMYO Date</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Tik Tok</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonetwork.com/network"
+              target="_blank"
+              >UMYO Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Mail</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO WhatsApp</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Games</a
+            >
+            <a class="btn-link" href="https://umyotube.com" target="_blank"
+              >UMYO Tube</a
+            >
+            <a class="btn-link" href="https://umyosms.com" target="_blank"
+              >UMYO SMS</a
+            >
+            <a class="btn-link" href="https://vibetalktv.com" target="_blank"
+              >UMYO PPV</a
+            >
+            <a class="btn-link" href="https://umyoeducator.com" target="_blank"
+              >UMYO LMS</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO VPN</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/membership-packages/"
+              target="_blank"
+              >UMYO Store</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/network/"
+              target="_blank"
+              >UMYO Profile</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Ambassadors</a
+            >
+            <a class="btn-link" href="https://umyoauthor.site" target="_blank"
+              >UMYO Authors</a
+            >
           </div>
         </div>
       </div>
@@ -4265,6 +2762,25 @@
   
             </pre
           >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ paypalTitleMessage }}</h3>
+          <p style="padding-top: 15px">{{ paypalMessage }}</p>
         </div>
       </div>
     </div>

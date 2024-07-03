@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter } from '@angular/core';
 import { ApiService } from './api.service'; 
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
@@ -12,6 +12,8 @@ import {User,registerResponse} from './models/register-response.model'
 })
 export class PaymentService {
 
+  loadingStatus = new EventEmitter<boolean>();
+   
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -38,17 +40,17 @@ export class PaymentService {
 const expireInValue = selectedPackage.expire_in.toLowerCase(); 
 
 if (expireInValue.includes("year")) {
-  interval = "YEAR";
+  interval = "year";
   interval_count = 1;
 } else if (expireInValue.includes("6 month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 6;
 } else if (expireInValue.includes("month")) {
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 } else {
   
-  interval = "MONTH";
+  interval = "month";
   interval_count = 1;
 }
     this.apiService.AddCustomer({
@@ -81,6 +83,7 @@ if (expireInValue.includes("year")) {
           if (response.status == "Success") {
             // proceed to email verification screen
             this.setUserData({
+
               firstname: form3.get('registerFirstName').value,
               lastname: form3.get('registerLastName').value,
               phone: form3.get('registerPhone').value,
@@ -114,6 +117,11 @@ if (expireInValue.includes("year")) {
         
         
               reffered_from: form3.get('registerReferralCode').value,
+
+
+              
+              
+
               
             });
 
@@ -130,7 +138,9 @@ if (expireInValue.includes("year")) {
                   this.router.navigate(['/email-verification']);
                 }
                 else{
+
                   alert(response.status + response.message)
+                  this.loadingStatus.emit(false);
                 }
                 
               }
@@ -142,12 +152,20 @@ if (expireInValue.includes("year")) {
             
           } else {
             alert(response.message)
+            this.loadingStatus.emit(false);
           }
         })
       } else {
-        alert("failesd")
+        alert("Payment Failed")
+        this.loadingStatus.emit(false);
       }
-    }, error => alert(error.error.message))
+    }, error => {
+
+      alert(error.error.message)
+      this.loadingStatus.emit(false);
+    }
+  )
+
   }
 
 
@@ -157,20 +175,20 @@ if (expireInValue.includes("year")) {
   testing(form3:any, selectedPackage: Package){
 
     this.setUserData({
-      
-      
-      friend_id: null,
-      package_id: selectedPackage.id,
-      balance_transaction: null,
-      balance_transaction_type: null,
-    
+       
       firstname: form3.get('registerFirstName').value,
       lastname: form3.get('registerLastName').value,
       phone: form3.get('registerPhone').value,
       email: form3.get('registerEmail').value,
       password: form3.get('registerPassword').value,
-
-      
+      country: "",
+      sub_category: "",
+      stripe_customer_id:this.stripe_customer_id,
+      stripe_subscription_id:this.stripe_subscription_id,
+      friend_id: null,
+      package_id: selectedPackage.id,
+      balance_transaction: null,
+      balance_transaction_type: 'stripe',
       business_type: form3.get('registerBusiness')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
@@ -188,7 +206,19 @@ if (expireInValue.includes("year")) {
       
 
 
+
+
       reffered_from: form3.get('registerReferralCode').value,
+
+
+
+
+
+      
+
+
+
+      
       
     });
 
@@ -254,44 +284,42 @@ if (expireInValue.includes("year")) {
         console.log("this is approval link"+approvalLink);
         
         this.setUserData({
+
           firstname: form3.get('registerFirstName').value,
           lastname: form3.get('registerLastName').value,
           phone: form3.get('registerPhone').value,
           email: form3.get('registerEmail').value,
           password: form3.get('registerPassword').value,
           country: "",
-          
           sub_category: "",
           stripe_customer_id:this.stripe_customer_id,
           stripe_subscription_id:this.stripe_subscription_id,
           friend_id: null,
           package_id: selectedPackage.id,
           balance_transaction: null,
-          balance_transaction_type: 'paypal',
-          
+          balance_transaction_type: 'stripe',
+          business_type: form3.get('registerBusiness')?.value,
+          sport_type: form3.get('registerSportType')?.value,
+          age_type: form3.get('registerAgeType')?.value,
+          position: form3.get('registerPositionType')?.value,
           state: form3.get('registerStateType')?.value,
-          reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocation')?.value,
           city: form3.get('registerCityType')?.value,
+          location: form3.get('registerLocation')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
-          plan_id:response.plan_id,
+          degree: form3.get('registerDegree')?.value,
 
+          college: form3.get('registerCollege')?.value,
+          year: form3.get('registerYear')?.value,
+          study: form3.get('registerStudy')?.value,
           
-      sport_type: form3.get('registerSportType')?.value,
-      age_type: form3.get('registerAgeType')?.value,
-      business_type: form3.get('registerBusiness')?.value,
-      position: form3.get('registerPositionType')?.value,
-      
-      
-      
-      
-      
-      degree: form3.get('registerDegree')?.value,
 
-      college: form3.get('registerCollege')?.value,
-      year: form3.get('registerYear')?.value,
-      study: form3.get('registerStudy')?.value,
+    
+    
+    
+          reffered_from: form3.get('registerReferralCode').value,
+
+
       
 
 });
@@ -355,17 +383,17 @@ localStorage.setItem('updatePaypalId',response.plan_id)
       },
       (error) => {
         console.error("Test: Failed to create billing plan", error);
+          alert("Failed To upgrade your Package.")
+        this.loadingStatus.emit(false);
        
-
 
 
       }
     )
    
 
-    
-
   }
+
   
 
 
@@ -382,6 +410,7 @@ localStorage.setItem('lastname', response.user.lastname);
 localStorage.setItem('phone', response.user.phone);
 localStorage.setItem('email', response.user.email);
 localStorage.setItem('user_id', response.user.id.toString());
+this.loadingStatus.emit(false);
         this.router.navigate(['/email-verification']);
       }
       else{
@@ -390,6 +419,8 @@ localStorage.setItem('user_id', response.user.id.toString());
     }
   )
 }
+
+
 
 
 upgradePaypal(userData:any,user_id:any,selectedPackage:any){
@@ -420,6 +451,3 @@ update_paypal_keys(subscription_id:any,user_id:any){
 
 }
 }
-
-
-
