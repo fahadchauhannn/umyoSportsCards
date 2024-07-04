@@ -249,6 +249,29 @@ export class ApiService {
 
     return this.http.post(url, { "user_id": user_id, "agreement_id": agreement_id }, { headers: combinedHeaders });
   }
+
+  
+
+
+  incrementCardView(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementTotalViews`, {"card_id":card_id}, { headers });
+  }
+
+  incrementCardShare(card_id:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `incrementSend`, {"card_id":card_id}, { headers });
+  }
+
+
   getActivity(user_id: any): Observable<any> {
     const url = baseUrl + `getActivity`;
     const headers = new HttpHeaders({

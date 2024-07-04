@@ -297,7 +297,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -431,143 +431,9 @@
                   formControlName="selectedBusiness"
                 >
                   <option selected value="" disabled>Business Type</option>
-                  <option value="Accountant">Accountant</option>
-                  <option value="Actor">Actor</option>
-                  <option value="Actuary">Actuary</option>
-                  <option value="Administrator">Administrator</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agricultural Worker">
-                    Agricultural Worker
+                  <option *ngFor="let item of businessType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Air Traffic Controller">
-                    Air Traffic Controller
-                  </option>
-                  <option value="Ambulance Officer">Ambulance Officer</option>
-                  <option value="Architect">Architect</option>
-                  <option value="Art Director">Art Director</option>
-                  <option value="Artist">Artist</option>
-                  <option value="Athlete">Athlete</option>
-                  <option value="Auditor">Auditor</option>
-                  <option value="Baker">Baker</option>
-                  <option value="Barista">Barista</option>
-                  <option value="Bartender">Bartender</option>
-                  <option value="Board Member">Board Member</option>
-                  <option value="Business Analyst">Business Analyst</option>
-                  <option value="Chef">Chef</option>
-                  <option value="Childcare Worker">Childcare Worker</option>
-                  <option value="Civil Servant">Civil Servant</option>
-                  <option value="Cleaner">Cleaner</option>
-                  <option value="Company Worker">Company Worker</option>
-                  <option value="Computer Scientist">Computer Scientist</option>
-                  <option value="Construction Worker">
-                    Construction Worker
-                  </option>
-                  <option value="Cook">Cook</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Craftsperson">Craftsperson</option>
-                  <option value="Curator">Curator</option>
-                  <option value="Customer Service Representative">
-                    Customer Service Representative
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Designer">Designer</option>
-                  <option value="Doctor">Doctor</option>
-                  <option value="Driver">Driver</option>
-                  <option value="Economist">Economist</option>
-                  <option value="Electrician">Electrician</option>
-                  <option value="Entrepreneur">Entrepreneur</option>
-                  <option value="Equipment Operator">Equipment Operator</option>
-                  <option value="Executive Manager">Executive Manager</option>
-                  <option value="Farmer">Farmer</option>
-                  <option value="Film Maker">Film Maker</option>
-                  <option value="Firefighter">Firefighter</option>
-                  <option value="Fisherman">Fisherman</option>
-                  <option value="Fitness Trainer">Fitness Trainer</option>
-                  <option value="Flight Attendant">Flight Attendant</option>
-                  <option value="Florist">Florist</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Gardener">Gardener</option>
-                  <option value="Hair Stylist">Hair Stylist</option>
-                  <option value="Home Care Aid">Home Care Aid</option>
-                  <option value="Homemaker">Homemaker</option>
-                  <option value="Hospitality Worker">Hospitality Worker</option>
-                  <option value="Housekeeper">Housekeeper</option>
-                  <option value="Information Technology Professional">
-                    Information Technology Professional
-                  </option>
-                  <option value="Investor">Investor</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Laborer">Laborer</option>
-                  <option value="Lawyer">Lawyer</option>
-                  <option value="Librarian">Librarian</option>
-                  <option value="Maintenance Worker">Maintenance Worker</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manufacturing Worker">
-                    Manufacturing Worker
-                  </option>
-                  <option value="Marketing Professional">
-                    Marketing Professional
-                  </option>
-                  <option value="Mathematician">Mathematician</option>
-                  <option value="Mechanic">Mechanic</option>
-                  <option value="Medical Professional">
-                    Medical Professional
-                  </option>
-                  <option value="Merchant">Merchant</option>
-                  <option value="Midwife">Midwife</option>
-                  <option value="Military Personnel">Military Personnel</option>
-                  <option value="Musician">Musician</option>
-                  <option value="Nanny">Nanny</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Office Clerk">Office Clerk</option>
-                  <option value="Office Worker">Office Worker</option>
-                  <option value="Optician">Optician</option>
-                  <option value="Performance Artist">Performance Artist</option>
-                  <option value="Photographer">Photographer</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="Politician">Politician</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Railroad Engineer">Railroad Engineer</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Retail Employee">Retail Employee</option>
-                  <option value="Retiree">Retiree</option>
-                  <option value="Rigger">Rigger</option>
-                  <option value="Sailor">Sailor</option>
-                  <option value="Salesperson">Salesperson</option>
-                  <option value="Scientist">Scientist</option>
-                  <option value="Sea Captain">Sea Captain</option>
-                  <option value="Secretary">Secretary</option>
-                  <option value="Self-Employed">Self-Employed</option>
-                  <option value="Small Business Owner">
-                    Small Business Owner
-                  </option>
-                  <option value="Social Worker">Social Worker</option>
-                  <option value="Software Developer">Software Developer</option>
-                  <option value="Spokesperson">Spokesperson</option>
-                  <option value="Statistician">Statistician</option>
-                  <option value="Stay-At-Home Parent">
-                    Stay-At-Home Parent
-                  </option>
-                  <option value="Student">Student</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surveyor">Surveyor</option>
-                  <option value="Tailor">Tailor</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Technician">Technician</option>
-                  <option value="Tradesperson">Tradesperson</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Translator">Translator</option>
-                  <option value="Truck Driver">Truck Driver</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Unemployed">Unemployed</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Videographer">Videographer</option>
-                  <option value="Waiter">Waiter</option>
-                  <option value="Waste Collector">Waste Collector</option>
-                  <option value="Writer">Writer</option>
-                  <option value="Zoologist">Zoologist</option>
                 </select>
               </div>
 
@@ -578,46 +444,9 @@
                   formControlName="selectedCity"
                 >
                   <option selected value="" disabled>DFW Cities</option>
-                  <option value="Dallas">Dallas</option>
-                  <option value="Plano">Plano</option>
-                  <option value="Irving">Irving</option>
-                  <option value="Fort Worth">Fort Worth</option>
-                  <option value="Richardson">Richardson</option>
-                  <option value="Addison">Addison</option>
-                  <option value="Frisco">Frisco</option>
-                  <option value="Arlington">Arlington</option>
-                  <option value="Carrollton">Carrollton</option>
-                  <option value="Southlake">Southlake</option>
-                  <option value="Lewisville">Lewisville</option>
-                  <option value="Garland">Garland</option>
-                  <option value="Mckinney">Mckinney</option>
-                  <option value="Allen">Allen</option>
-                  <option value="Coppell">Coppell</option>
-                  <option value="Denton">Denton</option>
-                  <option value="Grapevine">Grapevine</option>
-                  <option value="Grand Prairie">Grand Prairie</option>
-                  <option value="Flower Mound">Flower Mound</option>
-                  <option value="Mesquite">Mesquite</option>
-                  <option value="Bedford">Bedford</option>
-                  <option value="Rockwall">Rockwall</option>
-                  <option value="Sunnyvale">Sunnyvale</option>
-                  <option value="Hurst">Hurst</option>
-                  <option value="North Richland Hills">
-                    North Richland Hills
+                  <option *ngFor="let item of city" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Sachse">Sachse</option>
-                  <option value="Little Elm">Little Elm</option>
-                  <option value="Keller">Keller</option>
-                  <option value="Lancaster">Lancaster</option>
-                  <option value="Highland Park">Highland Park</option>
-                  <option value="University Park">University Park</option>
-                  <option value="Balch Springs">Balch Springs</option>
-                  <option value="Duncanville">Duncanville</option>
-                  <option value="Farmers Branch">Farmers Branch</option>
-                  <option value="DeSoto">DeSoto</option>
-                  <option value="Cockrell Hill">Cockrell Hill</option>
-                  <option value="Combine">Combine</option>
-                  <option value="Rowlett">Rowlett</option>
                 </select>
               </div>
 
@@ -628,30 +457,9 @@
                   formControlName="selectedLocation"
                 >
                   <option selected value="" disabled>Location</option>
-                  <option value="Business">Business</option>
-                  <option value="CEO">CEO</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Corporation">Corporation</option>
-                  <option value="Exclusive">Exclusive</option>
-                  <option value="Founder">Founder</option>
-                  <option value="CFO">CFO</option>
-                  <option value="COO">COO</option>
-                  <option value="Home Owner">Home Owner</option>
-                  <option value="Mall">Mall</option>
-                  <option value="Mass">Mass</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="Non Profit">Non Profit</option>
-                  <option value="Office">Office</option>
-                  <option value="Online">Online</option>
-                  <option value="Partners">Partners</option>
-                  <option value="Private">Private</option>
-                  <option value="Retail and Consultants">
-                    Retail and Consultants
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Community Pledge">Community Pledge</option>
-                  <option value="Store Front">Store Front</option>
-                  <option value="Pop Up Shop">Pop Up Shop</option>
-                  <option value="Vehicle">Vehicle</option>
                 </select>
               </div>
 
@@ -668,9 +476,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -681,21 +489,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Asian">Asian</option>
-                  <option value="African American">African American</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="American Indian">American Indian</option>
-                  <option value="Hispanics">Hispanics</option>
-                  <option value="Europeans">Europeans</option>
-                  <option value="Alaska Native">Alaska Native</option>
-                  <option value="Native Hawaiian">Native Hawaiian</option>
-                  <option value="Pacific Islander">Pacific Islander</option>
-                  <option value="Middle Easterners">Middle Easterners</option>
-                  <option value="North American Africans">
-                    North American Africans
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Two or More races">Two or More races</option>
-                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -1055,9 +851,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1080,29 +876,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Asian">Asian</option>
-                        <option value="African American">
-                          African American
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="American Indian">American Indian</option>
-                        <option value="Hispanics">Hispanics</option>
-                        <option value="Europeans">Europeans</option>
-                        <option value="Alaska Native">Alaska Native</option>
-                        <option value="Native Hawaiian">Native Hawaiian</option>
-                        <option value="Pacific Islander">
-                          Pacific Islander
-                        </option>
-                        <option value="Middle Easterners">
-                          Middle Easterners
-                        </option>
-                        <option value="North American Africans">
-                          North American Africans
-                        </option>
-                        <option value="Two or More races">
-                          Two or More races
-                        </option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
 
@@ -1128,46 +904,9 @@
                           Please Select
                         </option>
 
-                        <option value="Dallas">Dallas</option>
-                        <option value="Plano">Plano</option>
-                        <option value="Irving">Irving</option>
-                        <option value="Fort Worth">Fort Worth</option>
-                        <option value="Richardson">Richardson</option>
-                        <option value="Addison">Addison</option>
-                        <option value="Frisco">Frisco</option>
-                        <option value="Arlington">Arlington</option>
-                        <option value="Carrollton">Carrollton</option>
-                        <option value="Southlake">Southlake</option>
-                        <option value="Lewisville">Lewisville</option>
-                        <option value="Garland">Garland</option>
-                        <option value="Mckinney">Mckinney</option>
-                        <option value="Allen">Allen</option>
-                        <option value="Coppell">Coppell</option>
-                        <option value="Denton">Denton</option>
-                        <option value="Grapevine">Grapevine</option>
-                        <option value="Grand Prairie">Grand Prairie</option>
-                        <option value="Flower Mound">Flower Mound</option>
-                        <option value="Mesquite">Mesquite</option>
-                        <option value="Bedford">Bedford</option>
-                        <option value="Rockwall">Rockwall</option>
-                        <option value="Sunnyvale">Sunnyvale</option>
-                        <option value="Hurst">Hurst</option>
-                        <option value="North Richland Hills">
-                          North Richland Hills
+                        <option *ngFor="let item of city" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Sachse">Sachse</option>
-                        <option value="Little Elm">Little Elm</option>
-                        <option value="Keller">Keller</option>
-                        <option value="Lancaster">Lancaster</option>
-                        <option value="Highland Park">Highland Park</option>
-                        <option value="University Park">University Park</option>
-                        <option value="Balch Springs">Balch Springs</option>
-                        <option value="Duncanville">Duncanville</option>
-                        <option value="Farmers Branch">Farmers Branch</option>
-                        <option value="DeSoto">DeSoto</option>
-                        <option value="Cockrell Hill">Cockrell Hill</option>
-                        <option value="Combine">Combine</option>
-                        <option value="Rowlett">Rowlett</option>
                       </select>
                     </div>
 
@@ -1193,32 +932,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Business">Business</option>
-                        <option value="CEO">CEO</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Corporation">Corporation</option>
-                        <option value="Exclusive">Exclusive</option>
-                        <option value="Founder">Founder</option>
-                        <option value="CFO">CFO</option>
-                        <option value="COO">COO</option>
-                        <option value="Home Owner">Home Owner</option>
-                        <option value="Mall">Mall</option>
-                        <option value="Mass">Mass</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Non Profit">Non Profit</option>
-                        <option value="Office">Office</option>
-                        <option value="Online">Online</option>
-                        <option value="Partners">Partners</option>
-                        <option value="Private">Private</option>
-                        <option value="Retail and Consultants">
-                          Retail and Consultants
+                        <option *ngFor="let item of location" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Community Pledge">
-                          Community Pledge
-                        </option>
-                        <option value="Store Front">Store Front</option>
-                        <option value="Pop Up Shop">Pop Up Shop</option>
-                        <option value="Vehicle">Vehicle</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1243,169 +959,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="Actor">Actor</option>
-                        <option value="Actuary">Actuary</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agricultural Worker">
-                          Agricultural Worker
+                        <option
+                          *ngFor="let item of businessType"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
-                        <option value="Air Traffic Controller">
-                          Air Traffic Controller
-                        </option>
-                        <option value="Ambulance Officer">
-                          Ambulance Officer
-                        </option>
-                        <option value="Architect">Architect</option>
-                        <option value="Art Director">Art Director</option>
-                        <option value="Artist">Artist</option>
-                        <option value="Athlete">Athlete</option>
-                        <option value="Auditor">Auditor</option>
-                        <option value="Baker">Baker</option>
-                        <option value="Barista">Barista</option>
-                        <option value="Bartender">Bartender</option>
-                        <option value="Board Member">Board Member</option>
-                        <option value="Business Analyst">
-                          Business Analyst
-                        </option>
-                        <option value="Chef">Chef</option>
-                        <option value="Childcare Worker">
-                          Childcare Worker
-                        </option>
-                        <option value="Civil Servant">Civil Servant</option>
-                        <option value="Cleaner">Cleaner</option>
-                        <option value="Company Worker">Company Worker</option>
-                        <option value="Computer Scientist">
-                          Computer Scientist
-                        </option>
-                        <option value="Construction Worker">
-                          Construction Worker
-                        </option>
-                        <option value="Cook">Cook</option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Craftsperson">Craftsperson</option>
-                        <option value="Curator">Curator</option>
-                        <option value="Customer Service Representative">
-                          Customer Service Representative
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Economist">Economist</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Equipment Operator">
-                          Equipment Operator
-                        </option>
-                        <option value="Executive Manager">
-                          Executive Manager
-                        </option>
-                        <option value="Farmer">Farmer</option>
-                        <option value="Film Maker">Film Maker</option>
-                        <option value="Firefighter">Firefighter</option>
-                        <option value="Fisherman">Fisherman</option>
-                        <option value="Fitness Trainer">Fitness Trainer</option>
-                        <option value="Flight Attendant">
-                          Flight Attendant
-                        </option>
-                        <option value="Florist">Florist</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Gardener">Gardener</option>
-                        <option value="Hair Stylist">Hair Stylist</option>
-                        <option value="Home Care Aid">Home Care Aid</option>
-                        <option value="Homemaker">Homemaker</option>
-                        <option value="Hospitality Worker">
-                          Hospitality Worker
-                        </option>
-                        <option value="Housekeeper">Housekeeper</option>
-                        <option value="Information Technology Professional">
-                          Information Technology Professional
-                        </option>
-                        <option value="Investor">Investor</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Laborer">Laborer</option>
-                        <option value="Lawyer">Lawyer</option>
-                        <option value="Librarian">Librarian</option>
-                        <option value="Maintenance Worker">
-                          Maintenance Worker
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Manufacturing Worker">
-                          Manufacturing Worker
-                        </option>
-                        <option value="Marketing Professional">
-                          Marketing Professional
-                        </option>
-                        <option value="Mathematician">Mathematician</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Medical Professional">
-                          Medical Professional
-                        </option>
-                        <option value="Merchant">Merchant</option>
-                        <option value="Midwife">Midwife</option>
-                        <option value="Military Personnel">
-                          Military Personnel
-                        </option>
-                        <option value="Musician">Musician</option>
-                        <option value="Nanny">Nanny</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Office Clerk">Office Clerk</option>
-                        <option value="Office Worker">Office Worker</option>
-                        <option value="Optician">Optician</option>
-                        <option value="Performance Artist">
-                          Performance Artist
-                        </option>
-                        <option value="Photographer">Photographer</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="Politician">Politician</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Railroad Engineer">
-                          Railroad Engineer
-                        </option>
-                        <option value="Researcher">Researcher</option>
-                        <option value="Retail Employee">Retail Employee</option>
-                        <option value="Retiree">Retiree</option>
-                        <option value="Rigger">Rigger</option>
-                        <option value="Sailor">Sailor</option>
-                        <option value="Salesperson">Salesperson</option>
-                        <option value="Scientist">Scientist</option>
-                        <option value="Sea Captain">Sea Captain</option>
-                        <option value="Secretary">Secretary</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Small Business Owner">
-                          Small Business Owner
-                        </option>
-                        <option value="Social Worker">Social Worker</option>
-                        <option value="Software Developer">
-                          Software Developer
-                        </option>
-                        <option value="Spokesperson">Spokesperson</option>
-                        <option value="Statistician">Statistician</option>
-                        <option value="Stay-At-Home Parent">
-                          Stay-At-Home Parent
-                        </option>
-                        <option value="Student">Student</option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surveyor">Surveyor</option>
-                        <option value="Tailor">Tailor</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Tradesperson">Tradesperson</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Translator">Translator</option>
-                        <option value="Truck Driver">Truck Driver</option>
-                        <option value="Tutor">Tutor</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Videographer">Videographer</option>
-                        <option value="Waiter">Waiter</option>
-                        <option value="Waste Collector">Waste Collector</option>
-                        <option value="Writer">Writer</option>
-                        <option value="Zoologist">Zoologist</option>
                       </select>
                     </div>
 
@@ -1586,14 +1145,14 @@
           }"
         >
           <!-- <div id="paypal-button-container"></div> -->
-          <button
+          <!-- <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
             class="btn btn-info"
             (click)="openStripeModal()"
           >
             Stripe
-          </button>
+          </button> -->
           <button
             type="button"
             style="background-color: rgb(35, 149, 243); color: white"
@@ -2534,21 +2093,72 @@
         </div>
         <div class="moretext13" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">DFW Connects</a>
-            <a class="btn-link" href="">Military Connects</a>
-            <a class="btn-link" href="">Truckers Connects</a>
-            <a class="btn-link" href="">Automotive Connects</a>
-            <a class="btn-link" href="">Students Connects</a>
-            <a class="btn-link" href="">Sports Athletes Connects</a>
-            <a class="btn-link" href="">Realtors Connects</a>
-            <a class="btn-link" href="">Restaurants Connects</a>
-            <a class="btn-link" href="">Hair & Beauty Connects</a>
-            <a class="btn-link" href="">Hispanics Connects</a>
-            <a class="btn-link" href="">Nubians Connects</a>
-            <a class="btn-link" href="">Attorneys Connects</a>
-            <a class="btn-link" href="">Religions Connects</a>
-            <a class="btn-link" href="">Entertainers Connects</a>
-            <a class="btn-link" href="">Night Life Connects</a>
+            <a class="btn-link" href="https://umyobizdfw.com" target="_blank"
+              >DFW connects</a
+            >
+            <a class="btn-link" href="https://umyomilitary.site" target="_blank"
+              >Military Connects</a
+            >
+            <a class="btn-link" href="https://umyotruckers.site" target="_blank"
+              >Truckers Connects</a
+            >
+            <a class="btn-link" href="https://umyoauto.site" target="_blank"
+              >Automotive Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyohighschool.site"
+              target="_blank"
+              >Students Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyosportscards.com"
+              target="_blank"
+              >Sports Athletes Connects</a
+            >
+            <a class="btn-link" href="https://umyorealtor.site" target="_blank"
+              >Realtors Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyorestaurant.com"
+              target="_blank"
+              >Restaurants Connects</a
+            >
+            <a class="btn-link" href="https://umyostylist.com" target="_blank"
+              >Hair & Beauty Connects</a
+            >
+            <a class="btn-link" href="https://umyonegocio.site" target="_blank"
+              >Hispanics Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://nubianbizcards.com"
+              target="_blank"
+              >Nubians Connects</a
+            >
+            <a class="btn-link" href="https://umyolawyer.site" target="_blank"
+              >Attorneys Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoreligions.site"
+              target="_blank"
+              >Religions Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoentertainment.site"
+              target="_blank"
+              >Entertainers Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonightlife.site"
+              target="_blank"
+              >Night Life Connects</a
+            >
           </div>
         </div>
       </div>
@@ -2562,27 +2172,102 @@
         </div>
         <div class="moretext14" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">UMYO Conferences</a>
-            <a class="btn-link" href="">UMYO Music</a>
-            <a class="btn-link" href="">UMYO Market</a>
-            <a class="btn-link" href="">UMYO Hosting</a>
-            <a class="btn-link" href="">UMYO Chatgpt</a>
-            <a class="btn-link" href="">UMYO Tweets</a>
-            <a class="btn-link" href="">UMYO Date</a>
-            <a class="btn-link" href="">UMYO Tik Tok</a>
-            <a class="btn-link" href="">UMYO Connects</a>
-            <a class="btn-link" href="">UMYO Mail</a>
-            <a class="btn-link" href="">UMYO WhatsApp</a>
-            <a class="btn-link" href="">UMYO Games</a>
-            <a class="btn-link" href="">UMYO Tube</a>
-            <a class="btn-link" href="">UMYO SMS</a>
-            <a class="btn-link" href="">UMYO PPV</a>
-            <a class="btn-link" href="">UMYO LMS</a>
-            <a class="btn-link" href="">UMYO VPN</a>
-            <a class="btn-link" href="">UMYO Store</a>
-            <a class="btn-link" href="">UMYO Profile</a>
-            <a class="btn-link" href="">UMYO Ambassadors</a>
-            <a class="btn-link" href="">UMYO Articles</a>
+            <a
+              class="btn-link"
+              href="https://live.umyoconvo.site"
+              target="_blank"
+              >UMYO Conferences</a
+            >
+            <a class="btn-link" href="https://umyomusic.com" target="_blank"
+              >UMYO Music</a
+            >
+            <a class="btn-link" href="https://umyopopup.site" target="_blank"
+              >UMYO Market</a
+            >
+            <a class="btn-link" href="https://umyohost.com" target="_blank"
+              >UMYO Hosting</a
+            >
+            <a class="btn-link" href="https://uchatyes.com" target="_blank"
+              >UMYO Chatgpt</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyotweets.com/guest"
+              target="_blank"
+              >UMYO Tweets</a
+            >
+            <a class="btn-link" href="https://cpswipe.com" target="_blank"
+              >UMYO Date</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Tik Tok</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonetwork.com/network"
+              target="_blank"
+              >UMYO Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Mail</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO WhatsApp</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Games</a
+            >
+            <a class="btn-link" href="https://umyotube.com" target="_blank"
+              >UMYO Tube</a
+            >
+            <a class="btn-link" href="https://umyosms.com" target="_blank"
+              >UMYO SMS</a
+            >
+            <a class="btn-link" href="https://vibetalktv.com" target="_blank"
+              >UMYO PPV</a
+            >
+            <a class="btn-link" href="https://umyoeducator.com" target="_blank"
+              >UMYO LMS</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO VPN</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/membership-packages/"
+              target="_blank"
+              >UMYO Store</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/network/"
+              target="_blank"
+              >UMYO Profile</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Ambassadors</a
+            >
+            <a class="btn-link" href="https://umyoauthor.site" target="_blank"
+              >UMYO Authors</a
+            >
           </div>
         </div>
       </div>

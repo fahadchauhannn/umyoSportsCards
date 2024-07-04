@@ -118,7 +118,17 @@ return ""
     }
     return `https://www.youtube.com/embed/${videoId}`;
   }
-  
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
   extractVideoId(url: string): string {
     // Extract video ID from the URL
     const youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;

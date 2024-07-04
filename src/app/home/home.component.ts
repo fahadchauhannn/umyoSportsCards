@@ -5,6 +5,7 @@ import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { PaymentService } from '../payment.service'; 
+import { DropdownService } from './../dropdown.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { StripeCardNumberComponent, StripeService } from 'ngx-stripe';
@@ -43,7 +44,7 @@ export class HomeComponent implements AfterViewInit {
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -55,12 +56,29 @@ export class HomeComponent implements AfterViewInit {
   paymentForm:FormGroup
   planID:any
   elements: any; 
+
+  
+  businessType:any
+  city:any
+  location:any
+  race:any
+  gender:any
+  
+
   cardElement: any; 
   mode:any
   paypalTitleMessage:any;
   paypalMessage:any;
   
   ngOnInit(): void {
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
+      this.location = data.location;
+      this.city=data.city
+      this.gender = data.gender;
+      this.race = data.race;
+    });
+
     this.route.queryParams.subscribe(params => {
       const referralId = params['referralId'] || "";
        
@@ -532,14 +550,6 @@ export class HomeComponent implements AfterViewInit {
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
-    
-  
   
   
     login() {
@@ -623,7 +633,7 @@ export class HomeComponent implements AfterViewInit {
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
