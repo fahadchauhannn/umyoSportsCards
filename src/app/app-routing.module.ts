@@ -58,8 +58,8 @@ import { AiComponent } from './ai/ai.component';
 
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent ,pathMatch: 'full'},
   { path: '', component: UmyocardsComponent ,pathMatch: 'full'},
+  // { path: '', component: UmyocardsComponent ,pathMatch: 'full'},
   { path: 'mission', component: MissionComponent },
   { path: 'package', component: PackageComponent },
   { path: 'pledge', component: PledgeComponent },
