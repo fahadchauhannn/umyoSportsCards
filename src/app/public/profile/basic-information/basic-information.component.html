@@ -11,310 +11,69 @@
     <i class="fas fa-check-circle icon"></i>
     Edit Basic Information
   </h1>
-  <!-- <form style="margin-top: 50px"> -->
-  <form (submit)="saveChanges()" style="margin-top: 50px">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="firstname">First Name</label>
-          <input
-            type="text"
-            id="firstname"
-            [(ngModel)]="user.firstname"
-            name="firstname"
-            class="form-control"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="lastname">Last Name</label>
-          <input
-            type="text"
-            id="lastname"
-            [(ngModel)]="user.lastname"
-            name="lastname"
-            class="form-control"
-            required
-          />
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group">
-        <label for="email">My email</label>
-        <input
-          type="email"
-          id="email"
-          [(ngModel)]="user.email"
-          name="email"
-          class="form-control"
-        />
-      </div>
-    </div>
 
+  <form (submit)="saveChanges()" style="margin-top: 50px">
+    <ng-container *ngFor="let key of getKeys(user); let i = index">
+      <!-- Open a new row for the first item or every second item -->
+      <div class="row" *ngIf="i % 2 === 0">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label [for]="key">{{ formatLabel(key) }}</label>
+            <input
+              type="text"
+              [id]="key"
+              [(ngModel)]="user[key]"
+              [name]="key"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <!-- Check if there's a next item, and if so, create the second column -->
+        <div class="col-md-6" *ngIf="i + 1 < getKeys(user).length">
+          <div class="form-group">
+            <label [for]="getKeys(user)[i + 1]">{{
+              formatLabel(getKeys(user)[i + 1])
+            }}</label>
+            <input
+              type="text"
+              [id]="getKeys(user)[i + 1]"
+              [(ngModel)]="user[getKeys(user)[i + 1]]"
+              [name]="getKeys(user)[i + 1]"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Additional fields for gender and DOB if they are null -->
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label for="dob">Date of Birth</label>
+          <label for="gender">Gender</label>
+          <input
+            type="text"
+            id="gender"
+            [(ngModel)]="gender"
+            name="gender"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="DOB">Date of Birth</label>
           <input
             type="date"
-            id="dob"
-            [(ngModel)]="user.DOB"
+            id="DOB"
+            [(ngModel)]="DOB"
             name="DOB"
             class="form-control"
           />
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="city">City</label>
-          <input
-            type="text"
-            id="city"
-            [(ngModel)]="user.city"
-            name="city"
-            class="form-control"
-            placeholder="Your City"
-          />
-        </div>
-      </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>I am a:</label>
-
-          <input
-            style="margin-left: 10px"
-            type="radio"
-            id="male"
-            [(ngModel)]="user.gender"
-            name="gender"
-            value="Male"
-            class="form-check-input"
-          />
-          <label for="male" style="margin-left: 5px" class="form-check-label"
-            >Male</label
-          >
-
-          <input
-            style="margin-left: 10px"
-            type="radio"
-            id="Female"
-            [(ngModel)]="user.gender"
-            name="gender"
-            value="female"
-            class="form-check-input"
-          />
-          <label for="male" style="margin-left: 5px" class="form-check-label"
-            >Female</label
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="state">State</label>
-          <select
-            id="state"
-            [(ngModel)]="user.state"
-            name="state"
-            class="form-control"
-          >
-            <option value="Alabama">Alabama</option>
-            <option value="Alaska">Alaska</option>
-            <option value="Arizona">Arizona</option>
-            <option value="Arkansas">Arkansas</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Connecticut">Connecticut</option>
-            <option value="Delaware">Delaware</option>
-            <option value="Florida">Florida</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Idaho">Idaho</option>
-            <option value="Illinois">Illinois</option>
-            <option value="Indiana">Indiana</option>
-            <option value="Iowa">Iowa</option>
-            <option value="Kansas">Kansas</option>
-            <option value="Kentucky">Kentucky</option>
-            <option value="Louisiana">Louisiana</option>
-            <option value="Maine">Maine</option>
-            <option value="Maryland">Maryland</option>
-            <option value="Massachusetts">Massachusetts</option>
-            <option value="Michigan">Michigan</option>
-            <option value="Minnesota">Minnesota</option>
-            <option value="Mississippi">Mississippi</option>
-            <option value="Missouri">Missouri</option>
-            <option value="Montana">Montana</option>
-            <option value="Nebraska">Nebraska</option>
-            <option value="Nevada">Nevada</option>
-            <option value="New Hampshire">New Hampshire</option>
-            <option value="New Jersey">New Jersey</option>
-            <option value="New Mexico">New Mexico</option>
-            <option value="New York">New York</option>
-            <option value="North Carolina">North Carolina</option>
-            <option value="North Dakota">North Dakota</option>
-            <option value="Ohio">Ohio</option>
-            <option value="Oklahoma">Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania">Pennsylvania</option>
-            <option value="Rhode Island">Rhode Island</option>
-            <option value="South Carolina">South Carolina</option>
-            <option value="South Dakota">South Dakota</option>
-            <option value="Tennessee">Tennessee</option>
-            <option value="Texas">Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont">Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia">West Virginia</option>
-            <option value="Wisconsin">Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="location">Location</label>
-          <select
-            id="location"
-            [(ngModel)]="user.location"
-            name="location"
-            class="form-control"
-          >
-            <option value="Business">Business</option>
-            <option value="CEO">CEO</option>
-            <option value="Corporate">Corporate</option>
-            <option value="Corporation">Corporation</option>
-            <option value="Exclusive">Exclusive</option>
-            <option value="Founder">Founder</option>
-            <option value="CFO">CFO</option>
-            <option value="COO">COO</option>
-            <option value="Home Owner">Home Owner</option>
-            <option value="Mall">Mall</option>
-            <option value="Mass">Mass</option>
-            <option value="Mobile">Mobile</option>
-            <option value="Non Profit">Non Profit</option>
-            <option value="Office">Office</option>
-            <option value="Online">Online</option>
-            <option value="Partners">Partners</option>
-            <option value="Private">Private</option>
-            <option value="Retail and Consultants">
-              Retail and Consultants
-            </option>
-            <option value="Community Pledge">Community Pledge</option>
-            <option value="Store Front">Store Front</option>
-            <option value="Pop Up Shop">Pop Up Shop</option>
-            <option value="Vehicle">Vehicle</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="business_type">Business Type</label>
-
-          <select
-            id="business_type"
-            name="business_type"
-            class="form-select"
-            aria-label="Default select example"
-            [(ngModel)]="user.business_type"
-          >
-            <option value="Advertising">Advertising</option>
-            <option value="Artist">Artist</option>
-            <option value="Barber">Barber</option>
-            <option value="Barbershop Shop">Barbershop Shop</option>
-            <option value="Barber School">Barber School</option>
-            <option value="Boutique">Boutique</option>
-            <option value="Business Owner">Business Owner</option>
-            <option value="Corporation">Corporation</option>
-            <option value="Cosmetology School">Cosmetology School</option>
-            <option value="Educator">Educator</option>
-            <option value="Event Planner">Event Planner</option>
-            <option value="Fashion">Fashion</option>
-            <option value="Food Delivery">Food Delivery</option>
-            <option value="Hair Salon">Hair Salon</option>
-            <option value="Hair Shows">Hair Shows</option>
-            <option value="Hair Stylist">Hair Stylist</option>
-            <option value="Junior Stylist">Junior Stylist</option>
-            <option value="Make-up">Make-up</option>
-            <option value="Content Creator">Content Creator</option>
-            <option value="Influencer">Influencer</option>
-            <option value="Podcast">Podcast</option>
-            <option value="Manicurist">Manicurist</option>
-            <option value="Massage Therapist">Massage Therapist</option>
-            <option value="Master Stylist">Master Stylist</option>
-            <option value="Non Profit">Non Profit</option>
-            <option value="Platform Artist">Platform Artist</option>
-            <option value="Product Distributor">Product Distributor</option>
-            <option value="Senior Stylist">Senior Stylist</option>
-            <option value="Student">Student</option>
-            <option value="Stylist">Stylist</option>
-            <option value="Models">Models</option>
-            <option value="Trade Shows">Trade Shows</option>
-            <option value="Nail Tech">Nail Tech</option>
-            <option value="Pedicure">Pedicure</option>
-            <option value="NA">NA</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="race">Race</label>
-
-          <select
-            id="race"
-            name="race"
-            [(ngModel)]="user.race"
-            class="form-select"
-            aria-label="Default select example"
-          >
-            <option value="Nubians">Nubians</option>
-            <option value="African">African</option>
-            <option value="Native American">Native American</option>
-            <option value="Afro-Americans">Afro-Americans</option>
-            <option value="Asian">Asian</option>
-            <option value="Hispanic">Hispanic</option>
-            <option value="European">European</option>
-            <option value="Pacific Isalnder">Pacific Isalnder</option>
-            <option value="German">German</option>
-            <option value="Middle Eastern">Middle Eastern</option>
-            <option value="Casun">Casun</option>
-            <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-            <option value="Vietnamese">Vietnamese</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="youtube_url">Upload Profile Picture</label>
-          <input
-            name="profile_image"
-            type="file"
-            id="profile_image"
-            [(ngModel)]="user.profile_image"
-            name="profile_image"
-            class="form-control"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Add more form fields as needed -->
     <div class="row" style="margin-top: 50px">
       <div class="col-md-12">
         <button type="submit" class="btn btn-primary btn-rounded">

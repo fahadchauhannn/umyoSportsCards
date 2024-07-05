@@ -319,20 +319,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Nubians">Nubians</option>
-                  <option value="African">African</option>
-                  <option value="Native American">Native American</option>
-                  <option value="Afro-Americans">Afro-Americans</option>
-                  <option value="Asian">Asian</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="European">European</option>
-                  <option value="Pacific Isalnder">Pacific Isalnder</option>
-                  <option value="German">German</option>
-                  <option value="Middle Eastern">Middle Eastern</option>
-                  <option value="Casun">Casun</option>
-                  <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -342,9 +331,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -356,16 +345,9 @@
                   formControlName="selectedBusinessType"
                 >
                   <option selected value="" disabled>Business Type</option>
-                  <option value="Realtor">Realtor</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agencies">Agencies</option>
-                  <option value="Landlord">Landlord</option>
-                  <option value="Owners">Owners</option>
-                  <option value="Single Family">Single Family</option>
-                  <option value="Travel Agents">Travel Agents</option>
-                  <option value="Building">Building</option>
-                  <option value="Educator">Educator</option>
-                  <option value="Tourist">Tourist</option>
+                  <option *ngFor="let item of businessType" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -377,35 +359,9 @@
                   formControlName="selectedRealtorType"
                 >
                   <option selected value="" disabled>Realtors Type</option>
-                  <option value="Apartments">Apartments</option>
-                  <option value="Condos">Condos</option>
-                  <option value="Lofts">Lofts</option>
-                  <option value="Houses">Houses</option>
-                  <option value="Townhomes">Townhomes</option>
-                  <option value="Hotel">Hotel</option>
-                  <option value="AB&B">AB&B</option>
-                  <option value="Resort">Resort</option>
-                  <option value="Cabin">Cabin</option>
-                  <option value="Vacation Rental">Vacation Rental</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Real -Estate">Real -Estate</option>
-                  <option value="Real Property">Real Property</option>
-                  <option value="Residential">Residential</option>
-                  <option value="Community Property">Community Property</option>
-                  <option value="Mobile Home">Mobile Home</option>
-                  <option value="Life Estate">Life Estate</option>
-                  <option value="Lease Hold Estate">Lease Hold Estate</option>
-                  <option value="Mansion">Mansion</option>
-                  <option value="Timeshare">Timeshare</option>
-                  <option value="Ranch">Ranch</option>
-                  <option value="Trailer Park">Trailer Park</option>
-                  <option value="Manufactured. Housing">
-                    Manufactured. Housing
+                  <option *ngFor="let item of realtorType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Agriculture">Agriculture</option>
-                  <option value="Industrial">Industrial</option>
-                  <option value="Special Purpose">Special Purpose</option>
-                  <option value="Mixed Use">Mixed Use</option>
                 </select>
               </div>
 
@@ -422,30 +378,9 @@
                   formControlName="selectedLocation"
                 >
                   <option selected value="" disabled>Location</option>
-                  <option value="Business">Business</option>
-                  <option value="CEO">CEO</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Corporation">Corporation</option>
-                  <option value="Exclusive">Exclusive</option>
-                  <option value="Founder">Founder</option>
-                  <option value="CFO">CFO</option>
-                  <option value="COO">COO</option>
-                  <option value="Home Owner">Home Owner</option>
-                  <option value="Mall">Mall</option>
-                  <option value="Mass">Mass</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="Non Profit">Non Profit</option>
-                  <option value="Office">Office</option>
-                  <option value="Online">Online</option>
-                  <option value="Partners">Partners</option>
-                  <option value="Private">Private</option>
-                  <option value="Retail and Consultants">
-                    Retail and Consultants
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Community Pledge">Community Pledge</option>
-                  <option value="Store Front">Store Front</option>
-                  <option value="Pop Up Shop">Pop Up Shop</option>
-                  <option value="Vehicle">Vehicle</option>
                 </select>
               </div>
 
@@ -456,57 +391,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>State</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -876,9 +763,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -902,57 +789,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -974,22 +813,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Nubians">Nubians</option>
-                        <option value="African">African</option>
-                        <option value="Native American">Native American</option>
-                        <option value="Afro-Americans">Afro-Americans</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="European">European</option>
-                        <option value="Pacific Isalnder">
-                          Pacific Isalnder
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="German">German</option>
-                        <option value="Middle Eastern">Middle Eastern</option>
-                        <option value="Casun">Casun</option>
-                        <option value="Mixed Ethnicity">Mixed Ethnicity</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1036,16 +862,12 @@
                           Please Select
                         </option>
 
-                        <option value="Realtor">Realtor</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agencies">Agencies</option>
-                        <option value="Landlord">Landlord</option>
-                        <option value="Owners">Owners</option>
-                        <option value="Single Family">Single Family</option>
-                        <option value="Travel Agents">Travel Agents</option>
-                        <option value="Building">Building</option>
-                        <option value="Educator">Educator</option>
-                        <option value="Tourist">Tourist</option>
+                        <option
+                          *ngFor="let item of businessType"
+                          [value]="item"
+                        >
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1072,39 +894,9 @@
                           Please Select
                         </option>
 
-                        <option value="Apartments">Apartments</option>
-                        <option value="Condos">Condos</option>
-                        <option value="Lofts">Lofts</option>
-                        <option value="Houses">Houses</option>
-                        <option value="Townhomes">Townhomes</option>
-                        <option value="Hotel">Hotel</option>
-                        <option value="AB&B">AB&B</option>
-                        <option value="Resort">Resort</option>
-                        <option value="Cabin">Cabin</option>
-                        <option value="Vacation Rental">Vacation Rental</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Real -Estate">Real -Estate</option>
-                        <option value="Real Property">Real Property</option>
-                        <option value="Residential">Residential</option>
-                        <option value="Community Property">
-                          Community Property
+                        <option *ngFor="let item of realtorType" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Mobile Home">Mobile Home</option>
-                        <option value="Life Estate">Life Estate</option>
-                        <option value="Lease Hold Estate">
-                          Lease Hold Estate
-                        </option>
-                        <option value="Mansion">Mansion</option>
-                        <option value="Timeshare">Timeshare</option>
-                        <option value="Ranch">Ranch</option>
-                        <option value="Trailer Park">Trailer Park</option>
-                        <option value="Manufactured. Housing">
-                          Manufactured. Housing
-                        </option>
-                        <option value="Agriculture">Agriculture</option>
-                        <option value="Industrial">Industrial</option>
-                        <option value="Special Purpose">Special Purpose</option>
-                        <option value="Mixed Use">Mixed Use</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1129,33 +921,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-
-                        <option value="Business">Business</option>
-                        <option value="CEO">CEO</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Corporation">Corporation</option>
-                        <option value="Exclusive">Exclusive</option>
-                        <option value="Founder">Founder</option>
-                        <option value="CFO">CFO</option>
-                        <option value="COO">COO</option>
-                        <option value="Home Owner">Home Owner</option>
-                        <option value="Mall">Mall</option>
-                        <option value="Mass">Mass</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Non Profit">Non Profit</option>
-                        <option value="Office">Office</option>
-                        <option value="Online">Online</option>
-                        <option value="Partners">Partners</option>
-                        <option value="Private">Private</option>
-                        <option value="Retail and Consultants">
-                          Retail and Consultants
+                        <option *ngFor="let item of location" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Community Pledge">
-                          Community Pledge
-                        </option>
-                        <option value="Store Front">Store Front</option>
-                        <option value="Pop Up Shop">Pop Up Shop</option>
-                        <option value="Vehicle">Vehicle</option>
                       </select>
                     </div>
 
@@ -1585,281 +1353,6 @@
   </div>
 </div>
 <!-- Footer End -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Select One Package
-        </h5>
-        <button type="button" class="close" (click)="closePackageModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
-        <div class="row">
-          <div class="col-md-6" *ngFor="let package of packages; let i = index">
-            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
-              <div
-                class="card"
-                [ngClass]="{ cardSelect: selectedPackage === package }"
-                (click)="selectPackage(package)"
-              >
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
-                    $
-                    {{ package.net_price ? package.net_price : package.price }}
-                    <sup
-                      style="
-                        text-decoration: line-through;
-                        font-size: 20px;
-                        color: gray;
-                        padding-left: 15px;
-                      "
-                      *ngIf="package.net_price"
-                      >{{ package.price }}</sup
-                    >
-                  </h5>
-                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
-                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
-
-                  <div
-                    class="description-container"
-                    style="max-height: 100px; overflow-y: auto"
-                  >
-                    <p class="card-description">{{ package.description }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          (click)="closePackageModal()"
-          type="button"
-          class="btn btn-secondary"
-        >
-          Close
-        </button>
-
-        <div
-          *ngIf="selectedPackage?.price != '0'"
-          [ngClass]="{
-            hidden: selectedPackage == null || selectedPackage?.price == '0',
-            paymentButtons: selectedPackage != null
-          }"
-        >
-          <!-- <div id="paypal-button-container"></div> -->
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="openStripeModal()"
-          >
-            Stripe
-          </button>
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="paypalClick()"
-          >
-            paypal
-          </button>
-        </div>
-        <div *ngIf="selectedPackage?.price == '0'">
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="continuePaymentButton()"
-          >
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- stripe modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Pay Through Stripe
-        </h5>
-        <button type="button" class="close" (click)="closeStripeModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <form class="checkout-form" [formGroup]="paymentForm">
-            <h3>
-              Amount
-              {{
-                selectedPackage?.net_price
-                  ? selectedPackage?.net_price
-                  : selectedPackage?.price
-              }}
-            </h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-number"
-                    data-stripe-element="cardNumber"
-                    formControlName="cardNumber"
-                    placeholder="XXXXXXXXXXXXXXXX"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-expiry"
-                    data-stripe-element="expiryDate"
-                    formControlName="expiryDate"
-                    placeholder="MM/YY"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-cvc"
-                    data-stripe-element="cvc"
-                    formControlName="cvc"
-                    placeholder="XXX"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  id="pay-button"
-                  (click)="pay()"
-                  [disabled]="!paymentForm.valid"
-                >
-                  Pay Now
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeStripeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Are You 18+ of your age?</h3>
-        </div>
-        <p style="padding: 8px">
-          You must be at least 13 years old to use the Service. However,
-          children of all ages may use the Service and PLTalk Kids (where
-          available) if enabled by a parent or legal guardian. Permission by
-          Parent or Guardian If you are under 18, you represent that you have
-          your parent or guardian’s permission to use the Service. Please have
-          them read this Agreement with you. If you are a parent or legal
-          guardian of a user under the age of 18, by allowing your child to use
-          the Service, you are subject to the terms of this Agreement and
-          responsible for your child’s activity on the Service. You can find
-          tools and resources to help you manage your family’s experience on
-          PLTalk in our Help Center
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="confirmAge()">
-          Yes
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeAgeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Confirming Payment...</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div
   class="modal"
@@ -2570,6 +2063,313 @@
             </pre
           >
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- packages modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Select One Package
+        </h5>
+        <button type="button" class="close" (click)="closePackageModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let package of packages; let i = index">
+            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
+              <div
+                class="card"
+                [ngClass]="{ cardSelect: selectedPackage === package }"
+                (click)="selectPackage(package)"
+              >
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                    $
+                    {{ package.net_price ? package.net_price : package.price }}
+                    <sup
+                      style="
+                        text-decoration: line-through;
+                        font-size: 20px;
+                        color: gray;
+                        padding-left: 15px;
+                      "
+                      *ngIf="package.net_price"
+                      >{{ package.price }}</sup
+                    >
+                  </h5>
+                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
+
+                  <div
+                    class="description-container"
+                    style="max-height: 100px; overflow-y: auto"
+                  >
+                    <p class="card-description">{{ package.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          (click)="closePackageModal()"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Close
+        </button>
+
+        <div
+          *ngIf="selectedPackage?.price != '0'"
+          [ngClass]="{
+            hidden: selectedPackage == null || selectedPackage?.price == '0',
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <!-- <div id="paypal-button-container"></div> -->
+          <!-- hide stripe  -->
+          <!-- <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="openStripeModal()"
+          >
+            Stripe
+          </button> -->
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="paypalClick()"
+          >
+            paypal
+          </button>
+        </div>
+        <div *ngIf="selectedPackage?.price == '0'">
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="continuePaymentButton()"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ paypalTitleMessage }}</h3>
+          <p style="padding-top: 15px">{{ paypalMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- stripe modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Pay Through Stripe
+        </h5>
+        <button type="button" class="close" (click)="closeStripeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                    placeholder="XXX"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  id="pay-button"
+                  (click)="pay()"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeStripeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Are You 18+ of your age?</h3>
+        </div>
+        <p style="padding: 8px">
+          You must be at least 13 years old to use the Service. However,
+          children of all ages may use the Service and PLTalk Kids (where
+          available) if enabled by a parent or legal guardian. Permission by
+          Parent or Guardian If you are under 18, you represent that you have
+          your parent or guardian’s permission to use the Service. Please have
+          them read this Agreement with you. If you are a parent or legal
+          guardian of a user under the age of 18, by allowing your child to use
+          the Service, you are subject to the terms of this Agreement and
+          responsible for your child’s activity on the Service. You can find
+          tools and resources to help you manage your family’s experience on
+          PLTalk in our Help Center
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmAge()">
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAgeModal()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

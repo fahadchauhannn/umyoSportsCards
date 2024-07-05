@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 import { Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DropdownService } from './../dropdown.service';
 import { PaymentService } from '../payment.service'; 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -12,131 +13,15 @@ import {StripeCardElementOptions} from '@stripe/stripe-js';
 import { Package } from '../models/package.model';
 declare var $: any; 
 
-
 @Component({
   selector: 'app-realtor',
   templateUrl: './realtor.component.html',
   styleUrls: ['./realtor.component.css']
 })
-export class RealtorComponent implements AfterViewInit{
-
-
-
-  // ngAfterViewInit(): void {
-  //   $('.moreless-button-he').click(function() {
-  //     $('.moretext-he').slideToggle();
-  //     if ($('.moreless-button-he').text() == "Read more") {
-  //       $(this).text("Read less")
-  //     } else {
-  //       $(this).text("Read more")
-  //     }
-  //   });
-  //       $('.moreless-button').click(function() {
-  //   $('.moretext').slideToggle();
-  //   if ($('.moreless-button').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-      
-    
-  //       $('.moreless-button1').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext1').slideToggle();
-  //   if ($('.moreless-button1').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-  //       $('.moreless-button2').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext2').slideToggle();
-  //   if ($('.moreless-button2').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-      
-  //       $('.moreless-button3').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext3').slideToggle();
-  //   if ($('.moreless-button3').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-      
-  //       $('.moreless-button4').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext4').slideToggle();
-  //   if ($('.moreless-button4').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-     
-  //       $('.moreless-button5').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext5').slideToggle();
-  //   if ($('.moreless-button5').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-   
-  //       $('.moreless-button6').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext6').slideToggle();
-  //   if ($('.moreless-button6').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-    
-  //       $('.moreless-button7').click(function() {
-  //         event.preventDefault();
-  //   $('.moretext7').slideToggle();
-  //   if ($('.moreless-button7').text() == "Read more") {
-  //     $(this).text("Read less")
-  //   } else {
-  //     $(this).text("Read more")
-  //   }
-  // });
-    
-  
-  
-  // }
-
-
-  // videoUrl: SafeResourceUrl;
-
-
-  // constructor(private sanitizer: DomSanitizer){
-
-  // }
-
-  // ngOnInit(): void {
-  
-  //   const videoPath = 'assets/video.mp4';
-  //   this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
-    
-  // }
-
-
-
-
-
-
+export class RealtorComponent implements AfterViewInit {
   
 
-  showLoginTab: boolean;
+  showLoginTab: boolean=true;
   showAgeModal: boolean=false;
   showRegisterTab: boolean;
   isMoreTextVisible:boolean = false;
@@ -159,7 +44,7 @@ export class RealtorComponent implements AfterViewInit{
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  
   sportType: any = []
   ageType: any = []
   selectedSport: any
@@ -173,22 +58,41 @@ export class RealtorComponent implements AfterViewInit{
   elements: any; 
   cardElement: any; 
   mode:any
+  paypalTitleMessage:any;
+  paypalMessage:any;
+
+
+
+  businessType:any
+location:any
+state:any
+race:any
+gender:any
+realtorType:any
+
   
   ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
-      
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
+    this.dropdownService.getDropdownOptions().subscribe(data => {
+      this.businessType = data.businessType;
+      this.location = data.location;
+      this.state = data.state;
+      this.gender = data.gender;
+      this.race = data.race;
+      this.realtorType=data.realtorType
     });
+
+    this.route.queryParams.subscribe(params => {
+      const referralId = params['referralId'] || "";
+       
+      this.form3.get('registerReferralCode')?.setValue(referralId); // Set the referral ID to the form control
+    });
+   
   
     const videoPath = 'assets/video.mp4';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
+    this.paymentService.loadingStatus.subscribe((status: boolean) => {
+      this.showLoadingModal = status;
+    });
     
   }
   
@@ -258,10 +162,10 @@ export class RealtorComponent implements AfterViewInit{
     }
   });
      
-        $('.moreless-buttonf').click(function() {
+        $('.moreless-button5').click(function() {
           event.preventDefault();
-    $('.moretextf').slideToggle();
-    if ($('.moreless-buttonf').text() == "Read more") {
+    $('.moretext5').slideToggle();
+    if ($('.moreless-button5').text() == "Read more") {
       $(this).text("Read less")
     } else {
       $(this).text("Read more")
@@ -357,6 +261,120 @@ export class RealtorComponent implements AfterViewInit{
       $(this).text("Read more")
     }
   });
+
+
+
+
+
+
+        $('.moreless-button16').click(function() {
+          event.preventDefault();
+    $('.moretext16').slideToggle();
+    if ($('.moreless-button16').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button17').click(function() {
+          event.preventDefault();
+    $('.moretext17').slideToggle();
+    if ($('.moreless-button17').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button18').click(function() {
+          event.preventDefault();
+    $('.moretext18').slideToggle();
+    if ($('.moreless-button18').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button19').click(function() {
+          event.preventDefault();
+    $('.moretext19').slideToggle();
+    if ($('.moreless-button19').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button20').click(function() {
+          event.preventDefault();
+    $('.moretext20').slideToggle();
+    if ($('.moreless-button20').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button21').click(function() {
+          event.preventDefault();
+    $('.moretext21').slideToggle();
+    if ($('.moreless-button21').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button22').click(function() {
+          event.preventDefault();
+    $('.moretext22').slideToggle();
+    if ($('.moreless-button22').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button23').click(function() {
+          event.preventDefault();
+    $('.moretext23').slideToggle();
+    if ($('.moreless-button23').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button24').click(function() {
+          event.preventDefault();
+    $('.moretext24').slideToggle();
+    if ($('.moreless-button24').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button25').click(function() {
+          event.preventDefault();
+    $('.moretext25').slideToggle();
+    if ($('.moreless-button25').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button26').click(function() {
+          event.preventDefault();
+    $('.moretext26').slideToggle();
+    if ($('.moreless-button26').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button27').click(function() {
+          event.preventDefault();
+    $('.moretext27').slideToggle();
+    if ($('.moreless-button27').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
   
   }
   
@@ -431,16 +449,8 @@ export class RealtorComponent implements AfterViewInit{
   
     // check route for mobile view for registration and login tab
     checkRoute(){
-      this.route.fragment.subscribe(fragment => {
-        
-        if (fragment === 'regis') {
-          this.showLoginTab = false;
-          this.showRegisterTab = true;
-        } else {
-          this.showLoginTab = true;
-          this.showRegisterTab = false;
-        }
-      });
+    
+          this.showLoginTab = !this.showLoginTab;
     }
     
     // toggle read more buttons 
@@ -458,10 +468,9 @@ export class RealtorComponent implements AfterViewInit{
   
   
   
-    // search cards 
     searchCards(){
       
-       const payload={
+      const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
       
@@ -473,13 +482,17 @@ export class RealtorComponent implements AfterViewInit{
        
        }
       
-      this.apiService.searchCard(payload).subscribe(
-        (response)=>{
-          this.cardsSearched=response.Cards
-          console.log(response);
-        }
-      )
-    }
+     
+     this.apiService.searchCard(payload).subscribe(
+       (response)=>{
+         this.cardsSearched=response.Cards
+         console.log(response);
+       }
+     )
+   }
+
+
+
     getPositionType(sport: any) {
       this.apiService.getPositionType(sport).subscribe(
         (response) => {
@@ -527,17 +540,15 @@ export class RealtorComponent implements AfterViewInit{
       if (this.form3.valid) {
         this.submitButtonClicked = false;
       }
+
+
+
+
     }
   
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
     
   
   
@@ -623,10 +634,12 @@ export class RealtorComponent implements AfterViewInit{
     }
     videoUrl: SafeResourceUrl;
   
-    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,
+    constructor(private apiService: ApiService, private fb: FormBuilder,  private http: HttpClient,private route: ActivatedRoute,private dropdownService: DropdownService,
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
+        
+         
         const updatedPlanId=localStorage.getItem("updatePaypalId")
         
         if(updatedPlanId!=null && updatedPlanId){
@@ -644,6 +657,10 @@ export class RealtorComponent implements AfterViewInit{
     
         
         if(token && (updatedPlanId=='' || updatedPlanId==null)){
+          this.paypalTitleMessage="Please Wait"
+   this.paypalMessage="Your Paypal payment is being processed. Your patience is appreciated."
+
+   
           this.showLoadingModal=true
           
           this.apiService.executeAggrement(token)
@@ -651,6 +668,9 @@ export class RealtorComponent implements AfterViewInit{
             (response) => {
               // Subscription is now active
               if(response.status=='Success'){
+                this.paypalTitleMessage="Payment Successful!"
+                
+                this.paypalMessage="Thank you for successfully completing your payment through PayPal. Your transaction has been processed, and it may take a few minutes for us to update your payment status on our end. We appreciate your patience. If you have any questions or concerns, please don't hesitate to contact us for assistance."
                 console.log("Billing agreement executed successfully", response);
                 this.paymentService.paypal_Register_user(response.subscription_id)
               }
@@ -660,7 +680,7 @@ export class RealtorComponent implements AfterViewInit{
             (error) => {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
-                alert("Failed to Verify Paypal Payment")
+                alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
                 window.location.href='https://umyorealtor.site/'
             }
           );
@@ -685,10 +705,11 @@ export class RealtorComponent implements AfterViewInit{
       });
   
       this.form2 = this.fb.group({
+        
+    
+        
         selectedBusinessType: [''],
-        // selectedAgeType: [''],
-        // selectedSportType: [''],
-        // selectedPositionType: [''],
+        
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
@@ -699,12 +720,7 @@ export class RealtorComponent implements AfterViewInit{
         selectedRealtorType:['']
         
         
-     
-
-        // selectedTypeOfTrucks: [''],
-        // selectedTruckLoads: [''],
-        // selectedCommonCarrier: [''],
-        // selectedTruckService: [''],
+        
 
       });
       this.form3 = this.fb.group({
@@ -724,6 +740,8 @@ export class RealtorComponent implements AfterViewInit{
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
+
+
       // fetch packages
       this.apiService.getSignUpPackages(null).subscribe(
         (response) => {
@@ -902,10 +920,37 @@ export class RealtorComponent implements AfterViewInit{
   };
   
   pay(): void {
-  this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);   
-  this.closePackageModal()
-  this.closeStripeModal()
-    
+    if (this.paymentForm.valid) {
+      this.paymentService.createPaymentIntent(this.paymentForm, this.form3, this.selectedPackage);
+      this.closePackageModal();
+      this.closeStripeModal();
+      this.paypalTitleMessage = "Please Wait";
+      this.paypalMessage = "Your Stripe payment is being processed. Your patience is appreciated.";
+      this.showLoadingModal=true
+    } else {
+      // Display alert for each validation error
+      if (this.paymentForm.get('cardNumber').hasError('required')) {
+        alert('Please enter card number.');
+      }
+      if (this.paymentForm.get('cardNumber').hasError('invalidCardNumber')) {
+        alert('Invalid card number. Please enter a 16-digit number without dashes - XXXXXXXXXXXXXXXX');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('required')) {
+        alert('Please enter expiry date.');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('invalidExpiryDate')) {
+        alert('Invalid expiry date. Please enter in MM/YY format. for example: 12/28');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('expiredExpiryDate')) {
+        alert('Card has already expired.');
+      }
+      if (this.paymentForm.get('cvc').hasError('required')) {
+        alert('Please enter CVC.');
+      }
+      if (this.paymentForm.get('cvc').hasError('minlength') || this.paymentForm.get('cvc').hasError('maxlength')) {
+        alert('Invalid CVC. Please enter a 3-digit number.');
+      }
+    }
   }
   
   
@@ -913,6 +958,8 @@ export class RealtorComponent implements AfterViewInit{
   
   paypalClick(){
    this.closePackageModal()
+   this.paypalTitleMessage="Redirecting to PayPal"
+   this.paypalMessage="You are now being redirected to the PayPal website to complete your transaction securely. Please wait a moment while we process your request. If you encounter any issues or have any questions, feel free to contact us for assistance."
    this.showLoadingModal=true
    this.paymentService.paypal_create_billing_plan(this.form3,this.selectedPackage)
   }
@@ -925,6 +972,5 @@ export class RealtorComponent implements AfterViewInit{
   }
   
   
-
-
-}
+  
+  }
