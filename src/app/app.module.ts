@@ -72,6 +72,17 @@ import { ShareCardComponent } from './public/cards/share-card/share-card.compone
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
+import { ColorSketchModule } from 'ngx-color/sketch';
+
+
+
+// import { PackageComponent } from './package/package.component';
+// import { CfComponent } from './cf/cf.component';
+// import { AiComponent } from './ai/ai.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
 
 @NgModule({
   declarations: [
@@ -136,15 +147,18 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     EditCardComponent,
     ShareCardComponent,
     ForgotPasswordComponent,
+    // TruckersComponent,
     
     
-    
+    // PackageComponent,
+    // CfComponent,
+    // AiComponent,
     
     
   ],
   
   imports: [
-   
+    NgbCarouselModule,
     NgxSimpleTextEditorModule,
     NgxEditorModule,
     BrowserModule,
@@ -154,6 +168,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ColorSketchModule, 
     ToastrModule.forRoot({
       positionClass: 'custom-toast-position',
     }),

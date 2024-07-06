@@ -14,10 +14,28 @@
 
       <div class="px__screen">
         <div class="px__screen__">
-          <div class="px__screen__frame" style="overflow-y: scroll">
+          <div *ngIf="loading" class="loading-spinner">
+            <!-- Add your loading spinner component or HTML/CSS here -->
+          </div>
+          <div
+            *ngIf="!loading"
+            class="px__screen__frame"
+            style="overflow-y: scroll"
+          >
             <app-template01
               *ngIf="templateId == 1"
               [buttonColor]="selectedColor"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [firstName]="FirstName"
               [lastName]="LastName"
               [youtubeArray]="YoutubeArray"
@@ -38,15 +56,28 @@
               [logo]="Logo"
               [productImages]="ProductImages"
               [youtubeArray]="YoutubeArray"
+              [buttons]="buttons"
             ></app-template01>
             <app-template02
               *ngIf="templateId == 2"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
               [companyName]="CompanyName"
               [jobTitle]="JobTitle"
               [youtubeArray]="YoutubeArray"
+              [buttons]="buttons"
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [content]="ccontent"
@@ -64,6 +95,17 @@
             ></app-template02>
             <app-template03
               *ngIf="templateId == 3"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -72,6 +114,7 @@
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [jobTitle]="JobTitle"
+              [buttons]="buttons"
               [content]="ccontent"
               [email]="Email"
               [address]="Address"
@@ -87,11 +130,23 @@
             ></app-template03>
             <app-template04
               *ngIf="templateId == 4"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [youtubeArray]="YoutubeArray"
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [firstName]="FirstName"
+              [buttons]="buttons"
               [lastName]="LastName"
               [companyName]="CompanyName"
               [jobTitle]="JobTitle"
@@ -110,12 +165,24 @@
             ></app-template04>
             <app-template05
               *ngIf="templateId == 5"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [youtubeArray]="YoutubeArray"
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [lastName]="LastName"
+              [buttons]="buttons"
               [companyName]="CompanyName"
               [jobTitle]="JobTitle"
               [content]="ccontent"
@@ -133,6 +200,17 @@
             ></app-template05>
             <app-template06
               *ngIf="templateId == 6"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -141,6 +219,7 @@
               [youtubeArray]="YoutubeArray"
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
+              [buttons]="buttons"
               [content]="ccontent"
               [email]="Email"
               [address]="Address"
@@ -156,6 +235,17 @@
             ></app-template06>
             <app-template07
               *ngIf="templateId == 7"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -169,6 +259,7 @@
               [address]="Address"
               [phone]="PhoneNumber"
               [phoneAllow]="PhoneAllow"
+              [buttons]="buttons"
               [saveCard]="SaveCard"
               [inviteCode]="InviteCode"
               [forwardCard]="ForwardCard"
@@ -179,6 +270,17 @@
             ></app-template07>
             <app-template08
               *ngIf="templateId == 8"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [youtubeArray]="YoutubeArray"
               [umyotubeArray]="UmyotubeArray"
@@ -191,6 +293,7 @@
               [email]="Email"
               [address]="Address"
               [phone]="PhoneNumber"
+              [buttons]="buttons"
               [phoneAllow]="PhoneAllow"
               [saveCard]="SaveCard"
               [inviteCode]="InviteCode"
@@ -203,9 +306,21 @@
 
             <app-template09
               *ngIf="templateId == 9"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [youtubeArray]="YoutubeArray"
+              [buttons]="buttons"
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [lastName]="LastName"
@@ -227,6 +342,17 @@
 
             <app-template10
               *ngIf="templateId == 10"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -237,6 +363,7 @@
               [umyotubeArray]="UmyotubeArray"
               [vimeoArray]="VimeoVideoArray"
               [email]="Email"
+              [buttons]="buttons"
               [address]="Address"
               [phone]="PhoneNumber"
               [phoneAllow]="PhoneAllow"
@@ -251,6 +378,17 @@
             </app-template10>
             <app-template11
               *ngIf="templateId == 11"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [youtubeArray]="YoutubeArray"
@@ -258,6 +396,7 @@
               [vimeoArray]="VimeoVideoArray"
               [lastName]="LastName"
               [companyName]="CompanyName"
+              [buttons]="buttons"
               [jobTitle]="JobTitle"
               [content]="ccontent"
               [email]="Email"
@@ -275,6 +414,17 @@
             </app-template11>
             <app-template12
               *ngIf="templateId == 12"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -286,6 +436,7 @@
               [content]="ccontent"
               [email]="Email"
               [address]="Address"
+              [buttons]="buttons"
               [phone]="PhoneNumber"
               [phoneAllow]="PhoneAllow"
               [saveCard]="SaveCard"
@@ -299,6 +450,17 @@
             </app-template12>
             <app-template13
               *ngIf="templateId == 13"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [youtubeArray]="YoutubeArray"
@@ -308,6 +470,7 @@
               [companyName]="CompanyName"
               [jobTitle]="JobTitle"
               [content]="ccontent"
+              [buttons]="buttons"
               [email]="Email"
               [address]="Address"
               [phone]="PhoneNumber"
@@ -323,6 +486,17 @@
             </app-template13>
             <app-template14
               *ngIf="templateId == 14"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [lastName]="LastName"
@@ -336,6 +510,7 @@
               [address]="Address"
               [phone]="PhoneNumber"
               [phoneAllow]="PhoneAllow"
+              [buttons]="buttons"
               [saveCard]="SaveCard"
               [inviteCode]="InviteCode"
               [forwardCard]="ForwardCard"
@@ -347,6 +522,17 @@
             </app-template14>
             <app-template15
               *ngIf="templateId == 15"
+              [linkedin]="Linkedin"
+              [twitter]="Twitter"
+              [facebook]="Facebook"
+              [youtube]="Youtube"
+              [instagram]="Instagram"
+              [gpa]="gpa"
+              [age]="age"
+              [weight]="weight"
+              [height]="height"
+              [grade]="grade"
+              [school]="school"
               [buttonColor]="selectedColor"
               [firstName]="FirstName"
               [youtubeArray]="YoutubeArray"
@@ -359,6 +545,7 @@
               [email]="Email"
               [address]="Address"
               [phone]="PhoneNumber"
+              [buttons]="buttons"
               [phoneAllow]="PhoneAllow"
               [saveCard]="SaveCard"
               [inviteCode]="InviteCode"
@@ -398,4 +585,59 @@
       </div>
     </div>
   </div> -->
+</div>
+
+<div
+  class="modal fade"
+  id="shareCard"
+  tabindex="-1"
+  aria-labelledby="shareCardLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="shareCardLabel">Forward Card</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="row"
+          style="
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <h5 style="width: 100%; text-align: center; padding-bottom: 25px">
+            https://prolivingbiz.com/cards/share-card/{{ shareCardId }}
+          </h5>
+
+          <h3
+            style="
+              width: 100%;
+              text-align: center;
+              padding-bottom: 25px;
+              padding-top: 40px;
+              font-size: medium;
+            "
+          >
+            Copy link to share your card.
+          </h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

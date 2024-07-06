@@ -1,5 +1,6 @@
-import { Component,ChangeDetectorRef, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component,ChangeDetectorRef, OnInit, AfterViewInit } from '@angular/core';
+
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 declare var $: any;
 
@@ -12,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-card.component.html',
   styleUrls: ['./edit-card.component.css']
 })
-export class EditCardComponent  implements  OnInit{
+export class EditCardComponent  implements  AfterViewInit{
 
   selectedColor:any
       FirstName: any
@@ -26,6 +27,7 @@ export class EditCardComponent  implements  OnInit{
       PhoneNumber2: any
       PhoneAllow: any
       ForwardCard: any
+      colorPickerLoaded: boolean = false;
       SaveCard: any
       InviteCode: any
       Photo:any
@@ -40,12 +42,13 @@ export class EditCardComponent  implements  OnInit{
       LinkButtonTitle:any
       LinkButtonLink:any
       FacebookLink:any
-      
+      userPackageId:any
       Facebook:any
       Youtube:any
       Linkedin:any
       Twitter:any
       Snapchat:any
+      isLoading:any
       Instagram:any
       Voxer:any
       Line:any
@@ -56,12 +59,39 @@ export class EditCardComponent  implements  OnInit{
       referalCode:any
   
       templateId:any=1
+      userPackageData:any
       card_id:any
       ConvertedPhoto:any
      ConvertedLogo:any
      ConvertedProductImage:any
-  
+     iPic:any
+     showLoadingModal:any=false
+     loadingTitle:any="Please Wait."
+     loadingMessage:any="Updating Your Card..."
+     iLogo:any
+  iProduct: any;
 
+     changeComplete(color: any) {
+      
+      this.selectedColor = color.hex; // Update the selected color
+    }
+    
+     ngAfterViewInit() {
+      this.colorPickerLoaded = true;
+
+      
+ const uploadBoxes = document.querySelectorAll('.upload_box');
+ uploadBoxes.forEach((box) => {
+   box.addEventListener('click', () => {
+     const targetId = box.getAttribute('data-target');
+     const inputElement = document.getElementById(targetId);
+
+     if (inputElement) {
+       inputElement.click();
+     }
+   });
+ });
+    }
   displayStep(stepNumber: number) {
     console.log('display stepp');
     if (stepNumber >= 1 && stepNumber <= 3) {
@@ -87,7 +117,7 @@ export class EditCardComponent  implements  OnInit{
   colorOptions: string[] = ['red', 'green', 'yellow', 'olive', 'orange', 'teal', 'blue', 'violet', 'purple', 'pink'];
   
   
-  
+  productImagesQuantity:any
  
 id=localStorage.getItem('user_id')
 user_id  = parseInt(this.id, 10);
@@ -117,6 +147,7 @@ user_id  = parseInt(this.id, 10);
   
 
   constructor(private fb: FormBuilder,private cdr: ChangeDetectorRef, private apiService:ApiService,private route:ActivatedRoute,private router: Router,) {
+    
     this.route.params.subscribe((params) => {
       this.card_id = params['id'];
   })
@@ -124,8 +155,8 @@ user_id  = parseInt(this.id, 10);
       
     this.Form = this.fb.group({
       selectedColor:['red'],
-      FirstName: ['John'],
-      LastName: ['Doe'],
+      FirstName: [''],
+      LastName: [''],
       Gpa: [''],
       Age: [''],
       Height: [''],
@@ -133,20 +164,20 @@ user_id  = parseInt(this.id, 10);
       Grade: [''],
       School: [''],
 
-      CompanyName: ['UMYO Network'],
-      JobTitle: ['Affiliate'],
-      ccontent: ['Thanks for checking out my virtual business card! I’m excited to introduce you to umyocards because I know you"ll enjoy it as much as I have. umyocards helps me keep track of my prospects, my team, and my time so I can get more accomplished every day. Feel freeto contact me with any questions.'],
-      Email: ['team@goumyocards.com'],
-      Address: ['umyocards team'],
-      PhoneNumber: ['99122301'],
-      PhoneNumber2: [''],
+      CompanyName: [''],
+      JobTitle: [''],
+      ccontent: [''],
+      Email: '',
+      Address: '',
+      PhoneNumber: '',
+      PhoneNumber2: '',
       PhoneAllow: [true],
       ForwardCard: [true],
       SaveCard: [true],
       InviteCode: [true],
       Photo: ['assets/images/john-doe-avatar.jpg'],
       Logo: ['assets/images/unmasking-yourself.jpg'],
-      ProductImages: ['assets/images/app-devices.jpg'],
+      ProductImages: [['assets/images/app-devices.jpg']],
       YoutubeTitle:[''],
       YoutubeLink:['https://www.youtube.com/embed/soXhe4aEsTU'],
       VimeoTitle:[''],
@@ -161,18 +192,18 @@ user_id  = parseInt(this.id, 10);
       UmyotubeVideos:this.fb.array([this.createUmyotubeVideoGroup()]),
       VimeoVideos:this.fb.array([this.createVimeoVideoGroup()]),
       LinkButton:this.fb.array([this.createLinkButtonGroup()]),
-      Facebook:['https://www.facebook.com/'],
-      Youtube:['https://www.youtube.com/'],
-      Linkedin:['https://www.linkedin.com/'],
-      Twitter:['https://www.twitter.com/'],
-      Snapchat:[''],
-      Instagram:['https://www.instagram.com/'],
-      Voxer:[''],
-      Line:[''],
-      Pinterest:['https://www.pinterest.com/'],
-      Whatsapp:[''],
-      Skype:[''],
-      CardTitle:['Title'],
+      Facebook:'',
+      Youtube:'',
+      Linkedin:'',
+      Twitter:'',
+      Snapchat:'',
+      Instagram:'',
+      Voxer:'',
+      Line:'',
+      Pinterest:'',
+      Whatsapp:'',
+      Skype:'',
+      CardTitle:'Title',
 
 
 
@@ -256,16 +287,51 @@ user_id  = parseInt(this.id, 10);
   }
 
 
+  
+
   addYoutube() {
-    this.YoutubeVideos.push(this.createYoutubeVideoGroup());
-  }
+    const videoLimit = {
+        "1 video link": 1,
+        "2 video link": 2,
+        "3 video link": 3,
+        "Unlimited(General)": Infinity
+    };
+
+    const currentVideoCount = this.YoutubeVideos.value.length;
+    const maxVideosAllowed = videoLimit[this.userPackageData.videos];
+
+    if (currentVideoCount < maxVideosAllowed) {
+        this.YoutubeVideos.push(this.createYoutubeVideoGroup());
+    } else {
+        alert(`You are only allowed to have ${maxVideosAllowed} youtube video link${maxVideosAllowed > 1 ? 's' : ''}`);
+    }
+}
 
   removeYoutube(index: number) {
     this.YoutubeVideos.removeAt(index);
   }
  
   addUmyotubeVideos() {
+    
+    const videoLimit = {
+      "1 video link": 1,
+      "2 video link": 2,
+      "3 video link": 3,
+      "Unlimited(General)": Infinity
+  };
+
+  const currentVideoCount = this.YoutubeVideos.value.length;
+  const maxVideosAllowed = videoLimit[this.userPackageData.umyotube];
+
+  if (currentVideoCount < maxVideosAllowed) {
     this.UmyotubeVideos.push(this.createUmyotubeVideoGroup());
+  } else {
+      alert(`You are only allowed to have ${maxVideosAllowed} umyotube video link${maxVideosAllowed > 1 ? 's' : ''}`);
+  }
+
+
+
+
   }
 
   removeUmyotubeVideos(index: number) {
@@ -273,7 +339,25 @@ user_id  = parseInt(this.id, 10);
   }
 
   addVimeoVideos() {
+    
+        
+    const videoLimit = {
+      "1 video link": 1,
+      "2 video link": 2,
+      "3 video link": 3,
+      "Unlimited(General)": Infinity
+  };
+
+  const currentVideoCount = this.YoutubeVideos.value.length;
+  const maxVideosAllowed = videoLimit[this.userPackageData.umyotube];
+
+  if (currentVideoCount < maxVideosAllowed) {
     this.VimeoVideos.push(this.createVimeoVideoGroup());
+  } else {
+      alert(`You are only allowed to have ${maxVideosAllowed} vimeo video link${maxVideosAllowed > 1 ? 's' : ''}`);
+  }
+
+
   }
 
   removeVimeoVideos(index: number) {
@@ -307,32 +391,32 @@ user_id  = parseInt(this.id, 10);
     }
   }
   onLogoChange(event: any): void {
+    if (this.userPackageData.logo === "No") {
+      alert("You are not allowed to upload a logo in your current package.");
+      return;
+    }
+  
+    if (this.userPackageId === 14) {
+      alert("You are not allowed to update your logo image in your current package.");
+      return;
+    }
+console.log('oaaaaakege iddddddddddddddd');
+    console.log(this.userPackageId);
+  
     const file = event?.target?.files[0];
-
     if (file) {
-      this.Form.patchValue({
-        Logo: file,
-      });
+      this.Form.patchValue({ Logo: file });
       this.convertFileToDataURL(this.Form.value.Logo).then((dataUrl) => {
         this.ConvertedLogo = dataUrl;
-      }),
-      
-      this.cdr.detectChanges();
-    }
-  }
-  onProductImagesChange(event: any): void {
-    const file = event?.target?.files[0];
-
-    if (file) {
-      this.Form.patchValue({
-        ProductImages: file,
+      }).finally(() => {
+        this.cdr.detectChanges();
       });
-
-      
-      this.cdr.detectChanges();
     }
   }
   
+
+  
+
 
   
   populateYoutube(formArrayName: string, data: any[]) {
@@ -366,7 +450,7 @@ user_id  = parseInt(this.id, 10);
       // Add controls based on the length of the data array
       for (const item of data) {
         formArray.push(this.fb.group({
-          umyotubeTitle: item.umtotubeTitle,
+          umyotubeTitle: item.umyotubeTitle,
           umyotubeLink: item.umyotubeLink,
           
         }));
@@ -406,10 +490,35 @@ user_id  = parseInt(this.id, 10);
       }
     }
   }
+  onProductImagesChange(event: any): void {
+    console.log('product image chagnedddd');
+    const files = event?.target?.files;
+    if (files) {
+        const base64Images = [];
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                base64Images.push(reader.result);
+                if (base64Images.length === files.length) {
+
+                    this.Form.patchValue({
+                        ProductImages: base64Images,
+
+                    });
+                    this.ConvertedProductImage=base64Images
+                    this.cdr.detectChanges();
+                }
+            };
+        }
+    }
+}
+  
 
   ngOnInit(): void {
 
-
+    this.isLoading=true
 
     this.currentStep=1
    
@@ -424,6 +533,9 @@ user_id  = parseInt(this.id, 10);
 
     this.apiService.getSingleCard(payload).subscribe(
       (response)=>{
+
+        this.isLoading=false
+        console.log(this.isLoading);
         const socialFormData = response.Card.socialFormData;
 
         this.populateYoutube('YoutubeVideos', socialFormData.youtubeVideos);
@@ -434,7 +546,9 @@ user_id  = parseInt(this.id, 10);
 
           if(response.status=='Success'){
             this.templateId=response.Card.infoFormData.templateId
+            this.selectedColor=response.Card.colorTheme
             this.Form.get('selectedColor').setValue(response.Card.colorTheme);
+            this.Form.get('CardTitle').setValue(response.Card.infoFormData.cardTitle);
             this.Form.get('FirstName').setValue(response.Card.infoFormData.firstName);
             this.Form.get('LastName').setValue(response.Card.infoFormData.lastName);
             this.Form.get('CompanyName').setValue(response.Card.infoFormData.companyName);
@@ -457,20 +571,19 @@ user_id  = parseInt(this.id, 10);
             
             this.Form.get('Photo').setValue(this.convertDataURLtoFile(response.Card.change_photo, 'photo'));
             this.Form.get('Logo').setValue(this.convertDataURLtoFile(response.Card.change_logo, 'logo'));
-            this.Form.get('ProductImages').setValue('');
+            this.iPic=response.Card.change_photo
+            this.iLogo=response.Card.change_logo
+            this.Form.get('ProductImages').setValue(JSON.parse(response.Card.changeProductImages));
+              this.iProduct=response.Card.changeProductImages
+          
 
-            this.Form.get('YoutubeVideos').setValue(response.Card.socialFormData?.youtubeVideos[0]?.youtubeTitle);
-            
-            this.Form.get('VimeoVideos').setValue(response.Card.socialFormData?.vimeoVideos[0]?.vimeoTitle);
-
-            this.Form.get('UmyotubeVideos').setValue(response.Card.socialFormData?.vimeoVideos[0]?.vimeoLink);
-
-            this.Form.get('LinkButton').setValue(response.Card.socialFormData?.umyotubeVideos[0]?.umyotubeTitle);
-
-  
-            this.Form.get('FacebookLink').setValue(response.Card.FacebookLink);
             this.Form.get('Facebook').setValue(response.Card.socialFormData.facebook);
+            
+
+
             this.Form.get('Youtube').setValue(response.Card.socialFormData.youtube);
+            
+            
             this.Form.get('Linkedin').setValue(response.Card.socialFormData.linkedin);
             this.Form.get('Twitter').setValue(response.Card.socialFormData.twitter);
             this.Form.get('Snapchat').setValue(response.Card.socialFormData.snapchat);
@@ -484,19 +597,91 @@ user_id  = parseInt(this.id, 10);
             
 
             this.referalCode=response.Card.infoFormData.inviteCode
-            
+            this.isLoading=false
             
           }
           else{
+            this.isLoading=false
             alert('failed to fetch card')
           }
       },(error)=>{
+        this.isLoading=false
         alert('failed to fetch card'+error.message)
 
       }
       )
 
    
+
+
+// Fetch user data
+this.apiService.getUserById(this.user_id).subscribe(
+  (response) => {
+    if (response.status === 'Success') {
+      this.referalCode = response.Users.refer_code;
+      this.productImagesQuantity = response.Users.PackageData.product_image;
+      this.userPackageData = response.Users.PackageData
+      this.userPackageId=response.Users.package_id  
+
+      // Set validators based on productImagesQuantity
+      if (this.productImagesQuantity === '3 image') {
+      
+        
+        this.Form.controls['ProductImages'].setValidators(
+          Validators.maxLength(3)
+        );
+      }
+      if (this.productImagesQuantity === '1 image') {
+      
+        this.Form.controls['ProductImages'].setValidators(
+          Validators.maxLength(1)
+        );
+      }
+      if (this.productImagesQuantity === 'No image') {
+        this.Form.controls['ProductImages'].setValidators(
+          Validators.maxLength(1))
+      }
+      
+
+      // Trigger validation status change subscription
+      this.Form.controls['ProductImages'].statusChanges.subscribe(
+
+
+        
+        (status) => {
+          
+          if (this.productImagesQuantity === 'No image') {
+            if (JSON.stringify(this.Form.controls['ProductImages'].value) !== JSON.stringify(['assets/images/app-devices.jpg'])) {
+              alert("You are not allowed to upload a product image. Please upgrade your package to use this feature.");
+              this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+            }
+          }
+          if (status === 'INVALID') {
+            if (this.productImagesQuantity === '3 image') {
+              this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+              alert('You are only allowed to upload a maximum of 3 product images in your current package.');
+            }
+            if (this.productImagesQuantity === '1 image') {
+              this.Form.controls['ProductImages'].setValue(['assets/images/app-devices.jpg']);
+              alert('You are only allowed to upload a maximum of 1 product image in your current package.');
+            }
+          }
+        }
+      );
+
+    } else {
+      console.log('error fetching user data on create card steps');
+    }
+  },
+  (error) => {
+    console.log(
+      'error fetching request to get user data on create card steps'
+    );
+  }
+);
+
+
+
 
     
     this.displayStep(2);
@@ -539,25 +724,18 @@ user_id  = parseInt(this.id, 10);
 
     // Initial update of the progress bar
     updateProgressBar();
- const uploadBoxes = document.querySelectorAll('.upload_box');
-    uploadBoxes.forEach((box) => {
-      box.addEventListener('click', () => {
-        const targetId = box.getAttribute('data-target');
-        const inputElement = document.getElementById(targetId);
 
-        if (inputElement) {
-          inputElement.click();
-        }
-      });
-    });
   
    
     
   }
+  
+
+  
   currentStep:any
 
 check(){
-  console.log(this.Form.value.Photo);
+  
   
 }
 
@@ -594,7 +772,7 @@ check(){
 
   
    saveCard(){
-    
+    this.showLoadingModal=true
     
     const youtubeVideosArray = this.Form.get('YoutubeVideos') as FormArray;
     const umyotubeVideosArray = this.Form.get('UmyotubeVideos') as FormArray;
@@ -606,9 +784,9 @@ check(){
       return { youtubeTitle, youtubeLink };
     });
     const umyotubeData = umyotubeVideosArray.controls.map((control) => {  
-      const umtotubeTitle = control.get('umyotubeTitle').value;
+      const umyotubeTitle = control.get('umyotubeTitle').value;
       const umyotubeLink = control.get('umyotubeLink').value;
-      return { umtotubeTitle, umyotubeLink };
+      return { umyotubeTitle, umyotubeLink };
     });
     const vimeoVideosData = vimeoVideosArray.controls.map((control) => {  
       const vimeoVideoTitle = control.get('vimeoVideoTitle').value;
@@ -645,7 +823,7 @@ const infoFormData={
     cardTitle:this.Form.value.CardTitle,
     firstName:this.Form.value.FirstName,
     lastName:this.Form.value.LastName,
-    email:this.Form.value.email,
+    email:this.Form.value.Email,
     phoneNumber:this.Form.value.PhoneNumber,
     alternativePhoneNo:this.Form.value.PhoneNumber2,
     companyName:this.Form.value.CompanyName,
@@ -657,14 +835,29 @@ const infoFormData={
     showForwardButton:this.Form.value.ForwardCard,
     showInviteCode:this.Form.value.InviteCode,
     inviteCode:this.referalCode,
+
+
+
+    
+
+    gpa:this.Form.value.Gpa,
+    age:this.Form.value.Age,
+    height:this.Form.value.Height,
+    weight:this.Form.value.Weight,
+    grade:this.Form.value.Grade,
+    school:this.Form.value.School,
+
 }
  
 
-    const formData={
+    let formData={
       buttonColor:this.Form.value.selectedColor,
       cardTitle:this.Form.value.CardTitle,
-      change_logo:null,
-      change_photo:null,
+      change_logo:this.iLogo,
+      change_photo:this.iPic,
+      changeProductImages:this.iProduct,  
+      
+
       colorTheme:this.Form.value.selectedColor,
       user_id:this.id,
       card_id:this.card_id,
@@ -674,21 +867,42 @@ const infoFormData={
 
     }
 
-    if(this.ConvertedPhoto!=null || ''){
+    if(this.ConvertedPhoto!=null && this.ConvertedPhoto!='' && this.ConvertedPhoto!=undefined){
+      console.log('new  image used.');
+      console.log(this.ConvertedPhoto);
       formData.change_photo = this.ConvertedPhoto;
     }
+    
     else{
-      formData.change_photo = this.Form.value.photo;
+      console.log('old image used.');
+      formData.change_photo = this.iPic
     }
-    if(this.ConvertedLogo!=null || ''){
+
+   
+
+
+    if(this.ConvertedLogo!=null && this.ConvertedLogo!='' && this.ConvertedLogo!=undefined){
       formData.change_logo = this.ConvertedLogo;
     }
+    
     else{
-      formData.change_logo = this.Form.value.logo;
+      formData.change_logo = this.iLogo
     }
 
 
   
+
+
+
+
+
+    if(this.ConvertedProductImage!=null && this.ConvertedProductImage!='' && this.ConvertedProductImage!=undefined){
+      formData.changeProductImages = JSON.stringify(this.ConvertedProductImage)
+    }
+    
+    else{
+      formData.changeProductImages = this.iProduct
+    }
 
 
   
@@ -697,15 +911,18 @@ const infoFormData={
   this.apiService.updateCard(formData).subscribe(
     (response)=>{
       if(response.status!='Failed'){
+        this.showLoadingModal=false
         alert("Card Updated! ")
         this.router.navigate(['/cards']);
       }
       else{
+        this.showLoadingModal=false
         alert("Failed! "+ response.message)
 
       }
 
     },(error)=>{
+      this.showLoadingModal=false
 alert("Failed! " + error)
     }
   )

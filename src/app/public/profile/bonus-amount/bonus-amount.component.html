@@ -15,28 +15,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!-- <td>{{ user.email }}</td>
-            <td>{{ user.packagePrice }}</td>
-            <td>{{ user.stripe_subscription_id }}</td>
-            <td>{{ user.balance_transaction_type }}</td> -->
-
-          <!-- <td>
-            <div>
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  gap: 20px;
-                "
-              >
-                <a>
-                  <button class="btn btn-sm btn-primary">Edit</button>
-                </a>
-              </div>
-            </div>
-          </td> -->
+        <tr *ngFor="let amt of amountData; let i = index">
+          <td>{{ amt.PurchasedDate }}</td>
+          <td>{{ amt.whoPurchased }}</td>
+          <td>{{ amt.totalPackageAmount }}</td>
+          <td>{{ amt.bonusAmount }}</td>
+          <td>{{ amt.status }}</td>
         </tr>
       </tbody>
     </table>
