@@ -1,0 +1,125 @@
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<div
+  class="container"
+  *ngIf="!isLoading"
+  style="padding: 30px; margin-bottom: 60px"
+>
+  <h1 class="heading">
+    <i class="fas fa-check-circle icon"></i>
+    Work And Social
+  </h1>
+  <!-- <form style="margin-top: 50px"> -->
+  <form (submit)="saveChanges()" style="margin-top: 50px">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input
+            type="text"
+            id="company"
+            [(ngModel)]="user.company"
+            name="company"
+            class="form-control"
+            placeholder="Company Name"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="job_title">Job Title</label>
+          <input
+            type="text"
+            id="job_title"
+            [(ngModel)]="user.job_title"
+            name="job_title"
+            class="form-control"
+            placeholder="Designation Name"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input
+            type="text"
+            id="website"
+            [(ngModel)]="user.website"
+            name="website"
+            class="form-control"
+            placeholder="Website Address"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="facebook_url">Facebook URL</label>
+          <input
+            type="text"
+            id="facebook_url"
+            [(ngModel)]="user.facebook_url"
+            name="facebook_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="twitter_url">Twitter URL</label>
+          <input
+            type="text"
+            id="twitter_url"
+            [(ngModel)]="user.twitter_url"
+            name="twitter_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="linkedin_url">LinkedIn URL</label>
+          <input
+            type="text"
+            id="linkedin_url"
+            [(ngModel)]="user.linkedin_url"
+            name="linkedin_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="youtube_url">YouTube URL</label>
+          <input
+            type="text"
+            id="youtube_url"
+            [(ngModel)]="user.youtube_url"
+            name="youtube_url"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Add more form fields as needed -->
+    <div class="row" style="margin-top: 50px">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary btn-rounded">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

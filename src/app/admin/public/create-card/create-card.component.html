@@ -1,0 +1,217 @@
+<app-nav></app-nav>
+<section class="create-card-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <!-- MultiStep Form -->
+        <form id="msform">
+          <!-- progressbar -->
+          <ul id="progressbar">
+            <li class="active">Template</li>
+            <li>Info</li>
+            <li>Picture</li>
+            <li>Social</li>
+            <li>Confirm</li>
+          </ul>
+          <!-- fieldsets -->
+          <fieldset>
+            <!-- <input type="button" name="next" class="next action-button" value="Next"/> -->
+            <div
+              class="select-tempate-msg"
+              data-bs-toggle="modal"
+              data-bs-target="#select_template"
+            >
+              <h3>Please Choose Your Card<br />Temaplate</h3>
+            </div>
+          </fieldset>
+          <!-- <fieldset>
+                      <h2 class="fs-title">Event Operations</h2>
+                      <h3 class="fs-subtitle"></h3>
+                      <input type="number" name="eventCount" id="count" placeholder="Events per year"/>
+                      <input type="number" name="eventLabor" id="eventLabor" placeholder="Lot attendants per event"/>
+                      <input type="number" name="laborRate" id="laborRate" placeholder="Attendant hourly rate"/>
+                      <input type="number" name="eventHours" id="hours" placeholder="Labor hours per event"/>
+                      <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                      <input type="button" name="next" class="next action-button" value="Next"/>
+                  </fieldset>
+                  <fieldset>
+                      <h2 class="fs-title">Additional Information</h2>
+                      <h3 class="fs-subtitle">Fill in your credentials to get your ROI report</h3>
+                      <input type="text" id="email" name="email" placeholder="Email"/>
+                      <input type="text" id="full_name" name="name" placeholder="Name"/>
+                      <input type="text" name="company" id="company" placeholder="Copmany"/>
+                      <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                      <input type="submit" name="submit" id="submitBtn" class="submit action-button" value="Submit"/>
+                  </fieldset> -->
+        </form>
+        <!-- /.MultiStep Form end -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="select_template"
+  tabindex="-1"
+  aria-labelledby="upgradePackagesLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 30px">
+        <div class="">
+          <div *ngIf="isLoading" class="outer-spinner">
+            <div class="loading-spinner"></div>
+          </div>
+          <ngx-slick-carousel
+            *ngIf="!isLoading"
+            [config]="slickCarouselConfig"
+            class="carousel"
+          >
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/1.png" alt="" />
+              <a
+                routerLink="/create-card-steps/1"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/2.png" alt="" />
+              <a
+                routerLink="/create-card-steps/2"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/3.png" alt="" />
+              <a
+                routerLink="/create-card-steps/3"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/4.png" alt="" />
+              <a
+                routerLink="/create-card-steps/4"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/5.png" alt="" />
+              <a
+                routerLink="/create-card-steps/5"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/6.png" alt="" />
+              <a
+                routerLink="/create-card-steps/6"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/7.png" alt="" />
+              <a
+                routerLink="/create-card-steps/7"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/8.png" alt="" />
+              <a
+                routerLink="/create-card-steps/8"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/9.png" alt="" />
+              <a
+                routerLink="/create-card-steps/9"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/10.png" alt="" />
+              <a
+                routerLink="/create-card-steps/10"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/11.png" alt="" />
+              <a
+                routerLink="/create-card-steps/11"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/12.png" alt="" />
+              <a
+                routerLink="/create-card-steps/12"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/13.png" alt="" />
+              <a
+                routerLink="/create-card-steps/13"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/14.png" alt="" />
+              <a
+                routerLink="/create-card-steps/14"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+            <div ngxSlickItem class="slide slider-item">
+              <img src="assets/images/template/15.png" alt="" />
+              <a
+                routerLink="/create-card-steps/15"
+                class="btn btn-warning select-btn"
+                data-bs-dismiss="modal"
+                >Select This Tempate</a
+              >
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

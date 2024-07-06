@@ -1,0 +1,23 @@
+/* Default link styling */
+.custom-nav-link {
+    color: black; /* Default text color */
+    padding: 8px 20px; /* Add padding to create space between items */
+    text-decoration: none; /* Remove underline */
+
+  }
+  
+  /* Active link styling */
+  .custom-nav-link.active {
+    color: green; /* Text color when active */
+    border-left: 4px solid green; /* Add left border when active */
+  }
+  
+
+  .nav-item{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .nav-link i{
+    padding-right: 10px;
+  }

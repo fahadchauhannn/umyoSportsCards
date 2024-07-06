@@ -1,0 +1,617 @@
+<app-nav></app-nav>
+
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+
+<section class="cards-grid" *ngIf="!isLoading">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" *ngFor="let card of cards">
+        <div class="profile-card" style="min-height: 350px">
+          <button
+            type="button"
+            class="sub-options dropdown-toggle"
+            role="button"
+            aria-expanded="false"
+          >
+            <i
+              *ngIf="!DotsModal || activeCardId != card.id"
+              class="fa-solid fa-ellipsis-vertical"
+              (click)="setActiveCard(card.id)"
+            ></i>
+            <i
+              *ngIf="DotsModal && activeCardId === card.id"
+              class="fas fa-times"
+              (click)="unsetActiveCard(card.id)"
+            ></i>
+            <ul
+              class="dropdown-menu"
+              *ngIf="activeCardId === card.id"
+              [class.show]="DotsModal"
+            >
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/cards/preview-card/{{ card.id }}"
+                  ><i class="fa-solid fa-eye"></i> Preview</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#shareCard"
+                  (click)="setShareCard(card.id)"
+                  ><i class="fa-solid fa-share-nodes"></i> Shared Card</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/edit-card/{{ card.id }}"
+                  ><i class="fa-regular fa-pen-to-square"></i> Edit</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="deleteCard(card.id)"
+                  ><i class="fa-solid fa-trash"></i> Delete</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="generateQr(card.id)"
+                  ><i class="fa-solid fa-floppy-disk"></i> Download QR</a
+                >
+              </li>
+            </ul>
+          </button>
+
+          <div
+            *ngIf="card.change_photo != null"
+            class="image"
+            [style.backgroundImage]="'url(' + card.change_photo + ')'"
+          ></div>
+          <div
+            *ngIf="card.change_photo == null"
+            class="image"
+            style="background-image: url('assets/images/avatar.png')"
+          ></div>
+          <div class="data">
+            <h2>
+              {{
+                card.infoFormData.firstName + " " + card.infoFormData.lastName
+              }}
+            </h2>
+            <span>{{ card.infoFormData.cardTitle }}</span>
+          </div>
+          <div class="rows">
+            <div class="info">
+              <h3>Sends</h3>
+              <span>{{ card.sends }}</span>
+            </div>
+            <div class="info">
+              <h3>Total Views</h3>
+              <span>{{ card.totalViews }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a routerLink="/create-card" class="addCards" id="addCards"
+    ><i class="fa-solid fa-plus"></i
+  ></a>
+</section>
+
+<button
+  type="button"
+  class="upgrade"
+  id="upgrade"
+  data-bs-toggle="modal"
+  data-bs-target="#upgradePackages"
+  (click)="openPackageModal()"
+>
+  <i class="fa-solid fa-arrow-up-short-wide"></i> Upgrade Package
+</button>
+
+<div
+  class="modal fade"
+  id="shareCard"
+  tabindex="-1"
+  aria-labelledby="shareCardLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="shareCardLabel">Share Card</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="row"
+          style="
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <h5 style="width: 100%; text-align: center; padding-bottom: 25px">
+            https://lieutenantsacademydfw.org/cards/share-card/{{ shareCardId }}
+          </h5>
+          <button
+            class="btn btn-primary"
+            style="width: 80%; text-align: center; padding-bottom: 15px"
+            (click)="openShareDialog()"
+          >
+            Share
+          </button>
+          <h3
+            style="
+              width: 100%;
+              text-align: center;
+              padding-bottom: 25px;
+              padding-top: 40px;
+              font-size: medium;
+            "
+          >
+            Copy link to share your card.
+          </h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal" id="upgradePackages">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Select One Package</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="packages-radio-group">
+            <div
+              *ngFor="let package of packages; let i = index"
+              (click)="selectPackage(package)"
+            >
+              <div class="inputContainer" *ngIf="package.price !== '0'">
+                <div>
+                  <input
+                    [id]="'pack' + i"
+                    class="radio"
+                    type="radio"
+                    name="radio"
+                  />
+                  <div class="radioTile">
+                    <label [for]="'pack' + i" class="radioLabel">
+                      <h2>
+                        $
+                        {{
+                          package.net_price ? package.net_price : package.price
+                        }}<span *ngIf="package.net_price">{{
+                          package.price
+                        }}</span>
+                      </h2>
+                      <h3>Cards Limit: {{ package.limit }}</h3>
+                      <h4>Duration: {{ package.expire_in }}</h4>
+                      <p
+                        style="
+                          max-width: 15vw;
+                          max-height: 5vw;
+                          overflow-y: scroll;
+                          margin-top: 10px;
+                          padding: 5px;
+
+                          border-radius: 5px;
+                        "
+                      >
+                        {{ package.description }}
+                      </p>
+                      <i class="fa-solid fa-circle-check"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <div
+          [ngClass]="{
+            hidden: selectedPackage == null,
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <button
+            data-bs-toggle="modal"
+            (click)="payWithPayPal(selectedPackage)"
+            type="button"
+            class="btn payment-btn"
+          >
+            <img src="assets/images/paypal.svg" alt="..." />
+          </button>
+          <button
+            type="button"
+            class="btn payment-btn stripe"
+            data-bs-toggle="modal"
+            data-bs-target="#stripeModal"
+          >
+            <img src="assets/images/stripe.svg" alt=".." />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="stripeModal">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pay Through Stripe</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="card-number">Card Number 14 Digit</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="card-expiry">Expiration Date in MM/YY</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="card-cvc">3 Digit CVC</label>
+                  <input
+                    placeholder="XXX"
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="pay-button"
+                  (click)="pay()"
+                  data-bs-dismiss="modal"
+                  [disabled]="!paymentForm.valid"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ loadingTitle }}</h3>
+          <p style="padding-top: 15px">{{ loadingMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Select One Package
+        </h5>
+        <button type="button" class="close" (click)="closePackageModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let package of packages; let i = index">
+            <div
+              class="outerCard"
+              style="min-height: 30vh; cursor: pointer"
+              *ngIf="package.price !== '0'"
+            >
+              <div
+                class="card"
+                [ngClass]="{ cardSelect: selectedPackage === package }"
+                (click)="selectPackage(package)"
+              >
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                    $
+                    {{ package.net_price ? package.net_price : package.price }}
+                    <sup
+                      style="
+                        text-decoration: line-through;
+                        font-size: 20px;
+                        color: gray;
+                        padding-left: 15px;
+                      "
+                      *ngIf="package.net_price"
+                      >{{ package.price }}</sup
+                    >
+                  </h5>
+                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
+
+                  <div
+                    class="description-container"
+                    style="max-height: 100px; overflow-y: auto"
+                  >
+                    <p class="card-description">{{ package.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          (click)="closePackageModal()"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Close
+        </button>
+
+        <div
+          *ngIf="selectedPackage?.price != '0'"
+          [ngClass]="{
+            hidden: selectedPackage == null || selectedPackage?.price == '0',
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <!-- <div id="paypal-button-container"></div> -->
+
+          <!-- hide stripe  -->
+
+          <!-- <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="openStripeModal()"
+          >
+            Stripe
+          </button> -->
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="payWithPayPal(selectedPackage)"
+          >
+            paypal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- stripe modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Pay Through Stripe
+        </h5>
+        <button type="button" class="close" (click)="closeStripeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                    placeholder="XXX"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  id="pay-button"
+                  (click)="pay()"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeStripeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

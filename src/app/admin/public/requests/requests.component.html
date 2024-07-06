@@ -1,0 +1,84 @@
+<app-nav></app-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div *ngIf="!isLoading">
+  <div class="container" *ngIf="recivedRequestList.length > 0">
+    <div class="topRow">
+      <div class="col">
+        <h3>Recieved Requests</h3>
+      </div>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <div
+        *ngFor="let recivedFriend of recivedRequestList"
+        class="col-12 col-md-4"
+      >
+        <div class="card mb-3" style="min-width: 200px">
+          <div class="card-body d-flex align-items-center">
+            <div class="avatar mr-3">
+              <!-- Add your avatar image or icon here -->
+              <img
+                src="assets/images/avatar.png"
+                style="height: 40px; width: 40px"
+                alt="{{ recivedFriend.frnd.firstname }}"
+                class="avatar-image"
+              />
+            </div>
+            <span style="padding-left: 5px"
+              >{{ recivedFriend.frnd.firstname }}
+              {{ " " + recivedFriend.frnd.lastname }}</span
+            >
+          </div>
+          <div class="card-footer">
+            <div class="dropdown">
+              <p
+                class="status"
+                (click)="acceptRequest(recivedFriend.id)"
+                style="color: #8dc63f"
+                *ngIf="recivedFriend.status === 'Pending'"
+              >
+                Accept Request
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="topRow">
+      <div class="col">
+        <h3>Sent Requests</h3>
+      </div>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <div *ngFor="let friend of requestList" class="col-12 col-md-4">
+        <div class="card mb-3" style="min-width: 200px">
+          <div class="card-body d-flex align-items-center">
+            <div class="avatar mr-3">
+              <!-- Add your avatar image or icon here -->
+              <img
+                src="assets/images/avatar.png"
+                style="height: 40px; width: 40px"
+                alt="{{ friend.frnd.firstname }}"
+                class="avatar-image"
+              />
+            </div>
+            <span style="padding-left: 5px"
+              >{{ friend.frnd.firstname }}
+              {{ " " + friend.frnd.lastname }}</span
+            >
+          </div>
+          <div class="card-footer">
+            <div class="dropdown">
+              <p style="color: #8dc63f" class="status">{{ friend.status }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

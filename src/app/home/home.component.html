@@ -262,7 +262,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -395,21 +395,9 @@
                   formControlName="selectedType"
                 >
                   <option selected value="" disabled>Type</option>
-                  <option value="Recruiter">Recruiter</option>
-                  <option value="Retired">Retired</option>
-                  <option value="Reserve">Reserve</option>
-                  <option value="Enlisted">Enlisted</option>
-                  <option value="Discharged">Discharged</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Special Forces">Special Forces</option>
-                  <option value="Policeman">Policeman</option>
-                  <option value="Soldier">Soldier</option>
-                  <option value="Veteran">Veteran</option>
-                  <option value="Family Member">Family Member</option>
-                  <option value="Husband">Husband</option>
-                  <option value="Wife">Wife</option>
-                  <option value="Children">Children</option>
-                  <option value="Supporter">Supporter</option>
+                  <option *ngFor="let item of type" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -419,56 +407,9 @@
                   formControlName="selectedBranch"
                 >
                   <option selected value="" disabled>Military Branches</option>
-                  <option value="United States Army">United States Army</option>
-                  <option value="The United States Marine Corps">
-                    The United States Marine Corps
+                  <option *ngFor="let item of branch" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="United States Navy">United States Navy</option>
-                  <option value="Navy">Navy</option>
-                  <option value="US Marine Corps">US Marine Corps</option>
-                  <option value="Army">Army</option>
-                  <option value="Air Force">Air Force</option>
-                  <option value="Coast Guard">Coast Guard</option>
-                  <option value="Army National Guard">
-                    Army National Guard
-                  </option>
-                  <option value="Space Force">Space Force</option>
-                  <option value="United States Army Reserves">
-                    United States Army Reserves
-                  </option>
-                  <option value="United States Air Force">
-                    United States Air Force
-                  </option>
-                  <option value="United States Coast Guards">
-                    United States Coast Guards
-                  </option>
-                  <option value="United States Armed Forces">
-                    United States Armed Forces
-                  </option>
-                  <option value="National Guard of the United States">
-                    National Guard of the United States
-                  </option>
-                  <option value="United States Navy Reserve">
-                    United States Navy Reserve
-                  </option>
-                  <option value="United States Marine Reserve">
-                    United States Marine Reserve
-                  </option>
-                  <option value="Air Force Reserve Command">
-                    Air Force Reserve Command
-                  </option>
-                  <option value="United States Coast Guard Reserve">
-                    United States Coast Guard Reserve
-                  </option>
-                  <option value="Air National Guard">Air National Guard</option>
-                  <option value="Marine Corp">Marine Corp</option>
-                  <option value="Reserve Officers Training Corp">
-                    Reserve Officers Training Corp
-                  </option>
-                  <option value="National Reserve Officers Training Corp">
-                    National Reserve Officers Training Corp
-                  </option>
-                  <option value="Special Forces">Special Forces</option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -478,66 +419,9 @@
                   formControlName="selectedRank"
                 >
                   <option selected value="" disabled>Military Rankings</option>
-                  <option value="Private 2nd Class (E-2) ...">
-                    Private 2nd Class (E-2) ...
+                  <option *ngFor="let item of ranking" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Private First Class (E-3) ...">
-                    Private First Class (E-3) ...
-                  </option>
-                  <option value="Army Specialist (E-4) ...">
-                    Army Specialist (E-4) ...
-                  </option>
-                  <option value="Corporal (E-4) ...">Corporal (E-4) ...</option>
-                  <option value="Sergeant (E-5) ...">Sergeant (E-5) ...</option>
-                  <option value="Staff Sergeant (E-6) ...">
-                    Staff Sergeant (E-6) ...
-                  </option>
-                  <option
-                    value="Sergeant First Class (Platoon Sergeant) (E-7) ..."
-                  >
-                    Sergeant First Class (Platoon Sergeant) (E-7) ...
-                  </option>
-                  <option value="Master Sergeant (E-8)">
-                    Master Sergeant (E-8)
-                  </option>
-                  <option value="Warrant Officer">Warrant Officer</option>
-                  <option value="Major General">Major General</option>
-                  <option value="General">General</option>
-                  <option value="Lieutenant General">Lieutenant General</option>
-                  <option value="Second Lieutenant">Second Lieutenant</option>
-                  <option value="Major">Major</option>
-                  <option value="First Lieutenant">First Lieutenant</option>
-                  <option value="Master Sergeant">Master Sergeant</option>
-                  <option value="Colonel">Colonel</option>
-                  <option value="Captain">Captain</option>
-                  <option value="Lieutenant">Lieutenant</option>
-                  <option value="Sergeant Major">Sergeant Major</option>
-                  <option value="Commander">Commander</option>
-                  <option value="Chief Warrant Officer">
-                    Chief Warrant Officer
-                  </option>
-                  <option value="Vice Admiral">Vice Admiral</option>
-                  <option value="Commanding Officer">Commanding Officer</option>
-                  <option value="General of the Army">
-                    General of the Army
-                  </option>
-                  <option value="Admiral">Admiral</option>
-                  <option value="Anniston Army Depot">
-                    Anniston Army Depot
-                  </option>
-                  <option value="Fort Novosel">Fort Novosel</option>
-                  <option value="Maxwell AFB and Gunter Annex">
-                    Maxwell AFB and Gunter Annex
-                  </option>
-                  <option value="Redstone Arsenal">Redstone Arsenal</option>
-                  <option value="USAREC, 2nd Medical Recruiting Battalion">
-                    USAREC, 2nd Medical Recruiting Battalion
-                  </option>
-                  <option value="USAREC, Montgomery Battalion">
-                    USAREC, Montgomery Battalion
-                  </option>
-                  <option value="117 ARW">117 ARW</option>
-                  <option value="87 FW">87 FW</option>
                 </select>
               </div>
 
@@ -548,57 +432,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>States</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="District Of Columbia">
-                    District Of Columbia
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
                 </select>
               </div>
 
@@ -609,654 +445,9 @@
                   formControlName="selectedBase"
                 >
                   <option selected value="" disabled>Base</option>
-                  <option value="Davis-Monthan AFB">Davis-Monthan AFB</option>
-                  <option value="Fort Huachuca">Fort Huachuca</option>
-                  <option value="Luke AFB">Luke AFB</option>
-                  <option value="MCAS Yuma">MCAS Yuma</option>
-                  <option value="USAREC, Phoenix Battalion">
-                    USAREC, Phoenix Battalion
+                  <option *ngFor="let item of base" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="USAREC, Phoenix Battalion">
-                    USAREC, Phoenix Battalion
-                  </option>
-                  <option value="Yuma Proving Ground">
-                    Yuma Proving Ground
-                  </option>
-                  <option value="161 ARW">161 ARW</option>
-                  <option value="162 Wing">162 Wing</option>
-                  <option value="Little Rock AFB">Little Rock AFB</option>
-                  <option value="Pine Bluff Arsenal">Pine Bluff Arsenal</option>
-                  <option value="188 WG">188 WG</option>
-                  <option value="189 AW">189 AW</option>
-                  <option value="Beale AFB">Beale AFB</option>
-                  <option value="Camp Parks">Camp Parks</option>
-                  <option value="Camp Pendleton">Camp Pendleton</option>
-                  <option value="Defense Distribution Depot San Joaquin">
-                    Defense Distribution Depot San Joaquin
-                  </option>
-                  <option value="Edwards AFB">Edwards AFB</option>
-                  <option value="Fort Hunter Liggett">
-                    Fort Hunter Liggett
-                  </option>
-                  <option value="Fort Irwin">Fort Irwin</option>
-                  <option value="Los Angeles SFB">Los Angeles SFB</option>
-                  <option value="March ARB">March ARB</option>
-                  <option value="Marine Corps Air Station Miramar">
-                    Marine Corps Air Station Miramar
-                  </option>
-                  <option
-                    value="Marine Corps Mountain Warfare Training Center (MWTC)"
-                  >
-                    Marine Corps Mountain Warfare Training Center (MWTC)
-                  </option>
-                  <option value="MCLB Barstow">MCLB Barstow</option>
-                  <option value="MCRD San Diego">MCRD San Diego</option>
-                  <option value="Naval Air Facility El Centro">
-                    Naval Air Facility El Centro
-                  </option>
-                  <option value="Naval Air Station Lemoore">
-                    Naval Air Station Lemoore
-                  </option>
-                  <option value="Naval Air Weapons Station China Lake">
-                    Naval Air Weapons Station China Lake
-                  </option>
-                  <option value="Naval Base Coronado">
-                    Naval Base Coronado
-                  </option>
-                  <option value="Naval Base Point Loma">
-                    Naval Base Point Loma
-                  </option>
-                  <option value="Naval Base San Diego">
-                    Naval Base San Diego
-                  </option>
-                  <option
-                    value="Naval Base Ventura County - Point Mugu/Port Hueneme"
-                  >
-                    Naval Base Ventura County - Point Mugu/Port Hueneme
-                  </option>
-                  <option value="Naval Support Activity Monterey">
-                    Naval Support Activity Monterey
-                  </option>
-                  <option value="Naval Weapons Station Seal Beach">
-                    Naval Weapons Station Seal Beach
-                  </option>
-                  <option value="Presidio of Monterey (DLI/FLC)">
-                    Presidio of Monterey (DLI/FLC)
-                  </option>
-                  <option value="Travis Air Force Base">
-                    Travis Air Force Base
-                  </option>
-                  <option value="Twentynine Palms (MCAGCC)">
-                    Twentynine Palms (MCAGCC)
-                  </option>
-                  <option value="USAREC, Los Angeles Battalion">
-                    USAREC, Los Angeles Battalion
-                  </option>
-                  <option value="USAREC, Southern California Battalion">
-                    USAREC, Southern California Battalion
-                  </option>
-                  <option value="USAREC, US Army Battalion Central California">
-                    USAREC, US Army Battalion Central California
-                  </option>
-                  <option
-                    value="USAREC, US Army Recruiting Battalion Northern California"
-                  >
-                    USAREC, US Army Recruiting Battalion Northern California
-                  </option>
-                  <option value="Vandenberg SFB">Vandenberg SFB</option>
-                  <option value="129 RQW">129 RQW</option>
-                  <option value="144th FW">144th FW</option>
-                  <option value="146 AW">146 AW</option>
-                  <option value="163 ATKW">163 ATKW</option>
-                  <option value="Buckley SFB">Buckley SFB</option>
-                  <option value="Fort Carson">Fort Carson</option>
-                  <option value="Peterson SFB">Peterson SFB</option>
-                  <option value="Schriever SFB">Schriever SFB</option>
-                  <option value="USAF Academy">USAF Academy</option>
-                  <option value="USAREC, Denver Battalion">
-                    USAREC, Denver Battalion
-                  </option>
-                  <option value="140 WG">140 WG</option>
-                  <option value="Naval Submarine Base New London">
-                    Naval Submarine Base New London
-                  </option>
-                  <option value="103 AW">103 AW</option>
-                  <option value="Dover AFB">Dover AFB</option>
-                  <option value="166th AW">166th AW</option>
-                  <option value="Joint Base Anacostia-Bolling">
-                    Joint Base Anacostia-Bolling
-                  </option>
-                  <option value="Naval Support Activity Washington">
-                    Naval Support Activity Washington
-                  </option>
-                  <option value="Pentagon - Air Force">
-                    Pentagon - Air Force
-                  </option>
-                  <option value="Active">Active</option>
-                  <option value="Inactive">Inactive</option>
-                  <option value="Retired">Retired</option>
-                  <option value="Arnold AFB">Arnold AFB</option>
-                  <option value="Eglin AFB">Eglin AFB</option>
-                  <option value="Hurlburt Field">Hurlburt Field</option>
-                  <option value="MacDill AFB">MacDill AFB</option>
-                  <option value="Naval Air Station Jacksonville">
-                    Naval Air Station Jacksonville
-                  </option>
-                  <option value="Naval Air Station Key West">
-                    Naval Air Station Key West
-                  </option>
-                  <option value="Naval Air Station Pensacola">
-                    Naval Air Station Pensacola
-                  </option>
-                  <option value="Naval Air Station Whiting Field">
-                    Naval Air Station Whiting Field
-                  </option>
-                  <option value="Naval Station Mayport">
-                    Naval Station Mayport
-                  </option>
-                  <option value="Naval Support Activity Orlando">
-                    Naval Support Activity Orlando
-                  </option>
-                  <option value="Naval Support Activity Panama City">
-                    Naval Support Activity Panama City
-                  </option>
-                  <option value="Patrick SFB">Patrick SFB</option>
-                  <option value="Tyndall AFB">Tyndall AFB</option>
-                  <option value="USAREC, Jacksonville Battalion">
-                    USAREC, Jacksonville Battalion
-                  </option>
-                  <option value="USAREC, Miami Battalion">
-                    USAREC, Miami Battalion
-                  </option>
-                  <option value="USAREC, Tampa Battalion">
-                    USAREC, Tampa Battalion
-                  </option>
-                  <option value="USSOUTHCOM/U.S. Army Garrison-Miami">
-                    USSOUTHCOM/U.S. Army Garrison-Miami
-                  </option>
-                  <option value="125 FW">125 FW</option>
-                  <option value="Fort Gordon">Fort Gordon</option>
-                  <option value="Fort Moore">Fort Moore</option>
-                  <option value="Fort Stewart">Fort Stewart</option>
-                  <option value="Hunter Army Airfield">
-                    Hunter Army Airfield
-                  </option>
-                  <option value="Marine Corps Logistics Base - Albany">
-                    Marine Corps Logistics Base - Albany
-                  </option>
-                  <option value="Moody AFB">Moody AFB</option>
-                  <option value="Naval Submarine Base Kings Bay">
-                    Naval Submarine Base Kings Bay
-                  </option>
-                  <option value="Robins AFB">Robins AFB</option>
-                  <option value="US Army Cadet Command 6th Brigade">
-                    US Army Cadet Command 6th Brigade
-                  </option>
-                  <option value="USAREC, Atlanta Battalion">
-                    USAREC, Atlanta Battalion
-                  </option>
-                  <option value="116 ACW">116 ACW</option>
-                  <option value="165 AW">165 AW</option>
-                  <option value="Mountain Home AFB">Mountain Home AFB</option>
-                  <option value="124 FW">124 FW</option>
-                  <option value="Naval Station Great Lakes">
-                    Naval Station Great Lakes
-                  </option>
-                  <option value="Rock Island Arsenal">
-                    Rock Island Arsenal
-                  </option>
-                  <option value="Scott Air Force Base">
-                    Scott Air Force Base
-                  </option>
-                  <option value="US Army Cadet Command 3rd Brigade">
-                    US Army Cadet Command 3rd Brigade
-                  </option>
-                  <option value="USAREC, Chicago Battalion">
-                    USAREC, Chicago Battalion
-                  </option>
-                  <option value="126 ARW">126 ARW</option>
-                  <option value="182 AW">182 AW</option>
-                  <option value="183 Wing">183 Wing</option>
-                  <option value="Naval Support Activity Crane">
-                    Naval Support Activity Crane
-                  </option>
-                  <option value="USAREC, Indianapolis Battalion">
-                    USAREC, Indianapolis Battalion
-                  </option>
-                  <option value="122 FW">122 FW</option>
-                  <option value="181 IW">181 IW</option>
-                  <option value="132 WG">132 WG</option>
-                  <option value="185ARW">185ARW</option>
-                  <option value="Fort Leavenworth">Fort Leavenworth</option>
-                  <option value="Fort Riley">Fort Riley</option>
-                  <option value="McConnell AFB">McConnell AFB</option>
-                  <option value="184 IW">184 IW</option>
-                  <option value="190 ARW">190 ARW</option>
-                  <option value="Fort Campbell">Fort Campbell</option>
-                  <option value="Fort Knox">Fort Knox</option>
-                  <option value="US Army Cadet Command 1st Brigade">
-                    US Army Cadet Command 1st Brigade
-                  </option>
-                  <option value="US Army Cadet Command 7th Brigade">
-                    US Army Cadet Command 7th Brigade
-                  </option>
-                  <option value="US Army Cadet Command Headquarters">
-                    US Army Cadet Command Headquarters
-                  </option>
-                  <option value="USAREC, 3rd Medical Recruiting Battalion">
-                    USAREC, 3rd Medical Recruiting Battalion
-                  </option>
-                  <option value="USAREC, Columbus Battalion">
-                    USAREC, Columbus Battalion
-                  </option>
-                  <option value="123 AW">123 AW</option>
-                  <option value="Barksdale Air Force Base">
-                    Barksdale Air Force Base
-                  </option>
-                  <option value="Fort Johnson">Fort Johnson</option>
-                  <option
-                    value="Naval Air Station Joint Reserve Base New Orleans"
-                  >
-                    Naval Air Station Joint Reserve Base New Orleans
-                  </option>
-                  <option value="USAREC, Baton Rouge Battalion">
-                    USAREC, Baton Rouge Battalion
-                  </option>
-                  <option value="159 FW">159 FW</option>
-                  <option value="Portsmouth Naval Shipyard">
-                    Portsmouth Naval Shipyard
-                  </option>
-                  <option value="USAREC, New England Battalion">
-                    USAREC, New England Battalion
-                  </option>
-                  <option value="101 ARW">101 ARW</option>
-                  <option value="Aberdeen Proving Ground">
-                    Aberdeen Proving Ground
-                  </option>
-                  <option value="Fort Detrick">Fort Detrick</option>
-                  <option value="Fort George G. Meade">
-                    Fort George G. Meade
-                  </option>
-                  <option value="Fort George G. Meade - Navy">
-                    Fort George G. Meade - Navy
-                  </option>
-                  <option
-                    value="Joint Base Andrews-Naval Air Facility Washington"
-                  >
-                    Joint Base Andrews-Naval Air Facility Washington
-                  </option>
-                  <option value="Naval Air Station Patuxent River">
-                    Naval Air Station Patuxent River
-                  </option>
-                  <option
-                    value="Naval Support Activity Annapolis - U.S. Naval Academy"
-                  >
-                    Naval Support Activity Annapolis - U.S. Naval Academy
-                  </option>
-                  <option
-                    value="Naval Support Activity Bethesda Home of Walter Reed National Military Medical Center"
-                  >
-                    Naval Support Activity Bethesda Home of Walter Reed National
-                    Military Medical Center
-                  </option>
-                  <option
-                    value="Naval Support Activity South Potomac (NSF Indian Head)"
-                  >
-                    Naval Support Activity South Potomac (NSF Indian Head)
-                  </option>
-                  <option value="USAREC, 1st Medical Recruiting Battalion">
-                    USAREC, 1st Medical Recruiting Battalion
-                  </option>
-                  <option value="USAREC, Baltimore Battalion">
-                    USAREC, Baltimore Battalion
-                  </option>
-                  <option value="113 WG">113 WG</option>
-                  <option value="175 WG">175 WG</option>
-                  <option value="Hanscom AFB">Hanscom AFB</option>
-                  <option value="Natick Soldier Systems Center (NSSC)">
-                    Natick Soldier Systems Center (NSSC)
-                  </option>
-                  <option value="Westover ARB">Westover ARB</option>
-                  <option value="102IW">102IW</option>
-                  <option value="104 FW">104 FW</option>
-                  <option value="Hart-Dole-Inouye Federal Center">
-                    Hart-Dole-Inouye Federal Center
-                  </option>
-                  <option value="USAG Detroit Arsenal">
-                    USAG Detroit Arsenal
-                  </option>
-                  <option value="110 ATKW">110 ATKW</option>
-                  <option value="127WG">127WG</option>
-                  <option value="USAREC, Minneapolis Battalion">
-                    USAREC, Minneapolis Battalion
-                  </option>
-                  <option value="133 AW">133 AW</option>
-                  <option value="148 FW">148 FW</option>
-                  <option value="Columbus AFB">Columbus AFB</option>
-                  <option value="Keesler AFB">Keesler AFB</option>
-                  <option value="Naval Air Station Meridian">
-                    Naval Air Station Meridian
-                  </option>
-                  <option value="Naval Construction Battalion Center Gulfport">
-                    Naval Construction Battalion Center Gulfport
-                  </option>
-                  <option value="Stennis Space Center">
-                    Stennis Space Center
-                  </option>
-                  <option value="172 AW">172 AW</option>
-                  <option value="186 ARW">186 ARW</option>
-                  <option value="Fort Leonard Wood">Fort Leonard Wood</option>
-                  <option value="USAREC, Kansas City Battalion">
-                    USAREC, Kansas City Battalion
-                  </option>
-                  <option value="Whiteman AFB">Whiteman AFB</option>
-                  <option value="131 BW">131 BW</option>
-                  <option value="139 AW">139 AW</option>
-                  <option value="Malmstrom Air Force Base">
-                    Malmstrom Air Force Base
-                  </option>
-                  <option value="120 AW">120 AW</option>
-                  <option value="Offutt AFB">Offutt AFB</option>
-                  <option value="155 ARW">155 ARW</option>
-                  <option value="Creech AFB">Creech AFB</option>
-                  <option value="Naval Air Station Fallon">
-                    Naval Air Station Fallon
-                  </option>
-                  <option value="Nellis AFB">Nellis AFB</option>
-                  <option value="USAREC, 6th Medical Recruiting Battalion">
-                    USAREC, 6th Medical Recruiting Battalion
-                  </option>
-                  <option value="152 AW">152 AW</option>
-                  <option value="157 ARW">157 ARW</option>
-                  <option value="Joint Base McGuire-Dix-Lakehurst">
-                    Joint Base McGuire-Dix-Lakehurst
-                  </option>
-                  <option value="Naval Weapons Station Earle">
-                    Naval Weapons Station Earle
-                  </option>
-                  <option value="Picatinny Arsenal">Picatinny Arsenal</option>
-                  <option value="US Army Cadet Command 2nd Brigade">
-                    US Army Cadet Command 2nd Brigade
-                  </option>
-                  <option value="USAREC, Mid-Atlantic Battalion">
-                    USAREC, Mid-Atlantic Battalion
-                  </option>
-                  <option value="108 WG">108 WG</option>
-                  <option value="177 FW">177 FW</option>
-                  <option value="Cannon AFB">Cannon AFB</option>
-                  <option value="Holloman AFB">Holloman AFB</option>
-                  <option value="Kirtland Air Force Base">
-                    Kirtland Air Force Base
-                  </option>
-                  <option value="U.S. Army Garrison White Sands Missile Range">
-                    U.S. Army Garrison White Sands Missile Range
-                  </option>
-                  <option value="150 SOW">150 SOW</option>
-                  <option value="Fort Drum">Fort Drum</option>
-                  <option value="Fort Hamilton">Fort Hamilton</option>
-                  <option value="Naval Support Activity Saratoga Springs">
-                    Naval Support Activity Saratoga Springs
-                  </option>
-                  <option value="United States Military Academy at West Point">
-                    United States Military Academy at West Point
-                  </option>
-                  <option value="USAREC, Albany Battalion">
-                    USAREC, Albany Battalion
-                  </option>
-                  <option value="USAREC, New York City Battalion">
-                    USAREC, New York City Battalion
-                  </option>
-                  <option value="USAREC, Syracuse Battalion">
-                    USAREC, Syracuse Battalion
-                  </option>
-                  <option value="105 AW">105 AW</option>
-                  <option value="106 RQW">106 RQW</option>
-                  <option value="107 ATKW">107 ATKW</option>
-                  <option value="109AW">109AW</option>
-                  <option value="174 ATKW">174 ATKW</option>
-                  <option value="Camp Lejeune">Camp Lejeune</option>
-                  <option value="Fort Liberty">Fort Liberty</option>
-                  <option value="MCAS Cherry Point">MCAS Cherry Point</option>
-                  <option value="MCAS New River">MCAS New River</option>
-                  <option value="Pope Army Airfield">Pope Army Airfield</option>
-                  <option value="Seymour Johnson AFB">
-                    Seymour Johnson AFB
-                  </option>
-                  <option value="US Army Cadet Command 4th Brigade">
-                    US Army Cadet Command 4th Brigade
-                  </option>
-                  <option value="USAREC, Raleigh Battalion">
-                    USAREC, Raleigh Battalion
-                  </option>
-                  <option value="145 AW">145 AW</option>
-                  <option value="Grand Forks AFB">Grand Forks AFB</option>
-                  <option value="Minot AFB">Minot AFB</option>
-                  <option value="119 WG">119 WG</option>
-                  <option value="Defense Supply Center Columbus">
-                    Defense Supply Center Columbus
-                  </option>
-                  <option value="USAREC, Cleveland Battalion">
-                    USAREC, Cleveland Battalion
-                  </option>
-                  <option value="USAREC, Columbus Battalion">
-                    USAREC, Columbus Battalion
-                  </option>
-                  <option value="Wright-Patterson AFB">
-                    Wright-Patterson AFB
-                  </option>
-                  <option value="121ARW">121ARW</option>
-                  <option value="178 WG">178 WG</option>
-                  <option value="179th AW">179th AW</option>
-                  <option value="180 FW">180 FW</option>
-                  <option value="Altus AFB">Altus AFB</option>
-                  <option value="Fort Sill">Fort Sill</option>
-                  <option value="McAlester Army Ammunition Plant">
-                    McAlester Army Ammunition Plant
-                  </option>
-                  <option value="Tinker AFB">Tinker AFB</option>
-                  <option value="USAREC, Oklahoma City Battalion">
-                    USAREC, Oklahoma City Battalion
-                  </option>
-                  <option value="Vance AFB">Vance AFB</option>
-                  <option value="137 SOW">137 SOW</option>
-                  <option value="138 FW">138 FW</option>
-                  <option value="USAREC, Portland Battalion">
-                    USAREC, Portland Battalion
-                  </option>
-                  <option value="142 FW">142 FW</option>
-                  <option value="173 FW">173 FW</option>
-                  <option value="Carlisle Barracks">Carlisle Barracks</option>
-                  <option value="Defense Logistics Agency at Susquehanna">
-                    Defense Logistics Agency at Susquehanna
-                  </option>
-                  <option value="Naval Support Activity Mechanicsburg">
-                    Naval Support Activity Mechanicsburg
-                  </option>
-                  <option value="Naval Support Activity Philadelphia">
-                    Naval Support Activity Philadelphia
-                  </option>
-                  <option value="Tobyhanna Army Depot">
-                    Tobyhanna Army Depot
-                  </option>
-                  <option value="USAREC, Harrisburg Battalion">
-                    USAREC, Harrisburg Battalion
-                  </option>
-                  <option value="171ARW">171ARW</option>
-                  <option value="193 SOW">193 SOW</option>
-                  <option value="Naval Station Newport">
-                    Naval Station Newport
-                  </option>
-                  <option value="143 AW">143 AW</option>
-                  <option value="Fort Jackson">Fort Jackson</option>
-                  <option value="Joint Base Charleston">
-                    Joint Base Charleston
-                  </option>
-                  <option value="MCAS Beaufort">MCAS Beaufort</option>
-                  <option value="MCRD Parris Island">MCRD Parris Island</option>
-                  <option value="Shaw Air Force Base">
-                    Shaw Air Force Base
-                  </option>
-                  <option value="USAREC, Columbia Recruiting Battalion">
-                    USAREC, Columbia Recruiting Battalion
-                  </option>
-                  <option value="169 FW">169 FW</option>
-                  <option value="Ellsworth Air Force Base">
-                    Ellsworth Air Force Base
-                  </option>
-                  <option value="114 FW">114 FW</option>
-                  <option value="Naval Support Activity Mid-South">
-                    Naval Support Activity Mid-South
-                  </option>
-                  <option value="USAREC, Nashville Battalion">
-                    USAREC, Nashville Battalion
-                  </option>
-                  <option value="118th WG">118th WG</option>
-                  <option value="134ARW">134ARW</option>
-                  <option value="164 AW">164 AW</option>
-                  <option value="Dyess AFB">Dyess AFB</option>
-                  <option value="Fort Bliss">Fort Bliss</option>
-                  <option value="Fort Cavazos">Fort Cavazos</option>
-                  <option value="Goodfellow AFB">Goodfellow AFB</option>
-                  <option
-                    value="Joint Base San Antonio (Lackland, Randolph, Sam Houston)"
-                  >
-                    Joint Base San Antonio (Lackland, Randolph, Sam Houston)
-                  </option>
-                  <option value="Laughlin AFB">Laughlin AFB</option>
-                  <option value="Naval Air Station Corpus Christi">
-                    Naval Air Station Corpus Christi
-                  </option>
-                  <option
-                    value="Naval Air Station Joint Reserve Base Fort Worth"
-                  >
-                    Naval Air Station Joint Reserve Base Fort Worth
-                  </option>
-                  <option value="Naval Air Station Kingsville">
-                    Naval Air Station Kingsville
-                  </option>
-                  <option value="Red River Army Depot">
-                    Red River Army Depot
-                  </option>
-                  <option value="Sheppard AFB">Sheppard AFB</option>
-                  <option value="US Army Cadet Command 5th Brigade">
-                    US Army Cadet Command 5th Brigade
-                  </option>
-                  <option value="USAREC, 5th Medical Recruiting Battalion">
-                    USAREC, 5th Medical Recruiting Battalion
-                  </option>
-                  <option value="USAREC, Dallas Battalion">
-                    USAREC, Dallas Battalion
-                  </option>
-                  <option value="USAREC, Houston Battalion">
-                    USAREC, Houston Battalion
-                  </option>
-                  <option value="USAREC, San Antonio Battalion">
-                    USAREC, San Antonio Battalion
-                  </option>
-                  <option value="136 AW">136 AW</option>
-                  <option value="147 ATKW">147 ATKW</option>
-                  <option value="149 FW">149 FW</option>
-                  <option value="Dugway Proving Ground">
-                    Dugway Proving Ground
-                  </option>
-                  <option value="Hill AFB">Hill AFB</option>
-                  <option value="USAREC, Salt Lake City Battalion">
-                    USAREC, Salt Lake City Battalion
-                  </option>
-                  <option value="151st ARW">151st ARW</option>
-                  <option value="158 FW">158 FW</option>
-                  <option value="Defense Supply Center Richmond">
-                    Defense Supply Center Richmond
-                  </option>
-                  <option value="DLA McNamara HQC">DLA McNamara HQC</option>
-                  <option value="Fort Belvoir">Fort Belvoir</option>
-                  <option value="Fort Gregg-Adams">Fort Gregg-Adams</option>
-                  <option value="Fort Myer (Joint Base Myer - Henderson Hall)">
-                    Fort Myer (Joint Base Myer - Henderson Hall)
-                  </option>
-                  <option
-                    value="Henderson Hall (Joint Base Myer - Henderson Hall)"
-                  >
-                    Henderson Hall (Joint Base Myer - Henderson Hall)
-                  </option>
-                  <option value="Joint Base Langley-Eustis">
-                    Joint Base Langley-Eustis
-                  </option>
-                  <option
-                    value="Joint Expeditionary Base Little Creek-Fort Story"
-                  >
-                    Joint Expeditionary Base Little Creek-Fort Story
-                  </option>
-                  <option value="Marine Corps Base Quantico">
-                    Marine Corps Base Quantico
-                  </option>
-                  <option value="MCCS Hampton Roads">MCCS Hampton Roads</option>
-                  <option value="Naval Air Station Oceana">
-                    Naval Air Station Oceana
-                  </option>
-                  <option value="Naval Air Station Oceana Dam Neck Annex">
-                    Naval Air Station Oceana Dam Neck Annex
-                  </option>
-                  <option value="Naval Medical Center Portsmouth">
-                    Naval Medical Center Portsmouth
-                  </option>
-                  <option value="Naval Station Norfolk">
-                    Naval Station Norfolk
-                  </option>
-                  <option value="Naval Support Activity Hampton Roads">
-                    Naval Support Activity Hampton Roads
-                  </option>
-                  <option
-                    value="Naval Support Activity Hampton Roads Northwest Annex"
-                  >
-                    Naval Support Activity Hampton Roads Northwest Annex
-                  </option>
-                  <option
-                    value="Naval Support Activity South Potomac (NSF Dahlgren)"
-                  >
-                    Naval Support Activity South Potomac (NSF Dahlgren)
-                  </option>
-                  <option value="Naval Weapons Station Yorktown">
-                    Naval Weapons Station Yorktown
-                  </option>
-                  <option value="Newport News Shipyard">
-                    Newport News Shipyard
-                  </option>
-                  <option value="Norfolk Naval Shipyard">
-                    Norfolk Naval Shipyard
-                  </option>
-                  <option value="Surface Combat Systems Center Wallops Island">
-                    Surface Combat Systems Center Wallops Island
-                  </option>
-                  <option value="USAREC, Richmond Recruiting Battalion">
-                    USAREC, Richmond Recruiting Battalion
-                  </option>
-                  <option value="192 FW">192 FW</option>
-                  <option value="Fairchild AFB">Fairchild AFB</option>
-                  <option value="Joint Base Lewis-McChord">
-                    Joint Base Lewis-McChord
-                  </option>
-                  <option value="Naval Air Station Whidbey Island">
-                    Naval Air Station Whidbey Island
-                  </option>
-                  <option value="Naval Base Kitsap">Naval Base Kitsap</option>
-                  <option value="Naval Station Everett">
-                    Naval Station Everett
-                  </option>
-                  <option value="US Army Cadet Command 8th Brigade">
-                    US Army Cadet Command 8th Brigade
-                  </option>
-                  <option value="USAREC, Seattle Battalion">
-                    USAREC, Seattle Battalion
-                  </option>
-                  <option value="141 ARW">141 ARW</option>
-                  <option value="194 WG">194 WG</option>
-                  <option value="Fort McCoy">Fort McCoy</option>
-                  <option value="USAREC, Milwaukee Battalion">
-                    USAREC, Milwaukee Battalion
-                  </option>
-                  <option value="115FW">115FW</option>
-                  <option value="128 ARW">128 ARW</option>
                 </select>
               </div>
               <div class="col-lg-6">
@@ -1272,30 +463,9 @@
                   formControlName="selectedLocation"
                 >
                   <option selected value="" disabled>Location</option>
-                  <option value="Business">Business</option>
-                  <option value="CEO">CEO</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Corporation">Corporation</option>
-                  <option value="Exclusive">Exclusive</option>
-                  <option value="Founder">Founder</option>
-                  <option value="CFO">CFO</option>
-                  <option value="COO">COO</option>
-                  <option value="Home Owner">Home Owner</option>
-                  <option value="Mall">Mall</option>
-                  <option value="Mass">Mass</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="Non Profit">Non Profit</option>
-                  <option value="Office">Office</option>
-                  <option value="Online">Online</option>
-                  <option value="Partners">Partners</option>
-                  <option value="Private">Private</option>
-                  <option value="Retail and Consultants">
-                    Retail and Consultants
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Community Pledge">Community Pledge</option>
-                  <option value="Store Front">Store Front</option>
-                  <option value="Pop Up Shop">Pop Up Shop</option>
-                  <option value="Vehicle">Vehicle</option>
                 </select>
               </div>
 
@@ -1306,143 +476,9 @@
                   formControlName="selectedBusiness"
                 >
                   <option selected value="" disabled>Business Type</option>
-                  <option value="Accountant">Accountant</option>
-                  <option value="Actor">Actor</option>
-                  <option value="Actuary">Actuary</option>
-                  <option value="Administrator">Administrator</option>
-                  <option value="Agent">Agent</option>
-                  <option value="Agricultural Worker">
-                    Agricultural Worker
+                  <option *ngFor="let item of businessType" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Air Traffic Controller">
-                    Air Traffic Controller
-                  </option>
-                  <option value="Ambulance Officer">Ambulance Officer</option>
-                  <option value="Architect">Architect</option>
-                  <option value="Art Director">Art Director</option>
-                  <option value="Artist">Artist</option>
-                  <option value="Athlete">Athlete</option>
-                  <option value="Auditor">Auditor</option>
-                  <option value="Baker">Baker</option>
-                  <option value="Barista">Barista</option>
-                  <option value="Bartender">Bartender</option>
-                  <option value="Board Member">Board Member</option>
-                  <option value="Business Analyst">Business Analyst</option>
-                  <option value="Chef">Chef</option>
-                  <option value="Childcare Worker">Childcare Worker</option>
-                  <option value="Civil Servant">Civil Servant</option>
-                  <option value="Cleaner">Cleaner</option>
-                  <option value="Company Worker">Company Worker</option>
-                  <option value="Computer Scientist">Computer Scientist</option>
-                  <option value="Construction Worker">
-                    Construction Worker
-                  </option>
-                  <option value="Cook">Cook</option>
-                  <option value="Copywriter">Copywriter</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Craftsperson">Craftsperson</option>
-                  <option value="Curator">Curator</option>
-                  <option value="Customer Service Representative">
-                    Customer Service Representative
-                  </option>
-                  <option value="Dentist">Dentist</option>
-                  <option value="Designer">Designer</option>
-                  <option value="Doctor">Doctor</option>
-                  <option value="Driver">Driver</option>
-                  <option value="Economist">Economist</option>
-                  <option value="Electrician">Electrician</option>
-                  <option value="Entrepreneur">Entrepreneur</option>
-                  <option value="Equipment Operator">Equipment Operator</option>
-                  <option value="Executive Manager">Executive Manager</option>
-                  <option value="Farmer">Farmer</option>
-                  <option value="Film Maker">Film Maker</option>
-                  <option value="Firefighter">Firefighter</option>
-                  <option value="Fisherman">Fisherman</option>
-                  <option value="Fitness Trainer">Fitness Trainer</option>
-                  <option value="Flight Attendant">Flight Attendant</option>
-                  <option value="Florist">Florist</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Gardener">Gardener</option>
-                  <option value="Hair Stylist">Hair Stylist</option>
-                  <option value="Home Care Aid">Home Care Aid</option>
-                  <option value="Homemaker">Homemaker</option>
-                  <option value="Hospitality Worker">Hospitality Worker</option>
-                  <option value="Housekeeper">Housekeeper</option>
-                  <option value="Information Technology Professional">
-                    Information Technology Professional
-                  </option>
-                  <option value="Investor">Investor</option>
-                  <option value="Journalist">Journalist</option>
-                  <option value="Laborer">Laborer</option>
-                  <option value="Lawyer">Lawyer</option>
-                  <option value="Librarian">Librarian</option>
-                  <option value="Maintenance Worker">Maintenance Worker</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manufacturing Worker">
-                    Manufacturing Worker
-                  </option>
-                  <option value="Marketing Professional">
-                    Marketing Professional
-                  </option>
-                  <option value="Mathematician">Mathematician</option>
-                  <option value="Mechanic">Mechanic</option>
-                  <option value="Medical Professional">
-                    Medical Professional
-                  </option>
-                  <option value="Merchant">Merchant</option>
-                  <option value="Midwife">Midwife</option>
-                  <option value="Military Personnel">Military Personnel</option>
-                  <option value="Musician">Musician</option>
-                  <option value="Nanny">Nanny</option>
-                  <option value="Nurse">Nurse</option>
-                  <option value="Office Clerk">Office Clerk</option>
-                  <option value="Office Worker">Office Worker</option>
-                  <option value="Optician">Optician</option>
-                  <option value="Performance Artist">Performance Artist</option>
-                  <option value="Photographer">Photographer</option>
-                  <option value="Pilot">Pilot</option>
-                  <option value="Police Officer">Police Officer</option>
-                  <option value="Politician">Politician</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Railroad Engineer">Railroad Engineer</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Retail Employee">Retail Employee</option>
-                  <option value="Retiree">Retiree</option>
-                  <option value="Rigger">Rigger</option>
-                  <option value="Sailor">Sailor</option>
-                  <option value="Salesperson">Salesperson</option>
-                  <option value="Scientist">Scientist</option>
-                  <option value="Sea Captain">Sea Captain</option>
-                  <option value="Secretary">Secretary</option>
-                  <option value="Self-Employed">Self-Employed</option>
-                  <option value="Small Business Owner">
-                    Small Business Owner
-                  </option>
-                  <option value="Social Worker">Social Worker</option>
-                  <option value="Software Developer">Software Developer</option>
-                  <option value="Spokesperson">Spokesperson</option>
-                  <option value="Statistician">Statistician</option>
-                  <option value="Stay-At-Home Parent">
-                    Stay-At-Home Parent
-                  </option>
-                  <option value="Student">Student</option>
-                  <option value="Surgeon">Surgeon</option>
-                  <option value="Surveyor">Surveyor</option>
-                  <option value="Tailor">Tailor</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Technician">Technician</option>
-                  <option value="Tradesperson">Tradesperson</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Translator">Translator</option>
-                  <option value="Truck Driver">Truck Driver</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Unemployed">Unemployed</option>
-                  <option value="Veterinarian">Veterinarian</option>
-                  <option value="Videographer">Videographer</option>
-                  <option value="Waiter">Waiter</option>
-                  <option value="Waste Collector">Waste Collector</option>
-                  <option value="Writer">Writer</option>
-                  <option value="Zoologist">Zoologist</option>
                 </select>
               </div>
               <div class="col-lg-6 mb-4">
@@ -1452,9 +488,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -1473,11 +509,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="Afro American">Afro American</option>
-                  <option value="White">White</option>
-                  <option value="Indian">Indian</option>
-                  <option value="Asian">Asian</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -1510,23 +544,21 @@
           <div class="content">
             <!-- Nav pills -->
             <ul class="nav nav-pills" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
                   [class.active]="showLoginTab"
                   data-toggle="pill"
-                  href="#login"
                   >Login</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="cursor: pointer">
                 <a
                   class="nav-link"
                   (click)="checkRoute()"
-                  [class.active]="showRegisterTab"
+                  [class.active]="!showLoginTab"
                   data-toggle="pill"
-                  href="#regis"
                   >Register</a
                 >
               </li>
@@ -1662,7 +694,7 @@
               <div
                 id="regis"
                 class="container tab-pane"
-                [class.active]="showRegisterTab"
+                [class.active]="!showLoginTab"
               >
                 <form [formGroup]="form3">
                   <div class="row justify-content-center">
@@ -1838,9 +870,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1862,57 +894,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="District Of Columbia">
-                          District Of Columbia
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1934,11 +918,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="Afro American">Afro American</option>
-                        <option value="White">White</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Asian">Asian</option>
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1983,21 +965,9 @@
                           Please Select
                         </option>
 
-                        <option value="Recruiter">Recruiter</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Reserve">Reserve</option>
-                        <option value="Enlisted">Enlisted</option>
-                        <option value="Discharged">Discharged</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Special Forces">Special Forces</option>
-                        <option value="Policeman">Policeman</option>
-                        <option value="Soldier">Soldier</option>
-                        <option value="Veteran">Veteran</option>
-                        <option value="Family Member">Family Member</option>
-                        <option value="Husband">Husband</option>
-                        <option value="Wife">Wife</option>
-                        <option value="Children">Children</option>
-                        <option value="Supporter">Supporter</option>
+                        <option *ngFor="let item of type" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -2024,62 +994,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="United States Army">
-                          United States Army
+                        <option *ngFor="let item of branch" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="The United States Marine Corps">
-                          The United States Marine Corps
-                        </option>
-                        <option value="United States Navy">
-                          United States Navy
-                        </option>
-                        <option value="Navy">Navy</option>
-                        <option value="US Marine Corps">US Marine Corps</option>
-                        <option value="Army">Army</option>
-                        <option value="Air Force">Air Force</option>
-                        <option value="Coast Guard">Coast Guard</option>
-                        <option value="Army National Guard">
-                          Army National Guard
-                        </option>
-                        <option value="Space Force">Space Force</option>
-                        <option value="United States Army Reserves">
-                          United States Army Reserves
-                        </option>
-                        <option value="United States Air Force">
-                          United States Air Force
-                        </option>
-                        <option value="United States Coast Guards">
-                          United States Coast Guards
-                        </option>
-                        <option value="United States Armed Forces">
-                          United States Armed Forces
-                        </option>
-                        <option value="National Guard of the United States">
-                          National Guard of the United States
-                        </option>
-                        <option value="United States Navy Reserve">
-                          United States Navy Reserve
-                        </option>
-                        <option value="United States Marine Reserve">
-                          United States Marine Reserve
-                        </option>
-                        <option value="Air Force Reserve Command">
-                          Air Force Reserve Command
-                        </option>
-                        <option value="United States Coast Guard Reserve">
-                          United States Coast Guard Reserve
-                        </option>
-                        <option value="Air National Guard">
-                          Air National Guard
-                        </option>
-                        <option value="Marine Corp">Marine Corp</option>
-                        <option value="Reserve Officers Training Corp">
-                          Reserve Officers Training Corp
-                        </option>
-                        <option value="National Reserve Officers Training Corp">
-                          National Reserve Officers Training Corp
-                        </option>
-                        <option value="Special Forces">Special Forces</option>
                       </select>
                     </div>
 
@@ -2106,82 +1023,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Private 2nd Class (E-2) ...">
-                          Private 2nd Class (E-2) ...
+                        <option *ngFor="let item of ranking" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Private First Class (E-3) ...">
-                          Private First Class (E-3) ...
-                        </option>
-                        <option value="Army Specialist (E-4) ...">
-                          Army Specialist (E-4) ...
-                        </option>
-                        <option value="Corporal (E-4) ...">
-                          Corporal (E-4) ...
-                        </option>
-                        <option value="Sergeant (E-5) ...">
-                          Sergeant (E-5) ...
-                        </option>
-                        <option value="Staff Sergeant (E-6) ...">
-                          Staff Sergeant (E-6) ...
-                        </option>
-                        <option
-                          value="Sergeant First Class (Platoon Sergeant) (E-7) ..."
-                        >
-                          Sergeant First Class (Platoon Sergeant) (E-7) ...
-                        </option>
-                        <option value="Master Sergeant (E-8)">
-                          Master Sergeant (E-8)
-                        </option>
-                        <option value="Warrant Officer">Warrant Officer</option>
-                        <option value="Major General">Major General</option>
-                        <option value="General">General</option>
-                        <option value="Lieutenant General">
-                          Lieutenant General
-                        </option>
-                        <option value="Second Lieutenant">
-                          Second Lieutenant
-                        </option>
-                        <option value="Major">Major</option>
-                        <option value="First Lieutenant">
-                          First Lieutenant
-                        </option>
-                        <option value="Master Sergeant">Master Sergeant</option>
-                        <option value="Colonel">Colonel</option>
-                        <option value="Captain">Captain</option>
-                        <option value="Lieutenant">Lieutenant</option>
-                        <option value="Sergeant Major">Sergeant Major</option>
-                        <option value="Commander">Commander</option>
-                        <option value="Chief Warrant Officer">
-                          Chief Warrant Officer
-                        </option>
-                        <option value="Vice Admiral">Vice Admiral</option>
-                        <option value="Commanding Officer">
-                          Commanding Officer
-                        </option>
-                        <option value="General of the Army">
-                          General of the Army
-                        </option>
-                        <option value="Admiral">Admiral</option>
-                        <option value="Anniston Army Depot">
-                          Anniston Army Depot
-                        </option>
-                        <option value="Fort Novosel">Fort Novosel</option>
-                        <option value="Maxwell AFB and Gunter Annex">
-                          Maxwell AFB and Gunter Annex
-                        </option>
-                        <option value="Redstone Arsenal">
-                          Redstone Arsenal
-                        </option>
-                        <option
-                          value="USAREC, 2nd Medical Recruiting Battalion"
-                        >
-                          USAREC, 2nd Medical Recruiting Battalion
-                        </option>
-                        <option value="USAREC, Montgomery Battalion">
-                          USAREC, Montgomery Battalion
-                        </option>
-                        <option value="117 ARW">117 ARW</option>
-                        <option value="87 FW">87 FW</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2205,704 +1049,9 @@
                           Please Select
                         </option>
 
-                        <option value="Davis-Monthan AFB">
-                          Davis-Monthan AFB
+                        <option *ngFor="let item of base" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Fort Huachuca">Fort Huachuca</option>
-                        <option value="Luke AFB">Luke AFB</option>
-                        <option value="MCAS Yuma">MCAS Yuma</option>
-                        <option value="USAREC, Phoenix Battalion">
-                          USAREC, Phoenix Battalion
-                        </option>
-                        <option value="USAREC, Phoenix Battalion">
-                          USAREC, Phoenix Battalion
-                        </option>
-                        <option value="Yuma Proving Ground">
-                          Yuma Proving Ground
-                        </option>
-                        <option value="161 ARW">161 ARW</option>
-                        <option value="162 Wing">162 Wing</option>
-                        <option value="Little Rock AFB">Little Rock AFB</option>
-                        <option value="Pine Bluff Arsenal">
-                          Pine Bluff Arsenal
-                        </option>
-                        <option value="188 WG">188 WG</option>
-                        <option value="189 AW">189 AW</option>
-                        <option value="Beale AFB">Beale AFB</option>
-                        <option value="Camp Parks">Camp Parks</option>
-                        <option value="Camp Pendleton">Camp Pendleton</option>
-                        <option value="Defense Distribution Depot San Joaquin">
-                          Defense Distribution Depot San Joaquin
-                        </option>
-                        <option value="Edwards AFB">Edwards AFB</option>
-                        <option value="Fort Hunter Liggett">
-                          Fort Hunter Liggett
-                        </option>
-                        <option value="Fort Irwin">Fort Irwin</option>
-                        <option value="Los Angeles SFB">Los Angeles SFB</option>
-                        <option value="March ARB">March ARB</option>
-                        <option value="Marine Corps Air Station Miramar">
-                          Marine Corps Air Station Miramar
-                        </option>
-                        <option
-                          value="Marine Corps Mountain Warfare Training Center (MWTC)"
-                        >
-                          Marine Corps Mountain Warfare Training Center (MWTC)
-                        </option>
-                        <option value="MCLB Barstow">MCLB Barstow</option>
-                        <option value="MCRD San Diego">MCRD San Diego</option>
-                        <option value="Naval Air Facility El Centro">
-                          Naval Air Facility El Centro
-                        </option>
-                        <option value="Naval Air Station Lemoore">
-                          Naval Air Station Lemoore
-                        </option>
-                        <option value="Naval Air Weapons Station China Lake">
-                          Naval Air Weapons Station China Lake
-                        </option>
-                        <option value="Naval Base Coronado">
-                          Naval Base Coronado
-                        </option>
-                        <option value="Naval Base Point Loma">
-                          Naval Base Point Loma
-                        </option>
-                        <option value="Naval Base San Diego">
-                          Naval Base San Diego
-                        </option>
-                        <option
-                          value="Naval Base Ventura County - Point Mugu/Port Hueneme"
-                        >
-                          Naval Base Ventura County - Point Mugu/Port Hueneme
-                        </option>
-                        <option value="Naval Support Activity Monterey">
-                          Naval Support Activity Monterey
-                        </option>
-                        <option value="Naval Weapons Station Seal Beach">
-                          Naval Weapons Station Seal Beach
-                        </option>
-                        <option value="Presidio of Monterey (DLI/FLC)">
-                          Presidio of Monterey (DLI/FLC)
-                        </option>
-                        <option value="Travis Air Force Base">
-                          Travis Air Force Base
-                        </option>
-                        <option value="Twentynine Palms (MCAGCC)">
-                          Twentynine Palms (MCAGCC)
-                        </option>
-                        <option value="USAREC, Los Angeles Battalion">
-                          USAREC, Los Angeles Battalion
-                        </option>
-                        <option value="USAREC, Southern California Battalion">
-                          USAREC, Southern California Battalion
-                        </option>
-                        <option
-                          value="USAREC, US Army Battalion Central California"
-                        >
-                          USAREC, US Army Battalion Central California
-                        </option>
-                        <option
-                          value="USAREC, US Army Recruiting Battalion Northern California"
-                        >
-                          USAREC, US Army Recruiting Battalion Northern
-                          California
-                        </option>
-                        <option value="Vandenberg SFB">Vandenberg SFB</option>
-                        <option value="129 RQW">129 RQW</option>
-                        <option value="144th FW">144th FW</option>
-                        <option value="146 AW">146 AW</option>
-                        <option value="163 ATKW">163 ATKW</option>
-                        <option value="Buckley SFB">Buckley SFB</option>
-                        <option value="Fort Carson">Fort Carson</option>
-                        <option value="Peterson SFB">Peterson SFB</option>
-                        <option value="Schriever SFB">Schriever SFB</option>
-                        <option value="USAF Academy">USAF Academy</option>
-                        <option value="USAREC, Denver Battalion">
-                          USAREC, Denver Battalion
-                        </option>
-                        <option value="140 WG">140 WG</option>
-                        <option value="Naval Submarine Base New London">
-                          Naval Submarine Base New London
-                        </option>
-                        <option value="103 AW">103 AW</option>
-                        <option value="Dover AFB">Dover AFB</option>
-                        <option value="166th AW">166th AW</option>
-                        <option value="Joint Base Anacostia-Bolling">
-                          Joint Base Anacostia-Bolling
-                        </option>
-                        <option value="Naval Support Activity Washington">
-                          Naval Support Activity Washington
-                        </option>
-                        <option value="Pentagon - Air Force">
-                          Pentagon - Air Force
-                        </option>
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Arnold AFB">Arnold AFB</option>
-                        <option value="Eglin AFB">Eglin AFB</option>
-                        <option value="Hurlburt Field">Hurlburt Field</option>
-                        <option value="MacDill AFB">MacDill AFB</option>
-                        <option value="Naval Air Station Jacksonville">
-                          Naval Air Station Jacksonville
-                        </option>
-                        <option value="Naval Air Station Key West">
-                          Naval Air Station Key West
-                        </option>
-                        <option value="Naval Air Station Pensacola">
-                          Naval Air Station Pensacola
-                        </option>
-                        <option value="Naval Air Station Whiting Field">
-                          Naval Air Station Whiting Field
-                        </option>
-                        <option value="Naval Station Mayport">
-                          Naval Station Mayport
-                        </option>
-                        <option value="Naval Support Activity Orlando">
-                          Naval Support Activity Orlando
-                        </option>
-                        <option value="Naval Support Activity Panama City">
-                          Naval Support Activity Panama City
-                        </option>
-                        <option value="Patrick SFB">Patrick SFB</option>
-                        <option value="Tyndall AFB">Tyndall AFB</option>
-                        <option value="USAREC, Jacksonville Battalion">
-                          USAREC, Jacksonville Battalion
-                        </option>
-                        <option value="USAREC, Miami Battalion">
-                          USAREC, Miami Battalion
-                        </option>
-                        <option value="USAREC, Tampa Battalion">
-                          USAREC, Tampa Battalion
-                        </option>
-                        <option value="USSOUTHCOM/U.S. Army Garrison-Miami">
-                          USSOUTHCOM/U.S. Army Garrison-Miami
-                        </option>
-                        <option value="125 FW">125 FW</option>
-                        <option value="Fort Gordon">Fort Gordon</option>
-                        <option value="Fort Moore">Fort Moore</option>
-                        <option value="Fort Stewart">Fort Stewart</option>
-                        <option value="Hunter Army Airfield">
-                          Hunter Army Airfield
-                        </option>
-                        <option value="Marine Corps Logistics Base - Albany">
-                          Marine Corps Logistics Base - Albany
-                        </option>
-                        <option value="Moody AFB">Moody AFB</option>
-                        <option value="Naval Submarine Base Kings Bay">
-                          Naval Submarine Base Kings Bay
-                        </option>
-                        <option value="Robins AFB">Robins AFB</option>
-                        <option value="US Army Cadet Command 6th Brigade">
-                          US Army Cadet Command 6th Brigade
-                        </option>
-                        <option value="USAREC, Atlanta Battalion">
-                          USAREC, Atlanta Battalion
-                        </option>
-                        <option value="116 ACW">116 ACW</option>
-                        <option value="165 AW">165 AW</option>
-                        <option value="Mountain Home AFB">
-                          Mountain Home AFB
-                        </option>
-                        <option value="124 FW">124 FW</option>
-                        <option value="Naval Station Great Lakes">
-                          Naval Station Great Lakes
-                        </option>
-                        <option value="Rock Island Arsenal">
-                          Rock Island Arsenal
-                        </option>
-                        <option value="Scott Air Force Base">
-                          Scott Air Force Base
-                        </option>
-                        <option value="US Army Cadet Command 3rd Brigade">
-                          US Army Cadet Command 3rd Brigade
-                        </option>
-                        <option value="USAREC, Chicago Battalion">
-                          USAREC, Chicago Battalion
-                        </option>
-                        <option value="126 ARW">126 ARW</option>
-                        <option value="182 AW">182 AW</option>
-                        <option value="183 Wing">183 Wing</option>
-                        <option value="Naval Support Activity Crane">
-                          Naval Support Activity Crane
-                        </option>
-                        <option value="USAREC, Indianapolis Battalion">
-                          USAREC, Indianapolis Battalion
-                        </option>
-                        <option value="122 FW">122 FW</option>
-                        <option value="181 IW">181 IW</option>
-                        <option value="132 WG">132 WG</option>
-                        <option value="185ARW">185ARW</option>
-                        <option value="Fort Leavenworth">
-                          Fort Leavenworth
-                        </option>
-                        <option value="Fort Riley">Fort Riley</option>
-                        <option value="McConnell AFB">McConnell AFB</option>
-                        <option value="184 IW">184 IW</option>
-                        <option value="190 ARW">190 ARW</option>
-                        <option value="Fort Campbell">Fort Campbell</option>
-                        <option value="Fort Knox">Fort Knox</option>
-                        <option value="US Army Cadet Command 1st Brigade">
-                          US Army Cadet Command 1st Brigade
-                        </option>
-                        <option value="US Army Cadet Command 7th Brigade">
-                          US Army Cadet Command 7th Brigade
-                        </option>
-                        <option value="US Army Cadet Command Headquarters">
-                          US Army Cadet Command Headquarters
-                        </option>
-                        <option
-                          value="USAREC, 3rd Medical Recruiting Battalion"
-                        >
-                          USAREC, 3rd Medical Recruiting Battalion
-                        </option>
-                        <option value="USAREC, Columbus Battalion">
-                          USAREC, Columbus Battalion
-                        </option>
-                        <option value="123 AW">123 AW</option>
-                        <option value="Barksdale Air Force Base">
-                          Barksdale Air Force Base
-                        </option>
-                        <option value="Fort Johnson">Fort Johnson</option>
-                        <option
-                          value="Naval Air Station Joint Reserve Base New Orleans"
-                        >
-                          Naval Air Station Joint Reserve Base New Orleans
-                        </option>
-                        <option value="USAREC, Baton Rouge Battalion">
-                          USAREC, Baton Rouge Battalion
-                        </option>
-                        <option value="159 FW">159 FW</option>
-                        <option value="Portsmouth Naval Shipyard">
-                          Portsmouth Naval Shipyard
-                        </option>
-                        <option value="USAREC, New England Battalion">
-                          USAREC, New England Battalion
-                        </option>
-                        <option value="101 ARW">101 ARW</option>
-                        <option value="Aberdeen Proving Ground">
-                          Aberdeen Proving Ground
-                        </option>
-                        <option value="Fort Detrick">Fort Detrick</option>
-                        <option value="Fort George G. Meade">
-                          Fort George G. Meade
-                        </option>
-                        <option value="Fort George G. Meade - Navy">
-                          Fort George G. Meade - Navy
-                        </option>
-                        <option
-                          value="Joint Base Andrews-Naval Air Facility Washington"
-                        >
-                          Joint Base Andrews-Naval Air Facility Washington
-                        </option>
-                        <option value="Naval Air Station Patuxent River">
-                          Naval Air Station Patuxent River
-                        </option>
-                        <option
-                          value="Naval Support Activity Annapolis - U.S. Naval Academy"
-                        >
-                          Naval Support Activity Annapolis - U.S. Naval Academy
-                        </option>
-                        <option
-                          value="Naval Support Activity Bethesda Home of Walter Reed National Military Medical Center"
-                        >
-                          Naval Support Activity Bethesda Home of Walter Reed
-                          National Military Medical Center
-                        </option>
-                        <option
-                          value="Naval Support Activity South Potomac (NSF Indian Head)"
-                        >
-                          Naval Support Activity South Potomac (NSF Indian Head)
-                        </option>
-                        <option
-                          value="USAREC, 1st Medical Recruiting Battalion"
-                        >
-                          USAREC, 1st Medical Recruiting Battalion
-                        </option>
-                        <option value="USAREC, Baltimore Battalion">
-                          USAREC, Baltimore Battalion
-                        </option>
-                        <option value="113 WG">113 WG</option>
-                        <option value="175 WG">175 WG</option>
-                        <option value="Hanscom AFB">Hanscom AFB</option>
-                        <option value="Natick Soldier Systems Center (NSSC)">
-                          Natick Soldier Systems Center (NSSC)
-                        </option>
-                        <option value="Westover ARB">Westover ARB</option>
-                        <option value="102IW">102IW</option>
-                        <option value="104 FW">104 FW</option>
-                        <option value="Hart-Dole-Inouye Federal Center">
-                          Hart-Dole-Inouye Federal Center
-                        </option>
-                        <option value="USAG Detroit Arsenal">
-                          USAG Detroit Arsenal
-                        </option>
-                        <option value="110 ATKW">110 ATKW</option>
-                        <option value="127WG">127WG</option>
-                        <option value="USAREC, Minneapolis Battalion">
-                          USAREC, Minneapolis Battalion
-                        </option>
-                        <option value="133 AW">133 AW</option>
-                        <option value="148 FW">148 FW</option>
-                        <option value="Columbus AFB">Columbus AFB</option>
-                        <option value="Keesler AFB">Keesler AFB</option>
-                        <option value="Naval Air Station Meridian">
-                          Naval Air Station Meridian
-                        </option>
-                        <option
-                          value="Naval Construction Battalion Center Gulfport"
-                        >
-                          Naval Construction Battalion Center Gulfport
-                        </option>
-                        <option value="Stennis Space Center">
-                          Stennis Space Center
-                        </option>
-                        <option value="172 AW">172 AW</option>
-                        <option value="186 ARW">186 ARW</option>
-                        <option value="Fort Leonard Wood">
-                          Fort Leonard Wood
-                        </option>
-                        <option value="USAREC, Kansas City Battalion">
-                          USAREC, Kansas City Battalion
-                        </option>
-                        <option value="Whiteman AFB">Whiteman AFB</option>
-                        <option value="131 BW">131 BW</option>
-                        <option value="139 AW">139 AW</option>
-                        <option value="Malmstrom Air Force Base">
-                          Malmstrom Air Force Base
-                        </option>
-                        <option value="120 AW">120 AW</option>
-                        <option value="Offutt AFB">Offutt AFB</option>
-                        <option value="155 ARW">155 ARW</option>
-                        <option value="Creech AFB">Creech AFB</option>
-                        <option value="Naval Air Station Fallon">
-                          Naval Air Station Fallon
-                        </option>
-                        <option value="Nellis AFB">Nellis AFB</option>
-                        <option
-                          value="USAREC, 6th Medical Recruiting Battalion"
-                        >
-                          USAREC, 6th Medical Recruiting Battalion
-                        </option>
-                        <option value="152 AW">152 AW</option>
-                        <option value="157 ARW">157 ARW</option>
-                        <option value="Joint Base McGuire-Dix-Lakehurst">
-                          Joint Base McGuire-Dix-Lakehurst
-                        </option>
-                        <option value="Naval Weapons Station Earle">
-                          Naval Weapons Station Earle
-                        </option>
-                        <option value="Picatinny Arsenal">
-                          Picatinny Arsenal
-                        </option>
-                        <option value="US Army Cadet Command 2nd Brigade">
-                          US Army Cadet Command 2nd Brigade
-                        </option>
-                        <option value="USAREC, Mid-Atlantic Battalion">
-                          USAREC, Mid-Atlantic Battalion
-                        </option>
-                        <option value="108 WG">108 WG</option>
-                        <option value="177 FW">177 FW</option>
-                        <option value="Cannon AFB">Cannon AFB</option>
-                        <option value="Holloman AFB">Holloman AFB</option>
-                        <option value="Kirtland Air Force Base">
-                          Kirtland Air Force Base
-                        </option>
-                        <option
-                          value="U.S. Army Garrison White Sands Missile Range"
-                        >
-                          U.S. Army Garrison White Sands Missile Range
-                        </option>
-                        <option value="150 SOW">150 SOW</option>
-                        <option value="Fort Drum">Fort Drum</option>
-                        <option value="Fort Hamilton">Fort Hamilton</option>
-                        <option value="Naval Support Activity Saratoga Springs">
-                          Naval Support Activity Saratoga Springs
-                        </option>
-                        <option
-                          value="United States Military Academy at West Point"
-                        >
-                          United States Military Academy at West Point
-                        </option>
-                        <option value="USAREC, Albany Battalion">
-                          USAREC, Albany Battalion
-                        </option>
-                        <option value="USAREC, New York City Battalion">
-                          USAREC, New York City Battalion
-                        </option>
-                        <option value="USAREC, Syracuse Battalion">
-                          USAREC, Syracuse Battalion
-                        </option>
-                        <option value="105 AW">105 AW</option>
-                        <option value="106 RQW">106 RQW</option>
-                        <option value="107 ATKW">107 ATKW</option>
-                        <option value="109AW">109AW</option>
-                        <option value="174 ATKW">174 ATKW</option>
-                        <option value="Camp Lejeune">Camp Lejeune</option>
-                        <option value="Fort Liberty">Fort Liberty</option>
-                        <option value="MCAS Cherry Point">
-                          MCAS Cherry Point
-                        </option>
-                        <option value="MCAS New River">MCAS New River</option>
-                        <option value="Pope Army Airfield">
-                          Pope Army Airfield
-                        </option>
-                        <option value="Seymour Johnson AFB">
-                          Seymour Johnson AFB
-                        </option>
-                        <option value="US Army Cadet Command 4th Brigade">
-                          US Army Cadet Command 4th Brigade
-                        </option>
-                        <option value="USAREC, Raleigh Battalion">
-                          USAREC, Raleigh Battalion
-                        </option>
-                        <option value="145 AW">145 AW</option>
-                        <option value="Grand Forks AFB">Grand Forks AFB</option>
-                        <option value="Minot AFB">Minot AFB</option>
-                        <option value="119 WG">119 WG</option>
-                        <option value="Defense Supply Center Columbus">
-                          Defense Supply Center Columbus
-                        </option>
-                        <option value="USAREC, Cleveland Battalion">
-                          USAREC, Cleveland Battalion
-                        </option>
-                        <option value="USAREC, Columbus Battalion">
-                          USAREC, Columbus Battalion
-                        </option>
-                        <option value="Wright-Patterson AFB">
-                          Wright-Patterson AFB
-                        </option>
-                        <option value="121ARW">121ARW</option>
-                        <option value="178 WG">178 WG</option>
-                        <option value="179th AW">179th AW</option>
-                        <option value="180 FW">180 FW</option>
-                        <option value="Altus AFB">Altus AFB</option>
-                        <option value="Fort Sill">Fort Sill</option>
-                        <option value="McAlester Army Ammunition Plant">
-                          McAlester Army Ammunition Plant
-                        </option>
-                        <option value="Tinker AFB">Tinker AFB</option>
-                        <option value="USAREC, Oklahoma City Battalion">
-                          USAREC, Oklahoma City Battalion
-                        </option>
-                        <option value="Vance AFB">Vance AFB</option>
-                        <option value="137 SOW">137 SOW</option>
-                        <option value="138 FW">138 FW</option>
-                        <option value="USAREC, Portland Battalion">
-                          USAREC, Portland Battalion
-                        </option>
-                        <option value="142 FW">142 FW</option>
-                        <option value="173 FW">173 FW</option>
-                        <option value="Carlisle Barracks">
-                          Carlisle Barracks
-                        </option>
-                        <option value="Defense Logistics Agency at Susquehanna">
-                          Defense Logistics Agency at Susquehanna
-                        </option>
-                        <option value="Naval Support Activity Mechanicsburg">
-                          Naval Support Activity Mechanicsburg
-                        </option>
-                        <option value="Naval Support Activity Philadelphia">
-                          Naval Support Activity Philadelphia
-                        </option>
-                        <option value="Tobyhanna Army Depot">
-                          Tobyhanna Army Depot
-                        </option>
-                        <option value="USAREC, Harrisburg Battalion">
-                          USAREC, Harrisburg Battalion
-                        </option>
-                        <option value="171ARW">171ARW</option>
-                        <option value="193 SOW">193 SOW</option>
-                        <option value="Naval Station Newport">
-                          Naval Station Newport
-                        </option>
-                        <option value="143 AW">143 AW</option>
-                        <option value="Fort Jackson">Fort Jackson</option>
-                        <option value="Joint Base Charleston">
-                          Joint Base Charleston
-                        </option>
-                        <option value="MCAS Beaufort">MCAS Beaufort</option>
-                        <option value="MCRD Parris Island">
-                          MCRD Parris Island
-                        </option>
-                        <option value="Shaw Air Force Base">
-                          Shaw Air Force Base
-                        </option>
-                        <option value="USAREC, Columbia Recruiting Battalion">
-                          USAREC, Columbia Recruiting Battalion
-                        </option>
-                        <option value="169 FW">169 FW</option>
-                        <option value="Ellsworth Air Force Base">
-                          Ellsworth Air Force Base
-                        </option>
-                        <option value="114 FW">114 FW</option>
-                        <option value="Naval Support Activity Mid-South">
-                          Naval Support Activity Mid-South
-                        </option>
-                        <option value="USAREC, Nashville Battalion">
-                          USAREC, Nashville Battalion
-                        </option>
-                        <option value="118th WG">118th WG</option>
-                        <option value="134ARW">134ARW</option>
-                        <option value="164 AW">164 AW</option>
-                        <option value="Dyess AFB">Dyess AFB</option>
-                        <option value="Fort Bliss">Fort Bliss</option>
-                        <option value="Fort Cavazos">Fort Cavazos</option>
-                        <option value="Goodfellow AFB">Goodfellow AFB</option>
-                        <option
-                          value="Joint Base San Antonio (Lackland, Randolph, Sam Houston)"
-                        >
-                          Joint Base San Antonio (Lackland, Randolph, Sam
-                          Houston)
-                        </option>
-                        <option value="Laughlin AFB">Laughlin AFB</option>
-                        <option value="Naval Air Station Corpus Christi">
-                          Naval Air Station Corpus Christi
-                        </option>
-                        <option
-                          value="Naval Air Station Joint Reserve Base Fort Worth"
-                        >
-                          Naval Air Station Joint Reserve Base Fort Worth
-                        </option>
-                        <option value="Naval Air Station Kingsville">
-                          Naval Air Station Kingsville
-                        </option>
-                        <option value="Red River Army Depot">
-                          Red River Army Depot
-                        </option>
-                        <option value="Sheppard AFB">Sheppard AFB</option>
-                        <option value="US Army Cadet Command 5th Brigade">
-                          US Army Cadet Command 5th Brigade
-                        </option>
-                        <option
-                          value="USAREC, 5th Medical Recruiting Battalion"
-                        >
-                          USAREC, 5th Medical Recruiting Battalion
-                        </option>
-                        <option value="USAREC, Dallas Battalion">
-                          USAREC, Dallas Battalion
-                        </option>
-                        <option value="USAREC, Houston Battalion">
-                          USAREC, Houston Battalion
-                        </option>
-                        <option value="USAREC, San Antonio Battalion">
-                          USAREC, San Antonio Battalion
-                        </option>
-                        <option value="136 AW">136 AW</option>
-                        <option value="147 ATKW">147 ATKW</option>
-                        <option value="149 FW">149 FW</option>
-                        <option value="Dugway Proving Ground">
-                          Dugway Proving Ground
-                        </option>
-                        <option value="Hill AFB">Hill AFB</option>
-                        <option value="USAREC, Salt Lake City Battalion">
-                          USAREC, Salt Lake City Battalion
-                        </option>
-                        <option value="151st ARW">151st ARW</option>
-                        <option value="158 FW">158 FW</option>
-                        <option value="Defense Supply Center Richmond">
-                          Defense Supply Center Richmond
-                        </option>
-                        <option value="DLA McNamara HQC">
-                          DLA McNamara HQC
-                        </option>
-                        <option value="Fort Belvoir">Fort Belvoir</option>
-                        <option value="Fort Gregg-Adams">
-                          Fort Gregg-Adams
-                        </option>
-                        <option
-                          value="Fort Myer (Joint Base Myer - Henderson Hall)"
-                        >
-                          Fort Myer (Joint Base Myer - Henderson Hall)
-                        </option>
-                        <option
-                          value="Henderson Hall (Joint Base Myer - Henderson Hall)"
-                        >
-                          Henderson Hall (Joint Base Myer - Henderson Hall)
-                        </option>
-                        <option value="Joint Base Langley-Eustis">
-                          Joint Base Langley-Eustis
-                        </option>
-                        <option
-                          value="Joint Expeditionary Base Little Creek-Fort Story"
-                        >
-                          Joint Expeditionary Base Little Creek-Fort Story
-                        </option>
-                        <option value="Marine Corps Base Quantico">
-                          Marine Corps Base Quantico
-                        </option>
-                        <option value="MCCS Hampton Roads">
-                          MCCS Hampton Roads
-                        </option>
-                        <option value="Naval Air Station Oceana">
-                          Naval Air Station Oceana
-                        </option>
-                        <option value="Naval Air Station Oceana Dam Neck Annex">
-                          Naval Air Station Oceana Dam Neck Annex
-                        </option>
-                        <option value="Naval Medical Center Portsmouth">
-                          Naval Medical Center Portsmouth
-                        </option>
-                        <option value="Naval Station Norfolk">
-                          Naval Station Norfolk
-                        </option>
-                        <option value="Naval Support Activity Hampton Roads">
-                          Naval Support Activity Hampton Roads
-                        </option>
-                        <option
-                          value="Naval Support Activity Hampton Roads Northwest Annex"
-                        >
-                          Naval Support Activity Hampton Roads Northwest Annex
-                        </option>
-                        <option
-                          value="Naval Support Activity South Potomac (NSF Dahlgren)"
-                        >
-                          Naval Support Activity South Potomac (NSF Dahlgren)
-                        </option>
-                        <option value="Naval Weapons Station Yorktown">
-                          Naval Weapons Station Yorktown
-                        </option>
-                        <option value="Newport News Shipyard">
-                          Newport News Shipyard
-                        </option>
-                        <option value="Norfolk Naval Shipyard">
-                          Norfolk Naval Shipyard
-                        </option>
-                        <option
-                          value="Surface Combat Systems Center Wallops Island"
-                        >
-                          Surface Combat Systems Center Wallops Island
-                        </option>
-                        <option value="USAREC, Richmond Recruiting Battalion">
-                          USAREC, Richmond Recruiting Battalion
-                        </option>
-                        <option value="192 FW">192 FW</option>
-                        <option value="Fairchild AFB">Fairchild AFB</option>
-                        <option value="Joint Base Lewis-McChord">
-                          Joint Base Lewis-McChord
-                        </option>
-                        <option value="Naval Air Station Whidbey Island">
-                          Naval Air Station Whidbey Island
-                        </option>
-                        <option value="Naval Base Kitsap">
-                          Naval Base Kitsap
-                        </option>
-                        <option value="Naval Station Everett">
-                          Naval Station Everett
-                        </option>
-                        <option value="US Army Cadet Command 8th Brigade">
-                          US Army Cadet Command 8th Brigade
-                        </option>
-                        <option value="USAREC, Seattle Battalion">
-                          USAREC, Seattle Battalion
-                        </option>
-                        <option value="141 ARW">141 ARW</option>
-                        <option value="194 WG">194 WG</option>
-                        <option value="Fort McCoy">Fort McCoy</option>
-                        <option value="USAREC, Milwaukee Battalion">
-                          USAREC, Milwaukee Battalion
-                        </option>
-                        <option value="115FW">115FW</option>
-                        <option value="128 ARW">128 ARW</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2927,32 +1076,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Business">Business</option>
-                        <option value="CEO">CEO</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Corporation">Corporation</option>
-                        <option value="Exclusive">Exclusive</option>
-                        <option value="Founder">Founder</option>
-                        <option value="CFO">CFO</option>
-                        <option value="COO">COO</option>
-                        <option value="Home Owner">Home Owner</option>
-                        <option value="Mall">Mall</option>
-                        <option value="Mass">Mass</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Non Profit">Non Profit</option>
-                        <option value="Office">Office</option>
-                        <option value="Online">Online</option>
-                        <option value="Partners">Partners</option>
-                        <option value="Private">Private</option>
-                        <option value="Retail and Consultants">
-                          Retail and Consultants
+                        <option *ngFor="let item of location" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Community Pledge">
-                          Community Pledge
-                        </option>
-                        <option value="Store Front">Store Front</option>
-                        <option value="Pop Up Shop">Pop Up Shop</option>
-                        <option value="Vehicle">Vehicle</option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -2977,169 +1103,12 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="Actor">Actor</option>
-                        <option value="Actuary">Actuary</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Agent">Agent</option>
-                        <option value="Agricultural Worker">
-                          Agricultural Worker
+                        <option
+                          *ngFor="let item of businessType"
+                          [value]="item"
+                        >
+                          {{ item }}
                         </option>
-                        <option value="Air Traffic Controller">
-                          Air Traffic Controller
-                        </option>
-                        <option value="Ambulance Officer">
-                          Ambulance Officer
-                        </option>
-                        <option value="Architect">Architect</option>
-                        <option value="Art Director">Art Director</option>
-                        <option value="Artist">Artist</option>
-                        <option value="Athlete">Athlete</option>
-                        <option value="Auditor">Auditor</option>
-                        <option value="Baker">Baker</option>
-                        <option value="Barista">Barista</option>
-                        <option value="Bartender">Bartender</option>
-                        <option value="Board Member">Board Member</option>
-                        <option value="Business Analyst">
-                          Business Analyst
-                        </option>
-                        <option value="Chef">Chef</option>
-                        <option value="Childcare Worker">
-                          Childcare Worker
-                        </option>
-                        <option value="Civil Servant">Civil Servant</option>
-                        <option value="Cleaner">Cleaner</option>
-                        <option value="Company Worker">Company Worker</option>
-                        <option value="Computer Scientist">
-                          Computer Scientist
-                        </option>
-                        <option value="Construction Worker">
-                          Construction Worker
-                        </option>
-                        <option value="Cook">Cook</option>
-                        <option value="Copywriter">Copywriter</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Craftsperson">Craftsperson</option>
-                        <option value="Curator">Curator</option>
-                        <option value="Customer Service Representative">
-                          Customer Service Representative
-                        </option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Economist">Economist</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Equipment Operator">
-                          Equipment Operator
-                        </option>
-                        <option value="Executive Manager">
-                          Executive Manager
-                        </option>
-                        <option value="Farmer">Farmer</option>
-                        <option value="Film Maker">Film Maker</option>
-                        <option value="Firefighter">Firefighter</option>
-                        <option value="Fisherman">Fisherman</option>
-                        <option value="Fitness Trainer">Fitness Trainer</option>
-                        <option value="Flight Attendant">
-                          Flight Attendant
-                        </option>
-                        <option value="Florist">Florist</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Gardener">Gardener</option>
-                        <option value="Hair Stylist">Hair Stylist</option>
-                        <option value="Home Care Aid">Home Care Aid</option>
-                        <option value="Homemaker">Homemaker</option>
-                        <option value="Hospitality Worker">
-                          Hospitality Worker
-                        </option>
-                        <option value="Housekeeper">Housekeeper</option>
-                        <option value="Information Technology Professional">
-                          Information Technology Professional
-                        </option>
-                        <option value="Investor">Investor</option>
-                        <option value="Journalist">Journalist</option>
-                        <option value="Laborer">Laborer</option>
-                        <option value="Lawyer">Lawyer</option>
-                        <option value="Librarian">Librarian</option>
-                        <option value="Maintenance Worker">
-                          Maintenance Worker
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Manufacturing Worker">
-                          Manufacturing Worker
-                        </option>
-                        <option value="Marketing Professional">
-                          Marketing Professional
-                        </option>
-                        <option value="Mathematician">Mathematician</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Medical Professional">
-                          Medical Professional
-                        </option>
-                        <option value="Merchant">Merchant</option>
-                        <option value="Midwife">Midwife</option>
-                        <option value="Military Personnel">
-                          Military Personnel
-                        </option>
-                        <option value="Musician">Musician</option>
-                        <option value="Nanny">Nanny</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Office Clerk">Office Clerk</option>
-                        <option value="Office Worker">Office Worker</option>
-                        <option value="Optician">Optician</option>
-                        <option value="Performance Artist">
-                          Performance Artist
-                        </option>
-                        <option value="Photographer">Photographer</option>
-                        <option value="Pilot">Pilot</option>
-                        <option value="Police Officer">Police Officer</option>
-                        <option value="Politician">Politician</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Railroad Engineer">
-                          Railroad Engineer
-                        </option>
-                        <option value="Researcher">Researcher</option>
-                        <option value="Retail Employee">Retail Employee</option>
-                        <option value="Retiree">Retiree</option>
-                        <option value="Rigger">Rigger</option>
-                        <option value="Sailor">Sailor</option>
-                        <option value="Salesperson">Salesperson</option>
-                        <option value="Scientist">Scientist</option>
-                        <option value="Sea Captain">Sea Captain</option>
-                        <option value="Secretary">Secretary</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Small Business Owner">
-                          Small Business Owner
-                        </option>
-                        <option value="Social Worker">Social Worker</option>
-                        <option value="Software Developer">
-                          Software Developer
-                        </option>
-                        <option value="Spokesperson">Spokesperson</option>
-                        <option value="Statistician">Statistician</option>
-                        <option value="Stay-At-Home Parent">
-                          Stay-At-Home Parent
-                        </option>
-                        <option value="Student">Student</option>
-                        <option value="Surgeon">Surgeon</option>
-                        <option value="Surveyor">Surveyor</option>
-                        <option value="Tailor">Tailor</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Tradesperson">Tradesperson</option>
-                        <option value="Trainer">Trainer</option>
-                        <option value="Translator">Translator</option>
-                        <option value="Truck Driver">Truck Driver</option>
-                        <option value="Tutor">Tutor</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Veterinarian">Veterinarian</option>
-                        <option value="Videographer">Videographer</option>
-                        <option value="Waiter">Waiter</option>
-                        <option value="Waste Collector">Waste Collector</option>
-                        <option value="Writer">Writer</option>
-                        <option value="Zoologist">Zoologist</option>
                       </select>
                     </div>
 
@@ -3254,281 +1223,6 @@
 </section>
 
 <!-- packages modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Select One Package
-        </h5>
-        <button type="button" class="close" (click)="closePackageModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
-        <div class="row">
-          <div class="col-md-6" *ngFor="let package of packages; let i = index">
-            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
-              <div
-                class="card"
-                [ngClass]="{ cardSelect: selectedPackage === package }"
-                (click)="selectPackage(package)"
-              >
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
-                    $
-                    {{ package.net_price ? package.net_price : package.price }}
-                    <sup
-                      style="
-                        text-decoration: line-through;
-                        font-size: 20px;
-                        color: gray;
-                        padding-left: 15px;
-                      "
-                      *ngIf="package.net_price"
-                      >{{ package.price }}</sup
-                    >
-                  </h5>
-                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
-                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
-
-                  <div
-                    class="description-container"
-                    style="max-height: 100px; overflow-y: auto"
-                  >
-                    <p class="card-description">{{ package.description }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          (click)="closePackageModal()"
-          type="button"
-          class="btn btn-secondary"
-        >
-          Close
-        </button>
-
-        <div
-          *ngIf="selectedPackage?.price != '0'"
-          [ngClass]="{
-            hidden: selectedPackage == null || selectedPackage?.price == '0',
-            paymentButtons: selectedPackage != null
-          }"
-        >
-          <!-- <div id="paypal-button-container"></div> -->
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="openStripeModal()"
-          >
-            Stripe
-          </button>
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="paypalClick()"
-          >
-            paypal
-          </button>
-        </div>
-        <div *ngIf="selectedPackage?.price == '0'">
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="continuePaymentButton()"
-          >
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- stripe modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Pay Through Stripe
-        </h5>
-        <button type="button" class="close" (click)="closeStripeModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <form class="checkout-form" [formGroup]="paymentForm">
-            <h3>
-              Amount
-              {{
-                selectedPackage?.net_price
-                  ? selectedPackage?.net_price
-                  : selectedPackage?.price
-              }}
-            </h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-number"
-                    data-stripe-element="cardNumber"
-                    formControlName="cardNumber"
-                    placeholder="XXXXXXXXXXXXXXXX"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-expiry"
-                    data-stripe-element="expiryDate"
-                    formControlName="expiryDate"
-                    placeholder="MM/YY"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-cvc"
-                    data-stripe-element="cvc"
-                    formControlName="cvc"
-                    placeholder="XXX"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  id="pay-button"
-                  (click)="pay()"
-                  [disabled]="!paymentForm.valid"
-                >
-                  Pay Now
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeStripeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Are You 18+ of your age?</h3>
-        </div>
-        <p style="padding: 8px">
-          You must be at least 13 years old to use the Service. However,
-          children of all ages may use the Service and PLTalk Kids (where
-          available) if enabled by a parent or legal guardian. Permission by
-          Parent or Guardian If you are under 18, you represent that you have
-          your parent or guardian’s permission to use the Service. Please have
-          them read this Agreement with you. If you are a parent or legal
-          guardian of a user under the age of 18, by allowing your child to use
-          the Service, you are subject to the terms of this Agreement and
-          responsible for your child’s activity on the Service. You can find
-          tools and resources to help you manage your family’s experience on
-          PLTalk in our Help Center
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="confirmAge()">
-          Yes
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeAgeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Confirming Payment...</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!------- tab section end ---------->
 
@@ -3870,21 +1564,72 @@
         </div>
         <div class="moretext13" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">DFW Connects</a>
-            <a class="btn-link" href="">Military Connects</a>
-            <a class="btn-link" href="">Truckers Connects</a>
-            <a class="btn-link" href="">Automotive Connects</a>
-            <a class="btn-link" href="">Students Connects</a>
-            <a class="btn-link" href="">Sports Athletes Connects</a>
-            <a class="btn-link" href="">Realtors Connects</a>
-            <a class="btn-link" href="">Restaurants Connects</a>
-            <a class="btn-link" href="">Hair & Beauty Connects</a>
-            <a class="btn-link" href="">Hispanics Connects</a>
-            <a class="btn-link" href="">Nubians Connects</a>
-            <a class="btn-link" href="">Attorneys Connects</a>
-            <a class="btn-link" href="">Religions Connects</a>
-            <a class="btn-link" href="">Entertainers Connects</a>
-            <a class="btn-link" href="">Night Life Connects</a>
+            <a class="btn-link" href="https://umyobizdfw.com" target="_blank"
+              >DFW connects</a
+            >
+            <a class="btn-link" href="https://umyomilitary.site" target="_blank"
+              >Military Connects</a
+            >
+            <a class="btn-link" href="https://umyotruckers.site" target="_blank"
+              >Truckers Connects</a
+            >
+            <a class="btn-link" href="https://umyoauto.site" target="_blank"
+              >Automotive Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyohighschool.site"
+              target="_blank"
+              >Students Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyosportscards.com"
+              target="_blank"
+              >Sports Athletes Connects</a
+            >
+            <a class="btn-link" href="https://umyorealtor.site" target="_blank"
+              >Realtors Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyorestaurant.com"
+              target="_blank"
+              >Restaurants Connects</a
+            >
+            <a class="btn-link" href="https://umyostylist.com" target="_blank"
+              >Hair & Beauty Connects</a
+            >
+            <a class="btn-link" href="https://umyonegocio.site" target="_blank"
+              >Hispanics Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://nubianbizcards.com"
+              target="_blank"
+              >Nubians Connects</a
+            >
+            <a class="btn-link" href="https://umyolawyer.site" target="_blank"
+              >Attorneys Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoreligions.site"
+              target="_blank"
+              >Religions Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoentertainment.site"
+              target="_blank"
+              >Entertainers Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonightlife.site"
+              target="_blank"
+              >Night Life Connects</a
+            >
           </div>
         </div>
       </div>
@@ -3898,27 +1643,102 @@
         </div>
         <div class="moretext14" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">UMYO Conferences</a>
-            <a class="btn-link" href="">UMYO Music</a>
-            <a class="btn-link" href="">UMYO Market</a>
-            <a class="btn-link" href="">UMYO Hosting</a>
-            <a class="btn-link" href="">UMYO Chatgpt</a>
-            <a class="btn-link" href="">UMYO Tweets</a>
-            <a class="btn-link" href="">UMYO Date</a>
-            <a class="btn-link" href="">UMYO Tik Tok</a>
-            <a class="btn-link" href="">UMYO Connects</a>
-            <a class="btn-link" href="">UMYO Mail</a>
-            <a class="btn-link" href="">UMYO WhatsApp</a>
-            <a class="btn-link" href="">UMYO Games</a>
-            <a class="btn-link" href="">UMYO Tube</a>
-            <a class="btn-link" href="">UMYO SMS</a>
-            <a class="btn-link" href="">UMYO PPV</a>
-            <a class="btn-link" href="">UMYO LMS</a>
-            <a class="btn-link" href="">UMYO VPN</a>
-            <a class="btn-link" href="">UMYO Store</a>
-            <a class="btn-link" href="">UMYO Profile</a>
-            <a class="btn-link" href="">UMYO Ambassadors</a>
-            <a class="btn-link" href="">UMYO Articles</a>
+            <a
+              class="btn-link"
+              href="https://live.umyoconvo.site"
+              target="_blank"
+              >UMYO Conferences</a
+            >
+            <a class="btn-link" href="https://umyomusic.com" target="_blank"
+              >UMYO Music</a
+            >
+            <a class="btn-link" href="https://umyopopup.site" target="_blank"
+              >UMYO Market</a
+            >
+            <a class="btn-link" href="https://umyohost.com" target="_blank"
+              >UMYO Hosting</a
+            >
+            <a class="btn-link" href="https://uchatyes.com" target="_blank"
+              >UMYO Chatgpt</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyotweets.com/guest"
+              target="_blank"
+              >UMYO Tweets</a
+            >
+            <a class="btn-link" href="https://cpswipe.com" target="_blank"
+              >UMYO Date</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Tik Tok</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonetwork.com/network"
+              target="_blank"
+              >UMYO Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Mail</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO WhatsApp</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Games</a
+            >
+            <a class="btn-link" href="https://umyotube.com" target="_blank"
+              >UMYO Tube</a
+            >
+            <a class="btn-link" href="https://umyosms.com" target="_blank"
+              >UMYO SMS</a
+            >
+            <a class="btn-link" href="https://vibetalktv.com" target="_blank"
+              >UMYO PPV</a
+            >
+            <a class="btn-link" href="https://umyoeducator.com" target="_blank"
+              >UMYO LMS</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO VPN</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/membership-packages/"
+              target="_blank"
+              >UMYO Store</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/network/"
+              target="_blank"
+              >UMYO Profile</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Ambassadors</a
+            >
+            <a class="btn-link" href="https://umyoauthor.site" target="_blank"
+              >UMYO Authors</a
+            >
           </div>
         </div>
       </div>
@@ -4695,6 +2515,313 @@
             </pre
           >
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- packages modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Select One Package
+        </h5>
+        <button type="button" class="close" (click)="closePackageModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let package of packages; let i = index">
+            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
+              <div
+                class="card"
+                [ngClass]="{ cardSelect: selectedPackage === package }"
+                (click)="selectPackage(package)"
+              >
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                    $
+                    {{ package.net_price ? package.net_price : package.price }}
+                    <sup
+                      style="
+                        text-decoration: line-through;
+                        font-size: 20px;
+                        color: gray;
+                        padding-left: 15px;
+                      "
+                      *ngIf="package.net_price"
+                      >{{ package.price }}</sup
+                    >
+                  </h5>
+                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
+
+                  <div
+                    class="description-container"
+                    style="max-height: 100px; overflow-y: auto"
+                  >
+                    <p class="card-description">{{ package.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          (click)="closePackageModal()"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Close
+        </button>
+
+        <div
+          *ngIf="selectedPackage?.price != '0'"
+          [ngClass]="{
+            hidden: selectedPackage == null || selectedPackage?.price == '0',
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <!-- <div id="paypal-button-container"></div> -->
+          <!-- hide stripe  -->
+          <!-- <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="openStripeModal()"
+          >
+            Stripe
+          </button> -->
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="paypalClick()"
+          >
+            paypal
+          </button>
+        </div>
+        <div *ngIf="selectedPackage?.price == '0'">
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="continuePaymentButton()"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ paypalTitleMessage }}</h3>
+          <p style="padding-top: 15px">{{ paypalMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- stripe modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Pay Through Stripe
+        </h5>
+        <button type="button" class="close" (click)="closeStripeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                    placeholder="XXX"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  id="pay-button"
+                  (click)="pay()"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeStripeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Are You 18+ of your age?</h3>
+        </div>
+        <p style="padding: 8px">
+          You must be at least 13 years old to use the Service. However,
+          children of all ages may use the Service and PLTalk Kids (where
+          available) if enabled by a parent or legal guardian. Permission by
+          Parent or Guardian If you are under 18, you represent that you have
+          your parent or guardian’s permission to use the Service. Please have
+          them read this Agreement with you. If you are a parent or legal
+          guardian of a user under the age of 18, by allowing your child to use
+          the Service, you are subject to the terms of this Agreement and
+          responsible for your child’s activity on the Service. You can find
+          tools and resources to help you manage your family’s experience on
+          PLTalk in our Help Center
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmAge()">
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAgeModal()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

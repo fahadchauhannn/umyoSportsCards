@@ -398,7 +398,44 @@ export class ApiService {
 
 
 
-
+  changeStatus(id: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `changeStatus`, {id:id}, { headers });
+  }
+  
+  getUserReferals(userId:any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+  
+    return this.http.post(baseUrl + `listOfReferals`, {"user_id":userId}, { headers });
+  }
+  
+  
+    incrementCardView(card_id:any): Observable<any> {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        
+      });
+    
+      return this.http.post(baseUrl + `incrementTotalViews`, {"card_id":card_id}, { headers });
+    }
+  
+    incrementCardShare(card_id:any): Observable<any> {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        
+      });
+    
+      return this.http.post(baseUrl + `incrementSend`, {"card_id":card_id}, { headers });
+    }
+  
+  
   getSignUpPackages(user_id: any): Observable<any> {
     const url = baseUrl + `getPackages`;
     const headers = new HttpHeaders({

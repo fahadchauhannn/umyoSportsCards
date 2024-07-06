@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+<div *ngIf="isLoading" class="outer-spinner">
+  <div class="loading-spinner"></div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <div class="left-section">
+    <h2 style="margin-bottom: 30px">
+      {{ friend.friend.firstname + " " + friend.friend.lastname }}
+    </h2>
+    <p
+      class="link"
+      style="cursor: pointer"
+      (click)="sendRequest()"
+      *ngIf="friend.contacted == 'none'"
+    >
+      <i class="fas fa-user-plus" style="padding-right: 10px"></i> Send Request
+    </p>
+    <p
+      class="link"
+      style="cursor: pointer"
+      *ngIf="friend.contacted == 'Pending'"
+    >
+      <i class="fas fa-ellipsis-h" style="padding-right: 10px"></i> Request
+      Pending
+    </p>
+    <p
+      (click)="sendMessage()"
+      class="link"
+      style="cursor: pointer"
+      *ngIf="friend.contacted == 'Accepted'"
+    >
+      <i class="fas fa-ellipsis-h" style="padding-right: 10px"></i> Send Message
+    </p>
+  </div>
+  <div class="right-section">
+    <div class="profile-image">
+      <img
+        class="user-avatar"
+        src="assets/images/avatar.png"
+        alt="User Avatar"
+      />
+      <p class="user-name">
+        {{ friend.friend.firstname + " " + friend.friend.lastname }}
+      </p>
+    </div>
+    <div class="user-info">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="label">First Name</p>
+          <h2>{{ friend.friend.firstname }}</h2>
+        </div>
+        <div class="col-md-6">
+          <p class="label">Last Name</p>
+          <h2>{{ friend.friend.lastname }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="label">Country</p>
+        <h3>{{ friend.friend.country }}</h3>
+      </div>
+    </div>
+    <div class="social-heading">Social Profiles</div>
+    <p class="label">Email</p>
+    <p>{{ friend.friend.email }}</p>
+  </div>
+</div>
