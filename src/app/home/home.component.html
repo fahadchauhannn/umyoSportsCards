@@ -277,7 +277,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/UJ6bm5ZEOkc?si=0TDE2JWg34RYzxvz"
+                src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -409,9 +409,9 @@
                   formControlName="selectedGender"
                 >
                   <option selected value="" disabled>Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -422,11 +422,9 @@
                   formControlName="selectedRace"
                 >
                   <option selected value="" disabled>Race</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="Afro American">Afro American</option>
-                  <option value="White">White</option>
-                  <option value="Indian">Indian</option>
-                  <option value="Asian">Asian</option>
+                  <option *ngFor="let item of race" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -454,57 +452,9 @@
                   formControlName="selectedStateType"
                 >
                   <option selected value="" disabled>Select State Type</option>
-                  <option value="Alabama">Alabama</option>
-                  <option value="Alaska">Alaska</option>
-                  <option value="Arizona">Arizona</option>
-                  <option value="Arkansas">Arkansas</option>
-                  <option value="California">California</option>
-                  <option value="Colorado">Colorado</option>
-                  <option value="Connecticut">Connecticut</option>
-                  <option value="Delaware">Delaware</option>
-                  <option value="Florida">Florida</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Hawaii">Hawaii</option>
-                  <option value="Idaho">Idaho</option>
-                  <option value="Illinois">Illinois</option>
-                  <option value="Indiana">Indiana</option>
-                  <option value="Iowa">Iowa</option>
-                  <option value="Kansas">Kansas</option>
-                  <option value="Kentucky">Kentucky</option>
-                  <option value="Louisiana">Louisiana</option>
-                  <option value="Maine">Maine</option>
-                  <option value="Maryland">Maryland</option>
-                  <option value="Massachusetts">Massachusetts</option>
-                  <option value="Michigan">Michigan</option>
-                  <option value="Minnesota">Minnesota</option>
-                  <option value="Mississippi">Mississippi</option>
-                  <option value="Missouri">Missouri</option>
-                  <option value="Montana">Montana</option>
-                  <option value="Nebraska">Nebraska</option>
-                  <option value="Nevada">Nevada</option>
-                  <option value="New Hampshire">New Hampshire</option>
-                  <option value="New Jersey">New Jersey</option>
-                  <option value="New Mexico">New Mexico</option>
-                  <option value="New York">New York</option>
-                  <option value="North Carolina">North Carolina</option>
-                  <option value="North Dakota">North Dakota</option>
-                  <option value="Ohio">Ohio</option>
-                  <option value="Oklahoma">Oklahoma</option>
-                  <option value="Oregon">Oregon</option>
-                  <option value="Pennsylvania">Pennsylvania</option>
-                  <option value="Rhode Island">Rhode Island</option>
-                  <option value="South Carolina">South Carolina</option>
-                  <option value="South Dakota">South Dakota</option>
-                  <option value="Tennessee">Tennessee</option>
-                  <option value="Texas">Texas</option>
-                  <option value="Utah">Utah</option>
-                  <option value="Vermont">Vermont</option>
-                  <option value="Virginia">Virginia</option>
-                  <option value="Washington">Washington</option>
-                  <option value="West Virginia">West Virginia</option>
-                  <option value="Wisconsin">Wisconsin</option>
-                  <option value="Wyoming">Wyoming</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -521,31 +471,9 @@
                   formControlName="selectedTypeOfTrucks"
                 >
                   <option selected value="" disabled>Types of Trucks</option>
-                  <option value="Tanker">Tanker</option>
-                  <option value="Cement">Cement</option>
-                  <option value="Camioneta">Camioneta</option>
-                  <option value="Panel">Panel</option>
-                  <option value="Box">Box</option>
-                  <option value="Dump Truck">Dump Truck</option>
-                  <option value="Refrigerator">Refrigerator</option>
-                  <option value="Pickup">Pickup</option>
-                  <option value="Semi trailer">Semi trailer</option>
-                  <option value="Articulated">Articulated</option>
-                  <option value="Fire">Fire</option>
-                  <option value="Mobile crane">Mobile crane</option>
-                  <option value="Tractor">Tractor</option>
-                  <option value="Trailer">Trailer</option>
-                  <option value="Van">Van</option>
-                  <option value="Car Transporter">Car Transporter</option>
-                  <option value="Livestock">Livestock</option>
-                  <option value="Chassis">Chassis</option>
-                  <option value="Lowboy Trailer">Lowboy Trailer</option>
-                  <option value="Reefer">Reefer</option>
-                  <option value="Road Trains">Road Trains</option>
-                  <option value="Tow">Tow</option>
-                  <option value="Logging">Logging</option>
-                  <option value="Platform">Platform</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of type" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -556,10 +484,9 @@
                   formControlName="selectedTruckLoads"
                 >
                   <option selected value="" disabled>Truck Loads</option>
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Heavy">Heavy</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of load" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -570,14 +497,9 @@
                   formControlName="selectedCommonCarrier"
                 >
                   <option selected value="" disabled>Common carrier</option>
-
-                  <option value="conveyor">conveyor</option>
-                  <option value="driver">driver</option>
-                  <option value="shipper">shipper</option>
-                  <option value="transporter">transporter</option>
-                  <option value="truck driver">truck driver</option>
-                  <option value="Trucker">Trucker</option>
-                  <option value="Other">Other</option>
+                  <option *ngFor="let item of carrier" [value]="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
 
@@ -588,26 +510,9 @@
                   formControlName="selectedTruckService"
                 >
                   <option selected value="" disabled>Truck Service</option>
-                  <option value="Truck yards">Truck yards</option>
-                  <option value="Truck Parts">Truck Parts</option>
-                  <option value="Truck Sales">Truck Sales</option>
-                  <option value="Workshops">Workshops</option>
-                  <option value="Truck and Trailer">Truck and Trailer</option>
-                  <option value="Truck Employers">Truck Employers</option>
-                  <option value="Truck Companies">Truck Companies</option>
-                  <option value="RoadSide Assistance">
-                    RoadSide Assistance
+                  <option *ngFor="let item of service" [value]="item">
+                    {{ item }}
                   </option>
-                  <option value="Commercial and Heavy Duty">
-                    Commercial and Heavy Duty
-                  </option>
-                  <option value="Mobile Service">Mobile Service</option>
-                  <option value="Truck Stops">Truck Stops</option>
-                  <option value="Truck Apparels">Truck Apparels</option>
-                  <option value="DL Courses">DL Courses</option>
-                  <option value="Truck License">Truck License</option>
-                  <option value="Trucker">Trucker</option>
-                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -968,9 +873,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of gender" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -994,57 +899,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Arkansas">Arkansas</option>
-                        <option value="California">California</option>
-                        <option value="Colorado">Colorado</option>
-                        <option value="Connecticut">Connecticut</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Hawaii">Hawaii</option>
-                        <option value="Idaho">Idaho</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Indiana">Indiana</option>
-                        <option value="Iowa">Iowa</option>
-                        <option value="Kansas">Kansas</option>
-                        <option value="Kentucky">Kentucky</option>
-                        <option value="Louisiana">Louisiana</option>
-                        <option value="Maine">Maine</option>
-                        <option value="Maryland">Maryland</option>
-                        <option value="Massachusetts">Massachusetts</option>
-                        <option value="Michigan">Michigan</option>
-                        <option value="Minnesota">Minnesota</option>
-                        <option value="Mississippi">Mississippi</option>
-                        <option value="Missouri">Missouri</option>
-                        <option value="Montana">Montana</option>
-                        <option value="Nebraska">Nebraska</option>
-                        <option value="Nevada">Nevada</option>
-                        <option value="New Hampshire">New Hampshire</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New Mexico">New Mexico</option>
-                        <option value="New York">New York</option>
-                        <option value="North Carolina">North Carolina</option>
-                        <option value="North Dakota">North Dakota</option>
-                        <option value="Ohio">Ohio</option>
-                        <option value="Oklahoma">Oklahoma</option>
-                        <option value="Oregon">Oregon</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <option value="Rhode Island">Rhode Island</option>
-                        <option value="South Carolina">South Carolina</option>
-                        <option value="South Dakota">South Dakota</option>
-                        <option value="Tennessee">Tennessee</option>
-                        <option value="Texas">Texas</option>
-                        <option value="Utah">Utah</option>
-                        <option value="Vermont">Vermont</option>
-                        <option value="Virginia">Virginia</option>
-                        <option value="Washington">Washington</option>
-                        <option value="West Virginia">West Virginia</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Wyoming">Wyoming</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of state" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1066,11 +923,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option value="Hispanic">Hispanic</option>
-                        <option value="Afro American">Afro American</option>
-                        <option value="White">White</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Asian">Asian</option>
+                        <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1117,31 +972,9 @@
                           Please Select
                         </option>
 
-                        <option value="Tanker">Tanker</option>
-                        <option value="Cement">Cement</option>
-                        <option value="Camioneta">Camioneta</option>
-                        <option value="Panel">Panel</option>
-                        <option value="Box">Box</option>
-                        <option value="Dump Truck">Dump Truck</option>
-                        <option value="Refrigerator">Refrigerator</option>
-                        <option value="Pickup">Pickup</option>
-                        <option value="Semi trailer">Semi trailer</option>
-                        <option value="Articulated">Articulated</option>
-                        <option value="Fire">Fire</option>
-                        <option value="Mobile crane">Mobile crane</option>
-                        <option value="Tractor">Tractor</option>
-                        <option value="Trailer">Trailer</option>
-                        <option value="Van">Van</option>
-                        <option value="Car Transporter">Car Transporter</option>
-                        <option value="Livestock">Livestock</option>
-                        <option value="Chassis">Chassis</option>
-                        <option value="Lowboy Trailer">Lowboy Trailer</option>
-                        <option value="Reefer">Reefer</option>
-                        <option value="Road Trains">Road Trains</option>
-                        <option value="Tow">Tow</option>
-                        <option value="Logging">Logging</option>
-                        <option value="Platform">Platform</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of type" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
 
@@ -1168,10 +1001,9 @@
                           Please Select
                         </option>
 
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Heavy">Heavy</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of load" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1197,13 +1029,9 @@
                           Please Select
                         </option>
 
-                        <option value="conveyor">conveyor</option>
-                        <option value="driver">driver</option>
-                        <option value="shipper">shipper</option>
-                        <option value="transporter">transporter</option>
-                        <option value="truck driver">truck driver</option>
-                        <option value="Trucker">Trucker</option>
-                        <option value="Other">Other</option>
+                        <option *ngFor="let item of carrier" [value]="item">
+                          {{ item }}
+                        </option>
                       </select>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -1228,29 +1056,9 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-
-                        <option value="Truck yards">Truck yards</option>
-                        <option value="Truck Parts">Truck Parts</option>
-                        <option value="Truck Sales">Truck Sales</option>
-                        <option value="Workshops">Workshops</option>
-                        <option value="Truck and Trailer">
-                          Truck and Trailer
+                        <option *ngFor="let item of service" [value]="item">
+                          {{ item }}
                         </option>
-                        <option value="Truck Employers">Truck Employers</option>
-                        <option value="Truck Companies">Truck Companies</option>
-                        <option value="RoadSide Assistance">
-                          RoadSide Assistance
-                        </option>
-                        <option value="Commercial and Heavy Duty">
-                          Commercial and Heavy Duty
-                        </option>
-                        <option value="Mobile Service">Mobile Service</option>
-                        <option value="Truck Stops">Truck Stops</option>
-                        <option value="Truck Apparels">Truck Apparels</option>
-                        <option value="DL Courses">DL Courses</option>
-                        <option value="Truck License">Truck License</option>
-                        <option value="Trucker">Trucker</option>
-                        <option value="Other">Other</option>
                       </select>
                     </div>
 
@@ -1366,281 +1174,6 @@
 </section>
 
 <!-- packages modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Select One Package
-        </h5>
-        <button type="button" class="close" (click)="closePackageModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
-        <div class="row">
-          <div class="col-md-6" *ngFor="let package of packages; let i = index">
-            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
-              <div
-                class="card"
-                [ngClass]="{ cardSelect: selectedPackage === package }"
-                (click)="selectPackage(package)"
-              >
-                <div class="card-body">
-                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
-                    $
-                    {{ package.net_price ? package.net_price : package.price }}
-                    <sup
-                      style="
-                        text-decoration: line-through;
-                        font-size: 20px;
-                        color: gray;
-                        padding-left: 15px;
-                      "
-                      *ngIf="package.net_price"
-                      >{{ package.price }}</sup
-                    >
-                  </h5>
-                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
-                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
-
-                  <div
-                    class="description-container"
-                    style="max-height: 100px; overflow-y: auto"
-                  >
-                    <p class="card-description">{{ package.description }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          (click)="closePackageModal()"
-          type="button"
-          class="btn btn-secondary"
-        >
-          Close
-        </button>
-
-        <div
-          *ngIf="selectedPackage?.price != '0'"
-          [ngClass]="{
-            hidden: selectedPackage == null || selectedPackage?.price == '0',
-            paymentButtons: selectedPackage != null
-          }"
-        >
-          <!-- <div id="paypal-button-container"></div> -->
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="openStripeModal()"
-          >
-            Stripe
-          </button>
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="paypalClick()"
-          >
-            paypal
-          </button>
-        </div>
-        <div *ngIf="selectedPackage?.price == '0'">
-          <button
-            type="button"
-            style="background-color: rgb(35, 149, 243); color: white"
-            class="btn btn-info"
-            (click)="continuePaymentButton()"
-          >
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- stripe modal  -->
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          Pay Through Stripe
-        </h5>
-        <button type="button" class="close" (click)="closeStripeModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <form class="checkout-form" [formGroup]="paymentForm">
-            <h3>
-              Amount
-              {{
-                selectedPackage?.net_price
-                  ? selectedPackage?.net_price
-                  : selectedPackage?.price
-              }}
-            </h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="card-number"
-                    >Card Number 14 Digit (Without Dashes)</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-number"
-                    data-stripe-element="cardNumber"
-                    formControlName="cardNumber"
-                    placeholder="XXXXXXXXXXXXXXXX"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-expiry"
-                    >Expiration Date in (MM/YY) Format</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-expiry"
-                    data-stripe-element="expiryDate"
-                    formControlName="expiryDate"
-                    placeholder="MM/YY"
-                  />
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="card-cvc">CVC 3 Digit</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="card-cvc"
-                    data-stripe-element="cvc"
-                    formControlName="cvc"
-                    placeholder="XXX"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  id="pay-button"
-                  (click)="pay()"
-                  [disabled]="!paymentForm.valid"
-                >
-                  Pay Now
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeStripeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Are You 18+ of your age?</h3>
-        </div>
-        <p style="padding: 8px">
-          You must be at least 13 years old to use the Service. However,
-          children of all ages may use the Service and PLTalk Kids (where
-          available) if enabled by a parent or legal guardian. Permission by
-          Parent or Guardian If you are under 18, you represent that you have
-          your parent or guardian’s permission to use the Service. Please have
-          them read this Agreement with you. If you are a parent or legal
-          guardian of a user under the age of 18, by allowing your child to use
-          the Service, you are subject to the terms of this Agreement and
-          responsible for your child’s activity on the Service. You can find
-          tools and resources to help you manage your family’s experience on
-          PLTalk in our Help Center
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="confirmAge()">
-          Yes
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeAgeModal()"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
-  style="background-color: rgb(0, 0, 0, 0.8)"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container">
-          <h3>Confirming Payment...</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!------- tab section end ---------->
 
@@ -1989,21 +1522,72 @@
         </div>
         <div class="moretext13" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">DFW Connects</a>
-            <a class="btn-link" href="">Military Connects</a>
-            <a class="btn-link" href="">Truckers Connects</a>
-            <a class="btn-link" href="">Automotive Connects</a>
-            <a class="btn-link" href="">Students Connects</a>
-            <a class="btn-link" href="">Sports Athletes Connects</a>
-            <a class="btn-link" href="">Realtors Connects</a>
-            <a class="btn-link" href="">Restaurants Connects</a>
-            <a class="btn-link" href="">Hair & Beauty Connects</a>
-            <a class="btn-link" href="">Hispanics Connects</a>
-            <a class="btn-link" href="">Nubians Connects</a>
-            <a class="btn-link" href="">Attorneys Connects</a>
-            <a class="btn-link" href="">Religions Connects</a>
-            <a class="btn-link" href="">Entertainers Connects</a>
-            <a class="btn-link" href="">Night Life Connects</a>
+            <a class="btn-link" href="https://umyobizdfw.com" target="_blank"
+              >DFW connects</a
+            >
+            <a class="btn-link" href="https://umyomilitary.site" target="_blank"
+              >Military Connects</a
+            >
+            <a class="btn-link" href="https://umyotruckers.site" target="_blank"
+              >Truckers Connects</a
+            >
+            <a class="btn-link" href="https://umyoauto.site" target="_blank"
+              >Automotive Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyohighschool.site"
+              target="_blank"
+              >Students Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyosportscards.com"
+              target="_blank"
+              >Sports Athletes Connects</a
+            >
+            <a class="btn-link" href="https://umyorealtor.site" target="_blank"
+              >Realtors Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyorestaurant.com"
+              target="_blank"
+              >Restaurants Connects</a
+            >
+            <a class="btn-link" href="https://umyostylist.com" target="_blank"
+              >Hair & Beauty Connects</a
+            >
+            <a class="btn-link" href="https://umyonegocio.site" target="_blank"
+              >Hispanics Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://nubianbizcards.com"
+              target="_blank"
+              >Nubians Connects</a
+            >
+            <a class="btn-link" href="https://umyolawyer.site" target="_blank"
+              >Attorneys Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoreligions.site"
+              target="_blank"
+              >Religions Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyoentertainment.site"
+              target="_blank"
+              >Entertainers Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonightlife.site"
+              target="_blank"
+              >Night Life Connects</a
+            >
           </div>
         </div>
       </div>
@@ -2017,27 +1601,102 @@
         </div>
         <div class="moretext14" style="display: none">
           <div class="d-flex flex-column text-start footer-item">
-            <a class="btn-link" href="">UMYO Conferences</a>
-            <a class="btn-link" href="">UMYO Music</a>
-            <a class="btn-link" href="">UMYO Market</a>
-            <a class="btn-link" href="">UMYO Hosting</a>
-            <a class="btn-link" href="">UMYO Chatgpt</a>
-            <a class="btn-link" href="">UMYO Tweets</a>
-            <a class="btn-link" href="">UMYO Date</a>
-            <a class="btn-link" href="">UMYO Tik Tok</a>
-            <a class="btn-link" href="">UMYO Connects</a>
-            <a class="btn-link" href="">UMYO Mail</a>
-            <a class="btn-link" href="">UMYO WhatsApp</a>
-            <a class="btn-link" href="">UMYO Games</a>
-            <a class="btn-link" href="">UMYO Tube</a>
-            <a class="btn-link" href="">UMYO SMS</a>
-            <a class="btn-link" href="">UMYO PPV</a>
-            <a class="btn-link" href="">UMYO LMS</a>
-            <a class="btn-link" href="">UMYO VPN</a>
-            <a class="btn-link" href="">UMYO Store</a>
-            <a class="btn-link" href="">UMYO Profile</a>
-            <a class="btn-link" href="">UMYO Ambassadors</a>
-            <a class="btn-link" href="">UMYO Articles</a>
+            <a
+              class="btn-link"
+              href="https://live.umyoconvo.site"
+              target="_blank"
+              >UMYO Conferences</a
+            >
+            <a class="btn-link" href="https://umyomusic.com" target="_blank"
+              >UMYO Music</a
+            >
+            <a class="btn-link" href="https://umyopopup.site" target="_blank"
+              >UMYO Market</a
+            >
+            <a class="btn-link" href="https://umyohost.com" target="_blank"
+              >UMYO Hosting</a
+            >
+            <a class="btn-link" href="https://uchatyes.com" target="_blank"
+              >UMYO Chatgpt</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyotweets.com/guest"
+              target="_blank"
+              >UMYO Tweets</a
+            >
+            <a class="btn-link" href="https://cpswipe.com" target="_blank"
+              >UMYO Date</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Tik Tok</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyonetwork.com/network"
+              target="_blank"
+              >UMYO Connects</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Mail</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO WhatsApp</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Games</a
+            >
+            <a class="btn-link" href="https://umyotube.com" target="_blank"
+              >UMYO Tube</a
+            >
+            <a class="btn-link" href="https://umyosms.com" target="_blank"
+              >UMYO SMS</a
+            >
+            <a class="btn-link" href="https://vibetalktv.com" target="_blank"
+              >UMYO PPV</a
+            >
+            <a class="btn-link" href="https://umyoeducator.com" target="_blank"
+              >UMYO LMS</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO VPN</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/membership-packages/"
+              target="_blank"
+              >UMYO Store</a
+            >
+            <a
+              class="btn-link"
+              href="https://umyobiz.com/network/"
+              target="_blank"
+              >UMYO Profile</a
+            >
+            <a
+              class="btn-link"
+              href="https://lieutenantsacademydfw.org/"
+              target="_blank"
+              >UMYO Ambassadors</a
+            >
+            <a class="btn-link" href="https://umyoauthor.site" target="_blank"
+              >UMYO Authors</a
+            >
           </div>
         </div>
       </div>
@@ -2813,6 +2472,313 @@
             </pre
           >
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- packages modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showPackageModal, 'd-block': showPackageModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Select One Package
+        </h5>
+        <button type="button" class="close" (click)="closePackageModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 70vh; overflow-y: scroll">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let package of packages; let i = index">
+            <div class="outerCard" style="min-height: 30vh; cursor: pointer">
+              <div
+                class="card"
+                [ngClass]="{ cardSelect: selectedPackage === package }"
+                (click)="selectPackage(package)"
+              >
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(35, 149, 243)">
+                    $
+                    {{ package.net_price ? package.net_price : package.price }}
+                    <sup
+                      style="
+                        text-decoration: line-through;
+                        font-size: 20px;
+                        color: gray;
+                        padding-left: 15px;
+                      "
+                      *ngIf="package.net_price"
+                      >{{ package.price }}</sup
+                    >
+                  </h5>
+                  <p class="card-text">Cards Limit: {{ package.limit }}</p>
+                  <p class="card-duration">Duration: {{ package.expire_in }}</p>
+
+                  <div
+                    class="description-container"
+                    style="max-height: 100px; overflow-y: auto"
+                  >
+                    <p class="card-description">{{ package.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100" *ngIf="(i + 1) % 2 === 0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          (click)="closePackageModal()"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Close
+        </button>
+
+        <div
+          *ngIf="selectedPackage?.price != '0'"
+          [ngClass]="{
+            hidden: selectedPackage == null || selectedPackage?.price == '0',
+            paymentButtons: selectedPackage != null
+          }"
+        >
+          <!-- <div id="paypal-button-container"></div> -->
+          <!-- hide stripe  -->
+          <!-- <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="openStripeModal()"
+          >
+            Stripe
+          </button> -->
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="paypalClick()"
+          >
+            paypal
+          </button>
+        </div>
+        <div *ngIf="selectedPackage?.price == '0'">
+          <button
+            type="button"
+            style="background-color: rgb(35, 149, 243); color: white"
+            class="btn btn-info"
+            (click)="continuePaymentButton()"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showLoadingModal, 'd-block': showLoadingModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>{{ paypalTitleMessage }}</h3>
+          <p style="padding-top: 15px">{{ paypalMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- stripe modal  -->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showStripeModal, 'd-block': showStripeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Pay Through Stripe
+        </h5>
+        <button type="button" class="close" (click)="closeStripeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="checkout-form" [formGroup]="paymentForm">
+            <h3>
+              Amount
+              {{
+                selectedPackage?.net_price
+                  ? selectedPackage?.net_price
+                  : selectedPackage?.price
+              }}
+            </h3>
+            <div class="row">
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-number"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Card Number 16 Digit (Without Dashes)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-number"
+                    data-stripe-element="cardNumber"
+                    formControlName="cardNumber"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-expiry"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >Expiration Date in (MM/YY) Format including /
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-expiry"
+                    data-stripe-element="expiryDate"
+                    formControlName="expiryDate"
+                    placeholder="MM/YY"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 17px">
+                <div class="form-group">
+                  <label
+                    for="card-cvc"
+                    style="
+                      font-size: 17px;
+                      font-weight: 600;
+                      padding-bottom: 8px;
+                    "
+                    >CVC 3 Digit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="card-cvc"
+                    data-stripe-element="cvc"
+                    formControlName="cvc"
+                    placeholder="XXX"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div
+                class="col-md-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 10px;
+                "
+              >
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  id="pay-button"
+                  (click)="pay()"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeStripeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showAgeModal, 'd-block': showAgeModal }"
+  style="background-color: rgb(0, 0, 0, 0.8)"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <h3>Are You 18+ of your age?</h3>
+        </div>
+        <p style="padding: 8px">
+          You must be at least 13 years old to use the Service. However,
+          children of all ages may use the Service and PLTalk Kids (where
+          available) if enabled by a parent or legal guardian. Permission by
+          Parent or Guardian If you are under 18, you represent that you have
+          your parent or guardian’s permission to use the Service. Please have
+          them read this Agreement with you. If you are a parent or legal
+          guardian of a user under the age of 18, by allowing your child to use
+          the Service, you are subject to the terms of this Agreement and
+          responsible for your child’s activity on the Service. You can find
+          tools and resources to help you manage your family’s experience on
+          PLTalk in our Help Center
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmAge()">
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAgeModal()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

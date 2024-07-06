@@ -7,26 +7,46 @@ import { ApiService } from '../../api.service';
   templateUrl: './admin-amount.component.html',
   styleUrls: ['./admin-amount.component.css']
 })
-export class AdminAmountComponent  implements OnInit{
+export class AdminAmountComponent implements OnInit {
   amount: Amount[] = [];
-  isLoading:boolean=false;
+  isLoading: boolean = false;
+  bearerToken: string | null = localStorage.getItem("admin_access_token");
+
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    const bearerToken = localStorage.getItem("admin_access_token")
-    this.isLoading=true
-    this.apiService.getReferals(bearerToken).subscribe(
+    this.fetchReferals();
+  }
+
+  fetchReferals(): void {
+    this.isLoading = true;
+    this.apiService.getReferals(this.bearerToken).subscribe(
       (response) => {
-        this.isLoading=false
-        this.amount = response.listOfReferals; 
-        
+        this.isLoading = false;
+        this.amount = response.listOfReferals;
       },
       (error) => {
         console.error('Error fetching users:', error);
+        this.isLoading = false;
       }
     );
   }
-  changeStatus(amtId: number) {
-    
+
+  changeStatus(amtId: any): void {
+    this.isLoading = true;
+    this.apiService.changeStatus(amtId).subscribe(
+      (response) => {
+        if (response.status === "Success") {
+          this.fetchReferals();
+        } else {
+          alert("Failed to change the status");
+          this.isLoading = false;
+        }
+      },
+      (error) => {
+        console.error('Error changing status:', error);
+        this.isLoading = false;
+      }
+    );
   }
 }
