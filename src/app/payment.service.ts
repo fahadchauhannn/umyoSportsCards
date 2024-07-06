@@ -296,7 +296,7 @@ if (expireInValue.includes("year")) {
               friend_id: null,
               package_id: selectedPackage.id,
               balance_transaction: null,
-              balance_transaction_type: 'stripe',
+              balance_transaction_type: 'paypal',
               business_type: form3.get('registerBusinessType')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
@@ -307,7 +307,7 @@ if (expireInValue.includes("year")) {
               speciality: form3.get('registerSpecialityType')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              
+              plan_id:response.plan_id,
         
               reffered_from: form3.get('registerReferralCode').value,
               
