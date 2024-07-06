@@ -9,7 +9,7 @@
       <ul class="list-group">
         <li
           *ngFor="let user of chatUsers"
-          (click)="openChat(user.user_id)"
+          (click)="openChat(user.user.id)"
           class="list-group-item cursor-pointer user-list"
         >
           <span class="user-avatar">

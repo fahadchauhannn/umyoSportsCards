@@ -20,7 +20,7 @@ declare var $: any;
 export class HomeComponent implements AfterViewInit {
   
 
-  showLoginTab: boolean;
+  showLoginTab: boolean=true;
   showAgeModal: boolean=false;
   showRegisterTab: boolean;
   isMoreTextVisible:boolean = false;
@@ -57,296 +57,415 @@ export class HomeComponent implements AfterViewInit {
   elements: any; 
   cardElement: any; 
   mode:any
+  paypalTitleMessage:any;
+  paypalMessage:any;
   
   ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
-      
-      if (fragment === 'regis') {
-        this.showLoginTab = false;
-        this.showRegisterTab = true;
-      } else {
-        
-        this.showLoginTab = true;
-        this.showRegisterTab = false;
-      }
+    this.route.queryParams.subscribe(params => {
+      const referralId = params['referralId'] || "";
+       
+      this.form3.get('registerReferralCode')?.setValue(referralId); // Set the referral ID to the form control
     });
+   
   
     const videoPath = 'assets/video.mp4';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoPath);
+    this.paymentService.loadingStatus.subscribe((status: boolean) => {
+      this.showLoadingModal = status;
+    });
     
   }
   
   ngAfterViewInit(): void {
-    var slider1 = $('.slider-1').slick({
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed:5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: false,
-      cssEase: 'linear',
-      responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-        slidesToShow: 4,
-        speed:5500,
-        centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
-        slidesToScroll: 1
-        
-        }
-      },
-      {
-        breakpoint: 767, 
-        settings: {
-          slidesToShow: 3,
-          speed:6000,
-          slidesToScroll: 1
-          }
-      },
-      {
-        breakpoint: 600, 
-        settings: {
-          slidesToShow: 2,
-          speed:6000,
-          slidesToScroll: 1
-          }
-      },
-      
-      {
-        breakpoint: 480, 
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+    $('.moreless-button-he').click(function() {
+      $('.moretext-he').slideToggle();
+      if ($('.moreless-button-he').text() == "Read more") {
+        $(this).text("Read less")
+      } else {
+        $(this).text("Read more")
       }
-
-
-     ]
+    });
+        $('.moreless-button').click(function() {
+    $('.moretext').slideToggle();
+    if ($('.moreless-button').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
   });
+      
+        $('.moreless-button15').click(function() {
+          event.preventDefault();
+    $('.moretext15').slideToggle();
+    if ($('.moreless-button15').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button1').click(function() {
+          event.preventDefault();
+    $('.moretext1').slideToggle();
+    if ($('.moreless-button1').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button2').click(function() {
+          event.preventDefault();
+    $('.moretext2').slideToggle();
+    if ($('.moreless-button2').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+      
+        $('.moreless-button3').click(function() {
+          event.preventDefault();
+    $('.moretext3').slideToggle();
+    if ($('.moreless-button3').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+      
+        $('.moreless-button4').click(function() {
+          event.preventDefault();
+    $('.moretext4').slideToggle();
+    if ($('.moreless-button4').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+     
+        $('.moreless-button5').click(function() {
+          event.preventDefault();
+    $('.moretext5').slideToggle();
+    if ($('.moreless-button5').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+   
+        $('.moreless-button6').click(function() {
+          event.preventDefault();
+    $('.moretext6').slideToggle();
+    if ($('.moreless-button6').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+    
+        $('.moreless-button7').click(function() {
+          event.preventDefault();
+    $('.moretext7').slideToggle();
+    if ($('.moreless-button7').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+    
+        $('.moreless-button8').click(function() {
+          event.preventDefault();
+    $('.moretext8').slideToggle();
+    if ($('.moreless-button8').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+     
+        $('.moreless-button9').click(function() {
+          event.preventDefault();
+    $('.moretext9').slideToggle();
+    if ($('.moreless-button9').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+      
+        $('.moreless-button10').click(function() {
+          event.preventDefault();
+    $('.moretext10').slideToggle();
+    if ($('.moreless-button10').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+     
+        $('.moreless-button11').click(function() {
+          event.preventDefault();
+    $('.moretext11').slideToggle();
+    if ($('.moreless-button11').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+      
+        $('.moreless-button12').click(function() {
+          event.preventDefault();
+    $('.moretext12').slideToggle();
+    if ($('.moreless-button12').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+      
+        $('.moreless-button13').click(function() {
+          event.preventDefault();
+    $('.moretext13').slideToggle();
+    if ($('.moreless-button13').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+     
+        $('.moreless-button14').click(function() {
+          event.preventDefault();
+    $('.moretext14').slideToggle();
+    if ($('.moreless-button14').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+
+
+
+
+
+
+        $('.moreless-button16').click(function() {
+          event.preventDefault();
+    $('.moretext16').slideToggle();
+    if ($('.moreless-button16').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button17').click(function() {
+          event.preventDefault();
+    $('.moretext17').slideToggle();
+    if ($('.moreless-button17').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button18').click(function() {
+          event.preventDefault();
+    $('.moretext18').slideToggle();
+    if ($('.moreless-button18').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button19').click(function() {
+          event.preventDefault();
+    $('.moretext19').slideToggle();
+    if ($('.moreless-button19').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button20').click(function() {
+          event.preventDefault();
+    $('.moretext20').slideToggle();
+    if ($('.moreless-button20').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button21').click(function() {
+          event.preventDefault();
+    $('.moretext21').slideToggle();
+    if ($('.moreless-button21').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button22').click(function() {
+          event.preventDefault();
+    $('.moretext22').slideToggle();
+    if ($('.moreless-button22').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button23').click(function() {
+          event.preventDefault();
+    $('.moretext23').slideToggle();
+    if ($('.moreless-button23').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button24').click(function() {
+          event.preventDefault();
+    $('.moretext24').slideToggle();
+    if ($('.moreless-button24').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button25').click(function() {
+          event.preventDefault();
+    $('.moretext25').slideToggle();
+    if ($('.moreless-button25').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button26').click(function() {
+          event.preventDefault();
+    $('.moretext26').slideToggle();
+    if ($('.moreless-button26').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+        $('.moreless-button27').click(function() {
+          event.preventDefault();
+    $('.moretext27').slideToggle();
+    if ($('.moreless-button27').text() == "Read more") {
+      $(this).text("Read less")
+    } else {
+      $(this).text("Read more")
+    }
+  });
+  
+
+  var slider1 = $('.slider-1').slick({
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed:5000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    fade: false,
+    rtl: false,
+    cssEase: 'linear',
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+      slidesToShow: 4,
+      speed:5500,
+      centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+      slidesToScroll: 1
+      
+      }
+    },
+    {
+      breakpoint: 767, 
+      settings: {
+        slidesToShow: 3,
+        speed:6000,
+        slidesToScroll: 1
+        }
+    },
+    {
+      breakpoint: 600, 
+      settings: {
+        slidesToShow: 2,
+        speed:6000,
+        slidesToScroll: 1
+        }
+    },
+    
+    {
+      breakpoint: 480, 
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+
+
+   ]
+});
 
 var slider2 = $('.slider-2').slick({
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed:5000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      fade: false,
-      rtl: true,
-      cssEase: 'linear',
-      responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-        slidesToShow: 4,
-        speed:5500,
-        centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
-        slidesToScroll: 1
-        
-        }
-      },
-      {
-        breakpoint: 767, 
-        settings: {
-          slidesToShow: 3,
-          speed:6000,
-          slidesToScroll: 1
-          }
-      },
-      {
-        breakpoint: 600, 
-        settings: {
-          slidesToShow: 2,
-          speed:6000,
-          slidesToScroll: 1
-          }
-      },
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed:5000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    fade: false,
+    rtl: true,
+    cssEase: 'linear',
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+      slidesToShow: 4,
+      speed:5500,
+      centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+      slidesToScroll: 1
       
-      {
-        breakpoint: 480, 
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
       }
-
-     ]
-  });
-
-
-
-
+    },
+    {
+      breakpoint: 767, 
+      settings: {
+        slidesToShow: 3,
+        speed:6000,
+        slidesToScroll: 1
+        }
+    },
+    {
+      breakpoint: 600, 
+      settings: {
+        slidesToShow: 2,
+        speed:6000,
+        slidesToScroll: 1
+        }
+    },
     
-    $('.moreless-button-he').click(function() {
-$('.moretext-he').slideToggle();
-if ($('.moreless-button-he').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-buttonf').click(function() {
-$('.moretextf').slideToggle();
-if ($('.moreless-buttonf').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
+    {
+      breakpoint: 480, 
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
 
-    $('.moreless-button').click(function() {
-$('.moretext').slideToggle();
-if ($('.moreless-button').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
+   ]
 });
-  
-  
-    $('.moreless-button2').click(function() {
-$('.moretext2').slideToggle();
-if ($('.moreless-button2').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-   
-    $('.moreless-button3').click(function() {
-$('.moretext3').slideToggle();
-if ($('.moreless-button3').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button4').click(function() {
-$('.moretext4').slideToggle();
-if ($('.moreless-button4').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button5').click(function() {
-$('.moretext5').slideToggle();
-if ($('.moreless-button5').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button6').click(function() {
-$('.moretext6').slideToggle();
-if ($('.moreless-button6').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-   
-    $('.moreless-button7').click(function() {
-$('.moretext7').slideToggle();
-if ($('.moreless-button7').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-    
-    $('.moreless-button8').click(function() {
-$('.moretext8').slideToggle();
-if ($('.moreless-button8').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button9').click(function() {
-$('.moretext9').slideToggle();
-if ($('.moreless-button9').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-   
-    $('.moreless-button10').click(function() {
-$('.moretext10').slideToggle();
-if ($('.moreless-button10').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button11').click(function() {
-$('.moretext11').slideToggle();
-if ($('.moreless-button11').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-   
-    $('.moreless-button12').click(function() {
-$('.moretext12').slideToggle();
-if ($('.moreless-button12').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-  
-    $('.moreless-button13').click(function() {
-$('.moretext13').slideToggle();
-if ($('.moreless-button13').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
-   
-    $('.moreless-button14').click(function() {
-$('.moretext14').slideToggle();
-if ($('.moreless-button14').text() == "Read more") {
-  $(this).text("Read less")
-} else {
-  $(this).text("Read more")
-}
-});
-  
+
+
+
   
   }
   
@@ -421,16 +540,8 @@ if ($('.moreless-button14').text() == "Read more") {
   
     // check route for mobile view for registration and login tab
     checkRoute(){
-      this.route.fragment.subscribe(fragment => {
-        
-        if (fragment === 'regis') {
-          this.showLoginTab = false;
-          this.showRegisterTab = true;
-        } else {
-          this.showLoginTab = true;
-          this.showRegisterTab = false;
-        }
-      });
+    
+          this.showLoginTab = !this.showLoginTab;
     }
     
     // toggle read more buttons 
@@ -448,29 +559,30 @@ if ($('.moreless-button14').text() == "Read more") {
   
   
   
-    // search cards 
     searchCards(){
       
-       const payload={
-        state : this.form2.get('selectedStateType').value,
-       city : this.form2.get('selectedCity').value,
-       name : this.form2.get('selectedName').value,
-       position : this.form2.get('selectedPositionType').value,
-       business_type: this.form2.get('selectedBusinessType')?.value,
-       sport_type: this.form2.get('selectedSportType')?.value,
-       age_type: this.form2.get('selectedAgeType')?.value,
-       
-       
-  
-       }
+      const payload={
+       state : this.form2.get('selectedStateType').value,
+      city : this.form2.get('selectedCity').value,
+      name : this.form2.get('selectedName').value,
+      position : this.form2.get('selectedPositionType').value,
+      business_type: this.form2.get('selectedBusinessType')?.value,
+      sport_type: this.form2.get('selectedSportType')?.value,
+      age_type: this.form2.get('selectedAgeType')?.value,
       
-      this.apiService.searchCard(payload).subscribe(
-        (response)=>{
-          this.cardsSearched=response.Cards
-          console.log(response);
-        }
-      )
-    }
+      
+ 
+      }
+     
+     this.apiService.searchCard(payload).subscribe(
+       (response)=>{
+         this.cardsSearched=response.Cards
+         console.log(response);
+       }
+     )
+   }
+
+
     getPositionType(sport: any) {
       this.apiService.getPositionType(sport).subscribe(
         (response) => {
@@ -518,6 +630,10 @@ if ($('.moreless-button14').text() == "Read more") {
       if (this.form3.valid) {
         this.submitButtonClicked = false;
       }
+
+
+
+
     }
   
   
@@ -618,6 +734,8 @@ if ($('.moreless-button14').text() == "Read more") {
       private router: Router, private paymentService: PaymentService,private sanitizer: DomSanitizer) {
   
         const token = new URLSearchParams(window.location.search).get('token');
+        
+         
         const updatedPlanId=localStorage.getItem("updatePaypalId")
         
         if(updatedPlanId!=null && updatedPlanId){
@@ -635,6 +753,10 @@ if ($('.moreless-button14').text() == "Read more") {
     
         
         if(token && (updatedPlanId=='' || updatedPlanId==null)){
+          this.paypalTitleMessage="Please Wait"
+   this.paypalMessage="Your Paypal payment is being processed. Your patience is appreciated."
+
+   
           this.showLoadingModal=true
           
           this.apiService.executeAggrement(token)
@@ -642,6 +764,9 @@ if ($('.moreless-button14').text() == "Read more") {
             (response) => {
               // Subscription is now active
               if(response.status=='Success'){
+                this.paypalTitleMessage="Payment Successful!"
+                
+                this.paypalMessage="Thank you for successfully completing your payment through PayPal. Your transaction has been processed, and it may take a few minutes for us to update your payment status on our end. We appreciate your patience. If you have any questions or concerns, please don't hesitate to contact us for assistance."
                 console.log("Billing agreement executed successfully", response);
                 this.paymentService.paypal_Register_user(response.subscription_id)
               }
@@ -651,8 +776,8 @@ if ($('.moreless-button14').text() == "Read more") {
             (error) => {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
-                alert("Failed to Verify Paypal Payment")
-                window.location.href='https://umyosportscards.com'
+                alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
+                window.location.href='https://umyosportscards.com/'
             }
           );
         }
@@ -679,6 +804,7 @@ if ($('.moreless-button14').text() == "Read more") {
         
     
         
+               
       selectedBusinessType: [''],
       selectedAgeType: [''],
       selectedSportType: [''],
@@ -691,6 +817,7 @@ if ($('.moreless-button14').text() == "Read more") {
       selectedCity: [''],
 
 
+     
      
         
         
@@ -710,17 +837,13 @@ if ($('.moreless-button14').text() == "Read more") {
       registerPositionType: ['', Validators.required],
       registerStateType: ['', Validators.required],
       registerReferralCode: [''], // Not required
-        
-
-
       }, { validators: this.emailMatchValidator })
 
       this.getBusniessType()
 
-    this.getAgeType()
-    this.getSportType()
-
-    
+      this.getAgeType()
+      this.getSportType()
+  
       // fetch packages
       this.apiService.getSignUpPackages(null).subscribe(
         (response) => {
@@ -899,10 +1022,37 @@ if ($('.moreless-button14').text() == "Read more") {
   };
   
   pay(): void {
-  this.paymentService.createPaymentIntent(this.paymentForm, this.form3,this.selectedPackage);   
-  this.closePackageModal()
-  this.closeStripeModal()
-    
+    if (this.paymentForm.valid) {
+      this.paymentService.createPaymentIntent(this.paymentForm, this.form3, this.selectedPackage);
+      this.closePackageModal();
+      this.closeStripeModal();
+      this.paypalTitleMessage = "Please Wait";
+      this.paypalMessage = "Your Stripe payment is being processed. Your patience is appreciated.";
+      this.showLoadingModal=true
+    } else {
+      // Display alert for each validation error
+      if (this.paymentForm.get('cardNumber').hasError('required')) {
+        alert('Please enter card number.');
+      }
+      if (this.paymentForm.get('cardNumber').hasError('invalidCardNumber')) {
+        alert('Invalid card number. Please enter a 16-digit number without dashes - XXXXXXXXXXXXXXXX');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('required')) {
+        alert('Please enter expiry date.');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('invalidExpiryDate')) {
+        alert('Invalid expiry date. Please enter in MM/YY format. for example: 12/28');
+      }
+      if (this.paymentForm.get('expiryDate').hasError('expiredExpiryDate')) {
+        alert('Card has already expired.');
+      }
+      if (this.paymentForm.get('cvc').hasError('required')) {
+        alert('Please enter CVC.');
+      }
+      if (this.paymentForm.get('cvc').hasError('minlength') || this.paymentForm.get('cvc').hasError('maxlength')) {
+        alert('Invalid CVC. Please enter a 3-digit number.');
+      }
+    }
   }
   
   
@@ -910,6 +1060,8 @@ if ($('.moreless-button14').text() == "Read more") {
   
   paypalClick(){
    this.closePackageModal()
+   this.paypalTitleMessage="Redirecting to PayPal"
+   this.paypalMessage="You are now being redirected to the PayPal website to complete your transaction securely. Please wait a moment while we process your request. If you encounter any issues or have any questions, feel free to contact us for assistance."
    this.showLoadingModal=true
    this.paymentService.paypal_create_billing_plan(this.form3,this.selectedPackage)
   }

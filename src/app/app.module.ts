@@ -72,13 +72,14 @@ import { ShareCardComponent } from './public/cards/share-card/share-card.compone
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TruckersComponent } from './truckers/truckers.component';
 
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 
 
 import { PackageComponent } from './package/package.component';
 import { CfComponent } from './cf/cf.component';
 import { AiComponent } from './ai/ai.component';
-import { NbaComponent } from './nba/nba.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { PledgeComponent } from './pledge/pledge.component';
 
 
@@ -119,6 +120,7 @@ import { PledgeComponent } from './pledge/pledge.component';
     WorkAndSocialComponent,
     ApplyForReferralComponent,
     BonusAmountComponent,
+    PledgeComponent,
     ChangePasswordComponent,
     MyContactsComponent,
     TeamComponent,
@@ -153,8 +155,6 @@ import { PledgeComponent } from './pledge/pledge.component';
     PackageComponent,
     CfComponent,
     AiComponent,
-    NbaComponent,
-    PledgeComponent,
     
     
     
@@ -164,7 +164,7 @@ import { PledgeComponent } from './pledge/pledge.component';
   ],
   
   imports: [
-   
+    NgbCarouselModule,
     NgxSimpleTextEditorModule,
     NgxEditorModule,
     BrowserModule,
@@ -174,6 +174,7 @@ import { PledgeComponent } from './pledge/pledge.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ColorSketchModule, 
     ToastrModule.forRoot({
       positionClass: 'custom-toast-position',
     }),

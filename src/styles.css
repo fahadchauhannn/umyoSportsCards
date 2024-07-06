@@ -16,3 +16,66 @@
 overflow-x: hidden !important;
   }
    */
+
+
+   
+.custom-toast-position {
+  position: fixed;
+  top: 5rem; /* Adjust the top position as needed */
+  right: 5rem; /* Adjust the right position as needed */
+  text-align: center;
+  background-color: rgba(86, 249, 86, 0.799);
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px; 
+  color: #fff;
+  
+
+}
+
+/* *,html,body{
+overflow-x: hidden !important;
+}
+ */
+
+ /* .slick-prev{
+  left: 9px !important;
+  z-index: 11111 !important;
+}
+
+.slick-next {
+  right: 4px !important;
+  z-index: 1111111 !important;
+} */
+
+.custom-prev-arrow, .custom-next-arrow {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+z-index: 1;
+}
+
+.custom-prev-arrow {
+left: 10px;
+}
+
+.custom-next-arrow {
+right: 10px;
+}
+
+.carousel-control-prev{
+left: -24px !important;
+}
+
+.carousel-control-prev{
+top: 142px !important;
+}
+.carousel-control-next{
+top: 142px !important;
+}
+.carousel-control-next{
+right: -18px !important;
+}
+
+
