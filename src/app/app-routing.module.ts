@@ -46,6 +46,9 @@ import { PreviewCardComponent } from './public/cards/preview-card/preview-card.c
 import { EditCardComponent } from './public/edit-card/edit-card.component';
 import { ShareCardComponent } from './public/cards/share-card/share-card.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PackageComponent } from './package/package.component';
+import { AiComponent } from './ai/ai.component';
+import { CfComponent } from './cf/cf.component';
 
 
 
@@ -57,7 +60,9 @@ const routes: Routes = [
   { path: 'network', component: NetworkComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-
+  { path: 'package', component: PackageComponent },
+  { path: 'ai', component: AiComponent },
+  { path: 'cf', component: CfComponent },
   // Protected routes for authenticated users
   { path: 'cards', component: CardsComponent, canActivate: [AuthGuard] },
   { path: 'activities', component: ActivityComponent, canActivate: [AuthGuard] },
