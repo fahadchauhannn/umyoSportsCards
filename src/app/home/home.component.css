@@ -12,7 +12,10 @@
     font-size: 22px;
   }
 
-
+  .nav-link, .nav-item {
+    display: inline !important;
+    white-space: nowrap;
+}
   @media(max-width:500px){
     .mobile{
       display: block;
