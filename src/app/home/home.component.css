@@ -1,4 +1,4 @@
-.card {
+/* .card {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 10px;
@@ -6,7 +6,7 @@
     cursor: pointer;
     
     z-index: 1;
-  }
+  } */
   
   .card-title{
     font-size: 22px;
@@ -1743,10 +1743,7 @@ font-size: 30px;
 .program h1{
   color: rgb(67, 144, 181);
 }
-.card{
-  border: 0px;
-  background-color: rgb(246, 246, 246);;
-}
+
 /*.card img{
   border-radius: 50%;
 }*/
