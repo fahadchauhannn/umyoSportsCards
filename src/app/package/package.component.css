@@ -465,7 +465,7 @@ font-weight: 400;
 } 
 
 .navbar .navbar-nav .nav-link {
-    padding: 10px 30px 0 0;
+    /* padding: 10px 30px 0 0; */
     font-size: 19px;
     transition: .5s;
     color: white;
@@ -481,6 +481,11 @@ font-weight: 400;
     /* background-color: #2F3D7E!important; */
     /* height: 20vh; */
   }
+  .nav-link{
+    word-wrap: nowrap;
+    white-space: nowrap;
+  }
+
   .footer .form-control {
      background: white!important;
   }
