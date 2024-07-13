@@ -4,7 +4,7 @@
 // };
 export const environment = {
   production: false,
-  apiUrl: "https://umyosportscards.com/api_umyocards/public/api/"
+  apiUrl: "https://umyocards.com/api_umyocards/public/api/"
 };
 
 

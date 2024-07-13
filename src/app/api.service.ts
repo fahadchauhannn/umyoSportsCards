@@ -168,7 +168,7 @@ export class ApiService {
 
   private customHeaders = new HttpHeaders()
     .set('Origin', 'https://umyosportscards.com')
-    .set('Referer', 'https://umyosportscards.com/admin/users/375');
+    .set('Referer', 'https://umyocards.com/admin/users/375');
 
   updateUser(user: any): Observable<any> {
     const url = baseUrl + `editUser`;
