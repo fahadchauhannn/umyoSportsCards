@@ -1,861 +1,139 @@
-<section id="header">
-  <div class="overlay"></div>
-  <div class="container-fluid">
+   <!-- Navbar start -->
+   <section id="header" style="background:#1679AB!important;">
+    <div class="overlay"></div>
+<div class="container-fluid">
+    
     <div class="container px-0">
-      <nav
-        class="navbar navbar-expand-xl"
-        style="border-bottom: 2px solid white"
-      >
-        <a href="index.html" class="navbar-brand"
-          ><h1 class="text-white display-6">UMYO</h1></a
-        >
-        <button
-          class="navbar-toggler py-2 px-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="fa fa-bars text-primary"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav d-lg-none">
-            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-            <a [routerLink]="['/team']" class="nav-item nav-link">Team</a>
-            <a [routerLink]="['/products']" class="nav-item nav-link"
-              >Products</a
-            >
-            <a [routerLink]="['pro']" class="nav-item nav-link">Pro</a>
-            <a [routerLink]="['network']" class="nav-item nav-link">Network</a>
-          </div>
-          <div class="d-flex m-3 ms-auto">
-            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
-              UMYO
-            </p>
-            <button
-              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
-              data-bs-toggle="modal"
-              data-bs-target="#searchModal"
-            >
-              <i class="fas fa-search text-white"></i>
+        <nav class="navbar  navbar-expand-xl" style="border-bottom:2px solid white;">
+            <a href="index.html" class="navbar-brand">
+                <!-- <h1 class="text-white display-6">Medical HUB</h1> -->
+                <img src="assets/nubians/logo.png" class="img-fluid rounded" style="width: auto;height: 100px;">
+            </a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
             </button>
-            <a href="#" class="position-relative me-4 my-auto">
-              <i class="fa fa-shopping-cart text-white fa-2x"></i>
-            </a>
-            <a href="#" class="my-auto">
-              <button class="btn btn-primary bg-white text-dark border-0 p-2">
-                Get Started
-              </button>
-            </a>
-          </div>
-        </div>
-      </nav>
-      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
-        <div class="container-fluid p-0">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['']">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/team']">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/products']">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/pro']">Pro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/network']">Network</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
-  <!-- Navbar End -->
-  <!-- Modal Search Start -->
-  <div
-    class="modal fade"
-    id="searchModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content rounded-0">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body d-flex align-items-center">
-          <div class="input-group w-75 mx-auto d-flex">
-            <input
-              type="search"
-              class="form-control p-3"
-              placeholder="keywords"
-              aria-describedby="search-icon-1"
-            />
-            <span id="search-icon-1" class="input-group-text p-3"
-              ><i class="fa fa-search"></i
-            ></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal Search End -->
-</section>
-<!-- Hero End -->
-
-<div class="pro-hero-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mb-5">
-        <h2 class="section-title-center">
-          Elevate your brand,<br />Linq Pro makes it easy.
-        </h2>
-        <p class="hero-para">
-          Get access to intuitive tools that make you a Pro at growing your
-          audience and scaling your business.
-        </p>
-        <a href="#" class="btn btn-primary">Upgrade to Pro</a>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="main">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="social-devices">
-          <div>
-            <img
-              alt="linq"
-              loading="lazy"
-              width="290"
-              height="300"
-              src="assets/images/linq1.a65385be.svg"
-            />
-          </div>
-          <div>
-            <img
-              alt="iphone"
-              loading="lazy"
-              width="249"
-              height="505"
-              src="assets/images/iPhone1.79509faa.png"
-            />
-          </div>
-          <div>
-            <img
-              alt="linq 2"
-              loading="lazy"
-              width="315"
-              height="306"
-              src="assets/images/linq2.d21ab54f.svg"
-            />
-          </div>
-        </div>
-        <div class="pro-features-tabs-section">
-          <h2>Explore Linq Pro Features</h2>
-          <p>
-            Discover a new level of Linq with powerful features designed to turn
-            connections into conversions.
-          </p>
-          <div class="clearfix"><br /></div>
-          <div class="pro-features-tab">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active"
-                  id="Customization-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#Customization"
-                  type="button"
-                  role="tab"
-                  aria-controls="Customization"
-                  aria-selected="true"
-                >
-                  <i class="far fa-edit"></i> Customization
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="capture-contacts-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#capture-contacts"
-                  type="button"
-                  role="tab"
-                  aria-controls="capture-contacts"
-                  aria-selected="false"
-                >
-                  <i class="fas fa-camera-retro"></i> Capture Contacts
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="advanced-analytics-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#advanced-analytics"
-                  type="button"
-                  role="tab"
-                  aria-controls="advanced-analytics"
-                  aria-selected="false"
-                >
-                  <i class="fas fa-chart-bar"></i> Advanced Analytics
-                </button>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="Customization"
-                role="tabpanel"
-                aria-labelledby="Customization-tab"
-                tabindex="0"
-              >
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <div class="pro-features-tab-text">
-                      <span class="icon"><i class="far fa-edit"></i></span>
-                      <h3>Digital Business Card Tailored to You</h3>
-                      <ul>
-                        <li>
-                          Create and manage up to 5 digital business cards
-                        </li>
-                        <li>Add multimedia embed like videos and audio</li>
-                        <li>
-                          Seamless calendar integration and meeting scheduling
-                        </li>
-                        <li>Offer downloadable PDFs and files</li>
-                      </ul>
-                      <a href="#" class="btn btn-primary"
-                        >Ready, Set, Pro <i class="fas fa-arrow-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="assets/images/pro-features-img-0001.png" alt="" />
-                  </div>
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <div class="navbar-nav d-lg-none">
+                  <a [routerLink]="['']" class="nav-item nav-link">Home</a>
+                 <a href="https://Over50Talks.site/" class="nav-item nav-link">Over50talks</a>
+                  <a href="https://o50tweets.site/" class="nav-item nav-link">Over50tweets</a>
+                  <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
+                  <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
+                  <a [routerLink]="['/pro']" class="nav-item nav-link">Podcast</a>
+                  <a href="https://upmradio.site" class="nav-item nav-link">Radio Station</a>
+                  <a [routerLink]="['/ci']" class="nav-item nav-link">Card Feature</a>
+                  <a [routerLink]="['/package']" class="nav-item nav-link">View Services</a>
+                  <a [routerLink]="['/ai']" class="nav-item nav-link">Additional Services</a>
+                   
                 </div>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="capture-contacts"
-                role="tabpanel"
-                aria-labelledby="capture-contacts-tab"
-                tabindex="0"
-              >
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <div class="pro-features-tab-text">
-                      <span class="icon"
-                        ><i class="fas fa-camera-retro"></i
-                      ></span>
-                      <h3>Instant Contact Capture</h3>
-                      <ul>
-                        <li>Save business cards with a single scan</li>
-                        <li>Collect payment and sureys</li>
-                        <li>Popular CRM integration options</li>
-                        <li>Redirect page to any URL</li>
-                      </ul>
-                      <a href="#" class="btn btn-primary"
-                        >Ready, Set, Pro <i class="fas fa-arrow-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="assets/images/pro-features-img-0002.png" alt="" />
-                  </div>
+                <div class="d-flex m-3 ms-auto">
+                    <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">UMYO</p>
+                    <button class="btn-search btn border border-white btn-md-square rounded-circle  me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-white"></i></button>
+                    <a href="#" class="position-relative me-4 my-auto">
+                        <i class="fa fa-shopping-cart text-white fa-2x"></i>
+                        
+                    </a>
+                    <a href="#" class="my-auto">
+                        <button class="btn btn-primary bg-white text-dark border-0 p-2">Get Started</button>
+                    </a>
                 </div>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="advanced-analytics"
-                role="tabpanel"
-                aria-labelledby="advanced-analytics-tab"
-                tabindex="0"
-              >
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <div class="pro-features-tab-text">
-                      <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                      <h3>Advanced Analytics</h3>
-                      <ul>
-                        <li>Real-time insights across Linq Page</li>
-                        <li>Click-level analytics for detailed results</li>
-                        <li>Never miss a thing with activity history</li>
-                      </ul>
-                      <a href="#" class="btn btn-primary"
-                        >Ready, Set, Pro <i class="fas fa-arrow-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="assets/images/pro-features-img-0003.png" alt="" />
-                  </div>
-                </div>
-              </div>
             </div>
+        </nav>
+<nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+<div class="container-fluid p-0 ">
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mb-2 mb-lg-0">
+
+
+  <li class="nav-item">
+    <a [routerLink]="['']" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+    <a href="https://over50talks.site/" class="nav-link">Over50talks</a>
+    </li>
+    <li class="nav-item">
+    <a href="https://o50tweets.site/" class="nav-link">Over50tweets</a>
+    </li>
+    <li class="nav-item">
+    <a href="https://umyoappt.site/" class="nav-link">Booking</a>
+    </li>
+    <li class="nav-item">
+    <a href="https://umyoevents.site/" class="nav-link">Events</a>
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['/pro']" class=" nav-link">Podcast</a>
+    </li>
+    <li class="nav-item">
+    <a href="https://upmradio.site" class=" nav-link">Radio Station</a> 
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['/cf']" class=" nav-link">Card Feature</a> 
+    </li>
+    <li class="nav-item">
+    <a [routerLink]="['/package']" class=" nav-link">View Services</a> 
+    </li>
+       
+    <li class="nav-item">
+    <a [routerLink]="['/ai']" class=" nav-link">Additional Services</a>
+    </li>              
+                    
+                   
+</ul>
+</div>
+</div>
+</nav>
+    </div>
+</div>
+<!-- Navbar End -->
+<section id="mycard">
+<div class="container">
+<div class="row justify-content-center mt-5">
+ 
+  <div class="col-md-10 mb-4">
+ <a href="https://umyobooks.site" class="go">
+    <div class="subcard">
+        <div class="card"><img class="card__img" src="assets/img/Transparency Over 50 Podcast.jpg">
+                <div class="card__content text-center">
+                  <h1 class="card__header">Transparency over 50 Podcast</h1>
+                  <h4>Transparency over 50 Podcast</h4>
+                <p class="card__text">The picture of me and Kreg should go on this tab</p>
+                <p class="card__text">Co-host by Kreg and Tammie </p>
+                <p class="card__text">Live every Thursday, please join</p>
+                  <!-- <button class="card__btn">Explore <span>→</span></button> -->
+                </div>
+              </div>
+    
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="going-pro-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mb-0 pb-0">
-        <h2 class="section-title-center">Going Pro Pays Off</h2>
-        <p class="hero-para">
-          Get 40% off your next Linq Store order when you start an annual plan.
-        </p>
-        <a href="#" class="btn btn-primary">Upgrade to Pro</a>
-        <div class="clearfix my-5"></div>
-        <img src="assets/images/going-pro-section-img.jpg" alt="..." />
-      </div>
-    </div>
-  </div>
-</section>
-<section class="every-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mb-0 pb-0">
-        <div class="section-title-center">
-          <h4><i class="fas fa-user-plus mr-4"></i> Who is UMYO Pro?</h4>
-          <h2>Going Pro Pays Off</h2>
-        </div>
-        <p class="para">
-          Whether you’re a creator, a gamer, a founder, or still figuring it out
-          –<br />
-          rise to the (pro)ccasion along with 200,000+ successful users.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 colz col-one">
-        <div>
-          <div class="img-container one">
-            <img src="assets/images/every-section-img-001.svg" alt="" />
-            <h4>/SamCoudle</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">Real estte agent</a>
-        </div>
-      </div>
-      <div class="col-lg-3 colz col-two">
-        <div class="">
-          <div class="img-container two">
-            <img src="assets/images/every-section-img-002.jpg" alt="" />
-            <h4>/PotatGaming</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">Twitch Streamer</a>
-          <div class="img-container three">
-            <img src="assets/images/every-section-img-003.jpg" alt="" />
-            <h4>/Obliviamedicalr</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">Prdcast Channel</a>
-        </div>
-      </div>
-      <div class="col-lg-3 colz col-three">
-        <div>
-          <div class="img-container four">
-            <img src="assets/images/every-section-img-004.jpg" alt="" />
-            <h4>/RandallPorter</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">Fashion Influencer</a>
-        </div>
-      </div>
-      <div class="col-lg-3 colz col-four">
-        <div>
-          <div class="img-container five">
-            <img src="assets/images/every-section-img-005.jpg" alt="" />
-            <h4>/HannahTice</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">Real estate agent</a>
-          <div class="img-container six">
-            <img src="assets/images/every-section-img-005.svg" alt="" />
-            <h4>/EthanMartin</h4>
-          </div>
-          <a href="#" class="btn btn-transparent">photographer</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="features-compare-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-0 pb-0">
-        <h2 class="section-title-center">Going Pro Pays Off</h2>
-        <p class="hero-para">
-          Get 40% off your next Linq Store order when you start an annual plan.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="table-responsive compare-packages">
-          <table class="table table-bordered bg-light">
-            <thead>
-              <tr>
-                <th width="50">Features</th>
-                <th width="14%" class="text-center">
-                  Basic B Package
-                  <p>10k monthly</p>
-                  <!-- <img src="assets/images/PRO-1-.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Custom B Package
-                  <p>5k monthly</p>
-                  <!-- <img src="assets/images/free-profile.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Premium B Package
-                  <p>3k monthly</p>
-                  <!-- <img src="assets/images/PRO-1-.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Bronze B Package
-                  <p>1k monthly</p>
-                  <!-- <img src="assets/images/free-profile.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Platinum B Package
-                  <p>$500</p>
-                  <!-- <img src="assets/images/free-profile.png" class="comp-pack-img" alt=""> -->
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Uchatyes.com</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Standing Kiosk</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Floor Kiosk</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Sports Mag</td>
-                <td><i class="fas fa-check"></i></td>
-                <td>Ad</td>
-                <td>Logo</td>
-                <td>Virtual Card</td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Coupon Kiosk</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Commercial</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>EPK</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Google Ads</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>SEO</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>SMS Marketing</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Unlimited Cards</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Email Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Sponsor Athlete</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>MP3 Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Virtual Website</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Marketing Manager</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Campaign Marketing</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Social Media Influencer</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Youth Social Media Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Full Platforms Access & Features</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Community To Business Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 my-3">
-        <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="features-compare-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-0 pb-0">
-        <h2 class="section-title-center">Small Business Packages</h2>
-        <p class="hero-para">
-          Umyo Community and Small Business Accountability Packages.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="table-responsive compare-packages">
-          <table class="table table-bordered bg-light">
-            <thead>
-              <tr>
-                <th width="50">Features</th>
-                <th width="14%" class="text-center">
-                  Small Biz Package
-                  <p>$109 - $299 monthly</p>
-                  <!-- <img src="assets/images/PRO-1-.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Starter Biz Package
-                  <p>$49 - $109 monthly</p>
-                  <!-- <img src="assets/images/free-profile.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Accountability Package
-                  <p>$5.99 - $19.99 monthly</p>
-                  <!-- <img src="assets/images/PRO-1-.png" class="comp-pack-img" alt=""> -->
-                </th>
-                <th width="14%" class="text-center">
-                  Free Package
-                  <p>Free</p>
-                  <!-- <img src="assets/images/free-profile.png" class="comp-pack-img" alt=""> -->
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Business Cards</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Accountability Cards</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Coupon Kiosk</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Unlimited Cards</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>B2B Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Email Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>MP3 Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Commercial Contests</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Additional Platforms Access</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Community To Business Branding</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-              <tr>
-                <td>Networking Platforms</td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-                <td><i class="fas fa-check"></i></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 my-3">
-        <a href="#cto" class="cto-link">Book a meeting to learn more →</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="link-for-teams-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <img src="assets/images/linq_pro_phone_card.png" alt="" />
-      </div>
-      <div class="col-lg-6">
-        <h2>Linq for Teams</h2>
-        <p>
-          Give your whole team Pro features + advanced analytics, contact
-          sharing, and other features only available with Teams
-        </p>
-        <a href="#" class="btn btn-primary">Linq for Teams</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-white-50 footer">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="d-flex pt-3">
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            class="btn btn-outline-secondary btn-md-square rounded-circle"
-            href=""
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6">
-        <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link" href="">Contact us</a>
-          <a class="btn-link" href="">Privacy Policy</a>
-          <a class="btn-link" href="">Refund Policy</a>
-          <a class="btn-link" href="">Terms Of Service</a>
-          <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">Data Processing Addendum</a>
-          <a class="btn-link" href="">Careers</a>
-          <a class="btn-link" href="">Security & Trust Report</a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="d-flex flex-column text-start footer-item">
-          <a class="btn-link" href="">UMYO Store</a>
-          <a class="btn-link" href="">Industries</a>
-          <a class="btn-link" href="">UMYO for Teams</a>
-          <a class="btn-link" href="">UMYO Pro</a>
-          <a class="btn-link" href="">UMYO Profile</a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-item">
-          <h4 class="text-light mb-3">LET'S CONNECT</h4>
-          <p class="mb-4">
-            Subscribe to stay up to date on all the latest UMYO features,
-            products, stories, and more. You can also contact us at
-            contact@umyo.com.
-          </p>
-          <div class="position-relative mx-auto">
-            <input
-              class="form-control border-0 py-2 w-100"
-              type="text"
-              placeholder="Enter Your Email"
-            />
-            <button
-              type="submit"
-              class="btn btn-info border-0 border-secondary position-absolute py-2 text-white"
-              style="top: 0; right: 0"
-            >
-              Sent
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 text-center text-md-start my-5 mb-md-0">
-      <p class="text-white text-center">
-        <a href="#" style="text-decoration: none; color: white"
-          ><i class="fas fa-copyright text-light me-2"></i> 2023 UMYO</a
-        >, All right reserved.
-      </p>
-    </div>
+ </a>
   </div>
 </div>
-<!-- Footer End -->
+</div>
+</section>
 
-<!-- Back to Top -->
-<a
-  href="#"
-  class="btn btn-dark border-3 border-white rounded-circle back-to-top"
-  ><i class="fa fa-arrow-up"></i
-></a>
+
+<!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center">
+                <div class="input-group w-75 mx-auto d-flex">
+                    <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Search End -->
+
+
+<!-- Hero Start -->
+
+    </section>
+    <!-- Featurs Section End -->
+

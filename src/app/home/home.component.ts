@@ -49,14 +49,14 @@ export class HomeComponent implements AfterViewInit {
 
 
 
-authorType:any
-bookType:any
-writerType:any
+specialityType:any
+location:any
+
 gender:any
 state:any
 race:any
 businessType:any
-businessState:any
+
 
   ageType: any = []
   selectedSport: any
@@ -78,14 +78,14 @@ businessState:any
     this.dropdownService.getDropdownOptions().subscribe(data => {
      
 
-this.authorType=data.authorType
-this.bookType=data.bookType
-this.writerType=data.writerType
+this.specialityType=data.specialityType
+this.location=data.location
+
 this.gender=data.gender
 this.state=data.state
 this.race=data.race
 this.businessType=data.businessType
-this.businessState=data.businessState
+
     });
 
 
@@ -485,11 +485,9 @@ this.businessState=data.businessState
        name : this.form2.get('selectedName').value,
        race : this.form2.get('selectedRace').value,
        business_type : this.form2.get('selectedBussniesType').value,
-       business_city : this.form2.get('selectedBussniesCity').value,
-       business_state : this.form2.get('selectedBussniesState').value,
-       author : this.form2.get('selectedTypeOfAuthors').value,
-       book : this.form2.get('selectedBookType').value,
-       writer : this.form2.get('selectedTypeOfWriters').value,
+       location : this.form2.get('selectedLocation').value,
+       speciality_Type : this.form2.get('selectedspecialityType').value,
+      
 
                
        
@@ -697,7 +695,7 @@ this.businessState=data.businessState
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoauthor.site/'
+                window.location.href='https://prestigiousideas.com/'
             }
           );
         }
@@ -726,17 +724,15 @@ this.businessState=data.businessState
         
         selectedName: [''],
         selectedCity: [''],
-        selectedTypeOfAuthors:[''],
-        selectedBookType:[''],
-        selectedTypeOfWriters:[''],
+       
+       
         selectedStateType: [''],
         selectedGender:[''],
         selectedRace: [''],
         selectedBussniesType:[''],
-        selectedBussniesCity:[''],
-        selectedBussniesState:['']
-        
-     
+  
+        selectedspecialityType:[''],
+        selectedLocation:[''],
         
         
 
@@ -750,20 +746,10 @@ this.businessState=data.businessState
         registerPhone: ['', Validators.required],
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
-        
-        registerGenderType: ['', Validators.required],
-
-        
-        
-        
-        registerTypeOfAuthors: ['', Validators.required],
-        registerBookType: ['', Validators.required],
-        registerTypeOfWriters: ['', Validators.required],
-        
-        
+         registerGenderType: ['', Validators.required],
+         registerLocation: ['', Validators.required],
+        registerSpecialityType: ['', Validators.required],
         registerBusiness: ['', Validators.required],
-        registerBussniesCity: ['', Validators.required],
-        registerBussniesState: ['', Validators.required],
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })

@@ -66,6 +66,7 @@ const routes: Routes = [
   { path: 'cf', component: CfComponent },
   { path: 'ai', component: AiComponent },
   { path: 'package', component: PackageComponent },
+  { path: 'pro', component: ProComponent },
 
   // Protected routes for authenticated users
   { path: 'cards', component: CardsComponent, canActivate: [AuthGuard] },

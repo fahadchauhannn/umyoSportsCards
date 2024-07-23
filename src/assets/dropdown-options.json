@@ -270,58 +270,14 @@
     "Other"
     
   ],
-
-
-
-  "authorType": [
-    "Copywriter",
-    "Writers",
-    "Journalists",
-    "Novelist",
-    "Professional Writers",
-    "Screenwriter",
-    "Journalist",
-    "Lyricist",
-    "Blogger",
-    "Columnist",
-    "Epic Writer",
-    "Biographer",
-    "Playwright",
-    "Poet",
-    "Songwriter",
-    "Short Story",
-    "Business writers"
-  ],
-  "writerType": [
-    "Literary Genre",
-    "Drama",
-    "Fable",
-    "Fairytale",
-    "Fantasy",
-    "Fiction",
-    "Fiction in verse",
-    "Folklore",
-    "Historical Fiction",
-    "Horror",
-    "Humor",
-    "Legend",
-    "Poet",
-    "Mystery",
-    "Mythology",
-    "Realistic Fiction",
-    "Non Fiction",
-    "Short Story Tale",
-    "Audio",
-    "Audio /Video/Images",
-    "Biography /Autobiography",
-    "Essay",
-    "Narrative NonFiction",
-    "Non Fiction",
-    "Speech"
-  ],
-  "bookType": [
-    "Fiction",
-    "Non Fiction"
+  "specialityType": [
+    "Male",
+    "Female",
+    "Other"
   ]
+
+
+
+ 
   }
   

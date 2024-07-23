@@ -107,24 +107,14 @@ if (expireInValue.includes("year")) {
               location: form3.get('registerLocationType')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
-              truckType: form3.get('registerTypeOfTrucks')?.value,
-              truckLoad: form3.get('registerTruckLoads')?.value,
-              commonCarrier: form3.get('registerCommonCarrier')?.value,
-              truckService: form3.get('registerTruckService')?.value,
-
-              division: form3.get('registerDivision')?.value,
-      position: form3.get('registerPosition')?.value,
-      team: form3.get('registerTeam')?.value,
-      year: form3.get('registerYear')?.value,
-      trophy: form3.get('registerTrophy')?.value,
-      honor: form3.get('registerHonor')?.value,
 
 
-      author: form3.get('registerTypeOfAuthors')?.value,
-      book: form3.get('registerBookType')?.value,
-      writer: form3.get('registerTypeOfWriters')?.value,
-      business_city: form3.get('registerBussniesCity')?.value,
-      business_state: form3.get('registerBussniesState')?.value,
+              speciality_Type: form3.get('registerSpecialityType')?.value,
+             
+
+      
+
+      
       
 
 
@@ -255,6 +245,10 @@ if (expireInValue.includes("year")) {
 
 
 
+      speciality_Type: form3.get('registerSpecialityType')?.value,
+             
+
+      
       
 
 
@@ -379,6 +373,10 @@ if (expireInValue.includes("year")) {
       writer: form3.get('registerTypeOfWriters')?.value,
       business_city: form3.get('registerBussniesCity')?.value,
       business_state: form3.get('registerBussniesState')?.value,
+      
+      speciality_Type: form3.get('registerSpecialityType')?.value,
+             
+
       
       
 
