@@ -841,13 +841,13 @@
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerLocation')?.touched ||
-                              !form3.get('registerLocation')?.valid) &&
+                            (!form3.get('registerLocationType')?.touched ||
+                              !form3.get('registerLocationType')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerLocation"
+                        formControlName="registerLocationType"
                         class="form-select"
                         aria-label="Default select example"
                       >

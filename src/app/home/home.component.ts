@@ -747,7 +747,7 @@ this.businessType=data.businessType
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
          registerGenderType: ['', Validators.required],
-         registerLocation: ['', Validators.required],
+         registerLocationType: ['', Validators.required],
         registerSpecialityType: ['', Validators.required],
         registerBusiness: ['', Validators.required],
         registerStateType: ['', Validators.required],
