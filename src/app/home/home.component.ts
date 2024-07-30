@@ -62,6 +62,7 @@ export class HomeComponent implements AfterViewInit {
   paypalMessage:any;
 
   medicalType:any
+  specialityType:any
 location:any
 state:any
 race:any
@@ -72,7 +73,8 @@ gender:any
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.medicalType = data.medicalType;
+      this.businessType = data.businessType;
+      this.specialityType = data.specialityType;
       this.location = data.location;
       this.state = data.state;
       this.gender = data.gender;
@@ -480,9 +482,11 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       medical : this.form2.get('selectedMedical').value,
+       speciality : this.form2.get('selectedSpecialityType').value,
+       business_type : this.form2.get('selectedBusinessType').value,
 
-       
+
+     
        
        }
      
@@ -690,7 +694,7 @@ gender:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyomedical.site/'
+                window.location.href='https://umyonegocio.site/'
             }
           );
         }
@@ -721,10 +725,12 @@ gender:any
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
-        selectedMedical: [''],
+        selectedBusinessType: [''],
+        selectedSpecialityType: [''],
         selectedLocation:[''],
-        selectedGender:['']
-     
+        selectedGender:[''],
+       
+        
         
         
 
@@ -740,9 +746,10 @@ gender:any
         registerRaceType: ['', Validators.required],
         registerLocation: ['', Validators.required],
         registerGenderType: ['', Validators.required],
+        registerBusinessType: ['', Validators.required],
 
         
-        registerMedical: ['', Validators.required],
+        registerSpecialityType: ['', Validators.required],
         
 
 

@@ -122,7 +122,8 @@ if (expireInValue.includes("year")) {
                             
         
         
-        
+      speciality:form3.get('registerSpecialityType')?.value,
+      
               reffered_from: form3.get('registerReferralCode').value,
 
               
@@ -214,7 +215,8 @@ if (expireInValue.includes("year")) {
       honor: form3.get('registerHonor')?.value,
 
 
-
+      speciality:form3.get('registerSpecialityType')?.value,
+      
 
 
       
@@ -342,7 +344,7 @@ if (expireInValue.includes("year")) {
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
 
-
+          speciality:form3.get('registerSpecialityType')?.value,
       
 
 });

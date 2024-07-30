@@ -567,7 +567,7 @@ export class ApiService {
   }
 
   searchCard(payload:any): Observable<any> {
-    const url = baseUrl + `get-search-card-by-dropdown-medical`;
+    const url = baseUrl + `get-search-card-by-dropdown-hispanics`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer your-auth-token',

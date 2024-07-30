@@ -471,7 +471,10 @@ font-weight: 400;
     margin-left: 4px;
   }
   
-
+  .nav-item{
+    white-space: nowrap;
+  }
+  
   .footer_widget img{
     width: auto!important;
     height: 230px;

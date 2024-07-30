@@ -17,6 +17,10 @@
 .b ul li{
     color: #3D3B40;
 }
+.nav-item{
+    white-space: nowrap;
+  }
+  
 .box2{
     background: #EEE7DA;
 }

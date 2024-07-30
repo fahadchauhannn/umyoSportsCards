@@ -844,6 +844,10 @@ a.cto-link:hover {
   align-items: flex-start;
 }
 
+.nav-item{
+  white-space: nowrap;
+}
+
 .business-card-section .tabs-wrapper .nav-link {
   border: 2px solid #a4abc0;
   display: block;
