@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import * as QRCode from 'qrcode-generator';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -47,7 +48,8 @@ export class Template12Component implements OnChanges {
 
 
 
-  
+  qrCodeImage: SafeResourceUrl | null = null; // Variable to hold the QR code image
+
 
 
    sanitizedUrlsCache: Map<string, SafeResourceUrl> = new Map<string, SafeResourceUrl>();
@@ -61,6 +63,25 @@ export class Template12Component implements OnChanges {
     
   }
 
+
+  ngOnInit(): void {
+    this.generateQRCode();
+  }
+
+
+  generateQRCode() {
+    const url = window.location.href; // Get the current URL
+    const qr = QRCode(0, 'L'); // Generate QR code with low error correction level
+    qr.addData(url);
+    qr.make();
+    const qrImageTag = qr.createImgTag(5); // Create QR code image tag with a scale of 5
+
+    // Sanitize the image tag and store it in qrCodeImage
+    const div = document.createElement('div');
+    div.innerHTML = qrImageTag;
+    const img = div.firstChild as HTMLImageElement;
+    this.qrCodeImage = this.sanitizer.bypassSecurityTrustResourceUrl(img.src);
+  }
 
 
   // productImages2: string[] = ['assets/images/app-devices.jpg','assets/images/app-devices.jpg','assets/images/app-devices.jpg'];
@@ -159,12 +180,34 @@ return ""
       return sanitizedUrl;
     }
   }
+ 
 
    // Dailymotion functions
    convertDailymotionToEmbeddedFormat(url: string): string {
     const videoId = this.extractDailymotionVideoId(url);
     return videoId ? `https://www.dailymotion.com/embed/video/${videoId}` : '';
   }
+
+  extractDailymotionVideoId(url: string): string {
+    const dailymotionRegex = /https:\/\/dai\.ly\/([a-zA-Z0-9]+)/;
+    const match = url.match(dailymotionRegex);
+    return match && match[1] ? match[1] : '';
+  }
+
+  sanitizeDailymotionUrl(url: string): SafeResourceUrl {
+    const formattedUrl = this.convertDailymotionToEmbeddedFormat(url);
+    if(formattedUrl==""){
+      return ""
+    }
+    if (this.sanitizedUrlsCache.has(formattedUrl)) {
+      return this.sanitizedUrlsCache.get(formattedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formattedUrl);
+      this.sanitizedUrlsCache.set(formattedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
+
 
   formatVimeoUrl(url: string): string {
     const match = url.match(/vimeo\.com\/(\d+)/);
@@ -179,26 +222,6 @@ return ""
     const formattedUrl = url
     if (formattedUrl === '') {
       return '';
-    }
-    if (this.sanitizedUrlsCache.has(formattedUrl)) {
-      return this.sanitizedUrlsCache.get(formattedUrl)!;
-    } else {
-      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formattedUrl);
-      this.sanitizedUrlsCache.set(formattedUrl, sanitizedUrl);
-      return sanitizedUrl;
-    }
-  }
-
-  extractDailymotionVideoId(url: string): string {
-    const dailymotionRegex = /https:\/\/dai\.ly\/([a-zA-Z0-9]+)/;
-    const match = url.match(dailymotionRegex);
-    return match && match[1] ? match[1] : '';
-  }
-
-  sanitizeDailymotionUrl(url: string): SafeResourceUrl {
-    const formattedUrl = this.convertDailymotionToEmbeddedFormat(url);
-    if(formattedUrl==""){
-      return ""
     }
     if (this.sanitizedUrlsCache.has(formattedUrl)) {
       return this.sanitizedUrlsCache.get(formattedUrl)!;
