@@ -694,7 +694,7 @@ gender:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoespanol.site/'
+                window.location.href='https://umyonightlife.site/'
             }
           );
         }
