@@ -238,7 +238,7 @@ ul.nav.nav-pills {
 }
 .footer {
     --bs-bg-opacity: 1;
-    background-color: #2F3D7E!important;
+    /* background-color: #2F3D7E!important; */
     height: 80vh;
 }
 .footer .form-control {
@@ -482,7 +482,7 @@ ul.nav.nav-pills {
 }
 #logo-slider {
 /*    background: #030F2F url(/cdn/shop/files/bg-globe.png?v=1678133787);*/
-  background: #2F3D7E;
+  /* background: #2F3D7E; */
     display: grid;
     align-content: center;
     overflow: hidden;

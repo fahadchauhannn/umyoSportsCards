@@ -1,71 +1,31 @@
-<!-- Navbar start -->
-<section id="header" style="background: #45474B !important">
-  <div class="overlay"></div>
-  <div class="container-fluid">
-    <div class="container px-0">
-      <nav
-        class="navbar navbar-expand-xl"
-        style="border-bottom: 2px solid white"
-      >
-        <a [routerLink]="['']" class="navbar-brand">
-          <img
-            src="assets/religions/logo.png" class="img-fluid rounded-circle"
-            style="width: auto; height: 120px"
-          />
-          <!-- <img src="../proliving/pro_liv.jpeg" class="img-fluid rounded-circle" style="width:4rem; height:4rem;"> -->
-        </a>
-        <button
-          class="navbar-toggler py-2 px-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="fa fa-bars text-primary"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav d-lg-none">
-            <a [routerLink]="['']" class="nav-item nav-link">Home</a>
-            <a href="https://religiontalks.site/" class="nav-item nav-link"
-              >Religions Talks</a
-            >
-            <a href="https://UReligionTalk.site" class="nav-item nav-link"
-              >Religions Tweets</a
-            >
-            <a href="https://umyoappt.site/" class="nav-item nav-link"
-              >Booking</a
-            >
-            <a href="https://umyoevents.site/" class="nav-item nav-link"
-              >Events</a
-            >
-            <a href="https://live.umyoconvo.site/" class="nav-item nav-link"
-              >Podcast</a
-            >
-            <a href="https://uchatyes.com/" class="nav-item nav-link">ChaGPT</a>
-            <a href="https://UPMRadio.site/" class="nav-link- nav-item"
-            >Radio</a
-          >
+
+
+        <!-- Navbar start -->
+        <section id="header">
+          <div class="overlay"></div>
+      <div class="container-fluid">
           
-            <a href="https://FaithPatron.site" class="nav-link nav-item"
-              >FaithPatron</a
-            >
-          
-          
-            <a href="https://GraceMarket.site" class="nav-link nav-item"
-              >GraceMarket</a
-            >
-          
-          
-            <a href="https://FaithLearn.site" class="nav-link nav-item"
-              >FaithLearn</a
-            >
-          
-          
-            <a href="https://FaithConnect.site" class="nav-link nav-item"
-              >FaithConnect</a
-            >
-          
-            <a [routerLink]="['/cf']" class="nav-item nav-link"
+          <div class="container px-0">
+              <nav class="navbar  navbar-expand-xl" style="border-bottom:2px solid white;">
+                  <a [routerLink]="['']" class="navbar-brand">
+                    
+                      <!-- <h1 class="text-white display-6">Medical HUB</h1> -->
+                      <img src="assets/Home page Images/logo2-removebg-preview.png" class="img-fluid rounded" style="width: auto;height: 100px;">
+                  </a>
+                  <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                      <span class="fa fa-bars text-primary"></span>
+                  </button>
+                  <div class="collapse navbar-collapse " id="navbarCollapse">
+                      <div class="navbar-nav d-lg-none">
+                         
+                         <a href="https://Over50Talks.site/" class="nav-item nav-link">UnionsTalks.site</a>
+                          <a href="https://050tweets.sit/" class="nav-item nav-link">UnionsTweet.site</a>
+                          <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
+                          <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
+                          <a href="https://live.umyoconvo.site" class="nav-item nav-link">Podcast</a>
+                          <a href="https://upmradio.site" class="nav-item nav-link">Radio</a>
+                          <a [routerLink]="['/cf']" class="nav-item nav-link"
               >Card Features</a
             >
             <a [routerLink]="['/package']" class="nav-item nav-link"
@@ -74,145 +34,99 @@
             <a [routerLink]="['/ai']" class="nav-item nav-link"
               >Additional Features</a
             >
-          </div>
-          <div class="d-flex m-3 ms-auto">
-            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">Additional Features</p> -->
-            <button
-              class="btn-search btn border border-white btn-md-square rounded-circle me-4"
-              data-bs-toggle="modal"
-              data-bs-target="#searchModal"
-            >
-              <i class="fas fa-search text-white"></i>
-            </button>
-            <a href="#" class="position-relative me-4 my-auto">
-              <i class="fa fa-shopping-cart text-white fa-2x"></i>
-            </a>
-            <a href="#" class="my-auto">
-              <button class="btn btn-primary bg-white text-dark border-0 p-2">
-                Get Started
-              </button>
-            </a>
-          </div>
-        </div>
-      </nav>
-      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
-        <div class="container-fluid p-0">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['']">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://religiontalks.site/" class="nav-link"
-                  >Religions Talks</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://UReligionTalk.site" class="nav-link"
-                  >Religions Tweets</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://umyoappt.site/" class="nav-link">Booking</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://umyoevents.site/" class="nav-link">Events</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://live.umyoconvo.site/" class="nav-link"
-                  >Podcast</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://uchatyes.com/" class="nav-link">ChaGPT</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://UPMRadio.site/" class="nav-link"
-                  >Radio</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://FaithPatron.site" class="nav-link"
-                  >FaithPatron</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://GraceMarket.site" class="nav-link"
-                  >GraceMarket</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://FaithLearn.site" class="nav-link"
-                  >FaithLearn</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="https://FaithConnect.site" class="nav-link"
-                  >FaithConnect</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/package']"
-                  >View Services</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/ai']"
-                  >Additional Features</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+                      </div>
+                      <div class="d-flex m-3 ms-auto">
+                          <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">UMYO</p>
+                          <button class="btn-search btn border border-white btn-md-square rounded-circle  me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-white"></i></button>
+                          <a href="#" class="position-relative me-4 my-auto">
+                              <i class="fa fa-shopping-cart text-white fa-2x"></i>
+                              
+                          </a>
+                          <a href="#" class="my-auto">
+                              <button class="btn btn-primary bg-white text-dark border-0 p-2">Get Started</button>
+                          </a>
+                      </div>
+                  </div>
+              </nav>
+<nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+<div class="container-fluid p-0 ">
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mb-2 pb-3 mb-lg-0">
+
+      <li class="nav-item">
+        <a href="https://Over50Talks.site/" class="nav-item nav-link">UnionsTalks.site</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="https://050tweets.sit/" class="nav-item nav-link">UnionsTweet.site</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="https://live.umyoconvo.site" class="nav-item nav-link">Podcast</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="https://upmradio.site" class="nav-item nav-link">Radio</a>
+                                               
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cf']">Card Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/package']"
+          >View Services</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/ai']"
+          >Additional Features</a
+        >
+      </li>           
+                          
+                         
+    </ul>
   </div>
-  <!-- Navbar End -->
-
-  <!-- Navbar End -->
-
-  <!-- Modal Search Start -->
-  <div
-    class="modal fade"
-    id="searchModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content rounded-0">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body d-flex align-items-center">
-          <div class="input-group w-75 mx-auto d-flex">
-            <input
-              type="search"
-              class="form-control p-3"
-              placeholder="keywords"
-              aria-describedby="search-icon-1"
-            />
-            <span id="search-icon-1" class="input-group-text p-3"
-              ><i class="fa fa-search"></i
-            ></span>
+</div>
+</nav>
           </div>
-        </div>
+       
       </div>
-    </div>
-  </div>
-  <!-- Modal Search End -->
+      
+      <!-- Navbar End -->
 
-  <!-- Hero Start -->
-</section>
+
+      <!-- Modal Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content rounded-0">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body d-flex align-items-center">
+                      <div class="input-group w-75 mx-auto d-flex">
+                          <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                          <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Modal Search End -->
+
+
+      <!-- Hero Start -->
+     
+          </section>
 
 <!------- tab section end ---------->
 <section id="table-pkg">
@@ -225,7 +139,7 @@
           <div class="bg2">
             <h3 class="mt-4 small">Small <br />Biz Package</h3>
             <div class="line"></div>
-            <p>www.umyoReligions.com</p>
+            <p>www.umyoUnions.com</p>
           </div>
           <div class="th">
             <h6>(109-$299 monthly)</h6>
@@ -399,7 +313,7 @@
           <div class="bg2">
             <h4>Basic <br />Biz Package</h4>
             <div class="line"></div>
-            <p>www.umyoReligions.com</p>
+            <p>www.umyoUnions.com</p>
           </div>
           <div class="th">
             <h6>(10k monthly)</h6>
@@ -678,7 +592,7 @@
           <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
           <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
           <a class="btn-link" href="">Terms of Sales</a>
-          <a class="btn-link" href="">UMYO Religions</a>
+          <a class="btn-link" href="">UMYO Unions</a>
         </div>
       </div>
 
