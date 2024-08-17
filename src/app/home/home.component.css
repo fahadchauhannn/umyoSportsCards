@@ -445,11 +445,15 @@ ul.nav.nav-pills {
 
 /*** Navbar Start ***/
 .navbar .navbar-nav .nav-link {
-  padding: 10px 30px 0 0;
+  padding: 15px 30px 0 0;
   font-size: 19px;
   transition: 0.5s;
   color: white;
   margin-left: 4px;
+}
+
+.navbar-nav{
+  flex-wrap: wrap;
 }
 
 .navbar .navbar-nav .nav-link:hover,
