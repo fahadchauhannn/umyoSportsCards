@@ -402,77 +402,8 @@
                 />
               </div>
 
-              <!-- busnies type -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedRelgionType"
-                >
-                  <option selected value="" disabled>Unions Type</option>
-                  <option *ngFor="let item of relgionType" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- speciality type -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedSpecialityType"
-                >
-                  <option selected value="" disabled>Speciality Type</option>
-                  <option *ngFor="let item of specialityType" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
 
-
-              <!-- location -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedLocation"
-                >
-                  <option selected value="" disabled>Location </option>
-                  <option *ngFor="let item of location" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-
-              <!-- city -->
-              <div class="col-lg-6 mb-4">
-                <input
-                  type="text"
-                  formControlName="selectedCity"
-                  class="form-control"
-                  placeholder="City"
-                />
-              </div>
-
-              <!-- state -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedStateType"
-                >
-                  <option selected value="" disabled>State</option>
-                  <option *ngFor="let item of state" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <h4 class="mb-4 text-white text-center">
-                  I PLEDGE TO REPORT VIOLENT CRIMES
-                </h4>
-              </div>
+              
 
               <!-- race -->
               <div class="col-lg-6 mb-4">
@@ -501,6 +432,150 @@
                   </option>
                 </select>
               </div>
+
+              <div class="col-lg-6">
+                <h4 class="mb-4 text-white text-center">
+                  I PLEDGE TO REPORT VIOLENT CRIMES
+                </h4>
+              </div>
+
+
+              
+              <!-- location -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedLocation"
+                >
+                  <option selected value="" disabled>Location </option>
+                  <option *ngFor="let item of location" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+
+             
+
+              <!-- state -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedStateType"
+                >
+                  <option selected value="" disabled>State</option>
+                  <option *ngFor="let item of state" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+
+               <!-- city -->
+               <div class="col-lg-6 mb-4">
+                <input
+                  type="text"
+                  formControlName="selectedCity"
+                  class="form-control"
+                  placeholder="City"
+                />
+              </div>
+
+
+              <!-- Strategic_Organizing_Center" -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_Strategic_Organizing_Center"
+                >
+                  <option selected value="" disabled>Strategic Organizing Center</option>
+                  <option *ngFor="let item of Strategic_Organizing_Center" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- Largest_Unions -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_Largest_Unions"
+                >
+                  <option selected value="" disabled>Largest Unions</option>
+                  <option *ngFor="let item of Largest_Unions" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- Types -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_Types"
+                >
+                  <option selected value="" disabled>Types</option>
+                  <option *ngFor="let item of Types" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- Independent National -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_Independent_National"
+                >
+                  <option selected value="" disabled>Independent National</option>
+                  <option *ngFor="let item of Independent_National" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- State_and_Local -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_State_and_Local"
+                >
+                  <option selected value="" disabled>State and Local</option>
+                  <option *ngFor="let item of State_and_Local" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- State_and_Local -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_Professional_sports_labor_unions"
+                >
+                  <option selected value="" disabled>Professional sports labor unions</option>
+                  <option *ngFor="let item of Professional_sports_labor_unions" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <!-- State_and_Local -->
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Selected_AFL_CIO"
+                >
+                  <option selected value="" disabled>AFL CIO</option>
+                  <option *ngFor="let item of AFL_CIO" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+
+              
+            
               <div class="col-lg-6 mb-4">
                 <button
                   type="submit"
@@ -842,30 +917,37 @@
                         />
                       </div>
                     </div>
+
+
+                    
+                    
+                    
+                    
+                    
                       <!-- busnies type -->
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Unions Type<sup style="color: red; font-size: 20px"
+                        >Strategic Organizing Center<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerRelgionType')?.touched ||
-                              !form3.get('registerRelgionType')?.valid) &&
+                            (!form3.get('Register_Strategic_Organizing_Center')?.touched ||
+                              !form3.get('Register_Strategic_Organizing_Center')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerRelgionType"
+                        formControlName="Register_Strategic_Organizing_Center"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option *ngFor="let item of relgionType" [value]="item">
+                        <option *ngFor="let item of Strategic_Organizing_Center" [value]="item">
                           {{ item }}
                         </option>
                       </select>
@@ -899,25 +981,25 @@
                     <!-- specilaity type -->
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Speciality Type<sup style="color: red; font-size: 20px">*</sup>
+                        >Largest Unions<sup style="color: red; font-size: 20px">*</sup>
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerSpecialityType')?.touched ||
-                              !form3.get('registerSpecialityType')?.valid) &&
+                            (!form3.get('Register_Largest_Unions')?.touched ||
+                              !form3.get('Register_Largest_Unions')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerSpecialityType"
+                        formControlName="Register_Largest_Unions"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option *ngFor="let item of specialityType" [value]="item">
+                        <option *ngFor="let item of Largest_Unions" [value]="item">
                           {{ item }}
                         </option>
                       </select>
@@ -1031,6 +1113,154 @@
                           Please Select
                         </option>
                         <option *ngFor="let item of race" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <!-- race -->
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Types<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('Register_Types')?.touched ||
+                              !form3.get('Register_Types')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="Register_Types"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of Types" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <!-- race -->
+
+                    
+                    
+  
+                    
+                    
+
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Independent National<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('Register_Independent_National')?.touched ||
+                              !form3.get('Register_Independent_National')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="Register_Independent_National"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of Independent_National" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >State and Local<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('Register_State_and_Local')?.touched ||
+                              !form3.get('Register_State_and_Local')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="Register_State_and_Local"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of State_and_Local" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Professional sports labor unions<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('Register_Professional_sports_labor_unions')?.touched ||
+                              !form3.get('Register_Professional_sports_labor_unions')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="Register_Professional_sports_labor_unions"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of Professional_sports_labor_unions" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+
+
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >AFL CIO<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('Register_AFL_CIO')?.touched ||
+                              !form3.get('Register_AFL_CIO')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="Register_AFL_CIO"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of AFL_CIO" [value]="item">
                           {{ item }}
                         </option>
                       </select>

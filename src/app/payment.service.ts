@@ -123,6 +123,22 @@ if (expireInValue.includes("year")) {
         
         
       speciality:form3.get('registerSpecialityType')?.value,
+
+
+      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
+      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
+      Types:form3.get('Register_Types')?.value,
+      Independent_National:form3.get('Register_Independent_National')?.value,
+      State_and_Local:form3.get('Register_State_and_Local')?.value,
+      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
+      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
+
+
+      
+
+
+   
+      
       
               reffered_from: form3.get('registerReferralCode').value,
 
@@ -218,6 +234,13 @@ if (expireInValue.includes("year")) {
       speciality:form3.get('registerSpecialityType')?.value,
       
 
+      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
+      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
+      Types:form3.get('Register_Types')?.value,
+      Independent_National:form3.get('Register_Independent_National')?.value,
+      State_and_Local:form3.get('Register_State_and_Local')?.value,
+      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
+      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
 
       
               
@@ -329,7 +352,14 @@ if (expireInValue.includes("year")) {
       
       
       
-      
+      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
+      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
+      Types:form3.get('Register_Types')?.value,
+      Independent_National:form3.get('Register_Independent_National')?.value,
+      State_and_Local:form3.get('Register_State_and_Local')?.value,
+      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
+      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
+
       
       
       truckType: form3.get('registerTypeOfTrucks')?.value,

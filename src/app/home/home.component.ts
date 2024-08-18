@@ -68,18 +68,39 @@ location:any
 state:any
 race:any
 gender:any
-
+Strategic_Organizing_Center:any
+Largest_Unions:any
+Types:any
+Independent_National:any
+State_and_Local:any
+Professional_sports_labor_unions:any
+AFL_CIO:any
   
   ngOnInit(): void {
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
       this.relgionType = data.relgionType;
-      this.specialityType = data.specialityType;
+     
       this.location = data.location;
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
+
+
+
+     
+
+
+
+        this.Strategic_Organizing_Center=data.Strategic_Organizing_Center
+this.Largest_Unions=data.Largest_Unions
+this.Types=data.Types
+this.Independent_National=data.Independent_National
+this.State_and_Local=data.State_and_Local
+this.Professional_sports_labor_unions=data.Professional_sports_labor_unions
+this.AFL_CIO=data.AFL_CIO
+
     });
 
 
@@ -483,10 +504,21 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       speciality : this.form2.get('selectedSpecialityType').value,
-       religion : this.form2.get('selectedRelgionType').value,
+       Strategic_Organizing_Center:this.form2.get('Selected_Strategic_Organizing_Center').value,
+       Largest_Unions :this.form2.get('Selected_Largest_Unions').value,
+       Types :this.form2.get('Selected_Types').value,
+       Independent_National:this.form2.get('Selected_Independent_National').value,
+       State_and_Local:this.form2.get('Selected_State_and_Local').value,
+       Professional_sports_labor_unions :this.form2.get('Selected_Professional_sports_labor_unions').value,
+       AFL_CIO:this.form2.get('Selected_AFL_CI').value,
 
-
+       
+       
+       
+       
+       
+       
+       
      
        
        }
@@ -722,16 +754,24 @@ gender:any
         
     
         
-        selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        selectedCity: [''],
-        // selectedBusinessType: [''],
-        selectedSpecialityType: [''],
-        selectedLocation:[''],
         selectedGender:[''],
+        selectedLocation:[''],
+        selectedStateType: [''],
+        selectedCity: [''],
+        Selected_Strategic_Organizing_Center:[''],
+        Selected_Largest_Unions:[''],
+        Selected_Types:[''],
+        Selected_Independent_National:[''],
+        Selected_State_and_Local:[''],
+        Selected_Professional_sports_labor_unions:[''],
+        Selected_AFL_CIO:['']
+
+        
+
+
        
-        selectedRelgionType:['']
         
         
 
@@ -747,10 +787,15 @@ gender:any
         registerRaceType: ['', Validators.required],
         registerLocation: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-        registerRelgionType: ['', Validators.required],
 
-        
-        registerSpecialityType: ['', Validators.required],
+
+        Register_Strategic_Organizing_Center:['',Validators.required],
+        Register_Largest_Unions:['',Validators.required],
+        Register_Types:['',Validators.required],
+        Register_Independent_National:['',Validators.required],
+        Register_State_and_Local:['',Validators.required],
+        Register_Professional_sports_labor_unions:['',Validators.required],
+        Register_AFL_CIO:['',Validators.required],
         
 
 
