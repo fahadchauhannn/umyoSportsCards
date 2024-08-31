@@ -111,6 +111,7 @@ if (expireInValue.includes("year")) {
               truckLoad: form3.get('registerTruckLoads')?.value,
               commonCarrier: form3.get('registerCommonCarrier')?.value,
               truckService: form3.get('registerTruckService')?.value,
+              college: form3.get('registerCollege')?.value,
 
               // year: form3.get('registerTruckService')?.value,
               study: form3.get('registerStudy')?.value,
@@ -222,6 +223,7 @@ if (expireInValue.includes("year")) {
       speciality:form3.get('registerSpecialityType')?.value,
       
 
+      college: form3.get('registerCollege')?.value,
 
       
               
@@ -334,6 +336,7 @@ if (expireInValue.includes("year")) {
       
       
       study: form3.get('registerStudy')?.value,
+      college: form3.get('registerCollege')?.value,
 
       
       

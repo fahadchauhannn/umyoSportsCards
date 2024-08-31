@@ -70,6 +70,7 @@ race:any
 gender:any
 year:any
 study:any
+college:any
 
   
   ngOnInit(): void {
@@ -84,6 +85,7 @@ study:any
       this.race = data.race;
       this.year= data.year;
       this.study = data.study;
+      this.college = data.college;
     });
 
 
@@ -491,6 +493,7 @@ study:any
        religion : this.form2.get('selectedRelgionType').value,
        year : this.form2.get('selectedYear').value,
        study : this.form2.get('selectedStudy').value,
+       college : this.form2.get('selectedCollege').value,
 
 
      
@@ -733,7 +736,8 @@ study:any
        
         selectedRelgionType:[''],
         selectedYear:[''],
-        selectedStudy:['']
+        selectedStudy:[''],
+        selectedCollege:['']
         
 
       });
@@ -755,6 +759,8 @@ study:any
 
         registerYear: ['', Validators.required],
         registerStudy: ['', Validators.required],
+        registerCollege: ['', Validators.required],
+        
         
 
 

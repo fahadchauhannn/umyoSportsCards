@@ -438,10 +438,10 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedYear"
+                  formControlName="selectedCollege"
                 >
-                  <option selected value="" disabled>Year in College</option>
-                  <option *ngFor="let item of year" [value]="item">
+                  <option selected value="" disabled>College / University </option>
+                  <option *ngFor="let item of college" [value]="item">
                     {{ item }}
                   </option>
                 </select>
@@ -973,6 +973,31 @@
                           Please Select
                         </option>
                         <option *ngFor="let item of year" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >College / University<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerCollege')?.touched ||
+                              !form3.get('registerCollege')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerCollege"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of college" [value]="item">
                           {{ item }}
                         </option>
                       </select>
