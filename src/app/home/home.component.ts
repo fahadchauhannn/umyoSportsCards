@@ -44,7 +44,7 @@ export class HomeComponent implements AfterViewInit {
   password: string = ''
   form: FormGroup;
   positionType: any = []
-  businessType: any = []
+  businessType: any
   relgionType:any
   sportType: any = []
   ageType: any = []
@@ -76,7 +76,7 @@ study:any
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.relgionType = data.relgionType;
+      this.businessType = data.businessType;
       this.specialityType = data.specialityType;
       this.location = data.location;
       this.state = data.state;
@@ -563,13 +563,7 @@ study:any
   
   
   
-    getBusniessType() {
-      this.apiService.getBusinessType().subscribe(
-        (response) =>
-          this.businessType = response.Categories
-      )
-    }
-    
+  
   
   
   
