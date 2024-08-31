@@ -401,8 +401,8 @@
                   aria-label="Default select example"
                   formControlName="selectedRelgionType"
                 >
-                  <option selected value="" disabled>Religions Type</option>
-                  <option *ngFor="let item of relgionType" [value]="item">
+                  <option selected value="" disabled>Business Type</option>
+                  <option *ngFor="let item of businessType" [value]="item">
                     {{ item }}
                   </option>
                 </select>
@@ -873,7 +873,7 @@
                       <!-- busnies type -->
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Religions Type<sup style="color: red; font-size: 20px"
+                        >Business Type<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
@@ -893,7 +893,7 @@
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option *ngFor="let item of relgionType" [value]="item">
+                        <option *ngFor="let item of businessType" [value]="item">
                           {{ item }}
                         </option>
                       </select>
