@@ -269,7 +269,7 @@
                 src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               ></iframe>
             </div>
@@ -416,6 +416,42 @@
                 >
                   <option selected value="" disabled>Speciality Type</option>
                   <option *ngFor="let item of specialityType" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedYear"
+                >
+                  <option selected value="" disabled>Year in College</option>
+                  <option *ngFor="let item of year" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedYear"
+                >
+                  <option selected value="" disabled>Year in College</option>
+                  <option *ngFor="let item of year" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedStudy"
+                >
+                  <option selected value="" disabled>Study</option>
+                  <option *ngFor="let item of study" [value]="item">
                     {{ item }}
                   </option>
                 </select>
@@ -910,6 +946,56 @@
                           Please Select
                         </option>
                         <option *ngFor="let item of specialityType" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Year in College<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerYear')?.touched ||
+                              !form3.get('registerYear')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerYear"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of year" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Study<sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerStudy')?.touched ||
+                              !form3.get('registerStudy')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerStudy"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of study" [value]="item">
                           {{ item }}
                         </option>
                       </select>

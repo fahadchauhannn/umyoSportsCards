@@ -68,6 +68,8 @@ location:any
 state:any
 race:any
 gender:any
+year:any
+study:any
 
   
   ngOnInit(): void {
@@ -80,6 +82,8 @@ gender:any
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
+      this.year= data.year;
+      this.study = data.study;
     });
 
 
@@ -485,6 +489,8 @@ gender:any
       
        speciality : this.form2.get('selectedSpecialityType').value,
        religion : this.form2.get('selectedRelgionType').value,
+       year : this.form2.get('selectedYear').value,
+       study : this.form2.get('selectedStudy').value,
 
 
      
@@ -731,8 +737,9 @@ gender:any
         selectedLocation:[''],
         selectedGender:[''],
        
-        selectedRelgionType:['']
-        
+        selectedRelgionType:[''],
+        selectedYear:[''],
+        selectedStudy:['']
         
 
       });
@@ -751,6 +758,9 @@ gender:any
 
         
         registerSpecialityType: ['', Validators.required],
+
+        registerYear: ['', Validators.required],
+        registerStudy: ['', Validators.required],
         
 
 

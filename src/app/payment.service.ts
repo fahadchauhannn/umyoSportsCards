@@ -112,6 +112,9 @@ if (expireInValue.includes("year")) {
               commonCarrier: form3.get('registerCommonCarrier')?.value,
               truckService: form3.get('registerTruckService')?.value,
 
+              // year: form3.get('registerTruckService')?.value,
+              study: form3.get('registerStudy')?.value,
+
               division: form3.get('registerDivision')?.value,
       position: form3.get('registerPosition')?.value,
       team: form3.get('registerTeam')?.value,
@@ -213,6 +216,7 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
+      study: form3.get('registerStudy')?.value,
 
 
       speciality:form3.get('registerSpecialityType')?.value,
@@ -329,7 +333,8 @@ if (expireInValue.includes("year")) {
       
       
       
-      
+      study: form3.get('registerStudy')?.value,
+
       
       
       truckType: form3.get('registerTypeOfTrucks')?.value,
