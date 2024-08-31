@@ -2,17 +2,17 @@
 <section id="header" style="background: #45474B !important">
   <div class="overlay"></div>
   <div class="container-fluid">
-    <div class="container px-0">
+    <div class="">
       <nav
         class="navbar navbar-expand-xl"
-        style="border-bottom: 2px solid white"
+        style="margin-right: 30px;"
       >
         <a [routerLink]="['']" class="navbar-brand">
+          <!-- <h1 class="text-white display-6">LT  HUB</h1> -->
           <img
-            src="assets/religions/logo.png" class="img-fluid rounded-circle"
-            style="width: auto; height: 120px"
+            src="assets/religions/logo.png" class=" "
+            style="width: 150px; height: 150px"
           />
-          <!-- <img src="../proliving/pro_liv.jpeg" class="img-fluid rounded-circle" style="width:4rem; height:4rem;"> -->
         </a>
         <button
           class="navbar-toggler py-2 px-3"
@@ -74,7 +74,9 @@
             >
           </div>
           <div class="d-flex m-3 ms-auto">
-            <!-- <p class="text-white" style="margin: 2px 25px;    font-size: 25px;">Additional Features</p> -->
+            <p class="text-white" style="margin: 2px 25px; font-size: 25px">
+              UMYO
+            </p>
             <button
               class="btn-search btn border border-white btn-md-square rounded-circle me-4"
               data-bs-toggle="modal"
@@ -93,12 +95,14 @@
           </div>
         </div>
       </nav>
-      <nav class="navbar navbar-expand-lg d-lg-block d-none menu-nav2">
+      <nav class=" container navbar navbar-expand-lg d-lg-block d-none menu-nav2"
+      style="border-top: 2px solid white;"
+      >
         <div class="container-fluid p-0">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-5 pb-3 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" [routerLink]="['']">Home</a>
+                <a [routerLink]="['']" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
                 <a href="https://religiontalks.site/" class="nav-link"
@@ -168,8 +172,6 @@
       </nav>
     </div>
   </div>
-  <!-- Navbar End -->
-
   <!-- Navbar End -->
 
   <!-- Modal Search Start -->
