@@ -275,7 +275,7 @@
     </div>
   </div>
   <footer>
-    <img src="../../../../../assets/images/qrcode.jpg" alt="" />
+    <img *ngIf="qrCodeImage" [src]="qrCodeImage" alt="QR Code" />
     <!-- replace with auto generated in production -->
     <div class="clearfix"><br /></div>
   </footer>
