@@ -21,8 +21,8 @@
                         <a [routerLink]="['/']" class="nav-item nav-link"
                         >Home</a
                       >
-                         <a href="" class="nav-item nav-link">Gossip Talk</a>
-                          <a href="" class="nav-item nav-link">Gossip Tweet</a>
+<a href="https://ugossiptalk.site/" class="nav-item nav-link">Gossip Talk</a>
+                          <a href="https://gossiptweet.site/" class="nav-item nav-link">Gossip Tweet</a>
                           <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
                           <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
                           <a href="https://live.umyoconvo.site" class="nav-item nav-link">Podcast</a>
@@ -61,11 +61,11 @@
                          
       </li>
       <li class="nav-item">
-        <a href="" class="nav-item nav-link">Gossip Talk</a>
+        <a href="https://ugossiptalk.site/" class="nav-item nav-link">Gossip Talk</a>
                          
       </li>
       <li class="nav-item">
-        <a href="" class="nav-item nav-link">Gossip Tweet</a>
+        <a href="https://gossiptweet.site/" class="nav-item nav-link">Gossip Tweet</a>
                          
       </li>
       <li class="nav-item">
@@ -156,7 +156,7 @@
             <h1 class="mb-3">Religious Organizations & Their Members Connect
             </h1>
             <p class="mb-5">
-              Unions Connect Presents an Innovative Networking Solution Exclusively for Unions and their Members.
+              Gossip Connect Presents an Innovative Networking Solution Exclusively for Gossip and their Members.
 
 
             </p>
@@ -343,7 +343,7 @@
 
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #697999 !important">
+<section id="header" style="background: #265073 !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
      
@@ -367,7 +367,7 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedMedical"
+                  formControlName="selectedBusinessType"
                 >
                   <option selected value="" disabled>Business TYPE</option>
                   <option *ngFor="let item of businessType" [value]="item">
@@ -500,9 +500,12 @@
               >
               <form [formGroup]="form">
                 <div class="row">
-                  <h1 class="text-center">UMYO For Medical HUB</h1>
+                  <h1 class="text-center">UMYO Gossip
+                  </h1>
                   <p class="text-center">
-                    Register to Connect with Medical HUB
+                    Register to Connect with Your Community
+
+
                   </p>
 
                   <br /><br /><br /><br /><br /><br />
@@ -623,566 +626,374 @@
                 class="container tab-pane"
                 [class.active]="!showLoginTab"
               >
-                <form [formGroup]="form3">
-                  <div class="row justify-content-center">
-                    <h1 class="text-center">UMYO Pro</h1>
-                    <div class="col-md-3 my-5">
-                      <p class="text-center">starting at</p>
-                      <h1 class="text-center">$5/mo</h1>
-                      <p class="text-center">per agent</p>
-                    </div>
-                    <div class="col-md-1 my-5 d-none d-lg-block">
-                      <div class="verticle"></div>
-                    </div>
-                    <div class="col-md-6 my-5">
-                      <p>Includes:</p>
-                      <li>40% off all UMYO products</li>
-                      <li>3 free property listings per agent</li>
-                      <li>Free standard CRM integrations</li>
-                    </div>
-                    <h2 class="mb-3 text-info">Register</h2>
+              <form [formGroup]="form3">
+                <div class="row justify-content-center">
+                  <h1 class="text-center">UMYO Gossip                  </h1>
+                  <div class="col-md-3 my-5">
+                    <p class="text-center">starting at</p>
+                    <h1 class="text-center">$5/mo</h1>
+                    <p class="text-center">per agent</p>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >First Name
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerFirstName"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerFirstName')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Last Name
-                          <sup style="color: red; font-size: 20px">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          formControlName="registerLastName"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerLastName')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Phone Number
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerPhone"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerPhone')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Email
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="email"
-                          formControlName="registerEmail"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerEmail')?.touched ||
-                                !form3.get('registerEmail')?.valid) &&
-                              submitButtonClicked &&
-                              (!form3.valid || form3.hasError('emailMismatch'))
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Confrim Email 
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="email"
-                          formControlName="registerConfirmEmail"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerConfirmEmail')?.touched ||
-                                !form3.get('registerConfirmEmail')?.valid) &&
-                              submitButtonClicked &&
-                              (!form3.valid || form3.hasError('emailMismatch'))
-                          }"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Password<sup style="color: red; font-size: 20px"
-                            >* </sup
-                          ><sup style="color: red; font-size: 14px"
-                            >( Length Should be greater than 6 )</sup
-                          >
-                        </label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          required
-                          formControlName="registerPassword"
-                          [ngClass]="{
-                            'invalid-input':
-                              (!form3.get('registerPassword')?.touched ||
-                                !form3.get('registerPassword')?.valid) &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-
-
-                    
-                    
-                    
-                    
-                    
-                      <!-- busnies type -->
-                    <div class="col-lg-6 mb-4">
+                  <div class="col-md-1 my-5 d-none d-lg-block">
+                    <div class="verticle"></div>
+                  </div>
+                  <div class="col-md-6 my-5">
+                    <p>Includes:</p>
+                    <li>40% off all UMYO products</li>
+                    <li>3 free property listings per agent</li>
+                    <li>Free standard CRM integrations</li>
+                  </div>
+                  <h2 class="mb-3 text-info">Register</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Strategic Organizing Center<sup style="color: red; font-size: 20px"
+                        >Frist Name
+                        <sup style="color: red; font-size: 20px"
                           >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_Strategic_Organizing_Center')?.touched ||
-                              !form3.get('Register_Strategic_Organizing_Center')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        formControlName="registerFirstName"
+                        class="form-control"
                         required
-                        formControlName="Register_Strategic_Organizing_Center"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of Strategic_Organizing_Center" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-
-
-                    <!-- city -->
-                    <div class="col-lg-6 mb-4">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >City
-                          <sup style="color: red; font-size: 20px"
-                            >*</sup
-                          ></label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerCityType"
-                          class="form-control"
-                          required
-                          [ngClass]="{
-                            'invalid-input':
-                              !form3.get('registerCityType')?.touched &&
-                              submitButtonClicked &&
-                              !form3.valid
-                          }"
-                        />
-                      </div>
-                    </div>
-
-                    <!-- specilaity type -->
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Largest Unions<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('Register_Largest_Unions')?.touched ||
-                              !form3.get('Register_Largest_Unions')?.valid) &&
+                            !form3.get('registerFirstName')?.touched &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Last Name
+                        <sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <input
+                        type="text"
+                        formControlName="registerLastName"
+                        class="form-control"
                         required
-                        formControlName="Register_Largest_Unions"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of Largest_Unions" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-
-                    <!-- state -->
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >State	<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerStateType')?.touched ||
-                              !form3.get('registerStateType')?.valid) &&
+                            !form3.get('registerLastName')?.touched &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
-                        required
-                        formControlName="registerStateType"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of state" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
+                      />
                     </div>
-
-
-                    <!-- gender -->
-                    <div class="col-lg-6 mb-4">
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
                       <label style="font-size: 20px; font-weight: 600"
-                        >Gender	<sup style="color: red; font-size: 20px">*</sup>
-                      </label>
-                      <select
-                        formControlName="registerGenderType"
-                        class="form-select"
-                        aria-label="Default select example"
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerGenderType')?.touched ||
-                              !form3.get('registerGenderType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of gender" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-
-
-
-                    <!-- location -->
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Location<sup style="color: red; font-size: 20px"
+                        >Phone Number
+                        <sup style="color: red; font-size: 20px"
                           >*</sup
-                        >
-                      </label>
-                      <select
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        formControlName="registerPhone"
+                        class="form-control"
+                        required
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerLocation')?.touched ||
-                              !form3.get('registerLocation')?.valid) &&
+                            !form3.get('registerPhone')?.touched &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
-                        required
-                        formControlName="registerLocation"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of location" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-                    <!-- race -->
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Race<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('registerRaceType')?.touched ||
-                              !form3.get('registerRaceType')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="registerRaceType"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of race" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-                    <!-- race -->
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Types<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_Types')?.touched ||
-                              !form3.get('Register_Types')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="Register_Types"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of Types" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-                    <!-- race -->
-
-                    
-                    
-  
-                    
-                    
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Independent National<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_Independent_National')?.touched ||
-                              !form3.get('Register_Independent_National')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="Register_Independent_National"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of Independent_National" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-                    
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >State and Local<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_State_and_Local')?.touched ||
-                              !form3.get('Register_State_and_Local')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="Register_State_and_Local"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of State_and_Local" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-                    
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >Professional sports labor unions<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_Professional_sports_labor_unions')?.touched ||
-                              !form3.get('Register_Professional_sports_labor_unions')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="Register_Professional_sports_labor_unions"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of Professional_sports_labor_unions" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-
-
-                    <div class="col-lg-6 mb-4">
-                      <label style="font-size: 20px; font-weight: 600"
-                        >AFL CIO<sup style="color: red; font-size: 20px"
-                          >*</sup
-                        >
-                      </label>
-                      <select
-                        [ngClass]="{
-                          'invalid-input':
-                            (!form3.get('Register_AFL_CIO')?.touched ||
-                              !form3.get('Register_AFL_CIO')?.valid) &&
-                            submitButtonClicked &&
-                            !form3.valid
-                        }"
-                        required
-                        formControlName="Register_AFL_CIO"
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="" disabled selected>
-                          Please Select
-                        </option>
-                        <option *ngFor="let item of AFL_CIO" [value]="item">
-                          {{ item }}
-                        </option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Enter Referral Code</label
-                        >
-                        <input
-                          type="text"
-                          formControlName="registerReferralCode"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <div
-                          class="custom-control custom-checkbox custom-checkbox-lg"
-                        >
-                          <input
-                            style="width: 1rem; height: 1rem"
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="ageCheckbox"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="ageCheckbox"
-                            style="
-                              font-size: 20px;
-                              font-weight: 600;
-                              margin-left: 10px;
-                            "
-                          >
-                            Are you above 13 years old?
-                          </label>
-                        </div>
-                      </div>
+                      />
                     </div>
                   </div>
 
-                  <div (click)="submitForm()">
-                    <button
-                      (click)="openAgeModal('signup')"
-                      [disabled]="!form3.valid"
-                      class="btn btn-info text-white mt-3 py-3 px-5"
-                      style="margin: auto; display: block"
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Email
+                        <sup style="color: red; font-size: 20px"
+                          >*</sup
+                        ></label
+                      >
+                      <input
+                        type="email"
+                        formControlName="registerEmail"
+                        class="form-control"
+                        required
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerEmail')?.touched ||
+                              !form3.get('registerEmail')?.valid) &&
+                            submitButtonClicked &&
+                            (!form3.valid || form3.hasError('emailMismatch'))
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Confirm Email
+                        <sup style="color: red; font-size: 20px"
+                          >*</sup
+                        ></label
+                      >
+                      <input
+                        type="email"
+                        formControlName="registerConfirmEmail"
+                        class="form-control"
+                        required
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerConfirmEmail')?.touched ||
+                              !form3.get('registerConfirmEmail')?.valid) &&
+                            submitButtonClicked &&
+                            (!form3.valid || form3.hasError('emailMismatch'))
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Password<sup style="color: red; font-size: 20px"
+                          >* </sup
+                        ><sup style="color: red; font-size: 14px"
+                          >( Length Should be greater than 6 )</sup
+                        >
+                      </label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        required
+                        formControlName="registerPassword"
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerPassword')?.touched ||
+                              !form3.get('registerPassword')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                    <label style="font-size: 20px; font-weight: 600"
+                      >Business TYPE<sup style="color: red; font-size: 20px"
+                        >*</sup
+                      >
+                    </label>
+                    <select
+                      [ngClass]="{
+                        'invalid-input':
+                          (!form3.get('registerBusiness')?.touched ||
+                            !form3.get('registerBusiness')?.valid) &&
+                          submitButtonClicked &&
+                          !form3.valid
+                      }"
+                      required
+                      formControlName="registerBusiness"
+                      class="form-select"
+                      aria-label="Default select example"
                     >
-                      Submit
-                    </button>
+                      <option value="" disabled selected>
+                        Please Select
+                      </option>
+                      <option *ngFor="let item of businessType" [value]="item">
+                        {{ item }}
+                      </option>
+                    </select>
                   </div>
-                </form>
+
+                  <div class="col-lg-6 mb-4">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >City
+                        <sup style="color: red; font-size: 20px"
+                          >*</sup
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        formControlName="registerCityType"
+                        class="form-control"
+                        required
+                        [ngClass]="{
+                          'invalid-input':
+                            !form3.get('registerCityType')?.touched &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                    <label style="font-size: 20px; font-weight: 600"
+                      >Race<sup style="color: red; font-size: 20px">*</sup>
+                    </label>
+                    <select
+                      [ngClass]="{
+                        'invalid-input':
+                          (!form3.get('registerRaceType')?.touched ||
+                            !form3.get('registerRaceType')?.valid) &&
+                          submitButtonClicked &&
+                          !form3.valid
+                      }"
+                      required
+                      formControlName="registerRaceType"
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option value="" disabled selected>
+                        Please Select
+                      </option>
+                      <option *ngFor="let item of race" [value]="item">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                    <label style="font-size: 20px; font-weight: 600"
+                      >State<sup style="color: red; font-size: 20px">*</sup>
+                    </label>
+                    <select
+                      [ngClass]="{
+                        'invalid-input':
+                          (!form3.get('registerStateType')?.touched ||
+                            !form3.get('registerStateType')?.valid) &&
+                          submitButtonClicked &&
+                          !form3.valid
+                      }"
+                      required
+                      formControlName="registerStateType"
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option value="" disabled selected>
+                        Please Select
+                      </option>
+                      <option *ngFor="let item of state" [value]="item">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                    <label style="font-size: 20px; font-weight: 600"
+                      >Gender<sup style="color: red; font-size: 20px">*</sup>
+                    </label>
+                    <select
+                      formControlName="registerGenderType"
+                      class="form-select"
+                      aria-label="Default select example"
+                      [ngClass]="{
+                        'invalid-input':
+                          (!form3.get('registerGenderType')?.touched ||
+                            !form3.get('registerGenderType')?.valid) &&
+                          submitButtonClicked &&
+                          !form3.valid
+                      }"
+                    >
+                      <option value="" disabled selected>
+                        Please Select
+                      </option>
+                      <option *ngFor="let item of gender" [value]="item">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                    <label style="font-size: 20px; font-weight: 600"
+                      >Location<sup style="color: red; font-size: 20px"
+                        >*</sup
+                      >
+                    </label>
+                    <select
+                      [ngClass]="{
+                        'invalid-input':
+                          (!form3.get('registerLocation')?.touched ||
+                            !form3.get('registerLocation')?.valid) &&
+                          submitButtonClicked &&
+                          !form3.valid
+                      }"
+                      required
+                      formControlName="registerLocation"
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option value="" disabled selected>
+                        Please Select
+                      </option>
+                      <option *ngFor="let item of location" [value]="item">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Enter Referral Code</label
+                      >
+                      <input
+                        type="text"
+                        formControlName="registerReferralCode"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <div
+                        class="custom-control custom-checkbox custom-checkbox-lg"
+                      >
+                        <input
+                          style="width: 1rem; height: 1rem"
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="ageCheckbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="ageCheckbox"
+                          style="
+                            font-size: 20px;
+                            font-weight: 600;
+                            margin-left: 10px;
+                          "
+                        >
+                          Are you above 13 years old?
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div (click)="submitForm()">
+                  <button
+                    (click)="openAgeModal('signup')"
+                    [disabled]="!form3.valid"
+                    class="btn btn-info text-white mt-3 py-3 px-5"
+                    style="margin: auto; display: block"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-     <!-- <h1 class="text-white my-3 featurs">Unions Connects & Community </h1>
+     <!-- <h1 class="text-white my-3 featurs">Gossip Connects & Community </h1>
               <p class="text-white my-3">Through Umyo Religious Organizations and Community Connect, you can effortlessly upload your organizational records, community achievements...</p>
     <div class="moretext" style="display:none;">
         <p class="text-white my-3">interviews, local insights, images, and community milestones for a wide-reaching audience. It's the premier destination for religious organizations and those involved in the local community, providing them with a safe space exclusively for them.</p>
@@ -1525,292 +1336,324 @@
 </div>
 
 <!------- tab section end ---------->
-
-
-
-
-
-<section id="partner">
+<div class="container-fluid bg">
   <div class="container">
-    <div class="client-list">
-     <div class="row justify-content-center">
-      <div class="col-md-6 p-0 mb-4">
-        <h2 class="text-white">Strategic Organizing Center</h2>
-        <div class="box">
-         
-          <ol>
-            <li><a href="https://en.m.wikipedia.org/wiki/International_Brotherhood_of_Teamsters">International Brotherhood of Teamsters</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/Service_Employees_International_Union">Service Employees International Union</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/United_Farm_Workers">United Farm Workers of America</a></li>
-              
-          </ol>
-        </div>
+          <div class="row">
+          <div class="col-md-12">
+          <div class="program my-5 text-center">
+              <h1>UMYO Gossip</h1>
+          </div>
       </div>
-     </div> 
-      <div class="row justify-content-center">
-        
-        <div class="col-md-6 mb-4">
-          <h2 class="text-white">LARGEST UNIONS</h2>
-            <div class="box">
-             
-              <ol>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/National_Education_Association">National Education Association</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Service_Employees_International_Union">Service Employees International Union</a></li>
-                <li>    <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_State,_County_and_Municipal_Employees">American Federation of State, County and Municipal Employees</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Brotherhood_of_Teamsters">Teamsters</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/United_Food_and_Commercial_Workers">United Food and Commercial Workers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/United_Auto_Workers">United Auto Workers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/United_Steelworkers">United Steelworkers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_Teachers">American Federation of Teachers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Brotherhood_of_Electrical_Workers">International Brotherhood of Electrical Workers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Laborers%27_International_Union_of_North_America">Laborers' International Union of North America</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Machinists_and_Aerospace_Workers">International Association of Machinists and Aerospace Workers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Communications_Workers_of_America">Communications Workers of America</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/United_Brotherhood_of_Carpenters_and_Joiners_of_America">United Brotherhood of Carpenters and Joiners of America</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Longshore_and_Warehouse_Union">International Longshore and Warehouse Union
-                </a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Operating_Engineers">International Union of Operating Engineers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/United_Association">United Association</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/National_Association_of_Letter_Carriers">National Association of Letter Carriers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_Government_Employees">American Federation of Government Employees</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/American_Postal_Workers_Union">American Postal Workers Union</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Fire_Fighters">International Association of Fire Fighters</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/UNITE_HERE">UNITE HERE</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/National_Postal_Mail_Handlers_Union">National Postal Mail Handlers Union</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Amalgamated_Transit_Union">Amalgamated Transit Union</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/American_Nurses_Association">American Nurses Association</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Alliance_of_Theatrical_Stage_Employees">International Alliance of Theatrical Stage Employees</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Sheet_Metal_Workers_International_Association">Sheet Metal Workers International Association</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Painters_and_Allied_Trades">International Union of Painters and Allied Trades
-                </a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Bridge,_Structural,_Ornamental,_and_Reinforcing_Iron_Workers">International Association of Bridge, Structural, Ornamental, and Reinforcing Iron Workers</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Transport_Workers_Union_of_America">Transport Workers Union of America</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/Office_and_Professional_Employees_International_Union">Office and Professional Employees International Union</a></li>
-                <li>   <a href="https://en.m.wikipedia.org/wiki/National_Rural_Letter_Carriers%27_Association">National Rural Letter Carriers' Association</a></li>
-               
-              </ol>
+  </div>
+   <div class="row justify-content-center">
+      <div class="col-md-4" id="text1">
+          <div class="card">
+              <img src="assets/gossip/4.png" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Case Study: Marketing During a Recession</h4>
+                <!-- <div class="mycard">
+                <p class="card-text">
+                  The Hero's Project introduces our K-12 module, a comprehensive initiative bringing mental health counseling services and workshops to educational institutions. We extend support to faculty, staff, students, and parents, delivering essential resources for holistic well-being. Our Pro Living course guides students in identifying and embarki</p>
+                  <div class="moretext1" style="display:none;">
+                  <p>on their career paths, while also providing whole-life insurance protection to ensure their future security. Partnering with McAfee, our project incorporates cutting-edge data protection and security measures, offered to schools at no cost. Our commitment is to empower students, faculty, and staff, ensuring every family has access to knowledge and resources for success.</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button1">Show More</button>
+                </div>
+              </div> -->
+              </div>
             </div>
-        
-         </div>
-       <div class="col-md-6 mb-4">
-        <h2 class="text-white">TYPES</h2>
-          <div class="box">
-            <!-- <h2>Clients List</h2> -->
-            <ol>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Actors%27_Equity_Association">Actors' Equity Association (AEA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/American_Guild_of_Musical_Artists">American Guild of Musical Artists (AGMA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/American_Guild_of_Variety_Artists">American Guild of Variety Artists (AGVA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/The_Guild_of_Italian_American_Actors">The Guild of Italian American Actors (GIAA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/SAG-AFTRA">Screen Actors Guild-American Federation of Television and Radio Artists (SAG-AFTRA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Association_of_Flight_Attendants">Association of Flight Attendants (AFA-CWA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Industrial_Division,_CWA">Industrial Division, CWA (IUE-CWA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Association_of_Broadcast_Employees_and_Technicians">National Association of Broadcast Employees and Technicians (NABET-CWA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/The_Newspaper_Guild">The Newspaper Guild (TNG-CWA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Printing,_Publishing_and_Media_Workers">Printing, Publishing and Media Workers (PPMW-CWA)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Transportation_Communications_International_Union">Transportation Communications International Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Postal_Mail_Handlers_Union">National Postal Mail Handlers Union (NPMHU)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/American_Maritime_Officers">American Maritime Officers (AMO)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Graphic_Communications_Conference">Graphic Communications Conference</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Brotherhood_of_Maintenance_of_Way_Employes">Brotherhood of Maintenance of Way Employes</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Brotherhood_of_Locomotive_Engineers_and_Trainmen">Brotherhood of Locomotive Engineers and Trainmen</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Workers_United ">Workers United</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=Colorado_Workers_for_Innovations_and_New_Solutions&action=edit&redlink=1">Colorado Workers for Innovations and New Solutions (WINS)</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=Home_Healthcare_Workers_of_America&action=edit&redlink=1">Home Healthcare Workers of America</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=National_Organization_of_Industrial_Trade_Unions&action=edit&redlink=1">National Organization of Industrial Trade Unions</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=United_Public_Service_Employees_Union&action=edit&redlink=1">United Public Service Employees Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=United_Service_Workers_Union&action=edit&redlink=1">United Service Workers Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Association_for_Los_Angeles_Deputy_Sheriffs">Association for Los Angeles Deputy Sheriffs</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Los_Angeles_Police_Protective_League">Los Angeles Police Protective League</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=Los_Angeles_Sheriff%27s_Professional_Association&action=edit&redlink=1">Los Angeles Sheriff's Professional Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=United_Firefighters_of_Los_Angeles_City&action=edit&redlink=1">United Firefighters of Los Angeles City</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Detectives%27_Endowment_Association">Detectives' Endowment Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=Lieutenants_Benevolent_Association&action=edit&redlink=1">Lieutenants Benevolent Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Police_Benevolent_Association_of_the_City_of_New_York">Police Benevolent Association of the City of New York</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Sergeants_Benevolent_Association">Sergeants Benevolent Association</a></li>
+      </div>
+      <div class="col-md-4" id="text2">
+          <div class="card">
+              <img src="assets/gossip/5.png" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">5 Creator Platforms </h4>
+                <!-- <div class="mycard">
+                <p class="card-text">
+                  Step into our 'Life After the Game' program—a transformative journey crafted in two sectors. For current or former professional athletes embarking on their post-game voyage, our program offers more than a transition—it's a complete support system. Picture this: salaries, health insurance, and a dedicated accountability group, all tailored  
+              </p>
+              <div class="moretext2" style="display:none;">
+                  <p>to guide and empower you in discovering life's next thrilling phase. Our diverse team, which includes transitioned players, business owners, and seasoned company CEOs, will walk this exciting journey alongside you.</p>
+                  <p>If you're a retired athlete or nearing retirement, seeking to make a substantial impact in your community while charting your next steps, Pro Living was crafted with you in mind.</p>
+                  <p>The second part of our program is custom-built for collegiate student-athletes whose careers conclude post-college. Our 'Life After the Game' series partners with universities of all sizes, providing tailored support to these athletes as they navigate their post-college lives. We offer a unique platform to learn, network, and prepare for a seamless transition into the workforce.</p>
+                  <p>For current and former athletes seeking a purposeful life beyond the game and for colleges invested in their athletes' future success, Pro Living is the empowering partner you've been searching for. Join us in shaping the future beyond sports, where every athlete thrives in their life after the game.</p>
+                  </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button2">Show More</button>
+                </div>
+              </div> -->
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4" id="text3">
+          <div class="card">
+              <img src="assets/gossip/6.png" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Social Media Is All About Genuine Content</h4>
+                <!-- <div class="mycard">
+                <p class="card-text">
+                  The Pro Living Investment Fund was strategically crafted for both current and former players seeking to secure a residual income. It's more than an investment—it's an opportunity to support job creation while offering players a secure way to invest their earnings. We carefully test and invest in valuable products that yield returns, empowring    
               
-            </ol>
-          </div>
- 
-       </div>
-       <div class="col-md-12">
-        <h2 class="text-white">Independent National</h2>
-       </div>
-       <div class="col-md-6 mb-4">
-       
-          <div class="box">
-           
-            <ol>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Adult_Performance_Artists_Guild">Adult Performance Artists Guild</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Aircraft_Mechanics_Fraternal_Association">Aircraft Mechanics Fraternal Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Allied_Pilots_Association">Allied Pilots Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Amazon_Labor_Union">Amazon Labor Union</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Association_of_Professional_Flight_Attendants">Association of Professional Flight Attendants</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Association_of_Western_Pulp_and_Paper_Workers">Association of Western Pulp and Paper Workers</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Campaign_Workers_Guild">Campaign Workers Guild</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Directors_Guild_of_America">Directors Guild of America</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Fraternal_Order_of_Police">Fraternal Order of Police</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Independent_Pilots_Association">Independent Pilots Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Industrial_Workers_of_the_World">Industrial Workers of the World</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/International_Longshore_and_Warehouse_Union">International Longshore and Warehouse Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Journeymen_and_Allied_Trades">International Union of Journeymen and Allied Trades</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Jockeys%27_Guild">Jockeys' Guild</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Major_League_Baseball_Players_Association">Major League Baseball Players Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Major_League_Baseball_Umpires_Association">Major League Baseball Umpires Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Alliance_of_Postal_and_Federal_Employees">National Alliance of Postal and Federal Employees</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Basketball_Coaches_Association">National Basketball Coaches Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Education_Association">National Education Association</a></li>
-              </ol>
-          </div>
+               <div class="moretext3" style="display:none;">
+                  players, both current and former, to diversify their investments while championing other professional athletes.</p>
+                  <p>Our commitment goes beyond funding; we provide guidance and education to athletes on building generational wealth. We see ourselves as legacy builders, assisting players, both present and past, in creating a lasting impact for themselves and future generations.</p>
+             </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button3">Show More</button>
+                </div>
+              </div> -->
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4" id="text4">
+          <div class="card">
+              <img src="assets/gossip/7.png" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">How to Best Use Social Media and Content Marketing</h4>
+               <!--  <div class="mycard">
+                <p class="card-text">
+                  Our Business Growth and Development services cater to both for-profit and non-profit companies, facilitating workforce expansion and retention strategies. Our focus on establishing credibility among end-users drives engagement with their services or products, fostering growth and enhancing visibility. With a core mission of fostering company
+                </p>
+                <div class="moretext4" style="display:none;">
+                  <p> growth, we operate with the goal of enhancing efficiency and aiding in employee retention, ensuring companies optimize their performance and maintain a high level of production.</p>
+                </div>
+           <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button4">Show More</button>
+                </div>
+              </div> -->
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/8.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Looking for When Hiring Creators</h4>
+                <!-- <div class="mycard">
+                <p class="card-text">
+                  Step into our vibrant Mom and Dad's Club—a thrilling space for parents to bond, grow, and learn together! This isn't just a support group; it's a dynamic village where everyday superheroes recharge and thrive. Our innovative engagements spark connections between parents, fostering growth in various life domains.</p>
+                <p class="para">Join us in actively engaging</p>
+                <div class="moretext5" style="display:none;">
+                  <p>with schools, empowering parental involvement and equipping you with essential tools to elevate not just your own life, but your child's and community's too. This club isn't just for first-timers or seasonal parents; it's an open invitation to all generations! Grandparents bring wisdom, first-timers bring fresh perspectives—it's a melting pot of experiences.</p>
+                  <p>It's more than a club; it's a thrilling journey, a safe space for parents to share, connect, and learn from each other's incredible journeys. Get ready to dive into a supportive, exciting community where the bonds you form will be as thrilling as the growth you'll experience!</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fa fa-plus mybtn"></i>
+                <button type="btn" class="btn mybtn moreless-button5">Show More</button>
+                </div>
+              </div> -->
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/9.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Open Source Algorithm In 2024</h4>
+              </div>
+            </div>
+      </div>
+
+  </div>
+  <div class="row">
       
-       </div>
-       <div class="col-md-6 mb-4">
-        <div class="box">
-          <ol>
-            <li>    <a href="https://en.m.wikipedia.org/wiki/National_Emergency_Medical_Services_Association">National Emergency Medical Services Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Hockey_League_Players%27_Association">National Hockey League Players' Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Rural_Letter_Carriers%27_Association">National Rural Letter Carriers' Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Treasury_Employees_Union">National Treasury Employees Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=National_Weather_Service_Employees_Organization&action=edit&redlink=1">National Weather Service Employees Organization</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Women%27s_Soccer_League_Players_Association">National Women's Soccer League Players Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/National_Writers_Union">National Writers Union</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Premier_Hockey_Federation_Players%27_Association">Premier Hockey Federation Players' Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Professional_Lacrosse_Players%27_Association">Professional Lacrosse Players' Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=Southwest_Airlines%27_Pilots_Association&action=edit&redlink=1">Southwest Airlines' Pilots Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Stage_Directors_and_Choreographers_Society">Stage Directors and Choreographers Society</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/United_Brotherhood_of_Carpenters_and_Joiners_of_America">United Brotherhood of Carpenters and Joiners of America</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/United_Electrical,_Radio_and_Machine_Workers_of_America">United Electrical, Radio and Machine Workers of America</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/w/index.php?title=United_Independent_Technology_Technicians_of_America&action=edit&redlink=1">United Independent Technology Technicians of America</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/United_Nurses_and_Allied_Professionals">United Nurses and Allied Professionals</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/United_States_Rugby_Players_Association">United States Rugby Players Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/U.S._National_Soccer_Team_Players_Association">U.S. National Soccer Team Players Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/U.S._Women%27s_National_Team_Players_Association">U.S. Women's National Team Players Association</a></li>
-              <li>  <a href="https://en.m.wikipedia.org/wiki/Writers_Guild_of_America_West">Writers Guild of America West</a></li>
-            
-          </ol>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/11.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">African American Streaming Live Dual Vlog</h4>
+            </div>
         </div>
-       </div>
+    </div>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/12.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Digital Marketing Strategies For Marketing Managers</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/13.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Video Content is Crucial for Digital Marketing</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/14.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">International Content Creators</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/15.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Professional Learning Board</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="text5">
+          <div class="card">
+              <img src="assets/gossip/10.png" class=" img-fluid" alt="...">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Social Media Content Creator</h4>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
 
-       <div class="col-md-6 mb-4">
-       
-          <h2 class="text-white">State and Local</h2>
-          <div class="box">
-           
-            <ol>
-              <li> <a href="https://en.m.wikipedia.org/w/index.php?title=Alameda_County_Management_Employees%27_Association&action=edit&redlink=1">Alameda County Management Employees' Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Boston_Police_Patrolmen%27s_Association">Boston Police Patrolmen's Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Dallas_Police_Association">Dallas Police Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/Florida_Police_Benevolent_Association">Florida Police Benevolent Association</a></li>
-              <li> <a href="#">Los Angeles</a></li>
-              <li> <a href="#">New York City</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/San_Francisco_Police_Officers_Association">San Francisco Police Officers Association</a></li>
-              <li> <a href="https://en.m.wikipedia.org/wiki/State_of_Hawaii_Organization_of_Police_Officers">State of Hawaii Organization of Police Officers</a></li>
-            </ol>
+  <div class="container">
+
+          <div class="row">
+              <h2 class="text-center mt-3">UMYO Gossip Connects Packages, Products and Platforms</h2>
+              <div class="col-lg-3 col-md-6 my-4">
+                  <div class="box1 b">
+                  <h5>Free Monthly</h5>
+                  <ul>
+                      <li>Directory - “Basic” Membership</li>
+                      <li>Tweet & Talk Access</li>
+                  </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 my-4">
+                  <div class="box1 box2">
+                  <h5>$5 Monthly</h5>
+                  <ul>
+                      <li>Directory - “IAM” Pledge <br>Membership</li>
+                      <li>Free Standard CRM Integration</li>
+                      <li>Conference/Podcast Platform</li>
+                      <li>Eligible For Daily Prize & Money Giveaways</li>
+                  </ul>
+              </div>
+              </div>
+              <div class="col-lg-3 col-md-6 my-4">
+                  <div class="box1 b">
+                  <h5>$19.99 Monthly</h5>
+                  <ul>
+                      <li>“Premium” Membership -Directory, Tweet, Talk & Conference/Podcast</li>
+                      </ul>
+                      </div>
+              </div>
+              <div class="col-lg-3 col-md-6 my-4">
+                  <div class="box1 box2">
+                  <h5>Starting @ $109 - Community To Business Branding (Community Brands On Your Behalf)</h5>
+                  <ul>
+                      <li>“Business” Membership - Directory</li>
+                      <li>50% Monthly goes to Registered “IAM” Pledge Members </li>
+                      <li>Branded by Community</li>
+                      <li>Monthly Giveaways (Sponsored By Name Of Your Biz)</li>
+                      </ul>
+                  </div>
+              </div>
           </div>
-         
-       </div>
-       <div class="col-md-6 mb-4">
-        <h2 class="text-white">Professional sports labor unions</h2>
-        <div class="box">
-         
-          <ol>
-            <li><a href="https://en.m.wikipedia.org/wiki/National_Basketball_Players_Association">National Basketball Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/National_Football_League_Players_Association">National Football League Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/National_Football_League_Players_Association">Major League Baseball Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/National_Hockey_League_Players_Association">National Hockey League Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/Professional_Hockey_Players%27_Association">Professional Hockey Players' Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/Professional_Lacrosse_Players%27_Association">Professional Lacrosse Players' Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/MLS_Players_Association">MLS Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/Women%27s_National_Basketball_Players_Association">Women's National Basketball Players Association</a></li>
-            <li><a href="https://en.m.wikipedia.org/wiki/National_Women%27s_Soccer_League_Players_Association">National Women's Soccer League Players Association</a></li>
-          </ol>
-        </div>
-    
-       </div>
-       <div class="col-md-12 mb-4">
-        <h2 class="text-white">AFL-CIO</h2>
-       </div>
-       <div class="col-md-6 mb-4">
-        <div class="box">
-          <ol>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Air_Line_Pilots_Association,_International">Air Line Pilots Association (ALPA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Amalgamated_Transit_Union">Amalgamated Transit Union (ATU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_Government_Employees">American Federation of Government Employees (AFGE)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_Musicians">American Federation of Musicians of the United States and Canada (AFM)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_School_Administrators">American Federation of School Administrators (AFSA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_State,_County_and_Municipal_Employees">American Federation of State, County and Municipal Employees (AFSCME)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Federation_of_Teachers">American Federation of Teachers (AFT)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Postal_Workers_Union">American Postal Workers Union (APWU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Radio_Association">American Radio Association (ARA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/American_Train_Dispatchers_Association">American Train Dispatchers Association (ATDA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Associated_Actors_and_Artistes_of_America">Associated Actors and Artistes of America (4As)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Bakery,_Confectionery,_Tobacco_Workers_and_Grain_Millers%27_International_Union">Bakery, Confectionery, Tobacco Workers and Grain Millers' International Union (BCTGM)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Brotherhood_of_Railroad_Signalmen">Brotherhood of Railroad Signalmen (BRS)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/California_School_Employees_Association">California School Employees Association (CSEA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Communications_Workers_of_America">Communications Workers of America (CWA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Farm_Labor_Organizing_Committee">Farm Labor Organizing Committee (FLOC)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Gay_and_Lesbian_Labor_Activists_Network">Gay and Lesbian Labor Activists Network (GALLAN)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Alliance_of_Theatrical_Stage_Employes">International Alliance of Theatrical Stage Employees, Moving Picture Technicians, Artists and Allied Crafts of the United States, Its Territories and Canada (IATSE)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Bridge,_Structural,_Ornamental_and_Reinforcing_Iron_Workers">International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers (Ironworkers)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Fire_Fighters">International Association of Fire Fighters (IAFF)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Heat_and_Frost_Insulators_and_Allied_Workers">International Association of Heat and Frost Insulators and Allied Workers</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Machinists_and_Aerospace_Workers">International Association of Machinists and Aerospace Workers (IAM)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Association_of_Sheet_Metal,_Air,_Rail_and_Transportation_Workers">International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Brotherhood_of_Boilermakers,_Iron_Ship_Builders,_Blacksmiths,_Forgers_and_Helpers">International Brotherhood of Boilermakers, Iron Ship Builders, Blacksmiths, Forgers and Helpers (IBB)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Brotherhood_of_Electrical_Workers">International Brotherhood of Electrical Workers (IBEW)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Federation_of_Professional_and_Technical_Engineers">International Federation of Professional and Technical Engineers (IFPTE)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Longshoremen%27s_Association">International Longshoremen's Association (ILA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Organization_of_Masters,_Mates_%26_Pilots">International Organization of Masters, Mates & Pilots (MMP)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Plate_Printers,_Die_Stampers_and_Engravers_Union_of_North_America">International Plate Printers, Die Stampers and Engravers Union of North America</a></li>
+          <div style="margin: auto;display: table;margin-top: 1rem;margin-bottom: 4rem;">
+          <a href="pkg.html" class="btn btn-dark">Packages</a>
+          </div>
+          </div>
+          
+      
 
-                
-          </ol>
-        </div>
+  <!-- Featurs Section End -->
+
+
+<!------ contact us ------>
+<section id="contact-us">
+<div class="container">
+  <h1>Contact Us</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="get">
+        <h5>Get in Touch</h5>
+      <div class="form">
+        <input type="text" name="" id="" placeholder="Name"><br>
+        <input type="email" name="" id="" placeholder="Email"><br>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Message"></textarea><br>
+       <div class="select">
+        <input type="file" name="file" id="file" class="inputfile" />
+        <label for="file"><i class="fa-solid fa-paperclip"></i>Attach Files</label>
+                      <span>Attachments(0)</span>
        </div>
-       <div class="col-md-6 mb-4">
-        <div class="box">
-          <ol>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Allied_Novelty_and_Production_Workers">International Union of Allied Novelty and Production Workers (Novelty and Production Workers)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Bricklayers_and_Allied_Craftworkers">International Union of Bricklayers and Allied Craftworkers (BAC)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Elevator_Constructors">International Union of Elevator Constructors (IUEC)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Operating_Engineers">International Union of Operating Engineers (IUOE)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Painters_and_Allied_Trades">International Union of Painters and Allied Trades (IUPAT)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/International_Union_of_Police_Associations">International Union of Police Associations (IUPA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Laborers%27_International_Union_of_North_America">Laborers' International Union of North America</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Major_League_Baseball_Players_Association">Major League Baseball Players Association (MLBPA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Marine_Engineers_Beneficial_Association">Marine Engineers Beneficial Association (MEBA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Air_Traffic_Controllers_Association">National Air Traffic Controllers Association (NATCA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Association_of_Letter_Carriers">National Association of Letter Carriers (NALC)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Football_League_Players_Association">National Football League Players Association (NFLPA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Nurses_United">National Nurses United (NNU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Taxi_Workers%27_Alliance">National Taxi Workers' Alliance (NTWA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/National_Women%27s_Soccer_League_Players_Association">National Women's Soccer League Players Association (NWSLPA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Office_and_Professional_Employees_International_Union">Office and Professional Employees International Union (OPEIU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Operative_Plasterers%27_and_Cement_Masons%27_International_Association_of_the_United_States_and_Canada">Operative Plasterers' and Cement Masons' International Association of the United States and Canada (OPCMIA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Professional_Aviation_Safety_Specialists">Professional Aviation Safety Specialists (PASS)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Seafarers_International_Union_of_North_America">Seafarers International Union of North America (SIU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Transport_Workers_Union_of_America">Transport Workers Union of America (TWU)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/UNITE_HERE">UNITE HERE</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Association">United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry of the United States and Canada (UA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Auto_Workers">United Automobile, Aerospace and Agricultural Implement Workers of America International Union (UAW)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Food_and_Commercial_Workers">United Food and Commercial Workers (UFCW)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Mine_Workers_of_America">United Mine Workers of America (UMWA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Steelworkers">United Steelworkers (USW)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/United_Union_of_Roofers,_Waterproofers_and_Allied_Workers">United Union of Roofers, Waterproofers and Allied Workers (Roofers and Waterproofers)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Utility_Workers_Union_of_America">Utility Workers Union of America (UWUA)</a></li>
-       <li> <a href="https://en.m.wikipedia.org/wiki/Writers_Guild_of_America,_East">Writers Guild of America, East Inc. (WGAE)</a></li>
-       
-                
-          </ol>
-        </div>
-       </div>
+        <button type="submit">SEND MESSAGE</button><br>
+        <p class="button-para">This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy </a>and <a href="#">Terms of Service</a> apply.</p>
+      </div>
       </div>
     </div>
-  
+    <div class="col-md-6">
+     <div class="better">
+      <h5>Better yet, see us in person!</h5>
+      <p>Get the quickest response by reaching out to us on our social media platforms! You can also contact us directly via phone call or text message. We're excited to engage with you and hear your thoughts!</p>
+      <p>Drop us a message, and we'll make it a priority to get back to you at the earliest convenience.</p>
+    <button type="button"><img src="img/new-icon-removebg-preview.png" alt="">Message us on WhatsApp</button>
+    <h6>UMYO Gossip</h6>
+    <a href="#">(214)-926-0027</a>
+    <!-- <a href="#">cmoore@NBA.com</a> -->
+    <h6 class="hrs">Hours</h6>
+    <select name="" id="">
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+      <option value="">Open today 09:00 am – 02:00 pm</option>
+    </select>
+     </div>
+    </div>
   </div>
+</div>
 </section>
+
+<!----- subscribe -------->
+<section id="subscribe">
+<div class="container">
+  <h2 class="text-center">Subscribe</h2>
+  <p class="text-center">Get 10% off your first purchase when you sign up for our newsletter!</p>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-7 ">
+     
+    <div class="email-form">
+      <input type="email" placeholder="Email">
+    </div>
+    </div>
+    <div class="col-md-2 pb-5">
+      <button type="button" class="email-button">SIGN UP</button>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>
 <!-- Featurs Section End -->
 
-<div class="container-fluid text-white-50 footer"  style="background: #697999 !important; height: 100% !important">
+<div class="container-fluid text-white-50 footer"  style="background: #265073 !important; height: 100% !important">
   <div class="container py-5">
           <div class="row g-4">
 
@@ -1821,7 +1664,7 @@
                 <a class="btn-link" (click)="openRefundModal()">Refund Policy</a>
                 <a class="btn-link" (click)="openTermsModal()">Terms Of Service</a>
                   <a class="btn-link" href="">Terms of Sales</a>
-                  <a class="btn-link" href="">UMYO Unions</a>
+                  <a class="btn-link" href="">UMYO Gossip</a>
               </div>
           </div>
              
@@ -1830,7 +1673,7 @@
           <div class=" col-md-4">
               <div class="footer-item text-md-start  text-center">
                   <h4 class="text-light mb-3">LET'S CONNECT</h4>
-                  <p class="mb-4">Subscribe to stay up to date on all the latest UMYO features, products, stories, and more. You can also contact us at contact@umyounions.site</p>
+                  <p class="mb-4">Subscribe to stay up to date on all the latest UMYO features, products, stories, and more. You can also contact us at contact@umyogossip.site</p>
                   <div class="position-relative mx-auto">
                       <input class="form-control border-0 py-2 w-100" type="text" placeholder="Enter Your Email">
                       <button type="submit" class="btn btn-info border-0 border-secondary position-absolute py-2 text-white" style="top: 0; right: 0;">Sent</button>
@@ -1888,7 +1731,7 @@
   
   Who We Are
   
-  Welcome! We are UMYO Unions   Inc., a Texas corporation, or as we prefer to be known, "UMYO Unions  ,"
+  Welcome! We are UMYO Gossip   Inc., a Texas corporation, or as we prefer to be known, "UMYO Gossip  ,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -1902,7 +1745,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@UMYO Unions  .com or by mail at UMYO Unions   Inc., Attn: Data Privacy
+  email at data-privacy@UMYO Gossip  .com or by mail at UMYO Gossip   Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -2086,8 +1929,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “UMYO Unions   for Teams” subscription, the administrator 
-  associated with your “UMYO Unions   for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “UMYO Gossip   for Teams” subscription, the administrator 
+  associated with your “UMYO Gossip   for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -2128,7 +1971,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to UMYO Unions  ! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to UMYO Gossip  ! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -2220,8 +2063,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@UMYO Unions  .com] (mailto:data-privacy@UMYO Unions  .com) or by mail at
-  UMYO Unions   Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@UMYO Gossip  .com] (mailto:data-privacy@UMYO Gossip  .com) or by mail at
+  UMYO Gossip   Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -2250,10 +2093,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@UMYO Unions  .com](mailto:data-privacy@UMYO Unions  .com) or by mail at
-  UMYO Unions   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@UMYO Gossip  .com](mailto:data-privacy@UMYO Gossip  .com) or by mail at
+  UMYO Gossip   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at UMYO Unions  **
+  **Changes to Our Privacy Policy at UMYO Gossip  **
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -2296,7 +2139,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at UMYO Unions  **
+              **Refund Policy at UMYO Gossip  **
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -2369,9 +2212,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to UMYO Unions  !
+              Welcome to UMYO Gossip  !
   
-  **Terms of Service and Sale - UMYO Unions  **
+  **Terms of Service and Sale - UMYO Gossip  **
   
   **Last Revised: December 22, 2023**
   
@@ -2379,7 +2222,7 @@
   
   **Introduction**
   
-  Welcome! We are UMYO Unions  , a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are UMYO Gossip  , a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -2479,11 +2322,11 @@
   
   ---
   
-  **UMYO Unions   App Terms of Service**
+  **UMYO Gossip   App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your UMYO Unions  
+  (g) You must provide accurate, current, and complete information for your UMYO Gossip  
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -2500,7 +2343,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on UMYO Unions  . Posted Content is not confidential,
+  (a) Users can post content ("Content") on UMYO Gossip  . Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   
