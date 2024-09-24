@@ -97,14 +97,14 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              religion: form3.get('registerRelgionType')?.value,
+              business_type: form3.get('registerBusiness')?.value,
               medical: form3.get('registerMedical')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
               
               state: form3.get('registerStateType')?.value,
               city: form3.get('registerCityType')?.value,
-              location: form3.get('registerLocation')?.value,
+              location: form3.get('registerLocationType')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
               truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -122,24 +122,7 @@ if (expireInValue.includes("year")) {
                             
         
         
-      speciality:form3.get('registerSpecialityType')?.value,
-
-
-      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
-      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
-      Types:form3.get('Register_Types')?.value,
-      Independent_National:form3.get('Register_Independent_National')?.value,
-      State_and_Local:form3.get('Register_State_and_Local')?.value,
-      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
-      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
-
-
-      
-
-
-   
-      
-      
+        
               reffered_from: form3.get('registerReferralCode').value,
 
               
@@ -208,14 +191,14 @@ if (expireInValue.includes("year")) {
       password: form3.get('registerPassword').value,
 
       
-      religion: form3.get('registerRelgionType')?.value,
+      business_type: form3.get('registerBusiness')?.value,
       medical: form3.get('registerMedical')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
-      location: form3.get('registerLocation')?.value,
+      location: form3.get('registerLocationType')?.value,
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
       truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -231,16 +214,8 @@ if (expireInValue.includes("year")) {
       honor: form3.get('registerHonor')?.value,
 
 
-      speciality:form3.get('registerSpecialityType')?.value,
-      
 
-      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
-      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
-      Types:form3.get('Register_Types')?.value,
-      Independent_National:form3.get('Register_Independent_National')?.value,
-      State_and_Local:form3.get('Register_State_and_Local')?.value,
-      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
-      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
+
 
       
               
@@ -339,27 +314,20 @@ if (expireInValue.includes("year")) {
           
           state: form3.get('registerStateType')?.value,
           reffered_from: form3.get('registerReferralCode').value,
-          location: form3.get('registerLocation')?.value,
+          location: form3.get('registerLocationType')?.value,
           city: form3.get('registerCityType')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
           plan_id:response.plan_id,
 
-          religion: form3.get('registerRelgionType')?.value,
+          business_type: form3.get('registerBusiness')?.value,
           medical: form3.get('registerMedical')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       
       
       
-      Strategic_Organizing_Center:form3.get('Register_Strategic_Organizing_Center')?.value,
-      Largest_Unions:form3.get('Register_Largest_Unions')?.value,
-      Types:form3.get('Register_Types')?.value,
-      Independent_National:form3.get('Register_Independent_National')?.value,
-      State_and_Local:form3.get('Register_State_and_Local')?.value,
-      Professional_sports_labor_unions:form3.get('Register_Professional_sports_labor_unions')?.value,
-      AFL_CIO:form3.get('Register_AFL_CIO')?.value,
-
+      
       
       
       truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -374,7 +342,7 @@ if (expireInValue.includes("year")) {
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
 
-          speciality:form3.get('registerSpecialityType')?.value,
+
       
 
 });

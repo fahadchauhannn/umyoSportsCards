@@ -363,62 +363,41 @@
                 />
               </div>
 
-
-              
-
-              <!-- race -->
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedRace"
+                  formControlName="selectedMedical"
                 >
-                  <option selected value="" disabled>Race</option>
-                  <option *ngFor="let item of race" [value]="item">
+                  <option selected value="" disabled>Business TYPE</option>
+                  <option *ngFor="let item of businessType" [value]="item">
                     {{ item }}
                   </option>
                 </select>
               </div>
 
-              <!-- gender -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="selectedGender"
-                >
-                  <option selected value="" disabled>Gender</option>
-                  <option *ngFor="let item of gender" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <h4 class="mb-4 text-white text-center">
-                  I PLEDGE TO REPORT VIOLENT CRIMES
-                </h4>
-              </div>
-
-
-              
-              <!-- location -->
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
                   formControlName="selectedLocation"
                 >
-                  <option selected value="" disabled>Location </option>
+                  <option selected value="" disabled>Location</option>
                   <option *ngFor="let item of location" [value]="item">
                     {{ item }}
                   </option>
                 </select>
               </div>
 
-             
+              <div class="col-lg-6 mb-4">
+                <input
+                  type="text"
+                  formControlName="selectedCity"
+                  class="form-control"
+                  placeholder="City"
+                />
+              </div>
 
-              <!-- state -->
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
@@ -432,111 +411,37 @@
                 </select>
               </div>
 
-               <!-- city -->
-               <div class="col-lg-6 mb-4">
-                <input
-                  type="text"
-                  formControlName="selectedCity"
-                  class="form-control"
-                  placeholder="City"
-                />
+              <div class="col-lg-6">
+                <h4 class="mb-4 text-white text-center">
+                  I PLEDGE TO REPORT VIOLENT CRIMES
+                </h4>
               </div>
 
-
-              <!-- Strategic_Organizing_Center" -->
               <div class="col-lg-6 mb-4">
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="Selected_Strategic_Organizing_Center"
+                  formControlName="selectedRace"
                 >
-                  <option selected value="" disabled>Strategic Organizing Center</option>
-                  <option *ngFor="let item of Strategic_Organizing_Center" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- Largest_Unions -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_Largest_Unions"
-                >
-                  <option selected value="" disabled>Largest Unions</option>
-                  <option *ngFor="let item of Largest_Unions" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- Types -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_Types"
-                >
-                  <option selected value="" disabled>Types</option>
-                  <option *ngFor="let item of Types" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- Independent National -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_Independent_National"
-                >
-                  <option selected value="" disabled>Independent National</option>
-                  <option *ngFor="let item of Independent_National" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- State_and_Local -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_State_and_Local"
-                >
-                  <option selected value="" disabled>State and Local</option>
-                  <option *ngFor="let item of State_and_Local" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- State_and_Local -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_Professional_sports_labor_unions"
-                >
-                  <option selected value="" disabled>Professional sports labor unions</option>
-                  <option *ngFor="let item of Professional_sports_labor_unions" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <!-- State_and_Local -->
-              <div class="col-lg-6 mb-4">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  formControlName="Selected_AFL_CIO"
-                >
-                  <option selected value="" disabled>AFL CIO</option>
-                  <option *ngFor="let item of AFL_CIO" [value]="item">
+                  <option selected value="" disabled>Race</option>
+                  <option *ngFor="let item of race" [value]="item">
                     {{ item }}
                   </option>
                 </select>
               </div>
 
-              
-            
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedGender"
+                >
+                  <option selected value="" disabled>Gender</option>
+                  <option *ngFor="let item of gender" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
               <div class="col-lg-6 mb-4">
                 <button
                   type="submit"
@@ -593,129 +498,124 @@
                 class="container tab-pane"
                 [class.active]="showLoginTab"
               >
-                <form [formGroup]="form">
-                  <div class="row">
-                    <h1 class="text-center">UMYO For Unions
+              <form [formGroup]="form">
+                <div class="row">
+                  <h1 class="text-center">UMYO For Medical HUB</h1>
+                  <p class="text-center">
+                    Register to Connect with Medical HUB
+                  </p>
 
-                    </h1>
-                    <p class="text-center">
-                      Register to Connect with Unions Connects
-
-
-
-                    </p>
-
-                    <br /><br /><br /><br /><br /><br />
-                    <h2 class="text-info mb-3">Login</h2>
-                    <div class="col-md-12 mb-5">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Email
-                          <sup style="color: red; font-size: 20px">*</sup>
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          class="form-control"
-                          formControlName="email"
-                          required
-                        />
-                        <div
-                          *ngIf="
-                            form.get('email')?.hasError('required') &&
-                            form.get('email')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Email is required.
-                        </div>
-                        <div
-                          *ngIf="
-                            form.get('email')?.hasError('email') &&
-                            form.get('email')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Invalid email format.
-                        </div>
+                  <br /><br /><br /><br /><br /><br />
+                  <h2 class="text-info mb-3">Login</h2>
+                  <div class="col-md-12 mb-5">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Email
+                        <sup style="color: red; font-size: 20px">*</sup>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        formControlName="email"
+                        required
+                      />
+                      <div
+                        *ngIf="
+                          form.get('email')?.hasError('required') &&
+                          form.get('email')?.touched
+                        "
+                        class="text-danger"
+                      >
+                        Email is required.
                       </div>
-                    </div>
-                    <div class="col-md-12 mb-5">
-                      <div class="form-group">
-                        <label style="font-size: 20px; font-weight: 600"
-                          >Password<sup style="color: red; font-size: 20px"
-                            >*</sup
-                          >
-                        </label>
-                        <input
-                          type="password"
-                          id="password"
-                          class="form-control"
-                          formControlName="password"
-                          required
-                        />
-                        <div
-                          *ngIf="
-                            form.get('password')?.hasError('required') &&
-                            form.get('password')?.touched
-                          "
-                          class="text-danger"
-                        >
-                          Password is required.
-                        </div>
-                      </div>
-                      <div class="form-group" style="padding-top: 10px">
-                        <label
-                          style="
-                            font-size: 16px;
-                            font-weight: 400;
-                            text-decoration: underline;
-                            cursor: pointer;
-                          "
-                          [routerLink]="['/forgot-password']"
-                          >Forgot Your Password?
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <div
-                          class="custom-control custom-checkbox custom-checkbox-lg"
-                        >
-                          <input
-                            style="width: 1rem; height: 1rem"
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="ageCheckbox"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="ageCheckbox"
-                            style="
-                              font-size: 20px;
-                              font-weight: 600;
-                              margin-left: 10px;
-                            "
-                          >
-                            Are you above 13 years old?
-                          </label>
-                        </div>
+                      <div
+                        *ngIf="
+                          form.get('email')?.hasError('email') &&
+                          form.get('email')?.touched
+                        "
+                        class="text-danger"
+                      >
+                        Invalid email format.
                       </div>
                     </div>
                   </div>
+                  <div class="col-md-12 mb-5">
+                    <div class="form-group">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Password<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        formControlName="password"
+                        required
+                      />
+                      <div
+                        *ngIf="
+                          form.get('password')?.hasError('required') &&
+                          form.get('password')?.touched
+                        "
+                        class="text-danger"
+                      >
+                        Password is required.
+                      </div>
+                    </div>
+                    <div class="form-group" style="padding-top: 10px">
+                      <label
+                        style="
+                          font-size: 16px;
+                          font-weight: 400;
+                          text-decoration: underline;
+                          cursor: pointer;
+                        "
+                        [routerLink]="['/forgot-password']"
+                        >Forgot Password?
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <div
+                        class="custom-control custom-checkbox custom-checkbox-lg"
+                      >
+                        <input
+                          style="width: 1rem; height: 1rem"
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="ageCheckbox"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="ageCheckbox"
+                          style="
+                            font-size: 20px;
+                            font-weight: 600;
+                            margin-left: 10px;
+                          "
+                        >
+                          Are you above 13 years old?
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                  <button
-                    (click)="openAgeModal('login')"
-                    type="submit"
-                    class="btn btn-info text-white mt-3 py-3 px-5"
-                    style="margin: auto; display: block"
-                    [disabled]="!form.valid"
-                  >
-                    Submit
-                  </button>
-                  <!-- <div class="bg-img">
-    <img src="assets/img/illustrations-office.png"></div> -->
-                </form>
+                <button
+                  (click)="openAgeModal('login')"
+                  type="submit"
+                  class="btn btn-info text-white mt-3 py-3 px-5"
+                  style="margin: auto; display: block"
+                  [disabled]="!form.valid"
+                >
+                  Submit
+                </button>
+                <!-- <div class="bg-img">
+  <img src="assets/img/illustrations-office.png"></div> -->
+              </form>
               </div>
 
               <div
