@@ -2037,7 +2037,7 @@ display: block;
   top: 0!important;
 }
 #header {
-  background: #697999;
+  background: #265073;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -2541,7 +2541,7 @@ color: black!important;
 }
 .footer {
   --bs-bg-opacity: 1;
-  background-color: #697999;
+  background-color: #265073;
   height: 80vh;
 }
 

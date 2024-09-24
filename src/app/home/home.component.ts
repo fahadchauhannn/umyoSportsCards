@@ -128,9 +128,9 @@ this.AFL_CIO=data.AFL_CIO
         $(this).text("Read more")
       }
     });
-        $('.moreless-button').click(function() {
-    $('.moretext').slideToggle();
-    if ($('.moreless-button').text() == "Read more") {
+        $('.moreless-buttonf').click(function() {
+    $('.moretextf').slideToggle();
+    if ($('.moreless-buttonf').text() == "Read more") {
       $(this).text("Read less")
     } else {
       $(this).text("Read more")

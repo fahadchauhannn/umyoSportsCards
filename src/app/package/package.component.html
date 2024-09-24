@@ -11,16 +11,18 @@
                   <a [routerLink]="['']" class="navbar-brand">
                     
                       <!-- <h1 class="text-white display-6">Medical HUB</h1> -->
-                      <img src="assets/Home page Images/logo2-removebg-preview.png" class="img-fluid rounded" style="width: auto;height: 100px;">
+                      <h1 class="text-white display-6">UMYO Gossip</h1>
                   </a>
                   <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                       <span class="fa fa-bars text-primary"></span>
                   </button>
                   <div class="collapse navbar-collapse " id="navbarCollapse">
                       <div class="navbar-nav d-lg-none">
-                         
-                         <a href="https://unionstalks.site/" class="nav-item nav-link">UnionsTalks.site</a>
-                          <a href="https://unionstweet.site/" class="nav-item nav-link">UnionsTweet.site</a>
+                        <a [routerLink]="['/']" class="nav-item nav-link"
+                        >Home</a
+                      >
+                         <a href="" class="nav-item nav-link">Gossip Talk</a>
+                          <a href="" class="nav-item nav-link">Gossip Tweet</a>
                           <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
                           <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
                           <a href="https://live.umyoconvo.site" class="nav-item nav-link">Podcast</a>
@@ -55,11 +57,15 @@
     <ul class="navbar-nav mb-2 pb-3 mb-lg-0">
 
       <li class="nav-item">
-        <a href="https://unionstalks.site/" class="nav-item nav-link">UnionsTalks.site</a>
+        <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
                          
       </li>
       <li class="nav-item">
-        <a href="https://unionstweet.site/" class="nav-item nav-link">UnionsTweet.site</a>
+        <a href="" class="nav-item nav-link">Gossip Talk</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-item nav-link">Gossip Tweet</a>
                          
       </li>
       <li class="nav-item">

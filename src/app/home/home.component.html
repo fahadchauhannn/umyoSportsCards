@@ -10,17 +10,19 @@
               <nav class="navbar  navbar-expand-xl" style="border-bottom:2px solid white;">
                   <a [routerLink]="['']" class="navbar-brand">
                     
-                      <!-- <h1 class="text-white display-6">Medical HUB</h1> -->
-                      <img src="assets/Home page Images/logo2-removebg-preview.png" class="img-fluid rounded" style="width: auto;height: 100px;">
+                      <h1 class="text-white display-6">UMYO Gossip</h1>
+                      <!-- <img src="assets/Home page Images/logo2-removebg-preview.png" class="img-fluid rounded" style="width: auto;height: 100px;"> -->
                   </a>
                   <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                       <span class="fa fa-bars text-primary"></span>
                   </button>
                   <div class="collapse navbar-collapse " id="navbarCollapse">
                       <div class="navbar-nav d-lg-none">
-                         
-                         <a href="https://unionstalks.site/" class="nav-item nav-link">UnionsTalks.site</a>
-                          <a href="https://unionstweet.site/" class="nav-item nav-link">UnionsTweet.site</a>
+                        <a [routerLink]="['/']" class="nav-item nav-link"
+                        >Home</a
+                      >
+                         <a href="" class="nav-item nav-link">Gossip Talk</a>
+                          <a href="" class="nav-item nav-link">Gossip Tweet</a>
                           <a href="https://umyoappt.site/" class="nav-item nav-link">Booking</a>
                           <a href="https://umyoevents.site/" class="nav-item nav-link">Events</a>
                           <a href="https://live.umyoconvo.site" class="nav-item nav-link">Podcast</a>
@@ -55,11 +57,15 @@
     <ul class="navbar-nav mb-2 pb-3 mb-lg-0">
 
       <li class="nav-item">
-        <a href="https://unionstalks.site/" class="nav-item nav-link">UnionsTalks.site</a>
+        <a [routerLink]="['/']" class="nav-item nav-link">Home</a>
                          
       </li>
       <li class="nav-item">
-        <a href="https://unionstweet.site/" class="nav-item nav-link">UnionsTweet.site</a>
+        <a href="" class="nav-item nav-link">Gossip Talk</a>
+                         
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-item nav-link">Gossip Tweet</a>
                          
       </li>
       <li class="nav-item">
@@ -279,104 +285,59 @@
   </div>
 </section> -->
 
-
-<section id="crafting">
+<div class="container-fluid featurs pt-3 mt-3 mb-5">
   <div class="container">
-
-    <div class="row justify-content-center py-5">
-      <div class="col-md-8 text-center">
-      <h3 class="my-3 featurs">Crafting a Digital Haven for Unions: Introducing a Revolutionary Platform for Union Members and Their Communities with UMYO Union Cards & Platforms</h3>
-      <p class=" my-3">In the dynamic landscape of labor and community advocacy, we've come together to build a virtual social media platform and directory exclusively tailored for unions and their members. Our platform is a thriving ecosystem that goes beyond mere connections; it's a collaborative space where unions can showcase their initiatives, strengthen member engagement, and streamline their services.
-</p>
-<div class="moretext" style="display:none;">
-<p class=" my-3">       Community Highlights for a wide audience to explore. This all-in-one platform is essential for individuals over 50 seeking greater visibility and connections using virtual interactive concepts to network with others just like you. A safe and positive place to thrive in the Community over 50 Hub community.</p>
+      <div class="row">
+          <div class="col-md-4">
+              <img src="assets/gossip/1.png" class="img-fluid">
+              <h5 class="text-center mt-3">Become a Content Creator | UMYO Gossip</h5>
+          </div>
+          <div class="col-md-4">
+              <img src="assets/gossip/2.png" class="img-fluid">
+              <h5 class="text-center mt-3">Essential HABITS In UMYO Gossip </h5>
+          </div>
+          <div class="col-md-4">
+              <img src="assets/gossip/3.png" class="img-fluid">
+               <h5 class="text-center mt-3">Content Marketing</h5>
+          </div>
       </div>
-     <div class="d-flex justify-content-center">
-      <a class="moreless-button  text-white bg-dark btn" style="text-decoration: none; " href="#feature">Read more</a>
-     </div>
-    </div>
+      <div class="row g-4 justify-content-center mt-3">
+          <div class="col-lg-8 p-3 bg-light text-dark px-5 rounded">
+              <h4 style="color: #4390B3;">Crafting a Digital Haven for Creators: Introducing a Revolutionary Platform for Content Creators, Influencers, Artists, Athletes, and Actors and Their Subscribers</h4>
+              <p class="my-4">As the UMYO Gossip Directory & Social Media Platforms continues to redefine the landscape of connections among enthusiasts, we are thrilled to present a groundbreaking innovation—the Gossip Virtual Cards. This cutting-edge digital showcase offers creators a dynamic and interactive platform, providing a comprehensive view of their creative journey, both in and out of the content world.</p>
+              <p class="my-4">In the ever-evolving landscape of content creation, we've come together to build a virtual Social Media platform and directory exclusively tailored for creators and their loyal subscribers. Our platform, a thriving ecosystem, goes beyond connecting; it's a collaborative space where content creators with over 5k registered subscribers can now monetize their endeavors.</p>
+               <div class="moretextf" style="display:none;">
+              <h4 class="my-4">Elevating Connections</h4>
+              <p class="my-4">Immerse yourself in a unique networking experience where subscribers can connect, support each other's businesses, and foster a community-driven approach. Picture a platform where brands align, talents flourish, and a shared vision propels everyone towards collective success.</p>
+              <h4 class="my-4">Monetizing Creativity</h4>
+              <p class="my-4">For content creators, the opportunity to monetize is now at your fingertips. Give back to your subscribers by sharing half of your proceeds daily through contests and money giveaways. It's not just a platform; it's a tribe, a cooperative venture where everyone contributes to the greatness of the collective.</p>
+              <h4 class="my-4">Uniting Influencers and Subscribers</h4>
+              <p class="my-4">Imagine artists, actors, radio & podcast hosts and athletes connecting with content creators and their subscribers but on a whole new level. This is a revolutionary shift in the way connections are formed. Unlock the potential of collaborations and mutual support, transcending individual boundaries to create a tribe that thrives on unity and shared success.</p>
+              <h4 class="my-4">Our Vision Unveiled: A Platform for All</h4>
+              <p class="my-4">This is more than a directory; it's a movement. A place where subscribers can network, support, and collaborate. A space where each content creator contributes to the prosperity of the entire community. It's a platform where talents shine, businesses thrive, and everyone benefits from the collective effort.</p>
+              <h4 class="my-4">Captivating Content Moments</h4>
+              <p class="my-4">Creators now have the opportunity to curate a compelling reel that highlights their most iconic moments. From captivating content to groundbreaking plays, the Gossip Virtual Card transforms into a visual journey through a creator's career. Enhanced with striking visuals, this section allows creators to showcase the essence of their skills and unwavering commitment to their craft.</p>
+              <h4 class="my-4">Effortless Social Media Fusion</h4>
+              <p class="my-4">Immerse yourself in the power of social connectivity by seamlessly integrating your social media profiles into the Gossip Virtual Card. Share your latest updates, engage with your audience, and connect with fellow creators—all from a centralized digital hub. This feature ensures that your virtual card becomes a dynamic representation of your ongoing narrative in the creative world.</p>
+              <p class="my-4">Step into the future of online presence and storytelling with the Gossip Virtual Card—an extraordinary tool that goes beyond the ordinary, encapsulating the brilliance of your creative journey.</p>
+              <p class="my-4">Be a part of UMYO Gossip, where innovation meets connectivity, and where the narrative of creative excellence is showcased in a whole new light.</p>
+              <p class="my-4">Introducing UMYO Gossip Cards, a revolutionary experience for content creators and their subscribers. Dive into the world of connectivity and engagement with Gossip Cards, featuring seamless integration of your social media profiles.</p>
+              <h4 class="my-4">Social Media Fusion</h4>
+              <p class="my-4">Immerse yourself in the realm of social connectivity by effortlessly integrating your social media profiles into the UMYO Gossip Card. Share your latest updates, interact with your audience, and connect with fellow creators—all from a centralized digital hub. This feature ensures that your Gossip Card becomes a dynamic representation of your ongoing narrative in the realm of content creation.</p>
+              <h4 class="my-4">QR Code Innovation</h4>
+              <p class="my-4">Experience a fusion of efficiency and innovation with the personalized QR code on each UMYO Gossip Card. Users can effortlessly scan the code to access a creator's card, simplifying networking and content sharing. Whether it's during virtual events, meet-and-greets, or casual encounters, the QR code transforms the way creators connect with subscribers, sponsors, and peers.</p>
+              <h4 class="my-4">Card Collaboration</h4>
+              <p class="my-4">UMYO Gossip Cards go beyond confinement—they are designed for sharing. Creators can effortlessly share their digital showcase with subscribers, friends, and potential collaborators. This feature fosters a sense of community, enabling creators to extend their impact beyond the traditional boundaries of content creation.</p>
+              <p class="my-4">Step into the future of creator-subscriber relationships with UMYO Gossip Cards—a revolutionary tool that blends innovation and connectivity, showcasing the brilliance of your creative journey.</p>
+              <p class="my-4">Connect, share, and thrive with UMYO Gossip Cards, where every card tells a story and every connection creates a vibrant community.</p>
+              <p class="my-4">Join us in shaping the future of online collaboration. Welcome to a new era of community-driven greatness. It takes a village, and we've built one where every voice matters, every talent shines, and every subscriber is a vital part of the journey.</p>
+              <p class="my-4">Welcome to our Village of Greatness.</p>
+               </div>
+          <a class="moreless-buttonf btn btn-dark" style="text-decoration: none; " href="#feature2">Read more</a>
+          </div>
+          </div>
   </div>
-    <div class="row pb-5">
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/1.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <!-- <img src="assets/Home page Images/2.jpg" class="card-img-top" alt="Card image">      -->
-        <iframe src="https://umyovideo.com/embed/2o8UCd5PfgIyv68?color=04abf2" frameborder="0" width="100%" height="200" allowfullscreen></iframe>
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/3.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/15.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/5.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/6.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/7.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/8.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/9.jpeg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/10.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/11.png" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/12.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/13.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/16.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-     <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="assets/Home page Images/4.jpg" class="card-img-top" alt="Card image">     
-    </div>
-     </div>
-    
-    </div>
-  </div>
-</section>
+</div>
 
 
 
