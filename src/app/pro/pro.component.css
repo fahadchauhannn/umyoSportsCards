@@ -707,6 +707,9 @@
     text-decoration: underline;
     opacity: 0.75 !important;
   }
+  .nav-link{
+    white-space: nowrap;
+  }
   .business-card-section {
     padding-block: 70px;
     margin: 0;

@@ -107,6 +107,9 @@
   text-align: center;
   margin-bottom: 4rem;
 }
+.nav-link{
+    white-space: nowrap !important;
+  }
 
 /* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
 

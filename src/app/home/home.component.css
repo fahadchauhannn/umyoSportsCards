@@ -265,6 +265,10 @@ ul.nav.nav-pills {
 .nav-pills a {
   color: #a0d2eb !important;
 }
+
+.nav-link{
+  white-space: nowrap;
+}
 .nav-pills .nav-link {
   font-weight: bold;
   padding: 20px;

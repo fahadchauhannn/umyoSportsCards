@@ -61,7 +61,7 @@ export class HomeComponent implements AfterViewInit {
   paypalTitleMessage:any;
   paypalMessage:any;
 
-  medicalType:any
+  lawyerType:any
 location:any
 state:any
 race:any
@@ -72,7 +72,7 @@ gender:any
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.medicalType = data.medicalType;
+      this.lawyerType = data.lawyerType;
       this.location = data.location;
       this.state = data.state;
       this.gender = data.gender;
@@ -480,7 +480,7 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       medical : this.form2.get('selectedMedical').value,
+       lawyer : this.form2.get('selectedLawyer').value,
 
        
        
@@ -690,7 +690,7 @@ gender:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyomedical.site/'
+                window.location.href='https://umyolawyer.site/'
             }
           );
         }
@@ -721,7 +721,7 @@ gender:any
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
-        selectedMedical: [''],
+        selectedLawyer: [''],
         selectedLocation:[''],
         selectedGender:['']
      
@@ -742,7 +742,7 @@ gender:any
         registerGenderType: ['', Validators.required],
 
         
-        registerMedical: ['', Validators.required],
+        registerLawyer: ['', Validators.required],
         
 
 

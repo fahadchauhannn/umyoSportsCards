@@ -492,3 +492,7 @@ font-weight: 400;
     /* padding: 5px; */
     color: white!important;
   }
+
+  .nav-link{
+    white-space: nowrap !important;
+  }

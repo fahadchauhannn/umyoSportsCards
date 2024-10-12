@@ -143,7 +143,7 @@
 					-(pow(2, 20 * x - 10) * sin((20 * x - 11.125) * c5)) / 2 :
 					pow(2, -20 * x + 10) * sin((20 * x - 11.125) * c5) / 2 + 1;
 			},
-			easeImedicalck: function (x) {
+			easeIlawyerck: function (x) {
 				return c3 * x * x * x - c1 * x * x;
 			},
 			easeOutBack: function (x) {
