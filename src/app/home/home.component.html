@@ -1,5 +1,5 @@
 <!-- Navbar start -->
-<section id="header" style="background: #898121 !important">
+<section id="header" style="background: #862B0D !important">
   <div class="overlay"></div>
   <div class="container-fluid">
     <div class="container px-0">
@@ -9,7 +9,7 @@
       >
         <a [routerLink]="['']" class="navbar-brand">
           <!-- <h1 class="text-white display-6">LT  HUB</h1> -->
-                                 <img src="assets/dfw/attorneys.png" class="img-fluid rounded-circle" style="width:4rem; height:4rem;">
+                                 <img src="assets/dfw/automotive.png" class="img-fluid rounded-circle" style="width:4rem; height:4rem;">
 
         </a>
         <button
@@ -193,25 +193,11 @@
       <div class="col-md-12 col-lg-7">
         <div class="page-width">
           <div class="lft-hero__content">
-            <h1 class="mb-3">Lawyer Connects Businesses and Community Connect</h1>
-            <p class="mb-5">
-              The Introduces An Innovative Networking Solution Exclusively For Lawyer Businesses And The Local Community.
-
-
-            </p>
-            <div class="moretext-he" style="display: none">
-              <p class="mb-5">
-                Our groundbreaking app unites business owners, community
-                members, local professionals, educational institutions, and
-                affiliated organizations on a specialized platform, dedicated to
-                advancing the growth of the lawyer industry and supporting
-                businesses and promoting the well-being of the local community.
-                Our app is the first in its category, enabling community members
-                and businesses to engage in the lawyer scene within their city.
-                An app for networking with fellow businesses, local experts, and
-                organizations while showcasing their skills and expertise,
-                receiving the recognition and support they rightfully deserve.
-              </p>
+            <h1 class="mb-3">Automotives, Businesses and Community Connect </h1>
+            <p class="mb-5">Automotives Connect Businesses and Community Connect introduces an Innovative Networking Solution Exclusively For Automotives Businesses And The Local Community.</p>
+            <div class="moretext-he" style="display:none;">
+            <p class="mb-5">Our groundbreaking app, Automotives Connects, unites business owners, community members, local professionals, educational institutions, and affiliated organizations on a specialized platform dedicated to advancing the growth of automotive and promoting the well-being of the local community. Automotives Connect is the first in its category, enabling community members and businesses to report violent crimes within their city while providing a space for networking with fellow businesses, local experts, and organizations. It's an opportunity to showcase skills and expertise, receiving the recognition and support they rightfully deserve.</p>
+        
             </div>
             <a
               class="moreless-button-he text-white btn btn-dark"
@@ -244,7 +230,7 @@
   <!-- <div class="page-width">
   <div class="lft-hero__content">
   <h1>CREATE IMPRESSIVE MILITARY CARDS</h1>
-      <p>UMYO lawyer  Connect introduces an innovative networking solution exclusively for military personnel.</p>
+      <p>UMYO Auto  Connect introduces an innovative networking solution exclusively for military personnel.</p>
   
   
   <a class="button js-no-transition" href="#linq-form" onclick="track('Clicked LFT hero cta')">Read More</a>
@@ -252,7 +238,7 @@
   </div> -->
 </section>
 
-<section id="logo-slider" style="background: #898121 !important">
+<section id="logo-slider" style="background: #862B0D !important">
   <div class="container-fluid mt-5">
     <div class="container-fluid mt-1 mobile" style="overflow-x: hidden">
       <h1 class="text-center mb-5 text-white">
@@ -334,18 +320,18 @@
 
 <!-- Hero End -->
 <!------- tab section start-------->
-<section id="header" style="background: #898121 !important">
+<section id="header" style="background: #862B0D !important">
   <div class="container-fluid srice py-5">
     <div class="container py-5">
       <h1
         class="text-white text-center"
         style="font-weight: 600; margin-bottom: 60px"
       >
-      Search For Lawyer
+      Search For Automotives Businesses and Community Pledges
     </h1>
       <div class="row">
         <div class="col-lg-5">
-          <h4 class="mb-4 text-white">Search For Lawyer & Community Here
+          <h4 class="mb-4 text-white">Search For Automotives & Community Here
           </h4>
           <form [formGroup]="form2" class="text-center">
             <div class="row">
@@ -362,10 +348,22 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  formControlName="selectedlawyer"
+                  formControlName="selectedAuto"
                 >
-                  <option selected value="" disabled>LAWYER TYPE</option>
-                  <option *ngFor="let item of lawyerType" [value]="item">
+                  <option selected value="" disabled>Automotive Biz Type</option>
+                  <option *ngFor="let item of autoType" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="selectedSpeciality"
+                >
+                  <option selected value="" disabled>Specialty Type</option>
+                  <option *ngFor="let item of specialityType" [value]="item">
                     {{ item }}
                   </option>
                 </select>
@@ -495,7 +493,7 @@
               >
                 <form [formGroup]="form">
                   <div class="row">
-                    <h1 class="text-center">UMYO For Lawyer Connects
+                    <h1 class="text-center">UMYO For Auto Connects
                     </h1>
                     <p class="text-center">
                       Register to Connect with Your Community
@@ -778,27 +776,54 @@
 
                     <div class="col-lg-6 mb-4">
                       <label style="font-size: 20px; font-weight: 600"
-                        >LAWYER TYPE<sup style="color: red; font-size: 20px"
+                        >Automotive Biz Type<sup style="color: red; font-size: 20px"
                           >*</sup
                         >
                       </label>
                       <select
                         [ngClass]="{
                           'invalid-input':
-                            (!form3.get('registerLawyer')?.touched ||
-                              !form3.get('registerLawyer')?.valid) &&
+                            (!form3.get('registerAuto')?.touched ||
+                              !form3.get('registerAuto')?.valid) &&
                             submitButtonClicked &&
                             !form3.valid
                         }"
                         required
-                        formControlName="registerLawyer"
+                        formControlName="registerAuto"
                         class="form-select"
                         aria-label="Default select example"
                       >
                         <option value="" disabled selected>
                           Please Select
                         </option>
-                        <option *ngFor="let item of lawyerType" [value]="item">
+                        <option *ngFor="let item of autoType" [value]="item">
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                      <label style="font-size: 20px; font-weight: 600"
+                        >Speciality Type<sup style="color: red; font-size: 20px"
+                          >*</sup
+                        >
+                      </label>
+                      <select
+                        [ngClass]="{
+                          'invalid-input':
+                            (!form3.get('registerSpeciality')?.touched ||
+                              !form3.get('registerSpeciality')?.valid) &&
+                            submitButtonClicked &&
+                            !form3.valid
+                        }"
+                        required
+                        formControlName="registerSpeciality"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option *ngFor="let item of specialityType" [value]="item">
                           {{ item }}
                         </option>
                       </select>
@@ -987,34 +1012,14 @@
           </div>
         </div>
       </div>
-      <h1 class="text-white my-3 featurs">
-        Lawyer Connects Businesses and Community Connect
-      </h1>
-      <p class="text-white my-3">
-        Through Lawyer Connects, you can effortlessly upload your business records, community achievements, interviews, local insights, images...
-
-
-      </p>
-      <div class="moretext" style="display: none">
-        <p class="text-white my-3">
-          community milestones for a wide-reaching audience. It's the premier destination for Restaurants businesses and those involved in the local community, providing them with a safe space exclusively for them.
-        </p>
-        <p class="text-white my-3">
-          Lawyer and community professionals can reciprocate the support provided by organizations that support the local community. Business owners now have the opportunity to register their companies and connect them with specific community members using unique ID codes during the registration process.
-
-
-        </p>
-        <p class="text-white my-3">
-          UMYO Lawyer and Community Connect is a groundbreaking social network app designed exclusively for the Lawyer community. It connects restaurants, community members, local experts, and organizations eager to support the growth of our community as they strive for success.
-
-
-        </p>
-        <p class="text-white my-3">
-          Share your Business Portfolio, Community Achievements, Local Insights, Interviews, Experiences, Images, and Community Highlights for a wide audience to explore. This all-in-one platform is essential for Lawyer professionals seeking greater visibility, using virtual interactive concepts to network with others just like you. It's a safe and positive place to thrive in the Lawyer community.
-
-
-        </p>
-      </div>
+      <h1 class="text-white my-3 featurs">Automotives, Businesses and Community Connect</h1>
+              <p class="text-white my-3">Through Automotives Connect, you can effortlessly upload your business records, community achievements, interviews, local insights, images...</p>
+    <div class="moretext" style="display:none;">
+        <p class="text-white my-3">community milestones for a wide-reaching audience. It's the premier destination for Realtors businesses and those involved in the local community, providing them with a safe space exclusively for them.</p>
+              <p class="text-white my-3">Automotives and community professionals can reciprocate the support provided by organizations that support the local community. Business owners now have the opportunity to register their companies and connect them with specific community members using unique ID codes during the registration process.</p>
+              <p class="text-white my-3">UMYO Automotives and Community Connect is a groundbreaking social network app designed exclusively for the Automotive community. It connects automotives, community members, local experts, and organizations eager to support the growth of our community as they strive for success.</p>
+              <p class="text-white my-3">Share your Business Portfolio, Community Achievements, Local Insights, Interviews, Experiences, Images, and Community Highlights for a wide audience to explore. This all-in-one platform is essential for Automotive professionals seeking greater visibility, using virtual interactive concepts to network with others just like you. It's a safe and positive place to thrive in the Automotive community.</p>
+              </div>
       <a
         class="moreless-button btn btn-light"
         style="text-decoration: none"
@@ -1792,7 +1797,7 @@
 <!-- Featurs Section End -->
 <div
   class="container-fluid bg-dark text-white-50 footer"
-  style="background: #898121 !important; height: 100% !important"
+  style="background: #862B0D !important; height: 100% !important"
 >
   <div class="container py-5">
     <div class="row g-4">
@@ -1862,8 +1867,8 @@
               target="_blank"
               >Nubians Connects</a
             >
-            <a class="btn-link" href="https://umyolawyer.site" target="_blank"
-              >Attorneys Connects</a
+            <a class="btn-link" href="https://umyoauto.site" target="_blank"
+              >automotive Connects</a
             >
             <a
               class="btn-link"
@@ -2090,7 +2095,7 @@
   
   Who We Are
   
-  Welcome! We are UMYO lawyer   Inc., a Texas corporation, or as we prefer to be known, "UMYO lawyer  ,"
+  Welcome! We are UMYO Auto   Inc., a Texas corporation, or as we prefer to be known, "UMYO Auto  ,"
   "we," "our," or "us." Our mission is to revolutionize how the world connects! We provide
   products,services, and technologies ("Products") allowing users ("Users") to organize,
   display, and share information with their contacts through our software, mobile
@@ -2104,7 +2109,7 @@
   How to Contact Us
   
   If you have any questions about our practices or this Policy, please reach out to us via
-  email at data-privacy@UMYO lawyer  .com or by mail at UMYO lawyer   Inc., Attn: Data Privacy
+  email at data-privacy@UMYO Auto  .com or by mail at UMYO Auto   Inc., Attn: Data Privacy
   Officer, 1709 Martin Luther King Blvd Dallas, Texas, 75215
   
   Application of this Policy
@@ -2288,8 +2293,8 @@
   confidentiality requirements, and prohibiting use for any purpose other than contract
    performance. We do not sell your Personal Information.
   
-  For Users with an account linked to a “UMYO lawyer   for Teams” subscription, the administrator 
-  associated with your “UMYO lawyer   for Teams” account may manage, access, view, or store your
+  For Users with an account linked to a “UMYO Auto   for Teams” subscription, the administrator 
+  associated with your “UMYO Auto   for Teams” account may manage, access, view, or store your
   Information, including Personal Information. We do not control or limit your account's
   accessibility, and we are not responsible for the administrator's access, disclosure, or
   processing of your Information.
@@ -2330,7 +2335,7 @@
   
   **Effective Date: [Date]**
   
-  Welcome to UMYO lawyer  ! This User Data Privacy Policy ("Policy") outlines how we collect,
+  Welcome to UMYO Auto  ! This User Data Privacy Policy ("Policy") outlines how we collect,
   use, disclose, and protect your information when you use our platform, products, and
   services ("Platform" or "Products"). Please read this Policy carefully to understand
   our practices regarding your information and how we will treat it.
@@ -2422,8 +2427,8 @@
   ### 7. **How to Exercise Your Rights**
   
   To exercise your rights or inquire about your Personal Information, contact us at 
-  [data-privacy@UMYO lawyer  .com] (mailto:data-privacy@UMYO lawyer  .com) or by mail at
-  UMYO lawyer   Inc., Attn: Data Privacy Officer, [Address].
+  [data-privacy@UMYO Auto  .com] (mailto:data-privacy@UMYO Auto  .com) or by mail at
+  UMYO Auto   Inc., Attn: Data Privacy Officer, [Address].
   
   We will confirm receipt of your request within ten (10) business days and aim to
   respond within one month, unless the request is complex. If applicable, any disclosures
@@ -2452,10 +2457,10 @@
   
   We do not sell Personal Information. If you are 16 or older, you can direct us not
   to sell your information at any time by contacting us at 
-  [data-privacy@UMYO lawyer  .com](mailto:data-privacy@UMYO lawyer  .com) or by mail at
-  UMYO lawyer   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
+  [data-privacy@UMYO Auto  .com](mailto:data-privacy@UMYO Auto  .com) or by mail at
+  UMYO Auto   Inc., Attn: Data Privacy Officer, 1709 MLK BLVD Dallas, Texas 75215
   
-  **Changes to Our Privacy Policy at UMYO lawyer  **
+  **Changes to Our Privacy Policy at UMYO Auto  **
   
   You acknowledge that this Policy is subject to modification by us at any time,
   without prior written notice,and solely at our discretion. Any revisions to this
@@ -2498,7 +2503,7 @@
               overflow-x: hidden;
             "
           >
-              **Refund Policy at UMYO lawyer  **
+              **Refund Policy at UMYO Auto  **
   
   **Returns for Defective Items:**
   Our steadfast commitment to delivering high-quality custom items remains unwavering. In the
@@ -2571,9 +2576,9 @@
               overflow-x: hidden;
             "
           >
-              Welcome to UMYO lawyer  !
+              Welcome to UMYO Auto  !
   
-  **Terms of Service and Sale - UMYO lawyer  **
+  **Terms of Service and Sale - UMYO Auto  **
   
   **Last Revised: December 22, 2023**
   
@@ -2581,7 +2586,7 @@
   
   **Introduction**
   
-  Welcome! We are UMYO lawyer  , a Delaware corporation, known as "we," "our," or "us." Our mission
+  Welcome! We are UMYO Auto  , a Delaware corporation, known as "we," "our," or "us." Our mission
   is to redefine how the world connects. We provide Products, Services, and Technologies
   ("Products") that enable Users ("Users") to organize, display, and share information
   with others and third parties ("Services") through our software, mobile application, and
@@ -2681,11 +2686,11 @@
   
   ---
   
-  **UMYO lawyer   App Terms of Service**
+  **UMYO Auto   App Terms of Service**
   
   **1. Account Information and Updates**
   
-  (g) You must provide accurate, current, and complete information for your UMYO lawyer  
+  (g) You must provide accurate, current, and complete information for your UMYO Auto  
   account. Ensure timely updates for your billing account, including changes to
   billing address, credit card number, or expiration date. Promptly notify us or
   our payment processor about canceled payment methods or potential security breaches.
@@ -2702,7 +2707,7 @@
   
   **3. User-Generated Content**
   
-  (a) Users can post content ("Content") on UMYO lawyer  . Posted Content is not confidential,
+  (a) Users can post content ("Content") on UMYO Auto  . Posted Content is not confidential,
    treated as public information. By posting, users represent having the right to do so
   and grant us a non-exclusive license to use it for platform operation and promotion.
   

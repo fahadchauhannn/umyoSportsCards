@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-lawyer',
-  templateUrl: './lawyer.component.html',
-  styleUrls: ['./lawyer.component.css']
+  selector: 'app-Auto',
+  templateUrl: './Auto.component.html',
+  styleUrls: ['./Auto.component.css']
 })
-export class lawyerComponent {
+export class AutoComponent {
 
 }

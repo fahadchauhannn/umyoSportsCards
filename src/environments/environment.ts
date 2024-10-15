@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   
-  apiUrl: "https://umyolawyer.site/api_umyocards/public/api/"
+  apiUrl: "https://umyoauto.site/api_umyocards/public/api/"
   
 };
 

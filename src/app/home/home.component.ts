@@ -61,7 +61,8 @@ export class HomeComponent implements AfterViewInit {
   paypalTitleMessage:any;
   paypalMessage:any;
 
-  lawyerType:any
+  autoType:any
+  specialityType:any
 location:any
 state:any
 race:any
@@ -72,7 +73,8 @@ gender:any
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.lawyerType = data.lawyerType;
+      this.autoType = data.autoType;
+      this.specialityType = data.specialityType;
       this.location = data.location;
       this.state = data.state;
       this.gender = data.gender;
@@ -480,7 +482,8 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       lawyer : this.form2.get('selectedLawyer').value,
+       auto : this.form2.get('selectedAuto').value,
+       speciality : this.form2.get('selectedSpeciality').value,
 
        
        
@@ -690,7 +693,7 @@ gender:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyolawyer.site/'
+                window.location.href='https://umyoauto.site/'
             }
           );
         }
@@ -721,7 +724,9 @@ gender:any
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
-        selectedLawyer: [''],
+        selectedAuto: [''],
+        selectedSpeciality: [''],
+        
         selectedLocation:[''],
         selectedGender:['']
      
@@ -742,7 +747,8 @@ gender:any
         registerGenderType: ['', Validators.required],
 
         
-        registerLawyer: ['', Validators.required],
+        registerAuto: ['', Validators.required],
+        registerSpeciality: ['', Validators.required],
         
 
 
