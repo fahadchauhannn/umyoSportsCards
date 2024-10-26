@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import * as QRCode from 'qrcode-generator';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -47,7 +48,8 @@ export class Template10Component implements OnChanges {
 
 
 
-  
+  qrCodeImage: SafeResourceUrl | null = null; // Variable to hold the QR code image
+
 
 
    sanitizedUrlsCache: Map<string, SafeResourceUrl> = new Map<string, SafeResourceUrl>();
@@ -61,6 +63,25 @@ export class Template10Component implements OnChanges {
     
   }
 
+
+  ngOnInit(): void {
+    this.generateQRCode();
+  }
+
+
+  generateQRCode() {
+    const url = window.location.href; // Get the current URL
+    const qr = QRCode(0, 'L'); // Generate QR code with low error correction level
+    qr.addData(url);
+    qr.make();
+    const qrImageTag = qr.createImgTag(5); // Create QR code image tag with a scale of 5
+
+    // Sanitize the image tag and store it in qrCodeImage
+    const div = document.createElement('div');
+    div.innerHTML = qrImageTag;
+    const img = div.firstChild as HTMLImageElement;
+    this.qrCodeImage = this.sanitizer.bypassSecurityTrustResourceUrl(img.src);
+  }
 
 
   // productImages2: string[] = ['assets/images/app-devices.jpg','assets/images/app-devices.jpg','assets/images/app-devices.jpg'];
@@ -148,7 +169,6 @@ return ""
       return sanitizedUrl;
     }
   }
- 
   sanitizeumyovideo(url: string): SafeResourceUrl {
     let formatedUrl=url
    
@@ -160,6 +180,8 @@ return ""
       return sanitizedUrl;
     }
   }
+ 
+
    // Dailymotion functions
    convertDailymotionToEmbeddedFormat(url: string): string {
     const videoId = this.extractDailymotionVideoId(url);
@@ -185,6 +207,7 @@ return ""
       return sanitizedUrl;
     }
   }
+
 
   formatVimeoUrl(url: string): string {
     const match = url.match(/vimeo\.com\/(\d+)/);
