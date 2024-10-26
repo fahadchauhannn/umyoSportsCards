@@ -96,7 +96,7 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              business_type: form3.get('registerBusiness')?.value,
+              business_type: form3.get('registerBusinessType')?.value,
               sport_type: form3.get('registerSportType')?.value,
               age_type: form3.get('registerAgeType')?.value,
               position: form3.get('registerPositionType')?.value,
@@ -105,10 +105,15 @@ if (expireInValue.includes("year")) {
               location: form3.get('registerLocation')?.value,
               race: form3.get('registerRaceType')?.value,
               gender: form3.get('registerGenderType')?.value,
+              alumni: form3.get('registerAlumni')?.value,
               
 
               type: form3.get('registerType')?.value,
+              college: form3.get('registerCollege')?.value,
+
               talent: form3.get('registerTalent')?.value,
+
+              year: form3.get('registerYear')?.value,
               
               subscription_id:"",
 
@@ -182,8 +187,9 @@ if (expireInValue.includes("year")) {
       email: form3.get('registerEmail').value,
       password: form3.get('registerPassword').value,
 
-      
-      business_type: form3.get('registerBusiness')?.value,
+      alumni: form3.get('registerAlumni')?.value,
+
+      business_type: form3.get('registerBusinessType')?.value,
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
       position: form3.get('registerPositionType')?.value,
@@ -291,11 +297,12 @@ if (expireInValue.includes("year")) {
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
           plan_id:response.plan_id,
+          alumni: form3.get('registerAlumni')?.value,
 
           
       sport_type: form3.get('registerSportType')?.value,
       age_type: form3.get('registerAgeType')?.value,
-      business_type: form3.get('registerBusiness')?.value,
+      business_type: form3.get('registerBusinessType')?.value,
       position: form3.get('registerPositionType')?.value,
       
       type: form3.get('registerType')?.value,

@@ -71,13 +71,18 @@ export class HomeComponent implements AfterViewInit {
   mode:any
   paypalTitleMessage:any;
   paypalMessage:any;
-  
+  businessType:any
+  year:any
+  study:any
+  degree:any
+
   ngOnInit(): void {
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.specialityType = data.specialityType;
-      this.talentType = data.talentType;
-      this.location = data.location;
+      this.businessType = data.businessType;
+      this.year = data.year;
+      this.study = data.study;
+      this.degree = data.degree;
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
@@ -481,8 +486,6 @@ export class HomeComponent implements AfterViewInit {
        const payload={
         state : this.form2.get('selectedStateType').value,
        city : this.form2.get('selectedCity').value,
-       type : this.form2.get('selectedType').value,
-       talent : this.form2.get('selectedTalent').value,
        
        
 
@@ -490,6 +493,18 @@ export class HomeComponent implements AfterViewInit {
        name : this.form2.get('selectedName').value,
        gender : this.form2.get('selectedGender').value,
        race : this.form2.get('selectedRace').value,
+
+       collegeName : this.form2.get('selectedCollegeName').value,
+       year : this.form2.get('selectedYear').value,
+
+       study : this.form2.get('selectedStudies').value,
+       degree : this.form2.get('selectedDegree').value,
+       businessType : this.form2.get('selectedBusiness').value,
+       alumni : this.form2.get('selectedAlumni').value,
+
+
+    
+       
        
        }
       
@@ -679,7 +694,7 @@ export class HomeComponent implements AfterViewInit {
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoentertainment.site/'
+                window.location.href='https://umyoColleges.site/'
             }
           );
         }
@@ -706,12 +721,17 @@ export class HomeComponent implements AfterViewInit {
         
         selectedStateType: [''],
         selectedName: [''],
+        selectedCollegeName: [''],
         selectedRace: [''],
-        selectedLocation: [''],
+        selectedYear: [''],
+
         selectedGender: [''],
         selectedCity: [''],
-        selectedType:[''],
-        selectedTalent:[''],
+        selectedStudies:[''],
+        selectedDegree:[''],
+        selectedBusiness:[''],
+        selectedAlumni:[''],
+        
         
         
      
@@ -728,12 +748,16 @@ export class HomeComponent implements AfterViewInit {
         registerCityType: ['', Validators.required],
         registerRaceType: ['', Validators.required],
         registerGenderType: ['', Validators.required],
-        registerLocation: ['', Validators.required],
-        registerType: ['', Validators.required],
+
+        registerCollege: ['', Validators.required],
+        registerStudy: ['', Validators.required],
+        registerDegree: ['', Validators.required],
+        registerYear: ['', Validators.required],
+        registerAlumni: ['', Validators.required],
+        registerBusinessType: ['', Validators.required],
   
 
         registerStateType: ['', Validators.required],
-        registerTalent: ['', Validators.required],
       
         
 
