@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: "https://umyocolleges.site/api_umyocards/public/api/"
+  apiUrl: "https://umyodivine9.site/api_umyocards/public/api/"
 };
 
 

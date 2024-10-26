@@ -76,6 +76,7 @@ export class HomeComponent implements AfterViewInit {
   study:any
   degree:any
 
+  college:any
   ngOnInit(): void {
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
@@ -86,6 +87,8 @@ export class HomeComponent implements AfterViewInit {
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
+      this.college = data.college;
+
     });
 
 
@@ -494,13 +497,12 @@ export class HomeComponent implements AfterViewInit {
        gender : this.form2.get('selectedGender').value,
        race : this.form2.get('selectedRace').value,
 
-       collegeName : this.form2.get('selectedCollegeName').value,
+       college : this.form2.get('selectedCollege').value,
        year : this.form2.get('selectedYear').value,
 
        study : this.form2.get('selectedStudies').value,
        degree : this.form2.get('selectedDegree').value,
        businessType : this.form2.get('selectedBusiness').value,
-       alumni : this.form2.get('selectedAlumni').value,
 
 
     
@@ -721,7 +723,7 @@ export class HomeComponent implements AfterViewInit {
         
         selectedStateType: [''],
         selectedName: [''],
-        selectedCollegeName: [''],
+        selectedCollege: [''],
         selectedRace: [''],
         selectedYear: [''],
 
@@ -730,7 +732,6 @@ export class HomeComponent implements AfterViewInit {
         selectedStudies:[''],
         selectedDegree:[''],
         selectedBusiness:[''],
-        selectedAlumni:[''],
         
         
         
@@ -753,7 +754,6 @@ export class HomeComponent implements AfterViewInit {
         registerStudy: ['', Validators.required],
         registerDegree: ['', Validators.required],
         registerYear: ['', Validators.required],
-        registerAlumni: ['', Validators.required],
         registerBusinessType: ['', Validators.required],
   
 
