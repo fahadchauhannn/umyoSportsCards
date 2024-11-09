@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-Auto',
-  templateUrl: './Auto.component.html',
-  styleUrls: ['./Auto.component.css']
+  selector: 'app-Greeks',
+  templateUrl: './Greeks.component.html',
+  styleUrls: ['./Greeks.component.css']
 })
 export class AutoComponent {
 

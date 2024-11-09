@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AutoComponent } from './Auto.component';
+import { AutoComponent } from './Greeks.component';
 
 describe('AutoComponent', () => {
   let component: AutoComponent;

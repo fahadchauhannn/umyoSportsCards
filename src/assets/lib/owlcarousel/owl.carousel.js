@@ -1707,7 +1707,7 @@
 
 	/**
 	 * Creates the auto refresh plugin.
-	 * @class The Auto Refresh Plugin
+	 * @class The Greeks Refresh Plugin
 	 * @param {Owl} carousel - The Owl Carousel
 	 */
 	var AutoRefresh = function(carousel) {
@@ -1955,7 +1955,7 @@
 
 	/**
 	 * Creates the auto height plugin.
-	 * @class The Auto Height Plugin
+	 * @class The Greeks Height Plugin
 	 * @param {Owl} carousel - The Owl Carousel
 	 */
 	var AutoHeight = function(carousel) {

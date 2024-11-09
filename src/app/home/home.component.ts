@@ -67,18 +67,20 @@ location:any
 state:any
 race:any
 gender:any
-
-  
+year:any
+  degree:any
+study:any
   ngOnInit(): void {
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.autoType = data.autoType;
-      this.specialityType = data.specialityType;
-      this.location = data.location;
+      this.businessType = data.businessType;
+      this.degree = data.degree;
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
+      this.year = data.year;
+      this.study = data.study;
     });
 
 
@@ -723,14 +725,15 @@ gender:any
         selectedStateType: [''],
         selectedName: [''],
         selectedRace: [''],
-        selectedCity: [''],
-        selectedAuto: [''],
-        selectedSpeciality: [''],
         
         selectedLocation:[''],
-        selectedGender:['']
+        selectedGender:[''],
+        selectedGreeks:[''],
+        selectedYear:[''],
+        selectedStudy:[''],
+        selectedBusinessType:[''],
      
-        
+        selectedDegree:['']
         
 
       });
@@ -741,17 +744,15 @@ gender:any
         registerConfirmEmail: ['', [Validators.required, Validators.email]],
         registerPassword: ['', [Validators.required, Validators.minLength(6)]],
         registerPhone: ['', Validators.required],
-        registerCityType: ['', Validators.required],
+        registerGreeks: ['', Validators.required],
+        registerYear: ['', Validators.required],
+        registerDegree: ['', Validators.required],
         registerRaceType: ['', Validators.required],
-        registerLocation: ['', Validators.required],
+        registerStudy: ['', Validators.required],
         registerGenderType: ['', Validators.required],
+        registerBusinessType: ['', Validators.required],
 
-        
-        registerAuto: ['', Validators.required],
-        registerSpeciality: ['', Validators.required],
-        
-
-
+  
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
       }, { validators: this.emailMatchValidator })
