@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   
-  apiUrl: "https://umyoauto.site/api_umyocards/public/api/"
+  apiUrl: "https://umyoautomotive.site/api_umyocards/public/api/"
 };
 
 
