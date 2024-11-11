@@ -476,7 +476,6 @@ study:any
       const payload={
         state : this.form2.get('selectedStateType').value,
        gender : this.form2.get('selectedGender').value,
-       location : this.form2.get('selectedLocation').value,
        
       
        name : this.form2.get('selectedName').value,
