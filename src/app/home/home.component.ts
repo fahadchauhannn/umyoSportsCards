@@ -484,7 +484,6 @@ grade:any
        
        race : this.form2.get('selectedRace').value,
 
-       study : this.form2.get('selectedStudy').value,
        business_type : this.form2.get('selectedBusinessType').value,
        school : this.form2.get('selectedSchool').value,
        businessCity : this.form2.get('selectedBusinessAlumniCity').value,
