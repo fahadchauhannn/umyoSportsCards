@@ -97,7 +97,7 @@ if (expireInValue.includes("year")) {
               package_id: selectedPackage.id,
               balance_transaction: null,
               balance_transaction_type: 'stripe',
-              business_type: form3.get('registerBusiness')?.value,
+              business_type: form3.get('registerBusinessType')?.value,
               auto: form3.get('registerAuto')?.value,
               speciality: form3.get('registerSpeciality')?.value,
               sport_type: form3.get('registerSportType')?.value,
@@ -119,6 +119,10 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
+
+      degree: form3.get('registerDegree')?.value,
+      greek: form3.get('registerGreeks')?.value,
+      study: form3.get('registerStudy')?.value,
         
                             
         
@@ -192,7 +196,7 @@ if (expireInValue.includes("year")) {
       password: form3.get('registerPassword').value,
 
       
-      business_type: form3.get('registerBusiness')?.value,
+      business_type: form3.get('registerBusinessType')?.value,
       auto: form3.get('registerAuto')?.value,
       sport_type: form3.get('registerSportType')?.value,
       speciality: form3.get('registerSpeciality')?.value,
@@ -202,6 +206,10 @@ if (expireInValue.includes("year")) {
       state: form3.get('registerStateType')?.value,
       city: form3.get('registerCityType')?.value,
       location: form3.get('registerLocationType')?.value,
+      study: form3.get('registerStudy')?.value,
+
+      greek: form3.get('registerGreeks')?.value,
+
       race: form3.get('registerRaceType')?.value,
       gender: form3.get('registerGenderType')?.value,
       truckType: form3.get('registerTypeOfTrucks')?.value,
@@ -219,6 +227,7 @@ if (expireInValue.includes("year")) {
 
 
 
+      degree: form3.get('registerDegree')?.value,
 
       
               
@@ -321,17 +330,22 @@ if (expireInValue.includes("year")) {
           city: form3.get('registerCityType')?.value,
           race: form3.get('registerRaceType')?.value,
           gender: form3.get('registerGenderType')?.value,
+          study: form3.get('registerStudy')?.value,
+
           plan_id:response.plan_id,
 
-          business_type: form3.get('registerBusiness')?.value,
+          business_type: form3.get('registerBusinessType')?.value,
           auto: form3.get('registerAuto')?.value,
       sport_type: form3.get('registerSportType')?.value,
+      greek: form3.get('registerGreeks')?.value,
+
       age_type: form3.get('registerAgeType')?.value,
       
       speciality: form3.get('registerSpeciality')?.value,
 
       
-      
+      degree: form3.get('registerDegree')?.value,
+
       
       
       truckType: form3.get('registerTypeOfTrucks')?.value,

@@ -475,7 +475,6 @@ study:any
       
       const payload={
         state : this.form2.get('selectedStateType').value,
-       city : this.form2.get('selectedCity').value,
        gender : this.form2.get('selectedGender').value,
        location : this.form2.get('selectedLocation').value,
        
@@ -483,9 +482,14 @@ study:any
        name : this.form2.get('selectedName').value,
        
        race : this.form2.get('selectedRace').value,
+
+       greek : this.form2.get('selectedGreeks').value,
+       year : this.form2.get('selectedYear').value,
+       study : this.form2.get('selectedStudy').value,
+       business_type : this.form2.get('selectedBusinessType').value,
+       degree : this.form2.get('selectedDegree').value,
       
-       auto : this.form2.get('selectedAuto').value,
-       speciality : this.form2.get('selectedSpeciality').value,
+      
 
        
        
@@ -695,7 +699,7 @@ study:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoautomotive.site/'
+                window.location.href='https://umyogreeks.site/'
             }
           );
         }
@@ -726,7 +730,6 @@ study:any
         selectedName: [''],
         selectedRace: [''],
         
-        selectedLocation:[''],
         selectedGender:[''],
         selectedGreeks:[''],
         selectedYear:[''],
@@ -755,6 +758,10 @@ study:any
   
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
+
+
+
+
       }, { validators: this.emailMatchValidator })
 
 
