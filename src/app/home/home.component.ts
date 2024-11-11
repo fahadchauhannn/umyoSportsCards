@@ -70,17 +70,19 @@ gender:any
 year:any
   degree:any
 study:any
+grade:any
   ngOnInit(): void {
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
       this.businessType = data.businessType;
-      this.degree = data.degree;
+
       this.state = data.state;
       this.gender = data.gender;
       this.race = data.race;
-      this.year = data.year;
-      this.study = data.study;
+
+      this.grade = data.grade;
+
     });
 
 
@@ -476,20 +478,19 @@ study:any
       const payload={
         state : this.form2.get('selectedStateType').value,
        gender : this.form2.get('selectedGender').value,
-       location : this.form2.get('selectedLocation').value,
        
       
        name : this.form2.get('selectedName').value,
        
        race : this.form2.get('selectedRace').value,
 
-       greek : this.form2.get('selectedGreeks').value,
-       year : this.form2.get('selectedYear').value,
        study : this.form2.get('selectedStudy').value,
        business_type : this.form2.get('selectedBusinessType').value,
-       degree : this.form2.get('selectedDegree').value,
+       school : this.form2.get('selectedSchool').value,
+       businessCity : this.form2.get('selectedBusinessAlumniCity').value,
+       grade : this.form2.get('selectedGrade').value,
       
-      
+
 
        
        
@@ -699,7 +700,7 @@ study:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyogreeks.site/'
+                window.location.href='https://umyohighschool.site/'
             }
           );
         }
@@ -731,12 +732,11 @@ study:any
         selectedRace: [''],
         
         selectedGender:[''],
-        selectedGreeks:[''],
-        selectedYear:[''],
-        selectedStudy:[''],
+        selectedSchool:[''],
+        selectedCity:[''],
+        selectedGrade:[''],
         selectedBusinessType:[''],
-     
-        selectedDegree:['']
+        selectedBusinessAlumniCity:['']
         
 
       });
@@ -747,15 +747,13 @@ study:any
         registerConfirmEmail: ['', [Validators.required, Validators.email]],
         registerPassword: ['', [Validators.required, Validators.minLength(6)]],
         registerPhone: ['', Validators.required],
-        registerGreeks: ['', Validators.required],
-        registerYear: ['', Validators.required],
-        registerDegree: ['', Validators.required],
+        registerSchool: ['', Validators.required],
+        registerGrade: ['', Validators.required],
+        registerBusinessAlumniCity: ['', Validators.required],
         registerRaceType: ['', Validators.required],
-        registerStudy: ['', Validators.required],
         registerGenderType: ['', Validators.required],
         registerBusinessType: ['', Validators.required],
-
-  
+        registerCity: ['', Validators.required],
         registerStateType: ['', Validators.required],
         registerReferralCode: [''], // Not required
 

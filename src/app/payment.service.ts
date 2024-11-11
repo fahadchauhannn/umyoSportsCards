@@ -123,6 +123,9 @@ if (expireInValue.includes("year")) {
       degree: form3.get('registerDegree')?.value,
       greek: form3.get('registerGreeks')?.value,
       study: form3.get('registerStudy')?.value,
+      businessCity: form3.get('registerBusinessAlumniCity')?.value,
+      grade: form3.get('registerGrade')?.value,
+      school: form3.get('registerSchool')?.value,
         
                             
         
@@ -224,7 +227,11 @@ if (expireInValue.includes("year")) {
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
 
-
+      businessCity: form3.get('registerBusinessAlumniCity')?.value,
+      grade: form3.get('registerGrade')?.value,
+      school: form3.get('registerSchool')?.value,
+        
+                  
 
 
       degree: form3.get('registerDegree')?.value,
@@ -359,7 +366,11 @@ if (expireInValue.includes("year")) {
       year: form3.get('registerYear')?.value,
       trophy: form3.get('registerTrophy')?.value,
       honor: form3.get('registerHonor')?.value,
-
+      businessCity: form3.get('registerBusinessAlumniCity')?.value,
+      grade: form3.get('registerGrade')?.value,
+      school: form3.get('registerSchool')?.value,
+        
+                  
 
       
 
