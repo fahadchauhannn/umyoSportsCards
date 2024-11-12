@@ -73,8 +73,7 @@ gender:any
 
 
     this.dropdownService.getDropdownOptions().subscribe(data => {
-      this.autoType = data.autoType;
-      this.specialityType = data.specialityType;
+      this.businessType = data.businessType;
       this.location = data.location;
       this.state = data.state;
       this.gender = data.gender;
