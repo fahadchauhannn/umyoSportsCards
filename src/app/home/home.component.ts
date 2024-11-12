@@ -481,8 +481,7 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       businessType : this.form2.get('selectedbusiness').value,
-
+       businessType : this.form2.get('selectedBusiness').value
        
        
        }
@@ -725,8 +724,7 @@ gender:any
         selectedBusiness: [''],
         
         selectedLocation:[''],
-        selectedGender:['']
-     
+        selectedGender:[''],
         
         
 
