@@ -1707,7 +1707,7 @@
 
 	/**
 	 * Creates the auto refresh plugin.
-	 * @class The Nubian Refresh Plugin
+	 * @class The Bizatl Refresh Plugin
 	 * @param {Owl} carousel - The Owl Carousel
 	 */
 	var AutoRefresh = function(carousel) {
@@ -1955,7 +1955,7 @@
 
 	/**
 	 * Creates the auto height plugin.
-	 * @class The Nubian Height Plugin
+	 * @class The Bizatl Height Plugin
 	 * @param {Owl} carousel - The Owl Carousel
 	 */
 	var AutoHeight = function(carousel) {

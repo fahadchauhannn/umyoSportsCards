@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AutoComponent } from './Nubian.component';
+import { AutoComponent } from './Bizatl.component';
 
 describe('AutoComponent', () => {
   let component: AutoComponent;

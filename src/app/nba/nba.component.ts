@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-Nubian',
-  templateUrl: './Nubian.component.html',
-  styleUrls: ['./Nubian.component.css']
+  selector: 'app-Bizatl',
+  templateUrl: './Bizatl.component.html',
+  styleUrls: ['./Bizatl.component.css']
 })
 export class AutoComponent {
 
