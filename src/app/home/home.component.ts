@@ -482,8 +482,7 @@ gender:any
        
        race : this.form2.get('selectedRace').value,
       
-       auto : this.form2.get('selectedAuto').value,
-       speciality : this.form2.get('selectedSpeciality').value,
+       businessType : this.form2.get('selectedbusiness').value,
 
        
        
@@ -693,7 +692,7 @@ gender:any
               console.error("Failed to execute billing agreement", error);
               this.showLoadingModal=false
                 alert("We're sorry, it seems that your payment through PayPal was not completed successfully. if you continue to experience difficulties, please contact us!")
-                window.location.href='https://umyoautomotive.site/'
+                window.location.href='https://nubianhigherlearning.com/'
             }
           );
         }
@@ -724,8 +723,7 @@ gender:any
         selectedName: [''],
         selectedRace: [''],
         selectedCity: [''],
-        selectedAuto: [''],
-        selectedSpeciality: [''],
+        selectedBusiness: [''],
         
         selectedLocation:[''],
         selectedGender:['']
@@ -747,8 +745,7 @@ gender:any
         registerGenderType: ['', Validators.required],
 
         
-        registerAuto: ['', Validators.required],
-        registerSpeciality: ['', Validators.required],
+        registerBusiness: ['', Validators.required],
         
 
 
