@@ -252,7 +252,7 @@ this.paymentForm = this.fb.group({
 
 
  openShareDialog() {
-    const shareUrl = `https://umyoentertainment.site/cards/share-card/${this.shareCardId}`;
+    const shareUrl = `https://faithhub.site/cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
     this.incrementCardSend(this.shareCardId)
     // Open a new window for sharing
