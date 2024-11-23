@@ -46,11 +46,13 @@ export class CardsComponent implements AfterViewInit{
   shareCardId:any
   updatedPlanId:any
   userData:any={}
+
   payload={
     user_id:this.id,
     stripe_subscription_id:null,
     subscription_id:null
   }
+
   public elementsOptions: StripeElementsOptions = {
     locale: 'en',
   };
@@ -225,7 +227,7 @@ this.paymentForm = this.fb.group({
   openShareDialog() {
     const shareUrl = `https://umyoentertainment.site/cards/share-card/${this.shareCardId}`;
     const shareText = 'Check out my sports card!';
-
+    this.incrementCardSend(this.shareCardId)
     // Open a new window for sharing
     window.open(`https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`, '_blank');
   }
@@ -278,6 +280,33 @@ this.paymentForm = this.fb.group({
   }
 
   
+
+
+  incrementCardSend(cardId:any){
+    this.apiService.incrementCardShare(cardId).subscribe(
+      (response)=>{
+          console.log('card view updated');
+          this.apiService.getCards(this.payload).subscribe(
+            (response)=>{
+              this.isLoading=false;
+              if(response.status=='Success'){
+                this.cards=response.Card
+              }
+              else{
+                alert("failed to fetch cards.")
+              }
+          
+            },(error)=>{
+              this.isLoading=false;
+              alert("failed to fetch cards."+error.message)
+            }
+          )
+              },(error)=>{
+        console.log('error updating card view ');
+      }
+    )
+    
+  }
 
   payWithPayPal(selectedPackage: any) {
     this.selectedPackage = selectedPackage

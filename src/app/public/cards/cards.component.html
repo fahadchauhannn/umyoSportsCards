@@ -112,6 +112,9 @@
   <i class="fa-solid fa-arrow-up-short-wide"></i> Upgrade Package
 </button>
 
+
+
+
 <div
   class="modal fade"
   id="shareCard"
@@ -141,9 +144,9 @@
             justify-content: center;
           "
         >
-          <h5 style="width: 100%; text-align: center; padding-bottom: 25px">
-            https://umyoentertainment.site/cards/share-card/{{ shareCardId }}
-          </h5>
+        <div (copy)="incrementCardSend(shareCardId)" style="width: 100%; text-align: center; padding-bottom: 25px">
+          <h5>https://umyoentertainment.site/cards/share-card/{{ shareCardId }}</h5>
+        </div>
           <button
             class="btn btn-primary"
             style="width: 80%; text-align: center; padding-bottom: 15px"
