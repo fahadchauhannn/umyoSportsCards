@@ -141,7 +141,8 @@
             justify-content: center;
           "
         >
-          <h5 style="width: 100%; text-align: center; padding-bottom: 25px">
+          <h5 (copy)="incrementCardSend(shareCardId)"
+          style="width: 100%; text-align: center; padding-bottom: 25px">
             https://umyogreeks.site/cards/share-card/{{ shareCardId }}
           </h5>
           <button
