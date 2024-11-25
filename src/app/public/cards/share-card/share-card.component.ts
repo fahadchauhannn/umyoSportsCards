@@ -107,7 +107,7 @@ user_id  = parseInt(this.id, 10);
     }
 
     
-this.apiService.incrementCardShare(this.card_id).subscribe(
+this.apiService.incrementCardView(this.card_id).subscribe(
   (response)=>{
       console.log('card view updated');
   },(error)=>{
