@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import * as QRCode from 'qrcode-generator';
 @Component({
   selector: 'app-template02',
   templateUrl: './template02.component.html',
@@ -47,7 +48,8 @@ export class Template02Component implements OnChanges {
 
 
 
-  
+  qrCodeImage: SafeResourceUrl | null = null; // Variable to hold the QR code image
+
 
 
    sanitizedUrlsCache: Map<string, SafeResourceUrl> = new Map<string, SafeResourceUrl>();
@@ -61,6 +63,25 @@ export class Template02Component implements OnChanges {
     
   }
 
+
+  ngOnInit(): void {
+    this.generateQRCode();
+  }
+
+
+  generateQRCode() {
+    const url = window.location.href; // Get the current URL
+    const qr = QRCode(0, 'L'); // Generate QR code with low error correction level
+    qr.addData(url);
+    qr.make();
+    const qrImageTag = qr.createImgTag(5); // Create QR code image tag with a scale of 5
+
+    // Sanitize the image tag and store it in qrCodeImage
+    const div = document.createElement('div');
+    div.innerHTML = qrImageTag;
+    const img = div.firstChild as HTMLImageElement;
+    this.qrCodeImage = this.sanitizer.bypassSecurityTrustResourceUrl(img.src);
+  }
 
 
   // productImages2: string[] = ['assets/images/app-devices.jpg','assets/images/app-devices.jpg','assets/images/app-devices.jpg'];
@@ -135,17 +156,7 @@ return ""
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
     return youtubeRegex.test(url);
   }
-  sanitizeumyovideo(url: string): SafeResourceUrl {
-    let formatedUrl=url
-   
-    if (this.sanitizedUrlsCache.has(formatedUrl)) {
-      return this.sanitizedUrlsCache.get(formatedUrl)!;
-    } else {
-      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
-      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
-      return sanitizedUrl;
-    }
-  }
+
 
   sanitizeYouTubeUrl(url: string): SafeResourceUrl {
     let formatedUrl=this.convertToEmbeddedFormat(url)
@@ -158,29 +169,18 @@ return ""
       return sanitizedUrl;
     }
   }
- 
-  formatVimeoUrl(url: string): string {
-    const match = url.match(/vimeo\.com\/(\d+)/);
-    if (match && match[1]) {
-      const videoId = match[1];
-      return `https://player.vimeo.com/video/${videoId}?h=b550e8409e&title=0&byline=0&portrait=0`;
-    }
-    return '';
-  }
-
- sanitizeVimeo(url: string): SafeResourceUrl {
-    const formattedUrl = url
-    if (formattedUrl === '') {
-      return '';
-    }
-    if (this.sanitizedUrlsCache.has(formattedUrl)) {
-      return this.sanitizedUrlsCache.get(formattedUrl)!;
+  sanitizeumyovideo(url: string): SafeResourceUrl {
+    let formatedUrl=url
+   
+    if (this.sanitizedUrlsCache.has(formatedUrl)) {
+      return this.sanitizedUrlsCache.get(formatedUrl)!;
     } else {
-      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formattedUrl);
-      this.sanitizedUrlsCache.set(formattedUrl, sanitizedUrl);
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formatedUrl);
+      this.sanitizedUrlsCache.set(formatedUrl, sanitizedUrl);
       return sanitizedUrl;
     }
   }
+ 
 
    // Dailymotion functions
    convertDailymotionToEmbeddedFormat(url: string): string {
@@ -198,6 +198,30 @@ return ""
     const formattedUrl = this.convertDailymotionToEmbeddedFormat(url);
     if(formattedUrl==""){
       return ""
+    }
+    if (this.sanitizedUrlsCache.has(formattedUrl)) {
+      return this.sanitizedUrlsCache.get(formattedUrl)!;
+    } else {
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(formattedUrl);
+      this.sanitizedUrlsCache.set(formattedUrl, sanitizedUrl);
+      return sanitizedUrl;
+    }
+  }
+
+
+  formatVimeoUrl(url: string): string {
+    const match = url.match(/vimeo\.com\/(\d+)/);
+    if (match && match[1]) {
+      const videoId = match[1];
+      return `https://player.vimeo.com/video/${videoId}?h=b550e8409e&title=0&byline=0&portrait=0`;
+    }
+    return '';
+  }
+
+ sanitizeVimeo(url: string): SafeResourceUrl {
+    const formattedUrl = url
+    if (formattedUrl === '') {
+      return '';
     }
     if (this.sanitizedUrlsCache.has(formattedUrl)) {
       return this.sanitizedUrlsCache.get(formattedUrl)!;
